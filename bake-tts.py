@@ -223,11 +223,8 @@ def collect_groups(soup) -> list[tuple]:
     # Section boundaries: h2 elements + <div class="card"> (philosophy pages
     # use per-thinker cards, sometimes alongside a trailing h2 like 深入思考).
     # Collect both, then sort by DOM order.
-    candidates = list(body.find_all(["h2", "h3", "h4", "summary"]))
-    candidates += list(body.find_all(
-        "div",
-        class_=lambda c: c and ("card" in c or "answer" in c or "body" in c),
-    ))
+    candidates = list(body.find_all(["h2", "h3", "h4"]))
+    candidates += list(body.find_all("div", class_=lambda c: c and ("card" in c or ("qa" in c and "qa-title" not in c))))
     candidates = [el for el in candidates if not el.find_parent(class_="mmd-controls")]
     # DOM order: use sourceline+sourcepos if available, else find_all() order
     candidate_ids = set(id(c) for c in candidates)
