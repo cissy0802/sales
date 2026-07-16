@@ -68,6 +68,21 @@ def normalize_for_tts(text: str) -> str:
     text = text.replace("✘ ", "反例，").replace("✘ ", "反例，").replace("✘", "反例，")
     text = text.replace("❌ ", "反例，").replace("❌ ", "反例，").replace("❌", "反例，")
     text = text.replace("⚠️ ", "注意，").replace("⚠ ", "注意，").replace("⚠", "注意，")
+    # Math / comparison symbols that Azure otherwise renders as awkward
+    # single-character reads or silence. Pad with commas so surrounding
+    # phrasing doesn't collide.
+    import re as _re
+    text = _re.sub(r"\s*≥\s*", " 大于等于 ", text)
+    text = _re.sub(r"\s*≤\s*", " 小于等于 ", text)
+    text = _re.sub(r"\s*>\s*", " 大于 ", text)
+    text = _re.sub(r"\s*<\s*", " 小于 ", text)
+    text = _re.sub(r"\s*×\s*", " 乘以 ", text)
+    text = _re.sub(r"\s*÷\s*", " 除以 ", text)
+    text = _re.sub(r"\s*±\s*", " 正负 ", text)
+    # `=` gets spoken as "等于" only when surrounded by spaces or between
+    # obviously numeric/short-word contexts; leave "A=B" style alone since
+    # it's often used as inline labelling in Chinese copy.
+    text = _re.sub(r"\s+=\s+", " 等于 ", text)
     return text
 
 
@@ -208,8 +223,11 @@ def collect_groups(soup) -> list[tuple]:
     # Section boundaries: h2 elements + <div class="card"> (philosophy pages
     # use per-thinker cards, sometimes alongside a trailing h2 like 深入思考).
     # Collect both, then sort by DOM order.
-    candidates = list(body.find_all("h2"))
-    candidates += list(body.find_all("div", class_=lambda c: c and "card" in c))
+    candidates = list(body.find_all(["h2", "h3", "h4", "summary"]))
+    candidates += list(body.find_all(
+        "div",
+        class_=lambda c: c and ("card" in c or "answer" in c or "body" in c),
+    ))
     candidates = [el for el in candidates if not el.find_parent(class_="mmd-controls")]
     # DOM order: use sourceline+sourcepos if available, else find_all() order
     candidate_ids = set(id(c) for c in candidates)
@@ -217,11 +235,12 @@ def collect_groups(soup) -> list[tuple]:
     h2s = []
     for el in body.find_all(True):
         if id(el) in candidate_ids and id(el) not in seen:
-            # De-duplicate nested boundaries: if this candidate is inside
-            # another candidate (e.g. <h2> nested in <div class="card">),
-            # keep only the outer one.
-            outer = el.find_parent(lambda p: id(p) in candidate_ids)
-            if outer is not None:
+            # De-duplicate nested boundaries: if this candidate's DIRECT
+            # parent is also a candidate (e.g. <h2> nested inside a <div
+            # class="card">, or an <h3> inside a card), keep only the outer.
+            # Deeper nesting (like <summary> inside <details> inside .qa)
+            # is fine — sibling QAs each get their own segment.
+            if id(el.parent) in candidate_ids:
                 continue
             seen.add(id(el))
             h2s.append(el)
@@ -431,7 +450,7 @@ def process_page(
                 skipped_lang += 1
                 continue
 
-            digest = hash_text(text)
+            digest = hash_text(normalize_for_tts(text))
             # SPLIT mode: each file is single-language, JS reads `data-tts`.
             # FULL mode: file holds both, JS reads `data-tts-{lang}`.
             attr_name = "data-tts" if mode == "split" else f"data-tts-{lang}"
