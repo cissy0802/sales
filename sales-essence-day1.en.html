@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 1: What Selling Really Is</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:1px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"\2610";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"\25AA";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"\2013"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 01 · Phase A</div>
+<h1>What Selling Really Is: Not "Convincing People to Buy" but "Helping Them Make a Better Decision"</h1>
+<div class="meta"><span>Topic: What Selling Really Is</span><span>·</span><span>4 principles</span></div>
+<div class="subtitle">"People don't like to be sold, but they love to buy." The gap between those two is everything this course teaches.</div>
+</header>
+<div class="intro">
+<strong>First, clear up a myth.</strong> Most people hear "sales" and picture scripts, tricks, pushiness, offloading junk onto someone. So they conclude "I'm not cut out for sales." But the truth is you sell every day: getting your boss to approve a budget, getting an interviewer to pick you, getting your kid to brush their teeth, getting a friend to watch the film you recommend — all of it. Selling isn't a profession; it's the ability to <strong>help someone accept a change that is also better for them</strong>. Today we pour the foundation: what selling actually is, why you already do it, how to shift from "pushing" to "pulling," and a mindset you can practice for life. By the end you'll notice that the best sellers are the ones who look the <em>least</em> like salespeople.
+</div>
+
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>Selling = Helping the Other Person Get What They Actually Want
+<span class="en">You're not selling to them — you're helping them buy</span></h2>
+<span class="tag">value exchange</span><span class="tag">not manipulation</span><span class="tag">mindset</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">Selling isn't getting someone to buy what you want to sell; it's helping them get what they truly want — you're just the one who makes the exchange happen. Value &gt; cost, and the sale is a natural result; value &lt; cost, and even the slickest script is just manipulation.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"Selling is essentially a transfer of feelings."</span>
+<span class="source">— Zig Ziglar</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Pushing vs. helping them buy</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f6e3da" height="210" rx="6" stroke="#c0603a" stroke-width="2" width="320" x="20" y="20"></rect>
+<rect fill="#e2efdc" height="210" rx="6" stroke="#4e8a3f" stroke-width="2" width="320" x="360" y="20"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="15" font-weight="700" text-anchor="middle" x="180" y="50">&#10007; Pushing (me-centered)</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12.5" x="38" y="82">· Goal: get my thing sold</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12.5" x="38" y="107">· Lead with features &amp; specs</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12.5" x="38" y="132">· They hesitate &#8594; push, discount</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12.5" x="38" y="157">· The sale ends the relationship</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12.5" x="38" y="182">· Win a deal, lose trust</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12.5" x="38" y="207">· They feel: sold to</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="15" font-weight="700" text-anchor="middle" x="520" y="50">&#10003; Helping buy (them-centered)</text>
+<text fill="#25402f" font-family="Georgia" font-size="12.5" x="378" y="82">· Goal: help them decide right</text>
+<text fill="#25402f" font-family="Georgia" font-size="12.5" x="378" y="107">· First ask what they're solving</text>
+<text fill="#25402f" font-family="Georgia" font-size="12.5" x="378" y="132">· They hesitate &#8594; dig for the worry</text>
+<text fill="#25402f" font-family="Georgia" font-size="12.5" x="378" y="157">· The sale starts the relationship</text>
+<text fill="#25402f" font-family="Georgia" font-size="12.5" x="378" y="182">· Not a fit? Say so</text>
+<text fill="#25402f" font-family="Georgia" font-size="12.5" x="378" y="207">· They feel: helped</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">You're selling a used iPhone on a marketplace; a buyer messages you.</div>
+<div class="dialog bad">
+<div class="speaker">&#10007; The usual move</div>
+<p>"95% new! Battery health 89%! Original, never opened or repaired! Lowest price online, lots of people asking — better lock it in fast." You're reciting specs and manufacturing urgency; what they feel is pressure, and they start wondering whether your rush is hiding something.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">&#10003; Helping them buy</div>
+<p><strong>Ask about use first:</strong> "What are you mainly going to use it for — yourself or a family member? Do you game much?"</p>
+<p><strong>Speak to their use:</strong> "Then this one's plenty. Battery's at 89%, so heavy use means a charge a day — if you game all day you'll want a power bank; light use, no problem at all."</p>
+<p><strong>Say no when it's a no:</strong> "If you're mainly into heavy gaming, honestly this one will struggle — spend a bit more and look at model XX, better value." Result: either he trusts you more and buys on the spot, or it's a no this time — but he comes back, and refers friends.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: psychological reactance.</strong> The moment people feel their freedom to choose is threatened — pressured, cornered, rushed — they push back, even wanting the opposite. So the harder you press, the more they want out. "Helping them buy" hands the choice back, doesn't trip reactance, and leaves room for trust to grow.</p>
+<ul>
+<li><strong>Reactance theory</strong> (Jack Brehm, 1966) — a threatened sense of freedom triggers pushback; this is the psychological root of "people hate to be sold."</li>
+<li><strong>Rackham's analysis of 35,000 sales calls</strong> (<em>SPIN Selling</em>) — the bigger the sale, the more traditional "hard-close / scripts" lower close rates; top performers diagnose needs rather than apply pressure.</li>
+<li><strong>Neuroscience · getting to choose is itself a reward</strong>: Leotti &amp; Delgado (2011, <em>Psychological Science</em>) found the mere opportunity to make one's own choice activates the brain's reward circuitry (ventral striatum). Handing the choice back literally feels good; pressuring it away does the opposite.</li>
+</ul>
+<p class="caveat">Boundary: reactance bites hardest under "high pressure + low trust"; familiar, low-stakes, small purchases feel it less.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Run through this before you close</div>
+<ul class="checklist">
+<li>Is this genuinely the better choice for <strong>him</strong> (not for my numbers)?</li>
+<li>What does he lose — or keep tolerating — if he doesn't buy? Did I make that clear?</li>
+<li>Am I helping him <strong>make</strong> a decision, or <strong>forcing</strong> one?</li>
+<li>If he were my friend, would I give him the same advice?</li>
+<li>Is there an option better for him but worse for me that I'm quietly not mentioning?</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Equating selling with scripts.</strong> Scripts are tactics; value exchange is the substance. Tactics can fool someone once — not into repeat business and word of mouth.</li>
+<li><strong>Eyeing only your quota.</strong> People can tell in a second when all you see is the deal.</li>
+<li><strong>Substituting urgency and scarcity for value.</strong> "Last one," "gone if you don't decide today" — effective short-term, corrosive long-term. The trick is real vs. fake: a genuine deadline (the price really does rise, stock really is down to two) told honestly helps them see the cost; a fabricated one, once seen through, doubles the reactance and zeroes the trust.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Zig Ziglar, <em>Secrets of Closing the Sale</em></strong> — the source of the creed "help enough people get what they want, and you'll get what you want."<br/><strong>Daniel Pink, <em>To Sell Is Human</em></strong> — redefines modern selling from "hawking" to "moving others."</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"<em>Help them buy</em>, don't sell to them." — the whole mindset lives in the difference between the subjects of <em>buy</em> and <em>sell</em>.</p>
+<p>"What are you going to <em>use it for</em>?" — the opening move of every "help them buy."</p>
+<p>"Honestly, that might <em>not be the best fit</em> for you." — dare to say this and you win the trust.</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>You're Already Selling — Goods, Yourself, Ideas Are the Same Thing
+<span class="en">We're all in sales now</span></h2>
+<span class="tag">meta-skill</span><span class="tag">drop the stigma</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">The moment you want someone to accept an idea, choose you, or take action, you're selling. The only difference is whether you do it consciously and well, or unconsciously and badly.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"We're all in sales now."</span>
+<span class="source">— Daniel Pink, <em>To Sell Is Human</em></span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Same moves, different arena</div>
+<div class="scene">
+<div class="setup">Discover the need &#8594; build trust &#8594; make the value clear &#8594; handle objections &#8594; close — every one of these is it:</div>
+<div class="dialog good">
+<div class="speaker">&#10003; These are all selling</div>
+<p><strong>Interview:</strong> you're selling "me." The résumé is a landing page — not a list of what you did, but a clear statement of what you can solve for them; the interview is discovery + demo; the offer is a negotiation.</p>
+<p><strong>Getting your boss to approve budget:</strong> you're selling an idea. Lead with the outcome he cares about, then the cost.</p>
+<p><strong>Convincing your roommate to help move on the weekend:</strong> you're selling action. Ask what they've got on that day first, then trade on what they get out of it.</p>
+<p><strong>Getting your kid to brush their teeth:</strong> you're selling change. Reasoning fails; give them a reason <em>they</em> care about.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: naming is empowering.</strong> Once you reclassify "influencing others" from "the dirty work I'm bad at" to "a skill I can practice," you start preparing on purpose (asking the right questions, framing the right value) instead of winging it every time — and deliberate practice is the only way to get better.</p>
+<ul>
+<li><strong>Daniel Pink's large survey with Qualtrics</strong> (<em>To Sell Is Human</em>, 2012) — people in non-sales jobs spend on average about <strong>40%</strong> of their work time "moving others," and widely see it as crucial to career success.</li>
+</ul>
+<p class="caveat">Honestly: this one is more "a reframe + one big survey" than a causal experiment — but it's enough to break the "I don't do sales" illusion.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Spot this week's hidden selling</div>
+<ul class="checklist">
+<li>Is there something this week I want a specific person to accept / choose / do?</li>
+<li>Am I talking about what <strong>I</strong> want to say, or what <strong>they</strong> care about?</li>
+<li>Did I skip preparing because "this isn't really sales"?</li>
+<li>If I ran it as a proper sale, what's the first thing I'd change?</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>"I hate sales, so I don't sell."</strong> You're not not-selling; you just don't notice, and so you do it badly.</li>
+<li><strong>Treating self-promotion as shameful.</strong> Not letting people know what value you can offer isn't modesty — it's making yourself invisible to the people who need you.</li>
+<li><strong>Assuming only smooth-talking extroverts can do it.</strong> In fact introverts, with deep listening and the patience to sit in silence, often sell better than the glib — what you train is never "becoming extroverted."</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Daniel Pink, <em>To Sell Is Human</em></strong> — origin of the idea of "non-sales selling."</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"<em>Moving others</em>" — Pink's replacement for <em>selling</em>, widening it to every situation where you get someone to act.</p>
+<p>"<em>Non-sales selling</em>" — the selling that isn't called selling: persuading, influencing, moving.</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>A Good Seller Is First a Good Detective — Understand Before You Persuade
+<span class="en">Seek first to understand</span></h2>
+<span class="tag">ask before you tell</span><span class="tag">listening</span><span class="tag">diagnosis</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">The more you talk, the worse you tend to sell. Understand them first, then let them understand you — flip that order and "helping them buy" collapses back into "pushing." A doctor doesn't prescribe the second they sit down; a good seller doesn't pitch the second they open their mouth.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"Seek first to understand, then to be understood."</span>
+<span class="source">— Stephen Covey, <em>The 7 Habits</em></span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">A seller's talk-to-listen ratio</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 190" xmlns="http://www.w3.org/2000/svg">
+<text fill="#a8461f" font-family="Georgia" font-size="13.5" font-weight="700" x="20" y="35">&#10007; Poor seller: talks the whole time</text>
+<rect fill="#e2efdc" height="30" rx="4" width="140" x="20" y="48"></rect>
+<rect fill="#f6e3da" height="30" rx="4" width="500" x="160" y="48"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="12" x="34" y="68">Ask 20%</text>
+<text fill="#a8461f" font-family="Georgia" font-size="12" x="330" y="68">Talk 80% (pitch, quote, persuade)</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="13.5" font-weight="700" x="20" y="120">&#10003; Good seller: asks enough, then talks</text>
+<rect fill="#e2efdc" height="30" rx="4" width="440" x="20" y="133"></rect>
+<rect fill="#f6e3da" height="30" rx="4" width="200" x="460" y="133"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="12" x="150" y="153">Ask + listen 70%</text>
+<text fill="#a8461f" font-family="Georgia" font-size="12" x="500" y="153">Talk 30%</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">After your pitch, the customer says "Let me think about it."</div>
+<div class="dialog bad">
+<div class="speaker">&#10007; The usual move (pushes them further away)</div>
+<p>"It's really worth it — let me walk you through a few more features... want me to try for a discount?" You're piling on against a concern you haven't understood, which usually pushes them out the door.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">&#10003; The detective move (dig for the real objection)</div>
+<p>"Of course — you should think it over. Can I ask, <strong>which part makes you want to think more</strong>? Is it the price, the timing, or not being sure it's the right fit?" "Let me think about it" is almost never the real answer — it's usually "I have an unspoken worry" or "you haven't made me feel it's worth it," so don't take it at face value; gently ask one more question and surface the real objection.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: three effects stacked.</strong> (1) <strong>Information</strong> — prescribe without diagnosing and you'll miss; (2) <strong>self-persuasion</strong> — people are more convinced by reasons they say out loud themselves, so getting them to voice their pain is them persuading themselves; (3) <strong>liking + less reactance</strong> — questions put the spotlight on them, and people trust those who let them talk.</p>
+<ul>
+<li><strong>Rackham, <em>SPIN Selling</em></strong> — across 35,000 calls, top sellers ask markedly more (and better) "implication / need-payoff" questions.</li>
+<li><strong>Gong.io's analysis of hundreds of thousands of sales calls</strong> — the highest-closing reps talk a smaller share of the time (~<strong>43%</strong>, i.e. they clearly listen more than they talk).</li>
+<li><strong>Huang, Yeomans, Brooks, Gino &amp; Minson (2017, JPSP)</strong>, <em>It Doesn't Hurt to Ask</em> — asking more questions, especially follow-ups, significantly raises how much people like you — it even holds in speed-dating.</li>
+<li><strong>Neuroscience · when the other person talks, their brain is dispensing reward</strong>: Tamir &amp; Mitchell (2012, <em>PNAS</em>) found that talking about oneself activates the dopamine reward system (nucleus accumbens / VTA); people even gave up money for the chance to self-disclose. Letting them talk is literally pleasurable for them — which is why "the person who asks" is better liked. (For the brain mechanism in depth, see the neuroscience site.)</li>
+</ul>
+<p class="caveat">Gong is industry data (not peer-reviewed), but its direction matches the other academic findings.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Three all-purpose probing lines (steal these)</div>
+<div class="template">
+<span class="label">Keeper questions</span>
+<p>· "How are you handling this today?" — surfaces the current state and the real alternative.</p>
+<p>· "If this never gets solved, what's the most painful part?" — amplifies the pain and quantifies the cost.</p>
+<p>· "Ideally, what does it look like once it's solved?" — gets them to state, in their own words, the outcome they're buying.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Answering your own question.</strong> "Is it a bit pricey for you? Well, actually..." — you just buried their real answer.</li>
+<li><strong>Reciting spec sheets as expertise.</strong> Expertise is understanding their problem, not knowing your product.</li>
+<li><strong>Fearing silence.</strong> After a real question, hold for 3–5 seconds; the answer comes after the silence.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Stephen Covey, <em>The 7 Habits of Highly Effective People</em></strong> (Habit 5).<br/><strong>Neil Rackham, <em>SPIN Selling</em></strong> — proves with a large sample that top sellers out-question the rest in both count and quality; SPIN is the order of four question types — Situation &#8594; Problem &#8594; Implication &#8594; Need-payoff.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"What's <em>holding you back</em>?" — the smoothest way to surface the real objection.</p>
+<p>"How are you <em>handling this today</em>?" — ask about the status quo to find that your true competitor is "no change."</p>
+<p>"<em>Tell me more.</em>" — when they give a surface answer, two words are enough.</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>Move Your North Star from "Closing" to "How Many People You Help"
+<span class="en">Serve first — the sale follows</span></h2>
+<span class="tag">long game</span><span class="tag">mindset</span><span class="tag">compounding</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">Fix your eyes on this one deal and you'll trade trust for the close; fix them on "how many you help, and how well" and the close chases you. Sales isn't a zero-sum persuasion contest — it's a compounding trust business.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"Give more in value than you take in payment."</span>
+<span class="source">— Bob Burg, <em>The Go-Giver</em></span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">A customer wants your premium package, but you can tell the basic tier is enough for their needs.</div>
+<div class="dialog bad">
+<div class="speaker">&#10007; The short-term move</div>
+<p>Go with the flow and sell the premium — this month's numbers look great. But three months in he finds most of the features unused, feels ripped off, refunds, leaves a bad review, never comes back, and tells five friends.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">&#10003; The long-term move</div>
+<p>"For how you'll actually use it, the basic tier is plenty — hold off on premium; the money you save is there whenever you genuinely need to upgrade." He trusts you on the spot, renews long-term, and refers others. You earn less once and more ten times.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: reciprocity + repeated games.</strong> (1) <strong>Reciprocity</strong> — people who receive want to give back; it's a strong cross-cultural norm, so giving value first leaves them faintly "owing you one." (2) <strong>Repeated games</strong> — in a one-shot deal a cheat might come out ahead, but the real world is a repeated game: word of mouth, renewals, and referrals make "keeping faith" the long-run winner.</p>
+<ul>
+<li><strong>Reciprocity</strong>: Regan (1971) — a subject given a free bottle of Coke bought roughly twice as many raffle tickets afterward; Strohmetz et al. (2002) — a mint left with the check measurably raised tips.</li>
+<li><strong>Repeated games</strong>: Axelrod's <em>The Evolution of Cooperation</em> tournaments — "nice, tit-for-tat" strategies win over the long run while defect-to-profit strategies get weeded out.</li>
+<li><strong>Neuroscience · mutual cooperation activates the reward circuit</strong>: Rilling et al. (2002, <em>Neuron</em>) — in cooperation games, "mutual cooperation" lights up reward regions (nucleus accumbens / orbitofrontal cortex), showing cooperation itself feels good — the neural basis of why reciprocity norms sustain themselves. (For depth, see the neuroscience site.)</li>
+</ul>
+<p class="caveat">Boundary: in one-shot, anonymous, no-repeat settings the long-game mechanism is weak; but the vast majority of real selling is a repeated game. (Note: the oxytocin-and-trust link is widely cited but its replication is shaky, so it isn't used here as hard evidence.)</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">This session's mindset shift</div>
+<ul class="checklist">
+<li>Do I measure myself by "close rate," or by "how many people I helped, and how well"?</li>
+<li>This deal's decision — seen from three years out, does it earn me more trust or less?</li>
+<li>Am I willing to give up a sale I shouldn't make, for the sake of long-term reputation?</li>
+<li>Am I treating each customer as a one-off, or as a relationship that renews and refers?</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Short-termism.</strong> Overdrawing every future month's trust for this month's number.</li>
+<li><strong>Dark patterns.</strong> Manufacturing anxiety, hiding flaws, nudging the click — win a deal, lose a person and their whole circle.</li>
+<li><strong>Selling what you shouldn't.</strong> Knowingly selling a bad fit is the only real "failure" in this craft — and it marks the line between persuasion and manipulation: are you helping them make the better decision for <strong>them</strong>, or getting them to make the better decision for <strong>you</strong>?</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Bob Burg &amp; John David Mann, <em>The Go-Giver</em></strong> — the parable-style classic of "give-first" selling.<br/><strong>Zig Ziglar</strong> — the original source of the "help others get what they want" north star.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"<em>Go-giver</em>, not go-getter." — one word between taking and giving.</p>
+<p>"You don't <em>need</em> the expensive one." — the people who dare to say this earn the most over time.</p>
+<p>"Play the <em>long game</em>."</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>Your Day 1 Action</h3>
+<p>No reflecting, no reading — do one concrete thing this week:</p>
+<div class="action">
+<strong>Pick a real "selling" situation this week</strong> (selling something, an interview, convincing someone of something), and <strong>use Principle 03's "ask before you tell"</strong>: before you open with any pitch or persuasion, ask the other person <strong>at least 3 questions</strong> (the three keeper lines work fine), get clear on what they actually want, then speak to their answers.<br/><br/>Afterward, write two lines: <strong>(1) what you learned that you didn't know before; (2) whether knowing it changed what you said.</strong><br/><br/>You'll probably find you said half as much — and it worked twice as well.
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. If "helping them buy" sometimes means talking someone out of buying, what about the sales quota my company gives me? Isn't that a contradiction?</summary>
+<div class="answer">Short-term it looks like a contradiction; long-term it's the opposite. <strong>First, "helping them buy" usually raises, not lowers, total sales</strong> — occasionally waving off a bad-fit deal buys this person's trust, repeat business, and a ring of referrals: satisfied customers go persuade new ones for you, the cheapest, lowest-effort acquisition there is. <strong>Second, the quota is a lagging indicator</strong>: it measures trust you built in the past cashing in today. In the rare moment "this deal vs. long-term trust" truly conflict, remember — a sale can come again; broken trust costs ten times as much to repair. This isn't being too pure to close; it's daring to say no when it's clearly worse for them, not talking everyone out of everything.</div>
+</details>
+<details>
+<summary>2. Since people hate being sold, can you still use "urgency / scarcity" tactics that obviously work?</summary>
+<div class="answer">It hinges on <strong>real</strong> vs. <strong>manufactured</strong>. Spotlighting a <strong>genuine</strong> urgency ("this price really does expire at month-end," "there really are only two left") helps them see the cost — fair game. A <strong>fabricated</strong> fake scarcity (forever the "last day") is reactance + trust collapse the moment it's seen through. Order matters too: scarcity belongs <strong>after</strong> trust is built and value is clear, as the final nudge — not <strong>in place of</strong> value as the opener. One line to remember: scarcity used to "illuminate a real cost" is fine; used to "manufacture anxiety in place of value" is manipulation.</div>
+</details>
+<details>
+<summary>3. I'm introverted and not a smooth talker — is this stuff just not for me?</summary>
+<div class="answer">The opposite — today's issue is almost written for introverts. The core of selling isn't "talking well," it's "asking + listening": Gong's data shows the highest-closing reps talk <strong>less</strong> (~43%), and Rackham found top sellers win by questioning, not presenting. Deep listening, letting the other person talk more, sitting with silence — these are naturally an introvert's edge. What you train isn't becoming extroverted; it's making "ask before you tell" muscle memory — get questioning, listening, and holding silence down cold, and that's enough.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 01</footer>
+</div>
+</body>
+</html>

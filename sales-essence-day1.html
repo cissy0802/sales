@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 1：销售的本质</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 01 · Phase A</div>
+<h1>销售的本质：不是"说服别人买"，是"帮别人做出更好的决定"</h1>
+<div class="meta"><span>主题：What Selling Really Is</span><span>·</span><span>4 个原则</span></div>
+<div class="subtitle">"人们讨厌被推销，却热爱购买。" 这两件事之间的距离，就是这门课要教的全部。</div>
+</header>
+<div class="intro">
+<strong>先破一个误会：</strong>大多数人一听"销售"，脑子里蹦出来的是话术、套路、死缠烂打、把用不上的东西塞给别人。所以很多人说"我不适合做销售"。但真相是——你每天都在销售：让老板批预算、让面试官选你、让孩子刷牙、让朋友看你推荐的电影，全都是。销售不是一种职业，是一种<strong>让别人接受一个对他也更好的改变</strong>的能力。这一期我们把这门手艺的地基打好：销售到底是什么、你早就在做、怎么从"推"变成"拉"、以及一个能让你做一辈子的心态。学完你会发现，最会卖的人往往看起来最不像销售。
+</div>
+
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>销售=帮对方得到他真正想要的
+<span class="en">You're not selling to them — you're helping them buy</span></h2>
+<span class="tag">价值交换</span><span class="tag">非操纵</span><span class="tag">心智</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">销售不是让对方买你想卖的，而是帮他得到他真正想要的——你只是那个让这场交换发生的人。价值 &gt; 代价，成交是自然结果；价值 &lt; 代价，再好的话术也只是操纵。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Selling is essentially a transfer of feelings."</span>
+<span class="zh">"销售本质上是一种情绪的传递。"——你先真的相信这东西对他好，对方才会感到。</span>
+<span class="source">— Zig Ziglar</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">推销 vs 帮买</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f6e3da" height="210" rx="6" stroke="#c0603a" stroke-width="2" width="320" x="20" y="20"></rect>
+<rect fill="#e2efdc" height="210" rx="6" stroke="#4e8a3f" stroke-width="2" width="320" x="360" y="20"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="15" font-weight="700" text-anchor="middle" x="180" y="50">✗ 推销（以我为中心）</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12.5" x="38" y="82">· 目标：把我的东西卖出去</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12.5" x="38" y="107">· 先讲功能、参数、卖点</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12.5" x="38" y="132">· 对方犹豫 → 加压、打折</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12.5" x="38" y="157">· 成交那一刻关系结束</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12.5" x="38" y="182">· 赢一单，输信任</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12.5" x="38" y="207">· 对方感觉：被卖了</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="15" font-weight="700" text-anchor="middle" x="520" y="50">✓ 帮买（以对方为中心）</text>
+<text fill="#25402f" font-family="Georgia" font-size="12.5" x="378" y="82">· 目标：帮他做对的决定</text>
+<text fill="#25402f" font-family="Georgia" font-size="12.5" x="378" y="107">· 先问清楚他要解决什么</text>
+<text fill="#25402f" font-family="Georgia" font-size="12.5" x="378" y="132">· 对方犹豫 → 挖真顾虑</text>
+<text fill="#25402f" font-family="Georgia" font-size="12.5" x="378" y="157">· 成交那一刻关系开始</text>
+<text fill="#25402f" font-family="Georgia" font-size="12.5" x="378" y="182">· 不合适就说不合适</text>
+<text fill="#25402f" font-family="Georgia" font-size="12.5" x="378" y="207">· 对方感觉：被帮了</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你在二手平台卖一台旧 iPhone，买家来问。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 常见做法</div>
+<p>"95 新！电池健康 89%！原装无拆无修！这个价全网最低了，好多人问，你要不快点定。" —— 你在报参数 + 制造紧迫，对方感到的是压力，开始怀疑你急着出手是不是有猫腻。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 帮买做法</div>
+<p><strong>先问用途：</strong>"你主要拿来干嘛？自己用还是给家人？平时打游戏多吗？"</p>
+<p><strong>针对他的用途讲：</strong>"那这台够用——电池 89%，重度用一天要充一次，你要是天天开黑可能得配个充电宝；轻度用完全没问题。"</p>
+<p><strong>该说不就说不：</strong>"你要是打大型游戏为主，说实话这台会有点吃力，你加点预算看看 XX 型号更值。" —— 结果：要么他更信你、当场成交，要么这次不成，但他会回来、还会介绍朋友。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Stop pitching features; start diagnosing needs. "Help them buy" turns a wary buyer into a trusting one — even a lost sale earns a referral.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：心理逆反（reactance）。</strong>人一旦感到"选择的自由被威胁"——被逼、被套路、被制造紧迫——本能会反抗、甚至想做相反的事。所以你压得越紧，对方越想逃。"帮买"把选择权还给对方，不触发逆反，信任才有空间长出来。</p>
+<ul>
+<li><strong>心理逆反理论</strong>（Jack Brehm, 1966）——自由感受到威胁 → 抵触反弹，这是"人们讨厌被推销"的心理根源。</li>
+<li><strong>Rackham 对 3.5 万通销售电话的分析</strong>（《SPIN Selling》）——越是大额销售，传统"逼单 / 话术"越会压低成交率；顶尖销售靠诊断需求，不靠施压。</li>
+<li><strong>神经科学 · "能自己选"本身就是奖赏</strong>：Leotti &amp; Delgado (2011, <em>Psychological Science</em>) 发现，仅仅是"能自己做选择"的机会就会激活大脑奖赏回路（腹侧纹状体）。把选择权还给对方，本身就让他感觉更好；施压剥夺选择，则相反。（详见 neuroscience 站）</li>
+</ul>
+<p class="caveat">边界：逆反在"高压 + 低信任"时最强；熟人、小额、低风险场景影响较小。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">成交前先过一遍（照做清单）</div>
+<ul class="checklist">
+<li>这东西对<strong>他</strong>真的是更好的选择吗？（不是对我的业绩）</li>
+<li>他不买，会失去什么 / 继续忍受什么？我说清楚了吗？</li>
+<li>我是在帮他<strong>做决定</strong>，还是在<strong>逼他决定</strong>？</li>
+<li>如果他是我朋友，我会给他一样的建议吗？</li>
+<li>有没有一个更适合他但对我更不划算的选项，我藏着没说？</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>把销售等同于话术。</strong>话术是术，价值交换是道。术能骗一次，骗不了复购和口碑。</li>
+<li><strong>只盯着自己的配额。</strong>对方一眼看得出你眼里只有单子。</li>
+<li><strong>用紧迫和稀缺代替价值。</strong>"最后一台""今天不定就没了"——短期有效，长期透支信任。诀窍在真假：真实的紧迫（确实月底涨价、确实只剩两台）照实说，是帮对方看清代价；编造的假紧迫一旦被识破，逆反加倍、信任归零。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Zig Ziglar,《Secrets of Closing the Sale》</strong>——"帮到足够多的人得到他们想要的，你就能得到你想要的"这一信条的源头。<br/><strong>Daniel Pink,《To Sell Is Human》</strong>——把现代销售从"叫卖"重新定义为"打动他人（moving others）"。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Help them <em>buy</em>, don't sell to them." —— 英文里 buy / sell 的主语之差，就是整个心态之差。</p>
+<p>"What are you going to <em>use it for</em>?" —— 一切"帮买"的起手式。</p>
+<p>"Honestly, that might <em>not be the best fit</em> for you." —— 敢说这句，你就赢了信任。</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>你早就在卖了——卖货、卖自己、卖想法是同一件事
+<span class="en">We're all in sales now</span></h2>
+<span class="tag">元技能</span><span class="tag">破除心魔</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">只要你想让别人接受一个想法、选择你、或者行动起来，你就在销售。区别只在于：你是有意识地做好它，还是无意识地做砸它。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"We're all in sales now."</span>
+<span class="zh">"如今我们都是销售。"——Pink 的研究：即便不做销售岗，人们也有近四成时间在"打动他人"。</span>
+<span class="source">— Daniel Pink,《To Sell Is Human》</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">同一套动作，换了个场</div>
+<div class="scene">
+<div class="setup">发现需求 → 建立信任 → 讲清价值 → 处理异议 → 促成——下面每一件都是它：</div>
+<div class="dialog good">
+<div class="speaker">✓ 这些都是销售</div>
+<p><strong>面试：</strong>你在卖"我"。简历是落地页——不是罗列你干过啥，是写清你能帮对方解决什么；面试是需求发现 + 演示；谈 offer 是谈判。</p>
+<p><strong>找老板批预算：</strong>你在卖一个"想法"。先讲他关心的结果，再讲要多少钱。</p>
+<p><strong>说服室友周末一起搬家：</strong>你在卖"行动"。先问他那天有啥事，再换他能得到的好处。</p>
+<p><strong>让孩子刷牙：</strong>你在卖"改变"。讲道理没用，给他一个他在乎的理由。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Interviewing, pitching your boss, convincing a friend — all run the same loop: discover, build trust, show value, handle objections, close. Naming it is half the skill.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：命名即赋能。</strong>一旦你把"影响别人"从"我不擅长的脏活"重新归类成"一项可以练的技能"，你就会开始有意识地准备（问对问题、讲对价值），而不是每次靠临场硬撑——刻意练习才可能变好。</p>
+<ul>
+<li><strong>Daniel Pink 与 Qualtrics 的大样本调查</strong>（《To Sell Is Human》, 2012）——非销售岗的人平均约 <strong>40%</strong> 的工作时间花在"打动他人"上，且普遍认为这对职业成功至关重要。</li>
+</ul>
+<p class="caveat">诚实说：这张更多是"重新定义 + 一个大样本调查"，不是因果实验——但足以打破"我不做销售"的错觉。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">找出你这周的"隐性销售"（照做清单）</div>
+<ul class="checklist">
+<li>这周有没有一件事，是我想让某个人接受 / 选择 / 行动？</li>
+<li>那件事我是在"讲我想说的"，还是"讲他在乎的"？</li>
+<li>我有没有因为"这不算销售"而没好好准备？</li>
+<li>如果把它当成一次正经的销售来做，我第一步会改什么？</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>"我讨厌销售，所以我不销售。"</strong>——你不是不销售，你只是没意识到、于是做得很差。</li>
+<li><strong>把"推销自己"当成羞耻。</strong>不让别人知道你能提供什么价值，不是谦虚，是让需要你的人找不到你。</li>
+<li><strong>以为只有外向、能说会道的人才行。</strong>其实内向者靠深度倾听、忍得住沉默，往往比能说会道的人更能卖——你要练的从来不是变外向。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Daniel Pink,《To Sell Is Human》</strong>——"non-sales selling（非销售的销售）"这一概念的出处。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"<em>Moving others</em>" —— Pink 用它替代 selling，把范围扩到所有"让别人行动"的场景。</p>
+<p>"<em>Non-sales selling</em>" —— 不叫销售的销售：说服、影响、打动。</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>好销售先是好侦探——理解，在说服之前
+<span class="en">Seek first to understand</span></h2>
+<span class="tag">先问后说</span><span class="tag">倾听</span><span class="tag">诊断</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">说得越多，卖得往往越差。先理解对方，再让对方理解你——顺序一反，"帮买"就退回成"推销"。医生不会一坐下就开药，好销售也不会一开口就介绍产品。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Seek first to understand, then to be understood."</span>
+<span class="zh">"先寻求理解，再寻求被理解。"——Covey 第五个习惯，也是一切销售发现的地基。</span>
+<span class="source">— Stephen Covey,《The 7 Habits》</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">会卖的人，嘴和耳朵的比例</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 190" xmlns="http://www.w3.org/2000/svg">
+<text fill="#a8461f" font-family="Georgia" font-size="13.5" font-weight="700" x="20" y="35">✗ 不会卖：一直在说</text>
+<rect fill="#e2efdc" height="30" rx="4" width="140" x="20" y="48"></rect>
+<rect fill="#f6e3da" height="30" rx="4" width="500" x="160" y="48"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="12" x="34" y="68">问 20%</text>
+<text fill="#a8461f" font-family="Georgia" font-size="12" x="360" y="68">说 80%（介绍、报价、说服）</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="13.5" font-weight="700" x="20" y="120">✓ 会卖：先问够，再说</text>
+<rect fill="#e2efdc" height="30" rx="4" width="440" x="20" y="133"></rect>
+<rect fill="#f6e3da" height="30" rx="4" width="200" x="460" y="133"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="12" x="150" y="153">问 + 听 70%</text>
+<text fill="#a8461f" font-family="Georgia" font-size="12" x="500" y="153">说 30%</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：客户听完你的介绍，说"我再考虑考虑"。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 常见做法（越推越远）</div>
+<p>"这个真的很值，我再给你讲讲另外几个功能……要不我再申请个折扣？" —— 你在对着一个你还没搞懂的顾虑猛加码，通常直接把人推走。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 侦探做法（先挖真异议）</div>
+<p>"当然，应该考虑。方便问一句——<strong>是哪一部分让你还想再想想？</strong>是价格、时机，还是不确定它到底适不适合你？" —— 让对方把真正卡住的点说出来，你才知道该回应什么。"我再考虑"几乎从不是真话——它通常是"我有个没说出口的顾虑"或"你还没让我觉得值"，所以别把它当答案收下，要温和地追一句、问出背后那个真异议。</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：三重叠加。</strong>(1) <strong>信息</strong>——不诊断就开药，必然脱靶；(2) <strong>自我说服</strong>——人更容易被"自己说出口"的理由说服，你问出他的痛点，等于他在替你说服他自己；(3) <strong>好感 + 降逆反</strong>——提问把聚光灯打到对方身上，人天生更信任愿意听自己说话的人。</p>
+<ul>
+<li><strong>Rackham《SPIN Selling》</strong>——3.5 万通电话的分析，顶尖销售问的"暗示问题 / 需求-回报问题"在数量和质量上都显著更高。</li>
+<li><strong>Gong.io 对数十万通销售电话的对话分析</strong>——成交率最高的销售说话占比更低（约 <strong>43%</strong>，即明显多听少说）。</li>
+<li><strong>Huang, Yeomans, Brooks, Gino &amp; Minson (2017, JPSP)</strong>《It Doesn't Hurt to Ask》——多问问题、尤其追问，会显著提升对方对你的好感；连速配约会里都成立。</li>
+<li><strong>神经科学 · 让对方开口，他的大脑在"发奖赏"</strong>：Tamir &amp; Mitchell (2012, <em>PNAS</em>) 发现，人谈论自己会激活多巴胺奖赏系统（伏隔核 / VTA），受试者甚至愿意为"能多讲讲自己"而放弃金钱。你多问、让他多说，对他是生理层面的愉悦——这解释了为什么"会问的人"更讨人喜欢。（想深入这条脑机制，可去 neuroscience 站）</li>
+</ul>
+<p class="caveat">Gong 是行业数据（非同行评审），但方向与其余几项学术证据一致。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">"少说多问"万能三句（话术模板）</div>
+<div class="template">
+<span class="label">收藏级追问句</span>
+<p>· "你现在是怎么解决这个问题的？" —— 搞清现状和替代方案。</p>
+<p>· "如果这个问题一直不解决，最麻烦的是什么？" —— 放大痛点、量化代价。</p>
+<p>· "你理想中，它解决之后是什么样？" —— 让对方自己说出他要买的"结果"。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>问完自己抢答。</strong>"你是不是觉得有点贵？其实……"——你刚把他的真答案堵回去了。</li>
+<li><strong>把产品参数倒背如流当专业。</strong>专业是懂他的问题，不是懂你的产品。</li>
+<li><strong>怕沉默。</strong>问完一个真问题，忍住 3–5 秒，答案在沉默之后。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Stephen Covey,《The 7 Habits of Highly Effective People》</strong>（Habit 5）。<br/><strong>Neil Rackham,《SPIN Selling》</strong>——用大样本证明成交高手问的问题数量和质量都远超普通销售；SPIN 指四类问题的提问顺序——背景 → 难点 → 暗示 → 需求-回报。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"What's <em>holding you back</em>?" —— 挖真异议最顺的一句。</p>
+<p>"How are you <em>handling this today</em>?" —— 问现状，找出你真正的竞争对手是"不改变"。</p>
+<p>"<em>Tell me more.</em>" —— 对方给了表面答案时，两个词就够。</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>把北极星从"成交"换成"帮到多少人"
+<span class="en">Serve first — the sale follows</span></h2>
+<span class="tag">长期主义</span><span class="tag">心态</span><span class="tag">复利</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">盯着这一单，你会为了成交牺牲信任；盯着"帮到多少人、帮得多好"，成交会追着你跑。销售不是零和的说服比赛，是可复利的信任生意。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Give more in value than you take in payment."</span>
+<span class="zh">"你给出的价值，要多过你收取的报酬。"——收入是你服务的人数 × 服务得多好的结果。</span>
+<span class="source">— Bob Burg,《The Go-Giver》</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：客户想买你的高价套餐，但你看得出他的需求用基础版就够了。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 短期做法</div>
+<p>顺水推舟卖高价套餐——这个月业绩好看。但他用了三个月发现大半功能没用上，觉得被"宰"了，退款、差评、再不回来，还告诉了五个朋友。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 长期做法</div>
+<p>"以你现在的用法，基础版就够了，先别上高价套餐，省下的钱等你真需要再升级也不迟。" —— 他当场信你，长期续费，主动转介绍。你少赚一次，多赚十次。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Optimize for lifetime trust, not this month's quota. The rep who says "you don't need the expensive one" wins the referral, the renewal, and the reputation.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：互惠 + 重复博弈。</strong>(1) <strong>互惠</strong>——人受了恩会想回报，是跨文化的强规范；先给出价值，对方会隐隐"欠你一个人情"。(2) <strong>重复博弈</strong>——一次性买卖里骗一把或许占便宜，但真实世界是重复博弈：口碑、复购、转介绍让"守信"长期稳赢。</p>
+<ul>
+<li><strong>互惠</strong>：Regan (1971) 经典实验——先请对方喝一瓶可乐，对方随后买抽奖券的数量翻倍；Strohmetz 等 (2002)——账单附赠薄荷糖，小费显著上升。</li>
+<li><strong>重复博弈</strong>：Axelrod《合作的进化》计算机锦标赛——"先善意、以牙还牙"的策略长期胜出，靠背叛占便宜的策略被淘汰。</li>
+<li><strong>神经科学 · 互惠合作会激活奖赏回路</strong>：Rilling 等 (2002, <em>Neuron</em>)——在合作博弈里，"相互合作"会点亮大脑奖赏区（伏隔核 / 眶额皮层），说明合作本身让人感觉好，这是互惠规范能自我维持的神经基础。（详见 neuroscience 站）</li>
+</ul>
+<p class="caveat">边界：一次性、匿名、无复购的场景，长期机制弱；但绝大多数真实销售是重复博弈。（注：催产素与信任的关联流传很广，但近年复现存疑，故未作硬证据。）</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">这一期的心智转变（照做清单）</div>
+<ul class="checklist">
+<li>我衡量自己，用的是"成交率"，还是"我帮到了多少人、帮得多好"？</li>
+<li>这一单我做的决定，放到三年后看，会给我带来更多信任还是更少？</li>
+<li>我愿不愿意为了长期口碑，主动放掉一次不该做的成交？</li>
+<li>我有没有把每个客户当"一次性"，而不是"一个会复购、会转介绍的关系"？</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>短期主义。</strong>为这个月的数字，透支未来所有月份的信任。</li>
+<li><strong>用暗黑话术。</strong>制造焦虑、隐瞒缺点、诱导下单——赢一单，输一个人和他的整个圈子。</li>
+<li><strong>卖不该卖的。</strong>明知不合适还卖出去，是这门手艺里唯一真正的"失败"——说服与操纵的分界就在这一句：你是在帮他做对<strong>他</strong>更好的决定，还是在让他做对<strong>你</strong>更好的决定。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Bob Burg &amp; John David Mann,《The Go-Giver》</strong>——"给予者"式销售的寓言体经典。<br/><strong>Zig Ziglar</strong>——"帮别人得到他们想要的"这条北极星的原始出处。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"<em>Go-giver</em>, not go-getter." —— 从"索取者"到"给予者"的一词之差。</p>
+<p>"You don't <em>need</em> the expensive one." —— 敢说这句的人，长期赚得最多。</p>
+<p>"Play the <em>long game</em>." —— 打长期的游戏。</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>本期习作 · Your Day 1 Action</h3>
+<p>不用反思、不用读书，这周做一件具体的事：</p>
+<div class="action">
+<strong>挑一个你这周真实的"销售"场景</strong>（卖一件东西、一次面试、说服某人做某事都行），<strong>用 Principle 03 的"先问后说"</strong>：在你开口介绍 / 说服之前，先问对方<strong>至少 3 个问题</strong>（可以直接用模板里那三句），把他真正要的搞清楚，再针对他的回答说。<br/><br/>事后写两行：<strong>(1) 你问出了什么是你原本不知道的；(2) 因为知道了这个，你的说法有没有变。</strong><br/><br/>你多半会发现——你少说了一半，效果反而好了一倍。
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 如果"帮买"有时意味着劝对方别买，那公司给我的业绩指标怎么办？这不是自相矛盾吗？</summary>
+<div class="answer">短期看像矛盾，长期看恰恰相反。<strong>第一，"帮买"通常提高、而不是降低总成交</strong>——你偶尔劝退一单不合适的，换来的是这个人的信任、复购、以及他主动带来的转介绍——满意的老客户会替你去说服新客户，这是最省力、成本最低的获客。<strong>第二，业绩指标是滞后指标</strong>：它衡量的是你过去建立的信任在今天兑现。真到了"这一单和长期信任冲突"的少数时刻，记住——成交可以再来，被毁掉的信任要贵十倍才修得回。当然这不等于清高到不成交，是在"对他明显更差"时敢说不，而不是每单都劝退。</div>
+</details>
+<details>
+<summary>2. 既然人讨厌被推销，那"制造紧迫 / 稀缺"这种明明有效的话术，到底能不能用？</summary>
+<div class="answer">关键在<strong>真实</strong>还是<strong>制造</strong>。照亮一个<strong>真实存在</strong>的紧迫（"这个价格月底确实到期""库存真的只剩两台"）是在帮对方看清代价，合理；<strong>编造</strong>的假稀缺（永远都在"最后一天"）一旦被识破，就是逆反 + 信任崩塌。顺序也重要：稀缺该用在<strong>已建立信任、价值已讲清</strong>之后当临门一脚，而不是<strong>代替</strong>价值当敲门砖。一句话记住：稀缺用来"照亮真实的代价"没问题，用来"制造焦虑替代价值"就是操纵。</div>
+</details>
+<details>
+<summary>3. 我很内向、不擅长滔滔不绝，这套东西是不是不适合我？</summary>
+<div class="answer">恰恰相反——今天这一期几乎是为内向者写的。销售的核心不是"能说"，是"会问 + 会听"：Gong 的数据显示成交率最高的销售<strong>说得更少</strong>（约 43%），Rackham 发现顶尖销售靠提问而非表达。深度倾听、让对方多说、忍得住沉默，这些天然就是内向者的优势。你要练的不是变外向，是把"先问后说"做到位——把提问、倾听、忍住沉默这几样练成肌肉记忆，就够了。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 01</footer>
+</div>
+</body>
+</html>
