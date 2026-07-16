@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 3: The Buyer's Brain</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 03 · Phase A</div>
+<h1>The Buyer's Brain: People Aren't Persuaded — They Persuade Themselves</h1>
+<div class="meta"><span>Topic: The Buyer's Brain</span><span>·</span><span>4 principles</span></div>
+<div class="subtitle">You think the customer is comparing specs and doing the math. In fact they <em>feel</em> yes-or-no first, then reach back for reasons to tell themselves.</div>
+</header>
+<div class="intro">
+<strong>Accept one counterintuitive thing first:</strong> nobody buys on pure reason — not even you. The brain makes a purchase decision as a wave of feeling first (want / unease / fear of regret), and only then does logic step in to build a ramp and supply reasons. Dazzle someone with specs and value-for-money, and if you haven't lit the feeling first, they'll nod politely — then "think about it." Today we climb inside the buyer's head and get clear on four things: <strong>why people actually buy (and don't)</strong>, <strong>why fear of losing has more force than hope of gaining</strong>, <strong>why your biggest competitor is really "do nothing,"</strong> and <strong>why what buyers are often paying for is certainty</strong>. Grasp these four and you stop lecturing a calculator and start speaking to a real person's real motives.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>People Decide on Emotion, Then Justify with Logic
+<span class="en">Emotion decides, logic justifies</span></h2>
+<span class="tag">emotional decision</span><span class="tag">rationalization</span><span class="tag">motive</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">A purchase decision almost always happens at the emotional layer first; logic just shows up afterward to drape it in an "I'm being rational" coat. So light the feeling first (want, fear of missing out, fear of getting it wrong), then hand over a set of reasons they can justify to others — and to themselves.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"People buy on emotion and justify with logic."</span>
+<span class="source">— sales lore (traceable to the Zig Ziglar lineage)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The order it happens in the brain</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar1" markerheight="7" markerunits="userSpaceOnUse" markerwidth="9" orient="auto" refx="8" refy="3.5">
+<path d="M0,0 L9,3.5 L0,7 Z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<rect fill="#f6e3da" height="74" rx="8" stroke="#c0603a" stroke-width="2" width="180" x="24" y="72"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="14" font-weight="700" text-anchor="middle" x="114" y="100">1. Emotion fires</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="11.5" text-anchor="middle" x="114" y="121">want / unease / fear</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="11.5" text-anchor="middle" x="114" y="138">(milliseconds, wordless)</text>
+<rect fill="#e2efdc" height="74" rx="8" stroke="#4e8a3f" stroke-width="2" width="180" x="260" y="72"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="14" font-weight="700" text-anchor="middle" x="350" y="100">2. A lean forms</text>
+<text fill="#25402f" font-family="Georgia" font-size="11.5" text-anchor="middle" x="350" y="121">"I kind of want / don't"</text>
+<text fill="#25402f" font-family="Georgia" font-size="11.5" text-anchor="middle" x="350" y="138">(not yet conscious)</text>
+<rect fill="#eef1f5" height="74" rx="8" stroke="#3f5c7a" stroke-width="2" width="180" x="496" y="72"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="14" font-weight="700" text-anchor="middle" x="586" y="100">3. Logic supplies reasons</text>
+<text fill="#37493f" font-family="Georgia" font-size="11.5" text-anchor="middle" x="586" y="121">"because it's great value..."</text>
+<text fill="#37493f" font-family="Georgia" font-size="11.5" text-anchor="middle" x="586" y="138">(a ramp for the decision)</text>
+<line marker-end="url(#ar1)" stroke="#3f5c7a" stroke-width="2" x1="208" x2="256" y1="109" y2="109"></line>
+<line marker-end="url(#ar1)" stroke="#3f5c7a" stroke-width="2" x1="444" x2="492" y1="109" y2="109"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="12" font-style="italic" text-anchor="middle" x="350" y="40">You think they start at 3 — they actually start at 1</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">You sell a budgeting / personal-finance tool. The prospect is an office worker who keeps saying "let me think about it."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Feeding only logic</div>
+<p>"We sync 20 banks, auto-categorize, export reports, and send budget alerts..." All features. The emotional region of their brain never got lit, so those specs are just a pile of data to <em>compute</em> — computing is tiring, and tired means "let me think about it."</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Light the feeling, then give reasons</div>
+<p><strong>Poke the feeling:</strong> "Ever hit the end of the month, look at your balance, and have no idea where it went — that little jolt of panic?" (evokes unease)</p>
+<p><strong>Paint the picture:</strong> "About two weeks in, ten seconds a day tells you exactly how much you can still spend this month. That 'my money's in my hands' calm — people say they can't go back." (the emotional result they want)</p>
+<p><strong>Then hand over reasons:</strong> "And it auto-syncs 20 banks and categorizes for you — no manual logging." (now the features mean something: proof they're being smart)</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: emotion tags each option with a price sticker.</strong> Before you consciously run the numbers, the brain has already stamped each option "good / bad" with an emotional signal — a somatic marker — to shrink the choice fast. The region that integrates these emotional signals into a decision is the <strong>ventromedial prefrontal cortex (vmPFC)</strong>, alongside the <strong>amygdala</strong>. Damage it and a person stays intelligent but loses the ability to decide — with no emotional scoring, pure reason gets stuck in an endless pro-and-con loop.</p>
+<ul>
+<li><strong>Damasio's "somatic marker hypothesis" and patient Elliot</strong> (<em>Descartes' Error</em>, 1994) — a vmPFC-lesioned man with normal IQ and logic could agonize half an hour over "which day to come back" and simply couldn't make ordinary decisions. Classic and influential.</li>
+<li><strong>The Iowa Gambling Task</strong> (Bechara, Damasio et al., 1997, <em>Science</em>) — players' palms started sweating (an anticipatory emotional signal) and they began avoiding the bad decks <em>before</em> they consciously knew which decks were bad. Hard evidence: emotion precedes rational judgment.</li>
+<li><strong>Neuroscience · wanting and buying share the reward circuit</strong>: Knutson et al. (2007, <em>Neuron</em>) used fMRI to show the <strong>nucleus accumbens</strong> (dopamine reward) lights up at a liked product, while the <strong>insula</strong> (pain / aversion) lights up at an excessive price — the tug-of-war between them predicts purchase ahead of time. Buy-or-not is first an emotional tug-of-war in the brain. Cross-ref psychology / neuroscience.</li>
+</ul>
+<p class="caveat">Boundary: "emotion first" doesn't mean "logic is useless" — in large, multi-person decisions the reasons are what your buyer needs to answer to a boss or spouse, so don't skip them. The oft-quoted "95% of buying is subconscious" (Zaltman) points the right way, but that exact number is soft — don't treat it as precise.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Three openers that start from feeling (scripts)</div>
+<div class="template">
+<span class="label">Enter through the feeling</span>
+<p>· "Ever had one of those moments where you felt (panicked / stuck / like you'd wasted the whole day)?" — evoke the real negative emotion.</p>
+<p>· "Once this is solved, which feeling do you want most — peace of mind, or looking good to your team?" — let them name the emotional result.</p>
+<p>· "With this hanging over you, what's the part that bugs you most?" — make the vague unease concrete.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Carpet-bombing with features instead of connecting emotionally.</strong> The more specs, the more it feels like a math test — they tire and stall.</li>
+<li><strong>Lighting the feeling but giving no reasons.</strong> Pure emotion with no proof: the rational brake kicks in and they later feel "tricked into an impulse" and cancel. Emotion starts the engine; reasons let them sleep at night.</li>
+<li><strong>Mistaking "emotion" for a dramatic performance.</strong> You're not acting — you're naming the exact feeling they really have. Name it right and they move themselves.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Antonio Damasio, <em>Descartes' Error</em></strong> — emotion is a necessary component of rational decision-making, not its enemy.<br/><strong>Daniel Kahneman, <em>Thinking, Fast and Slow</em></strong> — the fast system (emotion / intuition) moves first; the slow system (reason) is often just after-the-fact rationalization.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"People buy on <em>emotion</em> and justify with <em>logic</em>." — remember just this one.</p>
+<p>"How does it <em>feel</em> when …?" — the opener that starts from feeling.</p>
+<p>"Give them a reason they can <em>tell their boss</em>." — reasons are for answering to others.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>Fear of Losing Beats Hope of Gaining — Loss Aversion
+<span class="en">Losses loom larger than gains</span></h2>
+<span class="tag">loss aversion</span><span class="tag">framing</span><span class="tag">pain point</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">The same dollar hurts about twice as much to lose as it feels good to gain. So "you could earn / enjoy more" often can't move people, while "here's what you're losing / keep bleeding" lights the fire. Selling "stop the loss" frequently beats selling "get the gain."</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"Losses loom larger than gains."</span>
+<span class="source">— Kahneman &amp; Tversky, 1979</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The same dollar, two different weights</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#9aab9f" stroke-width="1.5" x1="320" x2="320" y1="20" y2="280"></line>
+<line stroke="#9aab9f" stroke-width="1.5" x1="40" x2="600" y1="150" y2="150"></line>
+<path d="M320,150 C400,120 500,106 600,100" fill="none" stroke="#4e8a3f" stroke-width="2.5"></path>
+<path d="M320,150 C240,178 150,236 40,272" fill="none" stroke="#c0603a" stroke-width="3"></path>
+<text fill="#3f6d2f" font-family="Georgia" font-size="12.5" text-anchor="middle" x="500" y="128">Gain → pleasure (gentle curve)</text>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" text-anchor="middle" x="160" y="250">Loss → pain (steep curve)</text>
+<text fill="#5a7365" font-family="Georgia" font-size="11.5" text-anchor="end" x="308" y="40">felt value</text>
+<text fill="#5a7365" font-family="Georgia" font-size="11.5" x="512" y="142">gain</text>
+<text fill="#5a7365" font-family="Georgia" font-size="11.5" x="104" y="142">loss</text>
+<text fill="#37493f" font-family="Georgia" font-size="12" font-style="italic" text-anchor="middle" x="320" y="298">Same amount, the loss side dips ~twice as deep</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">You're helping a small shop buy a point-of-sale system that saves labor.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Selling only the "gain"</div>
+<p>"With our system, efficiency goes up 20%!" 20% is an abstract "gain," emotionally flat — the owner shrugs, "sure, I'll look into it sometime."</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Selling the "you're losing"</div>
+<p>"Right now you spend about an hour a day reconciling by hand, yes? That's 30 hours a month — hours you could spend serving a few more tables / getting home earlier. <strong>This isn't 'could you improve'; it's something you're quietly bleeding every single day.</strong>" — translate the abstract gain into an ongoing loss, and the sting turns concrete.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: loss aversion + reference points.</strong> People don't feel happiness by "how much I own in absolute terms" but by "up or down relative to some reference point." The pain of a drop (loss) is roughly <strong>twice</strong> the pleasure of an equal rise (gain). So reframing "not buying" as "you're continuously losing" drives action more than framing it as "buying gets you more."</p>
+<ul>
+<li><strong>Prospect theory</strong> (Kahneman &amp; Tversky, 1979, <em>Econometrica</em>) — loss-aversion coefficient around <strong>2×</strong>; a Nobel-winning cornerstone and one of behavioral economics' most solid findings.</li>
+<li><strong>The endowment effect</strong> (Kahneman, Knetsch &amp; Thaler, 1990) — people just handed a mug demanded about twice what people without one would pay: once it's "mine," losing it hurts disproportionately. This is why free trials / free samples work so well.</li>
+<li><strong>Neuroscience · the brain reacts more to "loss" than to "gain"</strong>: Tom, Fox, Trepel &amp; Poldrack (2007, <em>Science</em>) — in the same reward regions (ventral striatum / vmPFC), activity fell more steeply for potential losses than it rose for equal gains, matching behavioral loss aversion exactly. De Martino et al. (2010) further found patients with <strong>amygdala</strong> damage showed almost no loss aversion — the emotional brain is the source of this force. Cross-ref psychology / neuroscience.</li>
+</ul>
+<p class="caveat">Boundary: this is strong evidence, but don't abuse it into fear-mongering. Manufacturing a fake "you'll lose" is manipulation — seen through, trust collapses. Illuminating a <strong>real</strong> loss (time / money genuinely bleeding daily) is helping them see the cost.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Translate "gain" into "loss" (checklist)</div>
+<ul class="checklist">
+<li>Can the benefit I'm stating be rewritten as "something they're losing right now"?</li>
+<li>Have I quantified the daily / monthly cost of "not changing" into money or time?</li>
+<li>Is there a way to let them "own" it first (trial, sample) and trigger the endowment effect?</li>
+<li>Is the loss I'm illuminating <strong>real</strong>, or something I invented to scare them? (the latter is a red line)</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Only ever pitching gains.</strong> "Could improve," "could be better" is too abstract to raise emotion.</li>
+<li><strong>Turning loss aversion into fear marketing.</strong> Exaggerated or fabricated losses close a deal today and commit trust suicide long-term.</li>
+<li><strong>Forgetting the reference point.</strong> A "loss" must be relative to a status quo they accept — help them see the cost of today first, or the loss won't land.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Kahneman &amp; Tversky, "Prospect Theory" (1979)</strong> and <em>Thinking, Fast and Slow</em> — the source of loss aversion and framing effects.<br/><strong>Richard Thaler, <em>Misbehaving</em></strong> — the endowment effect and its real-world uses.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"You're <em>leaving money on the table</em>."</p>
+<p>"What's it <em>costing you</em> to stay as-is?"</p>
+<p>"<em>Every day you wait</em>, that adds up." — tie the loss to time.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>Your Biggest Competitor Isn't a Rival — It's "Do Nothing"
+<span class="en">Your real competitor is "do nothing"</span></h2>
+<span class="tag">status quo bias</span><span class="tag">cost of inaction</span><span class="tag">default inertia</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">Most deals you don't close aren't lost to another vendor — they're lost to "keep the status quo / deal with it later." People naturally favor the current state: change takes effort, carries risk, and might trigger regret. What you really have to beat is the customer's inertia.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"The status quo is the strongest competitor you'll ever face."</span>
+<span class="source">— consultative-selling wisdom</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The options really in the customer's head</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar3" markerheight="7" markerunits="userSpaceOnUse" markerwidth="9" orient="auto" refx="8" refy="3.5">
+<path d="M0,0 L9,3.5 L0,7 Z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="14" font-weight="700" text-anchor="middle" x="105" y="105">The choice</text>
+<text fill="#123f30" font-family="Georgia" font-size="14" font-weight="700" text-anchor="middle" x="105" y="125">in front of them</text>
+<rect fill="#e2efdc" height="42" rx="6" stroke="#4e8a3f" stroke-width="2" width="250" x="320" y="26"></rect>
+<text fill="#25402f" font-family="Georgia" font-size="12" text-anchor="middle" x="445" y="52">Buy yours (spend, change process)</text>
+<rect fill="#eef4f0" height="42" rx="6" stroke="#9aab9f" stroke-width="2" width="250" x="320" y="82"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="12" text-anchor="middle" x="445" y="108">Buy a rival's (another round of comparing)</text>
+<rect fill="#f6e3da" height="42" rx="6" stroke="#c0603a" stroke-width="2.5" width="250" x="320" y="138"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="445" y="164">Do nothing (least effort) ★</text>
+<line marker-end="url(#ar3)" stroke="#5a7365" stroke-width="1.8" x1="195" x2="316" y1="115" y2="47"></line>
+<line marker-end="url(#ar3)" stroke="#5a7365" stroke-width="1.8" x1="195" x2="316" y1="115" y2="103"></line>
+<line marker-end="url(#ar3)" stroke="#c0603a" stroke-width="2.2" x1="195" x2="316" y1="115" y2="159"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-style="italic" text-anchor="middle" x="575" y="197">← wins by default unless you make it hurt</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">The prospect is sold on you but says "looks great, we'll stay as we are for now and revisit later."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Just praising yourself</div>
+<p>"We really are so much better than what you've got!" You're competing with "the rivals," but they're not choosing a rival — they're choosing "don't move." No matter how good you sound, you've given them no reason to leave the status quo.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Attacking "no change"</div>
+<p>"Totally fair, no rush. Let me just help you run the numbers: <strong>staying with what you have costs roughly X more hours / Y missed orders over the next six months.</strong> If that cost is fine, genuinely no hurry. If it isn't, then 'revisit later' is itself a bill you're paying. Can you carry that six-month cost?" — turn "do nothing" from a zero-cost safe option into an option with a clear price tag.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: status quo bias.</strong> It's braided from three forces: (1) change costs cognitive and physical effort; (2) loss aversion — leaving the status quo means possibly "losing" the familiar, and loss hurts more than gain; (3) anticipated regret — "if the switch turns out worse, that's on me." Together they make "don't move" the brain's default low-effort option. So praising how good you are won't cut it — you must put the hidden cost of "not moving" on the table.</p>
+<ul>
+<li><strong>Samuelson &amp; Zeckhauser (1988), "Status Quo Bias in Decision Making"</strong> — a series of experiments showing people systematically favor the current state even when a better option exists.</li>
+<li><strong>The power of the default</strong>: Johnson &amp; Goldstein (2003, <em>Science</em>) — organ-donation consent, "opt-in vs opt-out," swings agreement from about <strong>15% to nearly 90%</strong>. People mostly go with the default — and the customer's default is "don't change."</li>
+<li><strong>Industry data</strong>: B2B research (e.g., the CEB / Challenger line) repeatedly finds a large share — some estimates near <strong>half</strong> — of qualified opportunities are lost not to a competitor but to "no decision." This is industry data (not peer-reviewed), but it's consistent with the mechanism above.</li>
+</ul>
+<p class="caveat">Boundary: status quo bias is strongest under high risk / high switching cost / many deciders; it's far weaker for small, low-risk, one-off impulse buys. Don't treat every customer as someone to storm — sometimes "let's wait" is rational, and forcing it becomes manipulation.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Make "do nothing" expensive (checklist)</div>
+<ul class="checklist">
+<li>Have I worked out the concrete monthly / quarterly cost of "keeping things as they are"? (money / time / opportunity)</li>
+<li>Have I turned that cost into a specific number they can't shrug off?</li>
+<li>How low have I made the "cost of changing"? (migration, onboarding, risk — all handled for them?)</li>
+<li>Did I give one reason to move <strong>now</strong>? (a real date, not a fabricated urgency)</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Comparing only against rivals, never against "no move."</strong> You beat the competitor and lose to the customer's inertia.</li>
+<li><strong>Not lowering the bar to change.</strong> You made the cost clear, but migration is a hassle and onboarding is hard — so they still don't move. Do both: raise the pain of "not moving," reduce the effort of "moving."</li>
+<li><strong>Forcing it with fake urgency.</strong> "Gone if you don't decide today" fools once and torches long-term trust; use a real date (the price genuinely changes month-end) and it holds up.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Samuelson &amp; Zeckhauser (1988)</strong> — the founding paper on status quo bias.<br/><strong>Matthew Dixon &amp; Brent Adamson, <em>The Challenger Sale</em></strong> — makes "beating the status quo / no decision" the central problem of modern B2B selling (the Challenger approach gets its own day later).</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"The cost of <em>doing nothing</em> is …" — put a price on "not moving."</p>
+<p>"Staying put isn't <em>free</em>."</p>
+<p>"<em>No decision</em> is still a decision."</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>When Buyers Spend, They're Often Buying Certainty
+<span class="en">People pay to remove uncertainty</span></h2>
+<span class="tag">risk aversion</span><span class="tag">certainty</span><span class="tag">risk reversal</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">What stalls a customer is often not "is it worth it" but "will I get burned." People dread the uncertain more than the known risk. Strip away a chunk of uncertainty and you've added an invisible layer of value to the product.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"People don't buy products; they buy certainty."</span>
+<span class="source">— the risk-reversal idea</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">The customer is clearly keen but won't pull the trigger, asking the same kinds of questions over and over.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Piling on more value</div>
+<p>"Let me tell you again how good and worth-it it is..." They're not stuck on "is it good," they're stuck on "what if it's not right for me." The more value you pile on, the more you miss their real worry.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Dismantle the uncertainty directly</div>
+<p><strong>Name it:</strong> "Is the main worry that you'll buy it, find it doesn't fit, and the money's down the drain?"</p>
+<p><strong>Then reverse the risk:</strong> "Here's how it works — try it 14 days, full refund if it's not right, no commitment during the trial. <strong>The risk on this one is mine to carry, not yours.</strong>" — move the "what if" off their shoulders onto yours, and the decision instantly gets lighter.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: uncertainty itself is uncomfortable.</strong> Compared with "risk of known probability," people fear the "not even knowing the odds" fog more — this is ambiguity aversion. And an uncertain outcome simultaneously stirs loss aversion (buying wrong = a loss) and anticipated regret (fear it'll be my fault), so the customer would rather not move. Turn uncertainty into certainty (a guarantee, a trial, a case study, a clear next step) and you directly offload that psychological weight.</p>
+<ul>
+<li><strong>The Ellsberg paradox</strong> (Ellsberg, 1961) — people prefer a bet with "known odds" over one with "unknown odds," even when the latter might be better: aversion to "ambiguity" is separate from aversion to "risk." Classic.</li>
+<li><strong>Neuroscience · ambiguity lights up the emotional brain</strong>: Hsu, Bhatt, Adolphs, Tranel &amp; Camerer (2005, <em>Science</em>) — facing "ambiguity" (missing information), the <strong>amygdala</strong> and <strong>orbitofrontal cortex</strong> show higher activity; patients with damage to those regions were markedly less ambiguity-averse. Hard evidence: the sense of uncertainty is a real, neurally rooted discomfort. Cross-ref psychology / neuroscience.</li>
+<li><strong>Risk reversal in practice</strong>: no-questions refunds / guarantees repeatedly prove to lift conversion — the loss from returns is usually far smaller than the added sales from removing hesitation. This is industry experience (moderate strength), consistent with the mechanism above.</li>
+</ul>
+<p class="caveat">Boundary: the guarantee must actually be honored and its terms must be clear, or breaking your word backfires harder than offering none. Risk reversal is a tool for dismantling real worries, not a fig leaf over product flaws.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Four blades for cutting uncertainty (scripts)</div>
+<div class="template">
+<span class="label">Deliver certainty</span>
+<p>· <strong>Guarantee / trial:</strong> "Full refund if you're not happy — the risk is on me."</p>
+<p>· <strong>Social proof:</strong> "Someone in a very similar spot to you used it and here's how it turned out." (someone walked the path, so it's less dark)</p>
+<p>· <strong>A clear next step:</strong> "From here it's just three steps, and I'll walk you through all of them." (unknown becomes known)</p>
+<p>· <strong>Reversibility:</strong> "Cancel or downgrade anytime — you're not locked in." (a decision that can be undone carries less pressure)</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Answering "fear of getting burned" with more value.</strong> The worry is risk, not insufficient value — you're answering the wrong question.</li>
+<li><strong>Offering a guarantee but hiding a pile of conditions.</strong> A fake guarantee, once exposed, backfires even harder.</li>
+<li><strong>Making every decision "irreversible."</strong> The heavier and harder-to-undo the decision, the more customers stall — give them an "I can change my mind" exit and it actually closes.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Daniel Ellsberg, "Risk, Ambiguity, and the Savage Axioms" (1961)</strong> — the classic source for ambiguity aversion.<br/><strong>Alex Hormozi, <em>$100M Offers</em></strong> — how risk reversal / guarantees systematically lift close rates (the irresistible-offer playbook gets its own day later).</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"<em>The risk is on me</em>, not on you."</p>
+<p>"What's the <em>worst case</em> you're worried about?" — turn the vague fear into a concrete worst case.</p>
+<p>"You can always <em>change your mind</em>." — reversibility is the best sedative.</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>Your Day 3 Action</h3>
+<p>Pick a real "persuade someone" situation you're holding right now (selling something, pitching a plan, asking for resources), and rewrite it in three steps:</p>
+<div class="action">
+<strong>1. Emotion:</strong> write down the feeling they actually care about (what they fear / what feeling they want), and open with a line that hits it — instead of leading with features.<br/><br/>
+<strong>2. Loss:</strong> rewrite the benefit you'd offer as "something they're continuously losing right now," and quantify it into money / time where you can.<br/><br/>
+<strong>3. Certainty:</strong> think of one move that dismantles their biggest worry (a guarantee, a trial, a comparable case, or an "I can undo this" exit) and offer it up front.<br/><br/>
+One boundary reminder: all three moves only hold when what you illuminate is <strong>real</strong> emotion, loss, and risk — the moment it's invented, you've slid from "helping them see clearly" into manipulation.
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. Since people buy on emotion, should I give less logic and lay on more feeling?</summary>
+<div class="answer">No. Emotion <strong>starts</strong> the decision; logic <strong>holds</strong> it — you need both, you just can't reverse the order. Lighting emotion first matters because without it, specs are a pile of drowsy numbers; but once it's lit you must supply solid reasons, because after buying, people still have to justify "I chose smartly" to others (boss, spouse) and to themselves. Pure emotion with no reasons: the rational brake kicks in and they cancel as "an impulse." And don't read "do emotion" as theatrical drama — that trips their guard; what works is <strong>naming precisely</strong> the feeling they really have, and named right, they move themselves. In one line: emotion opens the door, logic closes it — neither is optional.</div>
+</details>
+<details>
+<summary>2. Loss aversion, attacking "no change," manufacturing urgency… this all sounds like exploiting people's psychological weak spots. How is it different from manipulation?</summary>
+<div class="answer">There's exactly one dividing line: <strong>are you illuminating something that's really there, or something you invented.</strong> If they truly bleed an hour a day, if the status quo really does cost extra each month, if buying wrong really carries risk — then making these <strong>already-existing</strong> costs clear so they can see them is helping them decide more wisely; that's service. If those losses / urgencies / risks are exaggerated or conjured (the eternal "last day," a "price rises soon" that doesn't exist), that's manipulation — and the kind that gets seen through, and the moment it does, trust hits zero. The same psychological mechanism is a floodlight when aimed at truth and a trap when aimed at a lie. Simple test: if they later learned the whole truth and would still thank you, you're on the right side.</div>
+</details>
+<details>
+<summary>3. My customer literally says "I'm the rational type — I compare prices and decide on the data." Does this emotion theory even hold for them?</summary>
+<div class="answer">It holds, and the more they say it, the more you should watch for it. "I'm rational" is itself often part of the <strong>after-the-fact rationalization</strong> — the brain leans first, then marshals data to support the lean (psychology calls it motivated reasoning). For this type, the play isn't to drop emotion and pile on data; it's to <strong>run both tracks</strong>: on one hand, respect their need for "data backing" and make the reasons, ROI, and comparisons rock-solid (that's the proof they answer to themselves and others with — don't skip it); on the other, don't forget what actually drives them underneath is still emotion — fear of buying wrong, wanting a sense of control, not wanting to look like a bad decider in front of colleagues. Give the data in full <em>and</em> quietly dismantle their "fear of choosing wrong," and that's the most effective combination for a "rational buyer."</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to Index</a>
+</nav>
+<footer>BigCat · Sales · Day 03</footer>
+</div>
+</body>
+</html>
