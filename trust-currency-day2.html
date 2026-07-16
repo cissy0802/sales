@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 2：信任是唯一的货币</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 02 · Phase A</div>
+<h1>信任是唯一的货币：对方买的不是产品，是"敢信你"</h1>
+<div class="meta"><span>主题：Trust Is the Only Currency</span><span>·</span><span>4 个原则</span></div>
+<div class="subtitle">价格能谈、功能能比，唯独"我敢不敢信你"决定了这单成不成——而它，先于你说的每一句话就开始被判了。</div>
+</header>
+<div class="intro">
+<strong>先接受一个反直觉的事实：</strong>客户权衡"值不值"之前，大脑里先跑一个更古老的问题——"这个人，我能不能信？"信任不是成交后的副产品，是成交的<strong>前置条件</strong>：没有它，你讲的价值全打折、给的证据全存疑、报的价全像有诈。更麻烦的是它<strong>建立慢、崩塌快</strong>——一次失约就能把你攒半年的信任清零。这一期拆开"信任的经济学"：它由哪两条腿撑着、怎么被算出来、为什么这么容易碎、哪些动作能让陌生人几分钟内多信你一点。
+</div>
+
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>信任有两条腿：能力 + 善意——而且善意先被看见
+<span class="en">Trust = competence × warmth, and warmth is judged first</span></h2>
+<span class="tag">两种信任</span><span class="tag">善意先行</span><span class="tag">意图</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">别人信不信你取决于两件事：你<strong>有没有本事</strong>（能力信任）和你<strong>是不是站我这边</strong>（善意信任）。缺一条都站不稳——但对方先看、也更看重第二条。先让人觉得"你安全"，再让人觉得"你厉害"。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"People decide if they trust you within milliseconds, and they read warmth before competence."</span>
+<span class="zh">"人在毫秒之间就决定信不信你，而且先读到的是善意，不是能力。"</span>
+<span class="source">— Amy Cuddy,《Presence》</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">能力 × 善意的四个象限</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 640 400" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar1" markerHeight="7" markerUnits="userSpaceOnUse" markerWidth="7" orient="auto" refX="6" refY="3.5">
+<path d="M0,0 L7,3.5 L0,7 Z" fill="#4a6154"></path>
+</marker>
+</defs>
+<line stroke="#4a6154" stroke-width="1.6" x1="70" x2="70" y1="360" y2="40" marker-end="url(#ar1)"></line>
+<line stroke="#4a6154" stroke-width="1.6" x1="70" x2="600" y1="360" y2="360" marker-end="url(#ar1)"></line>
+<text fill="#4a6154" font-family="Georgia" font-size="13" font-weight="700" x="16" y="46" transform="rotate(0)">善意 高</text>
+<text fill="#4a6154" font-family="Georgia" font-size="13" x="20" y="352">善意 低</text>
+<text fill="#4a6154" font-family="Georgia" font-size="13" x="70" y="384">能力 低</text>
+<text fill="#4a6154" font-family="Georgia" font-size="13" font-weight="700" text-anchor="end" x="590" y="384">能力 高 →</text>
+<rect fill="#e2efdc" height="140" rx="6" stroke="#4e8a3f" stroke-width="2" width="240" x="90" y="60"></rect>
+<rect fill="#eef4f0" height="140" rx="6" stroke="#9aa89c" stroke-width="1.6" width="240" x="90" y="205"></rect>
+<rect fill="#e6f0ea" height="140" rx="6" stroke="#7bc0a4" stroke-width="1.6" width="240" x="340" y="60"></rect>
+<rect fill="#f6e3da" height="140" rx="6" stroke="#c0603a" stroke-width="2" width="240" x="340" y="205"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="13.5" font-weight="700" text-anchor="middle" x="210" y="115">好人但帮不上</text>
+<text fill="#4a6154" font-family="Georgia" font-size="11.5" text-anchor="middle" x="210" y="140">你信他的心，</text>
+<text fill="#4a6154" font-family="Georgia" font-size="11.5" text-anchor="middle" x="210" y="158">但不敢托付事</text>
+<text fill="#2c7a58" font-family="Georgia" font-size="13.5" font-weight="700" text-anchor="middle" x="460" y="108">值得信 · 甜蜜区</text>
+<text fill="#3d5548" font-family="Georgia" font-size="11.5" text-anchor="middle" x="460" y="133">又靠谱又站你这边</text>
+<text fill="#3d5548" font-family="Georgia" font-size="11.5" text-anchor="middle" x="460" y="151">——成交发生在这里</text>
+<text fill="#8a988c" font-family="Georgia" font-size="13.5" font-weight="700" text-anchor="middle" x="210" y="270">没戏</text>
+<text fill="#8a988c" font-family="Georgia" font-size="11.5" text-anchor="middle" x="210" y="295">既没本事也没诚意</text>
+<text fill="#a8461f" font-family="Georgia" font-size="13.5" font-weight="700" text-anchor="middle" x="460" y="262">最危险：被提防</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="11.5" text-anchor="middle" x="460" y="287">很能干，但你怕他</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="11.5" text-anchor="middle" x="460" y="305">拿本事算计你</text>
+</svg>
+</div>
+<p class="en-brief"><b>EN</b> Two legs hold up trust: competence ("can you deliver?") and warmth ("are you on my side?"). People read warmth first and weight it more — a skilled seller who reads as cold lands in the "dangerous" quadrant: admired, but guarded against.</p>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你去谈合作，对方第一次见你，开场三分钟你想证明自己。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 能力先行（把自己架到危险象限）</div>
+<p>"我做这行八年，服务过 XX、XX 大客户，转化率行业第一。" —— 全是能力信号，一句善意都没有。对方感到的不是"厉害"，是"这人很能干、但眼里只有自己的业绩，我得防着点"——你越证明能力，越把自己推进"被提防"那格。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 善意先行，再上能力</div>
+<p><strong>先站到他那边：</strong>"进来前我看了看你们最近的情况，感觉最头疼的可能是 XX——今天不急着推方案，先确认这个理解对不对。"</p>
+<p><strong>再让能力顺势出来：</strong>"如果确实是这问题，我正好踩过几次坑、也帮别人趟过。" —— 善意先落地，能力借着善意被接收，你稳稳落在"甜蜜区"。</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：进化的排序——先问"敌友"，再问"强弱"。</strong>面对陌生人，大脑最优先判断"他对我是好意还是恶意"（善意 / 意图），判断错了会要命；其次才问"有没有本事实现意图"（能力）。所以善意是"准入证"、能力是"放大器"：善意为负时能力越强越吓人（有本事害你）；善意为正，能力才把信任放大。</p>
+<ul>
+<li><strong>刻板印象内容模型</strong>：Fiske, Cuddy &amp; Glick (2007, <em>Trends in Cognitive Sciences</em>)——人对他人的判断普遍落在<strong>温暖（warmth）与能力（competence）</strong>两维度上，且温暖判断更快、在第一印象里权重更高。跨文化重复验证，较硬。</li>
+<li><strong>先连接，再领导</strong>：Cuddy, Kohut &amp; Neffinger (2013, <em>Harvard Business Review</em>)——先展现温暖再展现能力的人更有影响力；反过来先秀能力常适得其反、招人提防。</li>
+<li><strong>神经科学 · 杏仁核在你意识到之前就"判了"信任</strong>：Willis &amp; Todorov (2006, <em>Psychological Science</em>)——只看一张脸 <strong>100 毫秒</strong>，"可信度"判断就已成型，看更久也基本不变。Engell 等 (2007)——即使不要求你评价，<strong>杏仁核</strong>活跃度也自动跟着脸的可信度走。信任的第一道闸是自动、飞快、在理性之前的。（脑机制可去 neuroscience / psychology 两站）</li>
+</ul>
+<p class="caveat">边界：初次见面、低信任时"善意先行"最关键；长期共事、能力早验证的关系里顺序没那么要紧。HBR 那篇是实践洞见，权重弱于前后两条学术证据。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">开场先发"善意信号"（照做清单）</div>
+<ul class="checklist">
+<li>开口前 30 秒，我给的是<strong>能力信号</strong>（我多牛）还是<strong>善意信号</strong>（我懂你、我为你来）？</li>
+<li>我有没有做过一点"只有真在乎才会做"的功课（看过他的情况、记得上次的细节）？</li>
+<li>我这次的第一句话，是关于<strong>我</strong>，还是关于<strong>他</strong>？</li>
+<li>我的能力，是"用来压他"还是"用来帮他"——这两者对方分得清清楚楚。</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>用"秀能力"代替"建善意"。</strong>头衔、案例、数据堆一堆，赢得的是佩服不是信任——佩服会犹豫，不会成交。</li>
+<li><strong>以为专业形象=可信。</strong>专业只撑起能力那条腿；另一条腿"你站不站我这边"，西装再挺也撑不起来。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Susan Fiske, Amy Cuddy &amp; Peter Glick,《Universal dimensions of social cognition: warmth and competence》</strong>（2007）——温暖 / 能力两维度模型的奠基论文。<br/><strong>Amy Cuddy,《Presence》</strong> &amp; HBR《Connect, Then Lead》——"先温暖后能力"的实践版。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"<em>Warmth before competence.</em>" —— 先温暖，后能力：赢信任的排序。</p>
+<p>"<em>Whose side are you on?</em>" —— 对方脑子里那个没说出口的第一问。</p>
+<p>"<em>Connect, then lead.</em>" —— 先连接，再领导。</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>信任是能算的：（可信 + 可靠 + 亲近）÷ 自我导向
+<span class="en">The trust equation — and how to raise every term</span></h2>
+<span class="tag">信任方程式</span><span class="tag">可操作</span><span class="tag">降低自我</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">信任是一道分式：分子=可信（说的可信）+ 可靠（做的稳定）+ 亲近（跟你敢说真话）；分母=自我导向（你满脑子是不是只有自己）。想涨信任，要么加分子那三样，要么——最狠的——把分母"只想着自己"降下去。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Trust = (Credibility + Reliability + Intimacy) / Self-Orientation."</span>
+<span class="zh">"信任 =（可信 + 可靠 + 亲近）÷ 自我导向。"——分母最易被忽略、也最致命。</span>
+<span class="source">— Maister, Green &amp; Galford,《The Trusted Advisor》</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">信任方程式</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 640 320" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="26" font-weight="700" x="30" y="140">信任</text>
+<text fill="#123f30" font-family="Georgia" font-size="26" x="118" y="140">=</text>
+<line stroke="#1f7a5c" stroke-width="2.5" x1="160" x2="560" y1="150" y2="150"></line>
+<rect fill="#e2efdc" height="52" rx="6" stroke="#4e8a3f" stroke-width="1.6" width="118" x="162" y="52"></rect>
+<rect fill="#e2efdc" height="52" rx="6" stroke="#4e8a3f" stroke-width="1.6" width="118" x="292" y="52"></rect>
+<rect fill="#e2efdc" height="52" rx="6" stroke="#4e8a3f" stroke-width="1.6" width="118" x="422" y="52"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="22" x="270" y="86">+</text>
+<text fill="#123f30" font-family="Georgia" font-size="22" x="400" y="86">+</text>
+<text fill="#2c7a58" font-family="Georgia" font-size="15" font-weight="700" text-anchor="middle" x="221" y="76">可信</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10.5" text-anchor="middle" x="221" y="94">我说的话可信</text>
+<text fill="#2c7a58" font-family="Georgia" font-size="15" font-weight="700" text-anchor="middle" x="351" y="76">可靠</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10.5" text-anchor="middle" x="351" y="94">我做的事稳定</text>
+<text fill="#2c7a58" font-family="Georgia" font-size="15" font-weight="700" text-anchor="middle" x="481" y="76">亲近</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10.5" text-anchor="middle" x="481" y="94">敢跟你说真话</text>
+<rect fill="#f6e3da" height="56" rx="6" stroke="#c0603a" stroke-width="2" width="260" x="230" y="180"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="15" font-weight="700" text-anchor="middle" x="360" y="205">自我导向</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="10.5" text-anchor="middle" x="360" y="224">你心里装的是自己，还是我</text>
+<text fill="#4a6154" font-family="Georgia" font-size="12.5" text-anchor="middle" x="360" y="278">分母越大，整道分式越小——</text>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="360" y="300">"只想着自己"能把再高的可信/可靠/亲近全部吃掉</text>
+</svg>
+</div>
+<p class="en-brief"><b>EN</b> Trust = (Credibility + Reliability + Intimacy) / Self-Orientation. The three on top are earned slowly; the denominator is the killer — visible self-interest divides all your credibility down to nothing. The fastest trust move is often shrinking the denominator, not padding the top.</p>
+</div>
+<div class="section">
+<div class="section-label">四项各怎么涨（话术模板）</div>
+<div class="template">
+<span class="label">一项一句可迁移的话</span>
+<p><strong>· 可信：</strong>"这个我不确定，今天下午查完给你准信。"——敢说"我不知道"，反而让其余的话更可信。</p>
+<p><strong>· 可靠：</strong>"我周三前发你。"——然后周二就发到。小承诺 + 兑现，胜过任何"请相信我"。</p>
+<p><strong>· 亲近：</strong>"说句掏心窝的，这方案有个风险我得先讲……"——先暴露一点脆弱，对方才敢跟你交底。</p>
+<p><strong>· 降自我导向（最狠）：</strong>"如果这个对你不划算，我第一个告诉你别做。"——把"我要成交"从对方眼里拿掉，信任瞬间抬升。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：可信 / 可靠 / 亲近分别解决"你说的、你做的、你藏的"三种不确定；自我导向是"信任杀手"——对方一旦察觉你只为自己，会把你说的一切重解读成"话术"，分子瞬间被除小。降自我导向最灵，因为它反直觉、是"贵的信号"：只想成交的人不会劝你别买，你劝了就等于亮出"我在为你着想"的证据。</strong></p>
+<ul>
+<li><strong>信任方程式</strong>：Maister, Green &amp; Galford《The Trusted Advisor》(2000)——这是被广泛采用的<strong>实践框架 / 咨询经验总结</strong>，不是对照实验，价值在"好用、可拆解"，证据属经验之谈。</li>
+<li><strong>自我暴露 → 好感（亲近这项的硬支撑）</strong>：Collins &amp; Miller (1994, <em>Psychological Bulletin</em>) 元分析——适度、相互的自我暴露显著提升好感；Aron 等 (1997)"36 个问题"实验用逐步加深的相互暴露，让陌生人 45 分钟内产生亲近感。证据较硬。</li>
+<li><strong>"贵的信号"（costly signaling）</strong>：进化博弈论——信号只有"作假代价高"时才可信。主动说对自己不利的实话（劝你别买、点出自家风险）正是这种昂贵信号，格外能建信任。</li>
+</ul>
+<p class="caveat">诚实标注：方程式本身是框架而非实验；但四个组成项各有更硬的心理学支撑（暴露→好感、昂贵信号、承诺兑现）。别当精确计算，当"检查清单"用最好。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>只顾加分子，不管分母。</strong>再多的资质、案例、热情，被"他只想赚我钱"一除，全归零。</li>
+<li><strong>承诺给太满。</strong>可靠靠"承诺略小、兑现略多"，不是"承诺很大、勉强做到"。宁可 under-promise。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>David Maister, Charles Green &amp; Robert Galford,《The Trusted Advisor》</strong>——信任方程式出处，顾问式信任的经典。<br/><strong>Collins &amp; Miller (1994)</strong>——自我暴露与好感的元分析（学术硬支撑）。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"<em>I don't know — let me find out and get back to you today.</em>" —— 敢认"不知道"，反而加可信。</p>
+<p>"<em>Honestly, there's a risk I want to flag first…</em>" —— 主动暴露风险，抬亲近。</p>
+<p>"<em>Under-promise, over-deliver.</em>" —— 承诺略保守，交付超预期。</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>信任建立慢、崩塌快——所以别为一单赌上它
+<span class="en">Trust builds by the drop, breaks by the bucket</span></h2>
+<span class="tag">负面偏误</span><span class="tag">损失厌恶</span><span class="tag">不对称</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">信任是"存得慢、取得快、透支就破产"的账户：几十次靠谱才攒一点，一次失约 / 隐瞒就清零，且崩了极难修回。所以高手不是"每次都赢"，是"每次都不把信任押上桌"。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Trust is built in drops and lost in buckets."</span>
+<span class="zh">"信任一滴一滴地攒，一桶一桶地泼。"</span>
+<span class="source">— 谚语（常被引用于信任研究）</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">攒得慢，崩得快</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar2" markerHeight="7" markerUnits="userSpaceOnUse" markerWidth="7" orient="auto" refX="6" refY="3.5">
+<path d="M0,0 L7,3.5 L0,7 Z" fill="#4a6154"></path>
+</marker>
+</defs>
+<line stroke="#4a6154" stroke-width="1.6" x1="60" x2="60" y1="260" y2="30" marker-end="url(#ar2)"></line>
+<line stroke="#4a6154" stroke-width="1.6" x1="60" x2="610" y1="260" y2="260" marker-end="url(#ar2)"></line>
+<text fill="#4a6154" font-family="Georgia" font-size="12" x="8" y="44">信任</text>
+<text fill="#4a6154" font-family="Georgia" font-size="12" text-anchor="end" x="605" y="282">时间 →</text>
+<polyline fill="none" points="60,250 130,232 200,208 270,178 340,142 410,100 450,70" stroke="#4e8a3f" stroke-width="3"></polyline>
+<circle cx="450" cy="70" fill="#c0603a" r="5"></circle>
+<text fill="#3f6d2f" font-family="Georgia" font-size="12" x="150" y="150" transform="rotate(-20 150 150)">一次次靠谱，慢慢爬</text>
+<line stroke="#c0603a" stroke-width="3" x1="450" x2="478" y1="70" y2="235"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" x="486" y="120">一次失约</text>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" x="486" y="140">/ 夸大</text>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" x="486" y="160">/ 隐瞒</text>
+<polyline fill="none" points="478,235 520,238 560,240 600,241" stroke="#9aa89c" stroke-dasharray="5 4" stroke-width="2.5"></polyline>
+<text fill="#8a988c" font-family="Georgia" font-size="11.5" x="500" y="230">修回来极慢，</text>
+<text fill="#8a988c" font-family="Georgia" font-size="11.5" x="500" y="248">还常回不到原点</text>
+</svg>
+</div>
+<p class="en-brief"><b>EN</b> Trust rises slowly, one kept promise at a time, then a single lie or missed commitment drops it off a cliff — and the climb back is slower still, often never reaching the old high. Bad outweighs good, so never gamble months of trust on one deal.</p>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：产品有个明显短板，客户还没发现，你正要成交。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 赌一把（押上信任）</div>
+<p>装作不知道，先成交再说。客户上线一周撞上短板，第一反应是——"他早知道，却瞒着我。"从此你之前每句好话都被重读成"原来都是话术"。一次隐瞒，透支整段关系的信任本金。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 主动亮短（存一笔信任）</div>
+<p>"有一点我先讲清楚：这块我们目前做得一般，你若很看重，可能得配合 XX 方式、或等下个版本。" —— 短期多一个成交障碍，长期买到最贵的东西：一个"连缺点都对我说实话"的信任标签。客户反而更敢下单。</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：负面偏误 + 损失厌恶 + 信任的不对称性。</strong>大脑处理"坏"比"好"更用力、更持久（进化上，忽略危险的代价远大于错过好处）。一次背信的损失远不是一次守信能抵回的；而"失去信任"被当成损失，按损失厌恶约要<strong>两倍</strong>好处才补平。这就是"攒得慢、崩得快"的底层原因。</p>
+<ul>
+<li><strong>"坏比好更强"</strong>：Baumeister 等 (2001, <em>Review of General Psychology</em>)——跨领域综述，负面事件在情绪、记忆、关系上的影响系统性强于同等正面事件。较硬。</li>
+<li><strong>损失厌恶</strong>：Kahneman &amp; Tversky (1979, 前景理论)——同等的"失去"之痛约是"得到"之乐的 <strong>2 倍</strong>。信任崩塌被登记为损失，故格外痛、难补。经典。</li>
+<li><strong>信任的不对称原理</strong>：Slovic (1993, <em>Risk Analysis</em>)——毁信任的事件比建信任的更显眼、更被相信、权重更高；"易毁难建"是可测量的规律。较硬。</li>
+</ul>
+<p class="caveat">边界：小额、低风险、能快速再验证的场景崩塌没那么致命；越是大额、长期、难验证的关系，这条不对称越狠。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">别把信任押上桌（照做清单）</div>
+<ul class="checklist">
+<li>我这次为了成交说的话，三个月后被拆穿的概率有多大？拆穿的代价我承受得起吗？</li>
+<li>有没有一个我知道、对方还不知道的缺点？我是打算<strong>主动说</strong>，还是<strong>赌他发现不了</strong>？</li>
+<li>我给的每个承诺（时间、效果、价格），我是<strong>确定能兑现</strong>，还是"应该可以"？</li>
+<li>如果这单必须靠"押上信任"才能成，它值得吗？（多半不值。）</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>以为"没被发现"=没损失。</strong>隐瞒的雷埋着早晚炸，炸的那天利息翻倍。</li>
+<li><strong>崩了以后急着解释。</strong>信任崩后说得越多越像狡辩。修复靠"承认 + 承担 + 长期一致行动"，不是当场那几句话。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Baumeister 等,《Bad Is Stronger Than Good》</strong>（2001）——负面偏误的权威综述。<br/><strong>Paul Slovic,《Perceived Risk, Trust, and Democracy》</strong>（1993）——信任不对称原理的经典论文。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"<em>Built in drops, lost in buckets.</em>" —— 一滴滴攒，一桶桶泼。</p>
+<p>"<em>Bad is stronger than good.</em>" —— 坏比好更有分量（负面偏误一句话）。</p>
+<p>"<em>I'd rather tell you now than have you find out later.</em>" —— 与其让你以后发现，不如我现在就说。</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>信任会复利：把每次交易，都当成往同一个账户里存钱
+<span class="en">Trust compounds — bank it, don't spend it</span></h2>
+<span class="tag">长期复利</span><span class="tag">可靠性</span><span class="tag">重复博弈</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">单次交易里信任是成本；跨越多次，信任是<strong>会复利的资产</strong>：攒够了对方不再逐单审你——他默认你靠谱，于是成交更快、议价更少、还自动带来转介绍。可靠不是一次表演，是一条被你重复到对方闭眼都信的曲线。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"The best way to find out if you can trust somebody is to trust them."</span>
+<span class="zh">"想知道能不能信一个人，最好的办法就是先信他一次。"</span>
+<span class="source">— Ernest Hemingway（常被引用）</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：同一个客户，你和你的对手都在跟。你已经服务他两年。</div>
+<div class="dialog good">
+<div class="speaker">✓ 复利在此刻兑现</div>
+<p>对手报了个更低的价来抢单。客户的反应不是比价，而是："我跟他合作两年，说周三到从没跳票，出问题第一时间认、第一时间补——便宜这点，我不换。" —— 你过去两年每一次"说到做到"，此刻都变成对手降价也买不动的护城河。<strong>可靠性的复利，是最难被价格战击穿的壁垒。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> In one deal, trust is a cost you pay. Across many, it's an asset that compounds: once you've been reliable long enough, the client stops re-auditing you every time — faster closes, less haggling, inbound referrals. Consistency is the moat a price cut can't cross.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：重复博弈 + 可靠性降低对方"认知成本"。</strong>(1) <strong>重复博弈</strong>——一次性买卖里背叛或许占便宜，但真实关系反复交手：守信长期稳赢，背信被口碑和不再合作惩罚。(2) <strong>降认知成本</strong>——每次兑现承诺，对方少花力气核查你；攒够了他把"你靠谱"设成默认值，交易摩擦大降。省下的审查成本全变成你的溢价和速度，这就是复利来源。</p>
+<ul>
+<li><strong>重复博弈里合作胜出</strong>：Axelrod《合作的进化》(1984) 计算机锦标赛——"先善意、有信必守、被坑才罚"长期击败一切靠背叛占便宜的策略。经典。</li>
+<li><strong>信任降低交易成本</strong>：制度经济学（Williamson；Fukuyama《Trust》1995）——高信任关系里核查、监督、写死合同的成本大降，省下的效率就是信任的经济回报。理论 + 宏观证据。</li>
+<li><strong>可靠性 = 承诺一致的复利</strong>：反复"说到做到"被编码成稳定预期，正是这条让信任像利息一样滚。</li>
+</ul>
+<p class="caveat">诚实说：这条是"经典博弈论 + 制度经济学 + 从业经验"的合力，非单个随机实验，但方向被大量证据支持。复利的前提是<strong>真实、长期、可验证</strong>的关系——一次性、匿名场景里几乎不发生。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">往信任账户存钱（照做清单）</div>
+<ul class="checklist">
+<li>我有没有把每个客户当"一次性提款机"，而不是"一个会复利的信任账户"？</li>
+<li>这周我给出的承诺，兑现了几个、又有几个"忘了"或"拖了"？（每个没兑现的都是取款）</li>
+<li>我有没有刻意做过一次"超出对方预期一点点"的小交付？（复利靠小额高频的存入）</li>
+<li>成交之后我就消失了，还是继续存钱（回访、提醒、主动帮个小忙）？</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>成交即失联。</strong>把关系最高点停在付款那一刻，后面所有复利你都不要了。</li>
+<li><strong>可靠时好时坏。</strong>复利最怕波动：十次守信 + 一次爽约，对方记住的是那一次。稳定压倒偶尔的惊艳。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Robert Axelrod,《The Evolution of Cooperation》</strong>（1984）——重复博弈中合作策略如何长期胜出。<br/><strong>Francis Fukuyama,《Trust》</strong>（1995）——信任作为降低交易成本的"社会资本"。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"<em>Trust compounds.</em>" —— 信任会复利。</p>
+<p>"<em>Do what you said you'd do — every time.</em>" —— 说到做到，每一次。</p>
+<p>"<em>Bank trust, don't spend it.</em>" —— 存信任，别花信任。</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>本期习作 · Your Day 2 Action</h3>
+<p>不用理论，这周做两件很小、但能立刻涨信任的事：</p>
+<div class="action">
+<strong>(1) 存一笔"可靠"：</strong>挑一个对某人的小承诺，<strong>说小一点、做大一点</strong>——答应"周三前给"就周二给到。用"承诺略小、兑现略多"往对方的信任账户存第一笔。<br/><br/>
+<strong>(2) 亮一次"短处"：</strong>在一次你想说服 / 成交的对话里，<strong>主动说出一个对你不利、但真实的信息</strong>（一个缺点、一个风险、一句"这个我不确定"）。你多半会发现，这句"不利的实话"之后，对方反而更信你其余的话。<br/><br/>
+事后记一行：<strong>亮短前后，对方的态度有没有变。</strong>这就是善意 + 昂贵信号在给你攒信任。
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. "先善意后能力"，会不会让我显得软、被对方拿捏？</summary>
+<div class="answer">不会——前提是别把"善意"误解成"讨好"。善意是<strong>让对方确认你和他站一边、真在解决他的问题</strong>，不是无底线迎合。顺序是"温暖打底、能力压阵"：先用善意拿到"准入证"，再用能力兑现。被拿捏的人往往不是善意太多，而是<strong>只有善意、没有能力和边界</strong>——不敢说"不"、不敢报价、不敢指出他的错。温暖不等于软弱：最有说服力的姿态是"我明确站你这边，也明确知道怎么帮你、以及什么我不做"。别砍善意，去补能力和边界那条腿。</div>
+</details>
+<details>
+<summary>2. 主动暴露缺点、劝对方别买，会不会被对手用低价直接抢走单子？</summary>
+<div class="answer">短期偶尔会，长期几乎不会。能被一个低价直接撬走的客户，本就没建立信任、也不会复购转介绍，丢了不心疼；你真正想留的是"因为信你、所以不为省这点钱换人"的客户——这种客户恰恰被你"劝他别买、替他把关"这类动作圈住（即原则四的护城河）。而且"降自我导向"是<strong>昂贵信号</strong>：只想成交的人做不出这动作，你做了才格外可信。别走极端——不是每单都劝退，是在"对他明显更差"时敢说真话。这是精准的信任投资，不是自我牺牲。</div>
+</details>
+<details>
+<summary>3. 信任已经崩了一次，还能修回来吗？怎么修？</summary>
+<div class="answer">能修，但接受两件事：<strong>很慢</strong>（负面偏误 + 损失厌恶让崩塌远快于修复），且<strong>常回不到原来的高点</strong>——所以最好的策略永远是别崩。顺序是：<strong>(1) 立刻、无保留地承认</strong>——别辩解甩锅，狡辩只会加重"不可信"的判定；<strong>(2) 用行动而非言辞承担后果、主动补救</strong>；<strong>(3) 靠之后很多次"说到做到"把信任一滴滴攒回来</strong>。记住那条不对称：崩它一次，修它几十次，修复期一个承诺都不能再掉。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 02</footer>
+</div>
+</body>
+</html>

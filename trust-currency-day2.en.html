@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 2: Trust Is the Only Currency</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 02 · Phase A</div>
+<h1>Trust Is the Only Currency: They're Not Buying the Product, They're Buying "Can I Trust You?"</h1>
+<div class="meta"><span>Topic: Trust Is the Only Currency</span><span>·</span><span>4 principles</span></div>
+<div class="subtitle">Price is negotiable, features are comparable — but whether they dare to trust you decides the deal, and it's being judged before you say a single word.</div>
+</header>
+<div class="intro">
+<strong>Start with a counterintuitive fact:</strong> you think the customer is weighing "is it worth it?" — but the older question running first in their brain is "can I trust this person?" Trust isn't a by-product of the sale; it's the <strong>precondition</strong>. Without it, your value gets discounted, your evidence gets doubted, and your price looks like a trap. Worse, trust <strong>builds slow, like saving money, and collapses fast, like going bankrupt</strong> — one exaggeration, one missed commitment, and half a year of accrued trust zeroes out. Today we open up the economics of trust: which two legs actually hold it up, how it can be computed, why it's so fragile, and which concrete moves — usable today — make a stranger trust you a little more within minutes.
+</div>
+
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>Trust Has Two Legs: Competence + Warmth — and Warmth Is Judged First
+<span class="en">Trust = competence × warmth, and warmth is judged first</span></h2>
+<span class="tag">two kinds of trust</span><span class="tag">warmth first</span><span class="tag">intent</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">Whether people trust you turns on two things: whether you <strong>can deliver</strong> (competence trust) and whether you're <strong>on their side</strong> (warmth trust). Lose either leg and you can't stand — but the one they read first, and weight more, is the second. First make them feel "you're safe," then make them feel "you're good."</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"People decide if they trust you within milliseconds, and they read warmth before competence."</span>
+<span class="source">— Amy Cuddy, <em>Presence</em></span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The competence × warmth quadrants</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 640 400" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar1" markerHeight="7" markerUnits="userSpaceOnUse" markerWidth="7" orient="auto" refX="6" refY="3.5">
+<path d="M0,0 L7,3.5 L0,7 Z" fill="#4a6154"></path>
+</marker>
+</defs>
+<line stroke="#4a6154" stroke-width="1.6" x1="70" x2="70" y1="360" y2="40" marker-end="url(#ar1)"></line>
+<line stroke="#4a6154" stroke-width="1.6" x1="70" x2="600" y1="360" y2="360" marker-end="url(#ar1)"></line>
+<text fill="#4a6154" font-family="Georgia" font-size="12.5" font-weight="700" x="16" y="46">High warmth</text>
+<text fill="#4a6154" font-family="Georgia" font-size="12.5" x="20" y="352">Low warmth</text>
+<text fill="#4a6154" font-family="Georgia" font-size="12.5" x="70" y="384">Low competence</text>
+<text fill="#4a6154" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="end" x="596" y="384">High competence &#8594;</text>
+<rect fill="#e2efdc" height="140" rx="6" stroke="#4e8a3f" stroke-width="2" width="240" x="90" y="60"></rect>
+<rect fill="#eef4f0" height="140" rx="6" stroke="#9aa89c" stroke-width="1.6" width="240" x="90" y="205"></rect>
+<rect fill="#e6f0ea" height="140" rx="6" stroke="#7bc0a4" stroke-width="1.6" width="240" x="340" y="60"></rect>
+<rect fill="#f6e3da" height="140" rx="6" stroke="#c0603a" stroke-width="2" width="240" x="340" y="205"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="13.5" font-weight="700" text-anchor="middle" x="210" y="115">Nice, but no help</text>
+<text fill="#4a6154" font-family="Georgia" font-size="11.5" text-anchor="middle" x="210" y="140">You trust the heart,</text>
+<text fill="#4a6154" font-family="Georgia" font-size="11.5" text-anchor="middle" x="210" y="158">not the hands</text>
+<text fill="#2c7a58" font-family="Georgia" font-size="13.5" font-weight="700" text-anchor="middle" x="460" y="108">Trusted · sweet spot</text>
+<text fill="#3d5548" font-family="Georgia" font-size="11.5" text-anchor="middle" x="460" y="133">Capable AND on your side</text>
+<text fill="#3d5548" font-family="Georgia" font-size="11.5" text-anchor="middle" x="460" y="151">— deals happen here</text>
+<text fill="#8a988c" font-family="Georgia" font-size="13.5" font-weight="700" text-anchor="middle" x="210" y="270">No chance</text>
+<text fill="#8a988c" font-family="Georgia" font-size="11.5" text-anchor="middle" x="210" y="295">Neither able nor caring</text>
+<text fill="#a8461f" font-family="Georgia" font-size="13.5" font-weight="700" text-anchor="middle" x="460" y="262">Most dangerous: guarded</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="11.5" text-anchor="middle" x="460" y="287">Very able, but they fear</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="11.5" text-anchor="middle" x="460" y="305">you'll use it against them</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">You're pitching a partnership; it's your first meeting. Three minutes in, you want to prove yourself.</div>
+<div class="dialog bad">
+<div class="speaker">&#10007; Competence first (lands you in the danger quadrant)</div>
+<p>"I've done this eight years, served big names like XX and XX, our conversion rate is the highest in the industry, no one else can match it." All competence signals, zero warmth. What they feel isn't "impressive," it's "this person is very capable and sees only their own numbers — I'd better keep my guard up." The more you prove competence, the further you shove yourself into the "guarded against" box.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">&#10003; Warmth first, then competence</div>
+<p><strong>Stand on their side first:</strong> "Before coming in I looked over where things are for you lately, and it feels like the thing giving you the most trouble might be XX — I'm not here to push a proposal today, I mainly want to check whether that read is right."</p>
+<p><strong>Then let competence follow:</strong> "If that is the issue, I've stepped in a few of those potholes myself and helped others through them — we can get into which moves actually work and which are traps." Warmth (I'm here for you) lands first; competence (I've walked the road) rides in on it, and you settle squarely into the sweet spot.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: an evolutionary ordering — ask "friend or foe" before "strong or weak."</strong> Facing a stranger, the brain's top-priority question is "does this person mean me well or ill?" (warmth / intent), because getting that wrong can be fatal; only then does it ask "and do they have the ability to act on that intent?" (competence). So warmth is the entry ticket and competence is the amplifier: when warmth reads negative, more competence is scarier (they're able to harm you); when warmth reads positive, competence finally amplifies trust.</p>
+<ul>
+<li><strong>Stereotype Content Model</strong>: Fiske, Cuddy &amp; Glick (2007, <em>Trends in Cognitive Sciences</em>) — judgments of others fall along two universal dimensions, <strong>warmth and competence</strong>; warmth is judged faster and weighted more heavily in first impressions. Replicated cross-culturally — fairly hard evidence.</li>
+<li><strong>Connect, then lead</strong>: Cuddy, Kohut &amp; Neffinger (2013, <em>Harvard Business Review</em>) — people who project warmth before competence are more influential; leading with competence often backfires and invites wariness.</li>
+<li><strong>Neuroscience · the amygdala "rules" on trust before you're aware</strong>: Willis &amp; Todorov (2006, <em>Psychological Science</em>) — <strong>100 milliseconds</strong> of a face is enough to form a trustworthiness judgment; longer exposure barely changes it, only firms up confidence. Engell, Haxby &amp; Todorov (2007) — even when you're not asked to evaluate, <strong>amygdala</strong> activity automatically tracks a face's trustworthiness. The first gate of trust is automatic, fast, and pre-rational. (For this brain mechanism, see the neuroscience / psychology sites.)</li>
+</ul>
+<p class="caveat">Boundary: "warmth first" matters most on a first meeting, under low trust; in long-standing relationships where competence is already proven, the order matters less. The HBR piece is practitioner insight plus cases — weaker than the two academic findings around it.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Send warmth signals first (checklist)</div>
+<ul class="checklist">
+<li>In the first 30 seconds, am I sending <strong>competence signals</strong> (how good I am) or <strong>warmth signals</strong> (I get you, I'm here for you)?</li>
+<li>Did I do a little homework only a person who genuinely cares would do (looked at their situation, remembered a detail from last time)?</li>
+<li>Is my very first line about <strong>me</strong>, or about <strong>them</strong>?</li>
+<li>Is my competence there to <strong>pressure</strong> them or to <strong>help</strong> them — they can tell the two apart instantly.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Substituting "showing competence" for "building warmth."</strong> Piling on titles, cases, data wins admiration, not trust — and admiration hesitates at the close.</li>
+<li><strong>Faking warmth.</strong> Forced friendliness is worse than being cold; people are exquisitely sensitive to performed warmth (next principle shows how to do it for real).</li>
+<li><strong>Believing a professional image equals trustworthy.</strong> Polish covers the competence leg; the other leg — "are you actually on my side?" — no sharp suit can hold up.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Susan Fiske, Amy Cuddy &amp; Peter Glick, <em>Universal Dimensions of Social Cognition: Warmth and Competence</em></strong> (2007) — the foundational paper on the two-dimension model.<br/><strong>Amy Cuddy, <em>Presence</em></strong> &amp; HBR <em>Connect, Then Lead</em> — the practitioner version of "warmth before competence."</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"<em>Warmth before competence.</em>" — the ordering that wins trust.</p>
+<p>"<em>Whose side are you on?</em>" — the unspoken first question in their head.</p>
+<p>"<em>Connect, then lead.</em>" — earn the connection, then you can influence.</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>Trust Is Computable: (Credibility + Reliability + Intimacy) / Self-Orientation
+<span class="en">The trust equation — and how to raise every term</span></h2>
+<span class="tag">trust equation</span><span class="tag">actionable</span><span class="tag">lower the self</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">Trust isn't mystical; it's a fraction. Numerator = credibility (what I say is believable) + reliability (what I do is consistent) + intimacy (I feel safe telling you the truth). Denominator = self-orientation (are you only thinking about yourself?). To raise trust, add to the three on top — or, most powerfully, shrink the "it's-all-about-me" on the bottom.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"Trust = (Credibility + Reliability + Intimacy) / Self-Orientation."</span>
+<span class="source">— Maister, Green &amp; Galford, <em>The Trusted Advisor</em></span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The trust equation</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 640 320" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="24" font-weight="700" x="30" y="140">Trust</text>
+<text fill="#123f30" font-family="Georgia" font-size="26" x="128" y="140">=</text>
+<line stroke="#1f7a5c" stroke-width="2.5" x1="168" x2="568" y1="150" y2="150"></line>
+<rect fill="#e2efdc" height="52" rx="6" stroke="#4e8a3f" stroke-width="1.6" width="122" x="170" y="52"></rect>
+<rect fill="#e2efdc" height="52" rx="6" stroke="#4e8a3f" stroke-width="1.6" width="122" x="302" y="52"></rect>
+<rect fill="#e2efdc" height="52" rx="6" stroke="#4e8a3f" stroke-width="1.6" width="122" x="434" y="52"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="22" x="280" y="86">+</text>
+<text fill="#123f30" font-family="Georgia" font-size="22" x="412" y="86">+</text>
+<text fill="#2c7a58" font-family="Georgia" font-size="13.5" font-weight="700" text-anchor="middle" x="231" y="74">Credibility</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10" text-anchor="middle" x="231" y="92">what I say is true</text>
+<text fill="#2c7a58" font-family="Georgia" font-size="13.5" font-weight="700" text-anchor="middle" x="363" y="74">Reliability</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10" text-anchor="middle" x="363" y="92">what I do is steady</text>
+<text fill="#2c7a58" font-family="Georgia" font-size="13.5" font-weight="700" text-anchor="middle" x="495" y="74">Intimacy</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10" text-anchor="middle" x="495" y="92">safe to tell truth</text>
+<rect fill="#f6e3da" height="56" rx="6" stroke="#c0603a" stroke-width="2" width="280" x="228" y="180"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="14.5" font-weight="700" text-anchor="middle" x="368" y="205">Self-Orientation</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="10.5" text-anchor="middle" x="368" y="224">is your head full of you, or of me</text>
+<text fill="#4a6154" font-family="Georgia" font-size="12" text-anchor="middle" x="368" y="278">The bigger the denominator, the smaller the whole —</text>
+<text fill="#a8461f" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="368" y="300">visible self-interest divides all your credibility to nothing</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">How to raise each term (scripts)</div>
+<div class="template">
+<span class="label">one portable line per term</span>
+<p><strong>· Credibility (my word counts):</strong> "I'm not sure on that — let me check and get you a firm answer this afternoon." Daring to say "I don't know" makes everything else you say more believable.</p>
+<p><strong>· Reliability (I'm consistent):</strong> "I'll send it to you by Wednesday." Then it arrives Tuesday. A small promise + delivery beats any "please trust me."</p>
+<p><strong>· Intimacy (safe to be candid):</strong> "Honestly, there's a risk in this plan I should flag first…" Show a little vulnerability and they'll dare to level with you too.</p>
+<p><strong>· Lower self-orientation (the strongest):</strong> "If this actually isn't worth it for you, I'll be the first to tell you not to do it." Take "I need the sale" out of their view and trust jumps instantly.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: credibility / reliability / intimacy resolve three uncertainties — what you say, what you do, what you hide. Self-orientation is the trust killer: the moment they sense you're only in it for yourself, they re-read everything you've said as "just tactics," and the numerator you built up gets divided down. Why is lowering self-orientation so potent? Because it's counterintuitive and a costly signal: someone who only wants the sale won't tell you not to buy — so when you do, you've flashed hard evidence that you really are looking out for them.</strong></p>
+<ul>
+<li><strong>The trust equation</strong>: Maister, Green &amp; Galford, <em>The Trusted Advisor</em> (2000) — note: this is a widely adopted <strong>practitioner framework / consulting distillation</strong>, not a controlled experiment; its value is being usable and decomposable, and its evidential strength is experiential.</li>
+<li><strong>Self-disclosure &rarr; liking (hard support for intimacy)</strong>: Collins &amp; Miller (1994, <em>Psychological Bulletin</em>) meta-analysis confirms that moderate, mutual self-disclosure reliably raises liking; Aron et al. (1997) famous "36 questions" study used escalating mutual disclosure to make two strangers feel close in 45 minutes. Fairly hard evidence.</li>
+<li><strong>Costly signaling</strong>: evolutionary game theory — a signal is credible only when faking it is expensive. Volunteering the truth against your own interest (telling them not to buy, flagging your own risk) is exactly such a costly signal, so it builds trust unusually well.</li>
+</ul>
+<p class="caveat">Honestly labeled: the equation itself is a framework, not an experiment; but each of its four terms has harder psychological support (disclosure&rarr;liking, costly signaling, promise-keeping). Don't treat the formula as precise math — use it as a checklist.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Padding the numerator, ignoring the denominator.</strong> All the credentials, cases, and enthusiasm get divided to zero by "he just wants my money."</li>
+<li><strong>Turning intimacy into intrusion.</strong> "Daring to be candid" isn't over-familiarity or prying; it's the courage to say an unwelcome truth about the matter at hand.</li>
+<li><strong>Over-promising.</strong> Reliability comes from "promise a bit less, deliver a bit more," not "promise big, barely make it." When in doubt, under-promise.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>David Maister, Charles Green &amp; Robert Galford, <em>The Trusted Advisor</em></strong> — source of the trust equation, a classic of advisory trust.<br/><strong>Collins &amp; Miller (1994)</strong> — meta-analysis of self-disclosure and liking (the harder academic support).</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"<em>I don't know — let me find out and get back to you today.</em>" — admitting a gap adds credibility.</p>
+<p>"<em>Honestly, there's a risk I want to flag first…</em>" — volunteering a downside raises intimacy.</p>
+<p>"<em>Under-promise, over-deliver.</em>" — the reliability engine.</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>Trust Builds Slow and Breaks Fast — So Never Gamble It on One Deal
+<span class="en">Trust builds by the drop, breaks by the bucket</span></h2>
+<span class="tag">negativity bias</span><span class="tag">loss aversion</span><span class="tag">asymmetry</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">Trust is an account that fills slowly, empties fast, and bankrupts if overdrawn: dozens of reliable acts to build a little, one exaggeration / broken promise / concealment to zero it out — and once broken, it's brutally hard to restore. So the real pros aren't the ones who "win every time"; they're the ones who never put trust on the table.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"Trust is built in drops and lost in buckets."</span>
+<span class="source">— proverb (often cited in trust research)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Slow to fill, fast to spill</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar2" markerHeight="7" markerUnits="userSpaceOnUse" markerWidth="7" orient="auto" refX="6" refY="3.5">
+<path d="M0,0 L7,3.5 L0,7 Z" fill="#4a6154"></path>
+</marker>
+</defs>
+<line stroke="#4a6154" stroke-width="1.6" x1="60" x2="60" y1="260" y2="30" marker-end="url(#ar2)"></line>
+<line stroke="#4a6154" stroke-width="1.6" x1="60" x2="610" y1="260" y2="260" marker-end="url(#ar2)"></line>
+<text fill="#4a6154" font-family="Georgia" font-size="12" x="14" y="44">Trust</text>
+<text fill="#4a6154" font-family="Georgia" font-size="12" text-anchor="end" x="605" y="282">Time &#8594;</text>
+<polyline fill="none" points="60,250 130,232 200,208 270,178 340,142 410,100 450,70" stroke="#4e8a3f" stroke-width="3"></polyline>
+<circle cx="450" cy="70" fill="#c0603a" r="5"></circle>
+<text fill="#3f6d2f" font-family="Georgia" font-size="12" x="120" y="150" transform="rotate(-20 120 150)">reliable act by act, slow climb</text>
+<line stroke="#c0603a" stroke-width="3" x1="450" x2="478" y1="70" y2="235"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" x="486" y="120">one broken</text>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" x="486" y="140">promise / lie</text>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" x="486" y="160">/ concealment</text>
+<polyline fill="none" points="478,235 520,238 560,240 600,241" stroke="#9aa89c" stroke-dasharray="5 4" stroke-width="2.5"></polyline>
+<text fill="#8a988c" font-family="Georgia" font-size="11.5" x="498" y="228">recovery is slow,</text>
+<text fill="#8a988c" font-family="Georgia" font-size="11.5" x="498" y="248">often never full</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">The product has an obvious weak spot the customer hasn't noticed, and you're about to close.</div>
+<div class="dialog bad">
+<div class="speaker">&#10007; Gamble it (put trust on the table)</div>
+<p>Play dumb, close first, deal with it later. A week after going live they hit the weak spot, and their first thought is: "He knew, and hid it from me." From that moment, every good thing you said gets re-read as "so it was all a pitch." One concealment overdraws the trust principal of the whole relationship.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">&#10003; Flag the flaw yourself (deposit trust)</div>
+<p>"One thing I should be upfront about: we're only so-so on this part right now. If it matters a lot to you, you'd want to pair it with XX, or wait for our next release. Weigh that before you decide." Short-term you add one more obstacle to the close; long-term you buy the most expensive thing there is — the label of "someone who tells me the truth even about the flaws." The customer actually dares to buy more readily.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: negativity bias + loss aversion + the asymmetry of trust.</strong> The brain processes "bad" harder and longer than "good" (evolutionarily, missing one danger costs far more than missing one gain). So the trust lost from one betrayal isn't offset by one act of good faith; and "losing trust" is coded as a loss, which by loss aversion takes roughly <strong>twice</strong> the good to make up. That's the root of "slow to build, fast to break."</p>
+<ul>
+<li><strong>"Bad is stronger than good"</strong>: Baumeister, Bratslavsky, Finkenauer &amp; Vohs (2001, <em>Review of General Psychology</em>) — a cross-domain review showing negative events systematically outweigh equivalent positive ones in emotion, memory, and relationships. Fairly hard (a review of many studies).</li>
+<li><strong>Loss aversion</strong>: Kahneman &amp; Tversky (1979, Prospect Theory) — the pain of an equivalent loss is about <strong>2×</strong> the pleasure of the gain. Broken trust is registered as a loss, so it hurts and repairs especially hard. Nobel-level, classic.</li>
+<li><strong>The asymmetry principle of trust</strong>: Slovic (1993, <em>Risk Analysis</em>), <em>Perceived Risk, Trust, and Democracy</em> — trust-destroying events are more visible, more believed, and weighted more heavily than trust-building ones; "easy to destroy, hard to build" is a measurable regularity, not just a feeling. Fairly hard.</li>
+</ul>
+<p class="caveat">Boundary: in small, low-risk, quickly re-verifiable settings, a collapse isn't as fatal (still recoverable); the bigger, longer-term, and harder-to-verify the relationship, the more savage this asymmetry.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Don't put trust on the table (checklist)</div>
+<ul class="checklist">
+<li>What's the chance the thing I'm saying to close this gets exposed in three months? Can I afford the cost of exposure?</li>
+<li>Is there a flaw I know and they don't? Am I going to <strong>say it</strong>, or <strong>bet they won't find it</strong>?</li>
+<li>Every promise I make (timing, results, price) — am I <strong>sure I can deliver</strong>, or just "probably"?</li>
+<li>If this deal can only close by "putting trust on the table," is it worth it? (Usually not.)</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Overdrawing trust principal for a quarterly number.</strong> Trading this month's deal for every future month's trust is a losing swap.</li>
+<li><strong>Thinking "not caught" = "no loss."</strong> A hidden mine stays buried and eventually blows; the day it does, the interest is doubled.</li>
+<li><strong>Rushing to explain after a collapse.</strong> Once trust breaks, the more you say the more it sounds like excuses. Repair runs on "admit + own it + long-term consistent action," not on the words in that moment.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Baumeister et al., <em>Bad Is Stronger Than Good</em></strong> (2001) — the authoritative review of negativity bias.<br/><strong>Paul Slovic, <em>Perceived Risk, Trust, and Democracy</em></strong> (1993) — the classic paper on the asymmetry principle of trust.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"<em>Built in drops, lost in buckets.</em>" — the rate of building vs. breaking is asymmetric.</p>
+<p>"<em>Bad is stronger than good.</em>" — negativity bias in one line.</p>
+<p>"<em>I'd rather tell you now than have you find out later.</em>" — the flag-the-flaw move.</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>Trust Compounds: Treat Every Deal as a Deposit Into the Same Account
+<span class="en">Trust compounds — bank it, don't spend it</span></h2>
+<span class="tag">compounding</span><span class="tag">reliability</span><span class="tag">repeated game</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">In a single deal, trust is a cost (it takes time to build). Across many deals, trust is a <strong>compounding asset</strong>: past a threshold, they stop re-auditing you deal by deal — they default to "reliable," so you close faster, haggle less, and pull in referrals. Reliability isn't one performance; it's a curve you've repeated until they'd trust it with their eyes closed.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"The best way to find out if you can trust somebody is to trust them."</span>
+<span class="source">— Ernest Hemingway (widely attributed)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Same customer; you and your rival are both chasing it. You've served them two years.</div>
+<div class="dialog good">
+<div class="speaker">&#10003; Compounding pays off right here</div>
+<p>The rival quotes a lower price to poach the deal. The customer's reaction isn't to compare prices, but: "I've worked with him two years — when he says Wednesday it's never once slipped; when something broke he owned it immediately and fixed it. For that little bit of savings, I'm not switching." That's compounding trust: every "said and done" over two years turns, in this moment, into a moat a rival can't buy through with a discount. <strong>Compounded reliability is the wall a price war can't breach.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: repeated games + reliability lowering the other side's "cognitive cost."</strong> (1) <strong>Repeated games</strong> — in a one-shot deal betrayal might pay, but real relationships are played over and over: keeping faith wins across long iteration, while betrayal gets punished by reputation and no-repeat. (2) <strong>Lower cognitive cost</strong> — each time you keep a promise, they spend a little less effort checking you; accumulate enough and they set "you're reliable" as the default, and transaction friction drops sharply. That's the source of compounding: the audit cost they save becomes your premium and your speed.</p>
+<ul>
+<li><strong>Cooperation wins in repeated games</strong>: Axelrod, <em>The Evolution of Cooperation</em> (1984) computer tournaments — a "start nice, keep your word, punish only when crossed" strategy beats every strategy that tries to profit by defecting. Classic, directionally hard.</li>
+<li><strong>Trust lowers transaction cost</strong>: institutional economics (Williamson; and Fukuyama, <em>Trust</em>, 1995) — in high-trust relationships the cost of verifying, monitoring, and writing airtight contracts drops sharply, and that saved efficiency is trust's economic return. Theory + macro evidence, directionally aligned.</li>
+<li><strong>Reliability = the compounding of commitment-consistency</strong>: same root as the reciprocity / repeated-game logic from Day 1; repeated "said and done" gets encoded as a stable expectation, and that's what makes trust roll up like interest.</li>
+</ul>
+<p class="caveat">Honestly: this one is more the combined weight of classic game theory + institutional economics + practitioner experience than any single randomized experiment; but the direction is broadly supported. Compounding requires a <strong>real, long-term, verifiable</strong> relationship — in one-shot, anonymous settings it barely happens.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Deposit into the trust account (checklist)</div>
+<ul class="checklist">
+<li>Am I treating each customer as a one-time ATM instead of a compounding trust account?</li>
+<li>Of the promises I made this week, how many did I keep — and how many did I "forget" or "delay"? (Every unkept one is a withdrawal.)</li>
+<li>Did I deliberately do one small delivery that beat their expectation a little? (Compounding runs on small, frequent deposits.)</li>
+<li>After closing, did I vanish, or keep depositing (follow-ups, reminders, a small unsolicited favor)?</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Vanishing at the close.</strong> Peaking the relationship at payment throws away all the compounding that comes after.</li>
+<li><strong>Being "nice" only when a deal's on the line.</strong> People tell the difference between genuine care and pre-signature attentiveness; the latter compounds nothing and drains trust.</li>
+<li><strong>Reliability that runs hot and cold.</strong> Compounding hates volatility: ten kept promises + one no-show, and the one is what they remember. Steadiness beats the occasional dazzle.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Robert Axelrod, <em>The Evolution of Cooperation</em></strong> (1984) — how cooperative strategies win over the long run in repeated games.<br/><strong>Francis Fukuyama, <em>Trust</em></strong> (1995) — trust as the "social capital" that lowers transaction cost.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"<em>Trust compounds.</em>" — the whole point of the long game.</p>
+<p>"<em>Do what you said you'd do — every time.</em>" — the reliability rule.</p>
+<p>"<em>Bank trust, don't spend it.</em>" — treat it as an asset, not a resource to burn.</p>
+</div>
+</div>
+</div>
+
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>Your Day 2 Action</h3>
+<p>No theory — this week do two tiny things that raise trust immediately:</p>
+<div class="action">
+<strong>(1) Deposit some "reliability":</strong> pick one small promise to someone this week and <strong>say it smaller, do it bigger</strong> — promise "by Wednesday," deliver Tuesday; promise "I'll send you a link," and toss in one useful note with it. Make your first deposit into their trust account with "promise a bit less, deliver a bit more."<br/><br/>
+<strong>(2) Flag one "flaw":</strong> in a conversation where you want to persuade or close, <strong>volunteer one true but unflattering fact</strong> (a downside, a risk, or an honest "I'm not sure on this"). Watch their reaction — you'll likely find that after this "unfavorable truth," they trust the rest of what you say more.<br/><br/>
+Jot one line afterward: <strong>did their stance shift before vs. after you flagged the flaw?</strong> That's warmth + a costly signal banking trust for you.
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. Won't "warmth before competence" make me look soft and unprofessional — and get me pushed around?</summary>
+<div class="answer">No — as long as you don't mistake "warmth" for "people-pleasing." Warmth is <strong>letting them confirm you're on their side and genuinely solving their problem</strong>, not caving without limits or saying yes to everything. The real order is "warmth underneath, competence on top": use warmth to earn the entry ticket (they'll listen), then use competence to deliver (you actually get it done). People who get pushed around usually don't have too much warmth — they have <strong>warmth without competence or boundaries</strong>: afraid to say no, afraid to name a price, afraid to point out the other side's mistake. Warmth isn't weakness: the most persuasive posture is "I'm clearly on your side, and I clearly know how to help you — and what I won't do." So don't cut warmth; build up the competence-and-boundaries leg.</div>
+</details>
+<details>
+<summary>2. Volunteering flaws, telling people not to buy — won't a sharper rival just poach the deal with a lower price?</summary>
+<div class="answer">Short-term, occasionally yes; long-term, almost never — and "almost never long-term" is exactly what you want. First, a customer a low price can pry away never had trust with you and won't repeat or refer anyway; losing them costs you nothing. The ones you actually want to keep are those who "trust you, so they won't switch to save a little" — and those are exactly the ones your "told them not to buy, watched their back" moves lock in (the moat in Principle 4). Second, lowering self-orientation is a <strong>costly signal</strong>: precisely because someone who only wants the sale can't make that move, when you do it lands as unusually credible. Third, in real life don't go to extremes — it's not "talk everyone out of buying," it's "dare to tell the truth when it's clearly worse for them." Treat it as a precise trust investment, not lofty self-sacrifice.</div>
+</details>
+<details>
+<summary>3. Trust already broke once — can it be rebuilt? How?</summary>
+<div class="answer">It can, but accept two things: it's <strong>slow</strong> (negativity bias + loss aversion make breaking far faster than mending), and it <strong>often never returns to the old high</strong> — so the best strategy is always not to break it. If you must repair, the order is: <strong>(1) admit it immediately and without reservation</strong> — no excuses, no blame-shifting; wriggling only deepens the "untrustworthy" verdict; <strong>(2) own the consequences and make it right</strong> — with action, not words, proposing how you'll compensate; <strong>(3) then rebuild trust drop by drop through long-term consistency</strong> — repair isn't the pretty words at the apology, it's rebuilding the expectation through many more "said and done." Remember the asymmetry: breaking takes one time, rebuilding takes dozens, so in the repair period you especially can't drop a single promise more.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 02</footer>
+</div>
+</body>
+</html>
