@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 4: Jobs-to-be-Done — What Job Are People Hiring Your Product For?</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:1px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 04 · Phase A</div>
+<h1>Jobs-to-be-Done: Nobody Wants Your Product — They Want to Get One Thing Done</h1>
+<div class="meta"><span>Topic: Jobs-to-be-Done</span><span>·</span><span>4 principles</span></div>
+<div class="subtitle">"People don't want a quarter-inch drill; they want a quarter-inch hole." And really — they don't even want the hole. They want the picture hung on the wall.</div>
+</header>
+<div class="intro">
+<strong>Switch your point of view first.</strong> You think the customer is choosing between you and a competitor. What they're actually asking themselves is a different question: "Given the mess I'm in, how do I move one step forward?" People don't want to <em>own a product</em> — they're stuck on some bit of progress in their life and are temporarily hiring something to give them a push. A milkshake, a drill, your software, even you as a person — all of them get "hired" to do a job. Once you see the real <strong>job</strong> (the progress they're trying to make), three things get easier at once: you know what to say, you know who your real competitor is, and you know when to say "this isn't right for you." Today we install the job-centered lens — the foundation under everything that follows: selling the outcome, digging for pain, building a value proposition.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>People Don't Buy Products — They Hire Them to Do a Job
+<span class="en">People don't buy products — they hire them to do a job</span></h2>
+<span class="tag">job lens</span><span class="tag">progress</span><span class="tag">redraw the rivals</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">Don't ask "what features does my product have"; ask "in what situation, and to make what progress, did the customer hire me?" A product is a noun; a job is a verb — and people always pay for the verb.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"People don't want a quarter-inch drill. They want a quarter-inch hole."</span>
+<span class="source">— Theodore Levitt / popularized by Clayton Christensen</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The real structure of a purchase</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arr1" markerheight="10" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="3">
+<path d="M0,0 L8,3 L0,6 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<rect fill="#eef4f0" height="70" rx="6" stroke="#5a7365" stroke-width="1.5" width="150" x="14" y="60"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="13" font-weight="700" text-anchor="middle" x="89" y="88">Situation</text>
+<text fill="#4a6154" font-family="Georgia" font-size="11" text-anchor="middle" x="89" y="108">morning commute, bored &amp; hungry</text>
+<rect fill="#e6f0ea" height="70" rx="6" stroke="#1f7a5c" stroke-width="2" width="160" x="205" y="60"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="13" font-weight="700" text-anchor="middle" x="285" y="88">The progress (Job)</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11" text-anchor="middle" x="285" y="108">one-handed · filling · un-boring</text>
+<rect fill="#e2efdc" height="70" rx="6" stroke="#4e8a3f" stroke-width="1.5" width="150" x="406" y="60"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="13" font-weight="700" text-anchor="middle" x="481" y="84">Candidate "hires"</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11" text-anchor="middle" x="481" y="103">shake / banana / bagel</text>
+<text fill="#a8461f" font-family="Georgia" font-size="11" text-anchor="middle" x="481" y="120">…and "buy nothing"</text>
+<rect fill="#fbfaf4" height="70" rx="6" stroke="#cbb98f" stroke-width="1.5" width="140" x="596" y="60"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="13" font-weight="700" text-anchor="middle" x="666" y="88">Gets hired</text>
+<text fill="#5a7365" font-family="Georgia" font-size="11" text-anchor="middle" x="666" y="108">whoever does the job best</text>
+<line marker-end="url(#arr1)" stroke="#1f7a5c" stroke-width="2" x1="166" x2="201" y1="95" y2="95"></line>
+<line marker-end="url(#arr1)" stroke="#1f7a5c" stroke-width="2" x1="367" x2="402" y1="95" y2="95"></line>
+<line marker-end="url(#arr1)" stroke="#1f7a5c" stroke-width="2" x1="558" x2="592" y1="95" y2="95"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="11" text-anchor="middle" x="360" y="185">Same person, different situation, hires the very same shake for a totally different job</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">You sell an online course. The prospect asks: "How are you different from platform XX?"</div>
+<div class="dialog bad">
+<div class="speaker">✗ Product lens (spec war)</div>
+<p>"We have more hours, better instructors, a community, a workbook…" You're going head-to-head on features against the "competitor list" in their head — and that race almost always ends on price, cheapest wins.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Job lens (ask the job first)</div>
+<p><strong>Ask the progress they want:</strong> "After you finish, what one thing do you specifically want to be able to pull off? Land a job in a new field? Ship your current project solo? Or systematically fill a gap?"</p>
+<p><strong>Speak to the job:</strong> "If it's landing a job, then what you actually need isn't 'more hours' — it's 'a portfolio + passing interviews.' Ours is built dead-on for that: you walk out with three projects you can take into interviews." You've moved the battlefield from course specs to the progress they want — and the competitor list gets redrawn on the spot.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: people buy progress, not products.</strong> In a specific situation, someone is stuck at state A and wants to move to a better state B; the product is just a tool temporarily "hired" to make that move. So what closes the deal is never the feature list — it's "is your tool the one that best does <em>this</em> job, right now?" See the job, and you know what to highlight and who your rivals really are.</p>
+<ul>
+<li><strong>Jobs-to-be-Done theory</strong> (Clayton Christensen et al., <em>Competing Against Luck</em>, 2016) — reframes buying as "hiring a solution to do a job."</li>
+<li><strong>The milkshake case</strong> (Christensen &amp; Bob Moesta, for a fast-food chain) — morning milkshake buyers were hiring it to do the job of "something one-handed for a boring commute that lasts till noon." The real rivals weren't other shakes — they were bananas, bagels, and "buy nothing." Change the job and both the recipe and the pitch change.</li>
+<li><strong>Honest on strength</strong>: JTBD is mainly a <strong>business framework + case studies</strong>, not a randomized controlled experiment — don't treat it as a proven causal law. But its explanatory power and usability are high, and it points the same way as the two harder findings below (the reward-brain of status, and status-quo bias).</li>
+</ul>
+<p class="caveat">Boundary: the job is stable; solutions get swapped. So don't fall in love with your product — fall in love with the job. The day a better way to do it shows up, the customer will fire you without hesitation.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Translate "product description" into "job" (checklist)</div>
+<ul class="checklist">
+<li>What <strong>situation</strong> were they in when they started looking for a solution? (What happened in that moment?)</li>
+<li>Which <strong>state</strong> are they moving from, to which state? (The A → B "progress.")</li>
+<li>To do this job, <strong>who else could they hire</strong>? (Include workarounds and "buy nothing.")</li>
+<li>Is my thing genuinely the <strong>best</strong> at doing this job right now? If not, say so.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Falling for the product, forgetting the job.</strong> The better you know your features, the more you pitch the feature list — which the customer isn't even listening to.</li>
+<li><strong>Mistaking a demographic for a job.</strong> "My customer is a 25–35 urban woman" isn't a job — it's just who's buying. The same person hires you for wildly different jobs in different situations.</li>
+<li><strong>Seeing only the functional layer.</strong> Next up: a job usually has three layers.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Clayton Christensen et al., <em>Competing Against Luck</em></strong> — the definitive JTBD book and source of the milkshake case.<br/><strong>Theodore Levitt, <em>Marketing Myopia</em></strong> — origin of the "drill / hole" metaphor: don't fall for your product, watch the thing it does for the customer.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"What <em>job</em> are they hiring it for?" — the core JTBD question.</p>
+<p>"They <em>fired</em> their old solution and <em>hired</em> yours." — switching vendors = firing the old, hiring you.</p>
+<p>"Sell the <em>progress</em>, not the product." — the whole lens in five words.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>Every Job Has Three Layers: Functional, Emotional, Social
+<span class="en">Every job has three layers: functional, emotional, social</span></h2>
+<span class="tag">three layers</span><span class="tag">emotion</span><span class="tag">identity</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">Functional is "get the task done," emotional is "how I want to feel," social is "how I want to be seen." The pricier and more visible the thing, the bigger the top two layers loom — pitch only the functional one and you hand away the two most profitable layers for free.</div>
+</div>
+<div class="section">
+<div class="section-label">The three-layer value stack</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 640 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#e2efdc" height="56" rx="6" stroke="#4e8a3f" stroke-width="1.5" width="520" x="60" y="176"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="14" font-weight="700" x="80" y="200">Functional · get the task done</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11.5" x="80" y="220">"this watch tells accurate time"</text>
+<rect fill="#eef1f5" height="56" rx="6" stroke="#3f5c7a" stroke-width="1.5" width="440" x="100" y="108"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="14" font-weight="700" x="120" y="132">Emotional · how I want to feel</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="11.5" x="120" y="152">"wearing it, I feel I rewarded my hard work"</text>
+<rect fill="#f6efdd" height="56" rx="6" stroke="#c0a060" stroke-width="1.5" width="360" x="140" y="40"></rect>
+<text fill="#8a6d2f" font-family="Georgia" font-size="14" font-weight="700" x="160" y="64">Social · how I want to be seen</text>
+<text fill="#8a6d2f" font-family="Georgia" font-size="11.5" x="160" y="84">"people can tell I've arrived somewhere"</text>
+<text fill="#8a988c" font-family="Georgia" font-size="11" text-anchor="middle" x="320" y="252">Higher up = harder to replace, more willing to pay — yet most often left unsaid</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">You're selling team-collaboration software to a department manager.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Only the functional layer</div>
+<p>"We've got kanban, Gantt charts, auto-reminders, 100 integrations…" All features. But this manager's real job — features are only the bottom layer of it.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Hit all three layers</div>
+<p><strong>Functional:</strong> "The whole team's progress on one screen — no more chasing people one by one."</p>
+<p><strong>Emotional:</strong> "You stop lying awake wondering which ball got dropped — you feel on top of it."</p>
+<p><strong>Social:</strong> "Next time you report upward, you pull up one clean progress chart, and your boss thinks your team is rock-solid." That last line is often the real reason they pay.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: social approval and status run on the same reward "currency" in the brain as money.</strong> Being looked up to, being recognized, signaling identity — these light up brain regions that overlap with getting a monetary reward. So "how others will see me" isn't a vain add-on; it's a real payoff the brain can price like hard cash. Name it out loud and you switch on a value the buyer never said aloud.</p>
+<ul>
+<li><strong>Neuroscience · social and monetary rewards share a circuit</strong>: Izuma, Saito &amp; Sadato (2008, <em>Neuron</em>) — gaining a good reputation (social reward) activates the striatum, heavily overlapping the region activated by monetary reward, suggesting a "common neural currency" the brain uses to price social value. (cross-ref neuroscience on the reward system, psychology on social proof)</li>
+<li><strong>The emotional layer</strong>: buying leans hard on anticipated feeling — people often buy "the version of themselves / the mood they imagine afterward." This tracks with "emotion decides first, logic rationalizes after" (see this site's Buyer's Brain topic).</li>
+<li><strong>Evidence strength</strong>: the brain-imaging evidence is solid and replicated; the "three-layer" split itself is a practical framework (from the JTBD / consumer-behavior tradition) — useful, not a law.</li>
+</ul>
+<p class="caveat">Boundary: the layer mix varies by category. For toothpaste or screws, the functional layer all but dominates; for watches, bags, courses, career moves — anything visible and tied to identity — the emotional and social layers often outweigh function. Don't pitch identity to a screw buyer, and don't pitch only timekeeping accuracy to a luxury-watch buyer.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Probe all three layers (script)</div>
+<div class="template">
+<span class="label">One job, questioned on three layers</span>
+<p>· Functional: "Once this is handled, what can you get more of / worry less about?"</p>
+<p>· Emotional: "With this unsolved, what <strong>bugs you</strong> most? How would it feel once it's fixed?"</p>
+<p>· Social: "If this goes well / badly, <strong>who notices</strong>? How do they see you?"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Pitching all three as features.</strong> "Peace of mind" turned into "cuts communication cost 30%" — the number buries the feeling and misses.</li>
+<li><strong>Forcing the social layer, sounding slimy.</strong> Name the social layer along a concern they already hold; don't manufacture status envy. You can't invent a vanity they don't have — you'll only put them on guard.</li>
+<li><strong>Wrong layer for the wrong person.</strong> Saving money is the buyer's job; saving hassle is the user's job (finding each person's job is the Decision-Chain topic's work).</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Izuma, Saito &amp; Sadato (2008), "Processing of Social and Monetary Rewards in the Human Striatum," <em>Neuron</em></strong> — the classic evidence that social and monetary rewards share brain regions.<br/><strong>Anthony Ulwick, <em>Jobs to Be Done: Theory to Practice</em></strong> — one operational source for splitting a job into measurable outcomes across functional / emotional / social.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"How do you want to <em>feel</em> once this is handled?" — opens the emotional layer.</p>
+<p>"Who <em>notices</em> if this goes well?" — opens the social layer.</p>
+<p>"It's not just faster — it makes you look <em>on top of it</em>." — lights the social layer in one line.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>Your Real Competitor Isn't a Rival — It's "No Change"
+<span class="en">Your real competitor is "no change"</span></h2>
+<span class="tag">"do nothing" wins</span><span class="tag">status-quo bias</span><span class="tag">four forces</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">Most deals aren't lost to a competitor — they're lost to the customer deciding to do nothing. They already have a "good enough" workaround; change means paying a certain cost for an uncertain gain. What you must beat first is that inertia, not the shop next door.</div>
+</div>
+<div class="section">
+<div class="section-label">Will change happen: four forces in a tug-of-war</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#e2efdc" height="150" rx="6" stroke="#4e8a3f" stroke-width="2" width="310" x="20" y="20"></rect>
+<rect fill="#f6e3da" height="150" rx="6" stroke="#c0603a" stroke-width="2" width="310" x="370" y="20"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="14" font-weight="700" text-anchor="middle" x="175" y="46">Toward change →</text>
+<text fill="#25402f" font-family="Georgia" font-size="12" x="38" y="76">① Push of the situation</text>
+<text fill="#4a6154" font-family="Georgia" font-size="11" x="38" y="94">how much the status quo hurts</text>
+<text fill="#25402f" font-family="Georgia" font-size="12" x="38" y="122">② Pull of the new</text>
+<text fill="#4a6154" font-family="Georgia" font-size="11" x="38" y="140">how good the switch looks</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11" x="38" y="168">Your job: surface ①, make ② clear</text>
+<text fill="#a8461f" font-family="Georgia" font-size="14" font-weight="700" text-anchor="middle" x="525" y="46">← Back to status quo</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12" x="388" y="76">③ Anxiety about the new</text>
+<text fill="#8a5a3a" font-family="Georgia" font-size="11" x="388" y="94">what if it fails / is hard / breaks</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="12" x="388" y="122">④ Habit of the present</text>
+<text fill="#8a5a3a" font-family="Georgia" font-size="11" x="388" y="140">"we can get by as is"</text>
+<text fill="#a8461f" font-family="Georgia" font-size="11" x="388" y="168">Your job: lower ③, loosen ④</text>
+<text fill="#123f30" font-family="Georgia" font-size="13.5" font-weight="700" text-anchor="middle" x="350" y="212">Change happens ⟺ (① + ②) &gt; (③ + ④)</text>
+<text fill="#8a988c" font-family="Georgia" font-size="11" text-anchor="middle" x="350" y="236">Boost ② alone without lowering ③ &amp; ④ and they nod, then still don't move</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">The customer clearly likes your product but keeps stalling on the signature: "Let me think about it."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Just add more "pull"</div>
+<p>"Let me knock off another discount / throw in a bonus!" You assume the pull is too weak — but what's blocking them is anxiety (afraid the switch breaks something) and habit (they can cope as is). Adding pull is flooring the gas with the handbrake still on.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Release the handbrake (lower anxiety + loosen habit)</div>
+<p><strong>Lower anxiety:</strong> "Are you worried the switch will be messy and the team won't adopt it? We do a 14-day free migration + a dedicated onboarding person, and full refund anytime it doesn't fit — you carry almost no risk."</p>
+<p><strong>Loosen habit / amplify the pain of the status quo:</strong> "How many hours a week does your current setup burn on manual reconciliation? … That's X days a year. Do you keep paying that bill, or stop the bleeding now?"</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: status-quo bias + loss aversion.</strong> "No change" is the default, and change means paying a <strong>certain</strong> cost (money, learning, switch risk) for an <strong>uncertain</strong> gain. The brain feels the pain of a certain loss more sharply than the pleasure of a possible gain, so the scale defaults toward "keep things as they are." Don't actively release those two forces and the customer agrees in words while staying put in action.</p>
+<ul>
+<li><strong>Status-quo bias</strong>: Samuelson &amp; Zeckhauser (1988, <em>Journal of Risk and Uncertainty</em>), "Status Quo Bias in Decision Making" — a series of experiments shows a strong preference for keeping the default / current state, even when switching to a better option costs almost nothing.</li>
+<li><strong>Loss aversion</strong>: Kahneman &amp; Tversky (1979), prospect theory — a loss hurts about <strong>twice</strong> as much as an equivalent gain feels good (loss aversion, λ≈2). This is why a "certain switching cost" can scare off a "larger potential gain." (cross-ref psychology, the Buyer's Brain topic)</li>
+<li><strong>The four forces</strong> (Bob Moesta &amp; Chris Spiek, JTBD "switching forces") — push + pull vs anxiety + habit; a practical framework, not an experiment, but it translates the two hard findings above into four actionable handles.</li>
+</ul>
+<p class="caveat">Boundary: status-quo experiments mostly sit in economic-decision settings; the direction is robust and replicated. For any one deal, the strength of the four forces has to be asked and measured, not plugged into a formula.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Diagnose "why they won't move" (checklist)</div>
+<ul class="checklist">
+<li>What are they <strong>making do with</strong> right now? How much does it actually hurt? (Is the push enough?)</li>
+<li>What's the biggest <strong>"what if"</strong> in their head about switching to you? (Where's the anxiety?)</li>
+<li>What does "staying put" <strong>cost them a year</strong> in money / time / energy? Did I do that math for them?</li>
+<li>Am I frantically piling on benefits (pull), or also <strong>lowering risk and loosening habit</strong>?</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Treating "no buy" as no competition.</strong> You think you're fighting a rival; the biggest opponent is "they decide to do nothing." Ignore it and you won't even know who you lost to.</li>
+<li><strong>Solving anxiety with discounts.</strong> Price isn't the real reason they hesitate; cutting it just makes them wonder "what's the catch." Kill anxiety with guarantees, trials, migration support.</li>
+<li><strong>Afraid to spotlight the cost of the status quo.</strong> Fearing you'll look like a fear-monger, you won't do the "cost of not changing" math — but showing someone a real cost is a duty, not manipulation.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Samuelson &amp; Zeckhauser (1988), "Status Quo Bias in Decision Making"</strong> — the founding experiments on status-quo bias.<br/><strong>Bob Moesta, <em>Demand-Side Sales</em></strong> — the operational blueprint for the "four forces" and the "progress-making interview" through a JTBD lens.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"Your biggest competitor is the <em>status quo</em>."</p>
+<p>"What's the <em>cost of doing nothing</em>?" — do the "no change" math for them.</p>
+<p>"Let's <em>de-risk</em> the switch." — lower the anxiety force.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>Find the Job by Replaying the Moment of Hire and Fire
+<span class="en">Find the job by replaying the moment of hire and fire</span></h2>
+<span class="tag">progress interview</span><span class="tag">ask the past, not the future</span><span class="tag">timeline</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">Don't ask "what features do you want" or "would you buy this someday" — ask "the last time you paid for / switched something like this, what actually happened?" The real job hides in one concrete purchase that already occurred, not in imagined futures.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"People don't buy for logical reasons. They buy for emotional reasons — then justify with logic."</span>
+<span class="source">— Zig Ziglar (paraphrase)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">You want to figure out why a customer buys (or doesn't buy) something like your product.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Ask the future / a hypothetical (you get polite lies)</div>
+<p>"Do you think you'd use this feature?" "If we added X, would you buy?" To spare your feelings, they politely say "sure, sounds great." You collect a pile of fake signals, build the thing, and nobody buys.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Ask about one concrete past time (rebuild the timeline)</div>
+<p>"The <strong>last time</strong> you paid to fix a problem like this — when was it? What exactly happened that made you go 'no more, this has to change'?"</p>
+<p>"How were you <strong>making do</strong> before that? Why did that day become the day you stopped making do?"</p>
+<p>"What <strong>other options</strong> did you weigh? Why did you pick that one — and why did you later 'fire' it?" Every answer is anchored to something that actually happened; it can't be faked.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: memory of a concrete past event is far more reliable than an abstract future intention.</strong> Ask "would you buy someday" and you get imagination plus courtesy, contaminated by politeness and optimism; ask "why did you switch last time" and the answer is anchored to a real situation, date, and amount — hard to fabricate and awkward to. People predict their own future behavior badly but recall a specific thing they did fairly well.</p>
+<ul>
+<li><strong>The intention–behavior gap</strong>: Sheeran (2002) and Sheeran &amp; Webb (2016) meta-analyses — "intending to" explains "actually doing" only weakly; a large change in intention tends to produce only about half as large a change in behavior. So "would you buy" is a weak signal.</li>
+<li><strong>The Mom Test</strong> (Rob Fitzpatrick) — the operational version of the same logic: ask about concrete past behavior and money actually spent; don't ask about future intent, don't float hypotheticals, don't ask them to rate your idea. (This site's Mom Test topic unpacks the method.)</li>
+<li><strong>Evidence strength</strong>: the intention–behavior gap is a robust meta-analytic finding (fairly hard); the "timeline / progress interview" is a JTBD operational method (framework-level — useful, not experimentally proven).</li>
+</ul>
+<p class="caveat">Boundary: for a brand-new category the person has never bought before, there's no "last time" to replay — then fall back to asking how they're <strong>currently</strong> coping with the problem (the status-quo workaround), which still beats asking about future intent.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The progress interview · five questions (script)</div>
+<div class="template">
+<span class="label">Replay the timeline of one real purchase</span>
+<p>· Trigger: "What <strong>happened that day</strong> that made you start thinking you had to fix this?"</p>
+<p>· Status quo: "How were you <strong>getting by</strong> before that?"</p>
+<p>· Candidates: "What options did you <strong>consider</strong>? (Including 'just leave it.')"</p>
+<p>· Choice: "Why did you <strong>pick that one</strong>? What was the moment that sold you?"</p>
+<p>· Fire: "If you later dropped it, what was the <strong>one thing</strong> that made you say 'done with this'?"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Mistaking future intent for real need.</strong> "Would you recommend it to a friend?" — warm to hear, weak at predicting.</li>
+<li><strong>Fishing for praise on your idea.</strong> "Do you think my idea's good?" — you'll only get polite lies; ask instead what they actually did in the past.</li>
+<li><strong>Taking the conclusion, skipping the situation.</strong> "Because it's cheap" is a conclusion, not a job; press on "what actually happened that day" to dig out the real trigger.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Rob Fitzpatrick, <em>The Mom Test</em></strong> — how to ask so polite lies don't mislead you (this site covers it in its own topic).<br/><strong>Paschal Sheeran (2002), "Intention–Behavior Relations: A Conceptual and Empirical Review"</strong> — source of the intention–behavior gap meta-analysis.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"Walk me through the <em>last time</em> you…" — replay one concrete past.</p>
+<p>"What were you <em>using before</em>?" — ask the status quo / old solution.</p>
+<p>"What finally made you <em>pull the trigger</em>?" — ask the trigger moment.</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>Your Day 4 Action</h3>
+<p>No reading, no reflecting — do one concrete thing this week:</p>
+<div class="action">
+<strong>Pick one real thing you're actually selling</strong> (a product, a service, an idea, even "yourself" in a job hunt) and write down three things:<br/><br/><strong>(1) The job</strong> — in what situation, to make what progress, would they "hire" you? Write it as "When I ___, I want to ___, so I can ___."<br/><strong>(2) The three layers</strong> — what are the functional / emotional / social layers of this job? (Which layer have you never once pitched?)<br/><strong>(3) The real rival</strong> — if they don't pick you, it's most likely not a competitor but "keep coping with what / do nothing." What is it?<br/><br/>Then rewrite one opening line using these three. <strong>Boundary reminder:</strong> the job is stable, solutions get swapped — don't fall in love with your product, fall in love with the job, and see the better solution before your customer does.
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. How is "find the job" different from last time's "understand the buyer's brain"? Isn't it the same thing reworded?</summary>
+<div class="answer">Complementary, not repetitive. <strong>The Buyer's Brain topic is about "how people decide"</strong> — emotion first, logic after, loss aversion, status-quo bias: a universal set of decision mechanics. <strong>Today's JTBD is about "what this one person, right now, specifically wants to get done"</strong> — it lands those general mechanics on one customer, one situation, one concrete piece of progress. The former tells you roughly how human nature runs; the latter is the probe you aim at <em>this</em> deal: same status-quo bias, but only by pinning down their current job and the old workaround they're coping with do you know which force to release. Stacked together they're complete — mechanism plus landing point.</div>
+</details>
+<details>
+<summary>2. I sell a plain commodity (screws, tissues). Where's the "emotional or social layer"? Isn't that forced?</summary>
+<div class="answer">Don't force it — <strong>a commodity's job is often functional-dominant</strong>, and hammering identity there just sounds slimy and annoying. The three-layer frame isn't "stuff every layer full"; it's "first judge which layer this deal's center of gravity sits on." For screws and tissues, the job is usually "reliable supply, no stock-outs, no quality incidents, an easy life for procurement" — and note that last one already carries a bit of emotional layer (making the buyer <strong>feel at ease, not blamed</strong>). So even for a commodity there's often an overlooked soft line: not emotion about the product, but emotion about <strong>dealing with you</strong> — dependable, no worries, you've got their back if something breaks. That line is frequently exactly where you can command a premium among identical commodities.</div>
+</details>
+<details>
+<summary>3. The customer can't even articulate what they want, and can't answer "why did you buy last time." Now what?</summary>
+<div class="answer">Totally normal — <strong>people genuinely can't articulate their own real motives</strong> (the reasons they give afterward are mostly logical rationalizations). So don't expect them to "tell" you the job; your work is to <strong>reconstruct</strong> it. Don't ask "why," ask "what exactly happened that day" — ask for facts, sequence, details (what time, with whom, what they'd tried before, how urgent it felt). Pile up enough facts and the job surfaces on its own, often truer than what they'd say out loud. If there's no concrete past at all (a brand-new category), step back and watch how they're <strong>currently</strong> coping with the problem — that makeshift workaround is a living fossil of their job.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to Index</a>
+</nav>
+<footer>BigCat · Sales · Day 04</footer>
+</div>
+</body>
+</html>
