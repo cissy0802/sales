@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 5：卖结果不卖产品</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 05 · Phase A</div>
+<h1>卖结果不卖产品：没人想买钻头，人人都想要墙上那幅画</h1>
+<div class="meta"><span>主题：Sell the Outcome, Not the Product</span><span>·</span><span>4 个原则</span></div>
+<div class="subtitle">客户付钱买的从来不是你的产品，是产品用完之后，那个"更好的处境"。你越是滔滔不绝讲产品，就离那个处境越远。</div>
+</header>
+<div class="intro">
+<strong>先接着上一期往前走一步。</strong>上一期说"人们雇产品去完成一个任务"——今天讲的是：任务完成之后，客户真正到手的那个<strong>结果</strong>，才是他掏钱的理由。可绝大多数人一开口卖东西，讲的全是"我这东西<strong>是什么</strong>"——多少参数、什么材质、几项功能。但客户脑子里一直在问的是另一句话："<strong>那对我有什么用？</strong>"你不替他把"是什么"翻译成"我的日子会怎么变好"，他就得自己翻译——而大多数人懒得翻译，于是走了。这一期教你一件事：把每一个"特性"沿着 <strong>特性 → 好处 → 结果</strong> 这条阶梯往上推，一直推到客户的世界里那个看得见、算得清、值得为它掏钱的<strong>成果</strong>。学完你会发现，最贵的东西往往描述得最"轻"——因为它卖的是变化，不是零件。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>特性 → 好处 → 结果：客户只为最后一级掏钱
+<span class="en">Features tell, outcomes sell — climb the ladder</span></h2>
+<span class="tag">FAB 阶梯</span><span class="tag">那又怎样</span><span class="tag">翻译</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">每一个特性都要能回答一句"那对我有什么用"，一直问到客户的生活里那个具体的成果为止。特性是名词，结果是动词——人永远只为动词付钱。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Don't sell the steak — sell the sizzle."</span>
+<span class="zh">"别卖牛排，卖那声'滋啦'。"——顾客不为一块生肉付钱，为的是煎肉时那股香气勾起的"马上就能大快朵颐"的画面。</span>
+<span class="source">— Elmer Wheeler,《Tested Sentences That Sell》(1937)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">一条特性怎么爬上"结果"这级台阶</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="up" markerheight="11" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="8" refy="3.2">
+<path d="M0,0 L8,3.2 L0,6.4 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<rect fill="#f6e3da" height="64" rx="6" stroke="#c0603a" stroke-width="1.5" width="250" x="30" y="212"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="13" font-weight="700" x="46" y="236">① 特性（是什么）</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="11.5" x="46" y="258">"电池 5000mAh、10 分钟快充"</text>
+<rect fill="#eef4f0" height="64" rx="6" stroke="#5a7365" stroke-width="1.5" width="250" x="235" y="120"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="13" font-weight="700" x="251" y="144">② 好处（有什么用）</text>
+<text fill="#4a6154" font-family="Georgia" font-size="11.5" x="251" y="166">"一天不用带充电器，出门更省心"</text>
+<rect fill="#e6f0ea" height="64" rx="6" stroke="#1f7a5c" stroke-width="2" width="250" x="440" y="28"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="13" font-weight="700" x="456" y="52">③ 结果（我的日子怎么变）</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" x="456" y="74">"通勤路上不再焦虑没电、错过消息"</text>
+<line marker-end="url(#up)" stroke="#1f7a5c" stroke-width="2" x1="212" x2="252" y1="212" y2="176"></line>
+<line marker-end="url(#up)" stroke="#1f7a5c" stroke-width="2" x1="417" x2="457" y1="120" y2="84"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="11.5" font-style="italic" x="150" y="200">那又怎样？↗</text>
+<text fill="#8a988c" font-family="Georgia" font-size="11.5" font-style="italic" x="355" y="108">那又怎样？↗</text>
+<text fill="#1f7a5c" font-family="Georgia" font-size="12" font-weight="700" text-anchor="end" x="700" y="20">↑ 越往上，客户越愿意付钱</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你在卖一台扫地机器人，客户站在柜台前。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 只报特性（客户自己没在翻译）</div>
+<p>"这台 5000Pa 大吸力，激光雷达导航，支持 APP 分区清扫，280ml 尘盒，续航 180 分钟。" —— 一串参数砸过去，客户点点头，心里其实在算"这跟隔壁那台 4000Pa 的差在哪，凭啥贵三百"，于是话题只能滑到比价。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 爬到结果（替他翻译到底）</div>
+<p><strong>特性 → 好处：</strong>"它能自己分区清扫、规划路线（特性），意思是你不用挪家具、不用盯着它（好处）。"</p>
+<p><strong>好处 → 结果：</strong>"所以你下班回家，地已经是干净的——省下来的那 40 分钟，可以陪孩子、或者干脆躺着。它卖的其实不是吸力，是你每天多出来的那段时间。"</p>
+<p>—— 同一台机器，你把它从"参数堆"变成了"每天多 40 分钟"，客户脑子里比的就不再是"贵不贵"，而是"这 40 分钟值不值"。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Every feature must survive a "so what?" until it lands on a concrete result in the buyer's life. Features are nouns; outcomes are verbs — people only pay for the verb.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：知识的诅咒 + 翻译成本。</strong>你太懂自己的产品，会不自觉地默认对方也懂——于是只报参数，忘了客户脑子里没有"5000Pa=不用挪家具"这条连线。这条从"特性"到"我的好处"的翻译，本该由<strong>你</strong>来做；你不做，就等于把认知负担甩给客户，而人一累就走。你替他爬完阶梯，决策对他就变得毫不费力。</p>
+<ul>
+<li><strong>知识的诅咒 · "敲曲子"实验</strong>（Elizabeth Newton, 1990，斯坦福博士论文；经 Heath 兄弟《Made to Stick》推广）——让人用手指敲出一首人人会哼的歌，敲的人以为对方有 <strong>50%</strong> 能猜中，实际只有 <strong>2.5%</strong>。你脑子里"参数=好处"的旋律清清楚楚，客户听到的只是一串杂音。这是"专家只会报特性"的心理根源。</li>
+<li><strong>FAB（Feature–Advantage–Benefit）法则</strong>——把"特性→优势→利益"逐级翻译，是销售培训里最老的框架之一。诚实说：这条主要是<strong>经验之谈 / 行业方法</strong>，不是对照实验；但它和上面的"知识的诅咒"指向同一件事，所以照做有据。</li>
+<li><strong>"滋啦"原则</strong>（Elmer Wheeler, 1937）——早在八十多年前，广告实证就发现：让人下单的是产品带来的<strong>感官与结果的想象</strong>，不是产品本身的成分说明。</li>
+</ul>
+<p class="caveat">边界：面对真正的行家（他自己就能把参数翻译成结果，比如工程师采购元器件）时，过度"翻译"反而显得啰嗦——这时候把参数给准、给全更重要。见本期最后一个原则。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">给每个卖点做一次"那又怎样"三连问（照做清单）</div>
+<ul class="checklist">
+<li>写下你最想讲的那个<strong>特性</strong>（一句话，是什么）。</li>
+<li>问一次"那又怎样？"→ 得到<strong>好处</strong>（对使用者有什么用）。</li>
+<li>再问一次"那又怎样？"→ 落到<strong>结果</strong>（他的生活 / 工作 / 处境具体怎么变好）。</li>
+<li>还能再问一次吗？能就再爬一级，直到句子里出现"<strong>省下的时间 / 多赚的钱 / 少受的罪 / 变成的那种人</strong>"。</li>
+<li>最后只讲最顶上那一两级——特性当"证据"附在后面，别当主角。</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>把"好处"当成了"结果"就停手。</strong>"更省心"还只是好处；"下班到家地是干净的、多出 40 分钟陪孩子"才是结果。越具体越值钱。</li>
+<li><strong>特性倒背如流，当成专业。</strong>你对参数越熟，越容易掉进知识的诅咒——你以为在展示实力，客户听到的是噪音。</li>
+<li><strong>一次把十个特性全端上桌。</strong>客户记不住十条，只会记住一个和他有关的结果。少即是多。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Chip &amp; Dan Heath,《Made to Stick》</strong>——"知识的诅咒"及 Newton 敲曲实验的出处。<br/><strong>Elmer Wheeler,《Tested Sentences That Sell》(1937)</strong>——"卖滋啦不卖牛排"，早期广告实证的经典。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"So <em>what</em>?" —— 每讲一个特性就在心里问自己这两个字，直到问不动为止。</p>
+<p>"Which means <em>you</em>…" —— 把特性翻成好处最顺的接口："它有 X，也就是说<em>你</em>就能……"</p>
+<p>"Sell the <em>sizzle</em>, not the steak." —— 卖那声香气，别卖那块生肉。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>卖"用完之后的那个世界"——after-state
+<span class="en">Sell the after — the picture on the wall</span></h2>
+<span class="tag">前后对比</span><span class="tag">奖赏想象</span><span class="tag">画面感</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">客户要的不是钻头，甚至不是那个洞——是墙上挂好的那幅画、和挂好之后满意的自己。你的活儿，是让他在掏钱之前就先"看见"那个变好之后的世界。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"People don't buy products; they buy better versions of themselves."</span>
+<span class="zh">"人们买的不是产品，是一个更好版本的自己。"——你卖的是从"现在的他"到"他想成为的他"之间那段距离。</span>
+<span class="source">— 常见于文案与品牌营销（源头多归于 Samuel Hulick / Ogilvy 一脉）</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你卖线上健身私教课，客户问"你们课时多少、有哪些动作库"。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 卖产品（停在"现在")</div>
+<p>"48 节课，200 个动作视频，配一个 App 记录，还送饮食表。" —— 全是"你会买到什么"，客户听完还是不知道"三个月后我会变成谁"，只能拿课时数去和别家比单价。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 卖 after-state（先让他看见变好的自己）</div>
+<p>"想象一下三个月后：你早上起来不再腰酸，爬四楼不喘，去年那条穿不上的裤子又能穿了，同事问你是不是最近状态特别好。" <strong>先把那个画面点亮，再落地：</strong>"要到那个状态，你需要的其实就是有人替你排好每天练什么、盯着你别偷懒——这 48 节课和饮食表，是通往那个你的路，不是终点。"</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Don't sell the drill or even the hole — sell the picture on the wall and the satisfied person who hung it. Light up the after-state first, then land the product as the path to it.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：购买决策由"想象拥有后的奖赏"点火。</strong>人在决定买不买时，大脑不是在冷算参数，而是先<strong>预演</strong>一遍"拥有它之后是什么感觉"。你把那个变好的画面描述得越具体，客户脑子里的奖赏回路就越被点亮——而这份"预期的愉悦"正是推着他掏钱的力。你只报参数，等于让这套回路熄着火。</p>
+<ul>
+<li><strong>神经科学 · 大脑在你掏钱前就"预演"了奖赏</strong>：Knutson、Rick、Wimmer、Prelec &amp; Loewenstein (2007, <em>Neuron</em>)《Neural Predictors of Purchases》——用 fMRI 看购买决策：看到心动的产品时，<strong>伏隔核（NAcc，奖赏预期中枢）</strong>被激活，能预测"会买"；看到价格觉得贵时，<strong>脑岛（insula，处理痛感）</strong>激活、内侧前额叶（mPFC）下降，预测"不买"。<strong>卖结果 = 做大 NAcc 那一侧的想象</strong>。（cross-ref neuroscience 奖赏系统、psychology 说服）</li>
+<li><strong>心理学 · 具体的画面比抽象描述更能打动、更好记</strong>：这与"具体性 / 可想象性"效应一致——越能在脑中成像的信息越有说服力（Heath《Made to Stick》的"具体"原则同源）。</li>
+</ul>
+<p class="caveat">诚实标注：Knutson 这项是设计精巧、被大量引用的 fMRI 研究，属于较硬的证据；但"描述得越生动、买得越多"这一步是合理外推，不是同一实验直接证明的因果。别把它当成一按就灵的开关。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">"前 → 后"话术模板</div>
+<div class="template">
+<span class="label">Before → After 三步</span>
+<p>· <strong>现在（痛）：</strong>"你现在是不是……（点出他今天的处境和别扭）"</p>
+<p>· <strong>之后（爽）：</strong>"用上之后，你会……（一个具体、可想象、带感官细节的画面）"</p>
+<p>· <strong>桥（产品）：</strong>"从这里到那里，需要的就是……（这时才把产品作为"那座桥"端出来）"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>画面空洞。</strong>"让你更成功更自信"——太抽象，脑子里成不了像。要具体到"周一例会上你第一个发言、老板点头"。</li>
+<li><strong>夸大到失真。</strong>after-state 必须是产品真能带来的，编一个不可能兑现的画面，交付时就是信任崩塌。生动 ≠ 吹牛。</li>
+<li><strong>只给"后"不接"桥"。</strong>点亮了画面却不落到"所以你现在该做什么"，客户被打动了却不知道下一步，热度就凉了。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Knutson et al., 2007,《Neural Predictors of Purchases》(Neuron)</strong>——购买决策的"奖赏预期 vs 价格痛感"神经模型。<br/><strong>Donald Miller,《Building a StoryBrand》</strong>——把客户放进故事主角位、卖"转变后的他"的实操框架。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"<em>Imagine</em> waking up three months from now…" —— 一切 after-state 的起手式。</p>
+<p>"the <em>after</em> state" —— 用完之后那个变好的处境。</p>
+<p>"We sell the <em>transformation</em>, not the tool." —— 卖的是转变，不是工具。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>把结果翻译成钱和时间——让价值可以被算出来
+<span class="en">Quantify the outcome — put a number on it</span></h2>
+<span class="tag">量化价值</span><span class="tag">ROI</span><span class="tag">不改变的代价</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">结果一旦被算成具体的钱或时间，"贵不贵"就变成了"划不划算"。价格是确定的数字，价值如果还停在形容词，天平永远向价格倾斜——你的任务是给价值也标上数字。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Price is what you pay. Value is what you get."</span>
+<span class="zh">"价格是你付出的，价值是你得到的。"——两者放在同一杆秤上，客户才比得出来；只报价格不报价值，秤上只有一头。</span>
+<span class="source">— Warren Buffett</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">价格是一个点，价值要堆成一座山</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 720 260" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#c2ccbe" stroke-width="1.5" x1="60" x2="700" y1="220" y2="220"></line>
+<rect fill="#f6e3da" height="46" rx="4" stroke="#c0603a" stroke-width="1.5" width="150" x="90" y="174"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="165" y="196">价格</text>
+<text fill="#a8461f" font-family="Georgia" font-size="12" text-anchor="middle" x="165" y="212">￥6000</text>
+<text fill="#8a988c" font-family="Georgia" font-size="11.5" text-anchor="middle" x="165" y="244">客户一眼看得见的"付出"</text>
+<rect fill="#e6f0ea" height="46" rx="4" stroke="#1f7a5c" stroke-width="1.5" width="220" x="440" y="174"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" text-anchor="middle" x="550" y="196">每年省下 120 小时</text>
+<rect fill="#e6f0ea" height="46" rx="4" stroke="#1f7a5c" stroke-width="1.5" width="220" x="440" y="120"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" text-anchor="middle" x="550" y="148">少犯的错 ≈ ￥2 万/年</text>
+<rect fill="#e6f0ea" height="46" rx="4" stroke="#1f7a5c" stroke-width="2" width="220" x="440" y="66"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="550" y="94">拿下的新客 ≈ ￥5 万/年</text>
+<text fill="#1f7a5c" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="550" y="248">量化后的"得到"</text>
+<text fill="#5a7365" font-family="Georgia" font-size="26" font-weight="700" text-anchor="middle" x="345" y="150">&lt;</text>
+<text fill="#8a988c" font-family="Georgia" font-size="11.5" font-style="italic" text-anchor="middle" x="345" y="176">同一杆秤</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你卖一套小店记账 / 进销存软件，年费 6000，老板皱眉说"有点贵"。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 用形容词对抗数字</div>
+<p>"不贵啦，很好用的，能帮你省很多事，同行都在用。" —— "很多""同行"都是形容词，压不住"6000"这个硬数字，最后只能靠打折收场。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 给价值也标上数字</div>
+<p>"我们算笔账：你现在每周手工对账大概花几小时？……4 小时？一年就是约 200 小时。软件能把它压到半小时，一年<strong>省出约 180 小时</strong>——按你自己的时间算，值多少？另外你上个月因为库存记错压了两批货，这套能提前预警，<strong>光那一次的损失就够付大半年费</strong>。6000 买回 180 小时 + 不再压货，你看是花钱还是省钱？"</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Turn the outcome into hours and money and the question flips from "is it expensive?" to "is it worth it?" A price is a hard number; don't fight it with adjectives — put a number on the value too.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：可比性 + 不确定性下降。</strong>价格天生是个精确数字，价值若停在"很好用"这种形容词，两者不在同一维度，大脑没法比，只能盯着唯一那个数字（价格）做决定。把结果也算成钱 / 时间，等于给价值装上刻度，客户第一次能把"得到"和"付出"放同一杆秤上——而且具体数字降低了"到底值不值"的不确定感，决策阻力随之下降。</p>
+<ul>
+<li><strong>价值销售 / 商业案例（value selling）</strong>——B2B 里量化 ROI、写"不改变的代价"是成熟打法（后面 Phase F 专讲）。诚实说：这条主要是<strong>行业实践共识</strong>，缺乏干净的对照实验，但逻辑与下面两点一致。</li>
+<li><strong>具体、生动的数字更有说服力</strong>——与"具体性效应"一致：一个能落到"180 小时""少压两批货"的说法，比"省很多事"更好记、更可信。</li>
+<li><strong>损失更痛（前景理论）</strong>：Kahneman &amp; Tversky (1979)——同等大小，"损失"带来的心理冲击约是"获得"的两倍。所以把价值算成"你正在<strong>损失</strong>的 180 小时 / 那批压掉的货"，往往比算成"你能赚到"更能推动决定。（这条是硬证据，但注意别滑向制造焦虑——量化的是真实代价，不是编出来的恐惧。）</li>
+</ul>
+<p class="caveat">边界：数字必须真、可核。用客户自己报的数据一起算（"你说每周 4 小时"），别塞给他一个他不认的假 ROI——被戳穿一次，之后你说什么数字他都不信。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">量化价值三问（话术模板）</div>
+<div class="template">
+<span class="label">把"结果"算成钱 / 时间</span>
+<p>· "你现在为这件事，每周 / 每月大概花多少<strong>时间</strong>？" —— 把时间折成钱。</p>
+<p>· "这个问题上次出岔子，<strong>损失</strong>了多少（钱 / 客户 / 返工）？" —— 把"不改变的代价"摆出来。</p>
+<p>· "如果解决了，一年下来大概能<strong>省 / 多赚</strong>多少？" —— 让他自己说出那个数字，比你说更有分量。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>用形容词打价格战。</strong>"很划算""性价比高"都是空词，撞上具体价格必输。</li>
+<li><strong>自己编 ROI 硬塞。</strong>客户不认的数字等于没有；一起算、用他的数，他才信。</li>
+<li><strong>只算得到，不算"不改变的代价"。</strong>很多时候，"继续这么下去每年悄悄流掉多少"比"用了能多赚多少"更戳人——别漏了这一半。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Kahneman &amp; Tversky, 1979,《Prospect Theory》</strong>——损失厌恶（损失之痛约为获得之乐的两倍）的原始出处。<br/><strong>value selling / 商业案例方法</strong>——量化 ROI 与"不改变的代价"的顾问式实践（本站后续价值销售篇细讲）。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"What's the <em>cost of doing nothing</em>?" —— 不改变的代价，量化价值最狠的一问。</p>
+<p>"Let's <em>run the numbers</em> together." —— 我们一起算笔账（用他的数）。</p>
+<p>"It <em>pays for itself</em> in three months." —— 三个月就回本了。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>功能越多≠价值越大——以及 outcome selling 什么时候失效
+<span class="en">More features ≠ more value — and when outcome-selling fails</span></h2>
+<span class="tag">功能疲劳</span><span class="tag">适用边界</span><span class="tag">诚实</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">买之前，功能多看着像"更值"；用之后，功能多常常变成"更烦"。价值不等于功能清单的长度——它等于客户真正到手的那个结果。多堆的功能，可能正在拉低你的价值。</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你卖一款笔记软件，习惯把"功能多"当卖点。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 堆功能（越长越好？）</div>
+<p>"我们有 30 种模板、双向链接、AI 摘要、看板、甘特图、公式、白板、24 种主题……" —— 客户当场觉得"好全"，可回家一打开被吓到、不知从哪下手，三天后弃用。你赢了 demo，输了留存。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 对准一个结果（少即是多）</div>
+<p>"如果你就想'脑子里的事不再丢'，那你只需要三步：随手记、自动整理、随时搜到。其余功能等你用顺了再说。" —— 你把三十个功能收敛成一个他真正要的结果，上手轻、留得住。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Before buying, more features feel like more value; after buying, they often mean more hassle. Value = the outcome delivered, not the length of the feature list.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：功能疲劳 + 选择过载。</strong>买之前，人用"能力"想象价值——功能越多越强大；买之后，人用"易用度"体验价值——功能越多越难用。两种视角错位，就造成"当场心动、用后后悔"。堆功能还会制造选择过载：选项一多，认知负荷飙升，反而降低行动和满意度。</p>
+<ul>
+<li><strong>功能疲劳 · Thompson, Hamilton &amp; Rust (2005, <em>Journal of Marketing Research</em>)</strong>——消费者购买前倾向选功能多的，使用后却因复杂度而满意度下降、后悔"当初买多了"。堆功能是把短期成交建在长期不满上。（同行评审，较硬。）</li>
+<li><strong>选择过载 · "果酱实验" Iyengar &amp; Lepper (2000, JPSP)</strong>——货架摆 24 种果酱吸引更多人驻足，但最终购买率远低于只摆 6 种时（约 <strong>3% vs 30%</strong>）。选项越多≠成交越多。（注：后续有复现之争，效应大小视情境而定，故作方向性参考、不作铁律。）</li>
+</ul>
+<p class="caveat">这也划出 outcome selling 的<strong>失效边界</strong>：当买家是行家、买的是标准化商品（他早就懂结果、只在比参数和价格，比如批量采购螺丝、内存条），你再讲"想象一下"就是废话——这时把规格给准、给全、给对价，才是尊重。卖结果是默认打法，不是唯一打法。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">收敛到一个结果（照做清单）</div>
+<ul class="checklist">
+<li>如果只能留<strong>一个</strong>卖点，客户最想要的那个结果是什么？先讲它。</li>
+<li>我列的功能里，有多少是客户真会用、又有多少只是让清单显长？</li>
+<li>对方是"要结果的普通用户"还是"比参数的行家"？前者卖结果，后者给准规格。</li>
+<li>我的 demo 是让人觉得"我也能用起来"，还是"太复杂了算了"？</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>把"功能多"当核心卖点。</strong>它能赢演示，却常输在上手和留存。</li>
+<li><strong>对行家硬灌"想象一下"。</strong>人家要的是参数表和报价，你的画面感只会让他觉得你不专业。</li>
+<li><strong>怕漏卖点，全端上桌。</strong>十个卖点稀释成零个记忆点；一个直击结果的卖点，才留得下。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Thompson, Hamilton &amp; Rust, 2005,《Feature Fatigue》(JMR)</strong>——功能越多、用后越不满的实证。<br/><strong>Iyengar &amp; Lepper, 2000,《When Choice is Demotivating》(JPSP)</strong>——果酱实验，选择过载的经典（复现有争议，作方向性参考）。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"<em>Feature fatigue</em>" —— 功能疲劳：买时嫌少、用时嫌多。</p>
+<p>"<em>Less is more.</em>" —— 少即是多。</p>
+<p>"What's the <em>one</em> thing you need it to do?" —— 你最需要它做成的那<em>一</em>件事是什么？</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>本期习作 · Your Day 5 Action</h3>
+<p>拿你手上任何一样要"卖"的东西——一个产品、你的简历、一个想说服别人接受的方案：</p>
+<div class="action">
+<strong>挑出你最想讲的那 1 个特性，用 Principle 01 的"那又怎样"三连问把它推上阶梯</strong>：特性 →（那又怎样）→ 好处 →（那又怎样）→ 结果，一直推到句子里出现"<strong>省下的时间 / 多赚的钱 / 少受的罪 / 变成的那种人</strong>"。<br/><br/>然后用 Principle 03 试着给这个结果<strong>标一个数字</strong>（一年省多少小时 / 多赚多少 / 不改变的代价是多少）。<br/><br/>把改写前后两句话并排写下来读一遍——<strong>前一句在描述你的东西，后一句在描述他的未来。</strong>感受一下，哪一句你自己听了都更想买。
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我的产品就是参数强、功能硬，难道不该好好讲这些配置吗？</summary>
+<div class="answer">该讲——但讲的<strong>位置</strong>不一样。参数不是不讲，是不当<strong>主角</strong>讲，当<strong>证据</strong>讲。顺序是：先给结果（"续航一整天不用找插座"），客户动心了、开始信了，再用参数<strong>坐实</strong>这个结果（"因为是 5000mAh + 10 分钟快充"）。参数在前，是让客户自己去翻译、大多数人不翻译就走；参数在后，是给已经心动的人一个"我没冲动、我是理性的"的台阶。<strong>唯一例外</strong>是本期最后一个原则说的：对方是比参数的行家、买的是标准化商品，那就把规格给准给全、别绕弯——卖结果是默认打法，不是唯一打法。</div>
+</details>
+<details>
+<summary>2. 卖"结果 / after-state"和上一期的"Jobs-to-be-Done"到底啥区别？听着很像。</summary>
+<div class="answer">是近亲，但看的东西不同。<strong>JTBD 往前看：客户在什么处境、想取得什么进展，于是"雇"了一个方案</strong>——它帮你搞清"他到底要完成什么任务、真正的对手是谁"，是<strong>发现</strong>阶段的镜头。<strong>卖结果往后看：任务完成之后，他到手的那个成果、变好的那个处境</strong>——它帮你把话说到点上，是<strong>表达</strong>阶段的镜头。一句话：JTBD 告诉你"该对准哪个结果"，卖结果告诉你"怎么把那个结果讲得让人想要"。先用前者找准靶心，再用后者把箭说漂亮。</div>
+</details>
+<details>
+<summary>3. 把结果说得那么诱人，会不会一不小心就变成夸大和忽悠？</summary>
+<div class="answer">分界只有一条：<strong>那个结果，产品真能兑现吗？</strong>能——你把它讲生动、讲具体，是帮客户看清他真会得到什么，这是本分；不能——你把画面吹得天花乱坠，交付时落差就是信任的悬崖，一次就摔没。检验方法很简单：你描述的 after-state，敢不敢在成交后当着客户的面复述一遍？敢，就是照亮价值；心虚，就是在忽悠。量化也一样——用客户自己认的数去算，别塞假 ROI。生动是把真实的好处说清楚，不是把不存在的好处说出来。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 05</footer>
+</div>
+</body>
+</html>
