@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 6: Ask to Sell (SPIN)</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 06 · Phase B</div>
+<h1>Ask to Sell: The Real Pros Talk Least and Ask Hardest</h1>
+<div class="meta"><span>Topic: Ask to Sell — the SPIN method</span><span>·</span><span>4 principles</span></div>
+<div class="subtitle">Salespeople think they win by talking. They win by asking. The pain you draw out of them weighs a hundred times more than the benefit you talk at them — because one they said, the other you did.</div>
+</header>
+<div class="intro">
+<strong>From here we enter "discovery" — figure out what the other person actually wants before you figure out how to sell.</strong> The last few topics were about <strong>what</strong> you sell (outcomes, jobs, value); but if you haven't asked what they're missing, the prettiest pitch is just effort spent on thin air. Most people sit down and start <strong>talking</strong>: about the product, the plan, how great they are — mouth running, while the customer's brain quietly shuts off. People who really sell do the reverse: they spend most of the time <strong>asking</strong>, using questions to push the customer's vague "there might be a problem here" into a crisp, priced-out, must-fix pain. This topic hands you a questioning system that's still in use forty years on — <strong>SPIN</strong>: Situation → Problem → Implication → Need-payoff. By the end you'll see: the best closing line is the one where the customer states the reason to buy themselves.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>Top Sellers Ask More Than They Tell
+<span class="en">Top sellers ask more than they tell</span></h2>
+<span class="tag">open questions</span><span class="tag">ask, don't tell</span><span class="tag">self-persuasion</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">A hundred of your "you need this" lines lose to one of the customer's own "I do need this." Selling isn't pushing words into their head — it's using questions to draw the answer out of their mouth. What they say themselves, they believe.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"The most successful salespeople… ask more questions."</span>
+<span class="source">— Neil Rackham, <em>SPIN Selling</em> (1988), from watching 35,000 real sales calls</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Open vs closed: pry the customer's mouth open first</div>
+<p style="color:#2c382f;font-size:0.96rem">Closed questions (answerable with yes / no / a number) feel like an interrogation and stall after three. Open questions (ones you have to unfold) hand over the mic and get them talking more and more. <strong>In discovery, lead with open questions to raise the water level, then use closed ones to confirm at key points.</strong> Reverse the order and you sound like a census-taker.</p>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">You're selling team-collaboration software, meeting the ops lead of a company for the first time.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Talking from the moment you sit down (brain shutting off)</div>
+<p>"We've got task boards, auto-reminders, data reports, and it integrates with Slack…" You talk until you're hoarse; they politely say "mm-hm," thinking "how's this different from what I use now." Ten minutes in, you've learned nothing about where they're stuck, so you fall back on "so, want to give it a try?" — and get "let me think about it."</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Ask first, let them talk (you're gathering ammunition)</div>
+<p>"How do you assign work and track progress right now?" (open, hand the mic)<br/>"And when someone's task gets stuck, how long before you usually find out?" (open, heading for the pain)<br/>"Has anything gone wrong because progress wasn't synced in time?" (open, hooking a concrete story)</p>
+<p>The moment they talk, you get three things: their real process, a hassle they admit to themselves, and a concrete horror story. When they're done, all you say is "ours happens to surface exactly that kind of thing early" — and it feels like <strong>their own conclusion</strong>.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: self-persuasion + talking about yourself feels good.</strong> A point <em>you</em> make, the customer instinctively guards against and pokes holes in; but a line <em>they</em> say out loud, they now have to stand behind — that's self-persuasion, far sturdier than persuasion from outside. Better still: questions keep the customer talking about themselves, and the brain is wired to find talking about itself pleasurable — the more you ask, the better their experience, the more they warm to you. The more you tell, the more they defend; the more you ask, the more they invest.</p>
+<ul>
+<li><strong>Industry evidence · 35,000 sales calls</strong>: over 12 years, across 20+ countries, the Rackham / Huthwaite team observed about <strong>35,000</strong> real sales visits and found that in large / complex sales, successful sellers ask more questions (especially Problem and Implication types) and "talk product" less. Honest label: this is <strong>large-sample observational / correlational</strong> research, not a randomized controlled trial — but the sample is huge and the pattern replicated across industry, so it's fairly strong practitioner evidence.</li>
+<li><strong>Neuroscience · talking about yourself activates the reward circuit (hard evidence)</strong>: Tamir &amp; Mitchell (2012, <em>PNAS</em>), "Disclosing information about the self is intrinsically rewarding" — fMRI showed that when people <strong>talk about themselves</strong>, the <strong>nucleus accumbens (NAcc) and ventral tegmental area (VTA)</strong>, two dopamine reward hubs, light up; subjects even <strong>gave up money</strong> for the chance to talk about themselves more. Open questions that get the customer talking about themselves are, in effect, dispensing reward. (cross-ref neuroscience reward system, psychology persuasion)</li>
+<li><strong>Psychology · "ask and they're more likely to do it"</strong>: the question–behavior effect (Fitzsimons &amp; Morwitz and others) — merely asking someone "how do you intend to…" raises the odds they actually do it. Getting a customer to voice a need itself nudges them to act.</li>
+</ul>
+<p class="caveat">Boundary: more questions ≠ rapid fire. The pros in those 35,000 calls weren't machine-gunning; they <strong>asked one, listened fully, then asked the next off that answer</strong>. Interrogation-style volleys only raise defenses — covered in Principle 4.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Turn closed questions into open ones (checklist)</div>
+<ul class="checklist">
+<li>"Do you use system X?" → "<strong>How do you handle X today?</strong>"</li>
+<li>"What's the budget?" → first, "<strong>What is this problem costing you right now, unsolved?</strong>"</li>
+<li>"Are you happy with your current setup?" → "<strong>Which part of the current setup gives you the most grief?</strong>"</li>
+<li>After each question, <strong>shut up and count to three</strong> — leave the opening for them; don't rush to fill it.</li>
+<li>Goal: in this conversation, get <strong>them talking more than you</strong>.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Mistaking "presenting the product" for "communicating."</strong> You think you're building value; you're spending the customer's patience — with no stated problem, your solution has nowhere to land.</li>
+<li><strong>Asking, then answering for them.</strong> "You guys work overtime a lot, right? Of course, everyone does these days—" you snatch the thread back, they stop bothering, and the most precious self-disclosure is gone.</li>
+<li><strong>Only knowing closed questions.</strong> Five "is it / isn't it" in a row and the answers get shorter, the room feels like a case file, and trust drops instead of rising.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Neil Rackham, <em>SPIN Selling</em> (1988)</strong> — observational study of 35,000 sales calls; the foundation of modern consultative questioning.<br/><strong>Tamir &amp; Mitchell, 2012, "Disclosing information about the self is intrinsically rewarding" (PNAS)</strong> — talking about oneself activates the NAcc/VTA reward circuit.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"How do you currently handle…?" — the smoothest open-question opener to get them talking.</p>
+<p>"Tell me more about that." — the all-purpose follow-up; pulls them deeper.</p>
+<p>"<em>Diagnose</em> before you <em>prescribe</em>." — pitch before you've asked and you're a quack.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>SPIN: Four Question Types, in Order, to Draw the Need Out
+<span class="en">SPIN — four question types, in order</span></h2>
+<span class="tag">Situation</span><span class="tag">Problem</span><span class="tag">Implication</span><span class="tag">Need-payoff</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">SPIN isn't a checklist of lines, it's a path: map the Situation (S), surface the Problem (P), amplify the Implication (I), then let the customer voice the Need-payoff (N) themselves. Walk all four and they want to buy before you've even started presenting.</div>
+</div>
+<div class="section">
+<div class="section-label">What each question type is doing</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 720 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="dn" markerheight="11" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="8" refy="3.2">
+<path d="M0,0 L8,3.2 L0,6.4 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<rect fill="#eef4f0" height="52" rx="6" stroke="#5a7365" stroke-width="1.5" width="560" x="80" y="18"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="14" font-weight="700" x="98" y="40">S · Situation questions</text>
+<text fill="#4a6154" font-family="Georgia" font-size="11.5" x="98" y="60">Map the present: "what do you use / how do you do it now?" — few, no census-taking</text>
+<rect fill="#e6f0ea" height="52" rx="6" stroke="#1f7a5c" stroke-width="1.5" width="560" x="80" y="98"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="14" font-weight="700" x="98" y="120">P · Problem questions</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" x="98" y="140">Surface dissatisfaction: "which step is hardest / most error-prone?" — dig out hidden pain</text>
+<rect fill="#dcebe1" height="52" rx="6" stroke="#1f7a5c" stroke-width="2" width="560" x="80" y="178"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="14" font-weight="700" x="98" y="200">I · Implication questions</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" x="98" y="220">Amplify consequences: "what does that mean for delivery / cost / the team?" — grow the pain</text>
+<rect fill="#cfe6d7" height="52" rx="6" stroke="#123f30" stroke-width="2.5" width="560" x="80" y="258"></rect>
+<text fill="#0f3527" font-family="Georgia" font-size="14" font-weight="700" x="98" y="280">N · Need-payoff questions</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" x="98" y="300">Let them state the benefit: "if this auto-alerted you, what would that mean for you?"</text>
+<line marker-end="url(#dn)" stroke="#1f7a5c" stroke-width="2" x1="360" x2="360" y1="70" y2="94"></line>
+<line marker-end="url(#dn)" stroke="#1f7a5c" stroke-width="2" x1="360" x2="360" y1="150" y2="174"></line>
+<line marker-end="url(#dn)" stroke="#1f7a5c" stroke-width="2" x1="360" x2="360" y1="230" y2="254"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="11" font-style="italic" text-anchor="end" x="705" y="205">↓ pain and desire climb as you go down</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Same company as above — you walk it through SPIN (the ops lead is Lee).</div>
+<div class="dialog good">
+<div class="speaker">S · Situation (map it, don't over-ask)</div>
+<p>You: "What do you mainly use to assign work and track progress?"　Lee: "A group chat plus one Excel sheet."</p>
+</div>
+<div class="dialog good">
+<div class="speaker">P · Problem (find the dissatisfaction)</div>
+<p>You: "When the chat gets busy, does anyone miss a message and a task slips?"　Lee: "Oh yeah — people say 'I didn't see that one' all the time."</p>
+</div>
+<div class="dialog good">
+<div class="speaker">I · Implication (amplify — the key step)</div>
+<p>You: "So when a critical task slips like that, who ends up firefighting, and what does the client on the other end say about the delay?"　Lee: "…that's me, up at midnight coordinating. Last month we lost a renewal over exactly this." (the pain just got concrete)</p>
+</div>
+<div class="dialog good">
+<div class="speaker">N · Need-payoff (let them state the benefit)</div>
+<p>You: "If any task stuck for over a day popped up in front of you automatically, what would that mean for you?"　Lee: "I wouldn't have to babysit the chat, and no more midnight firefighting — that actually matters a lot." (the reason to buy, in their own words)</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: growing an "implicit need" into an "explicit need."</strong> Rackham's core finding: in large sales, a customer saying "it's fine as is" (implicit need) won't buy; the sale only happens once that faint dissatisfaction has been questioned into "this problem is genuinely serious, I have to fix it" (explicit need). SPIN's four-step order is precisely an assembly line that ripens an implicit need into an explicit one: S lays the ground, P names the dissatisfaction, I amplifies it to hurt, N lets them picture the fixed state themselves. Skip a step (say, map the situation then pitch straight away) and you're selling medicine to someone who doesn't yet feel sick.</p>
+<ul>
+<li><strong>Industry evidence · Rackham's tiering</strong>: across the 35,000 calls, <strong>Problem questions (P)</strong> are asked by novices and pros alike; but what separated big deals from small ones was <strong>Implication (I) and Need-payoff (N) questions</strong> — high performers used them markedly more. Situation questions (S), by contrast, are overused by novices and rationed by pros. (Large-sample observational research; fairly strong practitioner evidence, not a controlled experiment.)</li>
+<li><strong>The implicit→explicit need distinction</strong> is SPIN's theoretical spine, consistent with the plain truth that people only pay for a problem they deem real and painful enough — and it echoes the <strong>loss aversion / status-quo bias</strong> from the "buyer's brain" topic: fail to voice the cost of not changing, and status-quo bias keeps the customer rooted in place.</li>
+</ul>
+<p class="caveat">Honest label: SPIN was distilled for <strong>large, complex, multi-touch</strong> sales. For small instant transactions (buying a bottle of water, ordering takeout), marching through four steps just sounds like padding — that boundary is Principle 4.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The four SPIN questions (adapt to your scene)</div>
+<div class="template">
+<span class="label">S → P → I → N</span>
+<p>· <strong>S Situation:</strong> "How do you do ___ right now? What tools / process?" (one or two lines is plenty)</p>
+<p>· <strong>P Problem:</strong> "Which step in that is hardest / most error-prone / most frustrating?"</p>
+<p>· <strong>I Implication:</strong> "When that happens, does it drag in ___ (cost / time / clients / the team)? Last time it went wrong, what did it cost?"</p>
+<p>· <strong>N Need-payoff:</strong> "If this could be ___ (solved / automated / flagged early), what would that mean for you / your team?"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Too many Situation questions.</strong> Anything on their website, or already said a line ago — don't ask again. Situation questions build a bridge, not a census; over-ask and they've run out of patience before the crucial I and N.</li>
+<li><strong>Skipping I to pitch.</strong> The moment a problem pokes out you rush "we can solve that" — but they don't feel the pain yet, so your solution carries no weight. I is the lever of the whole method; never cut it.</li>
+<li><strong>Turning N into your own summary.</strong> "So you basically need ours, right?" — the moment the benefit comes from your mouth it's a pitch; steer with a question so <strong>they</strong> say it.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Neil Rackham, <em>SPIN Selling</em> (1988)</strong> — the source of the S/P/I/N question types and the "implicit → explicit need" model.<br/><strong>cross-ref psychology</strong> — how loss aversion and status-quo bias make "don't change" the default choice.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"What's the <em>hardest</em> part of doing that today?" — the classic Problem (P) probe.</p>
+<p>"What does that <em>cost</em> you when it goes wrong?" — the Implication (I) probe that amplifies.</p>
+<p>"If we could fix that, what would it <em>mean</em> for you?" — the Need-payoff (N) probe that makes them state the benefit.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>Implication Questions: Let Them Price Their Own Pain
+<span class="en">Implication questions — let them price their own pain</span></h2>
+<span class="tag">amplify pain</span><span class="tag">cost of inaction</span><span class="tag">the lever</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">An isolated small hassle, the customer tolerates; that same hassle questioned until the whole chain of consequences it drags in shows itself, they can't. Implication questions don't invent new problems — they just let an existing one reveal its true size.</div>
+</div>
+<div class="section">
+<div class="section-label">From the masters</div>
+<div class="quote">
+<span class="en">"Implication questions… make the buyer feel the problem more acutely."</span>
+<span class="source">— Neil Rackham, <em>SPIN Selling</em></span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">How one small problem gets rolled into a big pain</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 720 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="rt" markerheight="11" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="8" refy="3.2">
+<path d="M0,0 L8,3.2 L0,6.4 Z" fill="#c0603a"></path>
+</marker>
+</defs>
+<rect fill="#eef4f0" height="60" rx="8" stroke="#5a7365" stroke-width="1.5" width="150" x="20" y="95"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="95" y="120">Problem</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10.5" text-anchor="middle" x="95" y="140">"messages get missed"</text>
+<rect fill="#f7ebe2" height="52" rx="6" stroke="#c0603a" stroke-width="1.5" width="150" x="235" y="30"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="310" y="52">→ tasks dropped</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="310" y="70">→ client complaints</text>
+<rect fill="#f7ebe2" height="52" rx="6" stroke="#c0603a" stroke-width="1.5" width="150" x="235" y="160"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="310" y="182">→ you firefight at night</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="310" y="200">→ the team points fingers</text>
+<rect fill="#f3ddd0" height="70" rx="8" stroke="#a8461f" stroke-width="2.5" width="190" x="470" y="90"></rect>
+<text fill="#8a2f12" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="565" y="118">a lost renewal</text>
+<text fill="#8a2f12" font-family="Georgia" font-size="11" text-anchor="middle" x="565" y="140">≈ $12k / year</text>
+<line marker-end="url(#rt)" stroke="#c0603a" stroke-width="2" x1="172" x2="230" y1="115" y2="60"></line>
+<line marker-end="url(#rt)" stroke="#c0603a" stroke-width="2" x1="172" x2="230" y1="135" y2="185"></line>
+<line marker-end="url(#rt)" stroke="#c0603a" stroke-width="2" x1="387" x2="465" y1="60" y2="110"></line>
+<line marker-end="url(#rt)" stroke="#c0603a" stroke-width="2" x1="387" x2="465" y1="185" y2="140"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="10.5" font-style="italic" text-anchor="middle" x="360" y="240">each "and what does that lead to?" grows the pain another ring</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">You're selling a used car to a buyer who's still hesitating; he says "the one I've got still runs fine."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Rebutting directly (fighting him)</div>
+<p>"Yours is eight years old, way overdue, must be riddled with problems." You're negating his judgment; he reflexively defends "it's got no big issues, really," and digs in harder against changing.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Use implication questions, let him run the numbers</div>
+<p>"Runs fine, sure — I'm just curious, how many times has it been in the shop this past year?" ("Three or four.")<br/>"And each time, are you stuck on the subway or in cabs for those days? Ever made you miss anything that mattered?" ("Missed an important meeting last month, actually…")<br/>"So at that rate it'll only be in the shop more often — how much do you reckon the next six months costs you, repairs plus the things you miss?" (now he's frowning and genuinely doing the math)</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: dragging the "cost of doing nothing" from backstage to front.</strong> People have a powerful preference for the status quo — as long as the problem looks isolated and bearable, the brain defaults to "leaving it alone is least effort." Implication questions take a point-sized hassle and, following "and what does that lead to?", string it into a cost chain, so the customer <strong>sees for themselves</strong> that keeping things as they are is quietly bleeding money. And because <strong>they</strong> ran the numbers, not you scaring them, they believe it — and can't dodge it.</p>
+<ul>
+<li><strong>Loss aversion (hard evidence)</strong>: Kahneman &amp; Tversky (1979), Prospect Theory — for equal magnitudes, the sting of a loss is about <strong>twice</strong> the pleasure of a gain. Implication questions reframe the decision from "what could I gain" to "what am I continuously losing," landing right on the nerve most sensitive to loss. (cross-ref psychology loss aversion)</li>
+<li><strong>Status-quo bias / default effect</strong>: Samuelson &amp; Zeckhauser (1988) documented a systematic human preference for keeping things as they are; leave the cost implicit and status-quo bias keeps winning. Implication questions are the tool that dismantles "leave it as is" as the default option.</li>
+<li><strong>Rackham's tiering</strong>: as noted in the previous principle, Implication questions (I) are the watershed between big and small deals — high performers use them most. (Large-sample observational; fairly strong practitioner evidence.)</li>
+</ul>
+<p class="caveat">Here's the manipulation-vs-persuasion red line: what an implication question amplifies must be a <strong>real</strong> consequence. Dressing up a non-serious problem as a catastrophe to scare someone into buying is manipulation — it may close short-term, but it corrodes trust long-term. Test: is every ring you amplify a fact the customer owns?</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The implication four-punch (checklist)</div>
+<ul class="checklist">
+<li>"When this happens, what else does it <strong>drag in</strong>?" (point → chain)</li>
+<li>"How <strong>often</strong> does it happen? What does that add up to?" (turn the occasional into an ongoing cost)</li>
+<li>"Last time it went wrong, what was the <strong>cost</strong> (money / time / clients / energy)?" (get a concrete number)</li>
+<li>"If it keeps going like this, where is it in <strong>six months / a year</strong>?" (project today's pain into the future)</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Using a statement instead of a question.</strong> "This is going to cost you a lot of money" is you scaring him, and he'll rebut; "what does this add up to over a year?" is him running the numbers, and he'll believe it.</li>
+<li><strong>Amplifying past the truth.</strong> Blow a small problem up into the sky falling and the customer sees the trick instantly — trust zeroes out. Amplify real pain, don't manufacture fear.</li>
+<li><strong>Firing without pause.</strong> Implication questions carry pressure; five in one breath feels like an interrogation. Ask one, let him digest and say the number himself, then ask the next.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Kahneman &amp; Tversky, 1979, Prospect Theory</strong> — loss aversion (the pain of a loss ≈ twice the pleasure of a gain).<br/><strong>Samuelson &amp; Zeckhauser, 1988, "Status Quo Bias in Decision Making"</strong> — systematic evidence for status-quo preference.<br/><strong>Neil Rackham, <em>SPIN Selling</em></strong> — why implication questions are the lever of large deals.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"And when that happens, what does it <em>knock on to</em>?" — point → chain.</p>
+<p>"What's the <em>cost of doing nothing</em> here?" — the cost of not changing.</p>
+<p>"Left unfixed, where does this go in a year?" — project the pain forward.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>The Discipline of Asking: Don't Turn Discovery Into an Interrogation — and When SPIN Fails
+<span class="en">The discipline of asking — and when SPIN fails</span></h2>
+<span class="tag">question funnel</span><span class="tag">listen before you ask</span><span class="tag">boundary</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">The same string of questions, worn with "I'm helping you think this through," is consulting; worn with "I'm mining your wallet," it's an interrogation. What decides how the customer feels isn't what you asked — it's whether you actually listened, and whether it felt like a conversation.</div>
+</div>
+<div class="section">
+<div class="section-label">The question funnel: wide to narrow — don't stab at the pain first</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 720 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="dn2" markerheight="11" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="8" refy="3.2">
+<path d="M0,0 L8,3.2 L0,6.4 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<polygon fill="#eef4f0" points="120,30 600,30 470,210 250,210" stroke="#5a7365" stroke-width="1.5"></polygon>
+<text fill="#37493f" font-family="Georgia" font-size="13" font-weight="700" text-anchor="middle" x="360" y="60">Wide · open: "walk me through how you do it now"</text>
+<text fill="#2c5a44" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="360" y="120">Mid · focus: "which step is the worst?"</text>
+<text fill="#123f30" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="360" y="180">Narrow · confirm: "so ~4 hours a week lost, right?"</text>
+<line marker-end="url(#dn2)" stroke="#1f7a5c" stroke-width="2" x1="360" x2="360" y1="70" y2="100"></line>
+<line marker-end="url(#dn2)" stroke="#1f7a5c" stroke-width="2" x1="360" x2="360" y1="130" y2="160"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="11" font-style="italic" text-anchor="middle" x="360" y="235">let them open up first, then narrow to confirming the key fact</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">A job interview is a sale too — you're "selling yourself," the interviewer is "discovering." Flip it around and you feel what an interrogated customer feels.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Interrogation-style (asking, not listening, rapid fire)</div>
+<p>"How many years' experience? Do you know Python? Ever led a team? Why did you leave? Salary expectations?" The interviewer catches none of your answers, just jumps to the next. You get tenser, feeling sifted rather than talked with. Ask a customer this way and they feel exactly the same.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Conversation-style (ask one, listen, follow on)</div>
+<p>"Tell me about the project you're proudest of?" (listen, grab a thread) "You said you found a big bug three days before launch — how did you carry that?" (follow on) — same discovery, but they feel <strong>understood</strong>, not <strong>interrogated</strong>. Each question builds on the last answer; that's a question funnel.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: questions trigger reactance unless they clearly read as "for your good."</strong> Rapid-fire probing makes a person feel controlled and judged, triggering reactance — once people sense their autonomy is being invaded, they instinctively shut down and push back, even if the questions are reasonable. Conversation-style asking — "listen first, then ask off the last answer" — signals "I'm genuinely trying to understand you," reactance isn't triggered, and the customer opens up. So discipline isn't a matter of politeness; it's what determines whether you get to keep asking.</p>
+<ul>
+<li><strong>Reactance theory</strong>: Brehm (1966), <em>A Theory of Psychological Reactance</em> — when people feel their freedom of choice threatened, a motivation to resist and go the opposite way kicks in. Interrogation-style questioning is a textbook trigger. (cross-ref psychology resisting manipulation)</li>
+<li><strong>The value of active listening</strong>: conversation research consistently shows that feeling "heard" markedly raises trust and willingness to cooperate — which is exactly what the next topic, the craft of listening, unpacks. Honest note: this leans on consensus and practitioner evidence, moderate strength.</li>
+<li><strong>SPIN's boundary (Rackham's own honesty)</strong>: Rackham explicitly states SPIN was distilled for <strong>large, complex, long-cycle</strong> sales; in <strong>small, instant, one-off</strong> transactions, rigidly marching through four steps lowers efficiency and comes off as contrived. The method has a boundary — don't treat it as a master key.</li>
+</ul>
+<p class="caveat">Stacked boundary: when the other person is pressed for time, or buying a standardized small item, don't force-fit SPIN — giving the key info and a price is the respectful move. Questions exist to help them think clearly, not to complete a procedure.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Four disciplines to make asking feel like conversation (checklist)</div>
+<ul class="checklist">
+<li><strong>Wide before narrow</strong>: open first; don't lead with price or the sore spot.</li>
+<li><strong>Catch, then ask</strong>: build the next question on their last answer ("you just said… so…").</li>
+<li><strong>Ask one, pause three</strong>: leave room to think and add; silence isn't awkward, it's an invitation.</li>
+<li><strong>Control density</strong>: no more than two or three in a row, and slip in a reflection or paraphrase so it reads as a chat, not a grilling.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Reading the question list like a script.</strong> Ask the next one regardless of what they answered and they immediately feel like a cog in a process — reactance rises.</li>
+<li><strong>Asking without listening.</strong> Busy planning your next line, missing the hook they handed you — the most precious info and trust leak out right here.</li>
+<li><strong>Forcing SPIN on small deals.</strong> Asking "what does not solving this knock on to?" over a cup of coffee is a joke. Match the method to the scene.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Brehm, 1966, <em>A Theory of Psychological Reactance</em></strong> — threatened freedom → resistance; the psychological backfire of interrogation-style questioning.<br/><strong>Neil Rackham, <em>SPIN Selling</em></strong> — the boundary note that SPIN fits large complex sales, not small instant transactions.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts to steal</div>
+<div class="english">
+<span class="label">Ready-to-use lines</span>
+<p>"You mentioned ___ earlier — can we go back to that?" — catch their thread and dig.</p>
+<p>"I'm just trying to understand your world before I suggest anything." — one line that disarms the interrogation feel.</p>
+<p>Ask, then <em>shut up</em>. — ask, then leave the room to them.</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>Your Day 6 Action</h3>
+<p>Pick a scene where you'll soon "sell" something — a product, a job interview, talking a roommate into doing something with you. Don't rush to think about what you'll <strong>say</strong>; write the <strong>questions</strong> first:</p>
+<div class="action">
+Following the SPIN order, write <strong>one question each</strong> for this scene:<br/><br/>· <strong>S</strong> — one that maps the present<br/>· <strong>P</strong> — one that surfaces the step that frustrates them most<br/>· <strong>I</strong> — one that makes them run their own "cost of not changing" (this one matters most; polish it)<br/>· <strong>N</strong> — one that makes them say, <strong>in their own mouth</strong>, how good it'd be to have it solved<br/><br/>Then actually use them, holding one discipline: <strong>in this conversation, let them talk more than you.</strong> Afterward, ask yourself — the reason to buy / to agree, did you say it, or did they? If it was them, you won.
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. If I ask this much, won't the customer get impatient — "just tell me if you can solve it, stop asking"?</summary>
+<div class="answer">Yes — if your questions feel like you're gathering info <strong>for yourself</strong> (to pitch / to quote), of course they're annoyed. No — if every question clearly helps <strong>them</strong> think their own problem through. The difference is the posture from Principle 4. Two concrete moves: one, <strong>state your intent up front</strong> — "I want to understand your situation first, so I don't recommend the wrong thing" turns "interrogation" into "diagnosis" in one line; two, <strong>give as you ask</strong> — drop an insight or a small tip at the key moments so the conversation itself pays off, instead of feeling like a full-length blood draw. When the real impatience signals show (checking the clock, curt answers), wrap it up and give the core value directly — questions are the means, not the end.</div>
+</details>
+<details>
+<summary>2. SPIN was distilled in 1988 from big-company selling of that era. Does it still work — especially for online or small business?</summary>
+<div class="answer">The framework works; applying it depends on the scene. <strong>The underlying logic hasn't aged</strong>: people still believe what they say themselves, and still move only once the pain is priced out — that's era-independent. What changed is the <strong>medium and pace</strong> — today a lot of "asking" happens over chat, email, forms, even in a post's comments, where you can't fire four rounds in a row. Workarounds: split SPIN up, one or two questions at a time; or use <strong>content</strong> to do P and I for the customer (an article that spells out "how much this problem costs if you leave it" is doing implication questions at scale). As for small instant business (a bubble tea, a street stall), Rackham himself says don't force it — those scenes win on speed and trust, not depth of questioning. In one line: treat SPIN as a way of thinking (diagnose the need before you prescribe), not a ritual you must perform word for word.</div>
+</details>
+<details>
+<summary>3. Is there really that much difference between the customer "saying the need themselves" and you just telling them "you need this"?</summary>
+<div class="answer">Big — and there's a hard mechanism behind it. What you say, the customer instinctively runs through a "he's trying to sell me" firewall and discounts; what they say themselves activates <strong>commitment and consistency</strong> — people are strongly driven to keep word and action aligned, so once they've said "I have to solve this problem," it's hard to later say "eh, forget it." There's a neural layer too: Tamir &amp; Mitchell (2012, PNAS) found that when people talk about themselves, reward hubs like the <strong>nucleus accumbens and ventral tegmental area</strong> light up — so letting them talk about themselves makes their experience of the conversation better and warms them to you. Conversely, the more you talk, the more it reads as pitching, and the thicker the firewall. This isn't mysticism; it's that "who said it" decides "whether it's believed" — the same sentence, out of the customer's mouth, weighs several times what it does out of yours.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 06</footer>
+</div>
+</body>
+</html>
