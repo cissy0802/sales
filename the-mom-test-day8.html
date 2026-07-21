@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 8：The Mom Test</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 08 · Phase B</div>
+<h1 data-tts="6b1f0a92d47c3e58">The Mom Test：别问会不会买，问上次怎么做的</h1>
+<div class="meta"><span>主题：The Mom Test</span><span>·</span><span>4 个原则</span></div>
+<div class="subtitle">你去问潜在客户"你会买吗"，几乎人人都说"会啊，挺好的"——然后没一个掏钱。他们不是骗你，是你问错了问题。会不会买，是让他猜；上个月钱花在哪，是事实。</div>
+</header>
+<div class="intro">
+<strong>上一期讲会听，这一期讲："就算你把问题问出口了，答案也可能全是假的。"</strong>做产品、验证需求、甚至面试谈合作，最常见的翻车是：你兴冲冲把方案端出去问"你觉得怎么样"，对方出于礼貌一通夸，你以为找到金矿，回头一分钱收不上来。这套避坑法叫 <strong>The Mom Test</strong>（Rob Fitzpatrick）——意思是：问题问得够好，就算你妈（一定会说好话的人）也骗不了你。核心一句：<strong>别让对方评价你的点子，让他讲自己的生活和过去。</strong>这期给你三条铁律 + 一个"真信号"判据，学完你会重看那些"客户都说很有兴趣"的反馈——多半是假数据。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card" data-tts="2c8e14ab90f7d63b">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>别聊你的点子，聊他们的生活
+<span class="en">Talk about their life, not your idea</span></h2>
+<span class="tag">避免善意谎言</span><span class="tag">聊生活不聊方案</span><span class="tag">降面子压力</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">你一把点子端出去问"好不好"，对方就自动切进"别打击这人 / 给点鼓励"的模式，回给你的全是善意谎言。把话题从"我的想法怎么样"挪到"你平时是怎么过的、上次碰到这问题你怎么弄的"——聊他的世界，你才拿得到真话。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"You should never ask anyone whether your business is a good idea."</span>
+<span class="zh">"永远不要问任何人：你觉得我这生意（点子）好不好。"——因为连你妈都会为了护着你而说好。</span>
+<span class="source">— Rob Fitzpatrick,《The Mom Test》</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">同一个人，两种问法，两种数据</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar1" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<rect fill="#f6e3da" height="60" rx="8" stroke="#c0603a" stroke-width="1.5" width="210" x="18" y="24"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="13" font-weight="700" text-anchor="middle" x="123" y="48">你亮点子问「好不好」</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="11" text-anchor="middle" x="123" y="68">"我做了个 X，你会用吗？"</text>
+<rect fill="#f6e3da" height="46" rx="8" stroke="#c0603a" stroke-width="1.5" width="200" x="250" y="31"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="350" y="49">对方进入「鼓励模式」</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="66">护你面子 · 不想扫兴</text>
+<rect fill="#f6e3da" height="46" rx="8" stroke="#c0603a" stroke-width="1.5" width="220" x="470" y="31"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="580" y="49">✗ 假数据</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="580" y="66">"挺好的，会用！"</text>
+<rect fill="#e2efdc" height="60" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="210" x="18" y="166"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="13" font-weight="700" text-anchor="middle" x="123" y="190">你聊他生活 · 问过去</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="11" text-anchor="middle" x="123" y="210">"你现在都怎么弄这事？"</text>
+<rect fill="#e2efdc" height="46" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="200" x="250" y="173"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="350" y="191">对方在「回忆事实」</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="208">没有面子要护</text>
+<rect fill="#e6f0ea" height="46" rx="8" stroke="#1f7a5c" stroke-width="1.5" width="220" x="470" y="173"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="580" y="191">✓ 真数据</text>
+<text fill="#3d5548" font-family="Georgia" font-size="10.5" text-anchor="middle" x="580" y="208">真痛点 · 真花销</text>
+<line marker-end="url(#ar1)" stroke="#c0603a" stroke-width="2" x1="230" x2="246" y1="54" y2="54"></line>
+<line marker-end="url(#ar1)" stroke="#c0603a" stroke-width="2" x1="452" x2="466" y1="54" y2="54"></line>
+<line marker-end="url(#ar1)" stroke="#4e8a3f" stroke-width="2" x1="230" x2="246" y1="196" y2="196"></line>
+<line marker-end="url(#ar1)" stroke="#4e8a3f" stroke-width="2" x1="452" x2="466" y1="196" y2="196"></line>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你做了一个「自动记账、月底自动出预算报告」的 App，想验证有没有人要。你抓着一个朋友（或目标用户）聊。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 端出点子求评价（收一堆善意谎言）</div>
+<p>"我做了个 App，能帮你自动记账、月底自动生成预算报告，你觉得怎么样？会用吗？"<br/>—— 对方："哇挺方便的，会啊，这种我肯定用。" 你乐开花，回去写了半年代码。上线后：零付费。那句"会用"是说给你面子的，不是他真会做的事。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 只聊他的生活和过去（逼出事实）</div>
+<p>"你现在平时怎么管钱的？"<br/>"上个月有没有哪次月底一看，钱不知道花哪去了、或者超支了？"<br/>"当时你怎么处理的？有没有为这事儿装过什么 App、或者花钱买过啥工具？"<br/>—— 你一个字没提方案，却问出：他上月确实超支、下过一个记账 App、用了三天嫌烦删了。<strong>"下过又删了"</strong>比一百句"我会用"都值钱：需求真实，但"手动记账"这个方案会死。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The moment you pitch your idea and ask "is it good?", people flip into encourage-mode and hand you polite lies. Move the topic off your idea and onto their life — "how do you handle this today?" — and you finally get truth instead of applause.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：社会赞许偏差 + 护面子。</strong>当你亮出点子、还一脸期待，对方回答时脑子里多了个任务："别让这人难堪"。于是他不报告"我真会怎么做"，而挑一个"让我俩都舒服"的答案——这就是善意谎言的来源。你聊他的过去，就把"要不要护你面子"的压力整个拿掉了：过去发生的事，他没立场替你美化。</p>
+<ul>
+<li><strong>心理学 · 社会赞许偏差（较硬，方法学共识）</strong>：调查方法学里有个稳固发现——人在被问及态度 / 意向时，倾向给出"更被社会认可 / 让对方满意"的答案，而非真实答案（social desirability bias）。综述见 Nederhof (1985)、以及 Edwards (1957) 的经典工作。这是几十年问卷研究反复验证的偏差，不是个别实验。</li>
+<li><strong>直接后果 · "说"与"做"的鸿沟</strong>：市场调研里著名的翻车（如经典的 New Coke 口味测试叫好、上市却砸锅）反复表明：人嘴上说的偏好，和真掏钱的行为经常对不上。这属行业经验证据，方向明确。</li>
+<li><strong>奠基书</strong>：Rob Fitzpatrick,《The Mom Test》(2013)——把"别让对方评价你的点子"做成一套可操作的提问纪律。属实战方法论（非对照实验），但和上面的学术偏差同源。</li>
+</ul>
+<p class="caveat">边界：不是人爱骗你，而是"被当面问意见"天然诱导好话。问题不在人，在问法——换成问过去、问具体，同一个人就给你真话。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">开口前自检（照做清单）</div>
+<ul class="checklist">
+<li>我这句问的是<strong>我的点子好不好</strong>，还是<strong>他的生活怎么过</strong>？</li>
+<li>我有没有在句子里"剧透"我想听的答案，等他附和？</li>
+<li>如果对方只会说"好"或"不错"，这问题就是白问——能不能换成"上次…你怎么做的"？</li>
+<li>整场聊下来，我提自己方案的次数，能压到接近零吗？</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>忍不住先安利。</strong>刚寒暄两句就把方案倒出来——从这一刻起，对方所有反馈都被你的点子"污染"了，全成了鼓励。</li>
+<li><strong>只找会捧你的人聊。</strong>专挑家人朋友，他们护你面子的动机最强、数据最假。要去找真正有这问题的陌生用户。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Rob Fitzpatrick,《The Mom Test》(2013)</strong>——"别问你的点子好不好"的提问纪律源头。<br/><strong>Nederhof (1985) / Edwards (1957)</strong>——社会赞许偏差的方法学综述与经典研究。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"<em>How do you currently handle that?</em>" —— 把话题拉回他的现状，最好用的一句。</p>
+<p>"<em>Talk me through the last time that happened.</em>" —— 请他复盘过去的具体一次。</p>
+<p>Never ask "would you use it?" — ask "<em>what do you do today?</em>" —— 一句话记住整条原则。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card" data-tts="9d3a72f0c845b1e6">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>问过去的具体，别问未来的意见
+<span class="en">Ask about the specific past, not opinions about the future</span></h2>
+<span class="tag">过去=事实</span><span class="tag">未来=猜</span><span class="tag">意图-行为鸿沟</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">"你以后会不会用""愿不愿意花钱"——这类问题都是让对方<strong>预测自己</strong>，而人预测自己未来的行为极不准，还偏乐观。改问："你<strong>上一次</strong>遇到这问题是什么时候？当时具体怎么做的？为它花了多少钱 / 时间？"过去真发生过的，编不出来。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Opinions are worthless. … Anything involving the future is an over-optimistic lie."</span>
+<span class="zh">"意见一文不值……凡是关于未来的，都是过度乐观的谎话。"——问过去做过什么，别问以后打算怎样。</span>
+<span class="source">— Rob Fitzpatrick,《The Mom Test》</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">意图 ≠ 行为：中间有条鸿沟</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar2" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#5a6b7d" font-family="Georgia" font-size="12" text-anchor="middle" x="350" y="24">改变一个人的「意图」很容易，改变他真实「行为」难得多</text>
+<rect fill="#e6f0ea" height="42" rx="6" stroke="#1f7a5c" stroke-width="1.5" width="300" x="60" y="52"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="210" y="72">意图 Intention</text>
+<text fill="#3d5548" font-family="Georgia" font-size="10.5" text-anchor="middle" x="210" y="88">"我会""我打算""愿意付" — 变化大 (d≈0.66)</text>
+<rect fill="#f6e3da" height="42" rx="6" stroke="#c0603a" stroke-width="1.5" width="176" x="60" y="140"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="148" y="160">行为 Behavior</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="148" y="176">真去做 — 变化小得多 (d≈0.36)</text>
+<line marker-end="url(#ar2)" stroke="#c0603a" stroke-width="2.5" x1="210" x2="210" y1="96" y2="136"></line>
+<rect fill="none" height="42" rx="6" stroke="#b8916a" stroke-dasharray="5,4" stroke-width="1.6" width="120" x="248" y="140"></rect>
+<text fill="#9a6a3a" font-family="Georgia" font-size="11" font-style="italic" text-anchor="middle" x="308" y="166">← 漏掉的这段</text>
+<text fill="#9a6a3a" font-family="Georgia" font-size="11" font-style="italic" text-anchor="middle" x="308" y="181">就是「说了不做」</text>
+<rect fill="#eef4f0" height="90" rx="6" stroke="#1f7a5c" stroke-width="1.5" width="270" x="410" y="66"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="545" y="90">所以：问已经发生的</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="545" y="112">"上次是什么时候？"</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="545" y="130">"当时花了多少？"</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="545" y="150">过去=事实，绕开鸿沟</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：还是那个记账 App。你想知道：真有人愿意为这个付钱吗？</div>
+<div class="dialog bad">
+<div class="speaker">✗ 问未来意向（收一句过度乐观的猜测）</div>
+<p>"如果有个 App 能帮你自动搞定这些，你愿意每月付 30 块吗？"<br/>—— 对方："嗯……应该会吧，这价格还好。" 这句"应该会"是他此刻脑补的自己，不是月底真扣款时的自己。你拿它当"付费验证"，就是把预测当成了事实。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 问过去的真实花销（拿到事实）</div>
+<p>"你<strong>过去</strong>为了管钱这事，花过钱吗？买过 App 会员、记账本、还是请人帮忙？"<br/>"最近一次为它花时间 / 花钱是什么时候？花了多少？后来还在用吗？"<br/>—— 他说"买过一个 XX 会员，98 一年，用到现在"，这才是真金白银的付费信号；他要支支吾吾"没……没花过钱"，那不管嘴上多想要，你这门"月付 30"的生意都得打个问号。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> "Would you pay for it?" asks someone to predict their future self — and people predict their own behavior badly and optimistically. Ask instead: "When did you last hit this? What did you actually do — and spend?" The past can't be faked.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：意图-行为鸿沟（intention–behavior gap）。</strong>人"打算做 X"和"真去做 X"之间隔着鸿沟：意图容易被一时热情、想给你好脸色、对未来的美好想象抬高，但真要付出成本（掏钱、改习惯）时，行为远远跟不上。问"你以后会不会"，测到的是此刻的意图（虚高），不是将来的行为。问过去，你直接看到的就是行为本身。</p>
+<ul>
+<li><strong>心理学 · 意图预测不了多少行为（硬证据）</strong>：Webb &amp; Sheeran (2006, <em>Psychological Bulletin</em>) 对 47 项实验做元分析——把人的意图<strong>大幅拉高（d≈0.66，中到大的变化）</strong>，带来的真实行为改变却<strong>只有 d≈0.36（小到中）</strong>。也就是说，意图涨一大截，行为只挪一小步。这条"意图 ≠ 行为"是经得起复现的元分析结论。（cross-ref psychology 意图与行为）</li>
+<li><strong>方法论落点</strong>：Fitzpatrick 把它压成一句可执行的话——问 specifics in the past，不问 opinions about the future；并去挖"上一次"的具体时间、动作、花费。人对"自己将来会怎么做"还普遍偏乐观，这让未来意向类回答系统性偏高。</li>
+</ul>
+<p class="caveat">诚实标注：Webb &amp; Sheeran 是健康 / 行为改变领域的元分析，外推到购买决策是合理的机制迁移，不等于有人专门在销售场景做过同款研究。方向硬，别当成"实验证明了问过去能提高成交率"。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">把"问未来"改成"问过去"（话术模板）</div>
+<div class="template">
+<span class="label">同一件事的两种问法</span>
+<p>· ✗ "你会用吗？" → ✓ "<strong>你现在都用什么</strong>凑合着弄这事？"</p>
+<p>· ✗ "你愿意为它付钱吗？" → ✓ "<strong>你上次为解决它花过钱吗</strong>？花在哪、多少？"</p>
+<p>· ✗ "这功能有用吗？" → ✓ "<strong>上一次因为没有它、你吃过什么亏</strong>？"</p>
+<p>口诀：把"会不会 / 愿不愿 / 以后"换成"<strong>上一次 / 具体多少 / 现在怎么弄</strong>"。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>满足于"应该会"。</strong>任何带"应该 / 可能 / 大概会"的未来时回答，都要在心里打上"未验证"的标签，别当结论。</li>
+<li><strong>问了过去，却停在泛泛。</strong>"我一般都挺注意省钱的"不算过去——那是概括。要钉到"最近一次具体哪回、发生了什么"。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Webb &amp; Sheeran (2006),《Does changing behavioral intentions engender behavior change?》(Psychological Bulletin)</strong>——意图-行为鸿沟的元分析（d≈0.66 → 0.36）。<br/><strong>Rob Fitzpatrick,《The Mom Test》</strong>——"问过去具体、不问未来意见"。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"<em>When was the last time</em> you ran into this?" —— 把话题钉到具体的过去。</p>
+<p>"<em>What did that cost you</em> — in time or money?" —— 用花费量出真痛。</p>
+<p>Ask about the past, not the future. —— 过去是事实，未来是猜。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card" data-tts="41b7e0d9a6c8253f">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>揪出三种假数据：恭维、空泛、假设
+<span class="en">Spot the three kinds of bad data: compliments, fluff, hypotheticals</span></h2>
+<span class="tag">恭维别当真</span><span class="tag">泛泛≠具体</span><span class="tag">往下钻</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">聊完手里一堆"正面反馈"，先别乐——The Mom Test 把假数据分三种：<strong>恭维</strong>（"这想法真棒"）、<strong>空泛</strong>（"我一般都……"，没有具体某一次）、<strong>假设</strong>（"我会……""要是有我就……"）。听到这三种，别当证据，要当信号——立刻往下钻到"具体某一次到底怎样"。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Compliments are the fool's gold of customer conversations."</span>
+<span class="zh">"恭维，是客户对话里的愚人金。"——闪闪发光，一文不值，还最容易让你停止追问。</span>
+<span class="source">— Rob Fitzpatrick,《The Mom Test》</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">三种假数据 · 怎么识别、怎么拆</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar3" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<rect fill="#f6e3da" height="66" rx="8" stroke="#c0603a" stroke-width="1.5" width="200" x="20" y="20"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="120" y="42">① 恭维</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="61">"这主意真棒！"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="78">"我一定支持你"</text>
+<rect fill="#f6e3da" height="66" rx="8" stroke="#c0603a" stroke-width="1.5" width="200" x="20" y="98"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="120" y="120">② 空泛</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="139">"我一般都很注意…"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="156">"我通常会…"</text>
+<rect fill="#f6e3da" height="66" rx="8" stroke="#c0603a" stroke-width="1.5" width="200" x="20" y="176"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="120" y="198">③ 假设</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="217">"我会…""要是有…"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="234">"我可能就…"</text>
+<rect fill="#e2efdc" height="150" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="300" x="380" y="50"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="13" font-weight="700" text-anchor="middle" x="530" y="78">往下钻到「具体一次」</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="530" y="104">"具体是上一次哪回？"</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="530" y="126">"那次到底发生了什么？"</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="530" y="148">"为它花了多少钱/时间？"</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="530" y="170">"后来怎么解决的？"</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-style="italic" text-anchor="middle" x="530" y="196">钻不出具体 → 这需求多半是假的</text>
+<line marker-end="url(#ar3)" stroke="#1f7a5c" stroke-width="2" x1="222" x2="376" y1="53" y2="110"></line>
+<line marker-end="url(#ar3)" stroke="#1f7a5c" stroke-width="2" x1="222" x2="376" y1="131" y2="125"></line>
+<line marker-end="url(#ar3)" stroke="#1f7a5c" stroke-width="2" x1="222" x2="376" y1="209" y2="140"></line>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你聊到一半，客户来了这么一段——三种假数据一次集齐。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 把这段当"验证成功"</div>
+<p>客户："你这个想法真挺不错的（恭维），我们平时也一直挺重视数据安全的（空泛），以后要真有这种工具，我们肯定会考虑上一个（假设）。"<br/>—— 你听完热血沸腾，回去汇报"客户很有兴趣、重视安全、愿意采购"。全是幻觉：三句里没一个具体事实。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 把假数据当信号，往下钻</div>
+<p>"谢谢（先接住恭维，不当真）。你说一直很重视数据安全——<strong>上一次为这块真正投入是什么时候</strong>？当时买了什么、花了多少？"<br/>"过去一年，你们<strong>因为数据安全出过事、或被审计卡过</strong>吗？具体哪回、后来怎么补救的？"<br/>—— 他能说出"去年一次泄露赔了钱、后来上了个 XX 系统花几十万"，需求是真的；他钻不出任何具体、只会重复"就是很重视"，那这份"重视"多半只是嘴上的。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Before you celebrate all that "positive feedback," sort it: compliments ("great idea!"), fluff ("I usually…"), and hypotheticals ("I would…") are the three kinds of bad data. Don't bank them — treat each as a cue to dig down to one specific past instance.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：恭维对双方都"便宜又上头"，于是替换掉了真信息。</strong>对说的人，一句好话成本几乎为零、还落人情；对你，被夸是种社会奖赏，一爽就容易停止追问、只挑证实自己想法的信号看。两头一拍即合，假数据就留在了你的笔记本里。破解只有一招：不把恭维 / 空泛 / 假设当结论，一律往"具体某一次"钻。</p>
+<ul>
+<li><strong>神经科学 · "好名声 / 被认可"走的是金钱奖赏同一条回路（硬证据）</strong>：Izuma, Saito &amp; Sadato (2008, <em>Neuron</em>) 用 fMRI 发现，人获得<strong>良好社会评价（被认可）</strong>时，激活的是<strong>纹状体（striatum，含伏隔核一带的奖赏回路）</strong>——和拿到金钱奖赏激活的脑区高度重叠。这解释了为什么恭维让人上头、也为什么给恭维的人乐意给：它是一种廉价的社会奖赏。（cross-ref neuroscience 纹状体 / 奖赏回路、psychology 社会奖赏）</li>
+<li><strong>心理学 · 确认偏误让你只挑好听的信</strong>：人有系统性倾向去搜寻 / 偏信支持自己既有想法的信息（confirmation bias，综述 Nickerson 1998）。你爱着自己的点子，就格外容易把恭维当"验证"、把泼冷水的当"他不懂"。</li>
+<li><strong>方法论落点</strong>：Fitzpatrick 的"bad data"三分法（compliments / fluff / hypotheticals）是实战提炼的检查表——属经验框架，但每一类背后都对得上上面的机制。</li>
+</ul>
+<p class="caveat">诚实标注：Izuma 等证明的是"社会认可激活奖赏回路"这一神经事实，用来解释"恭维为何诱人"是合理迁移；"三类假数据"本身是从业者经验框架，不是被某个对照实验直接证明的分类。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">听到假数据，这样往下钻（话术模板）</div>
+<div class="template">
+<span class="label">拆三种假数据</span>
+<p>· 听到<strong>恭维</strong> → "谢谢，不过我更想搞清楚：你<strong>上次</strong>真遇到这问题是怎么弄的？"（不接夸，转具体）</p>
+<p>· 听到<strong>空泛</strong>（"我一般都…"）→ "能给我讲<strong>最近的具体一次</strong>吗？那回到底发生了什么？"</p>
+<p>· 听到<strong>假设</strong>（"我会…"）→ "先不说以后——<strong>现在</strong>你都怎么应付？为它花过钱 / 时间吗？"</p>
+<p>· 通用探针：<strong>"具体点，上一次是什么时候？" + "然后呢？"</strong>——钻不出具体，需求就存疑。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>被夸就飘、就收工。</strong>恭维最大的害处不是骗你，是让你<strong>提前停止追问</strong>——你以为验证过了，其实刚要开始。</li>
+<li><strong>拿假数据去汇报 / 决策。</strong>把"客户很感兴趣"写进 BP、当立项依据——这是无数产品死在起跑线的原因。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Izuma, Saito &amp; Sadato (2008),《Processing of Social and Monetary Rewards in the Human Striatum》(Neuron)</strong>——社会认可与金钱共享纹状体奖赏回路。<br/><strong>Nickerson (1998),《Confirmation Bias》(Review of General Psychology)</strong>。<br/><strong>Rob Fitzpatrick,《The Mom Test》</strong>——bad data 三分法。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"<em>Thanks — but tell me about the last time it actually happened.</em>" —— 挡掉恭维、转向具体。</p>
+<p>"<em>Can you give me a specific example?</em>" —— 拆空泛最顺的一句。</p>
+<p>Compliments are <em>fool's gold</em>. —— 恭维是愚人金：闪光，但不值钱。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card" data-tts="7e05c3a2f9186b4d">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>只有肯付代价的承诺，才算真信号
+<span class="en">Only commitment that costs them is a real signal</span></h2>
+<span class="tag">时间/名声/金钱</span><span class="tag">推进 advance</span><span class="tag">揭示偏好</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">光有热情（"太棒了，保持联系！"）不是信号，是噪音。真信号是对方肯掏出他<strong>珍惜的东西</strong>：时间（开会 / 试用）、名声（引荐给他老板 / 同事）、金钱（预付 / 意向金）。每次接触都要往"更实的下一个承诺"推进一格；只收恭维不收承诺，等于原地踏步。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"A meeting either advances to a real commitment, or it's a failure."</span>
+<span class="zh">"一次会谈，要么推进到一个真实的承诺，要么它就是失败的。"——热情不算数，付出代价才算数。</span>
+<span class="source">— Rob Fitzpatrick,《The Mom Test》（承诺与推进）</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">三种"珍惜的货币"：肯掏，才是真</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar4" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<rect fill="#f3ece0" height="40" rx="6" stroke="#b8916a" stroke-width="1.5" width="180" x="24" y="150"></rect>
+<text fill="#8a6a3a" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="114" y="168">✗ 只有热情</text>
+<text fill="#9a7a4a" font-family="Georgia" font-size="10" text-anchor="middle" x="114" y="184">"太棒了！保持联系"</text>
+<rect fill="#eef4f0" height="40" rx="6" stroke="#1f7a5c" stroke-width="1.5" width="180" x="24" y="98"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="114" y="116">时间 Time</text>
+<text fill="#3d5548" font-family="Georgia" font-size="10" text-anchor="middle" x="114" y="132">"下周三来试用一小时"</text>
+<rect fill="#e6f0ea" height="40" rx="6" stroke="#1f7a5c" stroke-width="1.5" width="180" x="24" y="52"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="114" y="70">名声 Reputation</text>
+<text fill="#3d5548" font-family="Georgia" font-size="10" text-anchor="middle" x="114" y="86">"引荐给我老板/同事"</text>
+<rect fill="#dfeae2" height="40" rx="6" stroke="#123f30" stroke-width="1.8" width="180" x="24" y="6"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="114" y="24">金钱 Money</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10" text-anchor="middle" x="114" y="40">"预付/意向金/下单"</text>
+<line marker-end="url(#ar4)" stroke="#1f7a5c" stroke-width="2.5" x1="250" x2="250" y1="170" y2="26"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="11" text-anchor="middle" transform="rotate(-90 268 100)" x="268" y="100">承诺越来越实 →</text>
+<rect fill="#f7faf6" height="150" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="360" x="308" y="30"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="13" font-weight="700" text-anchor="middle" x="488" y="58">判据：他肯掏珍惜的东西吗？</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="488" y="86">嘴上说好 → 不花他一分成本 → 噪音</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="488" y="110">肯给时间/名声/钱 → 付了代价 → 真信号</text>
+<text fill="#123f30" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="488" y="140">每次接触，往上推进一格</text>
+<text fill="#5a7365" font-family="Georgia" font-size="10.5" font-style="italic" text-anchor="middle" x="488" y="162">推不动，就是这单在委婉地拒绝你</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：一场聊得很热络的会谈，快结束了。对方一脸兴奋。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 满足于热情（把死单当活单）</div>
+<p>对方："太有意思了，你们做的东西真不错，回头我们内部聊聊，保持联系啊！"<br/>你："好嘞，那我等您消息！"<br/>—— 你带着"客户很有兴趣"的错觉走了。可他没付出任何东西：没约时间、没引荐、没掏钱。这类"很有兴趣"，八成是礼貌性告别，之后已读不回。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 索要一个要付代价的承诺（验真）</div>
+<p>"太好了。那别停在'聊聊'——<strong>下周三我带一版针对你们的方案，跟你和负责预算的同事一起过 30 分钟？</strong>"（要<strong>时间 + 名声</strong>：肯排会、肯拉上决策人，才是真的）<br/>他爽快约、还主动说拉谁进来——真信号；他打太极"最近有点忙、我先自己看看"——这单其实在委婉拒绝你，你反而早知道、早止损。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Enthusiasm ("love it, let's keep in touch!") is noise. A real signal is when they spend something they value — time (a next meeting, a trial), reputation (an intro to their boss), or money (a deposit). Every conversation should advance to a costlier commitment, or it failed.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：揭示偏好 + 承诺一致。</strong>(1) 一个人真正看重什么，看他把稀缺资源（钱、时间、名声）投向哪，而不是嘴上说什么——表态零成本，掏出珍惜的东西才暴露真实优先级。(2) 一旦他真付出了一点（约会、引荐），基于"言行一致"的心理压力，后续继续投入的概率也更高。所以"要一个小承诺"既是<strong>验真</strong>，也是<strong>推进</strong>。</p>
+<ul>
+<li><strong>经济学 · 揭示偏好（理论基石）</strong>：Samuelson (1938) 提出的 revealed preference——人的真实偏好由其实际选择（把资源花在哪）显示，而非其口头陈述。这是现代微观经济学的地基概念，用在这里再贴切不过：看行为，别只听表态。</li>
+<li><strong>心理学 · 承诺与一致（较硬）</strong>：Cialdini《Influence》整理的"承诺一致"原理，及其源头如 Freedman &amp; Fraser (1966) 的"登门槛效应（foot-in-the-door）"实验——先答应一个小请求的人，后续答应更大请求的比例显著更高。这为"用小承诺推进"提供了实证支撑。（cross-ref psychology 承诺一致）</li>
+<li><strong>方法论落点</strong>：Fitzpatrick 把每次会面的成败，重定义为"有没有拿到一个更实的承诺（advance）"，而不是"聊得开不开心"。属实战框架。</li>
+</ul>
+<p class="caveat">边界：别把"要承诺"变成硬逼单。索要的承诺要与当前阶段匹配——早期要"时间 / 引荐"这种小承诺就好，一上来就逼签单会吓退真客户。它是"验真 + 温和推进"，不是施压工具。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">收尾要一个真承诺（话术模板）</div>
+<div class="template">
+<span class="label">按代价从轻到重</span>
+<p>· <strong>时间</strong>：<span>"下周三来试用 30 分钟，行吗？"</span>——肯排进日历，才算数。</p>
+<p>· <strong>名声</strong>：<span>"能帮我引荐一下负责这块的同事 / 你老板吗？"</span>——肯用自己信誉背书，是强信号。</p>
+<p>· <strong>金钱</strong>：<span>"要不先付个小额意向金锁定名额？"</span>——真金白银，最硬。</p>
+<p>· 每次收尾都问自己一句：<strong>"这次，他往前迈了要付代价的一步吗？"</strong>没有，就是原地踏步。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">常见错误</div>
+<div class="pitfall">
+<ul>
+<li><strong>会谈无收尾。</strong>聊得开心就散场、不索要下一步——等于每次从零开始，单子永远推不动。</li>
+<li><strong>要的承诺不匹配阶段。</strong>第一次见面就逼人签合同，会把本可以慢慢培育的真客户直接吓跑。小步推进，别一步登天。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">关键参考</div>
+<div class="ref"><strong>Samuelson (1938)</strong>——揭示偏好理论（看行为不看表态）。<br/><strong>Freedman &amp; Fraser (1966)</strong>——登门槛效应（小承诺→大承诺）。<br/><strong>Rob Fitzpatrick,《The Mom Test》</strong>——用"承诺与推进（commitment &amp; advancement）"判定会谈成败。</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"<em>What are the next steps?</em>" —— 收尾必问，逼出真实的下一步。</p>
+<p>"Would you be open to <em>introducing me to</em> the person who owns this?" —— 要"名声"承诺。</p>
+<p>Enthusiasm isn't commitment. —— 热情不等于承诺，肯付代价才算。</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3 data-tts="d8a4021c76b9e5f3">本期习作 · Your Day 8 Action</h3>
+<p>挑一个你正在琢磨的东西——产品点子、要卖的服务、或求职 / 合作方向。这周找 <strong>3 个真实目标对象</strong>（别找家人朋友），各聊 15 分钟。</p>
+<div class="action">
+全程<strong>一句都不许介绍你的方案</strong>，只问过去三件事：<strong>(1)</strong> 你上一次遇到 X 是什么时候？<strong>(2)</strong> 当时具体怎么解决的？<strong>(3)</strong> 为它花过多少钱 / 多少时间？<br/><br/>聊完，把对方的话逐句分两堆：<strong>恭维 / 空泛 / 假设 → 全划掉</strong>；<strong>具体事实 / 真实花销 → 留下</strong>，数一数留下几条。最后向其中一人<strong>索要一个要付代价的小承诺</strong>（约下次、要引荐、或小额意向），看他肯不肯掏。<br/><br/>边界提醒：这套是<strong>验证真需求</strong>，不是拿来"证明我是对的"。三个人都钻不出具体、没人肯付代价——那不是你没问好，是需求在告诉你"再想想"。听得进这个，才是 The Mom Test 真正的用处。
+</div>
+</div>
+<div class="qa" data-tts="3f9b6142e0d7a8c5">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我全程不介绍我的方案，那到底怎么卖？光问不推销，不是白聊？</summary>
+<div class="answer">把<strong>发现</strong>和<strong>推销</strong>拆成两件事，你就不纠结了。The Mom Test 管的是<strong>发现阶段</strong>——现在的任务不是成交，是搞清楚"需求真不真、他现在怎么凑合、痛到肯花钱吗"。这些信息就是你后面推销的弹药：讲方案时你能精准对着他<strong>亲口说过</strong>的痛点和花销去讲，比"我猜你可能需要"有力得多。所以不是不卖，是<strong>先诊断、后开方</strong>——好医生不会你一进门就开药。至于"白聊"：15 分钟就问出需求是假的，那更没白聊——你省下了半年白干。</div>
+</details>
+<details>
+<summary>2. 万一是个全新品类，客户压根没经历过这问题、也没现成方案，怎么问过去？</summary>
+<div class="answer">全新品类确实是 The Mom Test 最难的场景，因为"过去"里没有直接对应的行为可问。两个办法：<strong>(1) 问"替代方案"，别问"你的产品"</strong>——再新的需求，人现在也总有个凑合的土办法（Excel、手动、忍着、或干脆不做）。去挖那土办法有多痛、出过什么岔子；如果大家"忍着也没事"，这需求可能没你想的那么刚。<strong>(2) 把"问"升级成"小规模真实测试"</strong>——做个最小可用的东西，让人真花钱 / 真花时间用一次，用揭示偏好代替口头意向。越是"客户想象不出来"的东西，越要靠真实行为来验，别信他对未来的话。</div>
+</details>
+<details>
+<summary>3. The Mom Test 是不是只对创业调研、B2B 有用？我日常生活也用得上吗？</summary>
+<div class="answer">用得上，用处极广，因为内核是"<strong>别信表态，信行为；别问未来，问过去</strong>"——凡要判断人真实意图的场合都成立。<strong>面试</strong>：与其问"你抗压吗"（人人答强），不如问"讲讲你上次项目要崩了、具体怎么处理的"。<strong>找合伙</strong>：别听"我一定全力以赴"，看他肯不肯先付代价（先做一小块、先投时间）。<strong>自己做决定</strong>时也能用：想知道自己是不是真想做某事，别问"以后会不会坚持"，看"过去这一个月我实际花了多少时间"。表态廉价，行为诚实——这条到哪都不过时。</div>
+</details>
+<details>
+<summary>4. 都只问过去、只信行为，那客户对未来的愿景、想要的新功能，就完全不听了？</summary>
+<div class="answer">要听，但要<strong>降权，并分清是哪种信息</strong>。Fitzpatrick 不是"未来的话一律扔掉"，而是给两类信息贴不同标签：<strong>事实</strong>（过去真发生的、真花的钱）——高可信，用来决策；<strong>观点 / 愿景 / 想要的功能</strong>——低可信，用来理解方向，但绝不当成"他一定会买"的证据。客户说想要某功能，别急着做——先追问"你上次因为没有它，具体吃过什么亏？"，用过去的事实去<strong>检验</strong>这愿望的份量。愿景告诉你"往哪看"，事实才告诉你"该不该动手"——永远让掏过钱的行为，压过没花成本的表态。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 08</footer>
+</div>
+</body>
+</html>

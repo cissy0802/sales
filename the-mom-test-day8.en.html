@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 8: The Mom Test</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:1px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:580px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 08 · Phase B</div>
+<h1 data-tts="6b1f0a92d47c3e58">The Mom Test: Don't Ask If They'd Buy — Ask What They Did Last Time</h1>
+<div class="meta"><span>Topic: The Mom Test</span><span>·</span><span>4 principles</span></div>
+<div class="subtitle">Ask a prospect "would you buy this?" and almost everyone says "sure, looks great" — then not one of them pays. They're not lying to you; you asked the wrong question. Whether they'd buy is a guess. Where their money went last month is a fact.</div>
+</header>
+<div class="intro">
+<strong>Last time was about listening well. This time: even when you get the question out of your mouth, the answer can still be all lies.</strong> The most common way people building products, validating needs, or even pitching a partnership crash and burn: you excitedly show your solution, ask "what do you think?", the other person politely praises it, you think you've struck gold — and then collect zero dollars. The fix is called <strong>The Mom Test</strong> (Rob Fitzpatrick) — the name means: a question asked well enough that even your mom (the person guaranteed to say something nice so as not to crush you) can't fool you with it. The whole thing is one line: <strong>never let people evaluate your idea; get them talking about their own life and past instead.</strong> This one gives you three hard rules plus a test for what a "real signal" actually is. By the end you'll re-read all that feedback where "customers seemed really interested" — most of it is bad data.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card" data-tts="2c8e14ab90f7d63b">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>Talk about their life, not your idea
+<span class="en">Move the topic off your pitch and onto their world</span></h2>
+<span class="tag">dodge polite lies</span><span class="tag">their life, not your plan</span><span class="tag">drop the ego pressure</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The moment you present your idea and ask "is it good?", the other person flips into "don't crush this person / give some encouragement" mode, and hands you nothing but polite lies. Move the topic from "how's my idea?" to "how do you actually live with this — what did you do last time you hit it?" Talk about their world, and only then do you get the truth.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"You should never ask anyone whether your business is a good idea."</span>
+<span class="source">— Rob Fitzpatrick, The Mom Test</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Same person, two ways to ask, two kinds of data</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar1" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<rect fill="#f6e3da" height="60" rx="8" stroke="#c0603a" stroke-width="1.5" width="210" x="18" y="24"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="123" y="48">Pitch it, ask "is it good?"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="123" y="68">"I built X — would you use it?"</text>
+<rect fill="#f6e3da" height="46" rx="8" stroke="#c0603a" stroke-width="1.5" width="200" x="250" y="31"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="350" y="49">They flip to "encourage" mode</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="66">save your ego · avoid awkward</text>
+<rect fill="#f6e3da" height="46" rx="8" stroke="#c0603a" stroke-width="1.5" width="220" x="470" y="31"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="580" y="49">✗ Bad data</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="580" y="66">"Looks great, I'd use it!"</text>
+<rect fill="#e2efdc" height="60" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="210" x="18" y="166"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="123" y="190">Their life · ask the past</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="123" y="210">"How do you handle this today?"</text>
+<rect fill="#e2efdc" height="46" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="200" x="250" y="173"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="350" y="191">They recall facts</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="208">no ego to protect</text>
+<rect fill="#e6f0ea" height="46" rx="8" stroke="#1f7a5c" stroke-width="1.5" width="220" x="470" y="173"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="580" y="191">✓ Real data</text>
+<text fill="#3d5548" font-family="Georgia" font-size="10.5" text-anchor="middle" x="580" y="208">real pain · real spend</text>
+<line marker-end="url(#ar1)" stroke="#c0603a" stroke-width="2" x1="230" x2="246" y1="54" y2="54"></line>
+<line marker-end="url(#ar1)" stroke="#c0603a" stroke-width="2" x1="452" x2="466" y1="54" y2="54"></line>
+<line marker-end="url(#ar1)" stroke="#4e8a3f" stroke-width="2" x1="230" x2="246" y1="196" y2="196"></line>
+<line marker-end="url(#ar1)" stroke="#4e8a3f" stroke-width="2" x1="452" x2="466" y1="196" y2="196"></line>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: You built an app that auto-tracks spending and generates a budget report at month-end. You want to know if anyone actually wants it, so you corner a friend (or target user) to chat.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Pitch it and fish for a verdict (collect polite lies)</div>
+<p>"I made an app that tracks your spending automatically and generates a budget report each month — what do you think? Would you use it?"<br/>— Them: "Oh, sounds handy, yeah, I'd definitely use something like that." Your heart soars, you go home and code for six months. After launch: zero paying users. Because that "I'd use it" was said to spare your feelings — not something they'll actually do.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Only talk about their life and past (force out facts)</div>
+<p>"How do you keep track of your money right now?"<br/>"Last month, was there a point where you checked and had no idea where the money went, or overspent?"<br/>"What did you do about it? Did you ever install an app for this, or pay for some tool?"<br/>— You never mentioned your solution, yet you learned: they did overspend last month, panicked a bit, downloaded a budgeting app, used it for three days, got tired of logging entries, and deleted it. <strong>"Downloaded it, then deleted it"</strong> — this one fact is worth more than a hundred "I'd use it"s: it tells you the need is real, but the "log it manually" solution is dead on arrival.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: social desirability bias + face-saving.</strong> When you present your own idea with a hopeful look, answering it adds a second task to their mind: "don't embarrass this person." So they're not reporting "what I'd really do" — they're picking an answer that keeps both of you comfortable. That's the source of the polite lie. Ask about their past, and you strip that "should I protect their feelings?" pressure out entirely: they have no stake in prettifying something that already happened.</p>
+<ul>
+<li><strong>Psychology · social desirability bias (fairly solid, methodological consensus)</strong>: A robust finding in survey methodology — when asked about attitudes or intentions, people lean toward the "more socially approved / pleasing" answer rather than the true one (social desirability bias). See the review by Nederhof (1985) and the classic work of Edwards (1957). Decades of questionnaire research keep replicating this, not a one-off study.</li>
+<li><strong>Direct consequence · the say-do gap</strong>: Famous market-research faceplants (e.g. the classic New Coke taste tests that scored great yet flopped at launch) show it repeatedly: the preference people state and the behavior they pay for often don't match. This is industry-experience evidence; the direction is clear.</li>
+<li><strong>Foundational book</strong>: Rob Fitzpatrick, The Mom Test (2013) — turns "never let them evaluate your idea" into an operational questioning discipline. It's a practitioner methodology (not a controlled experiment), but it shares a root with the bias above.</li>
+</ul>
+<p class="caveat">Boundary: this isn't that people love to lie — it's that "being asked your opinion to your face" naturally invites nice answers. So the problem isn't the person, it's your phrasing. Switch to asking about the past and the specific, and the same person gives you the truth.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Check yourself before you open your mouth</div>
+<ul class="checklist">
+<li>Is this question about <strong>whether my idea is good</strong>, or <strong>how they live their life</strong>?</li>
+<li>Am I "spoiling" the answer I want to hear inside the question, waiting for them to agree?</li>
+<li>If they can only say "good" or "nice," it's a wasted question — can I swap it for "how did you do it last time…"?</li>
+<li>Across the whole conversation, can I get the number of times I mention my own solution down to nearly zero?</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Can't resist pitching first.</strong> Two lines of small talk and you dump the solution — from that moment on, every bit of feedback is contaminated by your idea and becomes encouragement.</li>
+<li><strong>Treating compliments as validation.</strong> "Great idea!" "I totally support you!" — the words that make you giddy are exactly the ones to distrust (Principle 03 handles this).</li>
+<li><strong>Only talking to people who'll flatter you.</strong> Picking family and friends, whose motive to save your face is strongest, gets you the fakest data. Go find actual strangers who have the problem.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Rob Fitzpatrick, The Mom Test (2013)</strong> — origin of the "don't ask if your idea is good" discipline.<br/><strong>Nederhof (1985) / Edwards (1957)</strong> — reviews and classic work on social desirability bias.</div>
+</div>
+<div class="section">
+<div class="section-label">Key phrases</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"<em>How do you currently handle that?</em>" — the best line for pulling the topic back to their status quo.</p>
+<p>"<em>Talk me through the last time that happened.</em>" — get them to replay one specific past instance.</p>
+<p>Never ask "would you use it?" — ask "<em>what do you do today?</em>"</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card" data-tts="9d3a72f0c845b1e6">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>Ask about the specific past, not opinions about the future
+<span class="en">The past is fact; the future is a guess</span></h2>
+<span class="tag">past = fact</span><span class="tag">future = guess</span><span class="tag">intention–behavior gap</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">"Would you use it later?" "Would you pay for it?" — these all ask someone to <strong>predict themselves</strong>, and people predict their own future behavior badly, always optimistically. Ask instead: "When was the <strong>last time</strong> you hit this? What exactly did you do? How much money / time did it cost you?" Things that actually happened can't be invented.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Opinions are worthless. … Anything involving the future is an over-optimistic lie."</span>
+<span class="source">— Rob Fitzpatrick, The Mom Test</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Intention ≠ behavior: there's a gap between them</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar2" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#5a6b7d" font-family="Georgia" font-size="12" text-anchor="middle" x="350" y="24">Shifting someone's INTENTION is easy; shifting real BEHAVIOR is much harder</text>
+<rect fill="#e6f0ea" height="42" rx="6" stroke="#1f7a5c" stroke-width="1.5" width="300" x="60" y="52"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="210" y="72">Intention</text>
+<text fill="#3d5548" font-family="Georgia" font-size="10.5" text-anchor="middle" x="210" y="88">"I will" / "I'd pay" — big shift (d≈0.66)</text>
+<rect fill="#f6e3da" height="42" rx="6" stroke="#c0603a" stroke-width="1.5" width="176" x="60" y="140"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="148" y="160">Behavior</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="148" y="176">actually doing it — far smaller (d≈0.36)</text>
+<line marker-end="url(#ar2)" stroke="#c0603a" stroke-width="2.5" x1="210" x2="210" y1="96" y2="136"></line>
+<rect fill="none" height="42" rx="6" stroke="#b8916a" stroke-dasharray="5,4" stroke-width="1.6" width="130" x="248" y="140"></rect>
+<text fill="#9a6a3a" font-family="Georgia" font-size="11" font-style="italic" text-anchor="middle" x="313" y="166">← this missing gap =</text>
+<text fill="#9a6a3a" font-family="Georgia" font-size="11" font-style="italic" text-anchor="middle" x="313" y="181">"said it, didn't do it"</text>
+<rect fill="#eef4f0" height="90" rx="6" stroke="#1f7a5c" stroke-width="1.5" width="270" x="410" y="66"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="545" y="90">So: ask what already happened</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="545" y="112">"When was the last time?"</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="545" y="130">"What did it cost you?"</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="545" y="150">Past = fact, skips the gap</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: still that budgeting app. You want to know: will anyone actually pay for this?</div>
+<div class="dialog bad">
+<div class="speaker">✗ Ask about future intent (collect an over-optimistic guess)</div>
+<p>"If there were an app that handled all this for you automatically, would you pay $5 a month for it?"<br/>— Them: "Umm… yeah, probably, that price is fine." That "probably" is the self they imagine right now, not the self who's about to get charged at month-end. Take it as "payment validated" and you've mistaken a prediction for a fact.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Ask about real past spending (get facts)</div>
+<p>"Have you <strong>ever paid</strong> for anything to manage your money — an app subscription, a budgeting book, someone to help?"<br/>"When was the last time you spent time or money on it? How much? Are you still using it?"<br/>— If they say "I bought a subscription to XX, $98 a year, still using it," that's a real, cash-backed payment signal. If they hem and haw, "no… never spent money on it," then no matter how much they say they want it, your "$5-a-month" business deserves a big question mark.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: the intention–behavior gap.</strong> Between "I intend to do X" and "I actually do X" sits a gap: intentions are easily inflated by a moment's enthusiasm, wanting to please you, and rosy images of the future — but when it's time to pay a real cost (spend money, change a habit), behavior lags far behind intention. So "would you, in future?" measures their intention right now (inflated), not their behavior later. Ask about the past, and what you see directly is the behavior itself.</p>
+<ul>
+<li><strong>Psychology · intention predicts little behavior (hard evidence)</strong>: Webb &amp; Sheeran (2006, <em>Psychological Bulletin</em>) meta-analyzed 47 experiments — a <strong>large lift in intention (d≈0.66, medium-to-large)</strong> produced only a <strong>d≈0.36 (small-to-medium)</strong> change in actual behavior. Intention jumps a lot; behavior moves a little. This "intention ≠ behavior" result is a replicable meta-analytic finding. (cross-ref psychology: intention and behavior)</li>
+<li><strong>Mechanism add-on · we predict ourselves optimistically</strong>: people broadly overestimate "what I'll do in future" (optimism / planning-fallacy family), which systematically inflates future-intent answers. Direction is reliable; magnitude varies by situation.</li>
+<li><strong>Where the method lands</strong>: Fitzpatrick compresses it into one executable line — ask about specifics in the past, not opinions about the future; and dig for the concrete time, action, and cost of "the last time."</li>
+</ul>
+<p class="caveat">Honest note: Webb &amp; Sheeran is a meta-analysis of health / behavior-change domains; extending "intention inflated, behavior lags" to purchase decisions is a reasonable mechanism transfer, not proof that anyone ran the same meta-analysis on sales. The direction is hard; don't treat it as "experiments proved asking about the past raises close rates."</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Turn "future" questions into "past" questions</div>
+<div class="template">
+<span class="label">The same thing, asked two ways</span>
+<p>· ✗ "Would you use it?" → ✓ "<strong>What do you use today</strong> to muddle through this?"</p>
+<p>· ✗ "Would you pay for it?" → ✓ "<strong>Have you paid to solve it before</strong>? On what, how much?"</p>
+<p>· ✗ "Would this feature be useful?" → ✓ "<strong>When did not having it last bite you</strong>?"</p>
+<p>· ✗ "Would you use it often later?" → ✓ "<strong>How much time did this cost you last month</strong>?"</p>
+<p>Rule of thumb: swap "would / willing / later" for "<strong>last time / how much exactly / how you do it now</strong>."</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Settling for "probably."</strong> Any future-tense answer with "probably / maybe / I'd likely" gets a mental "unverified" label — don't treat it as a conclusion.</li>
+<li><strong>Asking the past but stopping at generics.</strong> "I usually watch my spending" isn't the past — it's a generality. Nail it down to "the most recent specific time, what happened."</li>
+<li><strong>Leading with hypotheticals.</strong> "If there were a perfect tool you'd totally use it, right?" — you're feeding them the answer, and what comes back is still bad data.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Webb &amp; Sheeran (2006), "Does changing behavioral intentions engender behavior change?" (Psychological Bulletin)</strong> — meta-analysis of the intention–behavior gap (d≈0.66 → 0.36).<br/><strong>Rob Fitzpatrick, The Mom Test</strong> — "specifics in the past, not opinions about the future."</div>
+</div>
+<div class="section">
+<div class="section-label">Key phrases</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"<em>When was the last time</em> you ran into this?" — pin the topic to a concrete past.</p>
+<p>"<em>What did that cost you</em> — in time or money?" — measure real pain by its cost.</p>
+<p>Ask about the past, not the future.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card" data-tts="41b7e0d9a6c8253f">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>Spot the three kinds of bad data: compliments, fluff, hypotheticals
+<span class="en">Don't bank praise — dig down to one specific past instance</span></h2>
+<span class="tag">don't trust compliments</span><span class="tag">fluff ≠ specifics</span><span class="tag">dig deeper</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Sitting on a pile of "positive feedback"? Don't celebrate yet — The Mom Test sorts bad data into three kinds: <strong>compliments</strong> ("great idea!"), <strong>fluff</strong> ("I usually…" / "I generally…," with no specific instance), and <strong>hypotheticals</strong> ("I would…" / "if it existed I'd…"). When you hear these, they're not evidence — they're a cue to immediately dig down to "what exactly happened one specific time."</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Compliments are the fool's gold of customer conversations."</span>
+<span class="source">— Rob Fitzpatrick, The Mom Test</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Three kinds of bad data · how to spot and crack them</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar3" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<rect fill="#f6e3da" height="66" rx="8" stroke="#c0603a" stroke-width="1.5" width="200" x="20" y="20"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="120" y="42">① Compliments</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="61">"Great idea!"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="78">"I'll definitely support you"</text>
+<rect fill="#f6e3da" height="66" rx="8" stroke="#c0603a" stroke-width="1.5" width="200" x="20" y="98"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="120" y="120">② Fluff</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="139">"I usually care a lot about…"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="156">"I generally…"</text>
+<rect fill="#f6e3da" height="66" rx="8" stroke="#c0603a" stroke-width="1.5" width="200" x="20" y="176"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="120" y="198">③ Hypotheticals</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="217">"I would…" / "if there were…"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="234">"I might just…"</text>
+<rect fill="#e2efdc" height="150" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="300" x="380" y="50"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="13" font-weight="700" text-anchor="middle" x="530" y="78">Dig to "one specific time"</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="530" y="104">"Which specific last time?"</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="530" y="126">"What actually happened then?"</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="530" y="148">"What did it cost in money/time?"</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="530" y="170">"How did you solve it after?"</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-style="italic" text-anchor="middle" x="530" y="196">Can't dig out specifics → need is likely fake</text>
+<line marker-end="url(#ar3)" stroke="#1f7a5c" stroke-width="2" x1="222" x2="376" y1="53" y2="110"></line>
+<line marker-end="url(#ar3)" stroke="#1f7a5c" stroke-width="2" x1="222" x2="376" y1="131" y2="125"></line>
+<line marker-end="url(#ar3)" stroke="#1f7a5c" stroke-width="2" x1="222" x2="376" y1="209" y2="140"></line>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: mid-conversation, the customer says this — all three kinds of bad data in one breath.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Take it as "validation succeeded"</div>
+<p>Customer: "This idea's really nice (compliment), we've always cared a lot about data security (fluff), and if a tool like this ever existed we'd definitely consider getting one (hypothetical)."<br/>— You walk away pumped and report "customer is very interested, cares about security, willing to buy." Pure illusion: not one specific fact in those three sentences.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Treat bad data as a cue and dig</div>
+<p>"Thanks (accept the compliment, don't bank it). You said you've always cared about data security — <strong>when did you last actually invest in that</strong>? What did you buy, how much did it cost?"<br/>"In the past year, have you <strong>had an incident, or been dinged by an audit</strong>, over data security? Which time exactly, and how did you fix it after?"<br/>— If they can say "we paid out after a leak last year, then rolled out an XX system for a few hundred grand," the need is real. If they can't dig out anything specific and just repeat "we really care," that "caring" is mostly lip service.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: compliments are "cheap and intoxicating" for both sides, so they crowd out real information.</strong> For the speaker, a kind word costs almost nothing and earns goodwill; for the listener (you), being praised is a social reward — one hit and you tend to stop probing and cherry-pick signals that confirm your idea. Both sides collude, and the bad data lands neatly in your notebook. The only cure: don't bank compliments / fluff / hypotheticals as conclusions — dig every one down to "one specific time."</p>
+<ul>
+<li><strong>Neuroscience · "reputation / approval" runs on the same reward circuit as money (hard evidence)</strong>: Izuma, Saito &amp; Sadato (2008, <em>Neuron</em>) used fMRI to show that receiving a <strong>good social reputation (approval)</strong> activates the <strong>striatum (the reward circuitry around the nucleus accumbens)</strong> — heavily overlapping with the region that lights up for a monetary reward. That's why compliments are intoxicating, and why people are happy to give them: it's a cheap social reward. (cross-ref neuroscience: striatum / reward circuit; psychology: social reward)</li>
+<li><strong>Psychology · confirmation bias makes you believe only the nice parts</strong>: people have a systematic tendency to seek and over-trust information that supports their existing view (confirmation bias; review by Nickerson, 1998). Loving your own idea makes you especially prone to reading compliments as "validation" and dismissing cold water as "they just don't get it."</li>
+<li><strong>Where the method lands</strong>: Fitzpatrick's "bad data" trichotomy (compliments / fluff / hypotheticals) is a field-tested checklist — an experience framework, but each category maps onto the mechanisms above.</li>
+</ul>
+<p class="caveat">Honest note: Izuma et al. established the neural fact that "social approval activates the reward circuit"; using it to explain "why compliments are seductive" is a reasonable mechanism transfer. The "three kinds of bad data" itself is a practitioner framework, not a classification proven by any single controlled experiment.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Hear bad data? Dig like this</div>
+<div class="template">
+<span class="label">Cracking the three kinds</span>
+<p>· Hear a <strong>compliment</strong> → "Thanks — but what I really want to understand: how did you handle it the <strong>last time</strong> you actually hit this?" (don't take the praise; turn to specifics)</p>
+<p>· Hear <strong>fluff</strong> ("I usually…") → "Can you walk me through the <strong>most recent specific time</strong>? What actually happened?"</p>
+<p>· Hear a <strong>hypothetical</strong> ("I would…") → "Forget later — how do you deal with it <strong>right now</strong>? Have you spent money / time on it?"</p>
+<p>· Universal probe: <strong>"Be specific — when was the last time?" + "And then what?"</strong> Can't dig out specifics → the need is in doubt.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Praise makes you float, then quit.</strong> The worst thing about a compliment isn't that it deceives you — it's that it makes you <strong>stop probing early</strong>. You think you've validated; you'd barely started.</li>
+<li><strong>Using bad data to report / decide.</strong> Writing "customer is very interested" into a business plan as grounds to build — this is how countless products die at the starting line.</li>
+<li><strong>Can't dig, so you comfort yourself.</strong> They give zero specific facts, yet you soothe yourself with "maybe they just don't remember." Usually, if you can't dig out specifics, the need isn't real.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Izuma, Saito &amp; Sadato (2008), "Processing of Social and Monetary Rewards in the Human Striatum" (Neuron)</strong> — social approval and money share the striatal reward circuit.<br/><strong>Nickerson (1998), "Confirmation Bias" (Review of General Psychology)</strong>.<br/><strong>Rob Fitzpatrick, The Mom Test</strong> — the bad-data trichotomy.</div>
+</div>
+<div class="section">
+<div class="section-label">Key phrases</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"<em>Thanks — but tell me about the last time it actually happened.</em>" — deflect the compliment, turn to specifics.</p>
+<p>"<em>Can you give me a specific example?</em>" — the smoothest line for cracking fluff.</p>
+<p>Compliments are <em>fool's gold</em>. — shiny, but worthless.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card" data-tts="7e05c3a2f9186b4d">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>Only commitment that costs them is a real signal
+<span class="en">Enthusiasm is noise; spending something they value is signal</span></h2>
+<span class="tag">time / reputation / money</span><span class="tag">advance</span><span class="tag">revealed preference</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Enthusiasm alone ("love it, let's keep in touch!") isn't signal, it's noise. A real signal is when they hand over something they <strong>value</strong>: time (a dedicated next meeting / a trial), reputation (an intro to their boss / colleague), money (a deposit / a letter of intent). Every contact should advance one notch toward a firmer next commitment; collect only compliments and no commitment, and you're standing still.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"A meeting either advances to a real commitment, or it's a failure."</span>
+<span class="source">— Rob Fitzpatrick, The Mom Test (commitment &amp; advancement)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Three "currencies they value": paying up is what's real</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar4" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<rect fill="#f3ece0" height="40" rx="6" stroke="#b8916a" stroke-width="1.5" width="180" x="24" y="150"></rect>
+<text fill="#8a6a3a" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="114" y="168">✗ Just enthusiasm</text>
+<text fill="#9a7a4a" font-family="Georgia" font-size="10" text-anchor="middle" x="114" y="184">"Love it! Keep in touch"</text>
+<rect fill="#eef4f0" height="40" rx="6" stroke="#1f7a5c" stroke-width="1.5" width="180" x="24" y="98"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="114" y="116">Time</text>
+<text fill="#3d5548" font-family="Georgia" font-size="10" text-anchor="middle" x="114" y="132">"a 1-hr trial next Wed"</text>
+<rect fill="#e6f0ea" height="40" rx="6" stroke="#1f7a5c" stroke-width="1.5" width="180" x="24" y="52"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="114" y="70">Reputation</text>
+<text fill="#3d5548" font-family="Georgia" font-size="10" text-anchor="middle" x="114" y="86">"intro to my boss/team"</text>
+<rect fill="#dfeae2" height="40" rx="6" stroke="#123f30" stroke-width="1.8" width="180" x="24" y="6"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="114" y="24">Money</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10" text-anchor="middle" x="114" y="40">"deposit / LOI / order"</text>
+<line marker-end="url(#ar4)" stroke="#1f7a5c" stroke-width="2.5" x1="250" x2="250" y1="170" y2="26"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="11" text-anchor="middle" transform="rotate(-90 268 100)" x="268" y="100">commitment gets firmer →</text>
+<rect fill="#f7faf6" height="150" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="360" x="308" y="30"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="13" font-weight="700" text-anchor="middle" x="488" y="58">Test: will they spend what they value?</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="488" y="86">Nice words → costs them nothing → noise</text>
+<text fill="#2c382f" font-family="Georgia" font-size="11" text-anchor="middle" x="488" y="110">Gives time/rep/money → paid a cost → signal</text>
+<text fill="#123f30" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="488" y="140">Each contact, advance one notch up</text>
+<text fill="#5a7365" font-family="Georgia" font-size="10.5" font-style="italic" text-anchor="middle" x="488" y="162">Can't advance = the deal is politely declining</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: a warm, lively meeting, nearly over. The other side looks excited.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Settle for enthusiasm (mistake a dead deal for a live one)</div>
+<p>Them: "So interesting, what you've built is really great, let us chat internally, keep in touch!"<br/>You: "Sounds good, I'll wait to hear from you!"<br/>— You leave with the illusion "the customer is very interested." But they paid nothing: no time booked, no intro made, no money down. This kind of "very interested" is usually a polite goodbye, followed by read-but-no-reply.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Ask for a commitment that costs them (verify it)</div>
+<p>"Great. Then let's not stop at 'chat' — <strong>how about this: next Wednesday I bring a version tailored to your situation and spend 30 minutes with you and whoever owns the budget?</strong>" (asking for <strong>time + reputation</strong>: only agreeing to book it and pull in the decision-maker is real)<br/>If they cheerfully book it and even volunteer who to bring in — real signal. If they start tap-dancing, "bit busy lately, let me look on my own first" — this deal is politely declining you, and you find out early and cut your losses.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: revealed preference + commitment &amp; consistency.</strong> (1) What a person truly values shows in where they put scarce resources (money, time, reputation), not in what they say — talk is free; handing over something valued exposes real priorities. (2) And once they've paid a little (booked a meeting, made an intro), the "be consistent with my actions" pressure makes them more likely to keep investing. So "ask for a small commitment" is both <strong>verification</strong> and <strong>advancement</strong>.</p>
+<ul>
+<li><strong>Economics · revealed preference (foundational theory)</strong>: revealed preference, introduced by Samuelson (1938) — a person's true preferences are shown by their actual choices (where they spend resources), not by their verbal statements. It's a bedrock concept of modern microeconomics, and it fits perfectly here: watch behavior, don't just hear the talk.</li>
+<li><strong>Psychology · commitment and consistency (fairly solid)</strong>: the "commitment and consistency" principle catalogued in Cialdini's Influence, and its source such as the Freedman &amp; Fraser (1966) "foot-in-the-door" experiments — people who first agree to a small request agree to a bigger one at a notably higher rate. This supports "advance via a small commitment." (cross-ref psychology: commitment and consistency)</li>
+<li><strong>Where the method lands</strong>: Fitzpatrick redefines a meeting's success as "did I get a firmer commitment (an advance)?", not "was it a pleasant chat." A field framework.</li>
+</ul>
+<p class="caveat">Boundary: don't turn "ask for commitment" into hard closing. The commitment you request must match the current stage — early on, a small one like "time / intro" is plenty; demanding a signed order out of the gate scares off real customers. It's "verify + gently advance," not a pressure tool.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Close by asking for a real commitment</div>
+<div class="template">
+<span class="label">By cost, light to heavy</span>
+<p>· <strong>Time</strong>: <span>"Come do a 30-minute trial next Wednesday?"</span> — only counts if it goes on the calendar.</p>
+<p>· <strong>Reputation</strong>: <span>"Could you introduce me to the person who owns this / your boss?"</span> — staking their own credibility is a strong signal.</p>
+<p>· <strong>Money</strong>: <span>"Want to put down a small deposit to lock a slot?"</span> — real cash is the hardest signal.</p>
+<p>· At every close, ask yourself: <strong>"Did they take one step forward that cost them something?"</strong> If not, you're standing still.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Mistaking enthusiasm for commitment.</strong> "I'm very interested" costs them nothing — don't write it into the pipeline as a closing signal.</li>
+<li><strong>Meetings with no close.</strong> A pleasant chat and everyone disperses, no next step requested — you restart from zero each time and the deal never advances.</li>
+<li><strong>Asking for a commitment that doesn't fit the stage.</strong> Pushing for a signed contract on the first meeting scares off real customers you could have nurtured. Advance in small steps; don't leap to the top.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Samuelson (1938)</strong> — revealed preference theory (watch behavior, not statements).<br/><strong>Freedman &amp; Fraser (1966)</strong> — foot-in-the-door (small commitment → big commitment).<br/><strong>Rob Fitzpatrick, The Mom Test</strong> — judging a meeting by "commitment &amp; advancement."</div>
+</div>
+<div class="section">
+<div class="section-label">Key phrases</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"<em>What are the next steps?</em>" — a must-ask close that forces out the real next move.</p>
+<p>"Would you be open to <em>introducing me to</em> the person who owns this?" — ask for a "reputation" commitment.</p>
+<p>Enthusiasm isn't commitment. — only paying a cost counts.</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3 data-tts="d8a4021c76b9e5f3">Your Day 8 Action</h3>
+<p>Pick something you're mulling over — a product idea, a service to sell, even a job-hunt or partnership direction. This week, find <strong>3 real target people</strong> (not family or friends) and talk for 15 minutes each.</p>
+<div class="action">
+<strong>Don't describe your solution once</strong> the whole time — only ask about three things in the past: <strong>(1)</strong> When was the last time you hit X? <strong>(2)</strong> What exactly did you do about it? <strong>(3)</strong> How much money / time have you spent on it?<br/><br/>Afterward, sort their words into two piles line by line: <strong>compliment / fluff / hypothetical → cross it all out</strong>; <strong>things that actually happened / real spending → keep it</strong>. Count how many you kept. Finally, try asking one of them for a <strong>small commitment that costs something</strong> (book a next meeting, ask for an intro, or a small deposit) and see if they pay up.<br/><br/>Boundary: this is for <strong>validating real need</strong>, not for "proving I was right." If all three can't dig out a single specific fact and no one will pay any cost — that's not you asking badly, that's the need telling you "think again." Being able to hear that is what The Mom Test is really for.
+</div>
+</div>
+<div class="qa" data-tts="3f9b6142e0d7a8c5">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. If I never describe my solution, how do I actually sell? Asking without pitching feels like wasted talk.</summary>
+<div class="answer">Split <strong>discovery</strong> and <strong>pitching</strong> into two things and the tension disappears. The Mom Test governs the <strong>discovery stage</strong> — your job right now isn't to close, it's to figure out "is the need real, how do they cope today, does it hurt enough that they'll pay?" That information is itself your sharpest ammunition for later: when you do present, you can aim precisely at the pain and the spend they <strong>said out loud</strong> — far more persuasive than "I'm guessing you might need this." So you're not not-selling; you're <strong>diagnose first, prescribe second</strong> — a good doctor doesn't hand you pills the moment you walk in. As for "wasted talk": if 15 minutes of asking reveals the need is fake, that's the opposite of wasted — you just saved six months of building the wrong thing.</div>
+</details>
+<details>
+<summary>2. What if it's a brand-new category and the customer has never faced this problem or had any solution — how do I ask about the past?</summary>
+<div class="answer">A brand-new category is The Mom Test's hardest case, because there's no directly matching past behavior to ask about. Two moves: <strong>(1) Ask about the "workaround," not your product</strong> — however new the need, people always have some makeshift way to cope now (a spreadsheet, doing it by hand, just enduring it, or not doing it at all). Dig into how painful, how laborious, how error-prone that workaround is; if the pain is real, your opening is real; if you find people "endure it and it's fine," the need may be less urgent than you thought. <strong>(2) Upgrade "asking" into a "small real test"</strong> — for a brand-new category you can't ask your way to truth, so build a minimal usable thing and let someone actually spend money / time on it once, substituting revealed preference for verbal intent. Remember: the more "customers can't picture it," the less you trust their words about the future, and the more you rely on real behavior to verify.</div>
+</details>
+<details>
+<summary>3. Is The Mom Test only useful for startup research and B2B? Can I use it in everyday life?</summary>
+<div class="answer">You can, and its reach is huge, because the core is "<strong>don't trust statements, trust behavior; don't ask the future, ask the past</strong>" — which holds anywhere you need to judge someone's true intent. <strong>Interviews</strong>: instead of "are you good under pressure?" (everyone says yes), ask "tell me about the last time a project was falling apart and exactly what you did" — a specific past behavior. <strong>Partnerships</strong>: don't listen to "I'll give it everything," watch whether they'll pay a little cost first (do a small piece, invest some time). <strong>Judging if someone's reliable</strong>: look at what they've done, not what they've promised. Even <strong>your own decisions</strong>: to know whether you truly want to do something, don't ask "will I keep at it later" — look at "how much time did I actually spend on it this past month." Talk is cheap, behavior is honest — that never goes out of date.</div>
+</details>
+<details>
+<summary>4. If I only ask the past and only trust behavior, do I completely ignore the customer's vision and the new features they want?</summary>
+<div class="answer">Listen — but <strong>down-weight it, and be clear which kind of information it is</strong>. Fitzpatrick's move isn't "toss all future talk," it's labeling two classes differently: <strong>facts</strong> (what actually happened, what they actually paid) — high credibility, use for decisions; <strong>opinions / vision / wanted features</strong> — low credibility, use to understand direction and leads, but never as proof "they'll buy." When a customer says they want a feature, don't rush to build it — first probe "what specifically did not having it cost you last time?", using a past fact to <strong>test</strong> the weight of that wish. Vision tells you "where to look"; facts tell you "whether to act." Use both, but always let paid behavior outweigh cost-free statements.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 08</footer>
+</div>
+</body>
+</html>
