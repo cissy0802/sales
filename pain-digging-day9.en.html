@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 9: Digging Out Pain &amp; Amplifying It</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:1px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:580px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 09 · Phase B</div>
+<h1>Digging Out Pain &amp; Amplifying It: What They Ask For Usually Isn't the Real Pain</h1>
+<div class="meta"><span>Topic: Digging out pain</span><span>·</span><span>4 principles</span></div>
+<div class="subtitle">A customer says "give me a cheaper one," so you cut the price — and they still don't buy. Because what they want was never "cheap"; it's the unspoken pain sitting underneath "cheap." People who can dig aren't selling a product — they're selling "you finally put into words where it hurts."</div>
+</header>
+<div class="intro">
+<strong>Last time was "don't get fooled by polite lies." This time: even when they're telling the truth, what they hand you is often the wrong layer.</strong> What a person says out loud is almost always a self-diagnosed "want" — faster, cheaper, one more feature. But a "want" is a prescription they guessed at, and it may not match the actual disease. Fill it as written and you become an interchangeable supplier — cheapest wins. Dig beneath the prescription to "why does it hurt?" and you get the initiative. Four things this time: digging from stated need down to latent pain, dragging your strongest competitor — "do nothing" — into the open, turning a vague ache into a number that actually bites, and drawing the line: revealing real pain is fine; manufacturing fake fear backfires.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>Dig past what they "want" to why it "hurts"
+<span class="en">Stop at the request and you're just filling a prescription</span></h2>
+<span class="tag">stated need ≠ real pain</span><span class="tag">dig three layers down</span><span class="tag">don't fill it as written</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">What a customer first hands you is a "want" (make it cheaper / add this feature) — a prescription they've already diagnosed for themselves, and it may be wrong. Stop there and you're a supplier filling an order; cheapest wins. Chase "why do you want it, and what happens if it's not fixed?" — dig to the unspoken pain, and you go from supplier to the one who understands their illness.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Ask 'why' five times about every matter."</span>
+<span class="source">— Taiichi Ohno (Toyota Production System · the 5 Whys)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Need is an iceberg: what surfaces is just the tip</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar1" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<line stroke="#7aa0c0" stroke-dasharray="6,4" stroke-width="1.5" x1="20" x2="680" y1="70" y2="70"></line>
+<text fill="#7089a0" font-family="Georgia" font-size="10.5" text-anchor="start" x="24" y="63">waterline · what they volunteer</text>
+<polygon fill="#dfeae2" points="350,22 300,68 400,68" stroke="#1f7a5c" stroke-width="1.5"></polygon>
+<text fill="#123f30" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="56">"want it cheaper"</text>
+<rect fill="#eef1f5" height="150" rx="8" stroke="#3f5c7a" stroke-width="1.5" width="380" x="160" y="80"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="104">↓ why cheaper?</text>
+<text fill="#37493f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="128">"overran budget last quarter, got grilled by my boss"</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="154">↓ what if it overruns again?</text>
+<text fill="#37493f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="178">"another overrun and my review is toast"</text>
+<text fill="#a8461f" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="350" y="210">real pain = fear of overrunning &amp; losing the review</text>
+<text fill="#5a7365" font-family="Georgia" font-size="10" font-style="italic" text-anchor="middle" x="350" y="230">the pitch isn't "cheap" — it's "keep your budget steady, no more grilling"</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: you sell enterprise software, and the customer opens with "can you go cheaper? our budget's tight."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Fill the "want" as written (fall into a price war)</div>
+<p>"Budget's tight, got it — let me quote you the entry tier, about 30% less."<br/>— You dive straight into haggling, and now the deal has exactly one dimension: price. Whoever undercuts you a bit wins — you've turned yourself into an interchangeable quote sheet.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Dig why, and what happens if unfixed (take the initiative)</div>
+<p>"Tight budget, I get it. Quick question — is the <strong>whole line getting cut</strong>, or did you <strong>overrun once before and now it's under scrutiny</strong>?"<br/>"Last time it overran, how did it play out afterward?"<br/>— Two layers down, the truth surfaces: this line overran last year, the owner got called out in front of the boss, and this year his real fear isn't "a bit expensive" — it's "another blowup and my year-end review is gone." <strong>What he wants was never cheap; it's "don't make me carry that blame again."</strong> Match your offer to that, and price immediately drops to second place.</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> What a customer first says ("make it cheaper") is a self-diagnosed prescription, not the disease. Stop there and you're an interchangeable price quote. Ask "why do you want that, and what happens if it's not fixed?" — dig to the unspoken pain, and you go from vendor to the one who understands their problem.</p>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: people state a "solution," not a "need."</strong> In their head they've already translated the pain into a fix they assume works ("cheaper," "add a feature") before telling you — with an unreliable self-diagnosis in between. Take that solution and you inherit all their diagnostic errors. Back up and ask "where does it hurt, what happens untreated?" and you reach the real illness — and can offer something better than they'd pictured.</p>
+<ul>
+<li><strong>Method · 5 Whys root-cause analysis (engineering practice, widely used)</strong>: the Toyota Production System (Taiichi Ohno) move — ask "why" five times about a problem, peeling to the root cause rather than stopping at the surface symptom. It's a diagnostic discipline reused for decades in manufacturing / lean; a field method, not a controlled experiment, but "the surface answer usually isn't the real cause" holds up well.</li>
+<li><strong>Sales landing · same root as SPIN's problem questions</strong>: in SPIN Selling, Rackham distinguishes explicit needs (the "I want" they state) from implicit needs (unspoken dissatisfaction) — the pro's job is to draw out the implicit pain and raise it. (See the SPIN questioning method in this site's "how to ask is how to sell" issue.)</li>
+<li><strong>Need layers · Jobs-to-be-Done</strong>: under the feature a person "wants" is a job to be done and the emotional / situational pain it carries. Don't stop at the feature layer. (This site's Jobs-to-be-Done issue.)</li>
+</ul>
+<p class="caveat">Boundary: digging isn't interrogation. A machine-gun of "why? why?" makes people defensive. The posture is curiosity — help them think it through, not grill them; if one line stalls, change angle, don't push.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">From "want" down to "real pain" (script)</div>
+<div class="template">
+<span class="label">Three questions that drill down</span>
+<p>· "You said you want X — <strong>what's it in service of</strong>?" — translate solution back to need.</p>
+<p>· "If this <strong>never gets fixed</strong>, what happens next?" — force out the consequence.</p>
+<p>· "Has it <strong>ever bitten you</strong> before? How did that play out?" — anchor real pain to a real past event.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Treating the "want" as the need and just serving it.</strong> They want cheap so you cut price, they want a feature so you add it — you serve the surface prescription, never touch the real pain, and the deal isn't solid.</li>
+<li><strong>Digging turns into interrogation.</strong> Five "why"s in a row and they clam up. Digging runs on empathetic curiosity, not a chain of demands.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Taiichi Ohno, Toyota Production System</strong> — 5 Whys root-cause analysis.<br/><strong>Neil Rackham, SPIN Selling</strong> — explicit vs implicit needs.</div>
+</div>
+<div class="section">
+<div class="section-label">Key phrases</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"<em>What are you really trying to solve?</em>" — turn the solution back into the real need.</p>
+<p>"<em>What happens if this doesn't get fixed?</em>" — the line that forces out the consequence.</p>
+<p>Sell to the pain, not to the request.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>Your real competitor is the status quo
+<span class="en">Most deals are lost to "do nothing," not to a rival</span></h2>
+<span class="tag">cost of inaction</span><span class="tag">loss aversion</span><span class="tag">status-quo bias</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Most deals aren't lost to a competitor — they're lost to "don't change." Change carries a certain cost (money, effort, risk); the cost of the status quo is diffuse and ignored — so people default to sitting still. Your job: drag the cost of inaction out of the background and onto the stage, make it concrete, felt, and bleeding right now.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Losses loom larger than gains."</span>
+<span class="source">— Kahneman &amp; Tversky (prospect theory · loss aversion)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Same fact: a gain frame doesn't move them, a loss frame does</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar2" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<rect fill="#f3ece0" height="70" rx="8" stroke="#b8916a" stroke-width="1.5" width="270" x="24" y="30"></rect>
+<text fill="#8a6a3a" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="159" y="55">Gain frame (weak)</text>
+<text fill="#9a7a4a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="159" y="76">"use it and gain / +20% efficiency"</text>
+<text fill="#9a7a4a" font-family="Georgia" font-size="9.5" text-anchor="middle" x="159" y="93">→ a "nice-to-have," easy to defer</text>
+<rect fill="#e6f0ea" height="70" rx="8" stroke="#1f7a5c" stroke-width="1.8" width="270" x="24" y="120"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="159" y="145">Loss frame (strong)</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="159" y="166">"don't change, lose $X every year"</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="159" y="183">→ "stop the bleeding," act now</text>
+<line marker-end="url(#ar2)" stroke="#1f7a5c" stroke-width="2" x1="300" x2="360" y1="120" y2="95"></line>
+<rect fill="#f7faf6" height="120" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="300" x="368" y="45"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="518" y="72">Same loss vs gain</text>
+<text fill="#2c382f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="518" y="98">a loss weighs ≈ 2× an equal gain</text>
+<text fill="#2c382f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="518" y="120">(λ≈2.25, prospect theory)</text>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="518" y="146">so: frame "not changing" as an active loss</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: you sell a tool that saves labor; the customer feels "we're fine as is, no rush."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Only pitch "how good it is" (gain frame, no traction)</div>
+<p>"With our tool, efficiency goes up 20% and the team's life gets easier!"<br/>— They nod: "Sounds good, we'll consider it." Because you painted a bonus they can live without — and against "do nothing," the hassle of change is certain and present while the benefit is future and fuzzy. Of course they don't move.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Put the cost of inaction on stage (loss frame)</div>
+<p>"Let me run the numbers first. Right now, <strong>how many people and hours a week</strong> does this eat? … Three people, 5 hours each, that's 15 hours a week — nearly <strong>two person-months</strong> of salary a year, just burned on this."<br/>"And last quarter, how many deals did you <strong>lose or complaints did you get</strong> because it's slow?"<br/>— You didn't praise the product once; you just laid out "the blood you keep losing by staying like this." The status quo went from "fine" to "burning cash every year," and now they sit up.</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Most deals aren't lost to a competitor — they're lost to "do nothing." Change has a certain, visible cost; staying put bleeds quietly and gets ignored. Your job is to drag the cost of inaction into the open and make it concrete — because a loss moves people about twice as hard as an equal gain.</p>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: loss aversion + status-quo bias.</strong> For an equal sum of money, the pain of "losing" is about twice the pleasure of "gaining"; and the cost of "change" is up-front, certain, and visible, while the cost of "not changing" is diffused into daily life as background. Both forces stack, and people default to staying put. The fix: make the hidden, backgrounded loss visible — replace "you could gain" with "you're losing."</p>
+<ul>
+<li><strong>Psychology · loss aversion (hard evidence)</strong>: Kahneman &amp; Tversky (1979, <em>Econometrica</em>), prospect theory; later Tversky &amp; Kahneman (1992) estimated a loss-aversion coefficient of <strong>λ≈2.25</strong> — an equal loss carries about 2.25× the psychological weight of a gain. A Nobel-level, heavily replicated finding.</li>
+<li><strong>Neuroscience · the brain reacts more to losses (hard evidence)</strong>: Tom, Fox, Trepel &amp; Poldrack (2007, <em>Science</em>), using fMRI, found that in the face of potential gains and losses, activity in reward regions like the <strong>striatum and ventromedial prefrontal cortex</strong> <strong>decreased more steeply for losses than it rose for equal gains</strong> — loss aversion has a neural signature. (cross-ref neuroscience: reward circuit; psychology: prospect theory)</li>
+<li><strong>Psychology · status-quo bias (fairly solid)</strong>: Samuelson &amp; Zeckhauser (1988) showed across experiments that people systematically favor the default / status-quo option, even when a switch is better. That's why "do nothing" is your strongest competitor. (This site's "the buyer's brain" issue covers loss aversion and status-quo bias.)</li>
+</ul>
+<p class="caveat">Boundary: a loss frame means making a <em>real</em> cost clear, not inventing a nonexistent loss to scare them — that's manipulation, see Principle 04 this issue. The numbers must hold up, computed in the customer's own terms.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Put the status-quo cost on the table (script)</div>
+<div class="template">
+<span class="label">Switch from gain frame to loss frame</span>
+<p>· ✗ "you'd gain X" → ✓ "<strong>don't change, and you're losing X every year</strong>."</p>
+<p>· "Right now, <strong>how many people / hours a week or month</strong> does this cost? What's that in money a year?"</p>
+<p>· "In the past six months, what's <strong>gone wrong or been paid out</strong> because it wasn't fixed?"</p>
+<p>Rule of thumb: don't praise the future upside — first tally the bill for "keeping on like this."</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Piling on benefits, never tallying the status-quo cost.</strong> Pitch it as a "nice-to-have" and you lose forever to "no rush" — no amount of upside beats the hassle of change.</li>
+<li><strong>Over-cranking the loss frame into a scare.</strong> Forcing a nonexistent or exaggerated cost onto someone may push them short-term, but trust and reputation collapse long-term. Amplify real pain; don't fabricate it.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Kahneman &amp; Tversky (1979) / Tversky &amp; Kahneman (1992)</strong> — prospect theory and loss aversion (λ≈2.25).<br/><strong>Tom, Fox, Trepel &amp; Poldrack (2007, Science)</strong> — the neural basis of loss aversion.<br/><strong>Samuelson &amp; Zeckhauser (1988)</strong> — status-quo bias.</div>
+</div>
+<div class="section">
+<div class="section-label">Key phrases</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"What's the <em>cost of doing nothing</em> here?" — ask the cost of inaction straight out.</p>
+<p>"You're not <em>missing out</em> — you're <em>bleeding</em> money every month." — upgrade from "missing out" to "bleeding."</p>
+<p>The status quo is your biggest competitor.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>Turn the pain into money and time
+<span class="en">Vague pain moves no one; a number does</span></h2>
+<span class="tag">vague pain won't move them</span><span class="tag">the so-what chain</span><span class="tag">quantify the fallout</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Vague pain — "it's annoying," "efficiency's a bit low" — moves no one. The same pain, stated as "15 hours a week, ~$X a year, 30 customers lost last quarter," makes people sit up. A number compresses a diffuse ache into one concrete loss — and only a concrete loss bites.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"In larger sales, the most successful people develop the buyer's problems into their full magnitude before offering a solution."</span>
+<span class="source">— Neil Rackham, SPIN Selling (Implication questions)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The "so what?" chain: roll a small glitch into a big number</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar3" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<rect fill="#eef4f0" height="52" rx="8" stroke="#7aa0c0" stroke-width="1.5" width="150" x="14" y="80"></rect>
+<text fill="#37506a" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="89" y="102">surface glitch</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="middle" x="89" y="120">"support's a bit slow"</text>
+<rect fill="#eaf3ee" height="52" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="150" x="190" y="80"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="265" y="100">so what? →</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="265" y="117">complaints, bad reviews</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="265" y="131">repeat rate drops</text>
+<rect fill="#eaf3ee" height="52" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="150" x="366" y="80"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="441" y="100">so what? →</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="441" y="117">~30 lost per quarter</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="441" y="131">$5,000 each</text>
+<rect fill="#dfeae2" height="52" rx="8" stroke="#123f30" stroke-width="1.8" width="164" x="522" y="80"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="604" y="100">quantified loss</text>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="604" y="122">≈ $600K a year</text>
+<line marker-end="url(#ar3)" stroke="#1f7a5c" stroke-width="2" x1="164" x2="188" y1="106" y2="106"></line>
+<line marker-end="url(#ar3)" stroke="#1f7a5c" stroke-width="2" x1="340" x2="364" y1="106" y2="106"></line>
+<line marker-end="url(#ar3)" stroke="#1f7a5c" stroke-width="2" x1="516" x2="520" y1="106" y2="106"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="10.5" font-style="italic" text-anchor="middle" x="350" y="180">each "and what does that lead to?" rolls the pain bigger — until it lands on a number</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: the customer admits "support's a little slow, but it's fine." You need to turn that "fine" into a number they can't stomach.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Stop at the surface (pain unamplified, they don't move)</div>
+<p>"Slow support does hurt the experience — we can speed it up for you."<br/>— You wave the pain away in one line and rush to pitch. In their mind it's still a "minor glitch" worth little, so of course "we'll see."</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Roll the pain into a number with "and then what?" (implication questions)</div>
+<p>"Slow support — <strong>what does that lead to</strong>?" — "Complaints, some turn into bad reviews."<br/>"Do the reviews and the slowness <strong>affect repeat business</strong>?" — "Yeah, we've lost some regulars."<br/>"Roughly <strong>how many a quarter</strong>? What's your average order value?" — "Thirty-ish, about $5,000 each."<br/>— You computed nothing for them; you just kept asking "and then what?" They worked out for themselves: ~$600K a year bleeding out. That number, <strong>said in their own mouth</strong>, stings more and sticks harder than any figure you could quote.</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Vague pain ("kind of annoying") moves no one; the same pain as "15 hours a week, ~$X a year, 30 customers lost last quarter" makes people sit up. A chain of "so what does that lead to?" questions rolls a small symptom into one concrete number — and best if the customer says the number, not you.</p>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: quantifying turns an abstract ache into a concrete loss, wiring it to the loss-aversion engine.</strong> A vague ache — the brain can't size it and easily shelves it; compress it into "$600K a year" and it becomes a clear loss that trips the loss aversion from the last principle — concrete, calculable, imminent, so people want to move. And when the customer works out the number themselves, it sidesteps your "sales pitch" suspicion.</p>
+<ul>
+<li><strong>Sales research · implication questions amplify the fallout (large-sample industry evidence)</strong>: Rackham's team (Huthwaite) analyzed roughly <strong>35,000 sales calls</strong> and found that in larger deals, "implication questions" (drawing out and enlarging a problem's knock-on consequences) correlate significantly with closing — a key thing separating top performers. Large sample, solid direction, but proprietary in-house research, not a peer-reviewed controlled experiment; flagged honestly.</li>
+<li><strong>Mechanism hand-off · only a concrete loss trips loss aversion</strong>: quantifying works because it plugs the pain into the previous principle's mechanism (Kahneman &amp; Tversky loss aversion) — abstract doesn't hurt, concrete does. A reasonable hand-off, not another standalone experiment.</li>
+<li><strong>Let them say it · reveal vs instill</strong>: numbers you quote, they'll haggle and doubt; a number they derive by following your questions, they can't easily walk back, by the "be consistent" pull. (This site's SPIN issue on implication questions.)</li>
+</ul>
+<p class="caveat">Honest note: Huthwaite's 35,000-call sample is an oft-cited industry figure from its own internal research, not publicly verifiable academic data; use it to support the direction "amplifying the fallout helps," not as a precise causal conclusion.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Roll the pain into a number (script)</div>
+<div class="template">
+<span class="label">Keep asking "and then what?", land on money / time</span>
+<p>· "This problem — <strong>what does it lead to</strong>?" — draw out the next consequence.</p>
+<p>· "And <strong>then what</strong>?" — roll one more layer (the knock-on effect).</p>
+<p>· "Roughly <strong>how many times / people / hours</strong>? What's that in money?" — land on a number.</p>
+<p>· Let <strong>them</strong> say the figures; you just do the arithmetic and repeat it back — a number from their mouth carries the most weight.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Stopping at "this is a problem."</strong> You confirm the pain and rush to pitch, never rolling the fallout bigger — the pain stays a "minor glitch" and the solution looks not worth it.</li>
+<li><strong>You invent the numbers.</strong> Slap an exaggerated figure on the table and they see the tactic instantly. Use their terms, their data; you just help them add it up.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Neil Rackham, SPIN Selling</strong> — implication questions: enlarge the fallout first, then pitch; Huthwaite's ~35,000-call study.</div>
+</div>
+<div class="section">
+<div class="section-label">Key phrases</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"<em>So what does that lead to?</em>" — the key line for rolling the fallout one link further.</p>
+<p>"<em>What's that costing you</em> — in hours, in dollars?" — land it on time / money.</p>
+<p>Make them do the math out loud.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>The line: reveal real pain, don't manufacture fear
+<span class="en">Revealing what's real builds trust; inventing fear backfires</span></h2>
+<span class="tag">reveal vs manufacture</span><span class="tag">fear needs an exit</span><span class="tag">trust is a repeated game</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Amplifying has a line: <strong>revealing</strong> a pain that truly exists but they hadn't noticed helps them see clearly (fine); <strong>manufacturing</strong> a fear that isn't there to force a deal is manipulation (over the line). The first builds trust; the second is a time bomb — the moment they realize they were scared into it, trust collapses and your reputation pays.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Fear appeals motivate action only when paired with a sense that something can be done about it."</span>
+<span class="source">— fear-appeal research review (Witte &amp; Allen, 2000)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Same "amplify," two forks in the road</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar4" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#4e8a3f"></path>
+</marker>
+<marker id="ar4b" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#c0603a"></path>
+</marker>
+</defs>
+<rect fill="#f7faf6" height="44" rx="8" stroke="#8a9a8f" stroke-width="1.5" width="200" x="250" y="12"></rect>
+<text fill="#3d5548" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="350" y="30">amplify their pain</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="46">one move, two directions</text>
+<rect fill="#e2efdc" height="70" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="300" x="20" y="120"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="170" y="143">✓ reveal real pain</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="170" y="162">pain is real · their data · offers an exit</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="170" y="179">→ they see clearly, thank you · trust</text>
+<rect fill="#f6e3da" height="70" rx="8" stroke="#c0603a" stroke-width="1.5" width="300" x="390" y="120"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="540" y="143">✗ manufacture fear</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" text-anchor="middle" x="540" y="162">pain is invented · no exit, just scare</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="540" y="179">→ they realize they were played · trust dies</text>
+<line marker-end="url(#ar4)" stroke="#4e8a3f" stroke-width="2" x1="320" x2="200" y1="56" y2="116"></line>
+<line marker-end="url(#ar4b)" stroke="#c0603a" stroke-width="2" x1="380" x2="500" y1="56" y2="116"></line>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: you're selling a course / an insurance policy and you badly want the close.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Manufacture fear (scare them with something invented)</div>
+<p>"If you don't learn this, you'll be replaced by AI within three years — and by then it'll be too late to cry!"<br/>— You're peddling a fear that may not match their actual situation, with no concrete exit, just "buy me and you're safe." It might spook a few short-term, but the clear-headed recoil, and the impulse buyers refund and badmouth you once they snap out of it — one deal won, reputation lost.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Reveal real pain, hand the decision back</div>
+<p>"Going by what you just told me: in the past six months, <strong>two projects got handed to younger colleagues because you weren't up on the new tools</strong>. That's a fact you stated — I'm not adding anything."<br/>"Whether to fix it now is your call — let me show you exactly what this course covers and how far it'd get you, and you decide if it's worth it."<br/>— You just laid out their <strong>real, actual pain</strong>, paired it with a "here's what you can do" exit, and handed the decision back. They trust you, because you didn't scare them and didn't decide for them.</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Amplifying has a line: revealing a real pain they hadn't noticed helps them see clearly (fine); manufacturing a fear that isn't there to force a deal is manipulation (over the line). Real pain, their own numbers, and a way out builds trust. Fear with no exit and no basis wins one deal and loses your reputation.</p>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: fear needs an "exit" to convert to action; and trust is a repeated game.</strong> (1) Scare someone with no workable solution and the brain turns to <strong>defensive avoidance</strong> — denial, escape, resentment — not action. What actually drives change is threat-is-real <em>and</em> I-can-cope, both in place. (2) Manufacturing fear is a one-shot extraction: once they see through it, the deal dies and they spread the word — in a long relationship it inevitably backfires. So legitimate amplifying only ever does "reveal real pain + give an exit."</p>
+<ul>
+<li><strong>Psychology · fear appeals need self-efficacy (hard evidence)</strong>: Witte &amp; Allen (2000) meta-analyzed over a hundred fear-appeal studies — fear drives protective action only when <strong>perceived efficacy is high (I know what to do and can do it)</strong>; <strong>high fear + low efficacy</strong> instead triggers defensive avoidance (rejection, denial). This is the core conclusion of the Extended Parallel Process Model (EPPM), meta-analytic evidence.</li>
+<li><strong>Game theory · manipulation doesn't pay in a repeated game</strong>: selling is rarely one-and-done — there's repeat business, word of mouth, referrals. Fake fear is a single grab; the cost of being found out (trust collapse, bad word of mouth) far outweighs that one deal over repeated play. (This site's "trust is the only currency" issue.)</li>
+<li><strong>Anti-manipulation · the line between persuasion and manipulation</strong>: reveal the truth and leave judgment to them = persuasion; conceal / fabricate and strip their rational judgment = manipulation. Amplifying pain slides easily into the latter — guard the line. (cross-ref psychology: resisting manipulation)</li>
+</ul>
+<p class="caveat">Boundary: this isn't "never let a customer feel urgency." Real urgency (truly bleeding, a genuine window) should be made clear; what you can't do is a fabricated fear that doesn't fit their situation. The test: strip out my product — does this pain still truly exist? Yes = fair to amplify; no = you're fabricating.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Amplify without crossing the line (self-check)</div>
+<ul class="checklist">
+<li>The pain I'm amplifying — <strong>would it still be real with my product removed</strong>?</li>
+<li>The numbers I'm using — <strong>are they in their own terms</strong>, or figures I pulled out of thin air?</li>
+<li>Beyond the fear, did I give them a <strong>concrete, reachable exit</strong>?</li>
+<li>The final decision — did I <strong>hand it back to them</strong>, or make it for them?</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Common mistakes</div>
+<div class="pitfall">
+<ul>
+<li><strong>Scare, but no exit.</strong> Frighten someone into helplessness and you trigger escape and resentment — they buy less, not more. Fear must be paired with "here's what you can do."</li>
+<li><strong>Inventing pain to force the close.</strong> A fabricated anxiety may push a few short-term but inevitably backfires: refunds, bad reviews, never coming back. Don't lose your trust for one deal.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Key references</div>
+<div class="ref"><strong>Witte &amp; Allen (2000)</strong> — fear-appeal meta-analysis: fear needs high self-efficacy, else it triggers defensive avoidance (EPPM).<br/><strong>Cialdini, Influence</strong> — the ethical line between persuasion and manipulation.</div>
+</div>
+<div class="section">
+<div class="section-label">Key phrases</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"Would this pain <em>still be real without my product</em>?" — the self-check for whether you've crossed the line.</p>
+<p>"Here's what's happening — <em>you decide</em> if it's worth fixing." — reveal real pain, hand the decision back.</p>
+<p>Reveal the pain; don't manufacture the fear.</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>Your Day 9 Action</h3>
+<p>Pick something you're selling and one real person (a customer, an interviewer, someone you need to persuade). Don't rush to pitch — first do this "dig → amplify → quantify" homework.</p>
+<div class="action">
+<strong>Step 1 · Dig:</strong> write down their <strong>stated need</strong> (what they say they want), then ask yourself "why / what happens if unfixed?" three layers down, to the <strong>latent pain</strong> underneath.<br/><br/><strong>Step 2 · Tally the status-quo cost:</strong> ask yourself — if they <strong>keep not changing</strong>, what are they losing in money and time each week / year? Write it as one "loss frame" line ("don't change, and per year about…"), not "you'd gain…".<br/><br/><strong>Step 3 · Quantify:</strong> design a chain of "and what does that lead to?" questions, and let <strong>them</strong> compute the pain into one concrete number. You just do the arithmetic.<br/><br/><strong>Step 4 · Hold the line:</strong> run the four self-checks — with my product removed, is this pain still real? Are the numbers in their terms? Did I give an exit? Did I hand the decision back?<br/><br/>Boundary: this is for <strong>helping them see their real situation</strong>, not "scaring them into buying." If three layers down you find there's no real pain — that's not you digging badly, it's that this deal probably shouldn't be chased. Honestly saying "you're actually fine as you are" keeps the long-term relationship instead.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. Won't digging and amplifying make customers feel I'm "peddling anxiety" and resent it?</summary>
+<div class="answer">It hinges on two things: <strong>whether the pain is real or fake</strong>, and <strong>the posture you dig with</strong>. First, if what you reveal is a real, verifiable pain (computed from their own data), that's helping them see clearly — most people are grateful; if you conjure a scare out of nothing, that's peddling anxiety, and Principle 04 this issue is exactly that red line. Second, on posture — the least resented way to dig is to <strong>let them say it</strong>: you ask "what does this lead to?" "roughly how much?", and both the pain and the number come out of their own mouth; you're just the person who helps them add up the bill. Throughout, they're diagnosing themselves, not you pinning a label on them. Real pain + let them say it rarely causes resentment; fake pain + you panicking on their behalf is what grates.</div>
+</details>
+<details>
+<summary>2. What if I dig and the customer genuinely has no pain and the status quo really is fine?</summary>
+<div class="answer">Then <strong>don't fabricate one</strong> — that itself is the most valuable piece of information. No pain means this deal probably shouldn't be chased, or the timing's off. Force a nonexistent pain on them to make them buy, and short-term you may win a deal, but long-term they return it, leave a bad review, and tell everyone you're all tricks — you pay far more than you earned. The smarter move: honestly tell them "given your situation, it's not really do-or-die yet; find me again when you actually hit signal XX." Short-term it looks like "letting a deal walk," but it's actually building a long-term trust account — they remember you as someone who doesn't hard-sell, and you're the first they think of once real pain shows up. This is exactly the "qualifying" lesson: not every customer is worth chasing, and sorting early saves time and protects your reputation.</div>
+</details>
+<details>
+<summary>3. Won't the customer think the numbers I quantify are made up to con them?</summary>
+<div class="answer">They will — as long as <strong>you</strong> quote the number. The fix is to make the number <strong>come from their mouth</strong>: you don't hand over a conclusion, you just keep asking "how many people a week?" "what's the order value?" "how many lost a quarter?" — they state every input themselves, and you do the arithmetic in front of them, confirming each step. The "$600K a year" computed this way is <strong>their</strong> ledger, not your pitch — they can't haggle it down or walk it back, because doing so means haggling the figures they just said. A number you invent, they see through and resent; a number they confirmed with their own mouth, they can't escape. Remember: you're a <strong>mirror that can do math</strong>, not a <strong>salesperson quoting figures</strong>.</div>
+</details>
+<details>
+<summary>4. Doesn't digging out pain contradict "listen well, don't rush to pitch"? Isn't digging a kind of manipulation?</summary>
+<div class="answer">No contradiction — they're two sides of the same craft. Digging out pain runs <strong>precisely</strong> on listening and questioning: you ask the right questions and let them realize and voice the pain themselves; the whole time they talk and you listen — which is the practice of "don't rush to pitch," not its opposite. The difference is <strong>where the endpoint points</strong>: good digging ends at <strong>their own real situation</strong> (even if the conclusion is "not much pain, actually"); manipulation ends at <strong>the thing you want to sell</strong>, distorting their situation to get there. The same line — "what does this lead to?" — can help them see clearly or hook them in; the divide isn't in the script, it's in whether you want them to see themselves clearly or to see themselves unclearly so you can offload your product. Hold that line and digging is honest diagnosis.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 09</footer>
+</div>
+</body>
+</html>
