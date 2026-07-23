@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 10: Map the Decision Chain</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:1px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:580px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 10 · Phase B</div>
+<h1>Map the Decision Chain: The Best Pitch to One Person Can Still Be Vetoed by Someone You've Never Met</h1>
+<div class="meta"><span>Topic: Map the decision chain</span><span>·</span><span>4 principles</span></div>
+<div class="subtitle">The most dangerous deals are often the "warmest" ones — you and one friendly contact hit it off, you assume it's in the bag, and you never learn that the person who actually signs off has never heard your name. Selling anything complex, you're never facing one person. You're facing a room full of people with different agendas.</div>
+</header>
+<div class="intro">
+<strong>Last time we dug out where it hurts. This time: whose pain is it, and who pays to fix it — because inside one organization, the person who feels the pain, the one who signs the check, the one who has to use it, and the one who might block it are often four different people.</strong> The rookie mistake is to pour everything into one contact who's warm to you, assuming that winning them wins the deal. But that person may neither pay, nor decide, nor be able to stop the objector — you won a match that doesn't count. Four things this time: seeing that "one contact ≠ one deal," sorting the four roles on a chain and what each is really buying, finding the <strong>champion</strong> who'll speak for you when you're not there, and reading what the <strong>blocker</strong> is actually afraid of losing — while holding the line: mapping the chain is about getting the right value to the right ears, not stabbing anyone in the back.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>A single enthusiastic contact is not a deal
+<span class="en">Pin it all on one person and the deal dies when they go quiet</span></h2>
+<span class="tag">the buyer is a group</span><span class="tag">single-threading = top killer</span><span class="tag">consensus decides</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Selling anything complex, the decision is almost never made by one person. A typical B2B purchase hides a group — the one who pays, the one who decides, the one who'll use it, the one who'll resist. Leaning all your weight on one person you click with is "single-threading": the moment they take leave, change roles, or lose their voice, your deal snaps with them. The real work is finding each of these people and learning what each one wants.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"The average buying group for a complex B2B solution involves six to ten decision makers."</span>
+<span class="source">— Gartner (B2B buying research)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">You see one person; you're facing a whole room</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar1" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<rect fill="#e6f0ea" height="60" rx="8" stroke="#1f7a5c" stroke-width="1.8" width="120" x="20" y="95"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="80" y="120">You</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" text-anchor="middle" x="80" y="138">(the seller)</text>
+<rect fill="#dfeae2" height="50" rx="8" stroke="#4e8a3f" stroke-width="1.8" width="140" x="200" y="100"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="270" y="122">Friendly contact</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="270" y="138">the only one you've met</text>
+<line marker-end="url(#ar1)" stroke="#1f7a5c" stroke-width="2" x1="140" x2="196" y1="125" y2="125"></line>
+<rect fill="#eef1f5" height="180" rx="8" stroke="#3f5c7a" stroke-dasharray="5,4" stroke-width="1.5" width="280" x="400" y="35"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-style="italic" text-anchor="middle" x="540" y="55">The room you've never seen</text>
+<rect fill="#fff" height="30" rx="5" stroke="#8a6a3a" stroke-width="1.3" width="120" x="418" y="68"></rect>
+<text fill="#8a6a3a" font-family="Georgia" font-size="10" text-anchor="middle" x="478" y="87">Pays (decides)</text>
+<rect fill="#fff" height="30" rx="5" stroke="#3f6d2f" stroke-width="1.3" width="120" x="548" y="68"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" text-anchor="middle" x="608" y="87">Uses it daily</text>
+<rect fill="#fff" height="30" rx="5" stroke="#37506a" stroke-width="1.3" width="120" x="418" y="112"></rect>
+<text fill="#37506a" font-family="Georgia" font-size="10" text-anchor="middle" x="478" y="131">Vets (can veto)</text>
+<rect fill="#fff" height="30" rx="5" stroke="#a8461f" stroke-width="1.3" width="120" x="548" y="112"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" text-anchor="middle" x="608" y="131">Objects</text>
+<rect fill="#fff" height="30" rx="5" stroke="#6a8577" stroke-width="1.3" width="250" x="418" y="156"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="10" text-anchor="middle" x="543" y="175">Finance / Legal / IT / user reps…</text>
+<line marker-end="url(#ar1)" stroke="#7089a0" stroke-dasharray="4,3" stroke-width="1.5" x1="340" x2="414" y1="118" y2="95"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="270" y="175">One thread only?</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="270" y="192">It snaps, the deal snaps</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: You're selling a system. Sam, in one department, really clicks with you and keeps saying "we so need this, I'll push it." Three months later, the deal goes silent.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Betting it all on one person (single-threading)</div>
+<p>"Sam's this supportive — we're golden!" All your information flows through Sam's single pipe, and you never asked "besides you, who else has to say yes?" Result: Sam does want to push it, but their director thinks "not a priority this year," finance freezes the budget, and Sam has no real say. <strong>You won Sam and lost the room you never walked into.</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Use the enthusiast to map the whole chain</div>
+<p>"Great — having you push this makes me a lot more confident. Let me help you stock up on ammo: <strong>who usually signs off on the budget</strong> for something like this? And besides your team, <strong>who else would care, or might have reservations</strong>?"<br/>"How about we loop in finance and IT for a round so we're not redoing work later?"<br/>—— You didn't bypass Sam; you used them as a guide to trace who pays, who vets, who might object. <strong>The enthusiast is the entrance, not the finish line.</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Selling anything complex, the decision is almost never made by one person. A typical B2B purchase hides a group — who pays, who decides, who'll use it, who'll resist. Pinning everything on one friendly contact ("single-threading") means the deal dies the moment they go quiet. Use the enthusiast as a guide to map the rest, not as the finish line.</p>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: more people means thinner responsibility, and decisions stall.</strong> When one person decides, the responsibility is all theirs and the motive is clear; when a group decides together, no one has to own it alone — "let's wait, let's look at it more" becomes the safest option, so the bigger the committee, the harder it is to decide anything. The trouble with a single thread is that the person who actually controls the budget and the veto has never heard your value, while your carefully crafted persuasion landed on someone with no real voice.</p>
+<ul>
+<li><strong>Industry research · the buyer is a group (large sample, solid direction)</strong>: Gartner (formerly CEB) research on complex B2B buying repeatedly finds a typical purchase involves <strong>6–10 decision makers</strong> (<em>The Challenger Customer</em>, Adamson, Dixon et al., 2015; the ~6.8 average is often cited), and as the group grows, reaching consensus itself becomes the biggest barrier to a deal. Large sample and a stable direction, but it's proprietary institutional research, not a publicly reproducible controlled study — flagged honestly.</li>
+<li><strong>Social psychology · diffusion of responsibility (hard evidence)</strong>: Darley &amp; Latané (1968, <em>JPSP</em>) showed with bystander experiments that the more onlookers present, the <em>lower</em> the odds any single person steps in to help, because responsibility gets "spread thin" across the crowd. This diffusion of responsibility is a repeatedly replicated classic — and it's the psychological floor under why committees stall and no one pulls the trigger.</li>
+<li><strong>Takeaway · single-threading is a quantifiable risk</strong>: dealing with only one contact ties the whole deal to one variable you can't control (they quit / transfer / fall from favor). Multi-threading isn't politeness — it's insurance on the deal.</li>
+</ul>
+<p class="caveat">Boundary: multi-threading doesn't mean bypassing your contact and spraying the org at random. Suddenly going over enthusiastic Sam's head to pester their boss makes Sam feel betrayed — the right move is to climb <em>through</em> them, via their introduction (see principles 3 and 4).</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Stop single-threading — five must-asks (script)</div>
+<div class="template">
+<span class="label">Trace the chain through your contact</span>
+<p>· "For a decision like this, who usually <strong>signs off / owns the budget</strong>?" — find who pays and decides.</p>
+<p>· "Besides your team, <strong>who else would use this, or care</strong> about it?" — find the users.</p>
+<p>· "As this moves forward, <strong>which step or person tends to get stuck</strong>?" — find the gatekeeper and the blocker.</p>
+<p>· "If this ultimately didn't happen, <strong>whose 'no' would most likely be the reason</strong>?" — surface the objector early.</p>
+<p>· "If it's alright, <strong>could we bring X into the next conversation</strong>?" — multi-thread naturally.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Idiomatic phrasing</span>
+<p>"Who else <em>needs to weigh in</em> on a decision like this?"</p>
+<p>"Let's not <em>single-thread</em> this."</p>
+<p>An enthusiastic contact is a doorway, not the deal.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>Four roles, each buying something different
+<span class="en">The right message to the wrong person is wasted breath</span></h2>
+<span class="tag">economic buyer</span><span class="tag">user</span><span class="tag">gatekeeper</span><span class="tag">right words, wrong ears</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The people on a chain aren't cast from one mold. The classic split has four roles: <strong>the one who pays and decides (economic buyer)</strong>, <strong>the one who uses it daily (user)</strong>, <strong>the one who vets and can veto (technical / compliance gatekeeper)</strong>, and <strong>the insider who feeds you intel (coach)</strong>. They care about completely different things — lecture the boss on how nice the buttons are, or hit a frontline user with three-year ROI, and you're saying the right thing to the wrong person. Wasted effort.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"For every sale there are four buying influences: Economic, User, Technical, and Coach."</span>
+<span class="source">— Miller &amp; Heiman, <em>Strategic Selling</em></span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">One solution, four people each looking at a different part</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f3ece0" height="120" rx="8" stroke="#b8916a" stroke-width="1.6" width="330" x="15" y="15"></rect>
+<text fill="#8a6a3a" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="180" y="40">Economic buyer (pays · decides)</text>
+<text fill="#7a5a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="180" y="62">Buys: ROI, risk, is it worth the money</text>
+<text fill="#7a5a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="180" y="80">Cares: total return, budget, their record</text>
+<text fill="#9a7a4a" font-family="Georgia" font-size="10" font-style="italic" text-anchor="middle" x="180" y="102">Tell them: yearly saving, risk control</text>
+<rect fill="#e6f0ea" height="120" rx="8" stroke="#4e8a3f" stroke-width="1.6" width="330" x="355" y="15"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="520" y="40">User (uses it daily)</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="520" y="62">Buys: is it easy, does it save hassle</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="520" y="80">Cares: daily feel, learning curve, no mess</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-style="italic" text-anchor="middle" x="520" y="102">Tell them: the grind it kills each day</text>
+<rect fill="#eef1f5" height="120" rx="8" stroke="#37506a" stroke-width="1.6" width="330" x="15" y="150"></rect>
+<text fill="#37506a" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="180" y="175">Gatekeeper (tech/compliance · veto)</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.5" text-anchor="middle" x="180" y="197">Buys: compliant, meets specs, secure</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.5" text-anchor="middle" x="180" y="215">Cares: no incidents, no blame, no trouble</text>
+<text fill="#4a5a72" font-family="Georgia" font-size="10" font-style="italic" text-anchor="middle" x="180" y="237">Tell them: certs/security/compatibility</text>
+<rect fill="#f7f0e4" height="120" rx="8" stroke="#c08a3a" stroke-width="1.6" width="330" x="355" y="150"></rect>
+<text fill="#a5701f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="520" y="175">Coach / insider (feeds you intel)</text>
+<text fill="#8a6020" font-family="Georgia" font-size="10.5" text-anchor="middle" x="520" y="197">Gives you: the inside story, map, timing</text>
+<text fill="#8a6020" font-family="Georgia" font-size="10.5" text-anchor="middle" x="520" y="215">Cares: this winning helps them too</text>
+<text fill="#a5701f" font-family="Georgia" font-size="10" font-style="italic" text-anchor="middle" x="520" y="237">Give them: ammo to carry (next principle)</text>
+<text fill="#5a7365" font-family="Georgia" font-size="11" font-style="italic" text-anchor="middle" x="350" y="285">Same product, translated into four different "what's in it for me"s</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: You sell collaboration software. You finally land 15 face-to-face minutes with their CFO (the economic buyer).</div>
+<div class="dialog bad">
+<div class="speaker">✗ Telling the CFO what only a user cares about</div>
+<p>"Our interface is super friendly, you build tasks by dragging, notifications are instant, employees love using it!"<br/>—— The CFO is stone-faced. This is the <strong>user's</strong> language, not theirs. What's in their head is "hundreds of thousands a year going out — where's the return, where's the risk?" You spent 15 precious minutes pitching someone who doesn't buy on any of that.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Speaking the economic buyer's language to the CFO</div>
+<p>"Straight to it: your cross-team coordination currently burns about X person-hours a month, roughly $XX a year. Clients like you cut that by about 60% with this, so <strong>payback runs about two quarters</strong>, and it's net savings after. On risk, we have a ready plan for data compliance and migration."<br/>—— Same product, translated into their ledger: return, payback period, risk. "Is it nice to use?" you'll save for the <strong>user's</strong> demo.</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The people on a decision chain aren't one type. The classic split: the economic buyer (pays, decides — buys ROI and risk), the user (buys daily ease), the technical/compliance gatekeeper (buys "won't blow up, won't get me blamed"), and the coach (feeds you intel). Pitch daily-usability to the CFO or three-year ROI to a frontline user and you're saying the right thing to the wrong person.</p>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: each role's "what's in it for me" differs, so value must be translated per person.</strong> The economic buyer answers for total return and risk, the user for their own daily experience, the gatekeeper for "nothing blows up, no blame lands on me." The same feature means something completely different to each. People only act on reasons that mean something to <em>them</em> — hand A's reason to B, and all B hears is noise. You map the chain precisely so you can tell each person their own version of the story.</p>
+<ul>
+<li><strong>Method · four buying influences (field framework, widely used)</strong>: Miller &amp; Heiman's <em>Strategic Selling</em> (1985) sorts each deal's decision makers into economic, user, technical, and coach — each with different concerns and veto power. It's a field framework the sales world has used for decades, not a controlled experiment, but the direction — segment by role, pitch by role — is solid. Modern methodologies like MEDDIC ("economic buyer / champion") share the same root.</li>
+<li><strong>Psychology backing · self-relevance drives attention and memory</strong>: the more information relates to the "self," the more it's attended to and remembered (self-reference effect, Rogers, Kuiper &amp; Kirker, 1977 — a robust finding). This is why only the "means something to me" version gets through — pitch the wrong person and you've delivered a message unrelated to them, which gets filtered out automatically.</li>
+<li><strong>Key distinction · the one who pays ≠ the one who uses</strong>: many deals die right here — the user is in love, but the economic buyer who never owns the price kills it with one "too expensive"; or the economic buyer wants it, but frontline users find it a hassle and resist en masse. Cover both ends.</li>
+</ul>
+<p class="caveat">Boundary: the four roles are "roles," not headcount. One person can wear two hats (a small-business owner is both economic buyer and user), and one role can be several people (three department heads jointly vetting). Don't map mechanically to headcount — map by "who answers for which concern."</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Profile the chain (script)</div>
+<div class="template">
+<span class="label">Four roles, one opener each</span>
+<p>· <strong>To the economic buyer</strong>: "In three sentences, here's the return, the payback period, and the risk of this investment."</p>
+<p>· <strong>To the user</strong>: "Which of your most annoying daily chores does this kill? Let's try it live."</p>
+<p>· <strong>To the gatekeeper</strong>: "On hard specs — compliance, security, compatibility — let me walk you through a checklist, line by line."</p>
+<p>· <strong>To the coach</strong>: "What's in this for you if it lands? How can I help you sell it internally?"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Idiomatic phrasing</span>
+<p>"Who's the <em>economic buyer</em> here — who signs off on the budget?"</p>
+<p>"IT can't say yes, but they can say no."</p>
+<p>Sell the ROI upstairs, sell the ease-of-use on the floor.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>Find your champion: who speaks for you in the room you can't enter
+<span class="en">The real decision gets made where you aren't</span></h2>
+<span class="tag">champion vs powerless enthusiast</span><span class="tag">decisions happen off-stage</span><span class="tag">test with a small ask</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The real close happens in a room you can't get into — so when you're not there, someone has to fight that fight for you. That person is your <strong>champion</strong>: they have internal influence, genuinely believe you can help them, and are willing to speak up for you and feed you intel in your absence. Note: someone warm to you but with no voice in the company, or who cheers with their mouth and never lifts a finger, is a <em>cheerleader</em>, not a champion.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"A champion sells for you when you are not there."</span>
+<span class="source">— MEDDIC methodology (originated at PTC, 1990s)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Don't confuse the three: champion · coach · cheerleader</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 230" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#e6f0ea" height="150" rx="8" stroke="#1f7a5c" stroke-width="1.8" width="205" x="15" y="20"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="117" y="44">Champion (find this one)</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="117" y="68">✓ Has internal influence</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="117" y="88">✓ Truly believes in you</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="117" y="108">✓ Speaks up when absent</text>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="117" y="128">✓ Does real things for you</text>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="117" y="152">→ Wins you the room</text>
+<rect fill="#f3ece0" height="150" rx="8" stroke="#b8916a" stroke-width="1.6" width="205" x="248" y="20"></rect>
+<text fill="#8a6a3a" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="44">Coach (useful)</text>
+<text fill="#7a5a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="68">✓ Gives intel and the map</text>
+<text fill="#7a5a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="88">✓ Tells you internal moves</text>
+<text fill="#9a7a4a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="108">? May lack influence</text>
+<text fill="#9a7a4a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="128">? May not back you openly</text>
+<text fill="#8a6a3a" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="350" y="152">→ Helps you see, not win</text>
+<rect fill="#f6e3da" height="150" rx="8" stroke="#c0603a" stroke-width="1.6" width="205" x="481" y="20"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="583" y="44">Cheerleader (easy to misread)</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="583" y="68">✓ Warm, really likes you</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="583" y="88">✗ No voice / no influence</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="583" y="108">✗ Cheers, never acts</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" text-anchor="middle" x="583" y="128">✗ Dodges when asked to act</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="583" y="152">→ Feels safe, is hollow</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: Sam keeps saying "I'm fully behind you." You want to know whether Sam is a real champion or an enthusiastic cheerleader. Method: give them a "small ask" and watch whether they move.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Judging by verbal warmth alone</div>
+<p>"Sam says they fully support it, so I'll just wait for them to move it forward."<br/>—— You've staked the deal on "they said they'd push." But "I'm behind you" is the cheapest promise there is; it costs them nothing. A month later, zero progress, and you don't even know whether they did anything.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Test with a small ask (the champion test)</div>
+<p>"Thank you, really. Could I ask a small favor: <strong>could you introduce me to Wang, who owns the budget, or set up a 15-minute three-way</strong>? I'd like to walk the ROI to them directly and save you relaying it back and forth."<br/>—— Watch the reaction: a real champion arranges it ("I'll set it up"); a cheerleader dodges ("they're really busy," "bad timing," "let me mention it to them" — then nothing). <strong>The one willing to spend a little of their own internal credit to get it done is the champion.</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The real decision gets made in a room you can't enter — so someone has to fight for you when you're not there. That's a champion: internal influence, genuine belief you'll help them, and willingness to advocate for you in your absence. Someone warm but powerless, or all-talk-no-action, is a cheerleader, not a champion. Test the difference with a small ask — will they spend a little internal credit to actually move it?</p>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: a decision you can't attend needs a present proxy — and an insider vouching for you is more credible than you vouching for yourself.</strong> (1) Purchase decisions happen in internal meetings, hallways, group chats — where you're absent 95% of the time. Without a proxy, your value proposition never enters those rooms. (2) The same sentence, said by a self-interested outside seller, is automatically discounted; said by "one of us," it's taken as a neutral, credible endorsement (social proof + source credibility). A champion speaking for you beats you saying it ten times.</p>
+<ul>
+<li><strong>Method · the champion is a verifiable role (field framework)</strong>: MEDDIC (originated at PTC / Parametric, 1990s, Jack Napoli et al.) lists "Champion" as one of six elements and stresses the champion must be <strong>verifiable</strong> — not "likes you," but proven against small asks (willing to introduce, obtain internal documents, arrange meetings). A widely used field method, not a controlled experiment, but the direction is reliable.</li>
+<li><strong>Psychology · source credibility and social proof (fairly hard)</strong>: persuasion depends heavily on whether the <em>source</em> is credible and "one of us" (Hovland &amp; Weiss, 1951, the classic on source credibility; and Cialdini's social proof principle). An internal champion's endorsement is your claim spoken through a more credible mouth.</li>
+<li><strong>Commitment &amp; consistency · have them do one small thing</strong>: once a champion does something small for you (an intro, an internal forward), the "act consistently with my actions" pressure makes them more invested in continuing to help — the small ask is both a test and a deeper bond. (See the influence-principles piece on this site.)</li>
+</ul>
+<p class="caveat">Boundary: don't treat a champion as a tool to squeeze. A healthy champion relationship is win-win — if this lands, they gain a result / solve their own pain inside the company. Keep helping them so "backing you" pays off for them, rather than being a one-way extraction.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Three small asks to verify a champion (script)</div>
+<div class="template">
+<span class="label">Light to heavy — watch whether they move</span>
+<p>· <strong>Light</strong>: "Could you <strong>forward this one-pager</strong> to Wang?" — forwarding is near-zero cost; no move = shaky.</p>
+<p>· <strong>Medium</strong>: "Could you <strong>introduce me / set up a 15-minute three-way</strong>?" — willingness signals influence and the will to use it.</p>
+<p>· <strong>Heavy</strong>: "Before the internal review, could you get me <strong>their evaluation criteria / budget range</strong>?" — pulling this off means a real champion.</p>
+<p>Rule of thumb: <strong>a champion isn't declared — they're proven by doing.</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Idiomatic phrasing</span>
+<p>"Could you <em>introduce me</em> to whoever owns the budget?"</p>
+<p>A champion sells for you when you're not in the room.</p>
+<p>Cheerleaders cheer; champions <em>act</em>.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>The blocker isn't your enemy — read what they fear losing
+<span class="en">Beat them in an argument and they dig in harder</span></h2>
+<span class="tag">resistance rarely about the product</span><span class="tag">hand a way out, don't fight head-on</span><span class="tag">line: no backstabbing</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">There's always someone on the chain quietly pushing against you. Key insight: their opposition is <strong>usually not because your product is bad</strong> — it's that this change makes <strong>them</strong> lose something: more work, lost turf, personal risk, or the incumbent supplier being their person. Treat them as an enemy to beat head-on and they'll only dig in harder. The real fix is to understand what they're afraid of losing and, wherever you can, hand them a way out.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"People don't resist change. They resist being changed."</span>
+<span class="source">— widely cited in organizational behavior (on resistance to change)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">What the blocker fights is usually not the product — it's their own loss</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 240" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar4" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<rect fill="#f6e3da" height="46" rx="8" stroke="#c0603a" stroke-width="1.6" width="240" x="230" y="14"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="350" y="34">They say: "This solution won't work"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" font-style="italic" text-anchor="middle" x="350" y="49">(surface reason, maybe not the real one)</text>
+<rect fill="#eef1f5" height="60" rx="8" stroke="#37506a" stroke-width="1.4" width="150" x="20" y="95"></rect>
+<text fill="#37506a" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="95" y="117">Fears more work</text>
+<text fill="#4a5a72" font-family="Georgia" font-size="9.5" text-anchor="middle" x="95" y="135">Migration/learning</text>
+<text fill="#4a5a72" font-family="Georgia" font-size="9.5" text-anchor="middle" x="95" y="150">all lands on them</text>
+<rect fill="#eef1f5" height="60" rx="8" stroke="#37506a" stroke-width="1.4" width="150" x="190" y="95"></rect>
+<text fill="#37506a" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="265" y="117">Fears lost turf</text>
+<text fill="#4a5a72" font-family="Georgia" font-size="9.5" text-anchor="middle" x="265" y="135">Owns this area now</text>
+<text fill="#4a5a72" font-family="Georgia" font-size="9.5" text-anchor="middle" x="265" y="150">switch = out of it</text>
+<rect fill="#eef1f5" height="60" rx="8" stroke="#37506a" stroke-width="1.4" width="150" x="360" y="95"></rect>
+<text fill="#37506a" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="435" y="117">Fears the blame</text>
+<text fill="#4a5a72" font-family="Georgia" font-size="9.5" text-anchor="middle" x="435" y="135">If go-live breaks</text>
+<text fill="#4a5a72" font-family="Georgia" font-size="9.5" text-anchor="middle" x="435" y="150">it's on them</text>
+<rect fill="#eef1f5" height="60" rx="8" stroke="#37506a" stroke-width="1.4" width="150" x="530" y="95"></rect>
+<text fill="#37506a" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="605" y="117">Ties to incumbent</text>
+<text fill="#4a5a72" font-family="Georgia" font-size="9.5" text-anchor="middle" x="605" y="135">Relationship/stake</text>
+<text fill="#4a5a72" font-family="Georgia" font-size="9.5" text-anchor="middle" x="605" y="150">switch = awkward</text>
+<rect fill="#e2efdc" height="40" rx="8" stroke="#4e8a3f" stroke-width="1.6" width="500" x="100" y="185"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="350" y="210">Fix: don't rebut "won't work" — catch what they fear losing, hand a way out</text>
+<line marker-end="url(#ar4)" stroke="#4e8a3f" stroke-width="1.8" x1="300" x2="200" y1="90" y2="93"></line>
+<line marker-end="url(#ar4)" stroke="#4e8a3f" stroke-width="1.8" x1="400" x2="500" y1="90" y2="93"></line>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: The tech lead, Zhang, keeps nitpicking and dragging the timeline. You've learned what he actually fears: after go-live, all the maintenance falls on his group, and he's afraid of taking the blame for an outage.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Treating him as an enemy and rebutting him head-on</div>
+<p>"Zhang, none of your concerns really hold up — our system is very stable, none of our other clients have issues."<br/>—— You won the debate and lost the person. Publicly rebutted, his face and "technical authority" take a hit, so now he has to prove he wasn't wrong — and blocks even harder. Worse, you never touched what he actually fears: the workload and the blame.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Catch what he fears losing, hand him a way out</div>
+<p>"Zhang, you vet the hardest, which is exactly why I want you in on this. I get that <strong>maintenance and stability pressure after go-live land mostly on your side</strong> — so I want to nail this down with you: <strong>we take on migration and first-year on-site support, and if anything breaks our engineers own it first</strong>, SLA written into the contract. So if something does go wrong, we carry it together, not you alone."<br/>—— You didn't rebut him once; instead you lifted off the two things he feared — <strong>more work and the blame</strong>. Once a blocker sees the change no longer costs them, the fuel for opposition drains away — and sometimes they turn into an ally.</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Someone on the chain is usually pushing against you in the shadows — and it's rarely because your product is bad. It's that the change costs <em>them</em> something: more work, lost turf, personal risk, a relationship with the incumbent. Beat them in an argument and they dig in harder. Instead, figure out what they fear losing and hand them a way out. A blocker who stops losing often stops blocking.</p>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: a blocker's opposition is loss aversion + status-quo bias + psychological reactance, combined.</strong> To them personally, change means a certain loss (more work, shrunken power, carried risk) — losses they feel far more sharply than equal gains — while the status quo is easiest and lowest-blame. And if you rebut head-on and try to "persuade" them out of their position, you trigger <strong>reactance</strong>: the moment people feel their freedom is being taken, they instinctively grip their original position tighter. So the effective path isn't to beat them — it's to erase the loss they'd carry and hand their autonomy back.</p>
+<ul>
+<li><strong>Psychology · loss aversion + status-quo bias (hard evidence)</strong>: Kahneman &amp; Tversky's prospect theory — a loss weighs about twice an equal gain (λ≈2.25); Samuelson &amp; Zeckhauser (1988) on status-quo bias. To a blocker, change = a certain personal loss, and opposition is rational self-protection. (Detailed in the "find &amp; amplify the pain" and "the buyer's brain" pieces on this site.)</li>
+<li><strong>Psychology · reactance (hard evidence)</strong>: Brehm's (1966) reactance theory — when people feel their freedom of choice is threatened, they push back and lean harder toward the threatened option. This is why "persuading a blocker to drop their opposition" head-on usually backfires: the more you push, the more they resist. (Cross-ref psychology, on resisting manipulation.)</li>
+<li><strong>Takeaway · neutralize beats defeat</strong>: the goal isn't to out-argue the blocker, it's to make "change" no longer a net loss for them — take on the work they fear, protect their face and turf, leave the decision with them. Remove the loss and the fuel for opposition is gone.</li>
+</ul>
+<p class="caveat">The line: mapping the chain and neutralizing a blocker are both about getting the right value to the right ears — <strong>not</strong> about going around the blocker to tell tales behind their back, or manipulating internal politics to squeeze them out. Backstabbing may bypass one person short-term, but long-term it destroys the whole org's trust in you, and once discovered, even your champion walks. The clean way: openly get the blocker's legitimate concerns heard and resolved.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Read and neutralize the blocker (checklist)</div>
+<ul class="checklist">
+<li>What is this person opposing me <strong>actually afraid of losing</strong>? Work, power, face, or a relationship?</li>
+<li>Is their stated reason ("won't work") the same as their <strong>real concern</strong>?</li>
+<li>Can I <strong>directly lift off the thing they fear</strong> (we take on migration / write it into the SLA / protect their turf)?</li>
+<li>Am I <strong>openly resolving their concern</strong>, or trying to go around them and take them out behind their back?</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Idiomatic phrasing</span>
+<p>"What's <em>at stake for them</em> personally if this changes?"</p>
+<p>Don't win the argument and lose the person.</p>
+<p>Neutralize the blocker; don't try to defeat them.</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>Your Day 10 Action</h3>
+<p>Pick something you're currently pushing where more than one person decides (a B2B deal, a cross-team proposal, even convincing your whole family to make a decision together). Stop staring at the one person you click with, and draw the whole decision chain.</p>
+<div class="action">
+<strong>Step 1 · Draw the chain:</strong> on paper, list — <strong>who pays and decides (economic buyer), who uses it daily (user), who can veto (gatekeeper), who's quietly opposing (blocker), who might speak for you (champion)</strong>. Which box is empty right now? An empty box is your risk.<br/><br/><strong>Step 2 · Rewrite the pitch per role:</strong> write the economic buyer a line on "return / payback / risk," the user a line on "which grind this kills," the gatekeeper a line on "how compliance / security is guaranteed." Same product, three translations.<br/><br/><strong>Step 3 · Test the champion:</strong> to the person most behind you, make one <strong>concrete small ask</strong> (introduce me / forward a one-pager / set up a 15-minute three-way). Watch whether they move — those who act are champions, those who dodge are cheerleaders.<br/><br/><strong>Step 4 · Read the blocker:</strong> find the person most likely to oppose, ask yourself "what do they <strong>fear losing</strong>," then think of one way to lift that loss directly (we take it on / write it into the contract / protect their turf).<br/><br/>Boundary reminder: this is about getting the right value to the right ears, <strong>not</strong> about backstabbing or playing internal politics. Once you've mapped the chain, the finest move is always to openly get every person's legitimate concern caught — including the one opposing you.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. I only sell something small / one-on-one — where would I get that many decision makers? Is this only for big B2B?</summary>
+<div class="answer">The roles are universal; sometimes <strong>several roles collapse into one person</strong>. Sell a used phone to an individual and they're both economic buyer and user, a chain of one — so for you this piece means "don't ignore the invisible third party": will they go ask a savvy friend (gatekeeper)? Does the partner who manages the money have to say yes (economic buyer)? Plenty of "we chatted great but it didn't close" personal deals die on one invisible role you didn't cover. Conversely, the bigger the deal — and the more it's about "selling yourself" (a job needs HR + hiring manager + boss; fundraising needs the partners) — the longer the chain and the more this is a life-or-death line. So: small deals use it as a <strong>gap check</strong> (any hidden deciders?), big deals use it as a <strong>battle map</strong>.</div>
+</details>
+<details>
+<summary>2. How do I climb up to the real decider without offending my enthusiastic contact?</summary>
+<div class="answer">The core is <strong>leverage, not bypass</strong> — use them as a guide and climb through them, not ditch them and stab straight to the boss. Three moves: (1) <strong>Give a reason</strong>: don't say "I want to go over you to your boss," say "I want to help you stock up on ammo and save you relaying it — could we loop in whoever owns the budget for one round?" You're helping them, not sidelining them. (2) <strong>Keep them in the room</strong>: when you set the three-way, bring them along, so they feel they made it happen rather than got cut out. (3) <strong>Use it to verify they're a champion</strong>: if they stall hard the moment you ask for an intro to the boss, that itself says they either lack influence or fear you stealing credit — and that's key intel. A real champion is eager to introduce you upward, because it landing reflects well on them too. <strong>Leverage in the open rarely offends; sneaking around behind them is what hurts.</strong></div>
+</details>
+<details>
+<summary>3. Mapping the chain, finding a champion, neutralizing a blocker — isn't this teaching me office politics and manipulation?</summary>
+<div class="answer">The dividing line is <strong>whether you want people to see clearly or not</strong>. Manipulation is: hiding the truth, sowing discord, telling tales over people's heads, quietly taking the blocker out — making the decision happen under distorted information. This piece teaches the opposite — getting <strong>every genuinely relevant person to hear the real value that concerns them</strong>, including putting the objector's legitimate worry on the table to be resolved. The economic buyer should see the real ROI, the gatekeeper should confirm real compliance, the blocker's feared workload should really get lifted. What you're doing is <strong>routing information to the right people</strong>, not distorting it. Simple test: could every step you take be laid on the table and told to everyone, and still hold up? If yes, that's professionalism; if it can't stand daylight and has to be hidden from someone, it's sliding into manipulation. Mapping the chain is <strong>letting sunlight into every corner</strong>, not scheming in the dark.</div>
+</details>
+<details>
+<summary>4. I found the champion and made the value clear, but the decision just drags. Now what?</summary>
+<div class="answer">"Dragging" is usually not a shortage of reasons — it's a shortage of <strong>consensus + process momentum</strong> — the very side effect of a bigger chain: with more people, no one wants to own the "decide" alone, so they collectively, silently stall (the diffusion of responsibility from principle 1). Three fixes: (1) <strong>Help the champion build consensus</strong>: don't expect everyone to agree live in one big meeting; help the champion align the key people (especially gatekeeper and blocker) privately, one by one, so the meeting is just a rubber stamp. (2) <strong>Ask about the decision process itself</strong>: "From here to signature, which gates are left, and roughly what's the pace?" — forcing a vague "we'll see" into a roadmap with milestones. (3) <strong>Give one real reason for timing</strong>: not a fake urgency to scare them (that's the red line from the pain-digging piece), but a genuinely existing window (budget cycle, a price-increase date, their own go-live schedule). Delay mostly dies from "no reason it has to be now" — find that real reason, or honestly admit the timing isn't right and agree on a trigger to come back.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 10</footer>
+</div>
+</body>
+</html>
