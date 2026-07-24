@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 11: Qualifying</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:1px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:580px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 11 · Phase B</div>
+<h1>Qualifying: Betting Your Time on Who Will Actually Buy Beats Pushing Harder to Close</h1>
+<div class="meta"><span>Topic: Qualifying</span><span>·</span><span>4 principles</span></div>
+<div class="subtitle">You think weak numbers mean you're not "pushing" hard enough. The more common truth: you waste half your time on people who were never going to buy — polite, warm, forever "thinking it over," people who never belonged on your list. Learning to say no early often saves you more than learning to close.</div>
+</header>
+<div class="intro">
+<strong>Last time we found each person on the decision chain one by one. This time we step back and ask a harsher question first — is this deal even worth chasing?</strong> The rookie default is "everyone who asks is an opportunity," so you spread your scarcest resource — your time and attention — evenly across everyone, and the biggest time-wasters end up taking the most. Qualifying means <strong>deciding whether a customer is worth pursuing before you pour in serious effort</strong>: do they have money, can they decide, is the pain real, is it now. Four things this time: counting the cost of chasing the wrong person, scoring a lead in thirty seconds with the four BANT questions, daring to say "this may not be for you," and working backward from the deals you've already won to find who you should really chase (ICP). Hold one line: disqualifying is about returning honest time to the right people, not a hard-to-get manipulation trick.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>Your scarce resource is time, not the product
+<span class="en">Time on a bad deal is time stolen from a good one</span></h2>
+<span class="tag">opportunity cost</span><span class="tag">the sunk-cost trap</span><span class="tag">chasing wrong = the biggest hidden loss</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The product copies infinitely; your time doesn't. Every hour on a customer who'll never buy is an hour stolen from one who will — that's <strong>opportunity cost</strong>. Worse is <strong>sunk cost</strong>: the longer you've chased and the more you've put in, the harder it is to let go, so you keep pouring good time into a bad deal. Qualifying step one is treating "chase this deal" as an investment call, not a faith that effort always pays off.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"The salesperson's most valuable, least renewable resource is time. Time spent on a bad opportunity is time stolen from a good one."</span>
+<span class="source">— consultative-selling wisdom (the core logic of qualifying)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Same month, where you bet the time decides the outcome</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">Same month of time, two ways to spend it</text>
+<text fill="#a8461f" font-family="Georgia" font-size="11" font-weight="700" x="20" y="58">✗ Grinding on one low-odds customer</text>
+<rect fill="#e4b7a3" height="30" rx="4" stroke="#c0603a" stroke-width="1.4" width="360" x="20" y="68"></rect>
+<text fill="#8a3a1f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="200" y="88">The big "let me think it over" account (~10% to close)</text>
+<rect fill="#dfeae2" height="30" rx="4" stroke="#7aa88f" stroke-width="1.2" width="140" x="386" y="68"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="10" text-anchor="middle" x="456" y="88">Scraps for others</text>
+<rect fill="#eee" height="30" rx="4" stroke="#bbb" stroke-width="1" width="152" x="530" y="68"></rect>
+<text fill="#888" font-family="Georgia" font-size="10" text-anchor="middle" x="606" y="88">Spinning, dragged along</text>
+<text fill="#a8461f" font-family="Georgia" font-size="11" font-weight="700" x="20" y="120">Result: 0–1 closed, exhausted</text>
+<line stroke="#cbb98f" stroke-dasharray="4,4" stroke-width="1" x1="20" x2="682" y1="140" y2="140"></line>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11" font-weight="700" x="20" y="168">✓ Cut the low-odds first, pour time into high-odds</text>
+<rect fill="#cfe6d6" height="30" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="200" x="20" y="178"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="198">Deepen A (60% odds)</text>
+<rect fill="#cfe6d6" height="30" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="200" x="230" y="178"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="330" y="198">Deepen B (50% odds)</text>
+<rect fill="#cfe6d6" height="30" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="242" x="440" y="178"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="561" y="198">Deepen C (45% odds)</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11" font-weight="700" x="20" y="232">Result: same time, 1–2 closed, and less burned out</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: A large account is warm from the first call, but three months in they still stall at "very interested, let us discuss internally" — no budget, no timeline given. You have three mid-size customers queued behind them.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Hostage to "big + warm," keep grinding</div>
+<p>"This one's huge, I've already put in three months — walking away now is such a waste! One more revision, one more trip to see their leadership…"<br/>—— You're doubling down on the <strong>three months already spent and unrecoverable</strong> (sunk cost), instead of asking "from today, is this time better spent here or on those three mid-size customers?" Big and warm don't equal will-close.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Treat "chase or not" as an investment call</div>
+<p>"I'll either push this until I can truly judge it, or let it go. Set a <strong>clear next step + deadline</strong>: 'To help you move this internally, I need a rough budget range and target go-live — can we lock that this week?' If they can't, it's not a real opportunity yet, and I put my main effort on A, B, C."<br/>—— The three months spent are sunk; they shouldn't drive today's call. <strong>Ask it for a qualifying signal; no signal, demote it and stop treating it as your top priority.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: chasing the wrong customer costs twice — the invisible opportunity cost, plus the sunk cost that hooks you.</strong> Time is zero-sum: this hour on A can't go to B, but "the loss of not chasing B" doesn't jump out like a bill, so people systematically underweight it. And time already invested hijacks you — the brain treats "letting go" as "admitting a loss," and a loss weighs about twice an equal gain (loss aversion, prospect theory), so you'd rather keep pouring money in than admit the mistake. Together, the two forces feed the most time to the customer who drags the longest.</p>
+<ul>
+<li><strong>Behavioral economics · the sunk-cost fallacy (hard evidence)</strong>: Arkes &amp; Blumer (1985, <em>OBHDP</em>) showed across classic experiments that people irrationally keep investing because they "already paid / already spent time" — buying a lousy ski ticket and forcing themselves to go use it. A repeatedly replicated, solid finding, and the psychological floor under "the longer I've chased, the less I can drop it."</li>
+<li><strong>Behavioral economics · opportunity cost is systematically ignored (fairly hard)</strong>: Frederick, Novemsky et al. (2009, <em>J. Consumer Research</em>) found people often don't spontaneously recall that "this money / time could go elsewhere," and once opportunity cost is made explicit, their choices change. So "chase this deal or that one" must be <strong>written out and compared</strong>, or the opportunity cost stays invisible.</li>
+</ul>
+<p class="caveat">Boundary: don't use "qualifying" as a lazy excuse — slapping a "not qualified" label on anything hard and slipping away. Real disqualifying rests on <strong>objective signals</strong> (no budget, no authority, no timeline), not on "this deal feels like a grind." The hard-but-fully-qualified deal is exactly the one worth grinding.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Run these three numbers before you chase (self-check)</div>
+<div class="template">
+<span class="label">Treat "chase or not" as an investment decision</span>
+<p>· <strong>Opportunity cost</strong>: if this time went to my most solid other customer, would the return be higher?</p>
+<p>· <strong>Zero out the sunk cost</strong>: pretend I met this deal for the first time today — looking only at the expected value from now on, would I still invest?</p>
+<p>· <strong>Stop-loss line</strong>: what "demote it if no signal by then" deadline have I set — or am I pacing it indefinitely?</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Idiomatic phrasing</span>
+<p>"Am I chasing this because it's a real opportunity, or because I've already <em>sunk</em> so much time in it?"</p>
+<p>"What's the <em>opportunity cost</em> of staying on this deal?"</p>
+<p>Time on a bad deal is time stolen from a good one.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>BANT: score a lead in thirty seconds
+<span class="en">Budget · Authority · Need · Timing</span></h2>
+<span class="tag">Budget</span><span class="tag">Authority</span><span class="tag">Need</span><span class="tag">Timing</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Don't allocate effort on "this one feels promising" — use a checklist to break "promising" into checkable signals. The classic <strong>BANT</strong> four questions: <strong>Budget</strong> (is there money), <strong>Authority</strong> (can the person you're talking to decide), <strong>Need</strong> (is the pain real), <strong>Timing</strong> (is it now). Four greens = go all in; missing budget or timing = nurture, don't push hard; the person has no say (no authority) = climb the chain (the decision-chain piece).</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Budget, Authority, Need, Timeline — if you can't check these, you don't have a qualified opportunity, you have a conversation."</span>
+<span class="source">— the BANT framework (originated at IBM, 1960s, widely used)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The BANT scorecard: light up each row</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 285" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f7f0e4" height="46" rx="6" stroke="#c08a3a" stroke-width="1.4" width="662" x="19" y="14"></rect>
+<circle cx="48" cy="37" fill="#e0a53a" r="9"></circle>
+<text fill="#8a6020" font-family="Georgia" font-size="12" font-weight="700" x="68" y="33">B · Budget —— is there money, roughly how much</text>
+<text fill="#9a7a4a" font-family="Georgia" font-size="10" x="68" y="50">Ask: "About how much have you set aside for this / who owns the money?"</text>
+<rect fill="#eef1f5" height="46" rx="6" stroke="#37506a" stroke-width="1.4" width="662" x="19" y="70"></rect>
+<circle cx="48" cy="93" fill="#4e8a3f" r="9"></circle>
+<text fill="#2f4a66" font-family="Georgia" font-size="12" font-weight="700" x="68" y="89">A · Authority —— can the person you're talking to decide</text>
+<text fill="#4a5a72" font-family="Georgia" font-size="10" x="68" y="106">Ask: "Who usually signs off? Who else weighs in?" (ties to the decision chain)</text>
+<rect fill="#e6f0ea" height="46" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="662" x="19" y="126"></rect>
+<circle cx="48" cy="149" fill="#4e8a3f" r="9"></circle>
+<text fill="#2f6a2f" font-family="Georgia" font-size="12" font-weight="700" x="68" y="145">N · Need —— is the pain real, how bad</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" x="68" y="162">Ask: "If it goes unsolved, roughly what does it cost you each month?" (ties to pain-digging)</text>
+<rect fill="#f6e3da" height="46" rx="6" stroke="#c0603a" stroke-width="1.4" width="662" x="19" y="182"></rect>
+<circle cx="48" cy="205" fill="#c0603a" r="9"></circle>
+<text fill="#8a3a1f" font-family="Georgia" font-size="12" font-weight="700" x="68" y="201">T · Timing —— is it now</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10" x="68" y="218">Ask: "When do you want it live? Any reason it has to be now?"</text>
+<rect fill="#123f30" height="34" rx="6" width="662" x="19" y="240"></rect>
+<text fill="#eef7f2" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="262">More greens = go all in　yellow = nurture　red (esp. no timing/budget) = demote or disqualify</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: A customer raves about the product for an hour and you're sure it's in the bag. Run BANT — only N (need) lights green; the rest are all question marks.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Fooled by "great chat," straight to a proposal</div>
+<p>"They love it — let me rush back and build a detailed proposal + quote!"<br/>—— You're pouring hours into someone with only "likes it," no budget, no timeline, and no certainty they can even decide. Three weeks later the proposal vanishes into silence — they never planned to buy this year, they just enjoyed the conversation.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Fill in BANT with four natural questions</div>
+<p>"Great. So I can give you something actually useful, let me confirm a few things: <strong>(Budget)</strong> what kind of order of magnitude do you usually put into this? <strong>(Timing)</strong> ideally when would you want it live? <strong>(Authority)</strong> besides you, who else would look at this?"<br/>—— Not an interrogation, but a "let me save you time" tone. If they go vague and push everything to next year, you know: keep it to light follow-up, don't sink a heavy proposal. <strong>Separate "likes it" from "will buy."</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: the checklist swaps subjective "feels promising" for objective "are the signals complete," blocking cognitive bias.</strong> People are naturally pulled by warmth, likability, size — <strong>vivid but irrelevant</strong> cues — while ignoring the dull-but-decisive facts of "is there money, is it now." A fixed checklist forces you to ask every item, putting a brake on the impulsive judgment, and keeps you from missing the fatal one.</p>
+<ul>
+<li><strong>Method · BANT (widely used, not an experiment)</strong>: Budget / Authority / Need / Timing originated at IBM (1960s) and is the most widely used qualifying heuristic. It's not a controlled experiment but a checklist that structures sales intuition; the direction is reliable, but use it flexibly for how people buy today (see the honest discussion of BANT's limits in "Think It Through" below). Heavier B2B often upgrades to MEDDIC — adding metrics, economic buyer, decision criteria / process, and champion (covered in the decision-chain piece).</li>
+<li><strong>Decision science · checklists beat judgment bias (fairly hard)</strong>: Gawande's <em>The Checklist Manifesto</em> reviews how checklists sharply reduce omissions in surgery and aviation (e.g. the WHO surgical checklist markedly lowered complications). Qualifying is the same — the checklist isn't smart, it stops you forgetting.</li>
+</ul>
+<p class="caveat">Boundary: BANT is a filter, not an interrogation. Firing off budget-and-authority questions up front feels like a background check and burns trust. The right posture is to <strong>break the four apart and ask them naturally, wrapped in "to save your time / to give you a sharper proposal"</strong> — and build value and pain first, then ask budget. Get the order wrong and why would the customer tell you about money?</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Natural scripts for the four BANT questions (template)</div>
+<div class="template">
+<span class="label">Wrap them in "to help you," don't interrogate</span>
+<p>· <strong>Need (ask first)</strong>: "What's the biggest bottleneck right now? If it stays unsolved, what does it roughly cost?"</p>
+<p>· <strong>Budget</strong>: "So I don't pitch you something out of range — what order of magnitude is this for you?"</p>
+<p>· <strong>Authority</strong>: "Who else usually looks at a decision like this? I'll prep the materials in one pass."</p>
+<p>· <strong>Timing</strong>: "Ideally when would you want it live? Any hard trigger — a budget cycle, a go-live date?"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Idiomatic phrasing</span>
+<p>"Just so I don't waste your time — <em>what kind of budget</em> are we working with?"</p>
+<p>"Who else <em>needs to sign off</em> on something like this?"</p>
+<p>"Is this a <em>this-quarter</em> thing or a someday thing?"</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>Dare to say "this may not be for you": disqualifying is the strongest trust move
+<span class="en">Walk away, and you stop being the seller they defend against</span></h2>
+<span class="tag">proactively disqualify</span><span class="tag">push and they retreat · step back and they lean in</span><span class="tag">line: sincerity, not a script</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The most counterintuitive move: when the signals really don't fit, <strong>you proactively say "I don't think this is quite right for you"</strong> — it saves both sides' time and often <em>raises</em> trust, even makes them want it more. Because a seller willing to push you away clearly isn't just chasing the close; and people naturally want what they might lose. Note: this only holds when you genuinely judge it's not a fit. Performed as a "hard-to-get" act, it's manipulation and eventually shows.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"The moment you're willing to walk away, you stop being a salesperson they need to defend against — and start being an advisor they can trust."</span>
+<span class="source">— the core logic of take-away / disqualifying (consultative &amp; Sandler traditions)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Push harder, the customer retreats; step back, they lean in</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 230" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arR" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#c0603a"></path>
+</marker>
+<marker id="arG" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<rect fill="#f6e3da" height="82" rx="8" stroke="#c0603a" stroke-width="1.5" width="322" x="16" y="22"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="177" y="44">✗ Push hard to sell</text>
+<rect fill="#fff" height="26" rx="5" stroke="#c0603a" stroke-width="1.2" width="80" x="34" y="56"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" text-anchor="middle" x="74" y="73">You</text>
+<rect fill="#fff" height="26" rx="5" stroke="#8a4a2a" stroke-width="1.2" width="80" x="240" y="56"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10" text-anchor="middle" x="280" y="73">Customer</text>
+<line marker-end="url(#arR)" stroke="#c0603a" stroke-width="2" x1="118" x2="172" y1="69" y2="69"></line>
+<line marker-end="url(#arR)" stroke="#c0603a" stroke-width="2" x1="236" x2="300" y1="90" y2="90"></line>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" text-anchor="middle" x="280" y="108">(backs away / gets defensive)</text>
+<rect fill="#e2efdc" height="82" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="322" x="362" y="22"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="523" y="44">✓ Step back (disqualify)</text>
+<rect fill="#fff" height="26" rx="5" stroke="#4e8a3f" stroke-width="1.2" width="80" x="380" y="56"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" text-anchor="middle" x="420" y="73">You</text>
+<rect fill="#fff" height="26" rx="5" stroke="#3f6d2f" stroke-width="1.2" width="80" x="586" y="56"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" text-anchor="middle" x="626" y="73">Customer</text>
+<line marker-end="url(#arG)" stroke="#4e8a3f" stroke-width="2" x1="464" x2="410" y1="69" y2="69"></line>
+<line marker-end="url(#arG)" stroke="#4e8a3f" stroke-width="2" x1="590" x2="536" y1="90" y2="90"></line>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="523" y="108">(curious / wants to prove "I need it")</text>
+<rect fill="#eef1f5" height="56" rx="8" stroke="#3f5c7a" stroke-width="1.3" width="668" x="16" y="140"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="350" y="164">Mechanism: threatened freedom breeds resistance (reactance); "might not get it" raises desire (scarcity).</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="350" y="184">You step back, and they switch from "guarding against your pitch" to "do I actually need this?"</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: The customer's budget is clearly short, and the high-end tier is more than they'd ever use. Hard-selling it just leads to regret, returns, and a bad review.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Force the wrong thing onto them</div>
+<p>"No problem! We can do installments, and I can get you a discount — let's just get you started!"<br/>—— You won this one and buried three landmines: they can't use it, they regret it, they spread bad word-of-mouth. And they feel your "just want to sell" the whole time, defenses maxed. A short-term close, a long-term overdraft of trust.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Disqualify sincerely, hand the choice back</div>
+<p>"Honest take: at your usage, you'd never fill out this high-end tier — not worth it for you. <strong>For what you need right now, X (a lighter / cheaper option) is plenty; come back to me when you've genuinely grown into needing more.</strong> I don't want to sell you something you'll regret."<br/>—— Nine times out of ten they'll ask, seriously, "So when would you be worth it?" — defenses drop, and control returns to "do I actually need this?" <strong>You give up one deal that doesn't fit, and win back long-term trust and referrals.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: disqualifying fires three things at once — it disarms defenses, defuses reactance, and creates scarcity.</strong> The customer's default stance toward a seller is "guarding against a pitch"; you actively push them away, that premise collapses, and they switch from defense back to rational evaluation; you hand back the freedom to "buy or not," which defuses reactance (the more you're pushed to buy, the more you resist); and "I might not sell to you" makes it scarce, and scarcity directly raises perceived value and wanting.</p>
+<ul>
+<li><strong>Psychology · reactance (hard evidence)</strong>: Brehm (1966) reactance theory — the moment people feel their freedom of choice is threatened, they want the threatened option more. Hard-selling threatens the "I can choose not to buy" freedom and stirs resistance; disqualifying hands the freedom back, and the resistance dissolves. (Cross-ref psychology, on resisting manipulation.)</li>
+<li><strong>Social psychology · scarcity raises value (hard evidence)</strong>: Worchel, Lee &amp; Adewole (1975), the classic "cookie jar" experiment — the same cookie is rated tastier and more valuable when only 2 are left in the jar than when there are 10. "You might not get it" directly lifts desire. Neurally, "wanting" is driven by the mesolimbic dopamine system (nucleus accumbens) and is dissociable from "liking" (Berridge &amp; Robinson's incentive-salience work) — what scarcity amplifies is exactly this "wanting" signal. (Cross-ref neuroscience on the reward system, psychology on scarcity.)</li>
+</ul>
+<p class="caveat">The line: all the power here comes from <strong>it being real</strong>. You say it only when you genuinely judge it's not a fit, and you're genuinely ready to let go afterward — that's an advisor. If the customer is actually a fit and you fake walking away to make them chase you, that's manipulation; once seen through, trust collapses faster than from hard-selling. The test: if they truly walked away, would you feel relieved that "this is better for them too"? If yes, you've earned the right to say it.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts for sincere disqualifying (template)</div>
+<div class="template">
+<span class="label">Only when you genuinely judge it's not a fit</span>
+<p>· <strong>Mild mismatch</strong>: "For where you are now, we might be overkill — saying it upfront so you don't overspend."</p>
+<p>· <strong>Wrong timing</strong>: "If this isn't urgent for you this year, buying now is wasteful — it's better value to talk again at X."</p>
+<p>· <strong>Point to a better path</strong>: "Honestly, X is enough for your need — it doesn't have to be us." — which often draws "so when would you be worth it?"</p>
+<p>Rule of thumb: <strong>only by daring to release a bad-fit deal do you earn long-term trust.</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Idiomatic phrasing</span>
+<p>"Honestly, I'm not sure we're the <em>right fit</em> for you — and I'd rather tell you now."</p>
+<p>"This might be <em>overkill</em> for what you need."</p>
+<p>The willingness to walk away is what earns their trust.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>Your ICP: not "who might buy" but "who looks like the ones I've won"
+<span class="en">Your best leads look like the customers you've already won</span></h2>
+<span class="tag">ICP</span><span class="tag">fit × interest, two axes</span><span class="tag">beware the enthusiasm trap</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Qualifying shouldn't be improvised deal by deal — it should have an <strong>Ideal Customer Profile (ICP)</strong> as a ruler. The method is counterintuitive: don't imagine "who might be interested in me," but <strong>pull up the customers you've already won who used it well and renewed, and find what they share</strong> (industry, size, pain, trigger), compressed into one checkable profile. When a new customer shows up, score against the ICP first, rather than getting led by a moment of enthusiasm.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Don't ask who could use your product. Ask who your best customers already are — then go find more of them."</span>
+<span class="source">— ICP / ideal-customer-profile wisdom</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Filter on two axes: fit × interest</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arAx" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#5a7365"></path>
+</marker>
+</defs>
+<line marker-end="url(#arAx)" stroke="#5a7365" stroke-width="1.6" x1="70" x2="70" y1="292" y2="30"></line>
+<line marker-end="url(#arAx)" stroke="#5a7365" stroke-width="1.6" x1="70" x2="660" y1="292" y2="292"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="10.5" text-anchor="middle" transform="rotate(-90 30 160)" x="30" y="160">Fit to ICP →</text>
+<text fill="#5a7365" font-family="Georgia" font-size="10.5" text-anchor="middle" x="380" y="312">Interest / warmth →</text>
+<rect fill="#e2efdc" height="118" rx="8" stroke="#4e8a3f" stroke-width="1.6" width="272" x="384" y="40"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="520" y="82">High fit + high interest</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11" text-anchor="middle" x="520" y="104">→ Go all in (your golden deals)</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" text-anchor="middle" x="520" y="124">Most like who you've won, and ready now</text>
+<rect fill="#eef4f0" height="118" rx="8" stroke="#7aa88f" stroke-width="1.4" width="272" x="90" y="40"></rect>
+<text fill="#3d5548" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="226" y="82">High fit + low interest</text>
+<text fill="#4a6154" font-family="Georgia" font-size="11" text-anchor="middle" x="226" y="104">→ Nurture / wake up (long-term list)</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10" text-anchor="middle" x="226" y="124">Right person, not yet stirred — keep dripping</text>
+<rect fill="#f6e3da" height="118" rx="8" stroke="#c0603a" stroke-width="1.6" width="272" x="384" y="166"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="520" y="204">Low fit + high interest</text>
+<text fill="#8a3a1f" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="520" y="226">→ ⚠ Enthusiasm trap! Steals the most time</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10" text-anchor="middle" x="520" y="246">Warm but no real fit — politely demote / redirect</text>
+<rect fill="#eee" height="118" rx="8" stroke="#bbb" stroke-width="1.3" width="272" x="90" y="166"></rect>
+<text fill="#888" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="226" y="204">Low fit + low interest</text>
+<text fill="#999" font-family="Georgia" font-size="11" text-anchor="middle" x="226" y="226">→ Drop it, don't spend a minute</text>
+<text fill="#999" font-family="Georgia" font-size="10" text-anchor="middle" x="226" y="246">No fit, no heat — a polite goodbye</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: two customers. A is warm, chats with you daily, but their size and use case match none of your success cases; B is lukewarm, yet nearly a carbon copy of the customers who've renewed with you longest. Who gets your effort?</div>
+<div class="dialog bad">
+<div class="speaker">✗ Chase whoever's warmest (falling into the enthusiasm trap)</div>
+<p>"A is so eager — close them first! B is standoffish, park them."<br/>—— You're led by the single axis of "interest / warmth," ignoring "fit." Three months later A wants endless customization, haggles, and still doesn't buy (no real fit); and B — the one most like your successful customers — gets signed by a competitor. <strong>Warmth ≠ will-close, and ≠ will use it well long-term.</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Read both axes, fit first</div>
+<p>"B is cold but a high ICP fit — my <strong>golden quadrant</strong> — warm them up, invest heavily. A is hot but low fit; spend 10 minutes judging whether it can ever match: if yes, fill the gaps; if no, politely demote or point them to a better option, and don't burn time."<br/>—— Calibrate on ICP first, then read warmth. <strong>Give the most time to who most looks like the ones you've won.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: working backward from "deals won" replaces your imagination with a real base rate.</strong> Your mental "who'd be interested" is full of bias — dragged by the most recent, most vivid case (availability heuristic). But the customers you actually won and kept are <strong>evidence that already happened</strong>: their shared traits are the best leading indicator of "high close × high retention." Focusing by ICP means betting limited time on the highest-hit-rate pool — and once the hit rate rises, the same effort doubles the output.</p>
+<ul>
+<li><strong>Cognitive science · the availability heuristic misleads (hard evidence)</strong>: Tversky &amp; Kahneman (1973) showed people estimate probability by "how easily it comes to mind," so they're skewed by vivid, recent instances. That's exactly the root of "whoever's warm feels like they'll buy" — ICP corrects it with data.</li>
+<li><strong>Statistical intuition · base-rate neglect (hard evidence)</strong>: Kahneman &amp; Tversky (1973) on base-rate neglect — people overweight a case's surface representativeness and ignore the base rate of "what's the overall close rate for customers like this." ICP is base-rate made explicit: first ask "how many out of ten customers like them have I historically won?"</li>
+<li><strong>Practical direction · focusing on ICP raises win rate (industry data, directional)</strong>: multiple sales research groups repeatedly observe that teams who define and focus on their ICP see higher win rates and retention. This is industry observation and proprietary data, not a controlled experiment — the direction is stable but specific numbers vary by source.</li>
+</ul>
+<p class="caveat">Boundary: the ICP is alive, not a carved-in-stone dogma. Early on, with few samples, the profile skews; keep updating it with wins and losses. And don't use ICP as a lazy excuse to reject every new market — ask now and then "is a new profile I haven't validated starting to surface?"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Draw your ICP (checklist)</div>
+<ul class="checklist">
+<li>List the 5–10 customers who <strong>closed fast, used it well, and renewed / referred</strong>.</li>
+<li>Their <strong>shared traits</strong>: industry / size / role / trigger / the thing that hurt most?</li>
+<li>Can you compress it into <strong>one checkable profile</strong>: "A ___ company, currently tormented by ___, with a ___ trigger."</li>
+<li>Score every customer you're chasing against that profile — the least-fitting few, why are they still taking your time?</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Idiomatic phrasing</span>
+<p>"Who's our <em>ideal customer profile</em> — and does this lead actually match it?"</p>
+<p>Beware the <em>enthusiasm trap</em>: high interest, low fit.</p>
+<p>Your best leads look like the customers you've already won.</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>Your Day 11 Action</h3>
+<p>Open your list of customers / opportunities you're chasing (sales deals, job applications, partnership pitches all count), and run a real qualification on them.</p>
+<div class="action">
+<strong>Step 1 · Build the ICP:</strong> pull up 5 examples you've <strong>already won and that used it well</strong>, find the common thread, compress it into one checkable profile.<br/><br/><strong>Step 2 · BANT score:</strong> for each one you're chasing, mark <strong>Budget / Authority / Need / Timing</strong> red, yellow, or green — which item is missing jumps out.<br/><br/><strong>Step 3 · Sort on two axes:</strong> drop each into the "fit × interest" quadrant. <strong>High fit, high interest</strong> = double down; <strong>low fit, high interest</strong> = beware the enthusiasm trap, politely demote; <strong>low fit, low interest</strong> = drop today.<br/><br/><strong>Step 4 · Send one disqualifier:</strong> pick one you've long known isn't a fit but never let go of, and sincerely send "this may not be right for you, because…". Take the time and energy you free up and pour it into your golden quadrant.<br/><br/>Boundary reminder: disqualifying is returning honest time to the right people, <strong>not</strong> labeling hard deals and slipping away, nor performing a hard-to-get act. The test is always: if they truly walked away, would you feel "this is better for them too"?</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. Won't saying no early — disqualifying — also let go of deals that could have closed?</summary>
+<div class="answer">There's that risk, so the key is separating <strong>"disqualifying" from "giving up on effort."</strong> Disqualifying targets <strong>missing objective signals</strong> — no budget, no say, an explicit "not this year"; these aren't things more effort can change. But "this deal is a bit hard, the customer a bit cold" is not a reason to disqualify — that just needs you to nurture, climb to the decider, amplify the pain. Leave yourself a buffer in practice: before you really let go, run one "light confirmation" — a BANT clarifier or a sincere disqualifier. Nine times out of ten, the truly-not-a-fit gracefully exit, while the actually-a-fit immediately jump in to correct you ("No, no, we have budget, it's just…") — and that moment hands you the truest buying signal there is. <strong>Disqualifying isn't closing the door; it's a probe that forces out the truth.</strong></div>
+</details>
+<details>
+<summary>2. I'm a small shop / solo — I barely have customers, why be picky? Someone asking is cause to celebrate.</summary>
+<div class="answer">The opposite: <strong>the fewer customers and tighter the resources, the less you can afford waste.</strong> A big company has a room of salespeople to cast a wide net; you have only yourself — feeding your one available week to someone who'll never buy is fatal for you. Qualifying for the small player isn't a luxury, it's survival. And "few customers" is often the <em>result</em> of no focus: when you say clearly "I only serve people like X," you're more memorable and more referable — a vague "I can do anything for anyone" gives no one a way to pass you along. So the smaller you are, the more you need an ICP. Early on, with few samples, you can loosen the qualifying bar to probe more — but the act of "seeing whether each customer is worth deep investment" can't be skipped for a single day.</div>
+</details>
+<details>
+<summary>3. Everyone says "BANT is dead" — buyers now self-research and the process isn't linear. Is this still useful?</summary>
+<div class="answer">"BANT is dead" is an attention-grabbing line; the truth is <strong>the rigid use of BANT is dated, its core isn't</strong>. What's dated: firing off budget-and-authority questions like a background check, treating it as an interrogation form to fill your CRM. Today's buyers self-educate first, and the need is often something you have to "teach" into being rather than find ready-made — so reverse the order: <strong>first ignite the need (N) with value and insight, then naturally confirm budget, authority, timing</strong>, and "budget" may not be a ready number but "is it worth carving out budget for this." Heavier B2B just upgrades to MEDDIC. So don't recite BANT's letters, remember the four essential questions it forces you to answer: <strong>is there money, who decides, does it hurt, is it urgent</strong> — those four never go out of date, only the way you ask them must keep up with buyers.</div>
+</details>
+<details>
+<summary>4. "This may not be for you" sounds slick, but won't it come off arrogant, or just be a disguised hard-to-get play?</summary>
+<div class="answer">This is the line to watch most. The divide is one word: <strong>real</strong>. If you <strong>genuinely</strong> judge it's not a fit and are <strong>genuinely</strong> ready to let go, that's consultative honesty — the tone is naturally gentle and considerate ("I don't want you to overspend," "it'd be overkill"), not looking down and picking customers; the whiff of arrogance usually comes when your mouth says "not a fit" but your heart is still on the close, and that tension shows. But if the customer actually <strong>is</strong> a fit and you fake walking away to make them chase you — that's textbook hard-to-get manipulation, and once seen through, trust collapses faster than from hard-selling, because they re-read all your earlier "sincerity." The self-check always works: <strong>if they truly walked away, would you feel relieved that "this is better for them too," or annoyed that "a deal in hand got away"?</strong> Only the former earns you the right to say it.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 11</footer>
+</div>
+</body>
+</html>

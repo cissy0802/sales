@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 11：资格判定</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 11 · Phase B</div>
+<h1>资格判定：把时间押在会成交的人身上，比逼单更能拉高业绩</h1>
+<div class="meta"><span>主题：资格判定（qualifying）</span><span>·</span><span>4 个原则</span></div>
+<div class="subtitle">业绩差，你以为是"逼单不够狠"。更常见的真相是：你把一半时间浪费在了从第一天起就不会买的人身上——他们礼貌、热情、总说"再考虑考虑"，却本不该进你的名单。学会尽早说不，往往比学会成交更省命。</div>
+</header>
+<div class="intro">
+<strong>上一期把决策链上的人一个个找了出来；这一期先退一步问一个更狠的问题——这单，到底值不值得你追？</strong>新手默认"每个来问的人都是机会"，于是雨露均沾，把最稀缺的资源（时间和注意力）平摊给所有人，结果最会拖的人占用最多。资格判定就是<strong>在投入大量精力之前，先判断这客户值不值得追</strong>：有没有钱、能不能拍板、是不是真痛、是不是现在就要。这一期四件事：算清追错人的代价、用 BANT 四问打分、敢主动说"这也许不适合你"、再从你赢过的单反推出最该追的人（ICP）。守住一条线：取消资格是把诚实时间还给对的人，不是欲擒故纵的套路。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>你的稀缺资源是时间，不是产品
+<span class="en">Your scarce resource is time, not the product</span></h2>
+<span class="tag">机会成本</span><span class="tag">沉没成本陷阱</span><span class="tag">追错=最大隐性亏损</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">产品可以无限复制，你的时间不能。每小时花在永远不会买的客户身上，就是从会买的客户那里偷走的一小时——这叫<strong>机会成本</strong>。更坑的是<strong>沉没成本</strong>：追得越久、投入越多，越舍不得放手，于是把好时间继续砸进坏单子。资格判定第一步，是把"追这单"当投资算账，而不是当"努力就有回报"的信仰。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"The salesperson's most valuable, least renewable resource is time. Time spent on a bad opportunity is time stolen from a good one."</span>
+<span class="zh">"销售最宝贵、最不可再生的资源是时间。花在坏机会上的时间，是从好机会那里偷来的。"——业绩的差距常常不在成交率，而在你把时间押给了谁。</span>
+<span class="source">— 顾问式销售通识（qualifying 的核心逻辑）</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">同样一个月，时间押在哪里决定结果</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">同样一个月的时间，两种花法</text>
+<text fill="#a8461f" font-family="Georgia" font-size="11" font-weight="700" x="20" y="58">✗ 死磕一个低概率客户</text>
+<rect fill="#e4b7a3" height="30" rx="4" stroke="#c0603a" stroke-width="1.4" width="360" x="20" y="68"></rect>
+<text fill="#8a3a1f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="200" y="88">追那个总说"再看看"的大客户（成交概率≈10%）</text>
+<rect fill="#dfeae2" height="30" rx="4" stroke="#7aa88f" stroke-width="1.2" width="140" x="386" y="68"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="10" text-anchor="middle" x="456" y="88">零散跟别人</text>
+<rect fill="#eee" height="30" rx="4" stroke="#bbb" stroke-width="1" width="152" x="530" y="68"></rect>
+<text fill="#888" font-family="Georgia" font-size="10" text-anchor="middle" x="606" y="88">被拖走的空转</text>
+<text fill="#a8461f" font-family="Georgia" font-size="11" font-weight="700" x="20" y="120">结果：月底 0–1 成交，心力交瘁</text>
+<line stroke="#cbb98f" stroke-dasharray="4,4" stroke-width="1" x1="20" x2="682" y1="140" y2="140"></line>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11" font-weight="700" x="20" y="168">✓ 先砍掉低概率，时间铺给高概率</text>
+<rect fill="#cfe6d6" height="30" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="200" x="20" y="178"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="120" y="198">深耕客户 A（概率 60%）</text>
+<rect fill="#cfe6d6" height="30" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="200" x="230" y="178"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="330" y="198">深耕客户 B（概率 50%）</text>
+<rect fill="#cfe6d6" height="30" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="242" x="440" y="178"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" text-anchor="middle" x="561" y="198">深耕客户 C（概率 45%）</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11" font-weight="700" x="20" y="232">结果：同样的时间，月底 1–2 成交，还没那么累</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：一个体量很大的客户，第一次聊就很热情，但三个月了每次都停在"很感兴趣，内部再讨论下"，从没给预算和时间表。你手上还有三个中等客户在排队。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 被"大 + 热情"绑架，继续死磕</div>
+<p>"这单这么大，我都投三个月了，现在放手太亏！再改一版方案、再飞一趟见领导……"<br/>—— 你在为<strong>已花掉、要不回来的三个月</strong>继续加注（沉没成本），而不问"从今天起，这时间投这单和投那三个中等客户哪个回报更高"。大和热情都不等于会成交。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 把"追不追"当投资来算</div>
+<p>"我要么把它推到真判断得出来、要么放。给它设一个<strong>清晰的下一步 + 死线</strong>：'为帮你们内部推进，我需要大致预算范围和期望上线时间——这周能定吗？'定不了，就说明它还不是真机会，我把主力先压到 A、B、C 上。"<br/>—— 已花的三个月是沉没成本，不该影响今天的决定。<strong>要它给出资格信号，给不出就降级，不再当头号追。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Your product copies infinitely; your time doesn't. Every hour on someone who'll never buy is an hour stolen from someone who will — that's opportunity cost. Worse is the sunk-cost trap: the longer you've chased, the harder you cling, pouring good time after bad. Qualifying step one is treating "should I chase this" as an investment call, not a faith that effort always pays off.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：追错客户的亏损有两层——看不见的机会成本，加上让你上瘾的沉没成本。</strong>时间是零和的：这一小时给了 A 就给不了 B，但"没追 B 的损失"不像账单那样跳出来，人系统性地低估。而已投入的时间会反过来绑架你——大脑把"放手"当"承认亏损"，损失的心理权重约为等额获得的 2 倍（损失厌恶，前景理论），于是宁可继续砸钱也不认错。两股力合起来，让人把最多时间喂给最会拖的人。</p>
+<ul>
+<li><strong>行为经济学 · 沉没成本谬误（硬证据）</strong>：Arkes &amp; Blumer (1985, <em>OBHDP</em>) 一系列经典实验证明，人会因"已经付过钱 / 花过时间"而非理性地继续投入——买了不好看的滑雪票也硬要去用。反复复现的稳固发现，正是"追单越久越舍不得放"的心理底层。</li>
+<li><strong>行为经济学 · 机会成本被系统性忽视（较硬）</strong>：Frederick、Novemsky 等 (2009, <em>J. Consumer Research</em>) 发现，人决策时常想不起"这钱 / 时间本可用在别处"，一旦被明确提示机会成本，选择就会改变。所以"追这单还是那单"必须<strong>写出来对比</strong>，否则机会成本自动隐形。（损失厌恶机制见"买家的大脑"一期）</li>
+</ul>
+<p class="caveat">边界：别把"资格判定"当懒惰的借口，一遇难啃的就贴"没资格"溜走。真正的取消资格基于<strong>客观信号</strong>（没预算、没权限、没时间表），不是基于"这单有点费劲"。费劲但信号齐全的硬骨头，恰恰值得啃。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">追单前先算这三笔账（自检）</div>
+<div class="template">
+<span class="label">把"追不追"当投资决策</span>
+<p>· <strong>机会成本</strong>：这些时间投给手上最靠谱的另一个客户，回报会不会更高？</p>
+<p>· <strong>沉没成本清零</strong>：假装今天才第一次接触这单——只看从现在起的期望，我还投吗？</p>
+<p>· <strong>止损线</strong>：我给它设了什么"再不出信号就降级"的死线？还是无限期陪跑？</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Am I chasing this because it's a real opportunity, or because I've already <em>sunk</em> so much time in it?" —— 分清真机会与沉没成本。</p>
+<p>"What's the <em>opportunity cost</em> of staying on this deal?" —— 追这单的机会成本是什么。</p>
+<p>Time on a bad deal is time stolen from a good one.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>BANT 四问：30 秒给一个客户打分
+<span class="en">BANT: score a lead in thirty seconds</span></h2>
+<span class="tag">预算 Budget</span><span class="tag">权力 Authority</span><span class="tag">需求 Need</span><span class="tag">时机 Timing</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">别凭"感觉这单有戏"分配精力——用一张清单把"有戏"拆成可查的信号。经典的 <strong>BANT</strong> 四问：<strong>预算（Budget）</strong>有没有钱、<strong>权力（Authority）</strong>你聊的人能不能拍板、<strong>需求（Need）</strong>是不是真痛、<strong>时机（Timing）</strong>是不是现在就要。四绿=全力追；缺预算或时机=先培育别猛攻；聊的人说不上话=顺链往上找（决策链那期）。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Budget, Authority, Need, Timeline — if you can't check these, you don't have a qualified opportunity, you have a conversation."</span>
+<span class="zh">"预算、权力、需求、时机——这四项打不了勾，你手里就不是一个合格机会，只是一次聊天。"</span>
+<span class="source">— BANT 框架（源自 IBM，1960s，业界通用）</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">BANT 记分卡：逐项亮灯</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 285" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f7f0e4" height="46" rx="6" stroke="#c08a3a" stroke-width="1.4" width="662" x="19" y="14"></rect>
+<circle cx="48" cy="37" fill="#e0a53a" r="9"></circle>
+<text fill="#8a6020" font-family="Georgia" font-size="12" font-weight="700" x="68" y="33">B · 预算 Budget —— 有没有钱、大概多少</text>
+<text fill="#9a7a4a" font-family="Georgia" font-size="10" x="68" y="50">问："这件事你们大概留了多少预算 / 谁管这笔钱？"</text>
+<rect fill="#eef1f5" height="46" rx="6" stroke="#37506a" stroke-width="1.4" width="662" x="19" y="70"></rect>
+<circle cx="48" cy="93" fill="#4e8a3f" r="9"></circle>
+<text fill="#2f4a66" font-family="Georgia" font-size="12" font-weight="700" x="68" y="89">A · 权力 Authority —— 你聊的人能不能拍板</text>
+<text fill="#4a5a72" font-family="Georgia" font-size="10" x="68" y="106">问："这类决定通常谁点头？还需要谁参与？"（接决策链）</text>
+<rect fill="#e6f0ea" height="46" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="662" x="19" y="126"></rect>
+<circle cx="48" cy="149" fill="#4e8a3f" r="9"></circle>
+<text fill="#2f6a2f" font-family="Georgia" font-size="12" font-weight="700" x="68" y="145">N · 需求 Need —— 是不是真痛、有多痛</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" x="68" y="162">问："不解决它，现在每月大概损失多少？"（接挖痛点）</text>
+<rect fill="#f6e3da" height="46" rx="6" stroke="#c0603a" stroke-width="1.4" width="662" x="19" y="182"></rect>
+<circle cx="48" cy="205" fill="#c0603a" r="9"></circle>
+<text fill="#8a3a1f" font-family="Georgia" font-size="12" font-weight="700" x="68" y="201">T · 时机 Timing —— 是不是现在就要</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10" x="68" y="218">问："希望什么时候用上？有没有非现在不可的理由？"</text>
+<rect fill="#123f30" height="34" rx="6" width="662" x="19" y="240"></rect>
+<text fill="#eef7f2" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="262">绿灯多=全力追　黄灯=先培育　红灯（尤其缺时机/预算）=降级或取消资格</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：一个客户对产品赞不绝口，聊了一小时，你以为稳了。用 BANT 一过——只有 N（需求）亮绿，其余全是问号。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 被"聊得好"迷惑，直接进方案</div>
+<p>"他这么喜欢，我赶紧回去做份详细方案 + 报价！"<br/>—— 你把大量时间投在一个只有"喜欢"、没预算没时间表、还不确定能否拍板的人身上。三周后方案石沉大海——他没打算今年买，只是聊得开心。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 用四个自然的问题补齐 BANT</div>
+<p>"太好了。为了给你一份真正有用的方案，我确认几件事：<strong>（预算）</strong>这类事你们大概会投入什么量级？<strong>（时机）</strong>理想什么时候用上？<strong>（权力）</strong>除了你，还有谁会一起看？"<br/>—— 不是审问，是"帮你省时间"的口吻。他若含糊其辞、全推到明年，你就知道：现在只做轻量跟进，别砸重方案。<strong>把'喜欢'和'会买'分开。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Don't allocate effort on a hunch — turn "promising" into checkable signals. Classic BANT: Budget (is there money), Authority (can the person you're talking to decide), Need (is the pain real), Timing (is it now). Four greens = go all in; missing budget or timing = nurture, don't push hard; the person has no say (no authority) = climb the chain. Separate "likes it" from "will buy."</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：清单把主观的"感觉有戏"换成客观的"信号齐不齐"，挡住认知偏差。</strong>人天生被热情、好感、体量这些<strong>生动但不相关</strong>的线索带跑，却忽略"有没有钱、是不是现在"这些枯燥但决定性的事实。一张固定清单强迫你每项都问，等于给冲动的判断装了刹车，防止漏掉致命的一项。</p>
+<ul>
+<li><strong>方法论 · BANT（业界通用，非实验）</strong>：预算 / 权力 / 需求 / 时机四问源自 IBM（1960s），是沿用最广的资格判定启发式。它不是对照实验，而是把销售直觉结构化的清单；方向可靠，但要按今天的买法灵活用（见下方对 BANT 局限的讨论）。更重的 B2B 常用 MEDDIC 补强——加上量化指标、经济买家、决策标准 / 流程、冠军（决策链那期讲过）。</li>
+<li><strong>决策科学 · 清单对抗判断偏差（较硬）</strong>：Gawande《清单革命》综述了核查清单在外科、航空中显著降低疏漏（如 WHO 手术清单使并发症明显下降）。资格判定同理——不是清单聪明，是它防你漏。</li>
+</ul>
+<p class="caveat">边界：BANT 是筛子，不是审讯。上来连珠炮问预算权限，会像查户口、伤信任。正确姿势是把四问<strong>拆散、包在"帮你省时间 / 给你更准方案"的语境里自然问出</strong>，且先建立价值和痛点再问预算——顺序错了，客户凭什么告诉你钱的事。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">BANT 四问的自然话术（模板）</div>
+<div class="template">
+<span class="label">包在"帮你"的语境里问，别像审讯</span>
+<p>· <strong>需求（先问）</strong>："现在最卡的是哪块？不解决它，代价大概多少？"</p>
+<p>· <strong>预算</strong>："为了不给你推超范围的方案——这类事你们大概什么量级？"</p>
+<p>· <strong>权力</strong>："这类决定通常还有谁一起看？我好把材料一次备齐。"</p>
+<p>· <strong>时机</strong>："理想什么时候用上？有没有非现在不可的节点（预算周期 / 上线表）？"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Just so I don't waste your time — <em>what kind of budget</em> are we working with?" —— 用"不浪费你时间"起头问预算。</p>
+<p>"Who else <em>needs to sign off</em> on something like this?" —— 问权力。</p>
+<p>"Is this a <em>this-quarter</em> thing or a someday thing?" —— 问时机。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>敢说"这也许不适合你"：取消资格是最强的信任动作
+<span class="en">"This might not be for you" — disqualifying builds trust and closes</span></h2>
+<span class="tag">主动 disqualify</span><span class="tag">越推越退 · 后撤反被靠近</span><span class="tag">红线：真诚不是套路</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">最反直觉的一招：当信号真的不匹配时，<strong>你主动说"这可能不太适合你"</strong>——不但省下双方时间，还常常反而提升信任、甚至让对方更想买。因为愿意把你推开的销售，显然不是只想成交的人；而人对"可能失去"的东西天然更想要。注意：这只在你真心判断不匹配时才成立。当成"欲擒故纵"表演来演，是操纵，迟早穿帮。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"The moment you're willing to walk away, you stop being a salesperson they need to defend against — and start being an advisor they can trust."</span>
+<span class="zh">"当你敢于转身走开，你就不再是那个他们要提防的销售，而成了他们能信任的顾问。"</span>
+<span class="source">— take-away / disqualifying 的核心逻辑（顾问式 &amp; Sandler 传统）</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">越用力推，客户越后退；你后撤一步，他反而上前</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 230" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arR" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#c0603a"></path>
+</marker>
+<marker id="arG" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<rect fill="#f6e3da" height="82" rx="8" stroke="#c0603a" stroke-width="1.5" width="322" x="16" y="22"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="177" y="44">✗ 使劲推销</text>
+<rect fill="#fff" height="26" rx="5" stroke="#c0603a" stroke-width="1.2" width="80" x="34" y="56"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" text-anchor="middle" x="74" y="73">你</text>
+<rect fill="#fff" height="26" rx="5" stroke="#8a4a2a" stroke-width="1.2" width="80" x="240" y="56"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10" text-anchor="middle" x="280" y="73">客户</text>
+<line marker-end="url(#arR)" stroke="#c0603a" stroke-width="2" x1="118" x2="172" y1="69" y2="69"></line>
+<line marker-end="url(#arR)" stroke="#c0603a" stroke-width="2" x1="236" x2="300" y1="90" y2="90"></line>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" text-anchor="middle" x="280" y="108">（往后退 / 起防御）</text>
+<rect fill="#e2efdc" height="82" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="322" x="362" y="22"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="523" y="44">✓ 主动后撤（取消资格）</text>
+<rect fill="#fff" height="26" rx="5" stroke="#4e8a3f" stroke-width="1.2" width="80" x="380" y="56"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" text-anchor="middle" x="420" y="73">你</text>
+<rect fill="#fff" height="26" rx="5" stroke="#3f6d2f" stroke-width="1.2" width="80" x="586" y="56"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" text-anchor="middle" x="626" y="73">客户</text>
+<line marker-end="url(#arG)" stroke="#4e8a3f" stroke-width="2" x1="464" x2="410" y1="69" y2="69"></line>
+<line marker-end="url(#arG)" stroke="#4e8a3f" stroke-width="2" x1="590" x2="536" y1="90" y2="90"></line>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="523" y="108">（好奇 / 想证明"我需要"）</text>
+<rect fill="#eef1f5" height="56" rx="8" stroke="#3f5c7a" stroke-width="1.3" width="668" x="16" y="140"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="350" y="164">机制：自由被夺则抵触（心理逆反），"可能得不到"抬高渴望（稀缺）。</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="350" y="184">你后撤，他反而从"防你推销"切换到"我是不是真需要"。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：客户预算明显不够，产品的高配对他其实用不上，硬卖只会让他后悔、退货、给差评。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 硬把不合适的塞给他</div>
+<p>"没关系！我们可以分期，也能给你申请个折扣，先上再说！"<br/>—— 你赢了这一单，埋了三个雷：他用不上、后悔、传坏口碑。而且他全程感到你"只想卖"，防御拉满。短期成交，长期透支信任。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 真诚取消资格，把选择还给他</div>
+<p>"说句实在话：以你现在的用量，这套高配你多半用不满，不划算。<strong>眼下这点需求，你其实先用 X（更轻 / 更便宜）就够，等真长到需要了再找我。</strong>我不想卖你一个会后悔的东西。"<br/>—— 十有八九他会认真反问："那什么情况下你们才划算？"——防御瞬间卸下，主动权回到"我到底需不需要"。<strong>放走一单不合适，换回长期信任。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The most counterintuitive move: when the signals genuinely don't fit, you say "I don't think this is right for you." It saves both sides' time and often raises trust — even makes them want it more. A seller willing to push you away clearly isn't just chasing the close, and people want what they might lose. Caveat: this only works when you truly mean it. Faked as a "hard-to-get" act, it's manipulation and eventually shows.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：取消资格同时触发三件事——解除防御、心理逆反、稀缺。</strong>客户对销售的默认姿态是"提防被推销"，你主动往外推，这个前提瞬间失效，他从防御切回理性评估；你把"要不要买"的自由还给他，反而消掉逆反（越被逼买越抗拒）；而"你未必卖我"让它显得稀缺，稀缺直接抬高感知价值与"想要"。</p>
+<ul>
+<li><strong>心理学 · 心理逆反（硬证据）</strong>：Brehm (1966) 逆反理论——人一感到选择自由被威胁，就更想抓住被威胁的选项。硬推销威胁"我可以不买"的自由，激起抵触；取消资格把自由还回去，抵触随之消失。（cross-ref psychology 抗操纵）</li>
+<li><strong>社会心理学 · 稀缺抬高价值（硬证据）</strong>：Worchel、Lee &amp; Adewole (1975) 的经典"饼干罐"实验——同样的饼干，罐里只剩 2 块时被评得比满罐 10 块更好吃、更值钱。"你未必买得到"直接提升渴望。神经层面，"想要"（wanting）由中脑边缘多巴胺系统（伏隔核）驱动，与"喜欢"可分离（Berridge &amp; Robinson 的 incentive-salience 研究）——稀缺放大的正是这个"想要"信号。（cross-ref neuroscience 奖赏系统、psychology 稀缺）</li>
+</ul>
+<p class="caveat">红线：这一招的全部力量来自<strong>它是真的</strong>。你真心判断不匹配才说，说完也真的准备好放手——那是顾问。若客户其实合适，你却假装要走逼他追上来，那是操纵；一旦被识破，信任崩得比硬推还快。判据：如果他真的走了，你会不会松一口气觉得"这样对他也好"？会，才说得出口。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">真诚取消资格的话术（模板）</div>
+<div class="template">
+<span class="label">只在真心判断不匹配时用</span>
+<p>· <strong>轻度不匹配</strong>："以你现在的情况，我们可能有点大材小用，先说清楚免得你多花钱。"</p>
+<p>· <strong>时机不对</strong>："这事你们今年不急的话，现在上反而浪费，等到 X 时候再聊更划算。"</p>
+<p>· <strong>指条更合适的路</strong>："说实话，你这需求用 X 就够了，不一定非我们。"——反而常被追问"那你们什么时候值得？"</p>
+<p>口诀：<strong>敢放走一单不合适，才配得上长期信任。</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Honestly, I'm not sure we're the <em>right fit</em> for you — and I'd rather tell you now." —— 真诚取消资格的开场。</p>
+<p>"This might be <em>overkill</em> for what you need." —— 对你来说可能大材小用。</p>
+<p>The willingness to walk away is what earns their trust.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>理想客户画像：别问"谁可能买"，问"谁最像我赢过的人"
+<span class="en">Your ICP: not "who might buy" but "who looks like the ones I've won"</span></h2>
+<span class="tag">ICP</span><span class="tag">契合度 × 意向两轴</span><span class="tag">警惕"热情陷阱"</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">资格判定不该一单一单临时拍脑袋，而应有一张<strong>理想客户画像（ICP，Ideal Customer Profile）</strong>当标尺。做法很反直觉：不凭空想象"谁可能对我感兴趣"，而是<strong>翻出你已经赢过、且用得好又续费的客户，找出他们的共同点</strong>（行业、规模、痛点、触发场景），压成一句可判断的画像。以后来个新客户，先对标 ICP，别被一时热情牵着走。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Don't ask who could use your product. Ask who your best customers already are — then go find more of them."</span>
+<span class="zh">"别问谁'能用得上'你的产品。问你最好的客户已经是谁——然后去找更多这样的人。"</span>
+<span class="source">— ICP / 理想客户画像通识</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">两轴筛客户：契合度 × 意向</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arAx" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#5a7365"></path>
+</marker>
+</defs>
+<line marker-end="url(#arAx)" stroke="#5a7365" stroke-width="1.6" x1="70" x2="70" y1="292" y2="30"></line>
+<line marker-end="url(#arAx)" stroke="#5a7365" stroke-width="1.6" x1="70" x2="660" y1="292" y2="292"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="10.5" text-anchor="middle" transform="rotate(-90 34 160)" x="34" y="160">契合 ICP 程度 →</text>
+<text fill="#5a7365" font-family="Georgia" font-size="10.5" text-anchor="middle" x="380" y="312">意向 / 热度 →</text>
+<rect fill="#e2efdc" height="118" rx="8" stroke="#4e8a3f" stroke-width="1.6" width="272" x="384" y="40"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="520" y="82">高契合 + 高意向</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11" text-anchor="middle" x="520" y="104">→ 全力追（你的黄金单）</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" text-anchor="middle" x="520" y="124">最像你赢过的人，又现在就想动</text>
+<rect fill="#eef4f0" height="118" rx="8" stroke="#7aa88f" stroke-width="1.4" width="272" x="90" y="40"></rect>
+<text fill="#3d5548" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="226" y="82">高契合 + 低意向</text>
+<text fill="#4a6154" font-family="Georgia" font-size="11" text-anchor="middle" x="226" y="104">→ 培育 / 唤醒（长期名单）</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10" text-anchor="middle" x="226" y="124">对的人还没被点醒，值得持续滴灌</text>
+<rect fill="#f6e3da" height="118" rx="8" stroke="#c0603a" stroke-width="1.6" width="272" x="384" y="166"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="520" y="204">低契合 + 高意向</text>
+<text fill="#8a3a1f" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="520" y="226">→ ⚠ 热情陷阱！最容易被骗时间</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10" text-anchor="middle" x="520" y="246">很热情但根本不匹配，礼貌降级/指别处</text>
+<rect fill="#eee" height="118" rx="8" stroke="#bbb" stroke-width="1.3" width="272" x="90" y="166"></rect>
+<text fill="#888" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="226" y="204">低契合 + 低意向</text>
+<text fill="#999" font-family="Georgia" font-size="11" text-anchor="middle" x="226" y="226">→ 直接放，别投一分钟</text>
+<text fill="#999" font-family="Georgia" font-size="10" text-anchor="middle" x="226" y="246">不匹配又不热，礼貌告别</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：两个客户。甲很热情、天天找你聊，但规模、用法都跟你所有成功案例对不上；乙不温不火，却和你续费最久的那批客户几乎一个模子。你把精力给谁？</div>
+<div class="dialog bad">
+<div class="speaker">✗ 谁热情就追谁（掉进热情陷阱）</div>
+<p>"甲这么积极，肯定先成他！乙爱答不理，先放着。"<br/>—— 你被"意向 / 热度"单轴牵着走，忽略了"契合度"。三个月后甲各种要定制、压价、还是没买（根本不匹配）；而最像你成功客户的乙，被同行签走了。<strong>热情 ≠ 会成交，更 ≠ 长期用好。</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 两轴一起看，契合度优先</div>
+<p>"乙虽冷，但高度契合 ICP——是我的<strong>黄金象限</strong>，主动升温、重点投入。甲很热但低契合，先花 10 分钟判断能不能匹配：能就补，不能就礼貌降级、别耗。"<br/>—— 先用 ICP 校准，再看热度。<strong>把最多的时间，给最像你赢过的人。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Don't qualify ad hoc — keep an Ideal Customer Profile (ICP) as a ruler. Counterintuitively, don't imagine "who might be interested"; pull up the customers you've already won who stayed and renewed, find what they share (industry, size, pain, trigger), and turn it into one checkable profile. Score two axes — fit × interest — and beware the "enthusiasm trap": high interest but low fit wastes the most time.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：从"赢过的单"反推，等于用真实的基础概率替代你的想象。</strong>你脑补的"谁会感兴趣"充满偏差——被最近、最生动的个案带跑（可得性启发）。而你真正赢过并留住的客户是<strong>已发生的证据</strong>：他们的共同特征，就是"高成交 × 高留存"的最佳前置指标。按 ICP 聚焦，等于把有限时间押到命中率最高的池子里，产出翻倍。</p>
+<ul>
+<li><strong>认知科学 · 可得性启发导致误判（硬证据）</strong>：Tversky &amp; Kahneman (1973) 证明人靠"想起来有多容易"估概率，于是被生动、新近的个例带偏。这正是"谁热情就觉得谁会买"的病根——ICP 用数据纠正它。</li>
+<li><strong>统计直觉 · 忽视基础概率（硬证据）</strong>：Kahneman &amp; Tversky (1973) 的基率忽视——人过度看个案的表面代表性，忽略"这类客户整体成交率多少"的基率。ICP 就是把基率显性化：先看"像他这样的客户我历史上赢过几成"。</li>
+<li><strong>实务方向 · 聚焦 ICP 提升赢率（行业数据，方向性）</strong>：多家销售研究机构反复观察到，明确并聚焦 ICP 的团队赢率与留存更高。属行业观察与自有数据、非对照实验，方向稳但具体数字因来源而异。</li>
+</ul>
+<p class="caveat">边界：ICP 是活的，不是刻死的教条。早期样本少，画像会偏，要随赢单 / 丢单不断更新；也别把它当成拒绝新市场的懒惰借口，定期问一句"是不是有个新画像在冒头"。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">画出你的 ICP（自检清单）</div>
+<ul class="checklist">
+<li>列出我<strong>成交快、用得好、还续费 / 转介绍</strong>的 5–10 个客户。</li>
+<li>他们的<strong>共同点</strong>：行业 / 规模 / 角色 / 触发场景 / 最痛的那件事？</li>
+<li>能不能压成<strong>一句可判断的画像</strong>："_____ 的公司，正被 _____ 折磨，且有 _____ 触发。"</li>
+<li>每个在追的客户对着这句画像打个分——最不契合的那几个，为什么还占我时间？</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Who's our <em>ideal customer profile</em> — and does this lead actually match it?" —— 这条线索真的符合 ICP 吗。</p>
+<p>Beware the <em>enthusiasm trap</em>: high interest, low fit. —— 警惕热情陷阱。</p>
+<p>Your best leads look like the customers you've already won.</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>本期习作 · Your Day 11 Action</h3>
+<p>打开你正在追的客户 / 机会清单（销售单、求职投递、找合作都算），给它们做一次真正的资格判定。</p>
+<div class="action">
+<strong>第一步·建 ICP：</strong>翻出你<strong>已"赢过且用得好"</strong>的 5 个例子，找共同点，压成一句可判断的画像。<br/><br/><strong>第二步·BANT 打分：</strong>给每个在追的对象，用<strong>预算 / 权力 / 需求 / 时机</strong>四项各打个红黄绿，缺哪项一目了然。<br/><br/><strong>第三步·两轴归类：</strong>丢进"契合度 × 意向"四象限。<strong>高契合高意向</strong>=加倍投入；<strong>低契合高意向</strong>=警惕热情陷阱、礼貌降级；<strong>低契合低意向</strong>=今天就放。<br/><br/><strong>第四步·发一句取消资格：</strong>挑一个你早知道不匹配、却没舍得放的对象，真诚发一句"这也许不太适合你，原因是……"。把省下的时间压到黄金象限那几个身上。<br/><br/>边界提醒：取消资格是把诚实的时间还给对的人，<strong>不是</strong>给难啃的单贴标签溜走、更不是演"欲擒故纵"。判据永远是：他真走了，你会不会觉得"这样对他也好"。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 尽早说不、主动取消资格，会不会把本来能成交的单也放走了？</summary>
+<div class="answer">有这个风险，所以关键是分清<strong>"取消资格"和"放弃努力"是两回事</strong>。取消资格针对的是<strong>客观信号缺失</strong>——没预算、说不上话、明确今年不做；这些不是你多努力能改变的。而"这单有点难、客户有点冷"不是取消资格的理由，那只需要你去培育、往上找决策人、放大痛点。实操上留个缓冲：真放之前先做一次"轻量确认"——发一句 BANT 澄清或真诚的取消资格话术。真不匹配的会顺势退场，其实匹配的会立刻跳出来纠正你（"不不，我们有预算，就是……"）——那一刻你反而拿到了最真的购买信号。<strong>取消资格不是关门，是逼出真相的试探。</strong></div>
+</details>
+<details>
+<summary>2. 我是小公司 / 个人，客户本来就没几个，还挑什么资格？有人问就该偷着乐了。</summary>
+<div class="answer">恰恰相反：<strong>客户越少、资源越紧，越挑不起浪费。</strong>大公司有一屋子销售可以广撒网，你只有你自己——把仅有的一周时间喂给永远不会买的人，对你是致命的。资格判定对小玩家不是奢侈，是生存。而且"客户少"往往是<strong>没聚焦</strong>的结果：当你说清"我只服务像 X 这样的人"，反而更容易被记住、被转介绍——泛泛的"谁都能做"没人替你传话。所以越小越要有 ICP。早期样本少可把资格线放宽去多试探，但"看清每个客户值不值得深投"这动作，一天都不能省。</div>
+</details>
+<details>
+<summary>3. 都说"BANT 已死"，现在的买家自己上网研究、流程也不线性了，这套还有用吗？</summary>
+<div class="answer">"BANT 已死"是句吸引眼球的话，真相是<strong>僵化用法过时了，内核没有</strong>。过时的是：上来像查户口一样连问预算权限、把它当成填 CRM 的审讯清单。今天的买家先自我教育、需求常是被你"教"出来的——所以顺序要反过来：<strong>先用价值和洞见点燃需求（N），再自然确认预算、权力、时机</strong>，而且"预算"未必是现成数字，可能是"值不值得为此挪出预算"。更重的 B2B 干脆升级到 MEDDIC。所以别背 BANT 的字母，记它逼你回答的四个本质问题：<strong>有没有钱、谁拍板、痛不痛、急不急</strong>——这四问永不过时，只是问法要跟上买家。</div>
+</details>
+<details>
+<summary>4. "这也许不适合你"听起来很高级，但会不会显得傲慢、或者其实就是变相的欲擒故纵？</summary>
+<div class="answer">这是最该警惕的一条线。分野只有一个字：<strong>真</strong>。如果你<strong>真心</strong>判断不匹配、说完也<strong>真的</strong>准备好放手，那是顾问式的诚实——语气自然温和体谅（"怕你多花钱""大材小用"），不是居高临下地挑客；傲慢感通常来自你嘴上说不适合、心里还惦记成交，那股拧巴对方感觉得到。而如果客户其实<strong>完全合适</strong>，你却假装要走逼他追上来——那就是欲擒故纵的操纵，一旦被识破，信任崩得比硬推还快。自检那句永远管用：<strong>如果他真的走了，你会松一口气觉得"这样对他也好"，还是懊恼"到手的单飞了"？</strong>前者才有资格说这句话。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 11</footer>
+</div>
+</body>
+</html>
