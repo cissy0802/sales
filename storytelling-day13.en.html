@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 13: Selling With Stories</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 13 · Phase C</div>
+<h1>Selling With Stories: They Won't Remember Your Three Selling Points, But They'll Repeat Your Customer to a Colleague</h1>
+<div class="meta"><span>Topic: Selling With Stories</span><span>·</span><span>4 principles</span></div>
+<div class="subtitle">Everyone knows they're supposed to tell stories, so what comes out is "founded in 2015, growing steadily ever since" — that's a résumé. The smallest unit of a story isn't "what happened," it's "someone got stuck, and then what?"</div>
+</header>
+<div class="intro">
+<strong>A one-sentence value proposition is only enough to get the door open. What speaks for you when you're not in the room is the story they can repeat.</strong> And what most people tell isn't a story: the trouble gets cut out, the teller casts themselves as the hero, and the prettiest case gets to stand in for the average. Four things: <strong>put the conflict back in the middle, tell it as three blocks about one named person, hand the lead role to them, and hold the line that detail makes something feel true without making it true.</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>No trouble, no story
+<span class="en">Conflict is the only reason anyone stays to listen</span></h2>
+<span class="tag">situation-trouble-turn-result</span><span class="tag">narrative memory</span><span class="tag">neural coupling</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">A story has five beats: <strong>situation → trouble → turn → result → meaning</strong>. The adjectives are optional; the trouble isn't. "We worked with an e-commerce client and it went well" isn't a story, it's the two ends glued together — the trouble in the middle has been cut out, and the trouble was the only reason anyone was still listening. It needn't be dramatic: "the last two days of every month go to reconciling accounts" is plenty.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Be a sadist. No matter how sweet and innocent your leading characters, make awful things happen to them — in order that the reader may see what they are made of."</span>
+<span class="source">— Kurt Vonnegut, one of the eight rules in <em>Bagombo Snuff Box</em> (1999)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The five-beat skeleton</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="stArc" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">Where the tension rises, and where it lands</text>
+<rect fill="#f6e3da" height="34" rx="6" stroke="#c0603a" stroke-width="1.2" width="640" x="30" y="34"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" x="44" y="55">Most "stories" keep only the two ends: "a client of ours" … "and it went well."</text>
+<line stroke="#cbb98f" stroke-width="1" x1="30" x2="670" y1="226" y2="226"></line>
+<path d="M62,208 C130,208 150,154 205,150 C280,144 300,94 350,92 C405,90 440,132 500,146 C560,160 586,190 623,197" fill="none" marker-end="url(#stArc)" stroke="#1f7a5c" stroke-width="2.4"></path>
+<circle cx="62" cy="208" fill="#fbfaf4" r="6" stroke="#1f7a5c" stroke-width="2"></circle>
+<circle cx="205" cy="150" fill="#fbfaf4" r="6" stroke="#c0603a" stroke-width="2"></circle>
+<circle cx="350" cy="92" fill="#fbfaf4" r="6" stroke="#c0603a" stroke-width="2"></circle>
+<circle cx="500" cy="146" fill="#fbfaf4" r="6" stroke="#1f7a5c" stroke-width="2"></circle>
+<circle cx="638" cy="200" fill="#fbfaf4" r="6" stroke="#1f7a5c" stroke-width="2"></circle>
+<text fill="#4a6154" font-family="Georgia" font-size="10.5" text-anchor="middle" x="62" y="246">SITUATION</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="205" y="246">TROUBLE</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="350" y="246">TURN</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10.5" text-anchor="middle" x="500" y="246">RESULT</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10.5" text-anchor="middle" x="638" y="246">MEANING</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="62" y="264">who they are</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="205" y="264">where they stuck</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="264">what they found</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="500" y="264">what it became</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="638" y="264">so what</text>
+<text fill="#697682" font-family="Georgia" font-size="10" text-anchor="middle" x="350" y="290">The part they deleted is the entire reason anyone would keep listening.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: halfway through an interview, they say "tell me about a project you owned."</div>
+<div class="dialog bad">
+<div class="speaker">✗ A timeline in list form</div>
+<p>"I joined in 2023, owned user growth, started with community, then ran paid acquisition, results were decent, later I picked up content…"<br/>—— Every line is "and then I did this." Nowhere is there a "and then we got stuck." Nothing sticks, because nothing was ever left hanging.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Open on the trouble</div>
+<p>"When I took over, the product had been live two months and <strong>daily actives were frozen at 300 — half the people paid acquisition brought in were gone by week two (trouble)</strong>. We phoned the 20 most active users one by one and found almost all of them came from one niche forum, <strong>while 80% of the budget was going somewhere else (turn)</strong>. We moved the budget; three months later we were past eight hundred actives at a third of the acquisition cost (result). Ever since, my first move on any growth problem is twenty phone calls (meaning)."<br/>—— Same experience. One version is a résumé; the other is the thing they'll retell to a colleague.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: trouble creates an open loop — the brain keeps tracking something that hasn't resolved, and that's what holds attention; meanwhile a causal chain hooks the pieces to each other, so recalling one drags the next one up with it.</strong> An account with no conflict is a row of parallel facts, and it scatters the moment it lands.</p>
+<ul>
+<li><strong>Cognitive psychology · narrative multiplies recall (hard evidence)</strong>: Bower &amp; Clark (1969, <em>Psychonomic Science</em>) had people learn 12 lists of 10 unrelated nouns; one group wove each list into a little story, the other memorised as usual. At delayed recall the story group hit about <strong>93%</strong>, the control about <strong>13%</strong> — a near sevenfold gap, and one of the most vivid classic results in memory research.</li>
+<li><strong>Neuroscience · speaker and listener brains synchronise (hard evidence)</strong>: Stephens, Silbert &amp; Hasson (2010, <em>PNAS</em>) scanned someone telling a real, unscripted story and the people listening to it. The listeners' brain activity <strong>mirrored</strong> the speaker's with a delay of a second or two, and in some regions (including prefrontal areas) actually ran ahead in an anticipatory way; <strong>the stronger the coupling, the better the listener scored on a comprehension test afterwards</strong>. Play a language they don't understand and the coupling disappears. A story isn't ornament — it's two brains running on the same timeline. (cross-ref neuroscience on neural coupling)</li>
+</ul>
+<p class="caveat">Boundary: coupling and recall are about getting in and staying in, not about opening a wallet. A story earns you attention and memory; price, risk and delivery still have to clear on their own. And the trouble has to be real — inventing a crisis for the drama is the shortest-lived move in this whole craft.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Three ways to open on the trouble</div>
+<div class="template">
+<span class="label">There has to be trouble in the first sentence</span>
+<p>· "Everything was fine until <strong>______</strong>."</p>
+<p>· "They'd tried <strong>______</strong> and <strong>______</strong>, and neither helped — the problem wasn't there at all."</p>
+<p>· "Everyone assumed it was a <strong>______</strong> problem. It was actually <strong>______</strong>."</p>
+<p>· Self-check: delete every adjective. Is there still a "stuck" left? If not, it isn't a story yet.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Idiomatic phrasing</span>
+<p>"So there's this founder who…" — the standard opening that drops someone straight into a scene.</p>
+<p>"They'd tried everything, and nothing moved." — the trouble in one line.</p>
+<p>No trouble, no story.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>One named customer beats "hundreds of satisfied clients"
+<span class="en">Before, after, and the bridge in between</span></h2>
+<span class="tag">before-after-bridge</span><span class="tag">the identifiable effect</span><span class="tag">same unit both ends</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">A customer story is three blocks: <strong>Before (where they were stuck, with a number or a picture) → After (what it became, in the same unit) → Bridge (what actually happened in between, what you did)</strong>. Most people have only the After, and it's the adjective version: "it went great." Three hard requirements: a protagonist concrete enough to picture, two comparable numbers, and a middle the listener can repeat back.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"If I look at the mass, I will never act. If I look at the one, I will."</span>
+<span class="source">— commonly attributed to Mother Teresa; Slovic (2007) used the line as his paper's title</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Three blocks: before, after, and the bridge</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 286" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="stBab" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">A case needs three blocks; drop one and it collapses</text>
+<rect fill="#f6e3da" height="96" rx="8" stroke="#c0603a" stroke-width="1.5" width="196" x="18" y="38"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="116" y="62">BEFORE</text>
+<text fill="#8a3a1f" font-family="Georgia" font-size="10" text-anchor="middle" x="116" y="84">where they were stuck</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" text-anchor="middle" x="116" y="104">"copying orders by hand,</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" text-anchor="middle" x="116" y="120">ninety minutes a night"</text>
+<rect fill="#eef1f5" height="96" rx="8" stroke="#3f5c7a" stroke-width="1.5" width="196" x="252" y="38"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="62">BRIDGE</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" text-anchor="middle" x="350" y="84">what you actually did</text>
+<text fill="#697682" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="104">"sat in the shop two nights</text>
+<text fill="#697682" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="120">to see how she did it"</text>
+<rect fill="#e2efdc" height="96" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="196" x="486" y="38"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="584" y="62">AFTER</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" text-anchor="middle" x="584" y="84">what it became</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="middle" x="584" y="104">"ten minutes to</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="middle" x="584" y="120">check it now"</text>
+<line marker-end="url(#stBab)" stroke="#3f5c7a" stroke-width="2" x1="216" x2="246" y1="86" y2="86"></line>
+<line marker-end="url(#stBab)" stroke="#3f5c7a" stroke-width="2" x1="450" x2="480" y1="86" y2="86"></line>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" x="18" y="166">Both numbers must be in the same unit</text>
+<rect fill="#fbfaf4" height="42" rx="6" stroke="#c0603a" stroke-width="1.2" width="320" x="18" y="178"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" x="32" y="196">✗ before: "ninety minutes a night"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10" x="32" y="212">　 after: "98% satisfaction"　(unit swapped = nothing proven)</text>
+<rect fill="#fbfaf4" height="42" rx="6" stroke="#4e8a3f" stroke-width="1.2" width="320" x="362" y="178"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" x="376" y="196">✓ before: "ninety minutes a night"</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10" x="376" y="212">　 after: "ten minutes a night"　(one ruler)</text>
+<rect fill="#123f30" height="42" rx="6" width="664" x="18" y="234"></rect>
+<text fill="#eef7f2" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="350" y="252">"200 locations served, 98% satisfaction" — not one of them gets in.</text>
+<text fill="#cfe6d6" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="270">The bigger the number, the more it reads as advertising. No picture forms.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: you build small business apps, and you're sending a case to a restaurant owner.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Scale standing in for specifics</div>
+<p>"We've served 200+ locations with 98% customer satisfaction, across food, retail and beauty."<br/>—— Sounds solid, and not a word of it gets in. They can't place themselves inside "200 locations," and they have no way to tell whether you understand their particular mess.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ One person + two comparable numbers + a middle</div>
+<p>"There's a Sichuan place on the west side, open seven years. <strong>Every night the owner copied orders from three delivery platforms into a spreadsheet by hand to reconcile them — ninety minutes a go (Before)</strong>. We spent two weeks pulling the three platforms into one sheet, <strong>and now she checks it in ten minutes and goes home (After)</strong>. Honestly, not much to it: <strong>we sat in her shop for two evenings first, watching exactly how she was copying, before touching anything (Bridge)</strong>."<br/>—— Odds are they answer with "that's exactly what we do." Nobody persuaded them; they claimed it themselves.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: one identifiable individual triggers an emotional response directly and can be imagined as a scene; a statistic has to pass through a layer of abstraction first, and emotion barely fires.</strong> What you want isn't "more persuasive force" — it's for them to be able to play the thing back in their head. If it plays, it stores.</p>
+<ul>
+<li><strong>Social psychology · the identifiable victim effect (hard evidence)</strong>: in Small, Loewenstein &amp; Slovic's (2007, <em>OBHDP</em>) donation experiments, people shown "Rokia, a girl in Mali" gave significantly more than people shown the statistic about three million children facing famine; shown both together, giving fell back toward the statistics level. More telling still — having people first work an arithmetic problem (putting them in analytic mode) weakened the effect, which says it runs through the emotional channel.</li>
+<li><strong>Judgement psychology · a single case overrides base rates (hard evidence — but it's a bug in the listener)</strong>: Hamill, Wilson &amp; Nisbett (1980, <em>JPSP</em>) had people read one vivid case; <strong>even when explicitly told the case was unrepresentative</strong>, they still generalised from it.</li>
+<li><strong>Honest labelling (this one is weak)</strong>: the broader "vividness effect" — the more vividly told, the more effective — doesn't hold up well. Taylor &amp; Thompson's (1982, <em>Psychological Bulletin</em>) review found it hard to replicate reliably. What's dependable is one concrete, identifiable person, not a pile of detail. Piling on detail has a backfire of its own (next section).</li>
+</ul>
+<p class="caveat">Boundary: the second finding is exactly where the ethical pressure sits — your listener will generalise from one case whether or not you invited them to. One test settles it: <strong>is the case you're telling your median or your best result?</strong> Letting your best result stand in for the average is manipulation. Also: get permission before using a real name — anonymising to "the Sichuan place on the west side" still leaves the picture intact.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Four checks on a case</div>
+<ul class="checklist">
+<li>Is there a protagonist concrete enough to picture (a person, a shop) rather than "a client of ours"?</li>
+<li>Are Before and After measured with <strong>the same ruler</strong> — not minutes on one end and satisfaction on the other?</li>
+<li>Can they <strong>repeat back what you did</strong> in the middle after hearing it once?</li>
+<li>Does the case resemble their situation? If not, switch — a mismatched case proves you're busy, not that you can help them.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Idiomatic phrasing</span>
+<p>"Take the Sichuan place on the west side…" — open on one specific person.</p>
+<p>"Before / after — and here's what we actually did." — the natural way to say the three blocks.</p>
+<p>One named customer beats a hundred anonymous ones.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>They're the hero; you're the one handing over the map
+<span class="en">The guide has very few lines</span></h2>
+<span class="tag">four roles</span><span class="tag">narrative transportation</span><span class="tag">less counterarguing</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Check the last story you told: <strong>who overcomes the difficulty?</strong> If the answer is "our team," you've demoted your listener from hero to audience. The right casting: <strong>the customer is the hero, you're the guide; the villain is their status quo and what it costs them, not your competitor; your product is a tool in their hands, not the climax.</strong> The guide has very few lines and gives exactly two things: empathy ("I've seen this before") and a plan ("here are the next three steps").</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"The customer is the hero of the story, not your brand."</span>
+<span class="source">— Donald Miller, <em>Building a StoryBrand</em> (2017)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Four roles — don't miscast yourself</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 276" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="stRole" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#1f7a5c"></path>
+</marker>
+<marker id="stFoe" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">A story has only four seats</text>
+<rect fill="#eef4f0" height="70" rx="8" stroke="#7aa88f" stroke-width="1.4" width="170" x="18" y="42"></rect>
+<text fill="#3d5548" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="103" y="66">GUIDE = you</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="middle" x="103" y="86">empathy + a plan</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="103" y="102">very few lines</text>
+<rect fill="#e2efdc" height="70" rx="8" stroke="#4e8a3f" stroke-width="1.8" width="196" x="252" y="42"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="66">HERO = the customer</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="86">what they want · what blocks it</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="102">they must end up stronger</text>
+<rect fill="#f6e3da" height="70" rx="8" stroke="#c0603a" stroke-width="1.4" width="170" x="512" y="42"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="597" y="66">VILLAIN = status quo</text>
+<text fill="#8a3a1f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="597" y="86">and its monthly cost</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" text-anchor="middle" x="597" y="102">not your competitor</text>
+<line marker-end="url(#stRole)" stroke="#1f7a5c" stroke-width="2" x1="190" x2="246" y1="77" y2="77"></line>
+<line marker-end="url(#stFoe)" stroke="#c0603a" stroke-width="2" x1="452" x2="506" y1="77" y2="77"></line>
+<text fill="#1f7a5c" font-family="Georgia" font-size="9" text-anchor="middle" x="218" y="70">map</text>
+<text fill="#c0603a" font-family="Georgia" font-size="9" text-anchor="middle" x="479" y="70">fights</text>
+<rect fill="#f7f0e4" height="44" rx="6" stroke="#c08a3a" stroke-width="1.3" width="196" x="252" y="132"></rect>
+<text fill="#8a6020" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="350" y="152">TOOL = your product</text>
+<text fill="#9a7a4a" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="168">how it works in their hands</text>
+<line marker-end="url(#stRole)" stroke="#1f7a5c" stroke-width="2" x1="350" x2="350" y1="128" y2="118"></line>
+<rect fill="#f6e3da" height="66" rx="8" stroke="#c0603a" stroke-width="1.5" width="664" x="18" y="196"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="11" font-weight="700" x="34" y="218">The usual miscast: you play the hero</text>
+<text fill="#8a3a1f" font-family="Georgia" font-size="10" x="34" y="238">"Two weeks of overtime, three hard problems solved, delivered on time" — there's no seat</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10" x="34" y="256">left for them. All they can do is applaud. Audiences don't buy.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: you're sending a prospect a case by email, or presenting one in a meeting.</div>
+<div class="dialog bad">
+<div class="speaker">✗ You as the hero (an awards submission)</div>
+<p>"Our team worked overtime for two straight weeks, solved three hard technical problems, delivered the system, and the client was very satisfied."<br/>—— You overcome everything from start to finish. It reads like your own year-end review, and "the client was very satisfied" gives them neither a picture nor anything they can verify.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ They're the hero (you just handed over the map)</div>
+<p>"What she dreaded was the last three days of the month: orders from three platforms never matched, so she copied them by hand, and one typo meant digging back through the receipts <strong>(her villain: the status quo and what it costs)</strong>. We pulled the three platforms into one sheet, then sat with her through two month-ends <strong>(the plan the guide provides)</strong>. <strong>She handles it herself now — we don't actually need to come by any more.</strong>"<br/>—— That last line beats "the client was very satisfied" by a mile: it proves not that you're impressive, but that <strong>they got stronger</strong>.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: narrative persuasion runs on being transported — once someone is inside a story, their attention is spent following it, leaving less capacity for counterarguing; and the ticket in is being able to step into a character.</strong> Cast yourself as the hero and they can only stand outside and watch — and people standing outside are the ones who pick holes.</p>
+<ul>
+<li><strong>Communication psychology · narrative transportation (hard evidence)</strong>: Green &amp; Brock (2000, <em>JPSP</em>) showed across several experiments that the more transported a reader was, the more they accepted the story's implied beliefs and the fewer counterarguments they generated. Van Laer et al. (2014, <em>J. Consumer Research</em>) meta-analysed dozens of studies and confirmed the effect is robust (moderate in size), and found that <strong>the more the protagonist resembles the reader, the stronger the transportation</strong> — which is the empirical foothold for making them the hero.</li>
+<li><strong>Persuasion psychology · what narrative bypasses is defence (moderate evidence)</strong>: Moyer-Gusé &amp; Nabi (2010, <em>Human Communication Research</em>) found that a narrative format produced less counterarguing and less reactance (the instinctive "don't tell me what to do," Brehm 1966) than direct advocacy. Mostly domain-specific studies — don't treat it as a universal law.</li>
+<li><strong>Framework, not experiment</strong>: Miller's <em>Building a StoryBrand</em> (2017) "customer as hero, brand as guide" is a marketing framework. Its value is that it forces a change of viewpoint; it isn't a validated theory, so don't cite it as a scientific finding.</li>
+</ul>
+<p class="caveat">Boundary: precisely because the mechanism is "less counterarguing," it carries manipulation risk by construction — you've lowered their defences, not their risk. So a story must be followed by something verifiable: numbers, a reference they can phone, a trial. That's ethics and practicality at once: the person who signs off the budget is often not in the room, and all they'll ever see is the evidence you left behind.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Cast all four before you speak</div>
+<div class="template">
+<span class="label">Fill it in first, don't improvise mid-story</span>
+<p>· <strong>Hero (them)</strong>: they want ______, but ______ is in the way.</p>
+<p>· <strong>Villain (not a competitor)</strong>: the status quo costs them ______ every month (money / time / risk).</p>
+<p>· <strong>Guide (you)</strong>: one line of empathy — "I've seen ______ hit the same thing" — plus one plan: "three steps: ______."</p>
+<p>· <strong>Tool (your product)</strong>: one sentence on how it works in their hands, not how many features it has.</p>
+<p>· <strong>Self-check</strong>: who ends the story stronger? If it's you, rewrite it.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Idiomatic phrasing</span>
+<p>"You're the <em>guide</em>, not the hero." — the casting rule in one line.</p>
+<p>"Here's what I've seen work — and here are the next three steps." — the only two things a guide gives.</p>
+<p>Make them the one who wins.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>Detail makes it feel true; it doesn't make it true
+<span class="en">Where storytelling slides into manipulation</span></h2>
+<span class="tag">conjunction fallacy</span><span class="tag">survivorship bias</span><span class="tag">refutational two-sided</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Adding detail makes something sound truer <strong>even when it is logically less likely</strong> — a fixed bug in human judgement, and the easiest place for storytelling to slide into manipulation. Three hard lines: <strong>(1) it's real, no compositing and no polishing; (2) a typical case represents the typical — your best result doesn't stand in for the average; (3) you say out loud where it doesn't work.</strong> The third is the most counterintuitive and buys the most trust.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"The first principle is that you must not fool yourself — and you are the easiest person to fool."</span>
+<span class="source">— Richard Feynman, Caltech commencement address, 1974 (<em>Cargo Cult Science</em>)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Your case library is the planes that came back</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 252" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="stSurv" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">Survivorship bias: they only see the ones you show</text>
+<rect fill="#f7faf6" height="118" rx="8" stroke="#7aa88f" stroke-width="1.4" width="220" x="18" y="40"></rect>
+<text fill="#3d5548" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="128" y="60">all your customers (20)</text>
+<circle cx="46" cy="82" fill="#4e8a3f" r="7"></circle>
+<circle cx="72" cy="82" fill="#4e8a3f" r="7"></circle>
+<circle cx="98" cy="82" fill="#4e8a3f" r="7"></circle>
+<circle cx="124" cy="82" fill="#c2ccbe" r="7"></circle>
+<circle cx="150" cy="82" fill="#c2ccbe" r="7"></circle>
+<circle cx="176" cy="82" fill="#c2ccbe" r="7"></circle>
+<circle cx="202" cy="82" fill="#c2ccbe" r="7"></circle>
+<circle cx="46" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="72" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="98" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="124" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="150" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="176" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="202" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="46" cy="130" fill="#c2ccbe" r="7"></circle>
+<circle cx="72" cy="130" fill="#c2ccbe" r="7"></circle>
+<circle cx="98" cy="130" fill="#c2ccbe" r="7"></circle>
+<circle cx="124" cy="130" fill="#c2ccbe" r="7"></circle>
+<circle cx="150" cy="130" fill="#c0603a" r="7"></circle>
+<circle cx="176" cy="130" fill="#c0603a" r="7"></circle>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="128" y="152">green = great · grey = so-so · orange = failed</text>
+<rect fill="#e2efdc" height="118" rx="8" stroke="#4e8a3f" stroke-width="1.4" width="180" x="266" y="40"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="356" y="60">the ones you tell (3)</text>
+<circle cx="320" cy="92" fill="#4e8a3f" r="9"></circle>
+<circle cx="356" cy="92" fill="#4e8a3f" r="9"></circle>
+<circle cx="392" cy="92" fill="#4e8a3f" r="9"></circle>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="356" y="126">all green, and all true</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="middle" x="356" y="144">— you told no lie</text>
+<rect fill="#eef1f5" height="118" rx="8" stroke="#3f5c7a" stroke-width="1.4" width="208" x="474" y="40"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="578" y="60">the rate they infer</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="22" font-weight="700" text-anchor="middle" x="578" y="98">100%</text>
+<text fill="#697682" font-family="Georgia" font-size="9.5" text-anchor="middle" x="578" y="122">actual: about 15%</text>
+<text fill="#697682" font-family="Georgia" font-size="9.5" text-anchor="middle" x="578" y="140">they'll decide as if it's 100%</text>
+<line marker-end="url(#stSurv)" stroke="#3f5c7a" stroke-width="2" x1="240" x2="262" y1="99" y2="99"></line>
+<line marker-end="url(#stSurv)" stroke="#3f5c7a" stroke-width="2" x1="448" x2="470" y1="99" y2="99"></line>
+<rect fill="#123f30" height="44" rx="6" width="664" x="18" y="176"></rect>
+<text fill="#eef7f2" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="350" y="196">Every word true, and still a false impression — that's selective silence.</text>
+<text fill="#cfe6d6" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="214">The fix: volunteer the denominator.</text>
+<text fill="#697682" font-family="Georgia" font-size="10" text-anchor="middle" x="350" y="242">"Three of twenty got this far, most landed in the middle, two never worked — it depends on having an existing audience."</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: the prospect asks, "will this work for a situation like ours?"</div>
+<div class="dialog bad">
+<div class="speaker">✗ Your best result, forced to fit</div>
+<p>"Absolutely — one client did 10x in three months."<br/>(That's the best of twenty; most of the rest barely moved.)<br/>—— You win this exchange, and the price is that in three months they come back holding their own numbers, and you don't get a second chance.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Give the denominator + the failure conditions</div>
+<p>"The best one was 10x in three months, but that company already had ten thousand people on a private channel and you don't, so it isn't much of a guide. <strong>Closer to your situation is the Sichuan restaurant: reconciling went from ninety minutes to ten, and revenue didn't move at all.</strong> If what you want is more revenue, this probably won't help you — you want a different kind of person for that."<br/>—— You just shrank your own promise, and it's the most credible thing anyone says all meeting: <strong>you only believe someone about what they can do once they've told you what they can't.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: detail increases imaginability, and people mistake "easy to imagine" for "more likely to happen."</strong> Two things compound it: you only tell the successes, so the sample they see has already been filtered. They're not slow — they simply have no denominator in hand.</p>
+<ul>
+<li><strong>Judgement psychology · the conjunction fallacy (hard evidence)</strong>: in Tversky &amp; Kahneman's (1983, <em>Psychological Review</em>) Linda problem, most people rated "Linda is a bank teller <strong>and</strong> is active in the feminist movement" as more probable than "Linda is a bank teller," though the conjunction is necessarily less probable. One more vivid detail: credibility up, actual probability down. This holds for you as much as for them.</li>
+<li><strong>Statistics · survivorship bias (historical case, not an experiment)</strong>: during the Second World War the statistician Abraham Wald analysed the bullet-hole distribution on returning bombers and argued the armour belonged where the holes were <strong>fewest</strong> — because planes hit there never came back (Wald's 1943 memoranda; formally introduced by Mangel &amp; Samaniego, 1984, <em>JASA</em>). Your case library is the planes that came back.</li>
+<li><strong>Persuasion research · admitting the downside persuades more (meta-analysis, fairly hard)</strong>: O'Keefe's (1999) meta-analysis of one-sided versus two-sided messages found that <strong>refutational two-sided messages</strong> — raising the objection yourself and then answering it — outperform benefits-only messages. Note the boundary: what works is "acknowledge <em>and</em> answer." Naming your weakness without offering what to do about it earns you nothing.</li>
+</ul>
+<p class="caveat">Boundary: the much-quoted pratfall effect (Aronson et al., 1966 — a competent person becomes more likeable after a small blunder) is an interesting direction, but its conditions are narrow (it holds only for people already seen as highly competent) and replications have been inconsistent. Don't lean on it as a licence for strategic self-deprecation. The dependable move is O'Keefe's: state the boundary, and say what to do in that case.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Run through this before you tell it</div>
+<ul class="checklist">
+<li>For every fact in the story, can I produce evidence <strong>they could verify</strong>?</li>
+<li>Is this my <strong>median or my best</strong>? If it's the best, did I say so on the spot?</li>
+<li>Have I merged several customers into one "composite"? If so, <strong>I must say it's a composite</strong>.</li>
+<li>If they knew the part I left out (the churned, the failed), would they still decide the same way? If the answer is no, don't tell it this way.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Idiomatic phrasing</span>
+<p>"That's our <em>best</em> case, not our typical one." — separate the best from the typical, unprompted.</p>
+<p>"Here's where this doesn't work." — name the failure conditions.</p>
+<p>Detail makes it feel true; it doesn't make it true.</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>Your Day 13 Action</h3>
+<p>Pick one real customer, one real project, or one stretch of your own experience, and write a story you can tell in ninety seconds.</p>
+<div class="action">
+<strong>Step 1 · Find the trouble:</strong> write "everything was fine until ______." If you can't write that line, what you're holding isn't a story yet.<br/><br/><strong>Step 2 · Three blocks:</strong> Before (one number or picture of where they were) → After (another number measured with the same ruler) → Bridge (what you did, in one line they could repeat).<br/><br/><strong>Step 3 · Recast:</strong> read it through and change the subject of every sentence from "we" to "they." The one who ends up stronger has to be them, not you.<br/><br/><strong>Step 4 · Add the boundary:</strong> append "this doesn't work when ______," then add the denominator (how many out of how many).<br/><br/>Then tell it to someone, and <strong>ask them to repeat it back 24 hours later</strong>. What they can say is what actually stuck; what they dropped is what you fix next time.<br/><br/>Boundary reminder: a story gets you heard and remembered, but it doesn't replace evidence. When real money is on the line they still need verifiable numbers and a reference they can call. Treating a story as a pass that skips inspection is the most common slide in this craft.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. What I do is boring and I don't have customer cases yet. Where would a story even come from?</summary>
+<div class="answer">The bar isn't scale, it's "one specific person + one stretch of being stuck." Three sources you already have: <strong>your own experience</strong> — why you started doing this is usually a conflict in its own right; <strong>situations you've observed</strong> — "most people who've just taken this over hit the same thing in month one: …" needs no customers, only that you genuinely understood something; and <strong>telling them their own situation back</strong>, in the words they used about the pain (how to get those words without being misled by politeness is the whole point of the Mom Test topic: ask about specific past behaviour, not future intentions). As for "boring" — reconciliation and shift rosters genuinely are boring, but "three days a month copying by hand, and one typo means digging back through the receipts" isn't boring at all. What's boring is always the abstract summary, never the concrete situation.</div>
+</details>
+<details>
+<summary>2. In front of a time-poor executive, doesn't storytelling look unprofessional and waste their time?</summary>
+<div class="answer">It does — if you take three minutes. Their time constraint is real, so the rule is <strong>compress the story to 20–30 seconds and land it on a result they care about</strong>: "Last month a company about your size was closing the books on day 9, with finance doing overtime two quarters running; after we connected the systems it closes on day 3, with no extra headcount." Two sentences, one conflict, one comparable number. Its job isn't sentiment — it's <strong>turning an abstract benefit into a scene they can picture</strong>, after which you hand over the numbers. The division of labour: the story makes them willing to listen and able to remember, the numbers make them willing to sign. You need both, in that order. Lead with an ROI table instead and they can't even judge whether the case resembles them.</div>
+</details>
+<details>
+<summary>3. My real story isn't that impressive. Can I polish it a little so it lands better?</summary>
+<div class="answer">No, and there's no grey zone here. Three things you may do: <strong>trim</strong> (select the most relevant stretch of what really happened and cut the rest — no inventing), <strong>anonymise</strong> ("the Sichuan place on the west side" keeps the picture intact), and <strong>label</strong> (if you've merged several customers, you must say it's a composite). Why so rigid? Because a good story gets retold — to colleagues, to their boss, to the next prospect — and the part you embellished travels intact and gets amplified, while corrections never catch up. There's a more practical layer too: <strong>the imperfect bits of a true story are exactly what make it credible</strong>. "We sat in the shop for two evenings before touching anything" sounds slow, but nobody invents a detail like that; "flawless delivery in three weeks" sounds great and reads like it came off a template. You think you're adding impact. You're deleting credibility.</div>
+</details>
+<details>
+<summary>4. Stories make people argue back less and accept more — isn't telling one a form of manipulation?</summary>
+<div class="answer">Separate what it does from what it doesn't. A story acts on <strong>attention and comprehension</strong> — it makes someone willing to listen, able to follow, likely to remember. It doesn't change the facts and shouldn't stand in for evidence. So the test isn't whether you used a story, it's three questions: <strong>is it real? is it typical? if they knew the part I left out, would they still decide the same way?</strong> Three yeses and you're just telling the truth in a form people can take in. One no, and the problem isn't storytelling — you're using narrative to cover a fact you don't dare state plainly. There's also a duty attached: precisely because transportation lowers their counterarguing (the Green &amp; Brock finding), you carry <strong>more</strong> of the burden of proof than you would reciting dry terms, not less. So leave a verifiable anchor after every story: a number, a reference they can call, something they can trial. A quick self-test: if your listener later learned every motive you had and everything you left out, would they think "well told" or "I was played"? The answer to that question is where the line between persuasion and manipulation sits.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 13</footer>
+</div>
+</body>
+</html>

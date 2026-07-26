@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 13：讲故事卖东西</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 13 · Phase C</div>
+<h1>讲故事卖东西：他记不住你的三个卖点，却能把你讲的那个客户复述给同事听</h1>
+<div class="meta"><span>主题：讲故事卖东西</span><span>·</span><span>4 个原则</span></div>
+<div class="subtitle">人人都知道要讲故事，于是讲出来的是"我们成立于 2015 年，一路稳健成长"——那是简历。故事的最小单位不是"发生了什么"，是"有人卡住了，然后呢"。</div>
+</header>
+<div class="intro">
+<strong>一句话的价值主张只够敲开门。真正在你不在场时替你说话的，是对方能复述出去的那个故事。</strong>而多数人讲的并不是故事：麻烦被删掉、主角写成自己、再挑最漂亮的案例代表平均。四件事：<strong>把冲突放回中间、用一个有名有姓的人讲成三段、把主角让给对方、守住"细节让人相信但细节不是证据"这条线。</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>没有麻烦，就没有故事——冲突是唯一让人留下来听的东西
+<span class="en">No trouble, no story</span></h2>
+<span class="tag">情境-冲突-转折-结果</span><span class="tag">叙事记忆</span><span class="tag">神经耦合</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">故事的骨架是五段：<strong>情境 → 冲突 → 转折 → 结果 → 意义</strong>。可以删的是形容词，不能删的是冲突。"我们服务过一家电商，效果很好"不是故事，是把两端拼在一起——中间那段麻烦被切掉了，而听众唯一肯留下来听的，恰恰是那段麻烦。冲突不必惊天动地，"每月最后两天全在对账"就够。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Be a sadist. No matter how sweet and innocent your leading characters, make awful things happen to them — in order that the reader may see what they are made of."</span>
+<span class="zh">"当个虐待狂。不管你的主角多善良无辜，都得让糟糕的事发生在他们身上——这样读者才看得出他们是什么做的。"</span>
+<span class="source">— Kurt Vonnegut，《Bagombo Snuff Box》(1999) 写作八则之一</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">故事的五段骨架</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="stArc" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">张力从哪儿起、在哪儿落</text>
+<rect fill="#f6e3da" height="34" rx="6" stroke="#c0603a" stroke-width="1.2" width="640" x="30" y="34"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" x="44" y="55">多数人的"故事"只剩两端：开头一句"某客户"，结尾一句"效果很好"。</text>
+<line stroke="#cbb98f" stroke-width="1" x1="30" x2="670" y1="226" y2="226"></line>
+<path d="M62,208 C130,208 150,154 205,150 C280,144 300,94 350,92 C405,90 440,132 500,146 C560,160 586,190 623,197" fill="none" marker-end="url(#stArc)" stroke="#1f7a5c" stroke-width="2.4"></path>
+<circle cx="62" cy="208" fill="#fbfaf4" r="6" stroke="#1f7a5c" stroke-width="2"></circle>
+<circle cx="205" cy="150" fill="#fbfaf4" r="6" stroke="#c0603a" stroke-width="2"></circle>
+<circle cx="350" cy="92" fill="#fbfaf4" r="6" stroke="#c0603a" stroke-width="2"></circle>
+<circle cx="500" cy="146" fill="#fbfaf4" r="6" stroke="#1f7a5c" stroke-width="2"></circle>
+<circle cx="638" cy="200" fill="#fbfaf4" r="6" stroke="#1f7a5c" stroke-width="2"></circle>
+<text fill="#4a6154" font-family="Georgia" font-size="10.5" text-anchor="middle" x="62" y="246">情境</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="205" y="246">冲突</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="350" y="246">转折</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10.5" text-anchor="middle" x="500" y="246">结果</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10.5" text-anchor="middle" x="638" y="246">意义</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="62" y="264">他是谁</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="205" y="264">卡在哪</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="264">发现了什么</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="500" y="264">变成什么样</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="638" y="264">所以呢</text>
+<text fill="#697682" font-family="Georgia" font-size="10" text-anchor="middle" x="350" y="290">中间被删掉的那段，正是人愿意听下去的全部理由。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：面试到一半，对方说"讲讲你负责过的一个项目"。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 时间线流水账</div>
+<p>"我 2023 年加入，负责用户增长，先做了社群，然后做了投放，效果还不错，后来又接手了内容……"<br/>—— 每一句都是"接下来我做了什么"，没有一处是"卡住了"。听完记不住任何东西，因为没有任何东西需要他惦记。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 从冲突开场</div>
+<p>"接手时新品上线两个月，<strong>日活卡在 300 不动，投放拉来的人第二周掉一半（冲突）</strong>。我们把最活跃的 20 个人挨个打了电话，发现他们几乎全来自一个小众论坛，<strong>而 80% 的预算投在别处（转折）</strong>。把预算挪过去，三个月做到八百多活跃，获客成本降到原来三分之一（结果）。从那以后我做增长第一步都是先打二十个电话（意义）。"<br/>—— 同样的经历，一个是简历，一个是他会转述给同事的东西。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> A story has five beats: situation, trouble, turn, result, meaning. Adjectives are optional; trouble is not. "We worked with an e-commerce client and it went well" isn't a story — it's the two ends glued together with the trouble cut out, and the trouble was the only reason anyone was still listening. It doesn't have to be dramatic: "the last two days of every month go to reconciling accounts" is plenty.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：冲突制造的是"未闭合"——一件没有结局的事会被大脑持续追踪，这就是注意力被拴住的原因；而因果链条让信息彼此挂钩，回忆时一个带出一个。</strong>没有冲突的叙述只是一串平行事实，落地即散。</p>
+<ul>
+<li><strong>认知心理学 · 叙事让记忆翻几倍（硬证据）</strong>：Bower &amp; Clark (1969, <em>Psychonomic Science</em>) 让被试记 12 组、每组 10 个不相关名词，一组把每组词串成一个小故事，一组照常背诵。延迟回忆时，编故事组约 <strong>93%</strong>，对照组约 <strong>13%</strong>——近七倍差距，是记忆研究里最直观的经典结果之一。</li>
+<li><strong>神经科学 · 讲者与听者的大脑会同步（硬证据）</strong>：Stephens、Silbert &amp; Hasson (2010, <em>PNAS</em>) 让人自由讲一段真实经历，同时扫描讲者与听者。听者的脑活动以约一两秒延迟<strong>镜像</strong>讲者，部分区域（含前额叶）甚至出现"预测式"提前；<strong>耦合越强，事后理解测验分越高</strong>；换成听不懂的语言时耦合消失。故事不是修辞，是让两个大脑跑到同一条时间线上。（cross-ref neuroscience 神经耦合）</li>
+</ul>
+<p class="caveat">边界：耦合与记忆说的是"进得去、留得住"，不是"会掏钱"。故事负责让人愿意听并记住，价格、风险、交付仍要各自过关。冲突还必须是真的——为戏剧性编一场危机，是这套打法里最短命的用法。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">冲突开场的三个句式</div>
+<div class="template">
+<span class="label">开口第一句就得有麻烦</span>
+<p>· "本来 <strong>______</strong>，直到 <strong>______</strong>。"</p>
+<p>· "他们试过 <strong>______</strong> 和 <strong>______</strong>，都没用——问题根本不在那儿。"</p>
+<p>· "所有人都以为是 <strong>______</strong> 的问题，其实是 <strong>______</strong>。"</p>
+<p>· 自检：把形容词全删掉，还剩不剩一个"卡住了"？不剩就还不是故事。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"So there's this founder who…" —— 最常用的故事开场，一句就把人塞进场景。</p>
+<p>"They'd tried everything, and nothing moved." —— 一句话交代冲突。</p>
+<p>No trouble, no story.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>一个有名有姓的人，胜过"服务过众多客户"
+<span class="en">One named customer beats a hundred anonymous ones</span></h2>
+<span class="tag">Before-After-Bridge</span><span class="tag">可辨识效应</span><span class="tag">同口径数字</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">客户成功故事就三段：<strong>Before（他原来卡在哪，带数字或画面）→ After（后来变成什么样，带同一口径的数字）→ Bridge（中间到底发生了什么，你做了什么）</strong>。多数人只有 After，还是形容词版的"效果很好"。硬要求三条：一个具体到能想象的主角、前后两个可比的数字、一段听完能被复述的过程。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"If I look at the mass, I will never act. If I look at the one, I will."</span>
+<span class="zh">"如果我看着人群，我永远不会行动；如果我看着那一个人，我会。"</span>
+<span class="source">— 常归于特蕾莎修女；Slovic (2007) 直接以此句为论文标题</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">三段式：前 · 后 · 中间那座桥</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 286" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="stBab" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">一个案例只需要三块，缺哪块都会垮</text>
+<rect fill="#f6e3da" height="96" rx="8" stroke="#c0603a" stroke-width="1.5" width="196" x="18" y="38"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="116" y="62">BEFORE</text>
+<text fill="#8a3a1f" font-family="Georgia" font-size="10" text-anchor="middle" x="116" y="84">他原来卡在哪</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" text-anchor="middle" x="116" y="104">"每天手抄订单</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" text-anchor="middle" x="116" y="120">一个半小时"</text>
+<rect fill="#eef1f5" height="96" rx="8" stroke="#3f5c7a" stroke-width="1.5" width="196" x="252" y="38"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="62">BRIDGE</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" text-anchor="middle" x="350" y="84">中间你做了什么</text>
+<text fill="#697682" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="104">"先在店里坐两晚</text>
+<text fill="#697682" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="120">看清她怎么抄的"</text>
+<rect fill="#e2efdc" height="96" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="196" x="486" y="38"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="584" y="62">AFTER</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" text-anchor="middle" x="584" y="84">后来变成什么样</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="middle" x="584" y="104">"现在核一遍</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="middle" x="584" y="120">十分钟"</text>
+<line marker-end="url(#stBab)" stroke="#3f5c7a" stroke-width="2" x1="216" x2="246" y1="86" y2="86"></line>
+<line marker-end="url(#stBab)" stroke="#3f5c7a" stroke-width="2" x1="450" x2="480" y1="86" y2="86"></line>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" x="18" y="166">前后两个数字必须同口径</text>
+<rect fill="#fbfaf4" height="42" rx="6" stroke="#c0603a" stroke-width="1.2" width="320" x="18" y="178"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" x="32" y="196">✗ 前："每天抄一个半小时"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10" x="32" y="212">　 后："客户满意度 98%"　（换了单位＝没证明）</text>
+<rect fill="#fbfaf4" height="42" rx="6" stroke="#4e8a3f" stroke-width="1.2" width="320" x="362" y="178"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" x="376" y="196">✓ 前："每天一个半小时"</text>
+<text fill="#4a6154" font-family="Georgia" font-size="10" x="376" y="212">　 后："每天十分钟"　（同一把尺子）</text>
+<rect fill="#123f30" height="42" rx="6" width="664" x="18" y="234"></rect>
+<text fill="#eef7f2" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="350" y="252">"服务过 200 家门店，满意度 98%" —— 一个也进不去。</text>
+<text fill="#cfe6d6" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="270">数字越大越像宣传语，脑子里长不出任何画面。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你做小程序开发，给一个餐饮老板发案例。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 用规模代替具体</div>
+<p>"我们服务过 200 多家门店，客户满意度 98%，覆盖餐饮、零售、美业。"<br/>—— 听起来很稳，却一个字都进不去。他没法把自己放进"200 家"里，也判断不出你懂不懂他那点破事。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 一个人 + 两个同口径的数字 + 一段过程</div>
+<p>"城西那家开了七年的川菜馆，<strong>老板娘每天晚上把三个外卖平台的订单手抄进 Excel 对账，一抄一个半小时（Before）</strong>。我们花两周把三个平台接进一张表，<strong>现在她晚上核十分钟就走（After）</strong>。其实做的不多：<strong>先在她店里坐了两个晚上，看清她到底怎么抄的，才动手（Bridge）</strong>。"<br/>—— 对方大概率接一句"我们也是这么干的"。他不是被说服的，是自己认领的。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> A customer story is three blocks: Before (where they were stuck, with a number or a picture), After (what it became, in the same unit), Bridge (what actually happened in between). Most people only have the After, and it's the adjective version — "it went great." Three hard requirements: a protagonist concrete enough to picture, two comparable numbers, and a middle the listener can repeat back.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：一个可辨识的具体个体能直接引发情绪反应并被想象成场景；统计数字要先过一层抽象加工，情绪几乎不启动。</strong>你要的不是"更强的说服力"，是让对方能在脑子里把这件事播一遍——播得出来，才存得住。</p>
+<ul>
+<li><strong>社会心理学 · 可辨识受害者效应（硬证据）</strong>：Small、Loewenstein &amp; Slovic (2007, <em>OBHDP</em>) 的捐款实验：看到"马里一个叫 Rokia 的女孩"的一组，捐款显著高于看到"三百万儿童面临饥荒"统计版本的一组；两者放在一起时，捐款反而被拉回统计版的水平。更关键的是——先让被试做一道算术题（进入分析模式）会削弱这个效应，说明它走的是情绪通道。</li>
+<li><strong>判断心理学 · 单个个案会压过基础比率（硬证据，但这是听者的漏洞）</strong>：Hamill、Wilson &amp; Nisbett (1980, <em>JPSP</em>) 给被试读一个生动个案，<strong>即使明确告知该案例不具代表性</strong>，被试仍据此推广到整体。</li>
+<li><strong>诚实标注（此条证据偏弱）</strong>：更泛的"生动性效应"——讲得越生动越有效——其实不稳，Taylor &amp; Thompson (1982, <em>Psychological Bulletin</em>) 的综述发现它难以稳定复现。可靠的是"一个具体、可辨识的人"，不是"堆细节"。细节堆多了还有反效果（下一节说）。</li>
+</ul>
+<p class="caveat">边界：第二条正是这套打法的伦理压力点——你的听众会用一个案例推断整体，哪怕你没暗示。判据一句话：<strong>你讲的这个案例，是你的中位数还是你的最好成绩？</strong>拿最好成绩当代表就是操纵。另外，用真名前先拿到对方同意——匿名到"城西那家川菜馆"这种程度，照样有画面。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">案例四要素自检</div>
+<ul class="checklist">
+<li>有没有一个具体到能想象的主角（一个人 / 一家店），而不是"某客户"？</li>
+<li>Before 和 After 是不是<strong>同一把尺子</strong>——不能一个说时间、一个说满意度。</li>
+<li>中间那段过程，对方听完能不能<strong>复述出你做了什么</strong>？</li>
+<li>这个案例和他的处境像不像？不像就换——不像的案例只证明你忙，不证明你能帮他。</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Take the Sichuan place on the west side…" —— 用一个具体的人开头。</p>
+<p>"Before / after — and here's what we actually did." —— 三段式的自然说法。</p>
+<p>One named customer beats a hundred anonymous ones.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>主角是对方，你只是那个递地图的人
+<span class="en">They're the hero; you're the guide</span></h2>
+<span class="tag">四个角色</span><span class="tag">叙事传输</span><span class="tag">少反驳</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">检查你上次讲的故事：<strong>谁在克服困难？</strong>如果答案是"我们团队"，你就把对方从主角挤成了观众。正确的角色分配：<strong>客户是英雄，你是向导；敌人是他的现状和现状的代价，不是竞品；你的产品是他手上的工具，不是故事的高潮。</strong>向导戏份很少，只给两样东西：同理（"我见过这种情况"）和计划（"接下来三步"）。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"The customer is the hero of the story, not your brand."</span>
+<span class="zh">"故事的主角是客户，不是你的品牌。"</span>
+<span class="source">— Donald Miller，《Building a StoryBrand》(2017)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">四个角色，别演错</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 276" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="stRole" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#1f7a5c"></path>
+</marker>
+<marker id="stFoe" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">故事里只有四个位置</text>
+<rect fill="#eef4f0" height="70" rx="8" stroke="#7aa88f" stroke-width="1.4" width="170" x="18" y="42"></rect>
+<text fill="#3d5548" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="103" y="66">向导 = 你</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="middle" x="103" y="86">给同理 + 给计划</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="103" y="102">戏份很少</text>
+<rect fill="#e2efdc" height="70" rx="8" stroke="#4e8a3f" stroke-width="1.8" width="196" x="252" y="42"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="66">英雄 = 客户</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="86">想要什么 · 被什么挡住</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="102">结尾变强的必须是他</text>
+<rect fill="#f6e3da" height="70" rx="8" stroke="#c0603a" stroke-width="1.4" width="170" x="512" y="42"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="597" y="66">敌人 = 现状</text>
+<text fill="#8a3a1f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="597" y="86">以及它每月的代价</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" text-anchor="middle" x="597" y="102">不是竞争对手</text>
+<line marker-end="url(#stRole)" stroke="#1f7a5c" stroke-width="2" x1="190" x2="246" y1="77" y2="77"></line>
+<line marker-end="url(#stFoe)" stroke="#c0603a" stroke-width="2" x1="452" x2="506" y1="77" y2="77"></line>
+<text fill="#1f7a5c" font-family="Georgia" font-size="9" text-anchor="middle" x="218" y="70">地图</text>
+<text fill="#c0603a" font-family="Georgia" font-size="9" text-anchor="middle" x="479" y="70">对抗</text>
+<rect fill="#f7f0e4" height="44" rx="6" stroke="#c08a3a" stroke-width="1.3" width="196" x="252" y="132"></rect>
+<text fill="#8a6020" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="350" y="152">工具 = 你的产品</text>
+<text fill="#9a7a4a" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="168">在他手上怎么用</text>
+<line marker-end="url(#stRole)" stroke="#1f7a5c" stroke-width="2" x1="350" x2="350" y1="128" y2="118"></line>
+<rect fill="#f6e3da" height="66" rx="8" stroke="#c0603a" stroke-width="1.5" width="664" x="18" y="196"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="11" font-weight="700" x="34" y="218">常见错位：你把自己演成了英雄</text>
+<text fill="#8a3a1f" font-family="Georgia" font-size="10" x="34" y="238">"我们连续加班两周，攻克三个难点，最终交付" —— 对方在这故事里没有位置，</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10" x="34" y="256">他唯一能做的事是鼓掌。而观众不掏钱。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你给潜在客户发一封案例邮件，或在会上做汇报。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 主角是你（申报先进个人）</div>
+<p>"我们团队连续加班两周，攻克了三个技术难点，最终交付了这套系统，客户非常满意。"<br/>—— 全程你在克服困难。对方听着像在参加你的年终总结，"客户非常满意"这五个字既没画面也没法核实。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 主角是他（你只是递地图的）</div>
+<p>"她当时最怕月底那三天：三个平台的订单对不上，只能手抄，抄错一次就得倒回去翻小票<strong>（他的敌人：现状和它的代价）</strong>。我们把三个平台接成一张表，然后陪着她跑了两个月底<strong>（向导给的计划）</strong>。<strong>现在她自己就能处理，我们其实已经不用上门了。</strong>"<br/>—— 最后那句比"客户非常满意"有力得多：它证明的不是你厉害，是<strong>对方变强了</strong>。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Check the last story you told: who overcomes the difficulty? If the answer is "our team," you've demoted your listener from hero to audience. The right casting: the customer is the hero, you're the guide; the villain is their status quo and what it costs them, not your competitor; your product is a tool in their hands, not the climax. The guide has few lines — empathy and a plan, that's it.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：故事说服靠的是"被带进去"（transportation）——一旦进入故事，注意力资源都用在跟随情节上，用来反驳的余力就少了；而入场券是能不能代入某个角色。</strong>你把自己写成英雄，对方就只能站在故事外面看，而站在外面的人恰好最会挑刺。</p>
+<ul>
+<li><strong>传播心理学 · 叙事传输（硬证据）</strong>：Green &amp; Brock (2000, <em>JPSP</em>) 用一系列实验证明：被故事"带进去"程度越高的读者，越接受故事隐含的信念，写下的反驳也越少。van Laer 等 (2014, <em>J. Consumer Research</em>) 对数十项研究做元分析，确认传输效应稳健（强度中等），并发现<strong>主角与读者越相似，传输越强</strong>——这正是"让对方当主角"的实证落点。</li>
+<li><strong>说服心理 · 叙事绕开的是防御（证据中等）</strong>：Moyer-Gusé &amp; Nabi (2010, <em>Human Communication Research</em>) 发现叙事形式比直接劝说引发更少的反驳与心理逆反（reactance，即被劝时"偏不"的本能，Brehm 1966）。多为特定领域研究，别当普适定律。</li>
+<li><strong>框架说明（非实验）</strong>：Miller《Building a StoryBrand》(2017) 的"客户是英雄、品牌是向导"是营销框架，好用在于强制换视角，不是被验证过的理论，别当科学结论引用。</li>
+</ul>
+<p class="caveat">边界：正因为机制是"降低反驳"，它天生带操纵风险——你降低的是对方的防御，不是他的风险。所以故事之后必须补上可验证的东西（数字、能打电话的推荐人、试用）。这既是伦理也是实用：替你批预算的人往往不在现场，他只看得到你留下的证据。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">四个角色，一次填完</div>
+<div class="template">
+<span class="label">填完再讲，别边讲边想</span>
+<p>· <strong>英雄（对方）</strong>：他想要 ______，但被 ______ 挡住了。</p>
+<p>· <strong>敌人（不是竞品）</strong>：现状每月正让他付出 ______（钱 / 时间 / 风险）。</p>
+<p>· <strong>向导（你）</strong>：一句同理"我见过 ______ 也这样"，加一句计划"接下来三步：______"。</p>
+<p>· <strong>工具（你的产品）</strong>：一句话说清它在他手上怎么用，不是它有多少功能。</p>
+<p>· <strong>自检</strong>：故事结尾变强的是谁？如果是你，重写。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"You're the <em>guide</em>, not the hero." —— 角色分配的一句话。</p>
+<p>"Here's what I've seen work — and here are the next three steps." —— 向导只给这两样。</p>
+<p>Make them the one who wins.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>细节让人相信，但细节不是证据
+<span class="en">Detail makes it feel true; it doesn't make it true</span></h2>
+<span class="tag">合取谬误</span><span class="tag">幸存者偏差</span><span class="tag">反驳式双面</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">加细节会让一件事听起来更真，<strong>哪怕它在逻辑上更不可能发生</strong>——这是人脑的固定 bug，也是讲故事最容易滑向操纵的地方。三条硬线：<strong>（1）真事，不合成不美化；（2）拿典型案例代表典型，别拿最好成绩代表平均；（3）主动说出它在什么情况下不管用。</strong>第三条最反直觉，也最赚信任。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"The first principle is that you must not fool yourself — and you are the easiest person to fool."</span>
+<span class="zh">"第一原则是你绝不能骗自己——而你恰恰是最好骗的那个人。"</span>
+<span class="source">— Richard Feynman，加州理工 1974 毕业演讲《Cargo Cult Science》</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">你的案例库就是"飞回来的那些飞机"</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 252" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="stSurv" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="8" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">幸存者偏差：听众只看得见你展示的那几个</text>
+<rect fill="#f7faf6" height="118" rx="8" stroke="#7aa88f" stroke-width="1.4" width="220" x="18" y="40"></rect>
+<text fill="#3d5548" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="128" y="60">你的全部客户（20 个）</text>
+<circle cx="46" cy="82" fill="#4e8a3f" r="7"></circle>
+<circle cx="72" cy="82" fill="#4e8a3f" r="7"></circle>
+<circle cx="98" cy="82" fill="#4e8a3f" r="7"></circle>
+<circle cx="124" cy="82" fill="#c2ccbe" r="7"></circle>
+<circle cx="150" cy="82" fill="#c2ccbe" r="7"></circle>
+<circle cx="176" cy="82" fill="#c2ccbe" r="7"></circle>
+<circle cx="202" cy="82" fill="#c2ccbe" r="7"></circle>
+<circle cx="46" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="72" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="98" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="124" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="150" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="176" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="202" cy="106" fill="#c2ccbe" r="7"></circle>
+<circle cx="46" cy="130" fill="#c2ccbe" r="7"></circle>
+<circle cx="72" cy="130" fill="#c2ccbe" r="7"></circle>
+<circle cx="98" cy="130" fill="#c2ccbe" r="7"></circle>
+<circle cx="124" cy="130" fill="#c2ccbe" r="7"></circle>
+<circle cx="150" cy="130" fill="#c0603a" r="7"></circle>
+<circle cx="176" cy="130" fill="#c0603a" r="7"></circle>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="128" y="152">绿=很成功　灰=一般　橙=失败</text>
+<rect fill="#e2efdc" height="118" rx="8" stroke="#4e8a3f" stroke-width="1.4" width="180" x="266" y="40"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="356" y="60">你讲的（3 个）</text>
+<circle cx="320" cy="92" fill="#4e8a3f" r="9"></circle>
+<circle cx="356" cy="92" fill="#4e8a3f" r="9"></circle>
+<circle cx="392" cy="92" fill="#4e8a3f" r="9"></circle>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="356" y="126">全是绿的，且都是真的</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="middle" x="356" y="144">——你一句谎都没说</text>
+<rect fill="#eef1f5" height="118" rx="8" stroke="#3f5c7a" stroke-width="1.4" width="208" x="474" y="40"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="578" y="60">他推断的成功率</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="22" font-weight="700" text-anchor="middle" x="578" y="98">100%</text>
+<text fill="#697682" font-family="Georgia" font-size="9.5" text-anchor="middle" x="578" y="122">真实约 15%</text>
+<text fill="#697682" font-family="Georgia" font-size="9.5" text-anchor="middle" x="578" y="140">他会按 100% 做决定</text>
+<line marker-end="url(#stSurv)" stroke="#3f5c7a" stroke-width="2" x1="240" x2="262" y1="99" y2="99"></line>
+<line marker-end="url(#stSurv)" stroke="#3f5c7a" stroke-width="2" x1="448" x2="470" y1="99" y2="99"></line>
+<rect fill="#123f30" height="44" rx="6" width="664" x="18" y="176"></rect>
+<text fill="#eef7f2" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="350" y="196">全说真话，仍可能造成假印象——这就是选择性沉默。</text>
+<text fill="#cfe6d6" font-family="Georgia" font-size="10.5" text-anchor="middle" x="350" y="214">解法：主动报出分母。</text>
+<text fill="#697682" font-family="Georgia" font-size="10" text-anchor="middle" x="350" y="242">"二十家里三家做到这个程度，多数在中间，两家没做成——差别在有没有现成用户。"</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：客户问"你这套方法对我们这种情况也管用吗？"</div>
+<div class="dialog bad">
+<div class="speaker">✗ 拿最好成绩硬套</div>
+<p>"当然管用，我们有个客户三个月做到了十倍。"<br/>（那是二十个客户里最好的一个，其余大多没什么变化。）<br/>—— 你赢了这一轮对话，代价是三个月后他拿着自己的数字回来，而你没有第二次机会。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 报出分母 + 说清失效条件</div>
+<p>"最好的那个是三个月十倍，但那家本来就有一万私域用户，你这边没有，参考价值不大。<strong>更接近你情况的是那家川菜馆：对账从一个半小时降到十分钟，收入一分没多。</strong>如果你要的是增收，我这套大概率帮不上，你该找的是另一类人。"<br/>—— 你主动缩小了承诺范围，这反而是全场最可信的一段话：<strong>敢说自己不行的地方，说行的地方才有人信。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Adding detail makes something sound truer even when it's logically less likely — a fixed bug in human judgement, and the easiest slide from persuasion into manipulation. Three hard lines: it has to be real, no compositing and no polishing; a typical case represents the typical, not your best result standing in for the average; and you say out loud where it doesn't work. The third is the most counterintuitive and buys the most trust.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：细节增加的是"可想象性"，而人把"容易想象"误当成"更可能发生"。</strong>两件事叠加还会更糟：你只讲成功案例，听众看到的样本天然已被筛过一遍——他不是笨，是手里根本没有分母。</p>
+<ul>
+<li><strong>判断心理学 · 合取谬误（硬证据）</strong>：Tversky &amp; Kahneman (1983, <em>Psychological Review</em>) 的 Linda 问题——多数被试认为"Linda 是银行出纳<strong>且</strong>是女权运动积极分子"比"Linda 是银行出纳"更可能，尽管前者的概率在逻辑上必然更低。多加一个生动细节，可信感上升，真实概率下降。这条对你自己同样成立。</li>
+<li><strong>统计学 · 幸存者偏差（历史案例，非实验）</strong>：二战期间统计学家 Abraham Wald 分析返航轰炸机的弹孔分布，指出该加装甲的恰恰是弹孔<strong>最少</strong>的部位——因为中弹在那里的飞机根本没飞回来（Wald 1943 系列备忘录；Mangel &amp; Samaniego 1984, <em>JASA</em> 有正式介绍）。你的案例库就是"飞回来的飞机"。</li>
+<li><strong>说服研究 · 承认缺点反而更有说服力（元分析，较硬）</strong>：O'Keefe (1999) 对单面 vs 双面信息的元分析发现：<strong>反驳式双面信息</strong>（主动提出对方可能的反对意见，并给出回应）比只讲好处更有说服力。注意边界——有效的是"承认 + 回应"；单纯自曝短处却不给应对方案，不会加分。</li>
+</ul>
+<p class="caveat">边界：常被引用的"出丑效应"（Aronson 等 1966：能干的人犯个小错反而更讨喜）方向有趣，但适用条件窄（只对被认为高能力者成立）、后续复现不一致，别拿它当"故意示弱"的依据。稳的做法是 O'Keefe 那条：说出边界，同时给出这种情况下该怎么办。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">讲之前过一遍</div>
+<ul class="checklist">
+<li>这个故事里的每个事实，我能不能拿出<strong>对方可核实</strong>的证据？</li>
+<li>这是我的<strong>中位数还是最好成绩</strong>？如果是最好，我有没有当场说明？</li>
+<li>我有没有把几个客户捏成一个"复合案例"？如果有，<strong>必须明说是综合案例</strong>。</li>
+<li>如果他知道了我没讲的那部分（没续约的、失败的），还会做同样的决定吗？答案是"不会"就别这么讲。</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"That's our <em>best</em> case, not our typical one." —— 主动区分最好与典型。</p>
+<p>"Here's where this doesn't work." —— 说出失效条件。</p>
+<p>Detail makes it feel true; it doesn't make it true.</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>本期习作 · Your Day 13 Action</h3>
+<p>今天挑一个真实的客户、项目，或你自己的一段经历，写一个九十秒能讲完的故事。</p>
+<div class="action">
+<strong>第一步·找冲突：</strong>先写下"本来 ______，直到 ______"。写不出这句，就说明你手里的还不是故事。<br/><br/><strong>第二步·三段式：</strong>Before（他原来的一个数字或画面）→ After（同一把尺子量出的另一个数字）→ Bridge（中间你做了什么，一句能被复述的话）。<br/><br/><strong>第三步·换主角：</strong>通读一遍，把每句的主语从"我们"换成"他"。结尾变强的必须是他，不是你。<br/><br/><strong>第四步·上边界：</strong>补一句"这套在 ______ 情况下不管用"，再补一句分母（多少个里有多少个）。<br/><br/>然后找个人讲一遍，<strong>24 小时后请他复述</strong>——他能说出来的才是真正留下的，他漏掉的就是你下次要改的。<br/><br/>边界提醒：故事让人愿意听、记得住，但它不替代证据。对方要真金白银下决定时，仍然需要能核实的数字和能打电话的推荐人。把故事当成免检通行证，是这门手艺最常见的滑坡。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我做的事很枯燥，也还没有客户案例，哪来的故事？</summary>
+<div class="answer">故事的门槛不是规模，是"具体的一个人 + 一段卡住"。三个现成的来源：<strong>你自己的经历</strong>——你为什么开始做这件事，通常本身就是一段冲突；<strong>你观察到的处境</strong>——"很多和你一样刚接手的人，第一个月都会撞上同一件事：……"，这不需要你有客户，只需要你真的看明白了；<strong>把对方的处境讲回给他听</strong>——用他自己描述痛苦的原话复述一遍（怎么问出这些原话，The Mom Test 那期讲过：问过去的具体行为，别问未来意向）。至于"枯燥"：对账、排班本身确实枯燥，但"月底三天全在手抄、抄错一次要翻小票倒回去"一点都不枯燥——枯燥的从来是抽象的概括，不是具体的处境。</div>
+</details>
+<details>
+<summary>2. 在时间很紧的高管面前讲故事，会不会显得不专业、浪费时间？</summary>
+<div class="answer">会——如果你讲三分钟。高管的时间约束是真实的，所以规则是<strong>故事压到 20–30 秒，并且必须落在他在意的结果上</strong>："上个月有家和你们规模差不多的公司，月结要拖到第 9 天才出，财务连着两个季度加班；接进来之后第 3 天出，人没多招。"——两句话，一个冲突，一个可比的数字。它的作用不是煽情，是<strong>让抽象的收益变成一个他能想象的场景</strong>，接着你就可以给数字了。正确的分工是：故事负责让他愿意听下去并记住，数字负责让他敢批预算——两样都要，顺序是故事在前、数字在后。反过来先甩一页 ROI 表，他连"这跟我们像不像"都判断不了。</div>
+</details>
+<details>
+<summary>3. 真实的故事没那么精彩，为了讲得好听，稍微美化一点行吗？</summary>
+<div class="answer">不行，而且这条没有灰度空间。可做的只有三件事：<strong>剪裁</strong>（从真实过程里挑最相关的片段，删掉无关的，不虚构）、<strong>匿名化</strong>（"城西那家川菜馆"照样有画面）、<strong>明确标注</strong>（几个客户的经历捏在一起讲，必须说"这是个综合案例"）。为什么这么硬？因为好故事会被转述给同事、老板、下一个客户——你美化的那点会被原样带走并放大，修正永远追不上。更现实的一层：<strong>真实故事里那些不完美的地方，恰恰是它可信的原因</strong>。"我们先在店里坐了两个晚上才动手"听起来笨，但没人会编这种细节；"三周内完美交付"听起来漂亮，却像是从模板里抄的。你以为你在补精彩，其实你在删可信。</div>
+</details>
+<details>
+<summary>4. 故事能让人少反驳、更容易接受——那讲故事本身算不算操纵？</summary>
+<div class="answer">先分清它做了什么、没做什么：故事影响的是<strong>注意力和理解</strong>——让对方愿意听、听得进、记得住；它不改变事实，也不该替代证据。所以判据不在"用没用故事"，而在三问：<strong>这是真事吗？它典型吗？如果他知道我没讲的那部分，还会做同样的决定吗？</strong>三个都是"是"，讲故事只是把真相讲得让人听得进去；有一个是"否"，那不是讲故事的问题，是你在用叙事掩盖一个你不敢直说的事实。还有一条责任：正因为叙事传输会降低对方的反驳（Green &amp; Brock 那条证据），你比讲干条款时<strong>承担更多的举证责任</strong>，而不是更少——所以每个故事后面都要留一个能被核实的锚点：数字、可联系的推荐人、可试用的东西。一个简单的自测：如果你的听众事后知道了你讲故事时的全部动机和全部省略，他会觉得"讲得挺好"还是"被绕了"？这个问题的答案，就是说服与操纵那条线的位置。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 13</footer>
+</div>
+</body>
+</html>
