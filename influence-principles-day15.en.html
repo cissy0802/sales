@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 15: The Six Principles of Influence</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 15 · Phase C</div>
+<h1>The Six Principles of Influence: Sleazy or Effective Is a Question of Truth, Not Technique</h1>
+<div class="meta"><span>Topic: the six principles of influence</span><span>·</span><span>6 principles · 4 groups</span></div>
+<div class="subtitle">None of the six changes how good your thing is — only whether it gets weighed seriously. Which is why they carry a bad offer far less far than people assume.</div>
+</header>
+<div class="intro">
+<strong>These aren't six lines to deliver. They're the six default reactions people fall back on when they can't judge the thing itself.</strong> Reciprocity, commitment and consistency, social proof, authority, liking, scarcity — memorise them as "which one do I use here" and you will inevitably use them in the wrong place, and that visible effort is the entire source of "sleazy." The order runs the other way: <strong>find where they're stuck first, then see which principle fits.</strong> Grouped below by mechanism, four sets.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 01</div>
+<h2>Reciprocity: give first, and don't make it look like a trap
+<span class="en">Give first — and mean it</span></h2>
+<span class="tag">reciprocity</span><span class="tag">the favour ledger</span><span class="tag">no strings</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Reciprocity isn't "I was nice to you, so you owe me a sale." It's <strong>giving something genuinely useful with no strings attached</strong> — a ledger opens itself in their head. Everything hinges on "no strings": the moment the gift carries a condition (only if you sign today), it stops being a favour and becomes a quote, and the ledger resets to zero.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"The rule for reciprocation says that we should try to repay, in kind, what another person has provided us."</span>
+<span class="source">— Robert Cialdini, <em>Influence</em> (1984)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">A gift with a condition isn't a gift</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 292" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mkGive" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">Same gift, different delivery, completely different ledger</text>
+<rect fill="#f6e3da" height="74" rx="8" stroke="#c0603a" stroke-width="1.4" width="300" x="18" y="38"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="32" y="60">✗ Given with a condition</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="32" y="80">"Happy to draw it up — once you commit to us"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="32" y="98">This is a request for a deposit</text>
+<line marker-end="url(#mkGive)" stroke="#5a7365" stroke-width="2" x1="322" x2="368" y1="75" y2="75"></line>
+<rect fill="#fbfaf4" height="74" rx="8" stroke="#c0603a" stroke-width="1.4" width="306" x="376" y="38"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="390" y="60">They read it as a transaction</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="390" y="80">Transactions settle. No debt.</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="390" y="98">Plus: this one is keeping score</text>
+<rect fill="#e2efdc" height="74" rx="8" stroke="#4e8a3f" stroke-width="1.6" width="300" x="18" y="126"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" x="32" y="148">✓ Given with no strings</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" x="32" y="168">"Keep this comparison sheet either way"</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" x="32" y="186">Ask for nothing afterwards</text>
+<line marker-end="url(#mkGive)" stroke="#5a7365" stroke-width="2" x1="322" x2="368" y1="163" y2="163"></line>
+<rect fill="#fbfaf4" height="74" rx="8" stroke="#4e8a3f" stroke-width="1.6" width="306" x="376" y="126"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" x="390" y="148">They log a favour</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" x="390" y="168">They'll repay — not always by buying</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" x="390" y="186">Often by sending someone your way</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="350" y="222">Three amplifiers</text>
+<rect fill="#eef1f5" height="40" rx="6" stroke="#3f5c7a" stroke-width="1.2" width="214" x="18" y="232"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="125" y="250">Unexpected</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="125" y="266">given before they asked</text>
+<rect fill="#eef1f5" height="40" rx="6" stroke="#3f5c7a" stroke-width="1.2" width="214" x="243" y="232"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="350" y="250">Tailored</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="350" y="266">useless to anyone else</text>
+<rect fill="#eef1f5" height="40" rx="6" stroke="#3f5c7a" stroke-width="1.2" width="214" x="468" y="232"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="575" y="250">Unclaimed</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="575" y="266">never mention it; they will</text>
+<text fill="#9aab9f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="286">Volume isn't the point. "This was made for me" is.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: you do design or renovation work, and the client is pricing you against two other firms.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Using the gift as leverage</div>
+<p>"We can put a proposal together for free — but you'd need to commit to us first."<br/>—— That isn't a gift, it's a request for a deposit. They read a transaction, owe you nothing, and pick up one extra data point: this one counts every bean.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ No strings, and useful only to them</div>
+<p>"Send me the other two quotes? I'll normalise all three onto one sheet — who priced in the electrical changes, whose 'all-in' figure has extras hiding behind it. You'll see it at a glance. <strong>Keep it whoever you go with.</strong>"<br/>—— You took away the thing they dread most, and that sheet is worthless to any other client. Even if you lose this one, the next time someone asks them, yours is the first name out.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: an unpaid favour produces real discomfort, and the only way to clear it is to repay — Gouldner (1960, <em>ASR</em>) argued the norm exists in every known society. More to the point, people repay whoever gave <em>first</em>, not whoever gave most: moving first switches the relationship from trade to exchange, and exchange doesn't settle.</strong></p>
+<ul>
+<li><strong>Social psychology · giving first roughly doubles the return (classic experiment)</strong>: in Regan (1971, <em>JESP</em>), a confederate bought the participant an unrequested Coke during a break; when he later asked them to buy raffle tickets, they bought about twice as many. <strong>The telling detail</strong>: participants who disliked him bought anyway — obligation operates independently of liking, which is both its power and the reason it degrades so easily into a tactic.</li>
+<li><strong>Field study · the arithmetic of a mint (single field experiment, small effect)</strong>: Strohmetz et al. (2002, <em>JASP</em>) had servers leave candy with the bill: one mint raised tips about 3%, two about 14%, and one mint followed by the server turning back to add another with "for you nice people, here's an extra" about 21%. Don't over-extrapolate from one restaurant, but the direction matches: <strong>a gift that feels unexpected and personally intended beats a bigger gift.</strong></li>
+<li><strong>Neuroscience · mutual exchange is itself rewarding (hard evidence)</strong>: Rilling et al. (2002, <em>Neuron</em>) scanned people playing the Prisoner's Dilemma and found mutual cooperation raised activity in the <strong>nucleus accumbens / ventral striatum</strong>, <strong>orbitofrontal cortex</strong> and <strong>rostral anterior cingulate</strong> — the brain encodes reciprocity as a reward, which is why giving first needs no extra argument. (cross-ref neuroscience, reward circuitry)</li>
+</ul>
+<p class="caveat">Boundary: <strong>the instant they see the tactic, the favour becomes pressure, and pressure produces resentment.</strong> Three checks: is the thing useful to them, or just what you wanted to give? Did you ask for something immediately afterwards? And if they never reciprocate at all, will you be annoyed — because if yes, what you made was an investment, not a favour, and people can usually smell the difference.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">What to give first</div>
+<div class="template">
+<span class="label">Four gifts that cost little and land heavy</span>
+<p>· Something that takes them half a day and you twenty minutes (a tidy-up, a comparison, a template)</p>
+<p>· A number they've never worked out, with the method attached</p>
+<p>· An introduction with no pitch in it — you make the ask for them</p>
+<p>· "We're not the right fit for that bit, go look at X" — the most expensive gift, and the least forgettable</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Phrases that carry it</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"Here's something you can use either way." —— the standard no-strings opener.</p>
+<p>"No strings — keep it even if you go with someone else." —— removing the condition out loud.</p>
+<p>Give first, and let it be free.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 02</div>
+<h2>Commitment and consistency: ten times from you is worth less than once from them
+<span class="en">What they say beats what you say</span></h2>
+<span class="tag">consistency</span><span class="tag">foot-in-the-door</span><span class="tag">smallest step</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">People work to keep their behaviour consistent with <strong>what they've said, what they've written, and the small steps they've already taken</strong>. So moving things forward isn't a matter of arguing better — it's <strong>designing the smallest step they can take themselves</strong>, and getting the reason stated in their words. Yours is a pitch; theirs counts as a judgment.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"A foolish consistency is the hobgoblin of little minds."</span>
+<span class="source">— Ralph Waldo Emerson, <em>Self-Reliance</em> (1841): consistency cuts both ways — it pushes people to honour commitments, and traps them defending decisions they should have changed</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Commitment strength: not agreement, but movement</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 296" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mkStep" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#cbb98f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">All of these are a "yes" — they follow through at wildly different rates</text>
+<line marker-end="url(#mkStep)" stroke="#cbb98f" stroke-width="1.4" x1="58" x2="58" y1="238" y2="44"></line>
+<line stroke="#cbb98f" stroke-width="1.4" x1="58" x2="678" y1="238" y2="238"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="10" x="64" y="42">commitment strength</text>
+<rect fill="#eceee8" height="22" rx="3" stroke="#c2ccbe" stroke-width="1" width="86" x="86" y="216"></rect>
+<text fill="#8a988c" font-family="Georgia" font-size="9.5" text-anchor="middle" x="129" y="256">Heard you out</text>
+<text fill="#a7b1a7" font-family="Georgia" font-size="9" text-anchor="middle" x="129" y="272">a nod ≈ zero</text>
+<rect fill="#e8ece6" height="52" rx="3" stroke="#a9bda9" stroke-width="1" width="86" x="206" y="186"></rect>
+<text fill="#6a7a6c" font-family="Georgia" font-size="9.5" text-anchor="middle" x="249" y="256">Verbal yes</text>
+<text fill="#a7b1a7" font-family="Georgia" font-size="9" text-anchor="middle" x="249" y="272">"sounds good"</text>
+<rect fill="#dfeae2" height="96" rx="3" stroke="#7aa88f" stroke-width="1.2" width="86" x="326" y="142"></rect>
+<text fill="#3d5548" font-family="Georgia" font-size="9.5" text-anchor="middle" x="369" y="256">Gave the reason</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="369" y="272">"3 rewrites a week"</text>
+<rect fill="#cfe6d6" height="138" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="86" x="446" y="100"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="489" y="256">Written + dated</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="489" y="272">"by Thursday"</text>
+<rect fill="#b7dcc2" height="174" rx="3" stroke="#2f6a2f" stroke-width="1.6" width="86" x="566" y="64"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" text-anchor="middle" x="609" y="256">Told someone</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="609" y="272">"mentioned it upstairs"</text>
+<text fill="#697682" font-family="Georgia" font-size="10" text-anchor="middle" x="350" y="290">Each step right is cheap — your job is to design that one step, not to rush them to the end.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: a client who is "just having a look," and you want them one step further along.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Jumping straight to the biggest move</div>
+<p>"Shall I send over the contract?"<br/>—— Too big a leap; "let me think about it" is the only safe answer. And the moment it's said, the relationship is defined as "I'm waiting for your signature," which makes every follow-up read like debt collection.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ A small step, with the reason in their words</div>
+<p>"What's the most painful part right now?" (Them: quotes going back and forth.)<br/>"And if that came down to under half a day, what would that mean for you?" (<strong>let them say the benefit</strong>)<br/>"Next Tuesday I'll do a fifteen-minute walkthrough built on those two cases — just send me the two quotes you rewrite most."<br/>—— Small, specific, dated, and it requires them to move. Once they actually send those two files, the deal has changed character: they've put something in.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: once a position is stated, changing it costs something — the discomfort of "am I contradicting myself." The brain doesn't process that inconsistency neutrally; it hurts, and the cheapest way to make it stop is to let the behaviour catch up with the words.</strong></p>
+<ul>
+<li><strong>Social psychology · a small yes levers a large one (classic experiment, real but modest)</strong>: Freedman &amp; Fraser (1966, <em>JPSP</em>) first asked people to display a small window sign; two weeks later they asked them to put a huge "Drive Carefully" billboard on their front lawn. Asked cold, about <strong>17%</strong> agreed; after the small request, about <strong>76%</strong>. <strong>Honest labelling</strong>: Burger's (1999, <em>PSPR</em>) meta-analysis confirms the effect exists but is modest on average and heavily condition-dependent.</li>
+<li><strong>Large field experiments · let them make the plan (the hardest evidence here)</strong>: Nickerson &amp; Rogers (2010, <em>Psychological Science</em>) added "what time will you vote? how will you get there?" to get-out-the-vote calls reaching roughly 290,000 people, and turnout rose about <strong>4 percentage points</strong> over the standard script; Milkman et al. (2011, <em>PNAS</em>) found flu-shot mailings that asked employees to <strong>write down a specific date and time</strong> raised vaccination rates by about <strong>4 percentage points</strong>. Real behaviour, enormous samples.</li>
+<li><strong>Neuroscience · inconsistency genuinely hurts (hard evidence)</strong>: van Veen et al. (2009, <em>Nature Neuroscience</em>) had participants argue for something they disliked; during dissonance the <strong>dorsal anterior cingulate cortex</strong> and <strong>anterior insula</strong> showed increased activation, and the size of that activation predicted how much their stated attitude then shifted — talking yourself into things has a price tag in the brain. (cross-ref psychology, cognitive dissonance)</li>
+</ul>
+<p class="caveat">Boundary: the two ways this crosses the line are <strong>the low-ball</strong> (hook them cheap, then add cost) and <strong>using their own words against them</strong>. The first is deception; the second turns a collaboration into a contest on the spot. There is exactly one legitimate direction: making the thing they already wanted easier to start. And the same principle is a risk to you — <strong>your own words trap you too</strong>: when you've quoted wrong, owning it is always cheaper than staying consistent with the mistake.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Four questions that make them say it</div>
+<div class="template">
+<span class="label">Keep the order: turn statements into questions, and wait for the yes</span>
+<p>· "What's the most stuck part right now?" (they define the problem)</p>
+<p>· "If that got solved, what would it mean for you?" (they state the benefit)</p>
+<p>· "How does something like this usually move internally?" (and you see the decision chain)</p>
+<p>· "Next step is <strong>______</strong> (a date), and all you need to do is <strong>______</strong> (a five-minute action)."</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Phrases that carry it</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"What would that mean for your team if it worked?" —— gets the benefit out of their mouth.</p>
+<p>"Shall we pencil in Tuesday?" —— shrinks the commitment to one calendar slot.</p>
+<p>Yours is a pitch; theirs is a conclusion.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 03</div>
+<h2>Social proof, authority, liking: when they can't judge the thing, they judge the person
+<span class="en">Three borrowed judgments</span></h2>
+<span class="tag">social proof</span><span class="tag">authority</span><span class="tag">liking</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">These three are one thing in three forms: <strong>when someone can't judge the thing itself, they judge something else</strong> — what people like them do, who's vouching, and whether dealing with you is pleasant. The correct use is to <strong>lower the cost of judging</strong>, never to replace the judgment.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Where all think alike, no one thinks very much."</span>
+<span class="source">— Walter Lippmann; used by Cialdini as the epigraph to the social proof chapter of <em>Influence</em></span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Three borrowed channels</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mkCh" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">The less certain they are, the more these three weigh</text>
+<rect fill="#eef1f5" height="86" rx="8" stroke="#3f5c7a" stroke-width="1.5" width="176" x="18" y="118"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="106" y="150">They can't judge</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="106" y="168">the thing itself</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="106" y="188">first contact · expertise gap</text>
+<line marker-end="url(#mkCh)" stroke="#5a7365" stroke-width="1.8" x1="196" x2="272" y1="140" y2="76"></line>
+<line marker-end="url(#mkCh)" stroke="#5a7365" stroke-width="1.8" x1="196" x2="272" y1="161" y2="161"></line>
+<line marker-end="url(#mkCh)" stroke="#5a7365" stroke-width="1.8" x1="196" x2="272" y1="182" y2="246"></line>
+<rect fill="#e2efdc" height="72" rx="8" stroke="#4e8a3f" stroke-width="1.4" width="402" x="280" y="40"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" font-weight="700" x="294" y="62">Social proof: what do people like me do?</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="294" y="82">✓ One customer their size and sector, with a way to check</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" x="294" y="100">✗ A wall of 500 logos: big and irrelevant</text>
+<rect fill="#e2efdc" height="72" rx="8" stroke="#4e8a3f" stroke-width="1.4" width="402" x="280" y="125"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" font-weight="700" x="294" y="147">Authority: whose judgment do I trust?</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="294" y="167">✓ Experience on this exact problem + one volunteered flaw</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" x="294" y="185">✗ Credentials from another field: silently discounted</text>
+<rect fill="#e2efdc" height="72" rx="8" stroke="#4e8a3f" stroke-width="1.4" width="402" x="280" y="210"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" font-weight="700" x="294" y="232">Liking: do I want to deal with this person?</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="294" y="252">✓ Real common ground · solving it from the same side</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" x="294" y="270">✗ Generic flattery: it works even when seen through — resist it</text>
+<text fill="#9aab9f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="292">Inflate anything they can verify and all three die together.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: you sell a tool for small design studios, and they ask "so who else uses this?"</div>
+<div class="dialog bad">
+<div class="speaker">✗ The logo wall</div>
+<p>"We've served over five hundred companies, including [large group] and [large bank]."<br/>—— Big and irrelevant. Their question was never "does anyone use it," it's "does anyone <strong>like me</strong> use it." The bigger the names, the more certain they become that this wasn't built for a twenty-person shop.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ A peer, checkable, with a flaw volunteered</div>
+<p>"The closest to you is a twenty-person design studio in Hangzhou — same thing, three people rewriting quotes. <strong>I'll introduce you to their lead and you can ask what's bad about it</strong> — and they will tell you; they've complained to me about slow exports, which we're still working on."<br/>—— A peer, verifiable, and a flaw handed over unprompted. Worth more than five hundred logos.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: uncertainty is the switch — the less sure people are, the more they look at others (in Asch's 1951/1956 line-judgment studies about three quarters of participants conformed at least once), and the "others" who count most are the ones most like them. Authority and liking are two more doors into the same shortcut: unable to judge the content, people judge the source.</strong></p>
+<ul>
+<li><strong>Field experiment · closer to them beats bigger (hard evidence)</strong>: in Goldstein, Cialdini &amp; Griskevicius (2008, <em>JCR</em>), hotel towel cards with a standard environmental appeal produced about <strong>35%</strong> reuse; "about 75% of guests at this hotel reuse their towels" about <strong>44%</strong>; and "<strong>guests who stayed in this room</strong>" higher still.</li>
+<li><strong>Field experiment · social proof can backfire (hard evidence, must know)</strong>: Schultz et al. (2007, <em>Psychological Science</em>) sent households their electricity use next to the neighbourhood average, and <strong>the households already using less went up</strong> — the average read as permission. Only adding an approving signal ("good work ☺") cancelled the rebound. So "most people have already bought" is counterproductive with a customer who is already ahead.</li>
+<li><strong>Neuroscience · disagreeing with the group fires an error signal (hard evidence)</strong>: Klucharev et al. (2009, <em>Neuron</em>) found that when a participant's rating conflicted with the group, activity rose in the <strong>rostral cingulate zone</strong> and fell in the <strong>ventral striatum</strong> — the shape of a reward prediction error — and the size of it predicted how far they later shifted toward the group. Conformity borrows the learning system.</li>
+<li><strong>Authority · direction sound, label both ends</strong>: in Milgram (1963) about 65% of participants went to the maximum shock (severely criticised on ethics, contested in interpretation — don't quote it as a precise number). The more usable evidence is on the honest side: Ein-Gar, Shiv &amp; Tormala (2012, <em>JCR</em>) found that volunteering one <strong>small</strong> negative <strong>early</strong>, among otherwise positive information, raised overall evaluations.</li>
+<li><strong>Liking (reliable evidence, and the one to watch)</strong>: Burger et al. (2004, <em>PSPB</em>) found even <strong>incidental similarity</strong> — a shared birthday or first name — measurably raised compliance; Chan &amp; Sengupta (2010, <em>JMR</em>) found that flattery improved implicit attitudes even when recipients knew it was insincere. It bypasses detection, which is exactly the danger.</li>
+</ul>
+<p class="caveat">Boundary: all three are <strong>substitutes for judgment</strong>, so they belong only where the other person genuinely cannot judge for themselves; inflate anything they can check and you kill all three at once. Which also sets the one rule for picking a testimonial: <strong>make it look like them</strong> — same size, same sector, same pain. One of those beats ten logos.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Checks for all three</div>
+<ul class="checklist">
+<li>Does the example look like them (size / sector / pain)? If not, you haven't given one.</li>
+<li>Is your authority authority <strong>on this problem</strong>? Credentials from elsewhere get discounted automatically.</li>
+<li>Have you volunteered a flaw? If not they'll go find one, and it'll be worse than yours.</li>
+<li>Are they the low-usage or the high-usage type? Never tell a leader "everyone's doing it."</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Phrases that carry it</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"Companies your size usually get stuck on X — here's one you can call." —— peer plus proof.</p>
+<p>"Honestly, that's not what we're best at." —— one flaw buys credibility for everything else.</p>
+<p>Similar beats impressive.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PRINCIPLE 04</div>
+<h2>Scarcity: the only one that works instantly, and the only one that can end you instantly
+<span class="en">Scarcity moves the clock, not the value</span></h2>
+<span class="tag">scarcity</span><span class="tag">loss aversion</span><span class="tag">reactance</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Scarcity doesn't operate on "how good this is," it operates on "<strong>I might lose it</strong>" — and losses weigh more than equivalent gains. Hence one rule only: <strong>the scarcity has to be real, and you have to be able to say why it exists.</strong> Urgency with no stated reason is assumed to be invented — and usually they're right.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"The way to love anything is to realise that it may be lost."</span>
+<span class="source">— G. K. Chesterton; used by Cialdini as the epigraph to the scarcity chapter of <em>Influence</em></span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Real scarcity buys a deal; fake scarcity buys one and costs the rest</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 292" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">Same "you'll want to move," billed to two different accounts</text>
+<rect fill="#eef4f0" height="112" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="664" x="18" y="36"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="11" font-weight="700" x="34" y="60">✓ Real scarcity: you can say why</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="34" y="82">"Two deliveries collide next month; to launch before peak we'd need this week"</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" x="34" y="102">They check. It's true.</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" x="34" y="122">→ Next time you say it's urgent, they believe you</text>
+<polyline fill="none" points="470,126 520,118 570,106 620,92 656,76" stroke="#2f6a2f" stroke-width="2.4"></polyline>
+<line stroke="#c2ccbe" stroke-width="1" x1="470" x2="662" y1="134" y2="134"></line>
+<text fill="#4a6154" font-family="Georgia" font-size="9" x="470" y="62">trust balance</text>
+<rect fill="#fbefe8" height="112" rx="8" stroke="#c0603a" stroke-width="1.5" width="664" x="18" y="160"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="11" font-weight="700" x="34" y="184">✗ Manufactured urgency: the deadline that keeps moving</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="34" y="206">"This price ends at close of business" (still there next week)</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="34" y="226">They may well sign this time</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="34" y="246">→ And every future "genuinely urgent" is void</text>
+<polyline fill="none" points="470,246 500,200 532,212 572,232 620,248 656,256" stroke="#c0603a" stroke-width="2.4"></polyline>
+<line stroke="#e0cfc4" stroke-width="1" x1="470" x2="662" y1="262" y2="262"></line>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9" x="470" y="186">trust balance</text>
+<text fill="#9aab9f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="284">Scarcity raises the speed of the decision, never the value of the thing.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: the client says "let me think about it," and you do in fact have a real timing constraint.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Inventing a deadline</div>
+<p>"This price is only good until close of business today."<br/>—— Next week you'll have to send another "last chance," and at that moment every genuine urgency you'll ever have goes void. Worse, they'll file it as your character rather than this week's tactic.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ The real constraint, its reason, and permission to pick the later option</div>
+<p>"Straight answer on scheduling: two deliveries collide next month, so if you want to launch before peak season it has to be decided this week — otherwise the earliest is October. <strong>I'm not pushing you</strong> — if October works, we'll book October, and I'll write up the difference between the two dates and send it over."<br/>—— True, explained, and it hands the "no rush" option back to them. Reactance never fires, and the urgency actually holds.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: scarcity trips two switches at once — losses weigh more than equivalent gains, and restricted freedom provokes reactance (Brehm's 1966 theory: people restore a sense of freedom by wanting the restricted option more). "Almost gone" makes people grab; "you can't have it" makes them want it. Both act on the speed of the decision, not the value of the thing — which is why "I'm not pushing you" isn't politeness, it's handing the freedom back.</strong></p>
+<ul>
+<li><strong>Classic experiment · becoming scarce beats being scarce</strong>: Worchel, Lee &amp; Adewole (1975, <em>JPSP</em>) had people taste cookies from a jar; cookies from a jar holding two were rated above cookies from a full jar — and cookies that went <strong>from plentiful to scarce</strong> rated highest of all, especially when the reason was that other people had taken them.</li>
+<li><strong>Behavioural economics · losses weigh more (hard evidence, but don't treat the multiplier as a constant)</strong>: prospect theory (Kahneman &amp; Tversky, 1979, <em>Econometrica</em>) holds that losses carry more psychological weight than equivalent gains, often quoted at roughly two to one. <strong>Honest labelling</strong>: Gal &amp; Rucker (2018, <em>J. Consumer Psychology</em>) question how general that is. The direction holds; don't do arithmetic with the ratio. (The buyer's brain topic goes into loss aversion properly.)</li>
+<li><strong>Neuroscience · the extra weight of loss has a locatable basis (hard evidence)</strong>: De Martino, Camerer &amp; Adolphs (2010, <em>PNAS</em>) found two patients with focal bilateral <strong>amygdala</strong> damage showed almost no loss aversion in monetary gambles while responding normally to risk in general. (cross-ref neuroscience, amygdala and decision-making)</li>
+</ul>
+<p class="caveat">Boundary — and the line for the whole topic: none of the six changes how good your thing is, only whether it gets weighed seriously. So one test does the job: <strong>if they later learned every technique you used, would they still think this deal was right?</strong> Yes, and you helped the truth get heard; no, and you used their default reactions to bypass their judgment. In <em>Pre-Suasion</em> Cialdini argues against <strong>importing</strong> strengths that don't exist, and his reason isn't morality, it's arithmetic — once it's spotted, what you lose isn't this deal, it's the credibility of everything you say afterwards. (That's the author's argument plus his team's organisational surveys, not a controlled experiment.)</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In reverse: when the six are used on you</div>
+<ul class="checklist">
+<li>When you feel awkward saying no, ask first: did I want this favour, or was it pushed on me? <strong>An unsolicited favour creates no debt.</strong></li>
+<li>When you hear a deadline, ask "why that date?" A real constraint has an answer; an invented one doesn't.</li>
+<li>When you see "X people already bought" or a row of credentials, ask: are those people like me? Is this authority on <strong>this problem</strong>? Do they have a stake in it?</li>
+<li>If they genuinely helped you and you're not buying, <strong>don't repay the favour with a purchase</strong> — try "we went with someone else this time, but that sheet of yours saved me; I'll send you a friend with the same problem."</li>
+<li>The most useful one: <strong>push the decision past the point where the feeling settles</strong>. All six run on immediate reactions and lose most of their force overnight. Knowing in advance how you'll be worked on helps by itself — McGuire's (1961) inoculation theory: a weak dose of the counterargument beforehand measurably raises resistance.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Phrases that carry it</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"That deadline is real, and here's why." —— the only honest form of scarcity.</p>
+<p>"Take the weekend — it should still make sense on Monday." —— giving freedom back makes it hold.</p>
+<p>Scarcity moves the clock, not the value.</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>Your Day 15 Action</h3>
+<p>Pick one situation that's stuck — a client, an interview, a colleague you're trying to move — and use two principles this week, not six.</p>
+<div class="action">
+<strong>Move 1 · Give:</strong> within 24 hours, send them something <strong>unconditional</strong> and genuinely useful (a normalised comparison, a number they've never worked out, an introduction). Ask for nothing back, and say "whoever you go with."<br/><br/><strong>Move 2 · Shrink the step:</strong> cut the next step to a five-minute action with a date on it; and before that, use "if that got solved, what would it mean for you" so <strong>they</strong> say the benefit out loud.<br/><br/><strong>Run it backwards:</strong> take the last thing you were sold (a course, a membership, a contract) and mark which of the six were operating. You'll notice what actually worked wasn't the phrasing — it was that you couldn't judge the thing.<br/><br/>Boundary reminder: run the test before you open your mouth — <strong>if they later knew every technique you used, would they still think this was right?</strong> When the answer is no, the problem isn't your technique, it's what you're planning to sell.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. Wouldn't using all six at once work best?</summary>
+<div class="answer">No — usually worse. <strong>First, the fingerprints stack up.</strong> One principle on its own reads as a normal human act: you sent something useful, or you mentioned a comparable customer. All six at once doesn't land as six times the persuasion; it lands as "every sentence out of this person is engineered," and then everything gets discounted together. Once trust drops all six fail, because every one of them depends on the other person still listening properly. <strong>Second, they answer different blockages.</strong> If they don't know you, what's missing is liking and authority. If they can't tell whether it works, it's social proof. If they agree but don't move, it's a small step. If they keep deferring and you really do have a constraint, only then does scarcity apply. There's normally one real blockage in a conversation — find it and one principle is enough. Default order: give, let them talk, add a peer example if needed, and only then a real deadline.</div>
+</details>
+<details>
+<summary>2. I'm new. No case studies, no authority, no customer list — are all six out of reach?</summary>
+<div class="answer">The opposite: <strong>the two you can use are the two strongest.</strong> Reciprocity and commitment require no stockpile, only a willingness to move first. No case studies? Give: spend two hours turning what three competitors in their sector do into one page and send it. There's no seniority requirement, and it proves you've paid attention better than any case study. Commitment likewise: shrinking the next step to five minutes and getting them to say the benefit has nothing to do with your years in the job. The other three aren't binary either, they just need rescaling: <strong>authority isn't fame, it's knowing more than they do about this exact problem</strong> — the hole you fell into last week makes you an authority to them; social proof isn't a logo wall, one real user who resembles them is enough; and the most durable version of liking is honest common ground plus not faking expertise. <strong>Beginners also have one privilege: "I'm not sure about that, let me check and come back with a straight answer" builds more trust than a veteran's polish</strong> — provided you do check and do come back. What a beginner should avoid is precisely scarcity: you have no credibility yet to put up as collateral.</div>
+</details>
+<details>
+<summary>3. Isn't all of this manipulation? Where's the line?</summary>
+<div class="answer">Start with what they act on. All six affect the <strong>route by which someone judges</strong> — where attention goes, what serves as a reference, how fast a decision gets made. They don't change facts and shouldn't substitute for them. So the test isn't whether technique was used, it's three questions: <strong>is the thing you made easier to accept true? is the urgency you created real? does the trust you borrowed — the case study, the credential, the favour — match what you can actually deliver?</strong> Three yeses and you've only given the truth a chance to be heard; truth doesn't travel on its own, and where nobody does this work the winner is usually whoever packages best. One no, and the problem isn't the technique: you're using someone's default reactions to bypass their judgment, which is the definition of manipulation. There's also an asymmetry worth keeping: <strong>on a bad offer these six work exactly once; on a good one they work every time.</strong> Fake urgency and inflated case studies can buy the first deal, and after the first deal you still need this person to renew and to refer. Long-run, it isn't an ethics question, it's arithmetic.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 15</footer>
+</div>
+</body>
+</html>
