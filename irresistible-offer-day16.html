@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 16：做一个无法拒绝的报价</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 16 · Phase C</div>
+<h1>做一个无法拒绝的报价：让"不买"成为更贵的选项</h1>
+<div class="meta"><span>主题：无法拒绝的报价</span><span>·</span><span>4 个杠杆 · 3 档结构</span></div>
+<div class="subtitle">降价是拿利润替他找理由，重做报价是拿他的风险换你的成本——只有后者用一百次还有效。</div>
+</header>
+<div class="intro">
+<strong>他说"再考虑考虑"时，卡的多半不是价格，是四样别的东西</strong>：结果不是他真想要的、他不信自己能做到、要等太久、要他自己干太多活。降价一分钱都不碰这四项，只让他确认了一件事：原价是虚的。真正的动作是<strong>重做报价</strong>——同一个价，把他到结果之间的路铺掉，把"买错"的风险搬到你这边，再决定他拿什么跟你的数字比。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">LEVER 01</div>
+<h2>报价的四个杠杆：降价一个都不动
+<span class="en">Four levers — price isn't one of them</span></h2>
+<span class="tag">价值方程</span><span class="tag">时间延迟</span><span class="tag">努力与牺牲</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">他心里的划算程度 =（<strong>他真想要的结果</strong> × <strong>他相信自己能拿到的把握</strong>）÷（<strong>要等多久</strong> × <strong>他得付出多少</strong>）。四个杠杆里没有价格，所以降价改不动分子分母，只改你的利润。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Make people an offer so good they would feel stupid saying no."</span>
+<span class="zh">"把报价做到好得让人觉得说不才是傻。"</span>
+<span class="source">— Alex Hormozi，《$100M Offers》(2021)：他的价值方程即上面四项</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">四个杠杆长什么样</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 306" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">同一个价，他感觉到的划算程度由这四项决定</text>
+<rect fill="#e2efdc" height="54" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="248" x="76" y="36"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" font-weight="700" x="90" y="58">① 他真想要的结果</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" x="90" y="78">不是你的功能，是他要的变化</text>
+<text fill="#5a7365" font-family="Georgia" font-size="15" font-weight="700" text-anchor="middle" x="350" y="70">×</text>
+<rect fill="#e2efdc" height="54" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="248" x="376" y="36"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" font-weight="700" x="390" y="58">② 他相信能拿到的把握</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" x="390" y="78">不是你多可靠，是他觉得自己行吗</text>
+<line stroke="#cbb98f" stroke-width="2.4" x1="60" x2="640" y1="106" y2="106"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="101">感知价值</text>
+<rect fill="#f6e3da" height="54" rx="8" stroke="#c0603a" stroke-width="1.5" width="248" x="76" y="120"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="90" y="142">③ 要等多久</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="90" y="162">到第一个看得见的结果几天</text>
+<text fill="#5a7365" font-family="Georgia" font-size="15" font-weight="700" text-anchor="middle" x="350" y="154">×</text>
+<rect fill="#f6e3da" height="54" rx="8" stroke="#c0603a" stroke-width="1.5" width="248" x="376" y="120"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="390" y="142">④ 他得付出多少</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="390" y="162">要学的、要改的、要解释的</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="350" y="196">每个杠杆上，你今天能动的一件事</text>
+<rect fill="#eef1f5" height="56" rx="6" stroke="#3f5c7a" stroke-width="1.2" width="156" x="18" y="206"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="96" y="226">① 用他的话写结果</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="96" y="244">照抄他的原话</text>
+<rect fill="#eef1f5" height="56" rx="6" stroke="#3f5c7a" stroke-width="1.2" width="156" x="188" y="206"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="266" y="226">② 给同类可核实样本</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="266" y="244">同规模、能核实</text>
+<rect fill="#eef1f5" height="56" rx="6" stroke="#3f5c7a" stroke-width="1.2" width="156" x="358" y="206"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="436" y="226">③ 承诺第一个小结果</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="436" y="244">七天内看得见</text>
+<rect fill="#eef1f5" height="56" rx="6" stroke="#3f5c7a" stroke-width="1.2" width="156" x="528" y="206"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="606" y="226">④ 替他做掉两步</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="606" y="244">导数据、写说明</text>
+<rect fill="#fbefe8" height="26" rx="6" stroke="#c0603a" stroke-width="1.2" width="664" x="18" y="270"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" text-anchor="middle" x="350" y="288">降价动的是第五项：你的利润，四个杠杆一个没碰。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你做代记账，小老板听完报价说"比我现在那个贵，我再想想"。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 直接动价格</div>
+<p>"这样，我给您打个八折。"<br/>—— 他收到的信息不是"便宜了"，是"原价可以谈"，下一步他会再试一次。而他真正犹豫的四件事一件没解决：交接麻烦、怕断档、怕重讲一遍业务。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 价不动，动分子分母</div>
+<p>"价我不动，换个方式做：<strong>交接您不用管</strong>，我直接跟您现在那位对接，凭证我们自己取（④）；<strong>第一个月并行跑</strong>，两边账对得上您再切（②）；<strong>下周三前给您一张现金流月报</strong>，就是您说的'看不清哪个月要缺钱'那张（①＋③）。三条写进合同附件。"<br/>—— 一分钱没降，他犹豫的四件事全被拿掉了。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> How good your offer feels = (the outcome they actually want × how confident they are of getting it) ÷ (how long they wait × how much they must do themselves). Price isn't one of the four, which is why discounting moves nothing except your margin — and tells them the original number was fiction.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：人对"以后才拿到"和"要自己费劲"收的税极重——等待把未来的好处超比例折掉，努力本身也被大脑当成真实成本减分。所以缩短时间、替他干活，等于凭空提高了他感受到的价值，还不花你的毛利。</strong></p>
+<ul>
+<li><strong>行为经济学 · 等待的折价不是线性的（证据充分）</strong>：Green &amp; Myerson (2004, <em>Psychological Bulletin</em>) 综述大量延迟折扣实验，一致发现人的贴现接近双曲形——近期的一点延迟砍掉的价值远大于远期同样长的延迟。所以<strong>"第七天见到第一个结果"比减价 20% 更能改变他的感觉。</strong></li>
+<li><strong>神经科学 · 即时性被单独加分（硬证据，解读有争议）</strong>：McClure 等 (2004, <em>Science</em>) 发现选项含"立刻可得"时，<strong>腹侧纹状体</strong>与<strong>内侧前额</strong>等多巴胺投射区活动更强，延迟选择更依赖<strong>背侧前额与顶叶</strong>。<strong>诚实标注</strong>：Kable &amp; Glimcher (2007, <em>Nature Neuroscience</em>) 用单一价值系统也能解释同类数据，双系统之争未定，稳的是方向。（cross-ref neuroscience 奖赏与折扣）</li>
+<li><strong>认知神经科学 · 努力本身是减分项（硬证据）</strong>：Westbrook &amp; Braver (2015, <em>Neuron</em>) 指出<strong>纹状体多巴胺</strong>与<strong>前扣带</strong>共同编码"值不值得费这个劲"；Kool 等 (2010, <em>JEP: General</em>) 证明人系统性回避更费脑的选项，即便回报相同。他要填的表、要学的东西都是真金白银的扣分。</li>
+<li><strong>大规模现场证据 · 少一步能差出一个量级</strong>：Madrian &amp; Shea (2001, <em>QJE</em>) 研究一家公司把退休金从"自己申请加入"改成"默认加入、可退出"，参与率从约 <strong>37%</strong> 升到约 <strong>86%</strong>；Johnson &amp; Goldstein (2003, <em>Science</em>) 发现各国器官捐献同意率因默认选项不同差距极大——方案没变，变的只是要不要他自己动手。</li>
+</ul>
+<p class="caveat">边界：这四项都是<strong>感知</strong>，不是承诺。缩短时间指把第一个真实结果提前，不是把周期吹短；降低努力指你真接过那些活、真多花人力。做不到就别动那一格——唯一不可逆的错误是承诺交付不了的东西。预算天花板也是真硬的，够不上就别耗（资格判定那期讲了怎么早点问）。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"I'm not moving the price — I'm changing the offer." —— 不降价也不僵住。</p>
+<p>"You'll see the first result by Wednesday, and we'll do the migration for you." —— 同时动时间与努力。</p>
+<p>Discounting moves your margin, not their decision.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">LEVER 02</div>
+<h2>价值堆叠：把一句承诺拆成一串挡掉的障碍
+<span class="en">Stack obstacles removed, not bonuses</span></h2>
+<span class="tag">价值堆叠</span><span class="tag">具体化</span><span class="tag">赠品陷阱</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">堆叠不是堆赠品，是<strong>把他到结果那条路上的每个障碍列出来，一个个说清由谁挡掉</strong>。"我们帮你做好"是一个含糊承诺，五条"这一步归我们"是五件他能想象的事——<strong>但每条都必须挡掉一个真障碍，无关的赠品是负资产</strong>。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"The aim of marketing is to know and understand the customer so well that the product or service fits him and sells itself."</span>
+<span class="zh">"营销的目标，是把客户理解到产品刚好合他的身、自己就卖出去了。"</span>
+<span class="source">— Peter Drucker，《Management》(1973)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">障碍在左，谁挡掉在右</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 308" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mkStack" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="20">他嘴上说"太贵"，心里数的是这四道坎</text>
+<rect fill="#f6e3da" height="34" rx="6" stroke="#c0603a" stroke-width="1.3" width="300" x="18" y="34"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="30" y="55">① 交接一团乱，我得自己盯</text>
+<line marker-end="url(#mkStack)" stroke="#5a7365" stroke-width="1.8" x1="322" x2="368" y1="51" y2="51"></line>
+<rect fill="#e2efdc" height="34" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="306" x="376" y="34"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="388" y="55">我们直接对接原服务方，您不管</text>
+<rect fill="#f6e3da" height="34" rx="6" stroke="#c0603a" stroke-width="1.3" width="300" x="18" y="78"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="30" y="99">② 换的过程中断档怎么办</text>
+<line marker-end="url(#mkStack)" stroke="#5a7365" stroke-width="1.8" x1="322" x2="368" y1="95" y2="95"></line>
+<rect fill="#e2efdc" height="34" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="306" x="376" y="78"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="388" y="99">第一个月并行跑，对得上再切</text>
+<rect fill="#f6e3da" height="34" rx="6" stroke="#c0603a" stroke-width="1.3" width="300" x="18" y="122"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="30" y="143">③ 我得再把业务讲一遍</text>
+<line marker-end="url(#mkStack)" stroke="#5a7365" stroke-width="1.8" x1="322" x2="368" y1="139" y2="139"></line>
+<rect fill="#e2efdc" height="34" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="306" x="376" y="122"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="388" y="143">一次 40 分钟访谈，之后不再打扰</text>
+<rect fill="#f6e3da" height="34" rx="6" stroke="#c0603a" stroke-width="1.3" width="300" x="18" y="166"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="30" y="187">④ 出了事找不到人</text>
+<line marker-end="url(#mkStack)" stroke="#5a7365" stroke-width="1.8" x1="322" x2="368" y1="183" y2="183"></line>
+<rect fill="#e2efdc" height="34" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="306" x="376" y="166"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="388" y="187">固定一个会计 + 当日回复写进附件</text>
+<rect fill="#fbefe8" height="62" rx="8" stroke="#c0603a" stroke-width="1.5" width="664" x="18" y="212"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="32" y="232">✗ 别往上堆无关赠品（送课程、送台历、送一年咨询）</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="32" y="252">人评估一组东西取平均、不加总：加一件弱的，整体反而更低</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="32" y="268">四条强的 &gt; 四条强的 + 三条凑数的</text>
+<text fill="#9aab9f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="292">堆的是"障碍归谁挡"，不是"东西有几件"。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你的服务两万，对手报一万二，你要让这两万不是"贵了八千"。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 用赠品填缝</div>
+<p>"我们贵一点，但送您一套线上课程、一年免费咨询，还有个礼品。"<br/>—— 这三样和他的障碍毫无关系。他心里的算法不是"两万＋三件礼物"，是"两万里还塞了一堆我不会用的东西"，整体反而更虚。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 一条对一坎，全写进附件</div>
+<p>"差的八千买的是四条：交接我们自己做，您不用协调（省两周）；第一个月并行，账对不上不切；一次访谈讲清业务，之后不问第二遍；固定一个人对接、当日回复。<strong>四条写进合同附件，做不到按附件赔。</strong>便宜那家是这四条都归您自己——您先算算那两周值多少。"<br/>—— 每条都指向他真怕的一件事，还敢写进合同：八千的差价第一次有了对应物。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Stacking isn't piling on bonuses — it's listing every obstacle between them and the outcome and naming who removes each one. "We'll take care of it" is one vague promise; five lines of "this step is ours" are five things they can picture. And every line must kill a real obstacle: filler bonuses actively drag the whole offer down.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：含糊的承诺无法被评估，所以默认被打折；具体的条目能在脑子里被想象、被核对、被拿去说给别人听。但同一个机制有反向刀口——人评估一组东西时倾向取平均而非加总，任何一条弱项都会把整体拉低。</strong></p>
+<ul>
+<li><strong>社会心理学 · 加一条弱的会拉低整体（硬证据，最反直觉的一条）</strong>：Weaver、Garcia &amp; Schwarz (2012, <em>JPSP</em>) 称之为"呈现者悖论"：在强卖点外再加一条中等的，接收方的整体评价<strong>下降</strong>，而呈现者一致预期它会上升（产品套装、简历、论证多个实验方向一致）。结论很直接：<strong>删掉最弱那条，报价会变强。</strong></li>
+<li><strong>消费者行为 · "免费"的跳跃不成比例（可靠，别滥用）</strong>：Shampanier、Mazar &amp; Ariely (2007, <em>Marketing Science</em>) 发现价格从极小的正数降到零，选择率的跃升远超价差本身——零不是"很便宜"，是另一个类别。所以"这一步归我们、不额外收费"比"这一步打折"有效。<strong>边界</strong>：免费也让人不珍惜，用在降低他的努力上（帮你迁移）最安全。</li>
+<li><strong>认知心理学 · 容易成形的更容易被当成真的（效应真实但不大）</strong>：Reber &amp; Schwarz (1999, <em>Consciousness and Cognition</em>) 发现仅提高陈述的易读性就提高了"判断为真"的比例；Alter &amp; Oppenheimer (2009, <em>PSPR</em>) 综述了这类流畅性效应。这就是"周三前给你那张现金流月报"比"提升财务可见性"可信的原因：一个能想象，一个不能。（和让信息黏住那期的具体性同一机制）</li>
+</ul>
+<p class="caveat">边界：堆叠最常见的失效不是堆得少，是<strong>堆了不属于他的东西</strong>——每加一条先问"这挡掉的是他哪句原话里的顾虑"，答不上就删。第二个失效是堆出交付负担：写进附件的每条都要真做，四条做到远胜八条做不到。堆不出四条，说明你还没搞清他卡在哪儿，回去问就好。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">堆叠模板</div>
+<div class="template">
+<span class="label">一坎一条，写完删掉最弱的那条</span>
+<p>· 他要的结果（他的原话）：<strong>______</strong></p>
+<p>· 第 1 坎 <strong>______</strong> → 归谁挡：<strong>______</strong>（省他多少时间／钱）</p>
+<p>· 第 2 / 3 / 4 坎同上，每条附一个可核对的动作和时间点</p>
+<p>· 全部写进合同附件那一页，做不到怎么办也写上</p>
+<p>· 最后删掉最弱的一条；留下的都要答得出"这挡掉了他哪句原话"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"That step is on us — you don't touch it." —— 一句一坎。</p>
+<p>"I'd rather drop that bonus than dilute the offer." —— 主动砍凑数项。</p>
+<p>Stack removals, not gifts.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">LEVER 03</div>
+<h2>风险逆转：让"什么都不做"变成风险更大的那一边
+<span class="en">Move the risk onto your side</span></h2>
+<span class="tag">风险逆转</span><span class="tag">保证</span><span class="tag">不确定性厌恶</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">他不买不是觉得你不好，是<strong>"不动"看起来零风险</strong>——错了没人怪他。所以别把好处讲得更大，要<strong>把"买错"的代价从他身上搬到你身上</strong>：一份你真敢兑现的保证同时是最强的证据，因为交付不了的人根本不敢这么写。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Don't tell me what you think, tell me what you have in your portfolio."</span>
+<span class="zh">"别告诉我你怎么想，告诉我你自己押了什么。"</span>
+<span class="source">— Nassim Nicholas Taleb，《Skin in the Game》(2018)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">风险原来在哪儿，逆转后在哪儿</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mkRisk" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="9" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 Z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="20">默认情况下，风险全压在他一个人身上</text>
+<rect fill="#f6e3da" height="96" rx="8" stroke="#c0603a" stroke-width="1.5" width="664" x="18" y="32"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="32" y="54">他心里那张风险清单</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="32" y="76">· 钱花了没效果，我得自己承担</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="32" y="94">· 切换期出问题，是我拍的板</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="32" y="112">· 老板问起来，我没法解释</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="366" y="76">· 你们中途不干了怎么办</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="366" y="94">· 我买了才发现不合用</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="366" y="112">· 什么都不做 = 没人会怪我</text>
+<line marker-end="url(#mkRisk)" stroke="#3f5c7a" stroke-width="2.2" x1="350" x2="350" y1="132" y2="158"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" x="360" y="150">把风险搬过来</text>
+<rect fill="#e2efdc" height="106" rx="8" stroke="#4e8a3f" stroke-width="1.6" width="664" x="18" y="164"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" font-weight="700" x="32" y="186">三档逆转，按你真能承担的程度选</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="32" y="208">轻：分段付款 —— 第一阶段验收了再付下一笔</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="32" y="226">中：条件退款 —— 按流程做完仍无 X，退款（写清 X 和流程）</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="32" y="244">重：按结果付费 —— 达到 X 才收全款，交付成本低才玩得起</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" x="32" y="262">自查：最坏情况全额兑现你还活着吗？活不了就退回轻档。</text>
+<text fill="#9aab9f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="292">你敢承担的那部分，就是他不必承担的那部分。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：客户说"方案挺好，我们内部再评估一下"。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 加压 + 空保证</div>
+<p>"您放心，我们保证效果，做不好肯定负责到底。"<br/>—— "负责到底"没有可执行内容，等于没保证。他自动翻译成"出事还是我自己扛"，于是继续不动。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 把风险写成可执行的条款</div>
+<p>"评估之前先把风险定死，不然您评估的是个不确定的东西：<strong>第一阶段付一半，验收了再付后面</strong>；<strong>第一个月并行跑，账对不上我们自己吃这个月成本，您零损失退出</strong>；<strong>对接人固定，换人提前两周书面通知</strong>。三条进合同。最坏情况是您花一个月、损失零，我押的是整月人力。"<br/>—— 他评估的东西从"值不值两万"变成"要不要花一个月试试"，而后者的默认答案不再是不动。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> They don't stall because you look bad; they stall because doing nothing looks free — nobody gets blamed for it. So the move isn't a bigger promise, it's shifting the cost of being wrong onto your side. A guarantee you'd actually honour is also your strongest piece of evidence: someone who can't deliver can't afford to write it.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制有两层。一是不确定性本身在被扣分：概率未知比同等的已知风险更让人退缩，所以消掉一个不确定就抬高了感知价值，哪怕好处没变。二是信号——Spence (1973, <em>QJE</em>) 的信号理论说明只有低成本方才承担得起昂贵信号，所以保证本身就是可信度的证明：对手写不出这句，本身就是信息。</strong></p>
+<ul>
+<li><strong>神经科学 · 说不清概率时，脑子按"更危险"处理（硬证据）</strong>：Hsu、Bhatt、Adolphs、Tranel &amp; Camerer (2005, <em>Science</em>) 发现面对<strong>模糊</strong>（概率未知）而非已知风险时，<strong>杏仁核</strong>与<strong>眶额皮层</strong>活动更强、<strong>纹状体</strong>的价值信号更弱，而眶额损伤的病人对模糊几乎不敏感。所以"给个数、写清条件"比"您放心"有用：那是把模糊变成已知风险。（cross-ref neuroscience 杏仁核与不确定性）</li>
+<li><strong>行为经济学 · 不动的默认选项自带优势（证据充分）</strong>：Samuelson &amp; Zeckhauser (1988, <em>J. Risk and Uncertainty</em>) 用实验与真实退休金选择数据确立"现状偏好"：同一选项被标成现状时被选中的比例显著更高。你的对手从来不是另一家报价，是"什么都不做"。</li>
+<li><strong>行为经济学 · 先拿到手就不想还（硬证据）</strong>：Kahneman、Knetsch &amp; Thaler (1990, <em>JPE</em>) 的马克杯实验显示，人对已拥有之物的要价明显高于未拥有时的出价。这是"先用后付"真正的力道：试用期一结束，停用在心理上已是一次损失。</li>
+<li><strong>零售实证 · 宽松政策提高购买，也提高退货（元分析）</strong>：Janakiraman、Syrdal &amp; Freling (2016, <em>Journal of Retailing</em>) 发现更宽松的退货政策与更高购买率相关，也与更高退货率相关，净效应看品类。<strong>诚实标注</strong>："退款保证几乎没人用"多是自报行业数据，不可靠——按会被用来定价。</li>
+</ul>
+<p class="caveat">边界：<strong>你承担不起的保证是在借钱，而且借的是最贵的那种</strong>。三条规矩：一，假设兑现率是你估计的三倍，还活得下去才写；二，保证要绑住他那侧的动作（"按约定流程做完仍无 X"），否则吸引来的是本来就不打算配合的人（逆向选择）；三，一次性交付成本极高的生意别玩全额退款，改分段付款。还有<strong>措辞越具体越有力</strong>："不满意全退"远不如"第 30 天前按流程做完仍没拿到 X，一次退全款"。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Let's kill the risk first, then you can evaluate the thing itself." —— 从"值不值"换成"要不要试"。</p>
+<p>"If you follow the steps and don't get X by day 30, you get every penny back." —— 比"包您满意"强十倍。</p>
+<p>Doing nothing should be the risky option.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">LEVER 04</div>
+<h2>锚定与真实的紧迫：贵不贵，取决于旁边放了什么
+<span class="en">What sits next to the number</span></h2>
+<span class="tag">锚定</span><span class="tag">三档报价</span><span class="tag">真实约束</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">没有绝对的贵。他判断你的数字一定要拿点什么来比，<strong>你不给参照物，他就用手头最便宜的那个</strong>。所以报价前的活儿是决定他拿什么比：不改变的年度代价、自己招人的成本、你的完整版——三样都比你想成交的那档大。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Price is what you pay. Value is what you get."</span>
+<span class="zh">"价格是你付出的，价值是你得到的。"</span>
+<span class="source">— Warren Buffett，伯克希尔股东信（思路承自 Benjamin Graham）</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">先出现的数字，决定后面那个显得贵还是便宜</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 308" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mkAxis" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="20">按这个顺序出现，"标准版"才落在便宜那一侧</text>
+<rect fill="#eef1f5" height="150" rx="6" stroke="#3f5c7a" stroke-width="1.4" width="96" x="42" y="82"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="90" y="248">① 不改变</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="90" y="264">一年的代价</text>
+<rect fill="#eef1f5" height="120" rx="6" stroke="#3f5c7a" stroke-width="1.4" width="96" x="168" y="112"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="216" y="248">② 自己招人</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="216" y="264">工资＋管理</text>
+<rect fill="#dfeae2" height="86" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="96" x="294" y="146"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="342" y="248">③ 完整版</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="342" y="264">全接管</text>
+<rect fill="#b7dcc2" height="62" rx="6" stroke="#2f6a2f" stroke-width="1.8" width="96" x="420" y="170"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="468" y="248">④ 标准版</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="468" y="264">你想成交的</text>
+<rect fill="#eceee8" height="34" rx="6" stroke="#c2ccbe" stroke-width="1.2" width="96" x="546" y="198"></rect>
+<text fill="#8a988c" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="594" y="248">⑤ 精简版</text>
+<text fill="#a7b1a7" font-family="Georgia" font-size="9" text-anchor="middle" x="594" y="264">让"标准"显得值</text>
+<line marker-end="url(#mkAxis)" stroke="#5a7365" stroke-width="1.6" x1="30" x2="668" y1="232" y2="232"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" x="30" y="60">↑ 他心里的数字大小</text>
+<text fill="#697682" font-family="Georgia" font-size="9.5" x="196" y="60">①② 是他自己的账，不是你的报价，所以反驳不了</text>
+<text fill="#9aab9f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="290">锚必须是真的：虚构原价再划掉多数地区都违法，也一次烧掉可信度。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：他一开口就问"多少钱"，而你还没立起任何参照物。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 裸报一个数</div>
+<p>"两万。"<br/>—— 这个数字唯一的参照物是他手上那家一万二。你不是报了个价，是自愿站到"贵了八千"那个位置上。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 先立参照物，再给三档</div>
+<p>"我给您区间，先问一句：月中缺钱那事儿，去年因为发现得晚踩了几次？（他：三四次，有一次借了短期）<strong>那笔利息加上赶工的加班，一年是多少？</strong>（他自己算出一个数）<br/>行。三档：<strong>完整版</strong>全接管加每月现金流预测；<strong>标准版</strong>——您需要的这档，做账＋那张月报＋并行一个月；<strong>精简版</strong>只做账，没那张表。对着刚才那个数看，哪档划算您比我清楚。"<br/>—— 参照物是他自己算的，不是你摆的；三档让他从"买不买"切到"买哪档"。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Nothing is expensive in the abstract. They will compare your number to something, and if you don't supply the reference they'll use the cheapest thing at hand. So the work happens before the number: the annual cost of not changing, what hiring for it would cost, your own full-fat tier — all bigger than the tier you actually want to sell.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：价格没有绝对刻度，只有相对位置。人估一个不熟悉的量时会从手边任何一个数字出发往回调，而调整总是不够，于是先出现的数字把整个判断拖过去。给一组选项时同理——他不评估"值不值"，他在组内挑一个。</strong></p>
+<ul>
+<li><strong>认知心理学 · 锚定的原始实验（经典，方向极稳）</strong>：Tversky &amp; Kahneman (1974, <em>Science</em>) 让被试先转轮盘得到一个随机数，再估"联合国中非洲国家占比"：转到大数的人估得系统性更高——明显无关的数字都能拖动判断。</li>
+<li><strong>现场 · 连专业人士都躲不开（硬证据，最贴销售）</strong>：Northcraft &amp; Neale (1987, <em>OBHDP</em>) 给学生和<strong>执业房产经纪人</strong>看同一套房子、只改挂牌价：两组估值都被挂牌价系统性拉动，而经纪人普遍坚称自己没受影响。<strong>这也适用于你</strong>：对方先报的数字同样在拖你，先算好底线再进屋。</li>
+<li><strong>消费者行为 · 加一个选项会改变前两个的份额（同行评审）</strong>：Simonson &amp; Tversky (1992, <em>JMR</em>) 证明了折衷效应与吸引力效应——加入第三个选项会显著改变原有两项的选择比例，这才是三档报价的依据。<strong>诚实标注</strong>：常被引的《经济学人》订阅诱饵案例出自 Ariely 书中演示，非同行评审实验。</li>
+<li><strong>证据强度提醒</strong>：Ariely、Loewenstein &amp; Prelec (2003, <em>QJE</em>) 用身份证号尾数当锚影响出价的著名范式，后续复现不一致（Fudenberg、Levine &amp; Maniadis 2012 未复现同等强度）。<strong>方向可靠，但别指望随手一个数字定住价格</strong>——最稳的锚是他自己算出的那个数。</li>
+</ul>
+<p class="caveat">边界与法律：<strong>虚构原价再划掉是欺诈，不是锚定</strong>——多数地区的价格法规都禁止编造参考价。真锚只有三种：他自己算出的现状成本、真实存在且真有人买的高档位、公开可核实的替代方案价格。紧迫的机制影响力六原理那期讲透了（损失厌恶＋自由被限时的逆反），这里只补一条：<strong>期限必须绑在说得出口的真实约束上</strong>（排期、涨价日、名额），并允许他选晚的那个——说不出原因的截止日期，对方默认是编的，通常他是对的。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">三档怎么设</div>
+<ul class="checklist">
+<li>先定"标准版"——你真想成交的那档，另两档围着它设计。</li>
+<li>完整版必须真能买、真有人买；纯摆设一问就露。</li>
+<li>精简版靠<strong>删掉他最在意的那一项</strong>衬托，不靠降质量。</li>
+<li>档位差别写成成果差别，不是功能条数差别。</li>
+<li>报价前先让他算出一个自己的数（不改变的年度代价）。</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Before I give you a number — what did that problem cost you last year?" —— 让他自己算那个锚。</p>
+<p>"Three tiers: full, standard, lean. Most people in your position take standard." —— "买不买"变"买哪档"。</p>
+<p>Nothing is expensive next to the cost of doing nothing.</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>本期习作 · Your Day 16 Action</h3>
+<p>拿最近一个卡住的报价，今天重做一遍——价格不许动。</p>
+<div class="action">
+<strong>一（20 分钟）：</strong>四个杠杆各写一行——他要的结果用<strong>他的原话</strong>；他不信自己能做到的地方；第一个看得见的结果能提前到几号；成交后<strong>他</strong>要干的每一步，圈出两步你接过来。<br/><br/><strong>二：</strong>把他犹豫的每一坎写成"这一步归我们"，写四条，<strong>删掉最弱的一条</strong>，剩下的写进合同附件那一页。<br/><br/><strong>三：</strong>加一条你真敢兑现的风险逆转——按兑现率是你估计的三倍算，还活得下去再写；写不出全额退款就写分段付款。<br/><br/><strong>四：</strong>发出去之前先让他算一个数（"这问题去年大概花了你多少"），再给三档，标准版在中间。<br/><br/>边界提醒：唯一不可逆的错误是<strong>为了成交写下交付不了的条款</strong>。报价好不好不看他签不签，看三个月后他愿不愿意再签一次——真做不到的那条，宁可这单不要。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我东西很普通，做"无法拒绝的报价"是不是等于把话说大？</summary>
+<div class="answer">反了。"无法拒绝"从不靠承诺更大的结果，靠的是<strong>把分母压到很小</strong>——等得短、他要干的活少、错了不用他赔。这三样都不需要产品更强，只需要你多干一点、多担一点；真把话说大的恰恰是另一条路：讲一个交付不了的结果，赌他忘了追究。<strong>还有一个对普通产品特别有效的动作：把客群缩窄。</strong>"给二十人以内的设计公司做账"比"给中小企业做账"可信，因为范围一窄，承诺就可验证了，而可验证正是分子里那个"把握"。所以与其把结果说大，不如说<strong>小而确定</strong>——"不保证省钱，保证您每月 5 号前看到下个月哪天会紧"。</div>
+</details>
+<details>
+<summary>2. 免费试用、无条件退款，不会被人薅羊毛吗？</summary>
+<div class="answer">会，所以要<strong>提前算进价格</strong>，而不是指望它不发生。三件事：<strong>一，定价时假设兑现率是你估计的三倍</strong>，这个价还赚钱才敢写；<strong>二，把保证绑在他的动作上</strong>——"按约定流程做完仍没拿到 X"；这不是刁难，它顺手解决了逆向选择：只想白拿的人不愿走完流程；<strong>三，看交付成本的形状</strong>——边际成本低的（信息、软件、教练）适合无条件退款，一次性成本极高的（定制开发、实物生产）改分段付款、里程碑验收，风险照样搬走了。心态上：<strong>被薅的那几单是你为"不动最安全"付的钱</strong>，总账赚钱它就是成本，不是失败。</div>
+</details>
+<details>
+<summary>3. 客户一开口就问价，我到底该先报还是先诊断？</summary>
+<div class="answer">先给区间，同时把参照物立起来，两件事在同一句里做完。硬绕开要付双重代价：你显得不坦率，他还把"不肯说"读成"肯定贵"。可以照说：<strong>"区间是 X 到 Y，落在哪儿取决于两件事——我问您两个问题就能说准，行吗？"</strong> 区间让他放松，两个问题让你在报确数前把现状成本挖出来（挖痛点那期那套问法直接可用）。三个细节：<strong>下限别报太低</strong>，他只记得下限，之后每一分都像涨价；<strong>区间明显超他预算就越早知道越好</strong>，那不是失败，是省下双方两周（资格判定那期讲的正是这件事）；<strong>他的参照物还是"另一家一万二"时绝不给确数</strong>——那不叫报价，叫报名参加比价。反过来他先报数压你（"预算只有八千"），先问"这八千是怎么定出来的"：多半是个随手数字，而它正在拖你，就像挂牌价拖动房产经纪人。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 16</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 16: Craft an Irresistible Offer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 16 · Phase C</div>
+<h1>Craft an Irresistible Offer: Make "Do Nothing" the Expensive Option</h1>
+<div class="meta"><span>Topic: the irresistible offer</span><span>·</span><span>4 levers · 3 tiers</span></div>
+<div class="subtitle">A discount spends your margin to give them a reason. Rebuilding the offer spends your effort to take away their risk — only the second one still works the hundredth time.</div>
+</header>
+<div class="intro">
+<strong>When they say "let me think about it," the sticking point usually isn't the price. It's four other things</strong>: the outcome isn't the one they actually want, they don't believe they'll get it, it takes too long, and too much of the work lands on them. A discount touches none of the four — it only confirms that your first number was fiction. The real move is to <strong>rebuild the offer</strong>: same price, pave the road between them and the outcome, shift the cost of being wrong onto your side, and decide what your number gets compared to.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">LEVER 01</div>
+<h2>Four levers, and price isn't one of them
+<span class="en">Four levers — price isn't one of them</span></h2>
+<span class="tag">value equation</span><span class="tag">time delay</span><span class="tag">effort and sacrifice</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">How good your offer feels = (<strong>the outcome they actually want</strong> × <strong>how sure they are of getting it</strong>) ÷ (<strong>how long they wait</strong> × <strong>how much they have to do</strong>). Price isn't among the four levers, which is why a discount moves neither numerator nor denominator — only your margin.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Make people an offer so good they would feel stupid saying no."</span>
+<span class="source">— Alex Hormozi, <em>$100M Offers</em> (2021): his value equation is the four terms above</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">What the four levers look like</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 306" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="22">Same price — these four decide how good a deal it feels</text>
+<rect fill="#e2efdc" height="54" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="248" x="76" y="36"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" font-weight="700" x="90" y="58">① The outcome they want</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" x="90" y="78">Not your features — the change they want</text>
+<text fill="#5a7365" font-family="Georgia" font-size="15" font-weight="700" text-anchor="middle" x="350" y="70">×</text>
+<rect fill="#e2efdc" height="54" rx="8" stroke="#4e8a3f" stroke-width="1.5" width="248" x="376" y="36"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" font-weight="700" x="390" y="58">② How sure they are</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" x="390" y="78">Not whether you're good — whether they are</text>
+<line stroke="#cbb98f" stroke-width="2.4" x1="60" x2="640" y1="106" y2="106"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="101">perceived value</text>
+<rect fill="#f6e3da" height="54" rx="8" stroke="#c0603a" stroke-width="1.5" width="248" x="76" y="120"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="90" y="142">③ How long they wait</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="90" y="162">Days to the first visible result</text>
+<text fill="#5a7365" font-family="Georgia" font-size="15" font-weight="700" text-anchor="middle" x="350" y="154">×</text>
+<rect fill="#f6e3da" height="54" rx="8" stroke="#c0603a" stroke-width="1.5" width="248" x="376" y="120"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="390" y="142">④ How much they must do</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="390" y="162">Learn it, change it, explain it internally</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="350" y="196">One move you can make on each lever today</text>
+<rect fill="#eef1f5" height="56" rx="6" stroke="#3f5c7a" stroke-width="1.2" width="156" x="18" y="206"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="96" y="226">① Use their words</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="96" y="244">quote them verbatim</text>
+<rect fill="#eef1f5" height="56" rx="6" stroke="#3f5c7a" stroke-width="1.2" width="156" x="188" y="206"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="266" y="226">② One peer to call</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="266" y="244">same size, verifiable</text>
+<rect fill="#eef1f5" height="56" rx="6" stroke="#3f5c7a" stroke-width="1.2" width="156" x="358" y="206"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="436" y="226">③ Promise a first win</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="436" y="244">visible within 7 days</text>
+<rect fill="#eef1f5" height="56" rx="6" stroke="#3f5c7a" stroke-width="1.2" width="156" x="528" y="206"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="606" y="226">④ Take two steps off</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="606" y="244">migration, internal memo</text>
+<rect fill="#fbefe8" height="26" rx="6" stroke="#c0603a" stroke-width="1.2" width="664" x="18" y="270"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" text-anchor="middle" x="350" y="288">A discount moves a fifth thing — your margin. None of the four.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: you do outsourced bookkeeping. The owner hears your price and says "that's more than I pay now, let me think."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Reaching for the price</div>
+<p>"Alright — I can do 20% off."<br/>—— What he hears isn't "cheaper," it's "the first number was negotiable," so next he'll try again. And none of the four things he's actually hesitating over got solved: the handover, the risk of a gap, having to explain the business twice.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Price stays; the numerator and denominator move</div>
+<p>"Price stays where it is — I'll change how we do it. <strong>You don't touch the handover</strong>: I'll deal with your current bookkeeper directly and collect the records myself (④). <strong>Month one runs in parallel</strong>, and we only switch when both sets tie out (②). <strong>By next Wednesday you'll have a cash-flow sheet</strong> — the one that tells you which week you'll be short, in your words (① + ③). All three go into the contract annex."<br/>—— Not a penny off, and all four hesitations are gone.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: people tax "later" and "I have to do it myself" brutally. Waiting discounts a future benefit more than proportionally, and effort itself is scored by the brain as a real cost. So shortening the wait and taking work off them raises perceived value out of thin air — without touching your margin.</strong></p>
+<ul>
+<li><strong>Behavioural economics · the discount for waiting isn't linear (well supported)</strong>: Green &amp; Myerson (2004, <em>Psychological Bulletin</em>) review a large delay-discounting literature and find discounting is closer to hyperbolic — a short delay near the present destroys far more value than the same delay far out. Which means <strong>"a first visible result on day seven" changes how it feels more than 20% off does.</strong></li>
+<li><strong>Neuroscience · immediacy gets scored separately (hard evidence, contested reading)</strong>: McClure et al. (2004, <em>Science</em>) found that when an option is available <em>right now</em>, dopamine-projection areas including the <strong>ventral striatum</strong> and <strong>medial prefrontal cortex</strong> are more active, while delayed choices lean more on <strong>dorsolateral prefrontal and parietal</strong> regions. <strong>Honest labelling</strong>: Kable &amp; Glimcher (2007, <em>Nature Neuroscience</em>) explain similar data with a single valuation system, so the two-system reading remains disputed; the direction is what's solid. (cross-ref neuroscience, reward and discounting)</li>
+<li><strong>Cognitive neuroscience · effort is a subtraction (hard evidence)</strong>: Westbrook &amp; Braver (2015, <em>Neuron</em>) review how the cost of cognitive effort is computed, pointing to <strong>striatal dopamine</strong> and the <strong>anterior cingulate</strong> jointly encoding "is this worth the trouble"; Kool et al. (2010, <em>JEP: General</em>) showed people systematically avoid the more effortful option even when the payoff is identical. The forms they have to fill in and the things they have to learn are real deductions.</li>
+<li><strong>Large-scale field evidence · one step can be worth an order of magnitude</strong>: Madrian &amp; Shea (2001, <em>QJE</em>) studied a company that switched its retirement plan from opt-in to automatic-enrolment-with-opt-out; participation went from about <strong>37%</strong> to about <strong>86%</strong>. Johnson &amp; Goldstein (2003, <em>Science</em>) found organ-donation consent rates differ enormously by country default. The plan didn't change — only whether you had to act yourself.</li>
+</ul>
+<p class="caveat">Boundary: all four are <strong>perceptions</strong>, not promises. Shortening the wait means pulling the first real result forward, not shrinking the timeline in the telling; reducing their effort means you genuinely absorb that work and genuinely spend the hours. If you can't, leave that term alone — the one irreversible mistake in an offer is promising something you can't deliver. Budget ceilings are also genuinely hard: if you're above theirs, don't grind (the qualifying issue covers how to ask early).</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Phrases that carry it</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"I'm not moving the price — I'm changing the offer." —— refuse the discount without freezing.</p>
+<p>"You'll see the first result by Wednesday, and we'll do the migration for you." —— time and effort in one line.</p>
+<p>Discounting moves your margin, not their decision.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">LEVER 02</div>
+<h2>Value stacking: turn one promise into a list of obstacles removed
+<span class="en">Stack obstacles removed, not bonuses</span></h2>
+<span class="tag">value stacking</span><span class="tag">concreteness</span><span class="tag">the bonus trap</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Stacking isn't piling on bonuses. It's <strong>listing every obstacle between them and the outcome and naming who removes each one</strong>. "We'll take care of it" is one vague promise; five lines of "that step is ours" are five things they can picture — <strong>but every line has to kill a real obstacle, because filler bonuses are a negative asset</strong>.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"The aim of marketing is to know and understand the customer so well that the product or service fits him and sells itself."</span>
+<span class="source">— Peter Drucker, <em>Management</em> (1973)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Obstacles left, who removes them right</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 308" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mkStack" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="20">They say "too expensive" — they're counting these four hurdles</text>
+<rect fill="#f6e3da" height="34" rx="6" stroke="#c0603a" stroke-width="1.3" width="300" x="18" y="34"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="30" y="55">① The handover is a mess and I'll be chasing it</text>
+<line marker-end="url(#mkStack)" stroke="#5a7365" stroke-width="1.8" x1="322" x2="368" y1="51" y2="51"></line>
+<rect fill="#e2efdc" height="34" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="306" x="376" y="34"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="388" y="55">We deal with your current provider — you don't</text>
+<rect fill="#f6e3da" height="34" rx="6" stroke="#c0603a" stroke-width="1.3" width="300" x="18" y="78"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="30" y="99">② What if there's a gap while we switch</text>
+<line marker-end="url(#mkStack)" stroke="#5a7365" stroke-width="1.8" x1="322" x2="368" y1="95" y2="95"></line>
+<rect fill="#e2efdc" height="34" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="306" x="376" y="78"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="388" y="99">Month one runs in parallel; switch when it ties out</text>
+<rect fill="#f6e3da" height="34" rx="6" stroke="#c0603a" stroke-width="1.3" width="300" x="18" y="122"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="30" y="143">③ I'll have to explain the business all over again</text>
+<line marker-end="url(#mkStack)" stroke="#5a7365" stroke-width="1.8" x1="322" x2="368" y1="139" y2="139"></line>
+<rect fill="#e2efdc" height="34" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="306" x="376" y="122"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="388" y="143">One 40-minute interview, then we stop asking</text>
+<rect fill="#f6e3da" height="34" rx="6" stroke="#c0603a" stroke-width="1.3" width="300" x="18" y="166"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="30" y="187">④ Something breaks and nobody picks up</text>
+<line marker-end="url(#mkStack)" stroke="#5a7365" stroke-width="1.8" x1="322" x2="368" y1="183" y2="183"></line>
+<rect fill="#e2efdc" height="34" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="306" x="376" y="166"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="388" y="187">One named accountant, same-day reply, in writing</text>
+<rect fill="#fbefe8" height="62" rx="8" stroke="#c0603a" stroke-width="1.5" width="664" x="18" y="212"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="32" y="232">✗ Don't pile on unrelated bonuses (a course, a calendar, a year of advice)</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="32" y="252">People average a bundle rather than adding it up: one weak item lowers the whole</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="32" y="268">Four strong lines &gt; four strong lines + three fillers</text>
+<text fill="#9aab9f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="292">Stack who removes which obstacle, not how many items there are.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: your service is 20k, a competitor quoted 12k, and you need your number to read as something other than "8k more."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Filling the gap with bonuses</div>
+<p>"We're a bit more, but you get an online course, a year of free advice, and a gift."<br/>—— None of the three touches an obstacle. His arithmetic isn't "20k plus three presents," it's "20k with a pile of stuff I'll never use bundled in" — and the whole offer reads thinner.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ One line per hurdle, all in the annex</div>
+<p>"The extra 8k buys four things: we handle the handover, you coordinate nothing (saves you two weeks); month one runs in parallel and we don't switch until it ties out; one interview to learn the business and we never ask twice; one named person, same-day reply. <strong>All four go in the contract annex, and we pay out against the annex if we miss.</strong> With the cheaper quote all four are yours to carry — start by pricing those two weeks."<br/>—— Every line points at something he's actually afraid of, and you'll sign for it: the 8k finally has something concrete on the other side.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: a vague promise can't be evaluated, so it gets discounted by default; concrete items can be pictured, checked, and repeated to someone else. The same mechanism cuts the other way — people tend to average a set rather than sum it, so any weak item drags the whole thing down.</strong></p>
+<ul>
+<li><strong>Social psychology · adding a weak item lowers the total (hard evidence, the most counterintuitive line here)</strong>: Weaver, Garcia &amp; Schwarz (2012, <em>JPSP</em>) call it the "presenter's paradox": add a middling item to a set of strong ones and the audience's overall evaluation <strong>drops</strong>, while presenters uniformly expect it to rise (consistent across product bundles, résumés and arguments). The conclusion is blunt: <strong>delete the weakest line and the offer gets stronger.</strong></li>
+<li><strong>Consumer behaviour · the jump to "free" is disproportionate (reliable, don't abuse)</strong>: Shampanier, Mazar &amp; Ariely (2007, <em>Marketing Science</em>) found that dropping a price from a tiny positive number to zero produces a jump in choice far larger than the price difference — zero isn't "very cheap," it's a different category. So "that step is ours, no extra charge" beats "a discount on that step." <strong>Boundary</strong>: free also invites carelessness, so it's safest applied to reducing their effort (we'll do the migration).</li>
+<li><strong>Cognitive psychology · what forms easily in the mind is more readily believed (real but modest)</strong>: Reber &amp; Schwarz (1999, <em>Consciousness and Cognition</em>) found that merely making a statement easier to read raised the rate at which it was judged true; Alter &amp; Oppenheimer (2009, <em>PSPR</em>) review this family of fluency effects. That's why "the cash-flow sheet by Wednesday" is more credible than "improved financial visibility": one can be pictured, the other can't. (Same mechanism as the concreteness in the make-it-stick issue.)</li>
+</ul>
+<p class="caveat">Boundary: stacking usually fails not from too few items but from <strong>items that aren't theirs</strong> — before adding a line, ask which sentence of theirs it answers, and delete it if you can't say. The second failure is stacking up delivery debt: every line in the annex has to actually happen, and four you can do beat eight you can't. If you can't find four, you haven't yet worked out where they're stuck — go back and ask.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Stacking template</div>
+<div class="template">
+<span class="label">One line per hurdle, then delete the weakest</span>
+<p>· The outcome they want (their words): <strong>______</strong></p>
+<p>· Hurdle 1 <strong>______</strong> → removed by: <strong>______</strong> (time/money it saves them)</p>
+<p>· Hurdles 2 / 3 / 4 the same, each with a checkable action and a date</p>
+<p>· All of it on the annex page, including what happens if you miss</p>
+<p>· Last step: delete the weakest line. Each survivor must answer "which sentence of theirs does this remove?"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Phrases that carry it</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"That step is on us — you don't touch it." —— one line per hurdle.</p>
+<p>"I'd rather drop that bonus than dilute the offer." —— cut the filler yourself.</p>
+<p>Stack removals, not gifts.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">LEVER 03</div>
+<h2>Risk reversal: make "do nothing" the riskier side
+<span class="en">Move the risk onto your side</span></h2>
+<span class="tag">risk reversal</span><span class="tag">guarantees</span><span class="tag">ambiguity aversion</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">They don't stall because you look bad. They stall because <strong>not moving looks free</strong> — nobody gets blamed for it. So don't make the upside bigger, <strong>move the cost of being wrong from their side to yours</strong>: a guarantee you'd genuinely honour is also your strongest evidence, because someone who can't deliver can't afford to write it.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Don't tell me what you think, tell me what you have in your portfolio."</span>
+<span class="source">— Nassim Nicholas Taleb, <em>Skin in the Game</em> (2018)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Where the risk sits, and where it goes</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mkRisk" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="9" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 Z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="20">By default, the whole risk sits on one person — them</text>
+<rect fill="#f6e3da" height="96" rx="8" stroke="#c0603a" stroke-width="1.5" width="664" x="18" y="32"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="32" y="54">The risk list in their head</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="32" y="76">· Money spent, no result, and it's on me</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="32" y="94">· If the switch breaks, I made that call</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="32" y="112">· My boss asks and I can't explain it</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="366" y="76">· What if you walk away halfway</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="366" y="94">· I buy it and then find it doesn't fit</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="366" y="112">· Doing nothing = nobody blames me</text>
+<line marker-end="url(#mkRisk)" stroke="#3f5c7a" stroke-width="2.2" x1="350" x2="350" y1="132" y2="158"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" x="360" y="150">move the risk</text>
+<rect fill="#e2efdc" height="106" rx="8" stroke="#4e8a3f" stroke-width="1.6" width="664" x="18" y="164"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="10.5" font-weight="700" x="32" y="186">Three levels — pick what you can genuinely carry</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="32" y="208">Light: staged payments — the next tranche only after sign-off</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="32" y="226">Medium: conditional refund — follow the steps, no X, money back (define X)</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="32" y="244">Heavy: pay on results — full fee only once X lands; low delivery cost only</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" x="32" y="262">Check: if every claim were honoured, are you still standing? If not, go lighter.</text>
+<text fill="#9aab9f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="292">Whatever you're willing to carry is what they no longer have to.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: "The proposal looks good, we'll evaluate it internally" — the classic doing-nothing-is-safest.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Pressure plus an empty guarantee</div>
+<p>"Don't worry, we guarantee results — if it doesn't work we'll take full responsibility."<br/>—— "Full responsibility" has nothing executable in it, so it isn't a guarantee. He translates it to "if this goes wrong I'm still carrying it," and keeps not moving.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Risk written as executable clauses</div>
+<p>"Before you evaluate, let's fix the risk — otherwise you're evaluating something undefined. <strong>Half up front for stage one, the rest after sign-off</strong>; <strong>month one runs in parallel, and if the books don't tie out we eat that month's cost and you exit at zero loss</strong>; <strong>your contact is fixed, and any change comes two weeks ahead in writing</strong>. Those three go in the contract. Worst case, you spend a month and lose nothing, while I've staked a month of my team."<br/>—— What he's evaluating shifts from "is this worth 20k" to "do we spend a month trying it" — and the default answer to the second one isn't no.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Two layers. First, uncertainty is itself penalised: unknown probabilities repel more than equivalent known risk, so removing one uncertainty raises perceived value even when the upside is unchanged. Second, signalling — Spence (1973, <em>QJE</em>) showed only low-cost parties can afford an expensive signal, which makes the guarantee itself proof of credibility: the fact that a competitor can't write that sentence is information.</strong></p>
+<ul>
+<li><strong>Neuroscience · when the odds are undefined, the brain treats it as more dangerous (hard evidence)</strong>: Hsu, Bhatt, Adolphs, Tranel &amp; Camerer (2005, <em>Science</em>) found that <strong>ambiguity</strong> (unknown probability), as opposed to known risk, raised activity in the <strong>amygdala</strong> and <strong>orbitofrontal cortex</strong> and weakened the value signal in the <strong>striatum</strong> — and patients with orbitofrontal lesions were largely insensitive to ambiguity. That's why "here's the number, here are the conditions" beats "don't worry": you're converting ambiguity into known risk. (cross-ref neuroscience, amygdala and uncertainty)</li>
+<li><strong>Behavioural economics · the do-nothing default carries its own advantage (well supported)</strong>: Samuelson &amp; Zeckhauser (1988, <em>J. Risk and Uncertainty</em>) established status quo bias across experiments and real retirement-plan choices: labelling an option as the status quo significantly raises how often it's chosen. Your competitor was never the other quote — it's doing nothing.</li>
+<li><strong>Behavioural economics · once it's theirs they won't give it up (hard evidence)</strong>: the mug experiments of Kahneman, Knetsch &amp; Thaler (1990, <em>JPE</em>) showed people demand markedly more to give up what they already hold than they'd pay to acquire it. That's the real force behind "use it first, pay later": when the trial ends, stopping is already a loss.</li>
+<li><strong>Retail evidence · leniency raises purchases and returns (meta-analysis)</strong>: Janakiraman, Syrdal &amp; Freling (2016, <em>Journal of Retailing</em>) found more lenient return policies are associated with higher purchase rates and also with higher return rates; the net effect depends on category. <strong>Honest labelling</strong>: "hardly anyone claims a money-back guarantee" is mostly self-reported industry data and unreliable — price as if it will be claimed.</li>
+</ul>
+<p class="caveat">Boundary: <strong>a guarantee you can't carry is borrowing, at the worst rate available</strong>. Three rules: one, assume the claim rate is three times your estimate and only write it if you'd still survive; two, tie the guarantee to action on their side ("followed the agreed steps and still no X"), or you'll attract precisely the people who never intended to do the work (adverse selection); three, businesses with huge one-off delivery cost (custom builds, physical manufacturing) shouldn't play with full refunds — use staged payments instead. And <strong>the more specific the wording, the more force it carries</strong>: "refund if you're not happy" is far weaker than "if you've followed the steps and don't have X by day 30, you get every penny back."</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Phrases that carry it</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"Let's kill the risk first, then you can evaluate the thing itself." —— changes what's being evaluated.</p>
+<p>"If you follow the steps and don't get X by day 30, you get every penny back." —— ten times stronger than "satisfaction guaranteed."</p>
+<p>Doing nothing should be the risky option.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">LEVER 04</div>
+<h2>Anchoring and honest urgency: expensive depends on what sits next to it
+<span class="en">What sits next to the number</span></h2>
+<span class="tag">anchoring</span><span class="tag">three tiers</span><span class="tag">real constraints</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Nothing is expensive in the abstract. They have to compare your number to something, and <strong>if you don't supply the reference they'll use the cheapest thing to hand</strong>. So the work before the number is deciding what it gets compared to: the annual cost of not changing, what hiring for it would cost, your own full tier — all three larger than the tier you want to sell.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Price is what you pay. Value is what you get."</span>
+<span class="source">— Warren Buffett, Berkshire shareholder letters (the idea inherited from Benjamin Graham)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Whatever appears first decides what looks expensive</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 308" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mkAxis" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" text-anchor="middle" x="350" y="20">In this order, "standard" lands on the cheap side</text>
+<rect fill="#eef1f5" height="150" rx="6" stroke="#3f5c7a" stroke-width="1.4" width="96" x="42" y="82"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="90" y="248">① Not changing</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="90" y="264">cost per year</text>
+<rect fill="#eef1f5" height="120" rx="6" stroke="#3f5c7a" stroke-width="1.4" width="96" x="168" y="112"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="216" y="248">② Hiring for it</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="216" y="264">salary + managing</text>
+<rect fill="#dfeae2" height="86" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="96" x="294" y="146"></rect>
+<text fill="#2f6a2f" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="342" y="248">③ Full</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="342" y="264">we run all of it</text>
+<rect fill="#b7dcc2" height="62" rx="6" stroke="#2f6a2f" stroke-width="1.8" width="96" x="420" y="170"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="468" y="248">④ Standard</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="468" y="264">the one you want</text>
+<rect fill="#eceee8" height="34" rx="6" stroke="#c2ccbe" stroke-width="1.2" width="96" x="546" y="198"></rect>
+<text fill="#8a988c" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="594" y="248">⑤ Lean</text>
+<text fill="#a7b1a7" font-family="Georgia" font-size="9" text-anchor="middle" x="594" y="264">makes standard look good</text>
+<line marker-end="url(#mkAxis)" stroke="#5a7365" stroke-width="1.6" x1="30" x2="668" y1="232" y2="232"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" x="30" y="60">↑ size of the number in their head</text>
+<text fill="#697682" font-family="Georgia" font-size="9.5" x="266" y="60">①② are their own arithmetic, not your quote — so they can't argue</text>
+<text fill="#9aab9f" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="290">The anchor has to be real: a made-up "was" price is illegal in most places, and burns your credibility once.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: his first question is "what do you charge?" and you haven't set up any reference yet.</div>
+<div class="dialog bad">
+<div class="speaker">✗ A bare number</div>
+<p>"Twenty thousand."<br/>—— The only reference that number has is the 12k quote in his hand. You didn't give a price, you volunteered for the "8k more expensive" slot.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Set the reference, then give three tiers</div>
+<p>"I'll give you a range — one question first. That mid-month cash squeeze, how many times did it catch you last year? (Three or four; once we took short-term credit.) <strong>What did that interest plus the rush overtime come to over the year?</strong> (He works out a number.)<br/>Right. Three tiers: <strong>full</strong> — we run everything plus a monthly cash forecast; <strong>standard</strong> — the one you need: books, that monthly sheet, one month in parallel; <strong>lean</strong> — books only, no sheet. Hold them against the number you just said; you can see which one pays for itself better than I can."<br/>—— The reference is his own arithmetic, not something you placed, and the tiers move him from "buy or not" to "which one."</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: price has no absolute scale, only relative position. Estimating an unfamiliar quantity, people start from whatever number is at hand and adjust back — and the adjustment is always insufficient, so whatever appeared first drags the judgment with it. Same with a set of options: they don't evaluate "is it worth it," they pick one from the set.</strong></p>
+<ul>
+<li><strong>Cognitive psychology · the original anchoring experiment (classic, direction very stable)</strong>: Tversky &amp; Kahneman (1974, <em>Science</em>) had participants spin a wheel for a random number before estimating the share of African countries in the UN — those who landed on a high number estimated systematically higher. Even an obviously irrelevant number drags the judgment.</li>
+<li><strong>Field · professionals aren't immune either (hard evidence, closest to selling)</strong>: Northcraft &amp; Neale (1987, <em>OBHDP</em>) showed students and <strong>practising real-estate agents</strong> the same house, varying only the listing price: both groups' valuations were systematically pulled by it, and the agents generally insisted they hadn't been influenced. <strong>Which applies to you too</strong>: the first number they name is dragging you, so work out your floor before you walk in.</li>
+<li><strong>Consumer behaviour · adding an option changes the share of the first two (peer reviewed)</strong>: Simonson &amp; Tversky (1992, <em>JMR</em>) demonstrated the compromise and attraction effects — introducing a third option significantly shifts choice shares between the original two. That, not folklore, is the basis for three tiers. <strong>Honest labelling</strong>: the much-quoted <em>Economist</em> subscription decoy case comes from Ariely's book demonstration, not a peer-reviewed experiment.</li>
+<li><strong>A note on strength</strong>: the famous paradigm in Ariely, Loewenstein &amp; Prelec (2003, <em>QJE</em>), where the last digits of an ID number anchor bids, has an inconsistent replication record (Fudenberg, Levine &amp; Maniadis 2012 did not reproduce effects of the same magnitude). <strong>The direction is reliable, but don't expect a casual number to set a price</strong> — the sturdiest anchor is the one they work out themselves.</li>
+</ul>
+<p class="caveat">Boundary, and the law: <strong>inventing a "was" price and crossing it out is fraud, not anchoring</strong> — most jurisdictions explicitly prohibit fabricated reference prices. Only three anchors are real: the status quo cost they calculated themselves, a genuinely available higher tier that people genuinely buy, and a publicly verifiable price for the alternative. As for urgency, the mechanism is covered in the six-principles-of-influence issue (loss aversion plus reactance when freedom is restricted); the offer-specific rule is one line: <strong>a deadline must be tied to a real constraint you can say out loud</strong> (the schedule, a price rise, a limited slot), and you should explicitly allow them to take the later option. A deadline with no stated reason reads as invented, and usually is.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">How to set the three tiers</div>
+<ul class="checklist">
+<li>Define "standard" first — the tier you actually want — then build the other two around it.</li>
+<li>Full has to be genuinely purchasable and genuinely purchased; a prop collapses under one question.</li>
+<li>Lean works by <strong>removing the thing they care most about</strong>, not by lowering quality.</li>
+<li>Write the differences as differences in outcome, not counts of features.</li>
+<li>Before the number, get them to produce one of their own (the annual cost of not changing).</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Phrases that carry it</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"Before I give you a number — what did that problem cost you last year?" —— let them compute the anchor.</p>
+<p>"Three tiers: full, standard, lean. Most people in your position take standard." —— "buy or not" becomes "which one."</p>
+<p>Nothing is expensive next to the cost of doing nothing.</p>
+</div>
+</div>
+</div>
+<!-- ============ Homework ============ -->
+<div class="homework">
+<h3>Your Day 16 Action</h3>
+<p>Take the most recent offer that stalled and rebuild it today — the price stays untouched.</p>
+<div class="action"><strong>1 (20 minutes):</strong> one line per lever — the outcome in <strong>their words</strong>; where they doubt themselves; how early the first visible result can land; every step <strong>they</strong> would have to do after signing, with two circled that you'll absorb.<br/><br/><strong>2:</strong> write each hesitation as "that step is ours," four lines, then <strong>delete the weakest one</strong> and put the rest on the annex page.<br/><br/><strong>3:</strong> add one risk reversal you'd genuinely honour — assume the claim rate is three times your estimate and only write it if you'd still survive; if a full refund is out, write staged payments.<br/><br/><strong>4:</strong> before you send it, get them to produce a number ("roughly what did that problem cost you last year?"), then give three tiers with standard in the middle.<br/><br/>Boundary reminder: the one irreversible mistake is <strong>writing a clause you can't deliver in order to close</strong>. An offer isn't judged by whether they sign, but by whether they'd sign again three months later — if there's a line you can't honour, lose the deal instead.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. My product is pretty ordinary. Isn't an "irresistible" offer just overclaiming?</summary>
+<div class="answer">The reverse. "Irresistible" never comes from promising a bigger result; it comes from <strong>shrinking the denominator</strong> — shorter wait, less work for them, no cost to them if it fails. None of the three requires a better product, only that you do a bit more and carry a bit more; overclaiming is the other road: describing a result you can't deliver and betting they forget. <strong>One more move works unusually well for ordinary products: narrow who it's for.</strong> "Bookkeeping for design studios under twenty people" is more credible than "bookkeeping for small business," because a narrow scope makes the promise verifiable — and verifiable is exactly the confidence term in the numerator. So rather than saying more, say something <strong>small and certain</strong>: "I won't promise savings; I'll promise that by the 5th of each month you'll know which day next month gets tight."</div>
+</details>
+<details>
+<summary>2. Won't free trials and no-questions refunds just get farmed?</summary>
+<div class="answer">Yes, so <strong>price it in up front</strong> rather than hoping it won't happen. Three things: <strong>one, assume the claim rate is three times your estimate</strong> and only write it if the price still makes money; <strong>two, tie the guarantee to action on their side</strong> — "followed the agreed steps and still no X"; that isn't an obstacle course, it quietly solves adverse selection, because people who only want something for free won't complete the steps; <strong>three, look at the shape of your delivery cost</strong> — low marginal cost (information, software, coaching) suits unconditional refunds, while huge one-off cost (custom builds, physical production) should use staged payments and milestone sign-off, which still moves the risk. On mindset: <strong>the few deals that get farmed are what you pay for "doing nothing is safest"</strong> — as long as the book overall makes money, that's a cost, not a failure.</div>
+</details>
+<details>
+<summary>3. They ask the price up front. Do I quote, or diagnose first?</summary>
+<div class="answer">Give a range and set the reference in the same breath. Dodging costs you twice: you look evasive, and they read "won't say" as "must be expensive." Say it like this: <strong>"The range is X to Y; where it lands depends on two things — two questions and I can be precise, alright?"</strong> The range relaxes them; the two questions let you dig out the status quo cost before you commit to a figure (the pain-digging issue's question set works directly here). Three details: <strong>don't set the bottom of the range too low</strong> — they remember the bottom, and everything after reads as a price rise; <strong>if your range is clearly above their budget, the sooner you both know the better</strong> — that isn't failure, it's saving both of you two weeks (exactly what the qualifying issue is about); <strong>never give a firm figure while their reference is still "the other guy's 12k"</strong> — that's not quoting, that's entering a price comparison. Conversely, when they open with a number to pin you ("our budget is only 8k"), ask how the 8k was arrived at: usually it's a casual figure, and it's dragging you, exactly as the listing price dragged those estate agents.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 16</footer>
+</div>
+</body>
+</html>
