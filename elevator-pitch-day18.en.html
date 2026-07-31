@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 18: The Elevator Pitch and the One-Pager</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 18 · Phase C</div>
+<h1>The Elevator Pitch and the One-Pager: Thirty Seconds Is Not Compression, It's Choosing</h1>
+<div class="meta"><span>Topic: one-line positioning and the 30-second pitch</span><span>·</span><span>4 moves · 1 page</span></div>
+<div class="subtitle">When thirty seconds isn't enough, it's rarely the clock — it's that you still want to say three things. The bar isn't speed, it's willingness to drop things.</div>
+</header>
+<div class="intro">
+<strong>The point of an elevator pitch is not to make them understand what you do — it's to make them willing to give you a second chance.</strong> So the pass mark isn't "I covered everything," it's whether they can retell you to someone else <strong>in their own words</strong>. That standard is unforgiving: the version that actually circulates is the one they repeat, and that one is usually about a dozen words long. Since it's going to be a dozen words, you may as well pick which dozen.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>One line, so they can file you
+<span class="en">One line, so they can file you</span></h2>
+<span class="tag">processing fluency</span><span class="tag">categorization</span><span class="tag">positioning</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">A one-liner's job is not to praise you. It's to let them drop you, within about three seconds, <strong>into a slot that already exists in their head</strong>. Things that can't be filed don't get argued with — they get shelved, and "interesting, let's talk sometime" is the standard sound of a failed filing.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Positioning is not what you do to a product. Positioning is what you do to the mind of the prospect."</span>
+<span class="source">— Al Ries &amp; Jack Trout, <em>Positioning: The Battle for Your Mind</em> (1981)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Four slots — miss one and you can't be filed</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 290" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="p1" markerHeight="7" markerUnits="userSpaceOnUse" markerWidth="9" orient="auto" refX="8" refY="3.5">
+<path d="M0,0 L9,3.5 L0,7 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="18" y="22">One line = I help [WHO] go from [PAIN] to [RESULT], by [HOW]</text>
+<rect fill="#e6f0ea" height="50" rx="6" stroke="#1f7a5c" stroke-width="1.3" width="155" x="18" y="36"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="95.5" y="57">① WHO</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="95.5" y="74">narrow beats broad</text>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.5" x1="175" x2="191" y1="61" y2="61"></line>
+<rect fill="#e6f0ea" height="50" rx="6" stroke="#1f7a5c" stroke-width="1.3" width="155" x="193" y="36"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="270.5" y="57">② THE PAIN</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="270.5" y="74">in their own words</text>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.5" x1="350" x2="366" y1="61" y2="61"></line>
+<rect fill="#e6f0ea" height="50" rx="6" stroke="#1f7a5c" stroke-width="1.3" width="155" x="368" y="36"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="445.5" y="57">③ THE RESULT</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="445.5" y="74">checkable, with a number</text>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.5" x1="525" x2="541" y1="61" y2="61"></line>
+<rect fill="#e6f0ea" height="50" rx="6" stroke="#1f7a5c" stroke-width="1.3" width="155" x="543" y="36"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="620.5" y="57">④ WHY YOU</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="620.5" y="74">one line, not a list</text>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-weight="700" x="18" y="114">✗ All four slots empty: they have no idea where to put you</text>
+<rect fill="#f6e3da" height="42" rx="6" stroke="#c0603a" stroke-width="1.3" width="664" x="18" y="124"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" x="32" y="143">"We're a one-stop intelligent SaaS solution provider for HR digital transformation."</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" x="32" y="159">No who, no pain, no result — just words that would fit any company on earth.</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11.5" font-weight="700" x="18" y="192">✓ All four filled: three seconds and they know whether to ask more</text>
+<rect fill="#e2efdc" height="64" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="664" x="18" y="200"></rect>
+<text fill="#25402f" font-family="Georgia" font-size="10.5" x="32" y="219">"I help restaurant-chain managers cut weekly scheduling from two hours to</text>
+<text fill="#25402f" font-family="Georgia" font-size="10.5" x="32" y="234">about fifteen minutes, using a roster built automatically from time-clock data."</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" x="32" y="252">① restaurant-chain managers  ② two hours a week  ③ down to ~15 min  ④ auto-built from the time clock</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="18" y="280">Their next line is usually "how does that work?" — which is the only job this sentence has.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">How it plays out</div>
+<div class="scene">
+<div class="setup">The setting: coffee break at an industry event. Someone hands you a card and asks, "so what do you do?" You have roughly twenty seconds.</div>
+<div class="dialog bad">
+<div class="speaker">✗ All they can do is nod</div>
+<p>"We're an enterprise-grade intelligent collaboration platform, using data to help clients cut costs and drive digital upgrade."<br/>—— Every word is defensible; together they carry no information. There's no slot in their head labelled "intelligent collaboration platform," so you get filed under "another software guy" and asked, politely, "nice — how long have you been doing it?"</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ They ask a follow-up</div>
+<p>"I do staff scheduling for restaurant chains. Managers used to spend two or three hours every Wednesday building next week's roster, and one person swapping a shift meant seven phone calls; we build it from the time-clock data, so now it's about fifteen minutes. <strong>Three chains are on it — the messiest one has sixty-odd people in a single location.</strong>"<br/>—— They'll either say "I know someone who runs hot pot places" or "we're not restaurants, but our production scheduling looks exactly like that." Either reply is worth a hundred times more than "nice."</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: a sentence has to be <em>processed</em> before it can be evaluated. That half-second of effort isn't neutral — the brain reads the strain as "this is suspect" or "this person hasn't thought it through," not as "this must be sophisticated." Filing is a precondition for judging, and if you can't be filed there is no next step.</strong></p>
+<ul>
+<li><strong>Hard evidence · easy to process = liked (replicable, with a physiological marker)</strong>: Reber, Winkielman &amp; Schwarz (1998, <em>Psychological Science</em>) showed that merely raising perceptual fluency — better contrast, a brief prior flash of the contour — raised liking ratings for the very same image. Winkielman &amp; Cacioppo (2001, <em>JPSP</em>) went further with facial EMG: fluently processed stimuli increased activity in the <strong>zygomaticus major</strong> (the smiling muscle). Fluency produces a genuine positive affective response, not just a polite rating.</li>
+<li><strong>Hard evidence · the fancier the wording, the dumber the author seems</strong>: Oppenheimer (2006, <em>Applied Cognitive Psychology</em>) systematically swapped common words in the same text for obscure synonyms; readers' ratings of the author's intelligence dropped significantly. "One-stop enabling solution" doesn't read as expert — it reads as suspect.</li>
+<li><strong>Weaker evidence · don't over-extrapolate (labelled honestly)</strong>: Alter &amp; Oppenheimer (2006, <em>PNAS</em>) found that easily pronounceable stock tickers performed better shortly after listing, often cited as proof that "names should be easy to say." That's observational, short-window financial data — treat it as a side note, not support.</li>
+</ul>
+<p class="caveat">Boundary: <strong>simple is not simplistic, and it is certainly not inflated.</strong> The one-liner is a doorway, not the whole house; its only job is to earn you the words "how does that actually work?" Stretch the promise to make it flow ("I'll double your revenue") and the second chance you bought dies in minute three. A second boundary gets missed more often: <strong>fluency means "cheap for this listener," not "plain language for everybody."</strong> With a technical buyer who knows the field, use the jargon — translating your terms down to primary-school words makes them work harder to figure out whether you actually know anything.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasings</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"I help [who] go from [pain] to [result]." — the sturdiest frame there is: four slots, one sentence.</p>
+<p>"Think of it as [familiar thing], but [the one difference]." — only when they genuinely know the familiar thing.</p>
+<p>If they can't file it, they'll shelve it.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>Four blocks, thirty seconds: hook · who and pain · how · one small ask
+<span class="en">Four blocks, thirty seconds</span></h2>
+<span class="tag">working memory</span><span class="tag">serial position</span><span class="tag">implementation intentions</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Thirty seconds holds <strong>four chunks</strong>, not four paragraphs. Add a fifth and what gets squeezed out isn't the least important one — it's whichever one happens to sit in the middle. Which means the sentence you most want them to carry away can only live at the start or at the end.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"I try to leave out the parts that readers tend to skip."</span>
+<span class="source">— Elmore Leonard, "Writers on Writing," <em>The New York Times</em>, 16 July 2001</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">How the thirty seconds split, and which part survives</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 292" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="30" y="24">Thirty seconds = four chunks (not four paragraphs)</text>
+<rect fill="#dfeae2" height="54" rx="5" stroke="#1f7a5c" stroke-width="1.3" width="107" x="30" y="38"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="83.5" y="60">① The hook</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" text-anchor="middle" x="83.5" y="76">one real number</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" text-anchor="middle" x="83.5" y="88">or one image</text>
+<rect fill="#eef4f0" height="54" rx="5" stroke="#7aa694" stroke-width="1.2" width="213" x="137" y="38"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="243.5" y="60">② WHO + their pain</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" text-anchor="middle" x="243.5" y="76">a nameable group + one complaint they made</text>
+<rect fill="#eef4f0" height="54" rx="5" stroke="#7aa694" stroke-width="1.2" width="213" x="350" y="38"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="456.5" y="60">③ How it works + one proof</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" text-anchor="middle" x="456.5" y="76">one line of mechanism, one checkable fact</text>
+<rect fill="#dfeae2" height="54" rx="5" stroke="#1f7a5c" stroke-width="1.3" width="107" x="563" y="38"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="616.5" y="60">④ One small ask</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" text-anchor="middle" x="616.5" y="76">with a time</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" text-anchor="middle" x="616.5" y="88">and a format</text>
+<line stroke="#cbb98f" stroke-width="1" x1="30" x2="670" y1="100" y2="100"></line>
+<text fill="#697682" font-family="Georgia" font-size="8.5" text-anchor="middle" x="30" y="114">0s</text>
+<text fill="#697682" font-family="Georgia" font-size="8.5" text-anchor="middle" x="137" y="114">5s</text>
+<text fill="#697682" font-family="Georgia" font-size="8.5" text-anchor="middle" x="350" y="114">15s</text>
+<text fill="#697682" font-family="Georgia" font-size="8.5" text-anchor="middle" x="563" y="114">25s</text>
+<text fill="#697682" font-family="Georgia" font-size="8.5" text-anchor="middle" x="670" y="114">30s</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="12" font-weight="700" x="30" y="150">What they can still repeat tomorrow (serial position)</text>
+<line stroke="#cbb98f" stroke-width="1.2" x1="30" x2="670" y1="252" y2="252"></line>
+<path d="M36,180 C130,246 250,254 350,254 C450,254 570,224 664,178" fill="none" stroke="#3f5c7a" stroke-width="2.2"></path>
+<circle cx="36" cy="180" fill="#1f7a5c" r="4.5"></circle>
+<circle cx="664" cy="178" fill="#1f7a5c" r="4.5"></circle>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" x="46" y="176">Primacy: they keep the opening</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="end" x="654" y="172">Recency: they keep the closing</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="350" y="272">The middle drops fastest — never hide the key line here</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="30" y="288">Curve is illustrative: the U shape is the one reliably found in free-recall studies (Murdock, 1962), not measured data.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">How it plays out</div>
+<div class="scene">
+<div class="setup">The setting: a startup event is emptying out, and you run into an investor at the door who asks what you do while pulling on a coat.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Starting from the beginning, four blocks become ten</div>
+<p>"So there are three of us, I spent five years in restaurant operations, and what we found was that the industry is really under-digitised, and the market size is roughly…"<br/>—— Twenty seconds in and you still haven't said what you do. They'll listen politely and say "send me something" — which nine times out of ten means it's over.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Four blocks, thirty seconds, ending in an ask small enough to accept on reflex</div>
+<p><strong>①</strong> "There's a sixty-person hot pot restaurant where scheduling went from two hours a week to about fifteen minutes."<br/><strong>②</strong> "Managers at restaurant chains spend every Wednesday afternoon on it, and one shift swap means calling everybody."<br/><strong>③</strong> "We build the roster from the time clock and the labour rules. Three chains are on it, two renewed."<br/><strong>④</strong> "<strong>Can I send you two paragraphs Thursday morning? Three minutes to read and you'll know whether it's worth a call.</strong>"<br/>—— The ask is small enough that refusing takes more effort than agreeing, and it carries a time and a format, so they don't have to work out what happens next.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: thirty seconds is a <em>capacity</em> limit, not a time limit. The listener has no pen; everything lands in working memory as it comes, and once it overflows, what they keep isn't what mattered most — it's whatever sat nearest an edge. So "say a bit more" never raises how much they retain; it only dilutes the ending.</strong></p>
+<ul>
+<li><strong>Hard evidence · working memory holds about four chunks</strong>: Cowan (2001, <em>Behavioral and Brain Sciences</em>) reviewed the literature and revised Miller's (1956) famous 7±2 down to <strong>4±1</strong> when rehearsal and self-chunking are prevented. Four blocks is a ceiling, not a suggestion.</li>
+<li><strong>Hard evidence · the ends survive, the middle doesn't</strong>: Murdock (1962, <em>Journal of Experimental Psychology</em>) produced the classic U-shaped serial position curve in free recall — the first items (primacy) and the last (recency) are recalled far better than the middle. The effect is about as robust as findings in memory research get.</li>
+<li><strong>Hard evidence · overall judgment tracks the peak and the end, barely the length</strong>: Kahneman, Fredrickson, Schreiber &amp; Redelmeier (1993, <em>Psychological Science</em>) found that a longer cold-water trial with a gentler ending was rated as the one people would rather repeat — the peak-end rule, with duration neglect. Translated: the extra thirty seconds won't be remembered, but it will dilute your close.</li>
+<li><strong>Hard evidence · the more concrete the ask, the more often it happens</strong>: Gollwitzer's (1999, <em>American Psychologist</em>) work on implementation intentions shows that phrasing a plan as when-where-what if-then form substantially raises follow-through; in a field experiment by Milkman and colleagues (2011, <em>PNAS</em>), simply having employees write down the specific date and time they'd get a flu shot raised vaccination rates by roughly four percentage points over the control. So don't close with "let's stay in touch" — close with "I'll send you two paragraphs Thursday morning."</li>
+</ul>
+<p class="caveat">Boundary: four blocks is a skeleton, not a script. In real life you'll often be interrupted at second ten — which is good news, it means the hook worked. Abandon the remaining three blocks immediately and follow their question. If they're visibly in a hurry, keep only block one and block four. And one honest caveat: <strong>the peak-end rule comes from research on rating experiences; carrying it over to pitching is a reasonable extrapolation, not a verified result</strong> — it supports "don't run long, put the good part at the end," but it can't be used to calculate seconds.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Do this</div>
+<ul class="checklist">
+<li>The hook needs a number or a concrete image — never an adjective</li>
+<li>No more than four chunks in total; count them after you say it</li>
+<li>The line you most want kept goes first or last, never in the middle</li>
+<li>Make the closing ask small enough to accept on reflex: three minutes, one link, one introduction</li>
+<li>Give the ask a time and a format (Thursday morning · two paragraphs), not "let's stay in touch"</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasings</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"Can I send you two paragraphs Thursday? Three minutes to read." — an ask that's hard to refuse.</p>
+<p>"Short version: …" — opens with a promise they can exit from.</p>
+<p>Say less so the last line survives.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Trade adjectives for numbers and pictures
+<span class="en">Trade adjectives for numbers and pictures</span></h2>
+<span class="tag">concreteness effect</span><span class="tag">dual coding</span><span class="tag">checkable</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">An adjective is <strong>your</strong> opinion of yourself; a number or an image is a judgment <strong>they</strong> make. Same claim — the first asks a stranger to believe you first, the second only asks them to do the arithmetic. And a stranger's default setting is not to believe you.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Don't tell me the moon is shining; show me the glint of light on broken glass."</span>
+<span class="source">— the widely circulated Chekhov version. What he actually wrote to his brother in 1886 was closer to: in describing nature, seize on small details, arranged so that the reader can shut their eyes and see the picture. The line above is a later paraphrase — right in spirit, but don't quote it as original</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The same claim, four rungs down</div>
+<div class="scene">
+<div class="setup">Start at the least useful phrasing and walk down. Each rung is easier for them to verify for themselves.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Rung 1 · adjectives</div>
+<p>"We're very efficient and our service is excellent." —— Impossible to dispute, impossible to believe. The only available response is a nod.</p>
+</div>
+<div class="dialog bad">
+<div class="speaker">✗ Rung 2 · category words</div>
+<p>"We save you time and cut your labour costs." —— There's a direction now, but every competitor says the same sentence, so it says nothing.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Rung 3 · a number</div>
+<p>"Weekly scheduling goes from a bit over two hours to about fifteen minutes." —— Now they're doing arithmetic: eight hours a month, worth how much?</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Rung 4 · a picture</div>
+<p>"That two hours on Wednesday afternoon — you could spend it visiting a location instead." —— They can see the afternoon. Numbers go into the ledger; pictures go into memory.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Two mechanisms: concrete material gets <em>dual</em> coding (verbal plus imagery), so it travels a wider channel and sticks; and concrete material can be <em>checked</em>, whereas an adjective can only be believed or disbelieved — and strangers pick the latter by default.</strong></p>
+<ul>
+<li><strong>Hard evidence · concrete words are remembered better than abstract ones (one of the steadiest effects in memory research)</strong>: Paivio's dual-coding theory (1971; review in <em>Canadian Journal of Psychology</em>, 1991) holds that concrete words get both a verbal and an imagery code. On the brain side, Binder and colleagues (2005, <em>Journal of Cognitive Neuroscience</em>) found with fMRI that concrete words recruit more <strong>bilateral association cortex and the angular gyrus</strong> — multimodal integration regions — while abstract words lean more on the <strong>left superior temporal and inferior frontal</strong> language network. The "wider channel" is not only a metaphor. (Cross-ref: neuroscience on language and imagery, psychology on memory.)</li>
+<li><strong>Moderate evidence · a vivid case can outweigh the statistics</strong>: Nisbett &amp; Borgida (1975, <em>JPSP</em>) found participants were swayed more by one concrete case than by aggregate data on the same question. <strong>Labelled honestly</strong>: don't treat this as a law — Taylor &amp; Thompson (1982, <em>Psychological Bulletin</em>) reviewed the literature and concluded that the "vividness effect" often fails to appear under controlled conditions. What reliably works is <strong>concreteness</strong> (a checkable number, an imaginable scene), not <strong>colourful prose</strong>.</li>
+<li><strong>Giving both is cheapest</strong>: the "concrete" principle from the making-it-stick topic is the other face of this one — the number makes them calculate, the image makes them remember, and dropping either one costs you.</li>
+</ul>
+<p class="caveat">Boundary: <strong>the numbers have to be real and survive a follow-up question.</strong> Inventing "300% improvement" costs nothing in an elevator, but the second meeting will ask which three customers, measured how, divided by what — and at that moment what you lose isn't the deal, it's every referral that person would ever have made. When you're unsure, give the range: "across the three I've done, the best went from two hours to about fifteen minutes, the worst saved roughly half." An honest range persuades more than false precision, because it proves you actually measured. The other trap is fake precision: writing "1.87 hours" instead of "about two hours" buys a moment of credibility and repays it in full the first time someone checks.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasings</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"Two hours a week down to about fifteen minutes." — number first, no run-up.</p>
+<p>"Across the three we've done, the range was …" — the standard way to give an honest range.</p>
+<p>Adjectives are your opinion; numbers are theirs.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>The one-pager: because whoever decides isn't in the room
+<span class="en">The one-pager travels without you</span></h2>
+<span class="tag">retelling distortion</span><span class="tag">decision chain</span><span class="tag">forwardable</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Your pitch is never heard by only one person. Whoever hears it has to <strong>retell</strong> it to whoever decides, and retelling always distorts: detail is flattened, and what survives is sharpened to fit what they already thought. You can't control that retelling — but you can control what they're holding while they do it.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"I have made this longer than usual because I have not had time to make it shorter."</span>
+<span class="source">— Blaise Pascal, <em>Lettres provinciales</em>, letter 16 (1657); routinely misattributed to Mark Twain</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The six cells of a one-pager</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="p4" markerHeight="7" markerUnits="userSpaceOnUse" markerWidth="9" orient="auto" refX="8" refY="3.5">
+<path d="M0,0 L9,3.5 L0,7 Z" fill="#8a4a2a"></path>
+</marker>
+</defs>
+<rect fill="#ffffff" height="292" rx="4" stroke="#cbb98f" stroke-width="1.5" width="400" x="150" y="18"></rect>
+<rect fill="#e6f0ea" height="40" rx="4" stroke="#1f7a5c" stroke-width="1.3" width="372" x="164" y="30"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" x="176" y="48">① Headline = your one-liner</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="62">one line, sayable in a single breath</text>
+<rect fill="#f7faf6" height="48" rx="4" stroke="#7aa694" stroke-width="1.1" width="180" x="164" y="78"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="176" y="96">② Whose problem</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="110">copy a line they said</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="121">don't rewrite it in your jargon</text>
+<rect fill="#f7faf6" height="48" rx="4" stroke="#7aa694" stroke-width="1.1" width="180" x="356" y="78"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="368" y="96">③ The result</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="368" y="110">two or three real numbers</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="368" y="121">state the sample and basis</text>
+<rect fill="#f7faf6" height="56" rx="4" stroke="#7aa694" stroke-width="1.1" width="372" x="164" y="136"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="176" y="154">④ How it works: three lines, one each</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="169">written so they can read it out loud, not as your feature outline</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="183">more than three and they'll just say "it automates stuff"</text>
+<rect fill="#f7faf6" height="48" rx="4" stroke="#7aa694" stroke-width="1.1" width="372" x="164" y="200"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="176" y="218">⑤ Proof</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="233">one named case + one thing they can go check themselves (site, name, public data)</text>
+<rect fill="#e6f0ea" height="44" rx="4" stroke="#1f7a5c" stroke-width="1.3" width="372" x="164" y="256"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="176" y="274">⑥ Next step</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="289">one concrete ask + a time + how to reach you, in a sentence they can paste</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" font-weight="700" x="10" y="42">Often the only</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" font-weight="700" x="10" y="56">cell they screenshot</text>
+<line marker-end="url(#p4)" stroke="#8a4a2a" stroke-width="1.5" x1="108" x2="160" y1="50" y2="50"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" font-weight="700" x="562" y="270">Whoever speaks</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" font-weight="700" x="562" y="284">for you reads this</text>
+<line marker-end="url(#p4)" stroke="#8a4a2a" stroke-width="1.5" x1="600" x2="546" y1="292" y2="286"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="350" y="324">All six on one page. The moment it becomes two, its fate changes from forwarded to filed.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">How it plays out</div>
+<div class="scene">
+<div class="setup">The setting: the meeting is over, and your contact has to speak for you for three minutes at next week's internal review. All you can give them is one document.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Send a twenty-page product deck</div>
+<p>"I've sent the materials over, it's all in there."<br/>—— They won't read it. They'll skim the title page three minutes before the meeting and put it in their own words as "some scheduling software, apparently saves a bit of time." None of your numbers, boundaries or evidence makes it into the room.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Send one page, plus a line of instructions for using it</div>
+<p>"One page, six blocks. <strong>In the meeting you only need the first line and the last one</strong> — the three in the middle are there in case someone digs. The numbers column says how they were measured: three locations we actually timed, not an industry average."<br/>—— You didn't just hand over material, you rehearsed them. They have an easier meeting, and you get retold accurately.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: every retelling levels and sharpens — detail falls away, and what remains gets pushed toward what the teller already believed. A one-pager isn't reference material for your contact; it's the <em>script</em> you get to slip into that retelling.</strong></p>
+<ul>
+<li><strong>Hard evidence · wording rewrites memory</strong>: Loftus &amp; Palmer (1974, <em>Journal of Verbal Learning and Verbal Behavior</em>) showed participants the same crash footage and only changed the verb in the question from "hit" to "smashed"; speed estimates rose significantly, and a week later, when asked whether they'd seen broken glass, more of the "smashed" group said yes — there was no broken glass in the film. The sentence you hand them is the version they will "remember" a week later.</li>
+<li><strong>Foundational but methodologically dated (labelled honestly)</strong>: Bartlett (1932, <em>Remembering</em>) showed with serial reproduction that stories are systematically simplified and reshaped to fit the teller's own frame; Allport &amp; Postman (1947) summarised rumour transmission as levelling, sharpening and assimilation. These are the origins of the field, but by today's standards the samples are small and the controls loose — the direction is sound, don't quote their numbers.</li>
+<li><strong>Why this is fatal in B2B specifically</strong>: the person who actually decides usually isn't in the room — that's exactly what the decision-chain topic is about. The person in front of you is your narrator, not your audience, and the real reader of your one-pager is somebody you've never met.</li>
+<li><strong>Industry practice, not a controlled experiment (strength labelled)</strong>: Amazon's use of narrative memos instead of slide decks, read silently at the start of a meeting, rests on the same logic — bullet slides leave the retellers too many blanks to fill. But that's practice, not a controlled trial.</li>
+</ul>
+<p class="caveat">Boundary: <strong>a one-pager is one page.</strong> People who end up with three usually don't have more content, they just couldn't bring themselves to cut — and the fate of three pages is not being read. The second common error is writing it as a product spec: its reader is <strong>the person who has to speak for you</strong>, so every cell needs to be a sentence they can say out loud, not an outline you could talk from. And a third: no one-pager rescues a positioning you haven't settled. If you can't fill in cell one, the problem isn't layout — you haven't decided who you're helping.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Do this</div>
+<ul class="checklist">
+<li>Six cells: positioning · whose problem · the result · how it works (three lines) · proof · next step</li>
+<li>Label every number with its basis and sample ("three locations we timed," not "industry average")</li>
+<li>Write each cell as a sentence they can say out loud, not as outline fragments</li>
+<li>Attach one line of instructions: "you only need the first line and the last one"</li>
+<li>Cut until it fits one page; if it won't cut, cell one isn't settled yet</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasings</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"One page — you only need the first line and the last." — the instructions that ride along with it.</p>
+<p>"That's from three sites we measured, not an industry average." — label the basis before you're asked.</p>
+<p>Write it so they can read it out loud.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 18 Action</h3>
+<p>Write four things today. Together they should not exceed one page.</p>
+<div class="action">
+<strong>One (15 minutes):</strong> write your one-liner using the four slots — who / what pain / what result / why you. Then say it to <strong>someone with no idea what your industry is</strong> and ask them to repeat it back in their own words. If they can't, rewrite it until they can. Their version is the one that will actually circulate.<br/><br/><strong>Two:</strong> write the four blocks of your thirty seconds. The hook must contain a real number or a concrete image; the close must be a small ask with a time and a format ("two paragraphs Thursday morning, three minutes to read"). Record yourself once — if it runs past thirty-five seconds, cut the middle, never the ends.<br/><br/><strong>Three:</strong> strike out every adjective in both, and replace each with a number or a picture. Any sentence you can't convert usually had no content to begin with.<br/><br/><strong>Four:</strong> build the six-cell one-pager and attach a line of instructions. Send it to a friend and have them pretend to present you for three minutes — whichever cell they drop is the cell you didn't write to be read aloud.<br/><br/>Boundary: all of this rests on <strong>the numbers being real and the promise not being stretched</strong>. A smooth but inflated one-liner wins you thirty seconds in the elevator and loses you every meeting after it.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. What I do is complex and new — there's no way to say it in one line. Now what?</summary>
+<div class="answer">Reframe the problem first: a one-liner isn't a complete description, it's a <strong>doorway</strong>. The obstacle is never "complex" — it's "there's no existing slot to put you in." Three moves, from cheapest to most fundamental. <strong>One, borrow an existing slot</strong>: "like X, but Y" — only when they genuinely know X, and Y can only be one thing. The formula has been abused into sounding slick, so judge it by what happens next: do they ask about Y, or do they say "oh, so it's basically X"? <strong>Two, lead from the result they can feel, not from your mechanism.</strong> The newer the thing, the worse it is to open with what technology you used — they have no reference point for judging the technology, but they always have one for "two hours a week." <strong>Three, if it genuinely won't compress, the problem usually isn't complexity — it's that you haven't decided who gets it first.</strong> Narrow the audience by an order of magnitude (not "restaurant businesses" but "hot pot chains with three to ten locations") and the sentence often writes itself, because now the pain and the result are both specific. There's only one test: have an outsider repeat it back, and listen to their version.</div>
+</details>
+<details>
+<summary>2. If I say that little, won't I come across as shallow or lightweight?</summary>
+<div class="answer">"Short read as shallow" is almost always a <strong>resolution</strong> problem, not a length problem. "We do intelligent collaboration" is short and empty; "a sixty-person hot pot restaurant, scheduling from two hours to fifteen minutes" is equally short and nobody hears it as shallow — because it contains things only someone who has actually done the work would know (the size, how long it used to take, which step jams). Depth isn't demonstrated by word count; it's demonstrated by <strong>the resolution of your detail</strong>.<br/><br/>Then two insurance policies. <strong>One, turn what you cut into a one-pager</strong> and say "I put the detail on one page, I'll send it after" — that proves both that you have it and that you know what deserved their time, and the second half is the scarce part. <strong>Two, save the depth for the follow-up question.</strong> When they ask how you handle public holidays and last-minute swaps and you answer fast and precisely, that single exchange buys more credibility than ten unprompted minutes. Conversely, if brevity really does leave you sounding thin, don't add length yet — check whether the sentence is describing <strong>your feature</strong> rather than <strong>their result</strong>. Short sentences about features sound like slogans; short sentences about results sound like facts.</div>
+</details>
+<details>
+<summary>3. Rehearsed lines feel fake, and I blank when I'm nervous. What do I do?</summary>
+<div class="answer">Don't memorise sentences — memorise <strong>the four slots</strong>. Someone who memorised sentences is lost the moment they're interrupted, because they stored a line; someone who memorised slots can restart from any cell, because they stored a table. Concretely: keep four words in a note on your phone — "who / pain / how / the ask" — and improvise the content each time. You'll notice it comes out slightly different every time, which is exactly why it doesn't sound fake.<br/><br/>Two ways to practise. <strong>One, record and replay, then delete every connector that sounds like a document</strong> ("firstly," "as we all know," "on that basis") and swap in the words you'd genuinely use with a friend. <strong>Two, do it twenty times before you judge yourself.</strong> Nerves aren't solved by confidence, they're solved by repetition — the first dozen will be bad, and that's the process rather than a failure. I'm giving no citation for that one, because I haven't seen clean evidence that supports "N reps and you're fine" specifically; treat it as experience and use it as such.<br/><br/>One last practical note: drill the first sentence until you can produce it in any state. A clean opening usually carries the rest; a stumble at the opening is something four slots can't rescue.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 18</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 18：电梯陈述与一页纸</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 18 · Phase C</div>
+<h1>电梯陈述与一页纸：30 秒不是压缩，是取舍</h1>
+<div class="meta"><span>主题：一句话定位与 30 秒陈述</span><span>·</span><span>4 个动作 · 1 页纸</span></div>
+<div class="subtitle">30 秒讲不清，通常不是时间太短，是你还想讲三件事——门槛不在语速，在舍得。</div>
+</header>
+<div class="intro">
+<strong>电梯陈述的目的不是让他听懂你在干什么，是让他愿意给你第二次机会。</strong>所以合格线不是"讲全了"，而是——他能不能用<strong>他自己的话</strong>把你转述给另一个人。这条标准很不留情面：你精心打磨的那段话，真正流通的版本是他复述出来的那句，而那句话往往只剩十几个字。既然只剩十几个字，不如你来决定是哪十几个。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>一句话定位：先让他能把你归类
+<span class="en">One line, so they can file you</span></h2>
+<span class="tag">加工流畅性</span><span class="tag">归类</span><span class="tag">定位</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">一句话定位要做的不是夸你，是让对方在三秒内<strong>把你放进他脑子里已有的一个格子</strong>。归不了类的东西不会被反对，会被搁置——"挺有意思的，以后再聊"就是没归成类的标准回应。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Positioning is not what you do to a product. Positioning is what you do to the mind of the prospect."</span>
+<span class="zh">"定位不是你对产品做什么，是你对潜在客户的脑子做什么。"</span>
+<span class="source">— Al Ries &amp; Jack Trout,《Positioning: The Battle for Your Mind》(1981)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">四个槽，缺一个就归不了类</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 272" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="p1" markerheight="7" markerunits="userSpaceOnUse" markerwidth="9" orient="auto" refx="8" refy="3.5">
+<path d="M0,0 L9,3.5 L0,7 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="18" y="22">一句话定位 ＝ 我帮【谁】把【什么困境】变成【什么结果】，靠【凭什么】</text>
+<rect fill="#e6f0ea" height="50" rx="6" stroke="#1f7a5c" stroke-width="1.3" width="155" x="18" y="36"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="95.5" y="57">① 帮谁</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="95.5" y="74">越窄越好，宁可说小</text>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.5" x1="175" x2="191" y1="61" y2="61"></line>
+<rect fill="#e6f0ea" height="50" rx="6" stroke="#1f7a5c" stroke-width="1.3" width="155" x="193" y="36"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="270.5" y="57">② 什么困境</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="270.5" y="74">用他说过的原话</text>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.5" x1="350" x2="366" y1="61" y2="61"></line>
+<rect fill="#e6f0ea" height="50" rx="6" stroke="#1f7a5c" stroke-width="1.3" width="155" x="368" y="36"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="445.5" y="57">③ 什么结果</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="445.5" y="74">可验证，带数字</text>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.5" x1="525" x2="541" y1="61" y2="61"></line>
+<rect fill="#e6f0ea" height="50" rx="6" stroke="#1f7a5c" stroke-width="1.3" width="155" x="543" y="36"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="620.5" y="57">④ 凭什么</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="620.5" y="74">一句，别开清单</text>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-weight="700" x="18" y="114">✗ 四个槽全空：听完不知道该把你放哪</text>
+<rect fill="#f6e3da" height="42" rx="6" stroke="#c0603a" stroke-width="1.3" width="664" x="18" y="124"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.5" x="32" y="143">"我们是一家专注于人力资源数字化转型的一站式智能 SaaS 解决方案提供商。"</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" x="32" y="159">没有谁、没有困境、没有结果——只有一堆能套在任何公司身上的词。</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11.5" font-weight="700" x="18" y="192">✓ 四个槽都填上：他三秒钟就知道该不该接着问</text>
+<rect fill="#e2efdc" height="44" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="664" x="18" y="200"></rect>
+<text fill="#25402f" font-family="Georgia" font-size="10.5" x="32" y="219">"我帮连锁餐饮的店长，把每周排班那两小时压到十几分钟，靠一套按考勤自动排班的表。"</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" x="32" y="236">① 连锁餐饮店长　② 每周两小时排班　③ 压到十几分钟　④ 按考勤自动排</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="18" y="264">下一句他多半会问"具体怎么弄"——这就是它唯一的任务。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：行业活动的茶歇，对方递来名片："你们是做什么的？"你有大概二十秒。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 说完对方只能点头</div>
+<p>"我们做的是企业级的智能协同平台，通过数据驱动帮客户实现降本增效和数字化升级。"<br/>—— 每个词都对，合起来没有信息。他脑子里没有"智能协同平台"这个格子，只能把你放进"又一个卖软件的"，然后礼貌地问一句"挺好的，做多久了"。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 说完对方会追问</div>
+<p>"我帮连锁餐饮的店长排班。以前每周三下午要花两三个小时排下周的班，有人临时换还得打七八个电话；我们按考勤自动排，现在十几分钟。<strong>三家在用，最麻烦的那家门店有六十多号人。</strong>"<br/>—— 他要么说"我认识一个做火锅的"，要么说"我们不是餐饮，但我们排产也这样"。两种回应都比"挺好的"值钱一百倍。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> A one-liner's job is not to praise you — it is to let the other person drop you into a slot that already exists in their head, within about three seconds. Things that can't be filed don't get argued with; they get shelved. "Interesting, let's talk sometime" is the standard response to a failed filing.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：一句话先要被"加工"，才轮到被评价。听着费力的那半秒不是中性的——大脑把加工的吃力感直接读成"这东西可疑"或"这人没想清楚"，而不是读成"这很高深"。归类是评价的前提，归不了类就没有下一步。</strong></p>
+<ul>
+<li><strong>硬证据 · 好加工＝好感（可复现，有生理指标）</strong>：Reber、Winkielman &amp; Schwarz (1998, <em>Psychological Science</em>) 发现仅仅提高知觉流畅性（提高对比度、事先闪一下轮廓）就能提升被试对同一张图的喜好评分。Winkielman &amp; Cacioppo (2001, <em>JPSP</em>) 更进一步用面部肌电测到：加工顺畅的刺激会引起<strong>颧大肌</strong>（微笑肌）活动增强——流畅带来的是真实的正情绪反应，不只是嘴上说喜欢。</li>
+<li><strong>硬证据 · 用词越绕，读者觉得作者越笨</strong>：Oppenheimer (2006, <em>Applied Cognitive Psychology</em>) 把同一篇文章里的常用词系统换成生僻同义词，读者对作者智力的评分显著下降。"一站式赋能解决方案"不是显得专业，是显得可疑。</li>
+<li><strong>较弱证据 · 别过度外推（诚实标注）</strong>：Alter &amp; Oppenheimer (2006, <em>PNAS</em>) 发现好念的股票代码在上市初期表现更好，常被拿来证明"名字要顺口"。但那是观察性、短窗口的金融数据，只能当旁证。</li>
+</ul>
+<p class="caveat">边界：<strong>简单不等于幼稚，更不等于夸大。</strong>一句话定位是入口不是全部，它唯一的任务是换来对方那句"具体怎么弄"。为了顺口把承诺说大（"帮你业绩翻倍"），你换来的第二次机会会在第三分钟死掉。另一条边界更常被忽略：<strong>流畅的真正含义是"对这个听众省力"，不是"对所有人说大白话"。</strong>跟懂行的技术买家讲话，该用行话就用行话——把术语翻成小学生词汇，他反而要多花力气确认你到底懂不懂。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"I help [who] go from [pain] to [result]." —— 最稳的骨架，四个槽一句填完。</p>
+<p>"Think of it as [familiar thing], but [the one difference]." —— 对方确实认识 X 时才用。</p>
+<p>If they can't file it, they'll shelve it.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>30 秒的四段：钩子 · 谁和痛 · 怎么做到 · 一个小请求
+<span class="en">Four blocks, thirty seconds</span></h2>
+<span class="tag">工作记忆</span><span class="tag">系列位置</span><span class="tag">执行意图</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">30 秒装得下的是<strong>四个组块</strong>，不是四段信息。多塞一个，被挤掉的不是最不重要的那个，是刚好排在中间的那个——所以最想让他带走的话，只能放开头或结尾。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"I try to leave out the parts that readers tend to skip."</span>
+<span class="zh">"我尽量把读者会跳过的部分先删掉。"</span>
+<span class="source">— Elmore Leonard,《纽约时报》"Writers on Writing" 专栏（2001-07-16）</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">30 秒怎么分配，他又会记住哪一段</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 292" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="30" y="24">30 秒 ＝ 四个组块（不是四段话）</text>
+<rect fill="#dfeae2" height="54" rx="5" stroke="#1f7a5c" stroke-width="1.3" width="107" x="30" y="38"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="83.5" y="60">① 钩子</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" text-anchor="middle" x="83.5" y="76">一个真数字</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" text-anchor="middle" x="83.5" y="88">或一个画面</text>
+<rect fill="#eef4f0" height="54" rx="5" stroke="#7aa694" stroke-width="1.2" width="213" x="137" y="38"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="243.5" y="60">② 谁 ＋ 他的痛</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" text-anchor="middle" x="243.5" y="76">窄到能点名的人群，一句他自己说过的抱怨</text>
+<rect fill="#eef4f0" height="54" rx="5" stroke="#7aa694" stroke-width="1.2" width="213" x="350" y="38"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="456.5" y="60">③ 怎么做到 ＋ 一个证明</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" text-anchor="middle" x="456.5" y="76">一句机制，加一个能查的事实</text>
+<rect fill="#dfeae2" height="54" rx="5" stroke="#1f7a5c" stroke-width="1.3" width="107" x="563" y="38"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="616.5" y="60">④ 一个小请求</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" text-anchor="middle" x="616.5" y="76">带时间</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" text-anchor="middle" x="616.5" y="88">带形式</text>
+<line stroke="#cbb98f" stroke-width="1" x1="30" x2="670" y1="100" y2="100"></line>
+<text fill="#697682" font-family="Georgia" font-size="8.5" text-anchor="middle" x="30" y="114">0 秒</text>
+<text fill="#697682" font-family="Georgia" font-size="8.5" text-anchor="middle" x="137" y="114">5 秒</text>
+<text fill="#697682" font-family="Georgia" font-size="8.5" text-anchor="middle" x="350" y="114">15 秒</text>
+<text fill="#697682" font-family="Georgia" font-size="8.5" text-anchor="middle" x="563" y="114">25 秒</text>
+<text fill="#697682" font-family="Georgia" font-size="8.5" text-anchor="middle" x="670" y="114">30 秒</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="12" font-weight="700" x="30" y="150">他第二天还能复述的部分（系列位置效应）</text>
+<line stroke="#cbb98f" stroke-width="1.2" x1="30" x2="670" y1="252" y2="252"></line>
+<path d="M36,180 C130,246 250,254 350,254 C450,254 570,224 664,178" fill="none" stroke="#3f5c7a" stroke-width="2.2"></path>
+<circle cx="36" cy="180" fill="#1f7a5c" r="4.5"></circle>
+<circle cx="664" cy="178" fill="#1f7a5c" r="4.5"></circle>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" x="46" y="176">首因：开头这句他记得</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="end" x="654" y="172">近因：结尾这句他记得</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="350" y="272">中间这段掉得最快——所以别把关键那句藏在这里</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="30" y="288">曲线为示意图，形状取自自由回忆实验稳定出现的 U 形（Murdock, 1962），非实测数值。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：创业活动散场，你在门口碰到一个投资人，他一边穿外套一边说"你是做什么的"。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 从头讲起，四段变成十段</div>
+<p>"我们团队三个人，我以前在餐饮行业做了五年运营，我们发现这个行业其实数字化程度很低，然后市场规模大概有……"<br/>—— 二十秒过去了还没说自己做什么。他会礼貌听完，然后说"有资料发我"——这句九成情况下等于结束。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 四段，30 秒，结尾给一个小到能顺手答应的请求</div>
+<p><strong>①</strong> "有家六十人的火锅店，排班从每周两小时变成十几分钟。"<br/><strong>②</strong> "连锁餐饮的店长每周三下午都在干这件事，临时换人还得挨个打电话。"<br/><strong>③</strong> "我们按考勤和用工规则自动排，现在三家在用，续了两家。"<br/><strong>④</strong> "<strong>我周四上午发你两段话，你三分钟就能判断要不要聊，行吗？</strong>"<br/>—— 请求小到拒绝都费劲，而且带了时间和形式，他不用再想"那接下来怎么办"。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Thirty seconds holds four chunks, not four paragraphs. Add a fifth and what gets squeezed out isn't the least important one — it's whichever one sits in the middle. So the sentence you most want them to carry away can only live at the start or at the end.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：30 秒不是时长限制，是<em>容量</em>限制。听的人没有笔，全靠工作记忆现接；一旦超载，他保住的不是最重要的，是位置最靠边的。所以"讲多一点"从来不能提高记住的量，只会把结尾冲淡。</strong></p>
+<ul>
+<li><strong>硬证据 · 工作记忆大约只有 4 个组块</strong>：Cowan (2001, <em>Behavioral and Brain Sciences</em>) 系统回顾后把 Miller (1956) 那个 7±2 修正为 <strong>4±1</strong>（在无法复述、无法自行组块的条件下）。所以"四段"是天花板，不是建议值。</li>
+<li><strong>硬证据 · 首尾记得牢，中间掉得快</strong>：Murdock (1962, <em>Journal of Experimental Psychology</em>) 的自由回忆实验给出稳定的 U 形系列位置曲线——开头（首因）与结尾（近因）显著优于中间。这条效应极其稳健，几乎在所有记忆教科书里。</li>
+<li><strong>硬证据 · 总评价由峰值和结尾决定，跟长度几乎无关</strong>：Kahneman、Fredrickson、Schreiber &amp; Redelmeier (1993, <em>Psychological Science</em>) 的冷水实验发现，一段更长但结尾更舒服的体验，事后被评为"更愿意重来一次"——即所谓峰终定律与时长忽视。翻译成动作：多讲的那 30 秒不会被记住，但它会稀释你的结尾。</li>
+<li><strong>硬证据 · 请求越具体，被执行的概率越高</strong>：Gollwitzer (1999, <em>American Psychologist</em>) 的执行意图研究显示，把打算写成"何时、何地、做什么"的 if-then 形式，显著提高实际执行率；Milkman 等 (2011, <em>PNAS</em>) 的现场实验里，让员工在提示卡上自己写下打流感疫苗的具体日期与时间，接种率比对照组高出约 4 个百分点。所以结尾别说"保持联系"，说"周四上午给你发两段"。</li>
+</ul>
+<p class="caveat">边界：四段是骨架不是台本。真实场合常常第 10 秒就被打断——那是好事，说明钩子生效了，此时立刻放弃剩下三段，跟着他的问题走。对方明显赶时间时，只留第一段和第四段。还有个诚实提醒：<strong>峰终定律来自体验评价研究，搬到 pitch 上是合理类推，不是验证过的结论</strong>——它支持"别拖长、把好东西放结尾"，不能拿来精算秒数。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">照做清单</div>
+<ul class="checklist">
+<li>钩子里必须有一个数字或一个具体画面，不能是形容词</li>
+<li>全段不超过四个组块，讲完自己数一遍</li>
+<li>最想让他记住的那句放开头或结尾，绝不放中间</li>
+<li>结尾的请求小到"顺手就能答应"：三分钟、一个链接、一次引荐</li>
+<li>请求要带时间和形式（周四上午 · 两段文字），别说"保持联系"</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Can I send you two paragraphs Thursday? Three minutes to read." —— 小到难以拒绝的请求。</p>
+<p>"Short version: …" —— 开口就给对方一个可退出的承诺。</p>
+<p>Say less so the last line survives.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>把形容词换成数字和画面
+<span class="en">Trade adjectives for numbers and pictures</span></h2>
+<span class="tag">具体性效应</span><span class="tag">双编码</span><span class="tag">可验证</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">形容词是<strong>你</strong>对自己的评价，数字和画面是<strong>他</strong>自己做的评价。同一件事，前者要他先相信你，后者只要他会算——而陌生人对你的默认设置是不信。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Don't tell me the moon is shining; show me the glint of light on broken glass."</span>
+<span class="zh">"别告诉我月光皎洁，让我看见碎玻璃上那一点反光。"</span>
+<span class="source">— 流传的契诃夫版本。他 1886 年给哥哥的信里原话大意是：写景要抓小细节，让读者闭眼能看见画面。这句是后人转述，方向没错，别当原文引</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">同一件事的四级台阶</div>
+<div class="scene">
+<div class="setup">从最没用的说法往下走，每一级都比上一级更容易被他自己验证。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 第 1 级 · 形容词</div>
+<p>"我们效率很高，服务特别好。"—— 无法反驳，也无法相信。他唯一能做的动作是点头。</p>
+</div>
+<div class="dialog bad">
+<div class="speaker">✗ 第 2 级 · 类别词</div>
+<p>"我们能帮你节省时间、降低用工成本。"—— 有方向了，但任何同行都能说同一句，等于没说。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 第 3 级 · 数字</div>
+<p>"把每周排班的两个多小时压到十几分钟。"—— 他开始算了：一个月省八小时，值多少钱。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 第 4 级 · 画面</div>
+<p>"你周三下午那两个小时，可以拿去跑一趟门店。"—— 他能看见那个下午。数字进的是账本，画面进的是记忆。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> An adjective is your opinion of yourself; a number or an image is a judgment they make themselves. Same claim — the first one asks a stranger to trust you first, the second only asks them to do the arithmetic. And a stranger's default setting is not to trust you.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制两条：一是具体的东西能被<em>双通道</em>编码（语言＋图像），走的通路更宽，所以记得住；二是具体的东西可以被<em>验证</em>，而形容词只能被相信或不信——陌生人默认选后者。</strong></p>
+<ul>
+<li><strong>硬证据 · 具体词比抽象词记得牢（记忆研究里最稳的效应之一）</strong>：Paivio 的双编码理论（1971；1991 综述见 <em>Canadian Journal of Psychology</em>）指出具体词同时得到语言与表象两套编码。脑机制上，Binder 等 (2005, <em>Journal of Cognitive Neuroscience</em>) 用 fMRI 发现具体词更多募集<strong>双侧联合皮层与角回</strong>等多模态整合区，抽象词则更依赖<strong>左侧颞上回与额下回</strong>的语言网络——"更宽的通路"不只是比喻。（cross-ref neuroscience 语言与表象、psychology 记忆）</li>
+<li><strong>中等证据 · 生动的个案会压过统计数字</strong>：Nisbett &amp; Borgida (1975, <em>JPSP</em>) 发现被试更容易被一个具体案例影响，而不是同一议题上的汇总统计。<strong>诚实标注</strong>：这条别当铁律——Taylor &amp; Thompson (1982, <em>Psychological Bulletin</em>) 系统回顾后指出，"生动性效应"在受控实验里常常测不出来。真正稳的是<strong>具体</strong>（可验证的数字、可想象的场景），不是<strong>辞藻生动</strong>。</li>
+<li><strong>两者一起给最省事</strong>：让信息黏住那期讲的"具体"就是这条的另一面——数字让他算，画面让他记，缺一个都打折。</li>
+</ul>
+<p class="caveat">边界：<strong>数字必须真、且经得起追问。</strong>编一个"效率提升 300%" 在电梯里没人查，但第二次会面一定会被问"哪三家、什么口径、除以什么"，那一刻你丢的不是这单，是这个人以后所有的引荐。拿不准就把区间说出来："我手上三家，最好的从两小时到十几分钟，最差的大概省一半。"——诚实的区间比虚假的精确更有说服力，因为它证明你真的量过。另一个坑是假精确：把"大概两小时"写成"1.87 小时"会短暂提高可信度，被戳破一次就全额还回去。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Two hours a week down to about fifteen minutes." —— 数字先行，别铺垫。</p>
+<p>"Across the three we've done, the range was …" —— 诚实区间的标准说法。</p>
+<p>Adjectives are your opinion; numbers are theirs.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>一页纸：因为真正拍板的人不在场
+<span class="en">The one-pager travels without you</span></h2>
+<span class="tag">转述失真</span><span class="tag">决策链</span><span class="tag">可转发</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">你的陈述从来不是讲给一个人听的。他听完要<strong>转述</strong>给拍板的人，而转述必然失真：细节被削平，剩下的被夸大到符合他原有的想法。你控制不了那次转述，但你能控制他手里拿着什么。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"I have made this longer than usual because I have not had time to make it shorter."</span>
+<span class="zh">"这封信写长了，因为我没时间把它写短。"</span>
+<span class="source">— Blaise Pascal,《致外省人书》第十六封（1657）。常被误挂在马克·吐温名下</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">一页纸的六格</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="p4" markerheight="7" markerunits="userSpaceOnUse" markerwidth="9" orient="auto" refx="8" refy="3.5">
+<path d="M0,0 L9,3.5 L0,7 Z" fill="#8a4a2a"></path>
+</marker>
+</defs>
+<rect fill="#ffffff" height="292" rx="4" stroke="#cbb98f" stroke-width="1.5" width="400" x="150" y="18"></rect>
+<rect fill="#e6f0ea" height="40" rx="4" stroke="#1f7a5c" stroke-width="1.3" width="372" x="164" y="30"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" x="176" y="48">① 标题 ＝ 你那句话定位</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="62">一行，不超过一口气能念完</text>
+<rect fill="#f7faf6" height="48" rx="4" stroke="#7aa694" stroke-width="1.1" width="180" x="164" y="78"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="176" y="96">② 谁的什么问题</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="110">抄一句他自己说过的话</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="121">别用你的行话改写</text>
+<rect fill="#f7faf6" height="48" rx="4" stroke="#7aa694" stroke-width="1.1" width="180" x="356" y="78"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="368" y="96">③ 结果</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="368" y="110">两三个真数字</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="368" y="121">注明口径与样本</text>
+<rect fill="#f7faf6" height="56" rx="4" stroke="#7aa694" stroke-width="1.1" width="372" x="164" y="136"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="176" y="154">④ 怎么做到：三条，每条一行</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="169">写成他能照着念的句子，不是你的功能提纲</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="183">三条以上他就不会念了，会改成"反正就是自动化"</text>
+<rect fill="#f7faf6" height="48" rx="4" stroke="#7aa694" stroke-width="1.1" width="372" x="164" y="200"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="176" y="218">⑤ 证明</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="233">一个具名案例 ＋ 一个能自己去核实的点（网站、名字、公开数据）</text>
+<rect fill="#e6f0ea" height="44" rx="4" stroke="#1f7a5c" stroke-width="1.3" width="372" x="164" y="256"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="176" y="274">⑥ 下一步</text>
+<text fill="#4a6154" font-family="Georgia" font-size="8.5" x="176" y="289">一个具体请求 ＋ 时间 ＋ 联系方式，写成他能直接复制的一句</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" font-weight="700" x="10" y="42">他截图转发的</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" font-weight="700" x="10" y="56">常常只有这格</text>
+<line marker-end="url(#p4)" stroke="#8a4a2a" stroke-width="1.5" x1="108" x2="160" y1="50" y2="50"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" font-weight="700" x="562" y="270">替你说话的人</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" font-weight="700" x="562" y="284">照着念这格</text>
+<line marker-end="url(#p4)" stroke="#8a4a2a" stroke-width="1.5" x1="600" x2="546" y1="292" y2="286"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="350" y="324">六格全在一页里。做到第二页的那一刻，它的命运就从"被转发"变成"被存档"。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：见完面，你的对接人要在下周的会上替你讲三分钟。你能给他的只有一份材料。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 发一份 20 页的产品介绍</div>
+<p>"资料我发您了，里面写得很全。"<br/>—— 他不会读完，会在开会前三分钟扫一眼标题页，然后用自己的话讲成"就是个排班软件，好像能省点时间"。你所有的数字、边界、证据，一格都没进会议室。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 发一页纸，外加一句使用说明</div>
+<p>"发您一页，六块。<strong>您在会上只用念第一行和最后一行就够了</strong>，中间那三条是万一有人追问时的备用。数字那栏我标了口径，是三家门店的实测，不是行业平均。"<br/>—— 你不只给了材料，还替他排练了一遍。他在会上省力，你在会上被准确复述。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Your pitch is never heard by only one person. Whoever hears it has to retell it to whoever decides — and retelling always distorts: detail gets flattened, what survives gets sharpened to fit what they already believed. You can't control that retelling, but you can control what they're holding while they do it.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：信息每被复述一次，就被"整平＋尖化"一次——细节丢失，留下的部分被推向转述者本来就相信的方向。一页纸不是给你的对接人看的资料，是塞进那次转述里的<em>台词</em>。</strong></p>
+<ul>
+<li><strong>硬证据 · 措辞会改写记忆</strong>：Loftus &amp; Palmer (1974, <em>Journal of Verbal Learning and Verbal Behavior</em>) 让被试看同一段车祸录像，只把提问动词从 "hit" 换成 "smashed"，速度估计显著升高；一周后问"有没有看见碎玻璃"，用 "smashed" 那组更多人说看见了——录像里根本没有碎玻璃。你给他的那句话，就是他一周后"记得"的版本。</li>
+<li><strong>奠基性但方法较老（诚实标注）</strong>：Bartlett (1932,《Remembering》) 的连续复述实验显示故事在传递中被系统性简化、并被改成符合转述者文化框架的样子；Allport &amp; Postman (1947) 的谣言研究把它总结为整平（leveling）、尖化（sharpening）、同化（assimilation）。这两项是该领域源头，但按今天标准样本小、控制弱——方向可靠，别引具体数字。</li>
+<li><strong>为什么在 B2B 里尤其致命</strong>：真正拍板的人多半不在场，找到决策链那期讲的就是这件事。你面前这个人是你的转述者，不是你的听众——一页纸的真实读者，是一个你没见过的人。</li>
+<li><strong>行业实践，非受控实验（标注强度）</strong>：亚马逊用叙述式备忘录代替幻灯片、开会先默读，理由和上面一致：要点式幻灯片给转述者留了太多填空。但这是经验做法，不是对照实验。</li>
+</ul>
+<p class="caveat">边界：<strong>一页纸就是一页。</strong>做成三页的人通常不是内容多，是舍不得删，而三页的命运是不被读。第二个常见错误是把它写成产品说明书——它的读者是<strong>要替你说话的人</strong>，所以每一格都得写成他能照着念出口的句子，而不是你能照着讲的提纲。第三条：一页纸救不了一个没想清楚的定位。如果你写第一格就写不出来，问题不在排版，在你还没决定要帮谁。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">照做清单</div>
+<ul class="checklist">
+<li>六格：定位 · 谁的什么问题 · 结果 · 怎么做到（三条）· 证明 · 下一步</li>
+<li>数字标口径和样本量（"三家门店实测"，不是"行业平均"）</li>
+<li>每一格都用对方能直接念出口的句子写，不写提纲式短语</li>
+<li>随文件附一句使用说明："您只用念第一行和最后一行"</li>
+<li>写完删到一页；删不动就说明第一格还没想清楚</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"One page — you only need the first line and the last." —— 附在一页纸上的使用说明。</p>
+<p>"That's from three sites we measured, not an industry average." —— 主动标口径。</p>
+<p>Write it so they can read it out loud.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 18 Action</h3>
+<p>今天写四样东西，加起来不超过一页纸。</p>
+<div class="action">
+<strong>一（15 分钟）：</strong>按四个槽写一句话定位——帮谁 / 什么困境 / 什么结果 / 凭什么。写完念给一个<strong>完全不懂你行业的人</strong>听，请他用自己的话复述。他复述不出来就重写，直到他能。他的版本才是真正会流通的版本。<br/><br/><strong>二：</strong>写 30 秒的四段。钩子里必须有一个真数字或一个具体画面；结尾放一个带时间和形式的小请求（"周四上午发你两段，三分钟读完"）。录一遍音，超过 35 秒就删中间那段，不删开头结尾。<br/><br/><strong>三：</strong>把这两段里所有形容词划掉，每一个换成数字或画面。换不出来的那句，通常本来也没内容。<br/><br/><strong>四：</strong>做一页纸六格，附一句使用说明。发给一个朋友，让他假装在会上替你讲三分钟——他讲丢的那格，就是你写得不够能念的那格。<br/><br/>边界提醒：以上全部建立在<strong>数字是真的、承诺没说大</strong>上面。一句顺口但夸大的定位，会让你赢得电梯里的三十秒，输掉之后所有的会。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我做的东西又复杂又新，根本没法一句话说清，怎么办？</summary>
+<div class="answer">先把问题换个说法：一句话定位不是完整描述，是<strong>入口</strong>。真正的障碍从来不是"复杂"，是"对方脑子里没有可以放你的格子"。三个做法，从最省事到最根本。<strong>一，借一个已有的格子</strong>："像 X，但 Y"——只在对方确实认识 X 的时候用，而且 Y 只能有一个。这个句式被滥用后很容易显得油腻，判断标准是：说完对方会追问 Y，还是会说"哦，那不就是 X"。<strong>二，从他能感知的结果那头说，不从你的原理那头说。</strong>越是新的东西，越不该从"我们用了什么技术"开始——他没有参照物去评估技术，但永远有参照物去评估"每周省两小时"。<strong>三，如果真的压不进一句话，多半不是东西太复杂，是你还没决定先给谁用。</strong>把人群窄一个量级（不是"餐饮企业"，是"三到十家门店的连锁火锅"），一句话往往自己就出来了——因为这时候困境和结果都变得具体了。检验方式只有一个：让外行复述，听他的版本。</div>
+</details>
+<details>
+<summary>2. 说得这么短，会不会显得没深度、被当成没实力？</summary>
+<div class="answer">"简短被当成浅薄"几乎总是<strong>具体度不够</strong>，而不是长度不够。"我们做智能协同"很短也很空；"六十人的火锅店，排班从两小时到十几分钟"同样短，但没人会觉得它浅——因为它包含了只有真做过的人才知道的东西（店规模、原来花多久、卡在哪一步）。深度不是靠字数展示的，是靠<strong>细节的分辨率</strong>。<br/><br/>然后是两个保险动作。<strong>一，把删掉的内容做成一页纸</strong>，说一句"细节我整理了一页，会后发您"——这句同时证明了你有，和你知道什么值得占用他的时间，后者才是稀缺的。<strong>二，把深度留到被追问时。</strong>对方问"那节假日和临时换班怎么处理"的时候，你答得又快又准，这一下建立的可信度，比你主动讲十分钟高得多。反过来说，如果你讲短了确实显空，先别加长度，先检查那句话是不是在讲<strong>你的功能</strong>而不是<strong>他的结果</strong>——讲功能的短句听起来像口号，讲结果的短句听起来像事实。</div>
+</details>
+<details>
+<summary>3. 我一背稿就假，一紧张就忘词，怎么办？</summary>
+<div class="answer">别背句子，背<strong>四个槽</strong>。背句子的人一旦被打断就找不回来，因为他记的是一条线；记槽的人可以从任何一格重新开口，因为他记的是一张表。做法：把四个词写在手机备忘录里——"谁 / 痛 / 怎么做到 / 请求什么"，内容每次现说。你会发现每次说得都不太一样，这正是它听起来不假的原因。<br/><br/>再给两个练法。<strong>一，录音回放，删掉所有像稿子的连接词</strong>（"首先""众所周知""基于此"），换成你跟朋友讲话时真会用的词。<strong>二，先讲二十次再评价自己。</strong>紧张不是靠自信解决的，是靠次数——前十几次一定烂，这是流程不是失败。这一条我不给研究支撑，因为我没见到能直接支持"练 N 次就好"的干净证据，它就是经验之谈，你按经验用就行。<br/><br/>最后一个具体建议：把第一句练到能在任何状态下说出口。开头一顺，后面基本不会崩；开头卡壳，四个槽也救不回来。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 18</footer>
+</div>
+</body>
+</html>
