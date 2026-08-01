@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 19：社会证明与案例</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 19 · Phase C</div>
+<h1>社会证明与案例：只有像他的那个人才算数</h1>
+<div class="meta"><span>主题：证言 · 数据背书 · 案例研究</span><span>·</span><span>4 个动作 · 1 页案例</span></div>
+<div class="subtitle">墙上那排大 logo 可能正在帮倒忙——它证明你会伺候大公司，而坐你对面的是个五人小团队。</div>
+</header>
+<div class="intro">
+<strong>社会证明起作用的从来不是"有多少人买了"，而是"有几个和他处境一样的人已经趟过这条路"。</strong>两句听着差不多，做法完全相反：前者让你堆数量堆名气，后者让你精挑那一两个最像他的人，把细节说到能对上号。数量是给你壮胆的，相似度才是替他省风险——他想确认的只有一件事：万一搞砸了，有没有人替我搞砸过一次还活着。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>两个开关：他在犹豫吗？证据里的人像他吗？
+<span class="en">Two switches: uncertainty, and similarity</span></h2>
+<span class="tag">描述性规范</span><span class="tag">相似性</span><span class="tag">回旋镖效应</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">社会证明是<strong>省力开关</strong>，不是加分项。它只在两个条件同时成立时通电：<strong>他自己拿不准</strong>，且<strong>证据里的人在他眼里跟他是一类</strong>。缺一个，你堆再多客户都只是背景噪音；两个都缺，还会把他推远。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"We view a behavior as more correct in a given situation to the degree that we see others performing it."</span>
+<span class="zh">"我们判断一个行为对不对，很大程度上取决于我们看到多少人在这么做。"</span>
+<span class="source">— Robert Cialdini,《Influence》(1984)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">两个开关决定它是助力还是噪音</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">社会证明什么时候推得动决定</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="end" x="103" y="88">证据里的人</text>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="end" x="103" y="102">像他</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="end" x="103" y="190">证据里的人</text>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="end" x="103" y="204">不像他</text>
+<rect fill="#e2efdc" height="100" rx="6" stroke="#4e8a3f" stroke-width="1.5" width="275" x="110" y="44"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="11" font-weight="700" x="124" y="72">✓ 最强：他会直接照着做</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" x="124" y="92">"三家跟你一样五六十人的火锅店在用"</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" x="124" y="110">→ 一个同类客户 ＞ 二十个大 logo</text>
+<rect fill="#fdf6e6" height="100" rx="6" stroke="#cbb98f" stroke-width="1.4" width="275" x="387" y="44"></rect>
+<text fill="#8a6a20" font-family="Georgia" font-size="11" font-weight="700" x="401" y="72">△ 巩固，但当心回旋镖</text>
+<text fill="#7a6432" font-family="Georgia" font-size="9.2" x="401" y="92">他本来做得比"大家"好，你一说平均值，</text>
+<text fill="#7a6432" font-family="Georgia" font-size="9.2" x="401" y="110">→ 补一句认可，别只报平均数</text>
+<rect fill="#eceee8" height="100" rx="6" stroke="#c2ccbe" stroke-width="1.3" width="275" x="110" y="146"></rect>
+<text fill="#6f7d71" font-family="Georgia" font-size="11" font-weight="700" x="124" y="174">○ 被搁置：跟我没关系</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9.2" x="124" y="194">"我们跟他们不一样"是最常见的死法</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9.2" x="124" y="212">→ 换一个同规模同行业的案例再说</text>
+<rect fill="#f6e3da" height="100" rx="6" stroke="#c0603a" stroke-width="1.4" width="275" x="387" y="146"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="11" font-weight="700" x="401" y="174">✗ 反效果：像在说他不懂行</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="401" y="194">主意已定 ＋ 案例还不沾边，</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="401" y="212">→ 收起案例，回去问问题</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="middle" x="247" y="264">他还没主意（不确定）</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" text-anchor="middle" x="524" y="264">他已有主意 / 已经做得不错</text>
+<line stroke="#cbb98f" stroke-width="1" x1="20" x2="680" y1="282" y2="282"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="11.5" font-weight="700" x="20" y="306">只换参照人群：酒店毛巾复用率</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.5" text-anchor="end" x="255" y="328">"请为环保重复使用"</text>
+<rect fill="#c2ccbe" height="16" rx="3" width="140" x="264" y="316"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" x="412" y="328">约 35%</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.5" text-anchor="end" x="255" y="354">"75% 的客人都会重复使用"</text>
+<rect fill="#7aa694" height="16" rx="3" width="176" x="264" y="342"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="9.5" x="448" y="354">约 44%</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.5" text-anchor="end" x="255" y="380">"住过这间房的客人 75% 都会"</text>
+<rect fill="#1f7a5c" height="16" rx="3" width="196" x="264" y="368"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" x="468" y="380">约 49%</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" x="20" y="396">真实酒店随机分派实验，原文报告的近似值（Goldstein 等, 2008）。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：一家六十人的连锁火锅店老板问你："都有谁在用？"你手上既有两个大集团，也有三家小连锁。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 拿最响的名字压他</div>
+<p>"我们服务过 XX 集团、YY 餐饮，全国上千家门店都在用。"<br/>—— 他嘴上说"厉害"，心里想的是三件事：大概很贵、大概要配 IT、大概不理我这种小客户。你以为在展示实力，他收到的是"你不是我的菜"。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 拿最像他的那个说</div>
+<p>"最像你们的是城西那家，四家店、六十来号人，老板娘自己管排班。她当时也担心员工不会用小程序打卡——头两周确实有几个阿姨要手把手教，第三周就没人问了。要不我把她手机号给你，你直接问她那两周有多烦？"<br/>—— 规模、身份都对上了，连"我会踩什么坑"都提前给了。最后那句值一百个 logo：敢让他核实本身就是最强的证明。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Social proof is a switch, not a bonus. It only fires when two things are true at once: the buyer is genuinely unsure, and the people in your evidence read as <em>their kind of people</em>. One similar customer beats twenty impressive logos — and offering to hand over that customer's phone number is stronger proof than any of them.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：不确定时"别人怎么做"是条便宜的捷径，但它只对"和我同类"的样本有效——只有同类样本携带对我有用的信息。这也不是情绪：大脑真的把"跟大家不一样"编码成了"比预期差"的误差信号。</strong></p>
+<ul>
+<li><strong>硬证据 · 相似度直接换成行为差异</strong>：Goldstein、Cialdini &amp; Griskevicius (2008, <em>Journal of Consumer Research</em>) 在真实酒店做随机分派现场实验：标准环保诉求下毛巾复用率约 35%，换成描述性规范（"75% 的客人都会重复使用"）约 44%，参照群体再缩到"住过<strong>这间房</strong>的客人"约 49%。只换了"证据里的人是谁"。</li>
+<li><strong>硬证据 · 从众有神经层面的信号</strong>：Klucharev 等 (2009, <em>Neuron</em>) 让被试给人脸打分后看到群体评分：与群体不一致时<strong>吻侧前扣带回</strong>活动升高、<strong>伏隔核 / 腹侧纹状体</strong>活动下降，形态与强化学习的<strong>预测误差</strong>一致，且伏隔核下降幅度能<strong>预测</strong>随后往群体方向的修正量——"跟大家不一样"在大脑里是按"亏了"处理的。Campbell-Meiklejohn 等 (2010, <em>Current Biology</em>) 补上另一半：他人认可你的选择时腹侧纹状体反应升高。（cross-ref neuroscience、psychology）</li>
+<li><strong>硬证据 · 失效与反噬（回旋镖效应）</strong>：Schultz 等 (2007, <em>Psychological Science</em>) 给家庭反馈邻里平均用电量：原本用得多的降下来了，<strong>原本用得少的反而升上去</strong>；补一个赞许的笑脸后反噬消失。对已经做得不错的客户报"行业平均"，等于发给他一张放松许可证。</li>
+</ul>
+<p class="caveat">边界三条。<strong>一，社会证明只补"风险"那格，补不了"需求"那格</strong>：他不觉得这是问题时，一百个同行也没用。<strong>二，从众强度不是常数</strong>——Bond &amp; Smith (1996, <em>Psychological Bulletin</em>) 对 17 国 133 项 Asch 式实验的元分析显示，集体主义文化下更强，美国样本随年代下降。<strong>三，第一个同类案例值钱得离谱</strong>——Salganik 等 (2006, <em>Science</em>) 的人造音乐市场实验里，仅让被试看到彼此的下载量，排名就变得赢家通吃。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"The closest to you is …" —— 开口点相似度，不点名气。</p>
+<p>"Want her number? Ask her how annoying the first two weeks were." —— 敢让他核实。</p>
+<p>Similar beats impressive.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>证言的可信度来自能被查证，不来自夸得多好
+<span class="en">A testimonial is only as good as it is falsifiable</span></h2>
+<span class="tag">可证伪</span><span class="tag">双面论述</span><span class="tag">具体度</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">一句证言值不值钱，看<strong>它能不能被拆穿</strong>。"非常好用，强烈推荐"谁都能编，等于零；"周三下午排两小时，第六周稳定在十五分钟，头两周导考勤表很折腾"没人闲着去编，所以才算证据。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Opinions are worthless."</span>
+<span class="zh">"意见一文不值。"</span>
+<span class="source">— Rob Fitzpatrick,《The Mom Test》(2013)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">同一个客户，五种写法</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">越往下越能被查证，也就越算数</text>
+<rect fill="#eceee8" height="38" rx="5" stroke="#c2ccbe" stroke-width="1.2" width="500" x="20" y="36"></rect>
+<text fill="#6f7d71" font-family="Georgia" font-size="10" x="34" y="60">"非常好用，强烈推荐！" —— 匿名用户</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" x="532" y="60">谁都能编</text>
+<rect fill="#f2f0e6" height="38" rx="5" stroke="#cbb98f" stroke-width="1.2" width="500" x="20" y="84"></rect>
+<text fill="#7a6432" font-family="Georgia" font-size="10" x="34" y="108">"帮我们节省了大量时间。" —— 张先生，某餐饮公司</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" x="532" y="108">无法核对</text>
+<rect fill="#eef4f0" height="38" rx="5" stroke="#7aa694" stroke-width="1.3" width="500" x="20" y="132"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="34" y="156">"排班从 2 小时降到 15 分钟。" —— 张伟，XX 火锅 运营总监</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="532" y="156">能对上号</text>
+<rect fill="#dfeae2" height="38" rx="5" stroke="#4e8a3f" stroke-width="1.4" width="500" x="20" y="180"></rect>
+<text fill="#25402f" font-family="Georgia" font-size="10" x="34" y="199">"上线前每周三排 2 小时，第 6 周起稳定在</text>
+<text fill="#25402f" font-family="Georgia" font-size="10" x="34" y="213">15 分钟左右。"（四家店 · 六十余人）</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="532" y="206">可复算</text>
+<rect fill="#cfe4d6" height="46" rx="5" stroke="#1f7a5c" stroke-width="1.6" width="500" x="20" y="228"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10" x="34" y="247">…… 再加"头两周导考勤表很折腾，第三周才顺"，</text>
+<text fill="#123f30" font-family="Georgia" font-size="10" x="34" y="263">以及"想聊可以介绍你们认识"。</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" x="532" y="255">可被拆穿</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" x="20" y="290">前两条是好话，后三条是证据——差别不在热情，在能不能查。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：一个用得挺好的老客户，你想找他要一句能挂在官网上的证言。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 直接要好话</div>
+<p>"王姐，能帮我们写句好评吗？说说我们哪里好就行～"<br/>—— 你把写作任务丢给了他。多半是拖两周，回一句"你们服务很专业，值得信赖"：客气、真诚、毫无信息量。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 问三个具体问题，你来成稿</div>
+<p>"占您四分钟，三个问题：<strong>一、</strong>用之前，周三下午那两小时具体怎么过的？<strong>二、</strong>当时您差点没签，最担心哪一条？<strong>三、</strong>现在这个数大概多少，哪一周开始稳的？"<br/>——聊完整理成一段发回去："按您说的整理的，不对的地方直接改，改完的算数。"要好话是麻烦别人，问具体问题是替他省事——而第二问挖出的那条担心，正是下一个客户不肯签的原因。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> A testimonial is worth exactly as much as it is falsifiable. Never ask a happy customer to "write something nice" — that hands them the work and gets you a hollow sentence. Ask three specific questions (what the old Wednesday afternoon looked like, what nearly stopped them signing, what the number is now), then draft it yourself and let them edit.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：说服力来自"说这句话的代价"。全是好话的证言零成本，信息量也为零；带上具体口径和一个真实缺点，等于把自己放到可被验证、可被反驳的位置——对方读的不是内容，是"你敢不敢让我查"。</strong></p>
+<ul>
+<li><strong>较强证据 · 主动说缺点反而更可信</strong>：Crowley &amp; Hoyer (1994, <em>Journal of Consumer Research</em>) 梳理了双面论述（two-sided message）的机制；Eisend (2006, <em>International Journal of Research in Marketing</em>) 的元分析发现双面信息在<strong>可信度</strong>上稳定占优，净效果取决于负面信息的分量与相关性。落地版：说一个真实的小缺点加分，说一个致命缺点当然不会。</li>
+<li><strong>中等证据 · 小瑕疵效应边界很窄</strong>：Ein-Gar、Shiv &amp; Tanner (2012, <em>Journal of Marketing Research</em>) 发现负面信息能提升整体评价，但条件很挑：必须<strong>分量小</strong>、<strong>放在正面之后</strong>、对方处于<strong>不太费力加工</strong>的状态。条件不满足时效应会反过来。</li>
+</ul>
+<p class="caveat">边界：<strong>"承认缺点更可信"效应量普遍不大，且高度依赖承认的是哪条。</strong>标准很朴素：承认那个他<strong>反正会踩到</strong>的坑（前两周麻烦、要迁数据、第一个月得有人盯）——你先说，等于把他发现的时点从"上线后翻脸"提前到"签约前有准备"；绝不承认那个足以当拒绝理由的核心缺陷，那不叫坦诚，叫不该卖。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">照做清单 · 要一句能用的证言</div>
+<div class="template">
+<span class="label">四分钟通话，三个问题，你来成稿</span>
+<p>· 问一：<strong>用之前那个具体时刻什么样</strong>（哪天、几点、卡在哪步）</p>
+<p>· 问二：<strong>当时差点没买，最担心哪一条</strong>（常比表扬更值钱）</p>
+<p>· 问三：<strong>现在数字多少、哪周开始稳的</strong>（要时间点，不要"很快"）</p>
+<p>· 你整理成 60–80 字发回："不对的地方直接改，改完的算数。"</p>
+<p>· 落款写全<strong>姓名 · 职位 · 公司 · 规模</strong>，规模那格最不能省</p>
+<p>· 再问一句："同类客户想聊，能不能让他直接问您？"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"What almost stopped you from signing?" —— 问出下一个客户的异议。</p>
+<p>"I drafted it from your words — change anything that's off." —— 替他省事。</p>
+<p>Praise is free; specifics cost something.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>数字背书：先给口径，再给数字
+<span class="en">Denominator first, number second</span></h2>
+<span class="tag">口径</span><span class="tag">精确性线索</span><span class="tag">主动折扣</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">没有口径的数字不是证据，是形容词。"效率提升 300%"和"特别好用"在他脑子里是一类东西——都无法核对，都会被自动打折。<strong>把口径放在数字前面说出来，比把数字说大重要得多。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"The secret language of statistics, so appealing in a fact-minded culture, is employed to sensationalize, inflate, confuse, and oversimplify."</span>
+<span class="zh">"统计这门秘密语言在一个崇尚事实的文化里格外好用——好用在渲染、夸大、搅浑和过度简化。"</span>
+<span class="source">— Darrell Huff,《How to Lie with Statistics》(1954)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">一个数字的四件套</div>
+<div class="template">
+<span class="label">每个对外说的数字，配齐这四格再出门</span>
+<p>· <strong>n 是多少</strong>：三家门店，不是"众多客户"</p>
+<p>· <strong>时间窗</strong>：上线后第 6–12 周，不是"长期来看"</p>
+<p>· <strong>跟什么比</strong>：跟他们自己上线前比，不是跟行业平均</p>
+<p>· <strong>谁测的</strong>：客户后台自导，还是我们统计（差一个量级）</p>
+<p>· 有一格拿不出来就<strong>主动说</strong>："三家的平均，样本小。"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：他盯着你 PPT 上"平均效率提升 300%"那一行，抬头问："这个 300% 怎么来的？"</div>
+<div class="dialog bad">
+<div class="speaker">✗ 用更大的数字挡回去</div>
+<p>"这是我们上千家客户的平均值，有的甚至提升了 500%。"<br/>—— 你把怀疑当成了嫌数字小，于是加码。他问的是口径，你答的是音量。这一刻他不只是不信这个数，是开始怀疑 PPT 上其余每一个数——一个说不清来源的数字会污染旁边所有数字。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 先自曝口径，再把数字调小</div>
+<p>"这个数其实虚，我拆开您自己判断：<strong>三家门店</strong>，上线后<strong>第六到十二周</strong>，跟他们<strong>自己上线前</strong>比，排班耗时从两小时左右到十五分钟上下，数是他们后台导的。三家太少，我不会说这是行业水平。您店多、还有夜班，我估计头两个月到不了这个数。"<br/>—— 数字变小了，可信度反而上去了。认领样本小、预测他的结果更差，这两下建立的信任比 300% 值钱得多。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> A number without a denominator is an adjective. When someone challenges "300% average improvement," they are asking about your method, not your volume — answering with a bigger number poisons every other figure on the page. Name the sample size, the window, the baseline and who measured, then shrink the claim yourself.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：听众对数字做的第一件事不是相信，是估计它灌了多少水再按估计打折。你主动交代口径等于替他把折扣算完，他不用再留余量，剩下的才能被当真。反过来，一个无法核对的数字会连累旁边所有可核对的数字。</strong></p>
+<ul>
+<li><strong>硬证据 · 精确的数字被当成更有把握</strong>：Jerez-Fernandez、Angulo &amp; Oppenheimer (2014, <em>Psychological Science</em>) 发现给出精确数值（而非整数）的人被判断为对答案更有信心、也更可信，所以"降到 15 分钟左右"胜过"大幅缩短"。但它评的是<strong>信心</strong>不是<strong>正确</strong>——该补的是口径，不是小数位。</li>
+<li><strong>硬证据 · 精确锚点更难被拉动</strong>：Janiszewski &amp; Uy (2008, <em>Psychological Science</em>) 发现精确锚点（如 4,998）比整数锚点（5,000）引发的调整幅度更小。落到报价与效果承诺上：你给的第一个数会圈定他还价的范围——精确但假的数字杀伤力也更大。</li>
+<li><strong>硬证据 · 分母被忽略是默认状态</strong>：数值判断研究里稳定出现"分母忽视"：人们对"100 人里 9 人"的风险感受强于"1000 人里 90 人"，尽管后者比例更高（Reyna &amp; Brainerd 模糊痕迹理论一系）。你不给分母对方不会自己补，他凭分子形成印象，事后才发现被误导。</li>
+</ul>
+<p class="caveat">边界：<strong>"主动说小"不是话术，是硬约束。</strong>它有效恰恰因为大多数人不这么做；把"我这数其实虚"当套路挂嘴边，就变成了另一种表演，而客户圈子比你想的小。判断标准只有一条：你说的口径经不经得起他打电话给那三家门店去问。经不起就别说那个数。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"That's three sites over six weeks, measured off their own dashboard." —— 一句给全四件套。</p>
+<p>"I'd expect you to land lower than that in month one." —— 主动下调预期。</p>
+<p>A number without a denominator is an adjective.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>案例写成"某一天"，别写成一份报告
+<span class="en">Write the case as a day, not as a report</span></h2>
+<span class="tag">叙事运输</span><span class="tag">可辨识个体</span><span class="tag">可复制性</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">案例不是成绩单，是<strong>一份可复制的路线图</strong>。读者找的是"我照着走会经过哪些地方"，所以最该写清的不是结果多好，是<strong>他当初怎么犹豫</strong>和<strong>中间踩了什么</strong>——只有这两段能让下一个人认出自己。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"A case passes the Sinatra Test when one example alone is enough to establish credibility in a given domain."</span>
+<span class="zh">"当一个例子本身就足以在某个领域建立可信度，它就通过了辛纳屈测试。"</span>
+<span class="source">— Chip Heath &amp; Dan Heath,《Made to Stick》(2007)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">一页案例的六格</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerheight="7" markerunits="userSpaceOnUse" markerwidth="9" orient="auto" refx="8" refy="3.5">
+<path d="M0,0 L9,3.5 L0,7 Z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="25" y="22">六格写完，通常不到一页</text>
+<rect fill="#e6f0ea" height="72" rx="6" stroke="#1f7a5c" stroke-width="1.3" width="200" x="25" y="38"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" x="38" y="60">① 他是谁</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" x="38" y="82">窄到能对号：四家店 · 六十人</text>
+<line marker-end="url(#c1)" stroke="#1f7a5c" stroke-width="1.5" x1="227" x2="246" y1="74" y2="74"></line>
+<rect fill="#e6f0ea" height="72" rx="6" stroke="#1f7a5c" stroke-width="1.3" width="200" x="250" y="38"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" x="263" y="60">② 之前的一个上午</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" x="263" y="82">周三下午两小时 ＋ 七八个电话</text>
+<line marker-end="url(#c1)" stroke="#1f7a5c" stroke-width="1.5" x1="452" x2="471" y1="74" y2="74"></line>
+<rect fill="#fdf6e6" height="72" rx="6" stroke="#cbb98f" stroke-width="1.4" width="200" x="475" y="38"></rect>
+<text fill="#8a6a20" font-family="Georgia" font-size="10.5" font-weight="700" x="488" y="60">③ 他差点没买</text>
+<text fill="#7a6432" font-family="Georgia" font-size="9" x="488" y="82">"阿姨们肯定不会用小程序"</text>
+<path d="M675,112 C692,146 460,150 130,150 L130,166" fill="none" marker-end="url(#c1)" stroke="#1f7a5c" stroke-width="1.5"></path>
+<rect fill="#e6f0ea" height="72" rx="6" stroke="#1f7a5c" stroke-width="1.3" width="200" x="25" y="172"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" x="38" y="194">④ 他实际做了什么</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" x="38" y="216">头两周手把手教，第三周没人问</text>
+<line marker-end="url(#c1)" stroke="#1f7a5c" stroke-width="1.5" x1="227" x2="246" y1="208" y2="208"></line>
+<rect fill="#dfeae2" height="72" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="200" x="250" y="172"></rect>
+<text fill="#25402f" font-family="Georgia" font-size="10.5" font-weight="700" x="263" y="194">⑤ 数字 ＋ 口径</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" x="263" y="212">两小时 → 十五分钟左右</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" x="263" y="228">第 6 周起稳 · 后台自导</text>
+<line marker-end="url(#c1)" stroke="#1f7a5c" stroke-width="1.5" x1="452" x2="471" y1="208" y2="208"></line>
+<rect fill="#dfeae2" height="72" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="200" x="475" y="172"></rect>
+<text fill="#25402f" font-family="Georgia" font-size="10.5" font-weight="700" x="488" y="194">⑥ 他自己的一句话</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" x="488" y="216">"现在周三下午我能回家吃饭。"</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" font-weight="700" x="25" y="268">第 3 格写不出 → 你没问过他犹豫什么；第 4 格没有坑 → 读者会觉得是编的。</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" x="25" y="288">先认出自己（①②③），再看怎么走（④⑤），最后带走一句话（⑥）。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：官网上要挂一个客户案例，你手上有完整数据。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 写成一份成绩报告</div>
+<p>"某知名连锁餐饮企业通过引入我司智能排班解决方案，实现排班效率提升 87%，人力成本显著优化。"<br/>—— 没有人、没有那一天、没有犹豫、没有坑。读者提不出"我该怎么走"的信息，只提得出一个印象：这是广告。而"某知名企业"四个字本身就在说"不能核实"。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 写成他的那一个下午</div>
+<p>"张伟在城西开了四家火锅店，六十来号人，排班一直是他老婆在管。以前每周三下午两点开始排下周的班，排完差不多四点，中间还得打七八个电话确认谁能换。他一开始不肯用，原话是'阿姨们肯定不会弄小程序'——头两周确实要手把手教，第三周就没人问了。第六周起稳定在十五分钟上下（后台自己导的数）。他说：<strong>现在周三下午我能回家吃饭。</strong>"<br/>—— 下一个四家店的老板读到"阿姨们肯定不会弄"会心里一动：那正是他没说出口的担心。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> A case study is a route map, not a report card. The two sections everyone deletes — why they almost said no, and what went wrong in week one — are the two that let the next reader recognise themselves. "A leading restaurant group achieved 87% efficiency gains" contains no route and no person; a named owner, a specific Wednesday afternoon and an admitted rocky fortnight contain both.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：一个叫得出名字、看得见处境的人会调动共情与心理模拟，统计量只调动核算——前者让人产生"这可能是我"，后者让人退回旁观者。而"踩过什么坑"关键在于它把这段文字从广告那一类里移出来：广告不写自己不好的部分。</strong></p>
+<ul>
+<li><strong>硬证据 · 可辨识个体 ＞ 统计数字</strong>：Small、Loewenstein &amp; Slovic (2007, <em>OBHDP</em>) 让被试为饥荒儿童捐款：给一个有名有姓有照片的女孩（Rokia）比给宏观统计显著提高捐款额；更关键的是，事先提示"做分析性思考"反而<strong>降低</strong>了对她的捐款。读者一旦切到算账模式，故事的力量会被他自己关掉——所以案例和 ROI 表格要分开放。</li>
+<li><strong>硬证据 · 叙事运输带来态度改变</strong>：Green &amp; Brock (2000, <em>JPSP</em>) 提出并验证了"运输"（transportation）：读者越沉浸在叙事里，越倾向接受故事隐含的信念，且更少产生反驳性思考。这解释了案例为什么比论点更难被当场反驳：反驳要跳出故事，而好故事让人不想跳出来。（讲故事卖东西那期讲过结构做法）</li>
+<li><strong>诚实标注 · 有一条我不给证据</strong>："六格"这个结构没有对照实验支撑，是把上面几条机制拼起来的工程方案，属经验之谈。顺序可换、格子可并，但别删③和④——它们走的是双面论述那条路（见上一节 Crowley &amp; Hoyer 1994、Eisend 2006），是六格里唯一有硬证据托底的。</li>
+</ul>
+<p class="caveat">边界：<strong>可辨识个体是把双刃剑</strong>，它同样能让人被极端个案带偏。你举的若是效果最好的那家，就是在用真实的故事制造失真的预期，上线三个月后账会算回来；稳妥做法是明说"这是我们最好的一家，中位数大概是……"。另外案例必须拿到授权，涉及金额、人数、内部流程时书面确认。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Here's the one that looks most like you." —— 挑案例的第一句。</p>
+<p>"This is our best result — the median is closer to …" —— 防极端个案误导。</p>
+<p>Write the day, not the outcome.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 19 Action</h3>
+<p>今天只做一个案例，但把它做到能被查证。</p>
+<div class="action">
+<strong>一（10 分钟）：</strong>把现有客户按<strong>规模 × 行业</strong>列张表，圈出跟你下一个目标客户最像的那个——不是最大的那个。最像的效果一般也用他：对得上号胜过效果炸裂却跟他没关系。<br/><br/><strong>二（四分钟电话）：</strong>问三个问题——用之前那个具体时刻什么样、当时差点没买最担心哪条、现在数字多少哪周开始稳的。<strong>第二问的答案是今天最大的收获</strong>：它就是你下一个客户不肯签的原因。<br/><br/><strong>三（30 分钟）：</strong>按六格写成一页，写完自查：第 3 格空着吗？第 4 格有没有一个真实的坑？两格都得有。<br/><br/><strong>四（5 分钟）：</strong>发回客户过目，顺带谈定授权：能给"行业 + 规模 + 职位"就别写"某知名企业"，最好再问一句"同类客户想聊，能不能让他直接问您？"<br/><br/>边界提醒：每一步都建立在<strong>数字是真的、坑是真的、人是真的</strong>上面。买好评、编案例、把最好的一家说成"平均水平"，短期都有效——这正是它们危险的地方。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我一个客户都还没有，哪来的社会证明？</summary>
+<div class="answer">你缺的不是客户数量，是<strong>一条能降低他风险感的证据</strong>，案例只是其中最贵的一种。四条替代路径。<strong>一，把第一个用户写成案例，哪怕他没付钱</strong>：内测用户、朋友、你自己团队都行，只要口径写清"这是我们自己用了八周的数据，还没有付费客户"——这句坦白不减分。<strong>二，把过程当证明</strong>："我访谈了 27 个连锁餐饮店长，19 个提到周三下午排班"——不是客户数，但可核实，也证明你比多数供应商更懂。<strong>三，借公开研究讲机制</strong>，说清这法子为什么有效，再补一句"我还没有自己的数据"。<strong>四，用风险逆转顶上</strong>：先做一家、按结果收费、不满意不收。<br/><br/><strong>另外：第一个同类案例值得你为它做亏本的事。</strong>Salganik 等 (2006) 说明早期一点点可见差异会被放大成巨大差距。第一单不是在赚钱，是在买一张后面所有人都会看的入场券——该挑的不是出价最高的，是最像你后面想要的那群人的。</div>
+</details>
+<details>
+<summary>2. 客户不让我用他的名字，也不给数字，案例还写得成吗？</summary>
+<div class="answer">写得成，但要知道丢了什么。名字给的是<strong>可核实性</strong>，数字给的是<strong>可复算性</strong>；两样都没有时，你还剩一样最难伪造的：<strong>过程的分辨率</strong>。"四家店的连锁火锅，老板娘自己管排班，周三下午两点开始排、四点前后弄完，中间要打七八个电话"——没名字没百分比，但任何同行读完都知道你真进过这种店。假案例编得出结果，编不出这种细节。<br/><br/>三步：<strong>一，走匿名化阶梯</strong>，先争取"行业 + 规模 + 职位"，这层多数人会同意，也够下一个人对号；别写"某知名企业"，那四个字等于宣布不可查。<strong>二，绝对值给不了就给相对值</strong>："金额不让说，可以说耗时降到原来的八分之一。"<strong>三，把可核实性挪到你这边</strong>：方法写透到别人能自己判断真伪，或给一次小范围试点让他自己跑出数据。<br/><br/>还有个常被跳过的动作：<strong>问清楚他为什么不肯。</strong>怕对手知道、流程没走完、法务一刀切，还是其实没那么满意？最后一种最要紧：真实原因若是"没那么好"，要修的不是案例，是产品。</div>
+</details>
+<details>
+<summary>3. 同行都在刷好评、编数据，我老老实实反而吃亏，怎么办？</summary>
+<div class="answer">先承认一件不好听的事：<strong>短期确实吃亏。</strong>一次性交易、信息不透明、客户不回头的市场里，造假的人赢得更快。所以判断标准不是"哪种更高尚"，而是<strong>你玩的是一次性博弈还是重复博弈</strong>。景区门口卖纪念品是一次性的，市场就会奖励造假，结果那种市场里所有人都不被信任，包括老实的。但只要你的客户互相认识（同城同行、同一个群、同一批投资人），就是重复博弈：造假的收益在第一次被拆穿时永久清零，因为拆穿会被转述。<br/><br/>三条可操作的。<strong>一，把"可核实"当卖点摆上台面</strong>：别人不敢让客户接电话，你敢——不用说对方造假，只需说"想聊的话我给您电话"。<strong>二，在他被喂了一堆漂亮数字时主动下调预期</strong>："行业里流行说效率翻三倍，我的估计是头两个月省一半。"在一片 300% 里，这句不像谦虚，像专业。<strong>三，接受会输掉一部分单子，挑对赛道</strong>：老实打法在客单价高、周期长、要续费、有转介绍的生意里占优，一锤子买卖里劣势明显。<br/><br/>最后一条是硬的：编造评价与虚假宣传在多数地区受广告法和消费者保护法约束，已不是打法选择而是合规风险。<strong>说服与操纵的界线，最简单的判断是——如果对方事后知道了全部真相，他会觉得被帮了，还是被骗了。</strong></div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 19</footer>
+</div>
+</body>
+</html>
