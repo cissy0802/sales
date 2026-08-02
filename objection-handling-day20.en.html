@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 20: Objections Aren't Rejection</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 20 · Phase D</div>
+<h1>Objections Aren't Rejection: They're Trying Your Offer On</h1>
+<div class="meta"><span>Topic: objections as information · four-way triage · agree first</span><span>·</span><span>4 moves · 1 triage table</span></div>
+<div class="subtitle">The hardest deal to save is never the one who says "too expensive." It's the one who nods all the way through, calls you impressive, and finishes with "let us discuss it internally."</div>
+</header>
+<div class="intro">
+<strong>Anyone who can raise a specific objection has already run your offer through their own budget, their own calendar and their own colleagues.</strong> Nobody invents a line like "who's going to import our messy member spreadsheet?" without having tried the thing on in their head. So an objection is a receipt for effort, not a rejection letter — and what you actually have to handle is never the sentence itself, but the risk sitting behind it that hasn't been said out loud.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>A specific objection is a receipt. Politeness is the bad news
+<span class="en">A specific objection is a receipt; politeness is the bad news</span></h2>
+<span class="tag">ambiguity aversion</span><span class="tag">no-decision</span><span class="tag">buying signal</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">An objection doesn't mean "I don't want this." It means <strong>"I haven't worked out the risk of this step yet."</strong> If they'll say the risk out loud, you have something to work with; the risks they won't say turn into "let me think about it," and then they think about it forever.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Beware 'Yes' — Master 'No'."</span>
+<span class="source">— Chris Voss, <em>Never Split the Difference</em> (2016), chapter title</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Three reactions, three very different distances from a signature</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 278" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#8a6a20"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Three buyer reactions — don't rank them by how polite they sound</text>
+<rect fill="#dfeae2" height="112" rx="6" stroke="#4e8a3f" stroke-width="1.5" width="200" x="20" y="36"></rect>
+<text fill="#25402f" font-family="Georgia" font-size="10.5" font-weight="700" x="34" y="60">1 · Specific pushback</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" x="34" y="82">"Our member sheet is a</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" x="34" y="98">mess — who imports it?"</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.2" font-weight="700" x="34" y="122">→ Already used it in their head</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" x="34" y="140">Give a plan, not a promise</text>
+<rect fill="#fdf6e6" height="112" rx="6" stroke="#cbb98f" stroke-width="1.4" width="200" x="250" y="36"></rect>
+<text fill="#8a6a20" font-family="Georgia" font-size="10.5" font-weight="700" x="264" y="60">2 · Vague hesitation</text>
+<text fill="#7a6432" font-family="Georgia" font-size="9.2" x="264" y="82">"Looks good, let me think."</text>
+<text fill="#7a6432" font-family="Georgia" font-size="9.2" x="264" y="98">"We'll discuss internally."</text>
+<text fill="#8a6a20" font-family="Georgia" font-size="9.2" font-weight="700" x="264" y="122">→ Risk exists, unspoken</text>
+<text fill="#7a6432" font-family="Georgia" font-size="9" x="264" y="140">Your job: turn it into 1</text>
+<rect fill="#f6e3da" height="112" rx="6" stroke="#c0603a" stroke-width="1.4" width="200" x="480" y="36"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="494" y="60">3 · Pure praise</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="494" y="82">"Really professional —</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="494" y="98">we'll be in touch."</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" font-weight="700" x="494" y="122">→ Usually a polite exit</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9" x="494" y="140">Keep it out of the forecast</text>
+<line marker-end="url(#m1)" stroke="#8a6a20" stroke-width="1.6" x1="20" x2="676" y1="172" y2="172"></line>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" font-weight="700" x="20" y="192">Closer to a deal</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="end" x="676" y="192">Further from a deal</text>
+<line stroke="#cbb98f" stroke-width="1" x1="20" x2="680" y1="212" y2="212"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-weight="700" x="20" y="240">People afraid of choosing wrong never say "no" — they say "let me look again"</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="264">Rank follow-ups by how concrete the pushback was, not by how warm the person was.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: you sell gym membership software. Two demos in one week — owner A frowned and picked three holes in it, owner B nodded throughout and called you impressive. Next week you only have time for one.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Chase the one who was nicest</div>
+<p>"B was so pleasant." So you chase for three weeks: send materials, book a second demo, send a case study. The replies get slower, then stop. Meanwhile you answered none of A's three holes, so A assumes you had no answer.<br/>—— You read warmth as intent. Warmth is a social lubricant; it carries no information about buying.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Chase the one who pushed back hardest</div>
+<p>To A: treat the three holes as a checklist and answer them on the spot — a method where you have one ("I'll do the import myself, just send me the raw export, two working days"), a straight no where you don't ("multi-site permissions aren't there yet, October at the earliest").<br/>To B, send one message: "You didn't raise a single concern last time, which actually worries me — is there a piece you can't sign off on, or is this just not the moment? If it's not the moment, say so and I'll stop chasing."<br/>—— That last clause is the whole message: <strong>make saying no cheap and people tell you the truth.</strong> Either answer pays: a real objection, or three weeks back.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: a specific objection means they've already simulated your offer inside their own constraints. And "risk I can't put a number on" is an expensive state for a brain to sit in — people would rather not move than accept an outcome whose odds they can't even estimate. What blocks the deal is usually not "you aren't good enough" but "I can't calculate what happens if this goes wrong."</strong></p>
+<ul>
+<li><strong>Hard evidence · ambiguity repels more than risk</strong>: Ellsberg (1961, <em>QJE</em>) and his classic paradox — people prefer a gamble with known odds over one with unknown odds, even when the unknown one is the better bet. Not fear of losing; fear of not being able to compute.</li>
+<li><strong>Hard evidence · ambiguity has its own circuitry</strong>: Hsu, Bhatt, Adolphs, Tranel &amp; Camerer (2005, <em>Science</em>) used fMRI to contrast risk (known probabilities) with ambiguity (missing information): under ambiguity, the <strong>amygdala</strong> and <strong>orbitofrontal cortex</strong> showed heightened activity while <strong>striatal</strong> activity tracked expected reward, and <strong>patients with orbitofrontal lesions were largely insensitive to ambiguity</strong>. Every time you skip "who does this step, and how long it takes," you're loading the other person's amygdala. (cross-ref neuroscience)</li>
+<li><strong>Industry data · your biggest competitor is no-decision</strong>: Dixon &amp; McKenna, <em>The JOLT Effect</em> (2022), analysed millions of recorded sales calls: a large share of qualified opportunities neither lose to a rival nor stay with the status quo — they die of the buyer's fear of getting it wrong, and the fix is <strong>taking the downside off the table</strong> (narrow the options, give a clear recommendation, absorb part of the risk). <strong>Strength: vendor-owned data, not peer-reviewed</strong> — use it as a hypothesis.</li>
+</ul>
+<p class="caveat">Two boundaries. <strong>One, more objections ≠ better deal</strong>: the signal is in specificity, not volume. <strong>Two, some people genuinely don't need it</strong> — reading every "no" as "I under-sold it" will burn half a quarter on someone who was never going to buy. The next move is how you tell those apart.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>Triage before you answer: no need / no trust / no hurry / too expensive
+<span class="en">Triage first: no need, no trust, no hurry, too expensive</span></h2>
+<span class="tag">status quo bias</span><span class="tag">present bias</span><span class="tag">objection classes</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The four have completely different causes, so <strong>one stock answer only works when you guess right</strong>: "no need" sends you back to discovery, "no trust" needs proof, "no hurry" needs a date, "too expensive" needs a comparison. Pick the wrong cell and the harder you try, the more you sound like a salesperson.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Every sale has five basic obstacles: no need, no money, no hurry, no desire, no trust."</span>
+<span class="source">— attributed to Zig Ziglar (widely repeated; a practitioner's taxonomy, not a research finding)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The triage table: what you hear → what you ask → what you do</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 386" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">One sentence, four different diseases</text>
+<rect fill="#eceee8" height="138" rx="6" stroke="#c2ccbe" stroke-width="1.4" width="320" x="20" y="36"></rect>
+<text fill="#4a5a4c" font-family="Georgia" font-size="11" font-weight="700" x="34" y="60">NO NEED · we're fine as we are</text>
+<text fill="#5a6a5c" font-family="Georgia" font-size="9.2" x="34" y="84">Subtext: changing hurts more than staying</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.2" font-weight="700" x="34" y="108">Ask: "When did this last go wrong?"</text>
+<text fill="#5a6a5c" font-family="Georgia" font-size="9.2" x="34" y="130">No answer → drop it; an answer → price that day</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" x="34" y="152">Don't: pitch more features, harder</text>
+<rect fill="#eef1f5" height="138" rx="6" stroke="#3f5c7a" stroke-width="1.4" width="320" x="360" y="36"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-weight="700" x="374" y="60">NO TRUST · believes the problem, not you</text>
+<text fill="#43566b" font-family="Georgia" font-size="9.2" x="374" y="84">Subtext: if you can't deliver, I carry it</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.2" font-weight="700" x="374" y="108">Ask: "What would you need to see?"</text>
+<text fill="#43566b" font-family="Georgia" font-size="9.2" x="374" y="130">→ Same-size case, pilot, downside off the table</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" x="374" y="152">Don't: repeat how reliable you are</text>
+<rect fill="#fdf6e6" height="138" rx="6" stroke="#cbb98f" stroke-width="1.4" width="320" x="20" y="190"></rect>
+<text fill="#8a6a20" font-family="Georgia" font-size="11" font-weight="700" x="34" y="214">NO HURRY · agreed, but ranked seventh</text>
+<text fill="#7a6432" font-family="Georgia" font-size="9.2" x="34" y="238">Subtext: nobody yells at me if I skip it</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.2" font-weight="700" x="34" y="262">Ask: "And if it's the same in 3 months?"</text>
+<text fill="#7a6432" font-family="Georgia" font-size="9.2" x="34" y="284">→ Hook it to a date already in their calendar</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" x="34" y="306">Don't: invent a fake deadline</text>
+<rect fill="#f6e3da" height="138" rx="6" stroke="#c0603a" stroke-width="1.4" width="320" x="360" y="190"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="11" font-weight="700" x="374" y="214">TOO EXPENSIVE · half the time a proxy</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="374" y="238">Subtext: not worth it / not my budget</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.2" font-weight="700" x="374" y="262">Ask: "Compared to what?" + "Price solved = yes?"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="374" y="284">"Yes" → talk structure, not discount; else look again</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" x="374" y="306">Don't: discount by reflex</text>
+<line stroke="#cbb98f" stroke-width="1" x1="20" x2="680" y1="348" y2="348"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.5" x="20" y="372">Triage takes one move: when you hear an objection, don't answer — ask the diagnostic question first.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: you've quoted, and they say "that's a bit over budget." Same sentence, potentially four different causes.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Treat every "expensive" as a price problem</div>
+<p>"Let me ask — I can probably do 10% off."<br/>—— Three things happen at once: you've admitted the list price was fiction, you've dragged the conversation from value back to numbers, and if what they were really stuck on was "can this actually be made to work," they still won't sign at 10% off — only now you've spent your card.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Two sentences of triage first</div>
+<p><strong>First:</strong> "Over by how much? Over compared to other quotes, or over what you'd set aside for this?"<br/><strong>Second (isolate the objection):</strong> "Suppose we could sort the price out — would everything else be fine?"<br/>· "Yes, basically" → a genuine price problem. Talk <strong>structure</strong> (instalments, one site first, part of the fee tied to the result), not discounts.<br/>· "Well, I'd still want to see how the import goes" → the disease is <strong>no trust</strong>, and discounting is medicine for the wrong illness.<br/>—— The second sentence is the valuable one: five seconds to split "expensive" into a real price objection and a disguise. If you still can't tell which cell you're in, just ask: "Is this something we didn't explain well, or something that just isn't on your list this year?"</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: four different mechanics. "No need" is the gravity of the status quo — not moving is the default and changing carries a one-off cost. "No hurry" is temporal discounting — the same task shrinks automatically once it's in the future. "No trust" is risk ownership — if the purchase fails, they carry it alone. "Too expensive" is usually the most dignified exit from the other three.</strong></p>
+<ul>
+<li><strong>Hard evidence · the status quo is itself a force</strong>: Samuelson &amp; Zeckhauser (1988, <em>Journal of Risk and Uncertainty</em>) combined experiments with real health-plan and retirement-allocation data to show that <strong>merely labelling an option as the status quo substantially raises how often it's chosen</strong>, with inertia growing as the option set grows. Your competitor is usually not a rival vendor but the "change nothing" default — and offering more options helps it, not you.</li>
+<li><strong>Hard evidence · procrastination isn't laziness, it's discounting</strong>: O'Donoghue &amp; Rabin (1999, <em>American Economic Review</em>) modelled present bias — near-term costs are magnified and future benefits shrunk, so "worth doing but not urgent" gets deferred indefinitely. Ariely &amp; Wertenbroch (2002, <em>Psychological Science</em>) supply the antidote: <strong>groups working to deadlines clearly outperformed those with none</strong>. The cure for "no hurry" is a date you both agree on.</li>
+<li><strong>Weaker evidence · the four-way split itself</strong>: this taxonomy descends from Ziglar's practitioner lore and has <strong>no controlled studies behind it</strong>. Its value isn't scientific; it's that the categories are roughly exclusive and exhaustive, so you can label a call in three seconds.</li>
+</ul>
+<p class="caveat">Boundary: <strong>the answers to diagnostic questions aren't necessarily true.</strong> "Compared to what?" can produce a rival quote invented on the spot. What the questions really do is move the conversation from "you convince me" to "let me tell you" — and the Mom Test rule (ask about specific past behaviour, not future intent) applies here too. Also, <strong>don't use "suppose we could sort the price out" on someone who's offended or in a hurry</strong>: it carries a transactional smell and reads like a trap.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Agree first: argue, and they start defending their own sentence
+<span class="en">Agree first: the moment you argue, they start defending their own sentence</span></h2>
+<span class="tag">reactance</span><span class="tag">affect labeling</span><span class="tag">autonomy</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Right after someone voices an objection, what they care about isn't your offer — it's <strong>not looking stupid for having said that</strong>. The harder you push to prove them wrong, the harder they hold on. <strong>Let them confirm that you understood and that you aren't going to force them, and only then do they have the capacity to re-run the numbers.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"People are generally better persuaded by the reasons which they have themselves discovered than by those which have come into the mind of others."</span>
+<span class="source">— Blaise Pascal, <em>Pensées</em> (1670)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">One objection, two routes</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 344" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#c0603a"></path>
+</marker>
+<marker id="m3" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="20">They say: "Our spreadsheet works fine for us."</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="20" y="46">The rebuttal route</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" x="380" y="46">The agreement route</text>
+<rect fill="#f6e3da" height="52" rx="5" stroke="#c0603a" stroke-width="1.3" width="300" x="20" y="56"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="34" y="78">"Spreadsheets have three fatal flaws…"</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" x="34" y="96">(possibly all true)</text>
+<line marker-end="url(#m2)" stroke="#c0603a" stroke-width="1.5" x1="170" x2="170" y1="110" y2="128"></line>
+<rect fill="#f6e3da" height="52" rx="5" stroke="#c0603a" stroke-width="1.3" width="300" x="20" y="132"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="34" y="154">What they hear: you chose badly</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" x="34" y="172">Autonomy threatened → reactance</text>
+<line marker-end="url(#m2)" stroke="#c0603a" stroke-width="1.5" x1="170" x2="170" y1="186" y2="204"></line>
+<rect fill="#f6e3da" height="52" rx="5" stroke="#c0603a" stroke-width="1.3" width="300" x="20" y="208"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.5" x="34" y="230">They start listing what the sheet does well</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" x="34" y="248">Position now firmer than before</text>
+<rect fill="#e2efdc" height="52" rx="5" stroke="#4e8a3f" stroke-width="1.3" width="300" x="380" y="56"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="394" y="78">"If it works, don't switch — is it the hassle?"</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9" x="394" y="96">(label + concede what's true)</text>
+<line marker-end="url(#m3)" stroke="#1f7a5c" stroke-width="1.5" x1="530" x2="530" y1="110" y2="128"></line>
+<rect fill="#e2efdc" height="52" rx="5" stroke="#4e8a3f" stroke-width="1.3" width="300" x="380" y="132"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.5" x="394" y="154">"Totally your call — I'm not pushing."</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9" x="394" y="172">Choice handed back → reactance drops</text>
+<line marker-end="url(#m3)" stroke="#1f7a5c" stroke-width="1.5" x1="530" x2="530" y1="186" y2="204"></line>
+<rect fill="#dfeae2" height="52" rx="5" stroke="#1f7a5c" stroke-width="1.5" width="300" x="380" y="208"></rect>
+<text fill="#25402f" font-family="Georgia" font-size="9.5" x="394" y="230">"One question: what about shift swaps?"</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9" font-weight="700" x="394" y="248">They name the gap themselves</text>
+<line stroke="#cbb98f" stroke-width="1" x1="20" x2="680" y1="272" y2="272"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.5" font-weight="700" x="20" y="294">The fork isn't in the content — it's in whether they felt the choice being taken away</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="20" y="316">Naming a feeling tracks with reduced amygdala activity (Lieberman et al., 2007); "totally your call" has meta-analytic support (Carpenter, 2013).</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" x="20" y="336">The right-hand route still ends in a question, not a feature — you point at the gap, they draw the conclusion.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: the customer says "we've done rostering in a spreadsheet for six years and it's fine." You know spreadsheets break on shift swaps and multi-site sync.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Win on facts</div>
+<p>"Spreadsheets have three fatal problems: version conflicts, no permissions, and every change means messaging everyone…"<br/>—— Every point is correct and every point is useless. You said "that method has problems"; they heard "your judgement for six years was wrong." From here they stop evaluating the product and start defending themselves: <strong>"we're small, it's enough for us."</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Concede → label → hand back the choice → ask one narrow question</div>
+<p>"Six years and it still works, so it's probably genuinely a good fit — I don't think you should replace something just because it's replaceable. <strong>(concede the fact)</strong><br/>Sounds like the real cost here is having to go through a migration — is that fair? <strong>(label the concern, and leave room to be corrected — a correction is a win too)</strong><br/>Whether you switch is entirely your call; I'm not going to push it today. <strong>(hand the choice back explicitly)</strong><br/>Just one question: when somebody swaps a shift at short notice, who edits the sheet, and how do the other two sites find out?" <strong>(one narrow gap)</strong><br/>—— The first three lines never mention your product. On the fourth, they either say "yeah, that does get messy" or "we have a group chat." <strong>Either way the gap came out of their mouth, not yours</strong> — and those two things weigh completely differently.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: rebuttal steps on two mines at once. First, autonomy — the moment people sense a freedom being removed, they generate a drive to take it back, and the cheapest way to take it back is to hold their sentence harder. Second, an unnamed worry sits as diffuse tension, and nobody can be tense and do arithmetic at the same time. So the order has to be: cool it down, then reason.</strong></p>
+<ul>
+<li><strong>Hard evidence · reactance is measurable</strong>: Brehm (1966) introduced reactance theory; Dillard &amp; Shen (2005, <em>Communication Monographs</em>) showed experimentally that it decomposes into <strong>anger</strong> and <strong>counter-arguing</strong>, intertwined — the more forceful and freedom-threatening the message, the higher both run and the further attitudes move the wrong way. Which explains the counterintuitive part: the more thoroughly you argue, the firmer they sometimes get.</li>
+<li><strong>Hard evidence · "but you are free to refuse" buys compliance</strong>: Guéguen &amp; Pascual (2000) asked strangers in the street for bus fare; simply appending "but you are free to accept or refuse" lifted compliance from roughly one in ten to nearly half. Carpenter (2013, <em>Communication Studies</em>) meta-analysed 42 studies and confirmed the effect is <strong>reliable but small (r ≈ 0.17)</strong>. <strong>What it adds isn't pressure — it's autonomy.</strong></li>
+<li><strong>Hard evidence · naming a feeling cools it</strong>: Lieberman et al. (2007, <em>Psychological Science</em>) had participants <strong>label</strong> emotional faces rather than merely view them: <strong>amygdala</strong> activity dropped markedly while <strong>right ventrolateral prefrontal cortex</strong> activity rose, the two inversely related — labelling is itself a form of implicit emotion regulation (Torre &amp; Lieberman, 2018, <em>Emotion Review</em>). <strong>Honest note on the extrapolation: in the study people labelled emotions they saw, not a salesperson labelling a customer's.</strong> It supports the mechanism "putting it into words cools it," not the claim that labelling scripts raise close rates — that rests mainly on Voss-style field experience, which is weaker evidence. (cross-ref neuroscience)</li>
+</ul>
+<p class="caveat">Three boundaries. <strong>One, concede the fact, never the conclusion</strong>: faking agreement and then adding "but" is heard within a second and damages trust more than open disagreement. <strong>Two, "totally your call" has to be true</strong>: saying it and then chasing three more times is lying to someone's face. <strong>Three, leave room to be corrected</strong> — "sounds like…, is that fair?" not "I know you're just worried about the hassle." The second one delivers a verdict on their behalf, which is a fresh offence of its own.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Script · four lines, in this order</div>
+<div class="template">
+<span class="label">Restate → label → hand back → ask</span>
+<p>· <strong>Restate the fact</strong>: "You're saying ___, and it's never caused a real problem."</p>
+<p>· <strong>Label the concern</strong> (leave room): "Sounds like it's mostly not wanting a migration — is that fair?"</p>
+<p>· <strong>Hand back the choice</strong>: "Whether you switch is entirely your call; I'm not pushing today."</p>
+<p>· <strong>Ask one narrow question</strong>: "Just one question: when ___ happens, how is it handled now?"</p>
+<p>· No "but" anywhere. If you need a turn, use a full stop instead of a conjunction.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>Move objections earlier: intel before the quote, siege after it
+<span class="en">Move objections earlier: intel before the quote, crisis after it</span></h2>
+<span class="tag">inoculation theory</span><span class="tag">objection prevention</span><span class="tag">two-sided messages</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The same "too expensive" is ground you have to defend when it arrives <strong>after</strong> your quote, and free intelligence when it arrives <strong>before</strong>. <strong>The best objection handling is not letting it wait until the last minute</strong> — invite it to the table yourself and it can no longer function as a reason to say no.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"An ounce of prevention is worth a pound of cure."</span>
+<span class="source">— attributed to Benjamin Franklin (proverbial)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">How to give the shot</div>
+<div class="template">
+<span class="label">Inoculation in three steps: weak version + resolve it on the spot + hand back the judgement</span>
+<p>· <strong>List your three standing objections</strong> (go through the last ten stalled conversations — they repeat).</p>
+<p>· <strong>Raise them yourself during discovery, in a weakened form</strong>: "the first two weeks of data migration are genuinely annoying, other customers have said so."</p>
+<p>· <strong>Resolve it there and then</strong>: "which is why I do the import; you just send me the raw export."</p>
+<p>· <strong>Hand the judgement back</strong>: "whether those two weeks are worth it, decide after you've seen the pilot."</p>
+<p>· Before quoting, run the <strong>rehearsal question</strong>: "when you take this to your team, which line are you most likely to get stuck on?" That line is what kills the deal in the room you're not in.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: you're about 30% more expensive than the competition, and they will definitely go and compare.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Hide it and hope</div>
+<p>Don't mention it, trust that service will win them over. Then they get the rival quote and open with "they're 30% cheaper" — and now every explanation you give sounds like backfilling. <strong>The number they saw first became the anchor, and everything you say afterwards is arguing with an anchor.</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Say it first, and hand them the comparison method</div>
+<p>"One thing up front: we're roughly 30% more expensive than the cheap end of the market, and that gap is real. It buys two things — we do the migration, and someone picks up the phone within two hours when something breaks.<br/>If you are comparing, I'd compare three things: who does the import, who you call when it breaks, and whether year-two renewal goes up. <strong>If you compare and decide it isn't worth it, choosing them is a perfectly reasonable call.</strong>"<br/>—— "Expensive" goes from something you got caught on to something you flagged; the <strong>criteria</strong> for comparison are set by you; and that last sentence stops the whole thing sounding like a pitch. By the time they hold the cheaper quote, they're holding your checklist too.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: exactly like a vaccine — give a weakened, controlled version of the attack and people spontaneously generate reasons against it. When they later meet the strong version (a rival's quote, a colleague's "isn't that expensive?"), the ammunition is already theirs, and self-made ammunition lasts. Bonus: volunteering a weakness raises credibility, because advertising never admits its own faults.</strong></p>
+<ul>
+<li><strong>Hard evidence · inoculation theory</strong>: McGuire &amp; Papageorgis (1961) found in the original experiments that people pre-exposed to <strong>weakened counter-arguments, and given refutations</strong>, held their position far better under a subsequent strong attack than people given only supportive arguments. Banas &amp; Rains (2010, <em>Communication Monographs</em>) meta-analysed the literature and confirmed inoculation confers resistance, with a <strong>small but reliable effect</strong>.</li>
+<li><strong>Fairly strong evidence · admitting a flaw raises credibility</strong>: Eisend (2006, <em>International Journal of Research in Marketing</em>) meta-analysed two-sided messages and found a consistent advantage on <strong>credibility</strong>, with the net effect depending on how heavy and how relevant the negative is. The flaw you admit has to be one they <strong>were going to hit anyway</strong> — not a core defect that would justify walking away. Admitting that isn't candour; it means you shouldn't be selling it.</li>
+<li><strong>Industry data · skilled sellers receive fewer objections</strong>: Rackham, <em>SPIN Selling</em> (1988), drawing on Huthwaite's observation of some thirty-five thousand sales calls, reached a counterintuitive conclusion: <strong>a large share of objections are created by the seller</strong> — piling on features and advantages early measurably increases price objections. <strong>Strength: vendor-owned research, not peer-reviewed, raw data unpublished</strong>, but pointing the same way as the two findings above.</li>
+</ul>
+<p class="caveat">Boundary: <strong>inoculation has a dose.</strong> Too heavy ("we're often late") isn't inoculation, it's suicide; too light ("if I had to name a flaw, we care too much") carries no threat, produces no resistance, and sounds oily. One test only: <strong>is this a pothole they will definitely hit after go-live?</strong> If yes, say it now — you've moved their discovery of it from "furious" to "prepared." If no, don't invent one to look candid. Also, inoculation is for people <strong>already leaning your way</strong>; with someone who disagrees to begin with, voicing the counter-argument first just hands your rival a microphone.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 20 Action</h3>
+<p>No new scripts today. Just turn the objections you've already heard into a table you can look things up in.</p>
+<div class="action">
+<strong>One (20 minutes):</strong> go through your last 10 stalled or dead conversations and write down what the other person <strong>actually said</strong> — their words, not your paraphrase. Paraphrase flatters automatically.<br/><br/><strong>Two (10 minutes):</strong> tag each line: no need / no trust / no hurry / too expensive. Put the ones that won't tag in a separate pile — that pile is usually the valuable one. Count which cell is biggest. <strong>That cell is your actual bottleneck, and it's probably not the one you assumed.</strong><br/><br/><strong>Three (15 minutes):</strong> write exactly two sentences for the biggest cell: one diagnostic question, one line of agreement to open with. Don't write a third — you won't remember any of them live.<br/><br/><strong>Four (next call):</strong> practise one move only — when you hear an objection, restate it and ask a question back, and never once defend. Afterwards note whether they loosened or hardened.<br/><br/><strong>Five (this week):</strong> take the most frequent objection and move it into the opening of your next discovery call — weakened version, resolved on the spot.<br/><br/>Boundary: triage, labelling and handing back the choice are all tools for <strong>making the truth easier to say</strong>. They are not switches that turn "no" into "yes." Some "we don't need it" really means they don't need it, and some "too expensive" really means they can't afford it — spotting those and letting go cleanly sends the time you save to someone who does need you.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. When they say "let me think about it," should I chase? How many times before it's harassment?</summary>
+<div class="answer">First separate two things that get lumped together: <strong>"I don't want it" and "I'm scared of choosing wrong."</strong> The first is a demand problem and chasing is waste; the second is an uncertainty problem, and chasing correctly is exactly what helps — and it's more common than people assume, because someone afraid of choosing wrong almost never says no, they say "let me think."<br/><br/>Open your next call by splitting the two with one line: <strong>"Since last time — is this just not on the list, or is there a piece you can't quite sign off on? Say it straight, I won't hound you."</strong> That second clause is mandatory; it drops the cost of honesty to zero. If the answer is "not on the list," stop pitching and just agree a restart point tied to a hard date they already have (before the new site opens, before the audit, before peak season) — then genuinely let go. If the answer is "I can't sign off on X," the objection has surfaced; go back to triage.<br/><br/>As for how many times: <strong>the count isn't the point, what you bring each time is.</strong> "Just checking where you landed" is extraction, and three of those is harassment. Bring something usable each time — how a same-sized customer handled that exact pothole, a one-pager they can take to their boss — and five is fine. <strong>Hard line: chasing after an explicit "no thanks" is harassment, no exceptions.</strong> And if you said "totally your call," you have to actually stop; the entire value of that sentence is that it was true.</div>
+</details>
+<details>
+<summary>2. Won't constant agreeing make me look spineless? When should I just say they're wrong?</summary>
+<div class="answer">It will — if what you're agreeing with is the <strong>conclusion</strong>. The distinction: <strong>concede facts, never conclusions.</strong> "Six years without a serious failure" is a fact; agree with it sincerely. "So we don't need to change" is a conclusion; you don't have to echo it or rebut it — just ask a specific question. Faking agreement and adding "but" is the worst of both: it's heard instantly, you don't look decisive, and you've spent your sincerity.<br/><br/><strong>Three situations demand a straight answer.</strong> One, <strong>a factual error that would make them buy wrong</strong> — "this integrates with our old system, right?" If it doesn't, say so on the spot; vagueness here costs a hundred times more than the awkwardness. Two, <strong>what they want to buy isn't what they need</strong> — "from what you've described, you shouldn't be buying this from us." It loses the deal and it is the highest-return sentence in the job. Three, <strong>they're comparing on an obviously wrong criterion</strong> (first-year price with no view of renewal) — but give the criteria before the verdict: "I'd compare these three things" beats "you're comparing it wrong."<br/><br/>The rule of thumb: <strong>be hard on facts and soft on posture.</strong> Soft means "I'm not forcing you and I don't think you're foolish." Hard means "that number is wrong, and we can't do that." Most people have it exactly backwards.</div>
+</details>
+<details>
+<summary>3. Labelling, giving freedom, inoculating — where's the line against manipulation?</summary>
+<div class="answer">One line you can apply in the moment: <strong>are you reducing their uncertainty, or manufacturing it?</strong> The first is persuasion, the second is manipulation.<br/><br/>Side by side it's obvious. "The migration is genuinely annoying for two weeks, and I'll do it" reduces uncertainty; "this price is only good until tonight" manufactures it. "What would you need to see before you'd be comfortable?" hands them back their own criteria; "if you keep hesitating a competitor will get there first" borrows their loss-sensitivity to bypass their judgement — the same line the scarcity-and-urgency issue drew: <strong>real scarcity can be stated, manufactured scarcity can't.</strong><br/><br/>Three finer checks. <strong>One, is "totally your call" true?</strong> Say it and keep chasing, and it stops being respect and becomes a technique. <strong>Two, is the labelling for understanding or for control?</strong> "Sounds like it's the hassle — is that fair?" leaves room to be corrected; "I know you're just afraid of the trouble" delivers a verdict. One is a question, the other a sentence. <strong>Three, is the flaw you inoculate with real?</strong> Picking a harmless fake weakness to look candid isn't a two-sided message, it's theatre.<br/><br/>And in the end, the same ruler: <strong>if they later learned the whole truth, would they feel helped or conned?</strong> When you can't answer that, you usually already know the answer.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 20</footer>
+</div>
+</body>
+</html>
