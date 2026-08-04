@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 22: Negotiation Basics</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 22 · Phase D</div>
+<h1>Add Variables to the Table Before You Argue About Splitting</h1>
+<div class="meta"><span>Topic: positions vs interests · BATNA · growing the pie · a one-page prep sheet</span><span>·</span><span>4 moves · 3 diagrams</span></div>
+<div class="subtitle">Your power at the table was set before you walked into the room — and it wasn't set by how well you talk. It was set by what you still have if you get up and leave.</div>
+</header>
+<div class="intro">
+<strong>Most people picture a negotiation as a tug of war: one rope, and every inch you gain is an inch they lose.</strong> Real negotiations rarely look like that. The two sides weight things differently, so the same money in a different arrangement can leave both of you better off. The problem is that people assume the other side wants exactly the opposite of what they want, so they never check. Researchers call it the fixed-pie perception: a conversation that should have been addition, argued as subtraction for three hours.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>They state a position; what you're after is the interest underneath it
+<span class="en">A position is one solution; interests are the constraints behind it</span></h2>
+<span class="tag">positions vs interests</span><span class="tag">fixed-pie perception</span><span class="tag">ask how</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle"><strong>A position is the one solution they picked; their interests are the constraints that made them pick it.</strong> A person can only state one position, but the same constraints usually have several solutions. Conceding on a position is guessing. Solving on interests is arithmetic.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Your position is something you have decided upon. Your interests are what caused you to so decide."</span>
+<span class="source">— Fisher &amp; Ury, <em>Getting to Yes</em> (1981)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">One deadlock, two layers</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 306" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Opposed on the surface, not necessarily underneath</text>
+<rect fill="#f6e3da" height="50" rx="6" stroke="#c0603a" stroke-width="1.4" width="250" x="30" y="38"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.4" font-weight="700" x="44" y="60">POSITION · the client</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.6" x="44" y="78">"All of it live on December 1"</text>
+<rect fill="#f6e3da" height="50" rx="6" stroke="#c0603a" stroke-width="1.4" width="250" x="420" y="38"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.4" font-weight="700" x="434" y="60">POSITION · you</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.6" x="434" y="78">"Mid-January at the earliest"</text>
+<text fill="#697682" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="350" y="60">Deadlock</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="350" y="78">one axis only</text>
+<line marker-end="url(#m1)" stroke="#3f5c7a" stroke-width="1.5" x1="155" x2="155" y1="90" y2="122"></line>
+<line marker-end="url(#m1)" stroke="#3f5c7a" stroke-width="1.5" x1="545" x2="545" y1="90" y2="122"></line>
+<text fill="#3f5c7a" font-family="Georgia" font-size="9" x="164" y="110">ask one "how"</text>
+<text fill="#3f5c7a" font-family="Georgia" font-size="9" x="554" y="110">say one "why"</text>
+<rect fill="#eef1f5" height="62" rx="6" stroke="#3f5c7a" stroke-width="1.4" width="250" x="30" y="126"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.4" font-weight="700" x="44" y="148">INTEREST · what they need</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.6" x="44" y="166">Something to demo at the annual</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.6" x="44" y="182">meeting — not "every feature shipped"</text>
+<rect fill="#eef1f5" height="62" rx="6" stroke="#3f5c7a" stroke-width="1.4" width="250" x="420" y="126"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.4" font-weight="700" x="434" y="148">INTEREST · what you need</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.6" x="434" y="166">December is the migration; you</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.6" x="434" y="182">can't fight on two fronts at once</text>
+<line marker-end="url(#m1)" stroke="#4e8a3f" stroke-width="1.5" x1="155" x2="300" y1="190" y2="228"></line>
+<line marker-end="url(#m1)" stroke="#4e8a3f" stroke-width="1.5" x1="545" x2="400" y1="190" y2="228"></line>
+<rect fill="#dfeae2" height="46" rx="6" stroke="#4e8a3f" stroke-width="1.6" width="350" x="175" y="234"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10.6" font-weight="700" text-anchor="middle" x="350" y="256">A solution that satisfies both sets</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="350" y="272">Core module + demo script in December, the rest in January</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="298">There is only one position; there are often several solutions to the same interests — if you know what they are.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: procurement is locked onto one sentence — "the budget is one hundred thousand, not a penny more." You quoted a hundred and thirty.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Trade up and down their axis</div>
+<p>"Would one twenty work?" "No. A hundred." "One fifteen, that's the floor." Two people sliding along a single number line: closing means cutting into yourself, and not closing leaves both sides resentful. <strong>Worse, you have no idea where that hundred came from.</strong> A guess, an approval threshold, a line from their boss — three different problems with three different solutions, and you tried none of them.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Ask where the number came from</div>
+<p>"A hundred, noted. <strong>Can I ask how that number was set?</strong> Is that all that's left in this line for the year, or does anything above a hundred go through a different process?"<br/>(Them: above a hundred it goes to group review, three months minimum.)<br/>—— One question, and the problem stops being "cut thirty" and becomes "stay under that approval line." At least three solutions exist: <strong>sign 98 for the core scope this year and order the rest early next; split it into two purchases; or set up an annual framework agreement.</strong> You haven't moved a cent and their real constraint is solved.<br/>—— And if the answer is "there simply is no money," you've saved three rounds of haggling and can go straight to cutting scope.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: a position is a solution; an interest is a constraint. Conceding inside the solution space can only move value from one side to the other. Go back to the constraints and there are usually several feasible solutions, some of them better for both. People don't go back because they assume the other side's interests are the mirror image of their own — an assumption that is often wrong and, unasked, never gets overturned.</strong></p>
+<ul>
+<li><strong>Hard evidence · the fixed-pie perception is everywhere</strong>: Thompson &amp; Hastie (1990, <em>OBHDP</em>) found negotiators almost universally start out assuming the other party's preferences are directly opposed to theirs — and <strong>those who correct that judgement in the opening minutes end up with significantly higher joint gains.</strong> Peer-reviewed and repeatedly replicated.</li>
+<li><strong>Hard evidence · both sides want the same thing and still settle worse</strong>: Thompson &amp; Hrebec (1996, <em>Psychological Bulletin</em>), a meta-analysis of 32 studies and roughly 5,000 negotiators, found that where the two sides' interests on an issue were perfectly compatible, <strong>about half of negotiators failed to notice</strong>, and around a fifth signed agreements that left both parties worse off. That's not a skill gap; nobody checked.</li>
+<li><strong>Reasonably strong · trading priorities alone lifts the outcome</strong>: Thompson (1991, <em>JESP</em>) showed that simply having each side say which issue matters more to them significantly improved integrative outcomes — far more effective than probing with offers. <strong>Strength: lab experiments, mostly student subjects</strong>; in the wild people can misstate priorities, so verify with specific questions.</li>
+</ul>
+<p class="caveat">Boundary: <strong>not every position hides a reconcilable interest.</strong> Sometimes their interest genuinely is "spend less this quarter," and digging still leaves you at zero-sum. Sometimes the real interest is political (they need to show their boss they got you down), in which case give them something to take back as a win rather than more reasoning. And ask the "how" neutrally — said hard, it becomes an interrogation.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>BATNA: your nerve isn't in your mouth, it's outside the door
+<span class="en">Your power is what you have if you walk out</span></h2>
+<span class="tag">BATNA</span><span class="tag">reservation price</span><span class="tag">ZOPA</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle"><strong>Your BATNA is the best thing you can do if this deal dies</strong> (Best Alternative To a Negotiated Agreement). It sets your reservation price — below that number, no deal beats a deal. Which means almost everything that raises your negotiating power happens away from the table.</div>
+</div>
+<div class="section">
+<div class="section-label">Two BATNAs decide whether a deal exists at all</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 268" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#8a6a20"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Four points on one price axis (an outsourced project)</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.4" text-anchor="middle" x="250" y="52">Seller's BATNA: another client at 100k</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.4" text-anchor="middle" x="520" y="52">Buyer's BATNA: hire in-house, about 180k</text>
+<line stroke="#6a8577" stroke-dasharray="4,3" stroke-width="1.3" x1="250" x2="250" y1="102" y2="176"></line>
+<line stroke="#6a8577" stroke-dasharray="4,3" stroke-width="1.3" x1="520" x2="520" y1="102" y2="176"></line>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="250" y="80">Seller's floor: 120k</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" text-anchor="middle" x="250" y="95">below this, take the other job</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="520" y="80">Buyer's ceiling: 180k</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" text-anchor="middle" x="520" y="95">above this, they build it themselves</text>
+<rect fill="#dfeae2" height="30" rx="4" stroke="#4e8a3f" stroke-width="1.5" width="270" x="250" y="118"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="385" y="138">ZOPA · zone of possible agreement</text>
+<line marker-end="url(#m2)" stroke="#8a6a20" stroke-width="1.6" x1="40" x2="670" y1="160" y2="160"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="40" y="178">low</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="646" y="178">high</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" x="60" y="200">here the seller would rather walk</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" x="470" y="200">here the buyer would rather walk</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-weight="700" x="20" y="228">The zone is set by two BATNAs, not by who sounds firmer.</text>
+<text fill="#697682" font-family="Georgia" font-size="9.2" x="20" y="250">To get more: improve your own BATNA, or show them how expensive theirs is. Neither happens at this table.</text>
+<text fill="#697682" font-family="Georgia" font-size="9.2" x="20" y="264">When the two floors cross and the zone is negative, the best move is not to negotiate at all.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Checklist: write these four down before you go in</div>
+<div class="template">
+<span class="label">Unwritten, you will invent a floor under pressure</span>
+<p>· <strong>What is my BATNA?</strong> Be specific: not "find another client" but "client A's 100k order needs an answer this week." A vague alternative is no alternative.</p>
+<p>· <strong>My reservation price</strong>: derived from the BATNA, plus switching costs and risk. Write it on paper and take it in with you.</p>
+<p>· <strong>What is their BATNA worth?</strong> If they don't buy from you, what do they do and what does it cost? That number is where every value argument lands.</p>
+<p>· <strong>My target</strong> (not my floor — the number I actually want) and the reasoning behind it. Walk in with only a floor and you'll close near the floor.</p>
+<p>· <strong>The highest-value thing to do in the 48 hours before a negotiation isn't rehearsing lines — it's getting one more alternative</strong>: one more quote, one more offer, one more supplier. It beats any script.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: you're negotiating an offer. HR says, "That's the ceiling for this level."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Prop yourself up with an invented alternative</div>
+<p>"I have two other offers, both higher." If it isn't true the risk is severe: it invites specifics (which company? what role? by when?), and once it collapses everything else you said gets discounted. <strong>An invented BATNA also can't hold you up:</strong> they say "you should think seriously about that one," and you discover you were never prepared to leave.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Use a real alternative, plus a variable to trade</div>
+<p>"I understand there's a ceiling on the level. <strong>I am in a final round elsewhere, so I want to make this decision properly.</strong> If base can't move, could we look at three things: a signing bonus, the vesting schedule, or an early review at six months? Any one of them makes this straightforward for me."<br/>—— A real alternative steadies your voice without you acting, and splitting one axis into three gives them a way to pay you that doesn't break their rules. <strong>With no real alternative you need this step even more: you're not fighting for leverage, you're making it easier for them to say yes.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: the only reason a deal exists is that agreement beats no agreement. So your floor isn't "what I want," it's "what I get if we don't agree" — an external number that their pressure cannot touch. It's also why threats and stalling barely register with someone who has a real alternative: their floor isn't at this table.</strong></p>
+<ul>
+<li><strong>Reasonably strong · the side with an alternative gets more</strong>: Pinkley, Neale &amp; Bennett (1994, <em>OBHDP</em>) found that negotiators given an attractive alternative systematically achieved better outcomes in the same negotiation, with information otherwise equal. Peer-reviewed lab work, consistent in direction.</li>
+<li><strong>Mechanism note · an alternative is what lets you refuse</strong>: turning down a bad offer has a real psychological cost (the ultimatum-game neuroscience in the last section shows that cost), and a genuine alternative is what pays it — which is also why people with weak alternatives fold as a deadline approaches. (cross-ref psychology / neuroscience)</li>
+<li><strong>Practitioner framework · the concept itself</strong>: Fisher &amp; Ury, <em>Getting to Yes</em> (1981) introduced and popularised it. <strong>Strength: a conceptual framework, not an experimental result</strong> — its value is turning "my floor" from a feeling into something you can compute.</li>
+</ul>
+<p class="caveat">Three boundaries. <strong>One, the BATNA must be real</strong>: a fabricated one is checkable, and being caught costs you the credibility you already had. <strong>Two, don't brandish it</strong> — "I have other options," said with weight, is a threat and invites retaliation; simply say you're comparing. <strong>Three, a weak BATNA isn't a lost cause</strong>: the right response is to add issues (next section) and start improving your alternatives now, not to grind it out at the table.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>One issue is zero-sum by construction; two issues make a trade
+<span class="en">One issue is a tug of war; two issues are a trade</span></h2>
+<span class="tag">grow the pie</span><span class="tag">logrolling</span><span class="tag">simultaneous offers</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Whenever the two sides <strong>weight the issues differently</strong>, a trade exists: hand over what you barely care about, take back what they barely care about. Same total, both sides happier. <strong>Zero-sum is a product of how many issues are on the table, not the nature of negotiation.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">One deal, three issues, different weights</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 292" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m3" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Longer bar = cares more</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" x="190" y="46">You</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="430" y="46">Them</text>
+<text fill="#37493f" font-family="Georgia" font-size="10.2" x="24" y="76">Price</text>
+<rect fill="#dfeae2" height="18" rx="3" stroke="#4e8a3f" stroke-width="1.2" width="170" x="190" y="62"></rect>
+<rect fill="#f6e3da" height="18" rx="3" stroke="#c0603a" stroke-width="1.2" width="136" x="430" y="62"></rect>
+<text fill="#697682" font-family="Georgia" font-size="9" x="574" y="76">both care → the real fight</text>
+<text fill="#37493f" font-family="Georgia" font-size="10.2" x="24" y="122">Delivery date</text>
+<rect fill="#dfeae2" height="18" rx="3" stroke="#4e8a3f" stroke-width="1.2" width="54" x="190" y="108"></rect>
+<rect fill="#f6e3da" height="18" rx="3" stroke="#c0603a" stroke-width="1.2" width="170" x="430" y="108"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9" font-weight="700" x="608" y="122">→ give it</text>
+<text fill="#37493f" font-family="Georgia" font-size="10.2" x="24" y="168">Payment terms</text>
+<rect fill="#dfeae2" height="18" rx="3" stroke="#4e8a3f" stroke-width="1.2" width="160" x="190" y="154"></rect>
+<rect fill="#f6e3da" height="18" rx="3" stroke="#c0603a" stroke-width="1.2" width="34" x="430" y="154"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9" font-weight="700" x="472" y="168">→ cheap for them</text>
+<line marker-end="url(#m3)" stroke="#4e8a3f" stroke-width="1.6" x1="350" x2="350" y1="182" y2="212"></line>
+<rect fill="#f7faf6" height="42" rx="6" stroke="#4e8a3f" stroke-width="1.5" width="620" x="40" y="216"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10.6" font-weight="700" x="56" y="234">The trade: "You get the December date — in exchange, half up front and the price holds."</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="56" y="250">You spend schedule (low weight for you) and take back cash flow (low weight for them). Same total, both better off.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="282">It requires knowing each side's weights — which is why "which of these matters most?" is worth more than any pricing trick.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts</div>
+<div class="template">
+<span class="label">Three steps: add issues → ask for ranking → trade in packages</span>
+<p>· <strong>Add issues (before you quote)</strong>: "Besides price, a few things usually shape this decision: timing, payment terms, scope, contract length. <strong>How do those rank on your side?</strong>"</p>
+<p>· <strong>Ask for the ranking, not the ask</strong>: "If you could only protect one of these, which would it be?" A ranking is more honest than a demand, because it forces a trade-off.</p>
+<p>· <strong>Trade in packages, never issue by issue</strong>: "If it's half up front and a two-year term, I can hit the December date and the price holds." Settling one issue at a time turns every issue into its own tug of war; only packages create trades.</p>
+<p>· <strong>Put two or three equivalent packages on the table at once (MESO)</strong>: "A: December delivery, 50% up front, 130k. B: January delivery, 60-day terms, 130k. C: December delivery, 60-day terms, 145k. <strong>Which do you lean toward?</strong>" Their pick tells you their weights, and since the three are worth about the same to you, any answer is fine.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: the client wants "110." Your reservation price is 120 and your target is 130.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Answer only on price</div>
+<p>"110 doesn't work, I can do 125." You've just conceded that this whole negotiation is a price axis. Whether you land on 125 or 120, it's only a question of how much you lose — and what they learned is: <strong>push and it moves.</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Widen the axis, then package</div>
+<p>"110 depends on what it comes with. <strong>Here are two combinations that both work for me:</strong> A, 110, drop the data migration, delivery mid-January. B, 130, full scope, December delivery, half up front.<br/>—— <strong>Which matters more: saving the twenty, or having something to demo in December?</strong>"<br/>(They pick B.) —— The moment they choose, you know their real constraint is the annual meeting, not the money. That information never surfaces in a pure price fight.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: on a single issue, distribution is necessarily one side's gain and the other's loss. With two or more issues, any difference in marginal weights creates a trade that leaves both sides better off — a Pareto improvement. "Grow the pie" isn't a slogan, it's a structure you can compute, provided you know their ranking, which you only learn by asking and testing.</strong></p>
+<ul>
+<li><strong>Hard evidence · trading beats splitting</strong>: Froman &amp; Cohen (1970, <em>Behavioral Science</em>) compared two negotiation processes directly and found that <strong>trading across issues (logrolling) produced significantly higher joint outcomes than compromising halfway on each issue.</strong> A foundational result in integrative-bargaining research, replicated many times since.</li>
+<li><strong>Hard evidence · if you don't check, you miss it</strong>: the Thompson &amp; Hrebec (1996) meta-analysis cited earlier also prices the failure — <strong>where a perfectly compatible issue existed, about half of negotiators never spotted it.</strong> The main obstacle to growing the pie isn't technique, it's that nobody asks.</li>
+<li><strong>Weaker evidence · simultaneous equivalent offers (MESO)</strong>: mainly popularised by Medvec, Galinsky and colleagues at Kellogg, with lab studies supporting better integrative outcomes and less adversarial feel. <strong>Strength: lab work and practitioner synthesis, no large field experiments</strong> — a tool, not a law. Its precondition is strict: <strong>the packages must genuinely be worth the same to you</strong>, otherwise you're steering, not offering.</li>
+</ul>
+<p class="caveat">Boundary: <strong>some negotiations really are single-issue</strong> — a used phone off a listing, a one-off purchase of a standard part. Manufacturing issues there just wastes time and reads as slippery. The test is simple: <strong>besides money, is there a second thing that affects this decision?</strong> If not, talk price. Also, stating your priorities first can be exploited, so the safer route is <strong>to express priorities through whole packages rather than admitting out loud which issue you don't care about</strong>.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>Soft on the person, immovable on the terms — and when to stand up
+<span class="en">Soft on the person, hard on the problem</span></h2>
+<span class="tag">fairness</span><span class="tag">ultimatum game</span><span class="tag">walk-away discipline</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">People don't only compute money: <strong>when they judge they've been treated unfairly, they will pay out of their own pocket to punish you.</strong> A deal squeezed out of someone who felt humiliated doesn't cost you on signing day — it costs you across delivery, renewal and word of mouth. Be immovable on terms; leave the person their dignity.</div>
+</div>
+<div class="section">
+<div class="section-label">Checklist: the one-page prep sheet (20 minutes before)</div>
+<div class="template">
+<span class="label">Walk in with this and you won't invent a floor on the spot</span>
+<p>· <strong>My interests</strong> (three, ranked) | <strong>my guess at their interests</strong> (three, marked as guesses)</p>
+<p>· <strong>My BATNA / reservation price / target</strong> | <strong>what their BATNA is worth</strong></p>
+<p>· <strong>Issue list</strong>: beyond price — timing, scope, payment terms, contract length, named case study, ongoing support — <strong>and mark which ones are cheap for me and valuable to them</strong>. That's your ammunition.</p>
+<p>· <strong>Two or three equivalent packages</strong>, plus <strong>my opening question</strong> (usually "besides price, what else is shaping this decision for you?").</p>
+<p>· <strong>Walk-away triggers</strong>: written, e.g. "below 120," "unlimited revisions," "payment beyond 90 days." <strong>Written down is what makes them hold</strong> — in the room, willpower loses to the urge to end the conversation.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: they've already agreed to your price, then add one last thing — "throw in three months of free support, or we'll think about it again."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Give it away to protect the deal</div>
+<p>"Fine, it's yours." You've taught them one thing: <strong>a late add-on works.</strong> It will come back at renewal and at every change request — and the three free months become the baseline they think they were always entitled to.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Warm tone, terms unchanged</div>
+<p>"I want this to happen. <strong>Support has a real cost, though, so I can't hand it over.</strong> Two ways: add 8k for a three-month support pack, or introduce me to one company like yours and I'll include the three months. <strong>Which is easier for you?</strong>"<br/>—— Friendly throughout, not a step conceded, and two face-saving exits offered. <strong>Concessions always trade for something — that part never bends. How you decline can be very soft.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: fairness is a motivational system independent of money. When an offer is judged unfair, people experience something close to disgust and will pay a real cost to reject it — even when rejecting leaves them with nothing. So "squeeze them to the floor" wins on arithmetic and frequently backfires on humans.</strong></p>
+<ul>
+<li><strong>Hard evidence · people pay to punish unfairness</strong>: in the ultimatum game (Güth, Schmittberger &amp; Schwarze, 1982) a proposer splits a sum and the responder can only accept or reject it outright, with rejection paying both sides nothing. <strong>Rationally any positive amount should be accepted; in practice offers below about twenty percent are routinely rejected.</strong> One of the most replicated results in behavioural economics.</li>
+<li><strong>Hard evidence · what the brain does when it refuses</strong>: Sanfey, Rilling, Aronson, Nystrom &amp; Cohen (2003, <em>Science</em>) scanned people playing the ultimatum game: unfair offers activated the <strong>anterior insula</strong> (associated with disgust and negative affect) alongside <strong>anterior cingulate cortex</strong> and <strong>dorsolateral prefrontal cortex</strong>, and <strong>the stronger the insula response, the more likely the rejection</strong> — emotion and calculation visibly competing in the moment. <strong>Strength: a single fMRI study of roughly 19 subjects</strong>, and the regional interpretations remain debated; the behavioural finding, however, is rock solid. (cross-ref psychology / neuroscience)</li>
+<li><strong>Hard evidence · the standard of fairness varies, the punishing doesn't</strong>: Henrich et al. (2001) ran ultimatum games across 15 small-scale societies and found <strong>wide variation in what counted as a fair split</strong>, tracking local patterns of cooperation and exchange. So don't treat your own fairness intuition as universal — across cultures especially, ask.</li>
+</ul>
+<p class="caveat">Boundaries. <strong>One, "soft on the person" is not a polite word for conceding</strong>: warm and unmoved is the complete form; warm alone gets eaten. <strong>Two, using "we're friends" to extract terms they wouldn't otherwise give is manipulation</strong> — you're spending the relationship, and it usually only spends once. <strong>Three, walking away is a decision, not a pressure tactic</strong>: saying "I can't do that one; if things change, come back to me" brings more returning business than a cold exit — and a bluffed walk-out, once seen through, means nobody believes any floor you name again.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 22 Action</h3>
+<p>Pick one negotiation you've been dragging out — a quote, a renewal, a raise, a lease. Today is preparation only. Don't open your mouth.</p>
+<div class="action">
+<strong>1 (10 min):</strong> Write down, word for word, the last "no" they gave you, and label it: <strong>position or interest?</strong> If it's a position (a specific number, a specific date), write three plausible reasons underneath it and decide which neutral question would test them.<br/><br/><strong>2 (10 min):</strong> Fill in four blanks — <strong>my BATNA, my reservation price, my target, what their BATNA is worth.</strong> Whichever you can't fill in is this week's homework; if it's the BATNA, what you need before the meeting isn't a script, it's one more quote.<br/><br/><strong>3 (10 min):</strong> List <strong>five issues besides price</strong> and score each twice: how much it's worth to me, how much to them. <strong>Find the one that's cheap for you and valuable to them — it's your best chip in this negotiation, and it costs nothing.</strong><br/><br/><strong>4 (5 min):</strong> Use those issues to write <strong>two packages of roughly equal value to you</strong>. Put both on the table next time and ask which they lean toward.<br/><br/><strong>5 (in writing):</strong> State your walk-away condition as one testable sentence and send it to a friend or put it in your calendar. <strong>A floor you've said out loud is ten times harder than one you're holding in your head.</strong><br/><br/>Boundary: all of this exists to <strong>turn one axis into a space</strong> so both sides can find something better — not to walk someone into a hole they can't see.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. They open with "skip the dance, just give me your best price." Now what?</summary>
+<div class="answer">Take it, don't fight it — the sentence itself is information: they've been worn down by salespeople, or they're genuinely short of time, or they're using efficiency as pressure. All three take the same reply: <strong>"Happy to. One question first, because the number only means something with it:"</strong> then ask something too concrete to brush off — "how fast do you need delivery?" or "is this this quarter's budget or next year's?"<br/><br/>It works because <strong>you agreed not to dance; you only fixed the order.</strong> A lowest price without a scope isn't a commitment, it's a guess. Most people answer, because they know they haven't specified it either.<br/><br/>If they insist on "just quote the standard configuration," quote it — then split it into two or three packages (<strong>"standard config, 130; December delivery with half up front, still 130; if it can wait to January, 110"</strong>). <strong>You didn't dance, but the issues are back on the table.</strong> And if it really is a pure price comparison on a one-off purchase, that's a single-issue negotiation: quote your real number, expect to be compared, and don't burn three weeks somewhere there was never any room.</div>
+</details>
+<details>
+<summary>2. I'm clearly the weaker side (small vendor, big client; new grad, big employer) and my BATNA is bad. How do I negotiate?</summary>
+<div class="answer">Start by admitting the facts: <strong>a weak BATNA means few chips, and no script conjures chips.</strong> But few chips isn't the same as take-it-or-leave-it. Three things still work.<br/><br/><strong>First, add issues.</strong> The weaker side loses on the price axis but often has room on things that are cheap for the other side: faster response, flexible scheduling, a named case study, a pilot scope, an early review date. Asking for those succeeds far more often than asking for more money, because they can afford to give them.<br/><br/><strong>Second, improve the alternative, even slightly.</strong> One more client in play, one more offer in process, and your voice steadies on its own — you don't have to mention it for them to feel it. The point is that it has to be real; an invented one is just a line waiting to be checked.<br/><br/><strong>Third, treat time as an asset.</strong> The weaker side's classic error is rushing to sign. If you can wait two more weeks, wait — power gaps often narrow as the other side's own deadline approaches.<br/><br/>And maybe the most important: <strong>being the smaller party is no reason to hide it.</strong> "We're small, which is exactly why we're better on these three things" beats pretending otherwise. The cost of pretending falls due during delivery, all at once.</div>
+</details>
+<details>
+<summary>3. Digging for interests, growing the pie, offering several packages — where's the line with manipulation?</summary>
+<div class="answer">One test you can apply live: <strong>are you using what you learn to give them a better deal, or to squeeze them more precisely?</strong><br/><br/>Set the two side by side. Asking "which of these three matters most" and then giving them their top priority in full while taking value back where they're indifferent is a trade — both sides gain, and they wouldn't resent knowing your motive. Extracting their deadline so you can raise the price against it, or learning they have no other supplier and marking up accordingly, turns their candour into a penalty. <strong>The immediate consequence: they never tell you the truth again</strong>, and from then on you're guessing.<br/><br/>Simultaneous packages have their own hard line: <strong>the options must genuinely be worth about the same to you.</strong> If two of them are deliberately ugly decoys, that isn't offering a choice, it's staging one — and you can feel the difference instantly when you're the buyer.<br/><br/>Three self-checks: <strong>which side will I use this information on?</strong> <strong>Would I be glad to deliver every option I put on the table?</strong> <strong>If they saw today's prep sheet, would they feel understood or studied?</strong> Every inch you win at the table comes back, in some form, during the life of the contract.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 22</footer>
+</div>
+</body>
+</html>

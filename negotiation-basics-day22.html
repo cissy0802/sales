@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 22：谈判基础</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 22 · Phase D</div>
+<h1>谈判：先把桌上的变量变多，再谈怎么分</h1>
+<div class="meta"><span>主题：立场 vs 利益 · BATNA · 做大蛋糕再分 · 一页纸准备表</span><span>·</span><span>4 个动作 · 3 张图</span></div>
+<div class="subtitle">你在谈判桌上的力量，早在你走进这个房间之前就定好了——定它的不是你的口才，是你起身走开之后还剩下什么。</div>
+</header>
+<div class="intro">
+<strong>多数人把谈判想成拔河：一根绳子，你多一寸他少一寸。</strong>真实的谈判很少长这样。双方在意的东西权重不同，同一笔钱换个组合，两边都能更满意——问题是人默认对方要的正好跟自己相反，于是连问都不问。研究者叫它固定蛋糕知觉：本该做加法的对话，被当成减法谈了三小时。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>他报的是立场，你要挖的是立场底下的利益
+<span class="en">A position is one solution; interests are the constraints behind it</span></h2>
+<span class="tag">立场 vs 利益</span><span class="tag">固定蛋糕知觉</span><span class="tag">问为什么</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle"><strong>立场是他挑中的那一个解，利益是让他挑中它的那组约束。</strong>一个人只能报一个立场，但同一组约束往往有好几个解——你在立场上让步，是在猜；你在利益上找解，是在算。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Your position is something you have decided upon. Your interests are what caused you to so decide."</span>
+<span class="zh">"立场是你已经作出的决定；利益是让你作出这个决定的原因。"</span>
+<span class="source">— Fisher &amp; Ury,《Getting to Yes》(1981)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">同一个僵局，两层看法</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 306" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">表层对立，底层未必对立</text>
+<rect fill="#f6e3da" height="50" rx="6" stroke="#c0603a" stroke-width="1.4" width="250" x="30" y="38"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.4" font-weight="700" x="44" y="60">立场 · 客户</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.6" x="44" y="78">「12 月 1 日必须全部上线」</text>
+<rect fill="#f6e3da" height="50" rx="6" stroke="#c0603a" stroke-width="1.4" width="250" x="420" y="38"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.4" font-weight="700" x="434" y="60">立场 · 你</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.6" x="434" y="78">「最快 1 月中，早了没人做」</text>
+<text fill="#697682" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="350" y="60">僵住</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="350" y="78">只剩一根轴</text>
+<line marker-end="url(#m1)" stroke="#3f5c7a" stroke-width="1.5" x1="155" x2="155" y1="90" y2="122"></line>
+<line marker-end="url(#m1)" stroke="#3f5c7a" stroke-width="1.5" x1="545" x2="545" y1="90" y2="122"></line>
+<text fill="#3f5c7a" font-family="Georgia" font-size="9" x="164" y="110">问一句为什么</text>
+<text fill="#3f5c7a" font-family="Georgia" font-size="9" x="554" y="110">说一句为什么</text>
+<rect fill="#eef1f5" height="62" rx="6" stroke="#3f5c7a" stroke-width="1.4" width="250" x="30" y="126"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.4" font-weight="700" x="44" y="148">利益 · 他真正要的</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.6" x="44" y="166">年会上有东西能演示，</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.6" x="44" y="182">而不是"全部功能都在"</text>
+<rect fill="#eef1f5" height="62" rx="6" stroke="#3f5c7a" stroke-width="1.4" width="250" x="420" y="126"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.4" font-weight="700" x="434" y="148">利益 · 你真正要的</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.6" x="434" y="166">12 月团队全在做迁移，</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.6" x="434" y="182">不能同时开两个战场</text>
+<line marker-end="url(#m1)" stroke="#4e8a3f" stroke-width="1.5" x1="155" x2="300" y1="190" y2="228"></line>
+<line marker-end="url(#m1)" stroke="#4e8a3f" stroke-width="1.5" x1="545" x2="400" y1="190" y2="228"></line>
+<rect fill="#dfeae2" height="46" rx="6" stroke="#4e8a3f" stroke-width="1.6" width="350" x="175" y="234"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10.6" font-weight="700" text-anchor="middle" x="350" y="256">同时满足两组约束的解</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="350" y="272">12 月上核心模块 + 演示脚本，其余 1 月</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="298">立场只有一个，能满足同一组利益的方案常常有好几个——但你得先知道那组利益是什么。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：采购咬死一句话——"预算就 10 万，一分不能多。"你的报价 13 万。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 在立场那根轴上来回拉</div>
+<p>"12 万行不行？""不行，10 万。""11 万 5，真到底了。"两个人在一根数轴上来回，谈成是你割肉，谈不成还互相记恨。<strong>更要命的是：你不知道那个 10 万怎么来的。</strong>拍脑袋、审批线、上级一句话——三种情况解法完全不同，而你一种都没试。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 把那个数字的来历问出来</div>
+<p>"10 万这个数我记住了。<strong>能问一下它是怎么定的吗？</strong>是这块今年就剩这么多，还是超过 10 万流程不一样？"<br/>（他：超过 10 万要走集团评审，三个月起。）<br/>—— 一句话，问题就从"降 3 万"变成"怎么不触发那条审批线"。可选的解至少三个：<strong>今年签 9.8 万的核心范围、其余明年初单独下单；拆成两笔采购；或走年度框架合同。</strong>你一分钱没降，他的真实约束却解决了。<br/>—— 万一答案是"就是没钱"，你也省下三轮拉锯，直接谈缩范围。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The number someone opens with is a position — one solution they picked. What made them pick it is an interest, and interests usually have more than one solution. Before you trade along their axis, ask how the number was arrived at. "Ten thousand, tops" may mean no money, or it may mean anything above ten thousand triggers a three-month approval — and the second one you can solve without discounting at all.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：立场是"解"，利益是"约束"。在解的空间里让步只能一方多一方少；回到约束里找解，同一组约束常有多个可行解，其中一些对双方都更好。人之所以不回去，是因为默认对方的利益与自己完全相反——这个默认往往是错的，而且不问就不会被推翻。</strong></p>
+<ul>
+<li><strong>硬证据 · 固定蛋糕知觉普遍存在</strong>：Thompson &amp; Hastie (1990, <em>OBHDP</em>) 的实验显示，谈判者一开始几乎都假设对方的偏好与自己完全对立；<strong>能在前几分钟修正这一判断的人，最终拿到的联合收益显著更高。</strong>同行评审、多次被复制的稳健发现。</li>
+<li><strong>硬证据 · 双方明明想要同一件事，却谈成两边都更差</strong>：Thompson &amp; Hrebec (1996, <em>Psychological Bulletin</em>) 对 32 项研究、约 5000 名谈判者的元分析发现：当双方在某个议题上利益完全一致时，<strong>约一半的谈判者没能发现</strong>，还有约两成最终签下了双方都更差的协议。这不是谈判技巧不够，是根本没去查。</li>
+<li><strong>较强证据 · 交换优先级本身就能提高结果</strong>：Thompson (1991, <em>JESP</em>) 的实验显示，仅仅让双方交流"哪个议题对我更重要"，整合性结果就显著提升——比互相试探报价有效得多。<strong>证据强度：实验室实验、被试多为学生</strong>；现实里对方可能虚报优先级，所以要拿具体问题去验。</li>
+</ul>
+<p class="caveat">边界：<strong>不是所有立场底下都藏着可调和的利益。</strong>有时对方的利益就是"这轮必须省钱"，挖到底还是零和；有时他的真实利益是政治性的（要向老板证明砍下来了），那就给他一个能邀功的东西，别讲道理。另外"为什么"要用中性语气问，一硬就成了质问。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Help me understand how you got to that number." —— 挖来历，不挑战数字。</p>
+<p>"What would this need to look like for it to work on your side?" —— 让他自己描述约束。</p>
+<p>"Is that a budget issue or a process issue?" —— 一句话分开两种"不行"。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>BATNA：你的底气不在嘴上，在门外
+<span class="en">Your power is what you have if you walk out</span></h2>
+<span class="tag">BATNA</span><span class="tag">保留价</span><span class="tag">ZOPA</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle"><strong>BATNA = 谈崩之后你最好的那条退路</strong>（Best Alternative To a Negotiated Agreement）。它决定你的保留价——低于这个数，成交不如不成交。所以提升谈判力最有效的动作，几乎都发生在桌子之外。</div>
+</div>
+<div class="section">
+<div class="section-label">两个 BATNA 决定了能不能成交</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 268" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#8a6a20"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">价格轴上的四个点（一个外包项目）</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.4" text-anchor="middle" x="250" y="52">卖方 BATNA：手上另一个客户给 10 万</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.4" text-anchor="middle" x="520" y="52">买方 BATNA：自己招人做，约 18 万</text>
+<line stroke="#6a8577" stroke-dasharray="4,3" stroke-width="1.3" x1="250" x2="250" y1="102" y2="176"></line>
+<line stroke="#6a8577" stroke-dasharray="4,3" stroke-width="1.3" x1="520" x2="520" y1="102" y2="176"></line>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="250" y="80">卖方保留价 12 万</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" text-anchor="middle" x="250" y="95">低于这个数，不如去接那单</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="520" y="80">买方保留价 18 万</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" text-anchor="middle" x="520" y="95">高于这个数，不如自己做</text>
+<rect fill="#dfeae2" height="30" rx="4" stroke="#4e8a3f" stroke-width="1.5" width="270" x="250" y="118"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="385" y="138">ZOPA · 可成交区间</text>
+<line marker-end="url(#m2)" stroke="#8a6a20" stroke-width="1.6" x1="40" x2="670" y1="160" y2="160"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="40" y="178">低</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="650" y="178">高</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" x="60" y="200">这一段：卖方宁可走开</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" x="556" y="200">这一段：买方宁可走开</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-weight="700" x="20" y="228">区间由两个 BATNA 定，不由谁嘴硬定。</text>
+<text fill="#697682" font-family="Georgia" font-size="9.2" x="20" y="250">想多拿：改善自己的 BATNA，或让他看清他的 BATNA 有多贵——两件事都不在这张桌上。</text>
+<text fill="#697682" font-family="Georgia" font-size="9.2" x="20" y="264">两个保留价交叉、区间为负时，最好的动作是干脆不谈。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">照做清单：谈之前先把这四个数写下来</div>
+<div class="template">
+<span class="label">没写下来，你就会在压力下临时发明一个底线</span>
+<p>· <strong>我的 BATNA 是什么？</strong>写具体：不是"再找别的客户"，是"A 客户的 10 万单本周要答复"。模糊的退路等于没有退路。</p>
+<p>· <strong>我的保留价</strong>：由 BATNA 换算，加上切换成本与风险。写在纸上带进去。</p>
+<p>· <strong>他的 BATNA 值多少？</strong>他不买你会怎么办、要花多少？这个数是你所有价值论证的落点。</p>
+<p>· <strong>我的目标价</strong>（不是底线，是想要的那个数）及其依据。只带底线进场的人，最后一定在底线附近成交。</p>
+<p>· <strong>谈判前 48 小时最该做的不是练话术，是多找一条退路</strong>——多一个报价、多一个 offer、多一个供应商，比任何台词都管用。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你在谈一份 offer。HR 说："这已经是这个级别的上限了。"</div>
+<div class="dialog bad">
+<div class="speaker">✗ 用虚构的退路撑场面</div>
+<p>"我手上还有两个 offer，都比这个高。"——编的话风险极大：很容易被追问（哪家？什么岗？何时答复？），一旦露馅你后面每句话都被打折。<strong>而且虚构的退路撑不住你自己：</strong>对方一句"那你可以考虑那边"，你会立刻发现自己并没准备走。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 用真实的退路，加一个可交换的变量</div>
+<p>"我理解级别有上限。<strong>我确实在跟另一家推进到最后一轮，所以想把决定做扎实。</strong>如果基本工资动不了，能不能看这三样：签字费、股票授予节奏、提前半年的调级评估？能动一样我这边就好办。"<br/>—— 真实的退路让语气自然变稳（你不用演），而把一根轴拆成三样，给了对方一条不违反制度也能给你的路。<strong>没有真退路时更要靠这一步：你争的不是筹码，是让对方更容易说是。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Your leverage is your BATNA — the best thing you can do if this deal dies — and it sets your reservation price. Both sides' BATNAs define the zone of possible agreement, so the highest-yield work happens before the meeting: get one more quote, one more offer, one more supplier. Never invent a BATNA you don't have. It's checkable, and more importantly it won't hold you up when they call it.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：谈判成立的唯一理由，是协议比不协议更好。所以底线不是"想要多少"，而是"不谈能拿到多少"——这是一个外生的数，不受对方施压影响。这也解释了为什么威胁与拖延对有真退路的人几乎无效：他的底线不在这张桌上。</strong></p>
+<ul>
+<li><strong>较强证据 · 有退路的一方拿得更多</strong>：Pinkley、Neale &amp; Bennett (1994, <em>OBHDP</em>) 的实验中，被赋予有吸引力替代方案的一方在同一场谈判里系统性地拿到更好的结果，即便双方信息相同。同行评审的实验室研究，效应方向稳定。</li>
+<li><strong>机制补充 · 退路给的是"敢拒绝"的能力</strong>：拒绝一个糟糕提议在心理上是有代价的（本页最后一节的最后通牒博弈神经证据说明了这个代价），而真实的退路正是承担它的本钱——这也是为什么退路差的人更容易在临近截止时松口。（cross-ref psychology / neuroscience）</li>
+<li><strong>实务框架 · BATNA 概念本身</strong>：Fisher &amp; Ury《Getting to Yes》(1981) 提出并推广。<strong>证据强度：概念框架，不是实验结论</strong>——它的价值是把"底线"从情绪判断变成可算的量。</li>
+</ul>
+<p class="caveat">三条边界。<strong>一，BATNA 要真</strong>：编造的退路可被验证，被拆穿后原有的可信度也一起赔进去。<strong>二，别把它当武器亮出来</strong>——"我还有别家"说重了就是威胁，会激起对抗；平静说明你在做比较即可。<strong>三，退路差不等于必输</strong>：正确动作是把议题变多（下一节），同时尽早去改善退路，而不是在桌上死扛。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"I want to make sure I'm making this decision properly." —— 暗示你在比较，不构成威胁。</p>
+<p>"If the base can't move, what can?" —— 把死轴换成活轴。</p>
+<p>"That's below where I can go on this one." —— 陈述保留价，不解释、不道歉。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>一个议题必然零和，两个议题才有交换
+<span class="en">One issue is a tug of war; two issues are a trade</span></h2>
+<span class="tag">做大蛋糕</span><span class="tag">议题交换</span><span class="tag">同时多方案</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">只要双方对不同议题的<strong>在意程度不一样</strong>，就有这样一笔交易：把你不太在意的给他，换回他不太在意而你很在意的——总价没变，两边都更满意。<strong>零和是议题数量的产物，不是谈判的本质。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">同一笔单子，三个议题的权重差</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 292" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m3" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">条越长 = 越在意</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" x="190" y="46">你</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="430" y="46">对方</text>
+<text fill="#37493f" font-family="Georgia" font-size="10.2" x="24" y="76">价格</text>
+<rect fill="#dfeae2" height="18" rx="3" stroke="#4e8a3f" stroke-width="1.2" width="170" x="190" y="62"></rect>
+<rect fill="#f6e3da" height="18" rx="3" stroke="#c0603a" stroke-width="1.2" width="136" x="430" y="62"></rect>
+<text fill="#697682" font-family="Georgia" font-size="9" x="576" y="76">都在意 → 真的要谈</text>
+<text fill="#37493f" font-family="Georgia" font-size="10.2" x="24" y="122">交期</text>
+<rect fill="#dfeae2" height="18" rx="3" stroke="#4e8a3f" stroke-width="1.2" width="54" x="190" y="108"></rect>
+<rect fill="#f6e3da" height="18" rx="3" stroke="#c0603a" stroke-width="1.2" width="170" x="430" y="108"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9" font-weight="700" x="608" y="122">→ 送给他</text>
+<text fill="#37493f" font-family="Georgia" font-size="10.2" x="24" y="168">付款账期</text>
+<rect fill="#dfeae2" height="18" rx="3" stroke="#4e8a3f" stroke-width="1.2" width="160" x="190" y="154"></rect>
+<rect fill="#f6e3da" height="18" rx="3" stroke="#c0603a" stroke-width="1.2" width="34" x="430" y="154"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9" font-weight="700" x="472" y="168">→ 他给得起</text>
+<line marker-end="url(#m3)" stroke="#4e8a3f" stroke-width="1.6" x1="350" x2="350" y1="182" y2="212"></line>
+<rect fill="#f7faf6" height="42" rx="6" stroke="#4e8a3f" stroke-width="1.5" width="620" x="40" y="216"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10.6" font-weight="700" x="56" y="234">交换："交期按你要的 12 月，条件是预付五成、价格不动。"</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="56" y="250">你付出排期（你在意程度低），拿回现金流（他在意程度低）。同一个总价，两边都更好。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="282">前提是先知道彼此的权重——所以"哪样最要紧？"比任何报价技巧都值钱。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">话术模板</div>
+<div class="template">
+<span class="label">三步：加议题 → 问权重 → 打包交换</span>
+<p>· <strong>加议题（在报价之前）</strong>："除了价格，通常还有几件事会影响这个决定：交期、付款方式、服务范围、合约期限。<strong>你那边这几样的优先级是什么样？</strong>"</p>
+<p>· <strong>问权重（不问要求，问排序）</strong>："如果只能保住其中一样，你会保哪样？"——排序比诉求诚实，因为它逼人取舍。</p>
+<p>· <strong>打包交换（永远整包报，别逐项谈）</strong>："如果预付五成、合约签两年，我可以按 12 月交期走，价格不动。"逐项谈会让每一项都变成零和拉锯；整包谈才有交换。</p>
+<p>· <strong>同时给两三个等价方案（MESO）</strong>："A：12 月交付、预付五成、13 万。B：1 月交付、账期 60 天、13 万。C：12 月交付、账期 60 天、14 万 5。<strong>你更偏向哪个？</strong>"——他一选就把权重告诉了你，而三个方案对你价值相当，选哪个都不亏。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：客户要"降到 11 万"。你的保留价 12 万，目标 13 万。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 只在价格上应答</div>
+<p>"11 万做不了，12 万 5 可以。"你已经把整场谈判承认成一条价格轴。接下来无论 12 万 5 还是 12 万，都只是输多少的问题，而对方学到的是：<strong>推一下就会动。</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 把轴加宽，再打包</div>
+<p>"11 万得看它配什么条件。<strong>我给你两个都成立的组合：</strong>A，11 万，砍掉数据迁移，交期 1 月中；B，13 万，全范围、12 月交付，预付五成。<br/>—— <strong>你更在意哪个：省这两万，还是 12 月能演示？</strong>"<br/>（他选了 B。）—— 他选的那一刻你就知道：真正的约束是年会，不是钱。这个信息在纯价格拉锯里永远不会出现。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> A single-issue negotiation is zero-sum by construction. Add issues — timing, payment terms, scope, contract length — and any difference in how much each side cares about them creates a trade: give away what's cheap for you and costly for them, take back the reverse. Package your offers instead of settling issues one at a time, and put two or three equally acceptable packages on the table at once. Whichever they pick tells you their real priority.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：单议题的分配必然此消彼长；两个以上议题时，只要双方的边际权重不同，就存在一次让双方都变好的交换（经济学上叫帕累托改进）。所以"把蛋糕做大"不是鸡汤，是能算出来的结构——前提是你知道对方的权重排序，而这只能靠问和试。</strong></p>
+<ul>
+<li><strong>硬证据 · 议题交换优于逐项折中</strong>：Froman &amp; Cohen (1970, <em>Behavioral Science</em>) 直接比较了两种谈判过程：<strong>在议题之间做交换（logrolling）得到的联合收益，显著高于每个议题各让一半的折中。</strong>这是整合性谈判研究的早期基石结论，后续大量实验重复验证。</li>
+<li><strong>硬证据 · 不去查就会错过</strong>：前述 Thompson &amp; Hrebec (1996) 的元分析同时说明了代价——<strong>存在完全兼容议题时，约一半的谈判者没发现。</strong>做大蛋糕的最大障碍不是技巧，是没人问。</li>
+<li><strong>较弱证据 · 同时多方案（MESO）</strong>：这套打法主要由 Kellogg 的 Medvec 与 Galinsky 等人推广，实验室研究支持它能提高整合性结果并减少对抗感。<strong>证据强度：以实验室与实务总结为主，缺乏大规模现场实验</strong>——当工具用，别当定律。前提也很硬：<strong>几个方案对你必须真的价值相当</strong>，否则就是在诱导。</li>
+</ul>
+<p class="caveat">边界：<strong>有些谈判就是单议题的</strong>——路边买二手手机、标准品一次性采购，硬造议题只会拖时间、显得油滑。判断标准：<strong>除了钱，你们之间还有没有第二件会影响决定的事？</strong>没有就直接谈价。另外，先说出自己的优先级有被利用的风险，稳妥做法是<strong>用整包方案表达优先级，别口头承认哪项不重要</strong>。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"If you had to keep just one of these, which would it be?" —— 问排序，不问诉求。</p>
+<p>"I can do that, if…" —— 让步永远带条件，别单飞。</p>
+<p>"Here are two packages that work equally well for me." —— 同时多方案的开场。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>对人软，对事硬——以及什么时候起身
+<span class="en">Soft on the person, hard on the problem</span></h2>
+<span class="tag">公平感</span><span class="tag">最后通牒博弈</span><span class="tag">走开的纪律</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">人不是只算钱：<strong>觉得被不公对待时，人愿意自掏腰包惩罚你。</strong>把对方逼到羞辱性成交，代价不在签字那天出现——它在交付、续约和口碑里慢慢收回去。对事可以寸步不让，对人必须留面子。</div>
+</div>
+<div class="section">
+<div class="section-label">照做清单：一页纸准备表（谈之前 20 分钟填完）</div>
+<div class="template">
+<span class="label">带着这张纸进去，你就不会临场发明底线</span>
+<p>· <strong>我的利益</strong>（三条，按重要性排序）｜ <strong>我猜他的利益</strong>（三条，标出哪条是猜的）</p>
+<p>· <strong>我的 BATNA / 保留价 / 目标价</strong>｜ <strong>他的 BATNA 值多少</strong></p>
+<p>· <strong>议题清单</strong>：价格之外还有交期、范围、付款方式、合约期限、署名案例、后续支持——<strong>标出哪些对我便宜、对他值钱</strong>，那是你的弹药。</p>
+<p>· <strong>两三个等价方案</strong>，以及<strong>第一个问题</strong>（通常是"这次决定里，除了价格还有什么在影响你？"）。</p>
+<p>· <strong>走开的触发条件</strong>：写死，如"低于 12 万""无限次修改""付款超 90 天"。<strong>写下来才守得住</strong>——临场靠意志力，你会输给结束对话的冲动。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：对方已答应你的价格，却在最后一刻加码："再送三个月免费维护，不然再想想。"</div>
+<div class="dialog bad">
+<div class="speaker">✗ 为了保住这一单，无条件加送</div>
+<p>"行行行，送。"你教会了他一件事：<strong>最后一刻加码是有效的。</strong>下次续约、下次变更，同样的动作还会来；而白送的三个月，会变成他心里"本来就该有"的标配。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 态度温和，条件不动</div>
+<p>"我很想把这单做成。<strong>不过维护有实际成本，白送我做不到。</strong>两个办法：一，加 8000 买三个月维护包；二，你介绍一家同行给我，我把三个月算进去。<strong>你更方便哪个？</strong>"<br/>—— 语气全程友好，条件一步没退，还给了两条能下的台阶。<strong>让步必须换东西，这条不变；但拒绝的方式可以很软。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> People don't only compute money. In ultimatum-game experiments they routinely pay real cash to punish an offer they judge unfair — so a deal squeezed out of someone who felt humiliated gets repaid later, in delivery, renewal and word of mouth. Stay warm toward the person and immovable on the terms: never concede without a trade, but always leave a face-saving way to say yes. And write your walk-away conditions down before you go in — willpower loses to the urge to end the conversation.</p>
+</div>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：公平感是独立于金钱的动机系统。一个提议被判定为不公时，人会体验到近似厌恶的负面情绪，并愿意付出实际代价去拒绝它——哪怕自己也一无所获。所以"把对方压到最低"在算术上占优，在人身上却常触发反噬。</strong></p>
+<ul>
+<li><strong>硬证据 · 人会花钱惩罚不公</strong>：最后通牒博弈（Güth、Schmittberger &amp; Schwarze, 1982）里，提议者分配一笔钱，回应者只能全接受或全拒绝（拒绝则双方都拿零）。<strong>理性上任何正金额都该接受，实际上低于两成的提议经常被拒。</strong>这是被复制得最多的行为经济学实验之一。</li>
+<li><strong>硬证据 · 拒绝不公时的脑活动</strong>：Sanfey、Rilling、Aronson、Nystrom &amp; Cohen (2003, <em>Science</em>) 用 fMRI 记录最后通牒博弈：面对不公平提议时，<strong>前脑岛</strong>（与厌恶、负性情绪相关）、<strong>前扣带回</strong>与<strong>背外侧前额叶</strong>同时激活，而<strong>前脑岛激活越强，拒绝的概率越高</strong>——情绪系统与理性算计在此当场角力。<strong>证据强度：单一 fMRI 研究、样本约 19 人</strong>，脑区功能的解读也仍有争论；但行为层的结论极其稳固。（cross-ref psychology / neuroscience）</li>
+<li><strong>硬证据 · 公平的标准随文化变，但"会惩罚"不变</strong>：Henrich 等 (2001) 在 15 个小规模社会做的跨文化最后通牒实验显示，<strong>被视为公平的分配比例差异很大</strong>，与当地的合作与交换方式相关。所以别把自己的公平直觉当普世标准——跨文化谈判尤其要问。</li>
+</ul>
+<p class="caveat">边界。<strong>一，"对人软"不是让步的委婉说法</strong>：友好而条件不动才是完整形态，只软不硬就是被吃。<strong>二，用"我们是朋友"去换对方本不愿给的条件是操纵</strong>——把关系当筹码花，通常只花得动一次。<strong>三，走开是一次决定，不是施压动作</strong>：说清"这个条件我做不了，情况变了随时找我"，比冷脸离场更常带来回头单；而假装要走一旦被识破，你此后所有的"底线"都不再有人信。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"I want to make this work — and that one I can't do." —— 一句话同时表达善意与拒绝。</p>
+<p>"That's outside what I can agree to." —— 划界线，不针对人。</p>
+<p>"If things change on your side, come back to me — the door's open." —— 体面地走开。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 22 Action</h3>
+<p>挑一个你手上拖着的谈判——报价、续约、涨薪、房租都行。今天只做准备，不开口。</p>
+<div class="action">
+<strong>一（10 分钟）：</strong>写下对方最近那句"不行"的原话，旁边标：<strong>这是立场还是利益？</strong>若是立场（一个数字、一个日期），写出三个可能的底层原因，并想好用哪句中性问句验证。<br/><br/><strong>二（10 分钟）：</strong>填四个空——<strong>我的 BATNA、保留价、目标价、他的 BATNA 值多少。</strong>哪个填不出来，哪个就是这周的功课；BATNA 填不出的人，谈之前该做的不是练话术，是多要一个报价。<br/><br/><strong>三（10 分钟）：</strong>列出价格之外的<strong>五个议题</strong>，每个标两笔：对我多值钱、对他多值钱。<strong>找出"对我便宜、对他值钱"的那个——它是你最好的筹码，而且不花钱。</strong><br/><br/><strong>四（5 分钟）：</strong>用这些议题写<strong>两个对你价值相当的方案</strong>，下次同时摆出来，问一句"你更偏向哪个"。<br/><br/><strong>五（写死）：</strong>走开条件写成一句可判断的话，发给一个朋友或记进日历。<strong>说出去的底线比心里的底线硬十倍。</strong><br/><br/>边界提醒：这套东西是<strong>把一根轴变成一个空间</strong>，让双方都找到更好的解——不是把对方绕进一个他没看清的坑。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 对方一上来就说"别绕弯子，直接给最低价"，还怎么挖利益？</summary>
+<div class="answer">先接住，别对抗——这句话本身就是信息：他要么被销售磨怕了，要么时间真的紧，要么在用效率姿态施压。三种都可以同一句回应：<strong>"可以，我直接给。不过给之前问一件事，问完这个报价才有意义："</strong>然后问一个具体到不能敷衍的问题——"这批要多久到货？""是这个季度用还是明年预算？"<br/><br/>它有效是因为：<strong>你答应了不绕弯，只是把顺序摆正了。</strong>没有范围的最低价不是承诺，是猜。多数人会答，因为他也知道自己没说清楚。<br/><br/>如果他坚持"就按标准配置报"，那就报——然后拆成两三个包（<strong>"标准配置 13 万；12 月要用且预付五成，还是 13 万；能等到 1 月，11 万"</strong>）。<strong>你没绕弯，但把议题带回了桌上。</strong>真遇到纯比价的一次性采购，那就是单议题谈判：报实价、准备好被比，别在没有空间的地方耗三个星期。</div>
+</details>
+<details>
+<summary>2. 我明显是弱势一方（小公司对大客户、应届生对大厂），BATNA 很差，怎么谈？</summary>
+<div class="answer">先承认现实：<strong>BATNA 差就是筹码少，话术变不出筹码。</strong>但筹码少不等于只能全盘接受，有三件事可做。<br/><br/><strong>第一，把议题变多。</strong>弱势方在价格轴上必输，但在"对他便宜、对你值钱"的东西上常有空间：更快的响应、更灵活的排期、案例署名、试点范围、评估时点。争这些的成功率远高于争总价，因为对方给得起。<br/><br/><strong>第二，改善退路，哪怕一点点。</strong>多一个客户在谈、多一个 offer 在流程里，你的语气会自然变稳——不用说出来，对方也感觉得到。关键是它必须真实：虚构的退路只是一句迟早被追问的台词。<br/><br/><strong>第三，把时间当资产。</strong>弱势方最常见的错是急着签。能多等两周就等——力量差常随对方的截止日期临近而缩小（他也有 deadline）。<br/><br/>最后一条也许最重要：<strong>弱势不是隐瞒的理由。</strong>直说"我们规模小，所以这几件事我们做得比大公司实"，比装大有用；装大的成本会在交付期一次性结清。</div>
+</details>
+<details>
+<summary>3. 挖利益、做大蛋糕、同时给多个方案——这些和"套话、诱导"的界线在哪？</summary>
+<div class="answer">一条当场能用的线：<strong>你收集到的信息，是用来给他更好的方案，还是用来精确地压榨他？</strong><br/><br/>对照着看。问"这三样哪样最要紧"，然后把他最在意的给足、在他不在意的地方拿回价值——这是交换，双方都变好，他事后知道你的动机也不会生气。反过来，问出截止日期只为了掐着日期加价，套出他没有别的供应商就抬价，是把他的坦诚变成惩罚。<strong>后果很直接：他再也不告诉你真话</strong>，你从此只能靠猜。<br/><br/>同时多方案也有一条硬线：<strong>几个方案对你必须真的价值相当。</strong>其中两个若是故意做丑的陪衬，那不是给选择，是布置选择——你自己当买方时，一眼就能感觉到区别。<br/><br/>三个自查：<strong>我问出来的东西会用在哪一边？</strong><strong>每个选项他选了我都能高兴地交付吗？</strong><strong>他若看到我今天的准备表，会觉得被理解了还是被研究了？</strong>——你在桌上占的每一分便宜，都会在履约期以某种形式还回去。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 22</footer>
+</div>
+</body>
+</html>
