@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 23: Tactical Empathy in Negotiation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 23 · Phase D</div>
+<h1>Empathy Is Not a Concession: Get Their Situation Exactly Right, Discount Nothing</h1>
+<div class="meta"><span>Topic: calibrated questions · the "that's right" moment · deliberate deference · black swans</span><span>·</span><span>4 moves · 3 diagrams</span></div>
+<div class="subtitle">The line that most often changes a negotiation isn't your price. It's "let me try to say why this is hard on your side — tell me if I've got it wrong."</div>
+</header>
+<div class="intro">
+<strong>"Empathy" sounds like the softer party losing, so a lot of people deliberately go stone-faced at the table.</strong> That confuses two separate things. Understanding someone's situation and agreeing to their terms are completely independent. You can describe their difficulty with total accuracy and not move a single term. The difference is this: a person who feels accurately described starts giving you information, and a person who is defending just repeats their position — and the solution you need is sitting in the part they haven't said yet.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Turn "no" into "then how am I supposed to do that"
+<span class="en">Turn their refusal into a problem you solve together</span></h2>
+<span class="tag">calibrated questions</span><span class="tag">how / what</span><span class="tag">autonomy</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">A calibrated question <strong>starts with "how" or "what," can't be answered yes or no, and hands the problem back to them.</strong> It doesn't collide with their position — it asks them to find you a workable path inside their own constraints.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"How am I supposed to do that?"</span>
+<span class="source">— Voss, <em>Never Split the Difference</em> (2016)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">One "no," two ways to take it</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">They put a hard condition on the table</text>
+<rect fill="#eef1f5" height="38" rx="6" stroke="#3f5c7a" stroke-width="1.4" width="300" x="200" y="32"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.6" font-weight="700" text-anchor="middle" x="350" y="56">"Fifty percent up front? Impossible."</text>
+<line marker-end="url(#a1)" stroke="#3f5c7a" stroke-width="1.5" x1="300" x2="175" y1="72" y2="104"></line>
+<line marker-end="url(#a1)" stroke="#3f5c7a" stroke-width="1.5" x1="400" x2="525" y1="72" y2="104"></line>
+<rect fill="#f6e3da" height="56" rx="6" stroke="#c0603a" stroke-width="1.4" width="290" x="30" y="108"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.4" font-weight="700" x="44" y="130">✗ Counter with a number</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.6" x="44" y="150">"Would thirty percent work?"</text>
+<rect fill="#dfeae2" height="56" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="290" x="380" y="108"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.4" font-weight="700" x="394" y="130">✓ Hand the problem back</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.6" x="394" y="150">"How do I carry the upfront costs?"</text>
+<line marker-end="url(#a1)" stroke="#3f5c7a" stroke-width="1.5" x1="175" x2="175" y1="166" y2="196"></line>
+<line marker-end="url(#a1)" stroke="#4e8a3f" stroke-width="1.5" x1="525" x2="525" y1="166" y2="196"></line>
+<rect fill="#f7faf6" height="62" rx="6" stroke="#c0603a" stroke-width="1.3" width="290" x="30" y="200"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" x="44" y="220">All they do is judge: yes / no</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.4" x="44" y="238">You moved first, they learned pushing</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.4" x="44" y="254">works — and the constraint never showed.</text>
+<rect fill="#f7faf6" height="62" rx="6" stroke="#4e8a3f" stroke-width="1.3" width="290" x="380" y="200"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.8" font-weight="700" x="394" y="220">They have to explain the constraint</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.4" x="394" y="238">"Deposits need finance sign-off" —</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.4" x="394" y="254">so the fix is payment terms, not price.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="284">A yes/no question only lets people pick a side. "How" forces them to give you structure — and structure is what you're after.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts: four questions for almost any deadlock</div>
+<div class="template">
+<span class="label">All of them: unanswerable with yes or no, and free of accusation</span>
+<p>· <strong>"How am I supposed to do that?"</strong> — the strongest line you have when their condition is one you can't accept. It isn't a refusal; it puts the impossible part where they can see it.</p>
+<p>· <strong>"What matters most to you here?"</strong> — asks for weight, not for demands.</p>
+<p>· <strong>"If we did it that way, what problems would that create on your side?"</strong> — surface the resistance now, instead of meeting it later as "let us think about it."</p>
+<p>· <strong>"What's been the hardest part to push through so far?"</strong> — one question that often explains the entire stall.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: you're a freelance designer. The client says, "budget is eight thousand, and revisions have to be unlimited — we have a lot of opinions internally."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Give up both conditions at once</div>
+<p>"Sure, eight is fine, and we'll be flexible on revisions." <strong>You just handed over price and scope in one move and got nothing back</strong> — and "unlimited revisions" isn't a deliverable condition at all.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Take it, then hand the problem back</div>
+<p>"Eight thousand, noted — and a lot of internal opinions genuinely is a pain. <strong>But there's something I need to ask you: how am I supposed to guarantee you have the finished work before the year ends if revisions are unlimited?</strong>"<br/>(Them: …honestly it doesn't need to be unlimited. It's that my boss might overturn the direction.)<br/>—— And there it is: <strong>"unlimited revisions" doesn't mean a hundred rounds, it means fear that the direction gets reversed</strong> — a process problem, not a count problem. The solution follows: <strong>three directions for the boss to choose from, then two rounds of refinement on the chosen one; a new direction is quoted separately.</strong> The price never moved and their actual fear got solved.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: a yes/no question splits the conversation into two opposing sides and lets them simply hold their position. A question starting with "how" can only be answered by pulling up their own constraints, and the act of stating them is the act of giving you information. It also leaves the decision in their hands — people have a strong preference for being the one who chooses.</strong></p>
+<ul>
+<li><strong>Hard evidence · having a choice is rewarding in itself</strong>: Leotti &amp; Delgado (2011, <em>Psychological Science</em>) found that <strong>merely anticipating that you will get to choose activates ventral striatum and other corticostriatal reward circuitry</strong> — even when the options are worth exactly the same. Handing the decision back isn't just polite; in their head it pays. <strong>Strength: peer-reviewed fMRI, small samples</strong>, and reverse-inferring function from regions needs care. (cross-ref neuroscience)</li>
+<li><strong>Hard evidence · asking more, especially following up, makes people like you</strong>: Huang, Yeomans, Brooks, Minson &amp; Gino (2017, <em>JPSP</em>) ran several experiments plus a speed-dating field study and found <strong>people who ask more questions — particularly follow-ups on the previous answer — are rated as more likeable</strong>, and got more second dates. Multiple studies including field data.</li>
+<li><strong>Weaker evidence · the calibrated-question tool itself</strong>: it comes from Voss (2016), a practitioner's summary of hostage negotiation, <strong>with no controlled trials</strong>. What's credible is the mechanism behind it, not the script.</li>
+</ul>
+<p class="caveat">Boundary: <strong>fire off three or four "how am I supposed to"s in a row and it becomes evasion, or an interrogation</strong> — one or two well-placed ones per negotiation is plenty. The harder line: this is only honest <strong>when the constraint is real</strong>. Manufacturing helplessness you don't have is the same class of move as inventing an alternative you don't have. And when the other side is visibly hostile, absorb the emotion with one line of acknowledgement before you ask, or it lands as a challenge.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>You don't want "you're right" — you want "that's right"
+<span class="en">"You're right" ends the conversation; "That's right" starts it</span></h2>
+<span class="tag">tactical empathy</span><span class="tag">the summary</span><span class="tag">feeling understood</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle"><strong>"You're right" is almost always the polite form of "please stop talking." "That's right — exactly" means they just heard their own situation described accurately.</strong> The first means you won the argument; the second means their guard came down — and only the second keeps them talking.</div>
+</div>
+<div class="section">
+<div class="section-label">Two kinds of agreement, opposite destinations</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 288" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#6a8577"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Two exits from the same conversation</text>
+<rect fill="#f6e3da" height="46" rx="6" stroke="#c0603a" stroke-width="1.4" width="300" x="30" y="34"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.4" font-weight="700" x="44" y="54">You argue the facts, you defend</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.4" x="44" y="70">"But we actually delivered A, B and C"</text>
+<rect fill="#dfeae2" height="46" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="300" x="370" y="34"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.4" font-weight="700" x="384" y="54">You restate their situation</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.4" x="384" y="70">"Sounds like you're exposed internally"</text>
+<line marker-end="url(#a2)" stroke="#6a8577" stroke-width="1.5" x1="180" x2="180" y1="82" y2="110"></line>
+<line marker-end="url(#a2)" stroke="#6a8577" stroke-width="1.5" x1="520" x2="520" y1="82" y2="110"></line>
+<rect fill="#eef1f5" height="40" rx="6" stroke="#3f5c7a" stroke-width="1.4" width="300" x="30" y="114"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="180" y="139">They say: "You're right."</text>
+<rect fill="#eef1f5" height="40" rx="6" stroke="#3f5c7a" stroke-width="1.4" width="300" x="370" y="114"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="520" y="139">They say: "That's right."</text>
+<line marker-end="url(#a2)" stroke="#6a8577" stroke-width="1.5" x1="180" x2="180" y1="158" y2="186"></line>
+<line marker-end="url(#a2)" stroke="#6a8577" stroke-width="1.5" x1="520" x2="520" y1="158" y2="186"></line>
+<rect fill="#f7faf6" height="64" rx="6" stroke="#c0603a" stroke-width="1.3" width="300" x="30" y="190"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" x="44" y="210">What it means: please stop</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.4" x="44" y="228">They conceded the logic, not the issue.</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.4" x="44" y="246">Nothing changes once they leave.</text>
+<rect fill="#f7faf6" height="64" rx="6" stroke="#4e8a3f" stroke-width="1.3" width="300" x="370" y="190"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.8" font-weight="700" x="384" y="210">What it means: you got it</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.4" x="384" y="228">The guard drops and they add detail —</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.4" x="384" y="246">everything you need is in that part.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="276">Don't celebrate "you're right." It's usually the sound of a negotiation closing, not opening.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts: a good summary has three parts</div>
+<div class="template">
+<span class="label">The goal isn't to convince them; it's to make them say "that's right"</span>
+<p>· <strong>Part one · label the emotion</strong>: "It sounds like you're caught in the middle on this." Open with "it sounds like" or "it seems like," never "I know you…" — the latter draws the conclusion for them and invites pushback.</p>
+<p>· <strong>Part two · restate the structure</strong>: put their situation back <strong>in your own words</strong>, especially the stakes they didn't spell out — who's watching them, who they have to answer to. Parroting does nothing; naming the structure does everything.</p>
+<p>· <strong>Part three · ask to be corrected</strong>: "Have I got that right?" It hands control back and gives them room to fix whatever you guessed wrong — <strong>and that correction is usually the important part.</strong></p>
+<p>· <strong>Then shut up. Four seconds.</strong> Most people can't sit with silence and keep going, and those sentences are often worth more than the previous half hour.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: at the renewal meeting your contact opens coldly — "results this year were mediocre. Some people internally want to replace you."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Defend immediately</div>
+<p>"But we shipped three modules and the failure rate came down…" The numbers may all be correct, but what you're doing is <strong>contradicting them — right at the moment they admitted their own position is awkward.</strong> The likely reply: "You're right, but we still have to re-evaluate." Polite, closed, no follow-up.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Get their situation right first</div>
+<p>"Thanks for being straight with me. <strong>It sounds like you've been absorbing a lot for us internally this year, and you don't have a single result you can hold up that anyone would understand at a glance. Now people are floating a switch, and you're the one who has to weigh what switching costs. Have I got that right?</strong>"<br/>(A few seconds of silence. Them: …yes, that's it. The new VP only looks at one metric, and I can't present any of yours against it.)<br/>—— <strong>The real problem was never "mediocre results." It's "no metric that survives in the room."</strong> You already had the data; the self-defence route would never have bought you that sentence. What to do next isn't a discount to save the account — it's one page of results restated in the VP's metric.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: being accurately understood is a socially rewarding signal in its own right, and being misunderstood activates negative circuitry that partly overlaps with social pain. A person who is defending only repeats their position; once the defence lifts, they trade information. So "getting them to say that's right" isn't emotional manipulation — it's an observable state change.</strong></p>
+<ul>
+<li><strong>Hard evidence · feeling understood and not understood look different in the brain</strong>: Morelli, Torre &amp; Eisenberger (2014, <em>Social Cognitive and Affective Neuroscience</em>) compared the two experiences under fMRI. Feeling <strong>understood</strong> activated the <strong>ventral striatum and middle insula</strong> (associated with reward and social connection); feeling <strong>not understood</strong> activated the <strong>anterior insula and dorsal anterior cingulate</strong> — the same regions that keep showing up in social-rejection research. <strong>Strength: a single fMRI study with a small sample</strong>, and reverse inference from region to function has well-known limits. (cross-ref psychology / neuroscience)</li>
+<li><strong>Moderate evidence · verbatim restating really does change behaviour</strong>: in a restaurant field experiment by van Baaren et al. (2003, <em>JESP</em>), <strong>servers who repeated the order back word for word received noticeably larger tips than the control group who answered "OK, no problem."</strong> One setting only — don't stretch it into "restating always works" — but it shows that being repeated accurately does its work without any persuasive content at all.</li>
+<li><strong>Mechanism note · putting a feeling into words weakens it</strong>: labelling an emotion cools the other person because the act of converting a feeling into language dampens the emotional response itself (evidence at both the fMRI and behavioural level; covered in the piece on listening). <strong>Name the feeling before you discuss the facts — reverse the order and it turns into arguing.</strong></li>
+</ul>
+<p class="caveat">Three boundaries. <strong>One, "that's right" is not a buying signal</strong>: it means the guard dropped; the terms still have to be negotiated. <strong>Two, the summary has to actually be accurate</strong>: getting it wrong is worse than not trying. <strong>Three, the hardest one: using the feeling of being understood to extract terms they wouldn't otherwise give is manipulation.</strong> What empathy should produce is a proposal that fits their situation better, not a more precise pressure point.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Say the worst of it for them, then ask them for help
+<span class="en">Say the worst of it first, then ask for help</span></h2>
+<span class="tag">accusation audit</span><span class="tag">asking for help</span><span class="tag">cognitive perspective-taking</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle"><strong>The sentence you're most afraid they'll say loses most of its force once you say it first.</strong> Then don't rush to defend — hand them the problem. Asking for help doesn't read as weak; it usually reads as more professional.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts: the accusation audit</div>
+<div class="template">
+<span class="label">Use it to open bad news, a high price, or any situation where you're clearly in the wrong</span>
+<p>· <strong>One, list the three harshest things they might be thinking</strong>: "here comes another price rise," "this outfit is too small to handle it," "they were late last time." Write them down.</p>
+<p>· <strong>Two, open with "you're probably going to think" and say them out loud</strong>: "What I'm about to say will probably sound like we're using this as an excuse to charge more." Flat tone, no defence, then pause.</p>
+<p>· <strong>Three, give the conclusion with no warm-up</strong>: bad news always goes first. Listing wins and then mentioning it "by the way" makes people feel handled — and feeling handled damages trust more than the bad news does.</p>
+<p>· <strong>Four, hand them the problem</strong>: "How do I keep this from hurting you on your side?" That's a request for counsel, not an apology.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: the project is slipping by two weeks, you have to tell the client today, and their annual meeting is three weeks out.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Lead with the wins, mention it in passing</div>
+<p>"Good progress these two weeks, the integrations are through, and delivery timing may need a slight adjustment…" <strong>They'll snap to attention on "adjustment" and re-evaluate every sentence you just said.</strong> The three seconds of awkwardness you saved cost you a permanent discount on your status reports.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Own it first, then ask for help</div>
+<p>"This next part is going to sound unprofessional, and you may well wonder whether we took on too much work. <strong>Conclusion first: the core module will be two weeks late.</strong>" (pause) "I can go into why, but I'd rather solve your problem first: <strong>the annual meeting is fixed — how do I make sure you have something to demo there?</strong>"<br/>(Them: actually we only demo three scenarios; the rest can come later.)<br/>—— <strong>Owning it means they don't have to spend energy exposing you; asking for help moves them out of the judge's seat.</strong> The outcome is a re-ordered scope: those three scenarios first, everything else on the new schedule. The delay itself never came up again.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Two mechanisms. One, when you say it first you set both the framing and the timing, and their experience shifts from "discovering" to "confirming" — and the sense of having been kept in the dark does more damage than the bad news itself. Two, asking for help moves them from "judging you" to "solving it with you," and that shift costs far less than any defence.</strong></p>
+<ul>
+<li><strong>Hard evidence · disclosing it yourself does less damage</strong>: Williams, Bourgeois &amp; Croyle (1993) found in mock-trial experiments that <strong>a party who volunteers damaging information first (the researchers call it stealing thunder) suffers significantly less than one who waits for the other side to reveal it</strong>; Dolnik, Case &amp; Williams (2003, <em>Law and Human Behavior</em>) replicated the effect and suggested part of the mechanism is that saying it first changes how serious listeners judge the information to be. Peer-reviewed with independent replication, <strong>but largely in courtroom simulations</strong> — carrying it into business communication is a mechanism inference.</li>
+<li><strong>Hard evidence · people who ask for advice are seen as more competent</strong>: Brooks, Gino &amp; Schweitzer (2015, <em>Management Science</em>) showed across a series of experiments that <strong>seeking advice raises the other person's estimate of your competence</strong> — the opposite of the intuition. The mechanism is that being consulted feels like being validated. The boundary is clear: <strong>it only holds when they actually know the subject.</strong></li>
+<li><strong>Hard evidence · you want accuracy, not feeling</strong>: Galinsky, Maddux, Gilin &amp; White (2008, <em>Psychological Science</em>) compared two instructions in negotiation experiments. The group told to <strong>work out cognitively what the other side was thinking</strong> achieved better individual and joint outcomes; the group told to <strong>feel emotionally what the other side felt</strong> gained far less, and in some settings did worse. <strong>The "tactical" in tactical empathy is accuracy, not softness.</strong></li>
+</ul>
+<p class="caveat">Boundary: <strong>there is real deference and fake deference.</strong> Real means stating a constraint that exists; fake means performing helplessness to buy a concession — and once that's seen through, nobody believes any "I can't do that" of yours again. Also, <strong>if the other side is a pure zero-sum hardliner, posture doesn't fix a power gap</strong>: that's a question of alternatives (the BATNA from the piece on negotiation basics). And don't turn the accusation audit into a self-flagellation session — two or three of the harshest lines is enough.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>What's holding it up is usually what you never thought to ask
+<span class="en">What decides it is usually what you never thought to ask</span></h2>
+<span class="tag">black swans</span><span class="tag">unknown unknowns</span><span class="tag">unstructured moments</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">A deal that won't move usually isn't a price problem — <strong>there's a constraint at work that you don't even know exists.</strong> Voss calls this kind of information a black swan: you don't know that you don't know it, so it isn't on your question list. Finding it isn't about better phrasing; it's about getting them to talk more, in less formal moments.</div>
+</div>
+<div class="section">
+<div class="section-label">An information grid: your question list only covers the left half</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 296" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a3" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Four kinds of information in a negotiation</text>
+<rect fill="#eef4f0" height="86" rx="6" stroke="#6a8577" stroke-width="1.3" width="300" x="30" y="34"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="10.4" font-weight="700" x="44" y="54">① Known knowns</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.4" x="44" y="76">Their quote, requirements, public filings.</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.4" x="44" y="98">Everyone has it — no advantage in it.</text>
+<rect fill="#eef1f5" height="86" rx="6" stroke="#3f5c7a" stroke-width="1.3" width="300" x="370" y="34"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.4" font-weight="700" x="384" y="54">② Known unknowns</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.4" x="384" y="76">Their ceiling, rival quotes, who signs.</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.4" x="384" y="98">On your list — asking closes the gap.</text>
+<rect fill="#dfeae2" height="86" rx="6" stroke="#4e8a3f" stroke-width="1.6" width="300" x="30" y="132"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10.4" font-weight="700" x="44" y="152">③ Unknown unknowns · black swans</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="44" y="172">A system migration in December, a fallout</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="44" y="190">with the last vendor, a decider you never met.</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.4" font-weight="700" x="44" y="208">You can't ask — you can only let them say it.</text>
+<rect fill="#f6e3da" height="86" rx="6" stroke="#c0603a" stroke-width="1.3" width="300" x="370" y="132"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.4" font-weight="700" x="384" y="152">④ Things they don't know either</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.4" x="384" y="172">They never costed a year of not changing;</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.4" x="384" y="190">they don't know that process can be bypassed.</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="384" y="208">Working it out for them is the value.</text>
+<line marker-end="url(#a3)" stroke="#4e8a3f" stroke-width="1.6" x1="180" x2="180" y1="224" y2="248"></line>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10.2" font-weight="700" x="20" y="270">③ only falls out in unstructured moments: a phone call, after the agenda ends, your four seconds of silence.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="288">The more efficient the channel, the more reliably it filters out the most valuable class of information.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Checklist: five moves that force black swans out</div>
+<div class="template">
+<span class="label">All of them raise how much they talk and how informal the setting is</span>
+<p>· <strong>Change the channel.</strong> Don't negotiate anything complex over email — a ten-minute phone call gets you half-sentences that would never have appeared in writing.</p>
+<p>· <strong>Don't hang up when the business is done.</strong> "By the way, something I've been curious about — how long does a decision like this usually take on your side?" <strong>The three minutes after the agenda ends is when black swans show up most.</strong></p>
+<p>· <strong>Ask "what's been hardest to push through," not "how's it going."</strong> The first asks for structure; the second gets you "still in process."</p>
+<p>· <strong>Four seconds of silence.</strong> Say your piece and don't fill the gap — most people will, and what they fill it with is often what they hadn't planned to say.</p>
+<p>· <strong>Watch the words they repeat.</strong> Someone who keeps mentioning "the annual meeting," "the audit," "our last supplier" is showing you the door in.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: a deal has been stuck for three weeks and every follow-up gets the same reply — "still going through the process."</div>
+<div class="dialog bad">
+<div class="speaker">✗ More frequency plus a test discount</div>
+<p>Two emails a week, then in week three "sign this month and I can take five percent off." <strong>You're solving an undiagnosed problem with price</strong> — if the blockage isn't money, that five percent is a gift; worse, you've taught them that waiting produces discounts.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Change the channel, ask for structure</div>
+<p>Call them: "I'm not chasing you — I just want to understand how to help from my end. <strong>What's been the hardest part to push through so far?</strong>"<br/>(Them: …honestly, we're replacing our ERP at year end. Yours will have to integrate with the new system, and nobody wants to sign for that right now.)<br/>—— <strong>Three weeks of silence explained, and it has nothing to do with price.</strong> The fix is now obvious: an integration note, and a contract split into "the parts that don't depend on the ERP now, the integration module signed once the new system lands." Discounting would not have closed this at any price.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: stalled negotiations usually come down to information asymmetry, and the hardest gap to close isn't "the piece I know I'm missing" — it's "the piece I never realised existed." Since you can't aim a question at something you can't conceive of, the only workable strategy is to raise the volume and informality of the other side's talking: treat hit rate, not questioning technique, as the lever.</strong></p>
+<ul>
+<li><strong>Hard evidence · the opening minutes are already deciding it</strong>: Curhan &amp; Pentland (2007, <em>Journal of Applied Psychology</em>) used only the conversational dynamics of the <strong>first five minutes</strong> — vocal variation, turn-taking, activity level, with no content at all — to predict a substantial share of the variance in final outcomes. <strong>Small talk isn't a warm-up; it's already transmitting and collecting information.</strong> Peer-reviewed, lab negotiation task.</li>
+<li><strong>Moderate evidence · a bit of chat first produces better results</strong>: Morris, Nadler, Kurtzberg &amp; Thompson (2002) had some participants make a brief, non-business phone call before negotiating by email: <strong>that group reached agreement more often and did better</strong>, and rated each other as more trustworthy. <strong>Strength: lab study, student samples</strong>, but consistent with "the narrower the channel, the more gets lost."</li>
+<li><strong>Weaker evidence · the "black swan" category itself</strong>: it comes from Voss (2016) as a practitioner's framework, <strong>not an experimental result</strong>. Its value is reminding you that the unknown-unknown quadrant exists, and shifting the action from "ask better" to "get them to say more."</li>
+</ul>
+<p class="caveat">Boundaries. <strong>One, don't turn "listen more" into fishing for leverage</strong>: what you dig up should make the proposal fit their situation better, not locate a soft spot to price against. <strong>Two, don't dig forever</strong>: if three good questions produce nothing new, there probably isn't a black swan — decide on what you know. <strong>Three, small talk has to be actual small talk</strong>: purposeful faux-warmth is easy to feel, and once it's spotted, every bit of empathy that came before gets reinterpreted as technique.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 23 Action</h3>
+<p>Pick one conversation that's stuck: a client who's gone quiet, a raise you need to ask for, a partner you've deadlocked with. Today, prepare two sentences and make one phone call.</p>
+<div class="action">
+<strong>1 (5 min):</strong> Copy out, word for word, the last thing they said that stung. Next to it write: <strong>what were they actually worried about when they said that?</strong> Three guesses, at least one of which is "a problem inside their organisation that has nothing to do with me."<br/><br/><strong>2 (10 min):</strong> Write a <strong>summary</strong> using the three parts — label the emotion, restate the structure, "have I got that right?" Read it back: <strong>if you were them, would you want to argue or want to add something?</strong> If it's argue, you're still reasoning at them. Rewrite.<br/><br/><strong>3 (5 min):</strong> Prepare one <strong>calibrated question</strong> starting with "how" or "what," to which you don't know the answer yourself.<br/><br/><strong>4 (3 min):</strong> If any part of this is on you, write down <strong>the two harshest things they might be thinking</strong> and pick one to say for them.<br/><br/><strong>5 (today):</strong> Call, don't email. After the summary, <strong>stay silent for four seconds</strong> — those four seconds are the real assignment.<br/><br/>Boundary: what all of this should produce is <strong>a proposal that fits their situation better</strong>. If what you dug up only tells you more precisely where to squeeze, you weren't practising empathy, you were extracting — and extraction works exactly once.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. I'm not much of a performer. Won't "how am I supposed to do that" just make me sound weak and invite a squeeze?</summary>
+<div class="answer">It depends on two things, neither of which is acting.<br/><br/><strong>First, whether you have an alternative.</strong> The same sentence coming from someone with two other clients in play is a request for counsel; coming from someone who can't make payroll without this deal it's a plea. The difference isn't tone — it's whether you know you can walk. The preparation that makes the line stand up happens away from the table (that's the BATNA from the piece on negotiation basics).<br/><br/><strong>Second, whether you stop after saying it.</strong> The common failure isn't a soft tone, it's answering your own question: "…of course I know that's difficult, maybe we could think of something else?" That takes the problem back off them and onto you, and wastes the whole move. <strong>Ask, then shut up.</strong><br/><br/>One practical adjustment: swap "I" for "we," which turns the posture from asking for help into solving together. <strong>Not being a performer is actually an advantage</strong> — the point is accuracy, not theatre, and a flat delivery reads as more credible.</div>
+</details>
+<details>
+<summary>2. What if they've read the same book and can see straight through the technique?</summary>
+<div class="answer">Separate what's been seen through. If they've spotted the <strong>form</strong> — "you're labelling me, aren't you" — that does almost no damage, because what's underneath the form is true. <strong>Seeing through an accurate summary doesn't make it less accurate.</strong><br/><br/>What actually collapses is the other case: <strong>they notice your empathy and your behaviour don't match.</strong> You say "sounds like you're caught in the middle" and then use that information to price against their deadline. What they've seen through then isn't the technique, it's the motive — and once a motive is settled on, everything you say afterwards gets translated into tactics.<br/><br/>So the fix isn't at the script level: <strong>only dig for information you intend to use on their behalf.</strong> If you're called out to your face, honesty is the best answer: <strong>"Yes — I'm genuinely trying to work out where this is stuck on your side, because I don't want to come back with a proposal you can't use. Have I understood it?"</strong> Pull the attention back to content; denial is what's awkward.</div>
+</details>
+<details>
+<summary>3. Where exactly is the line between tactical empathy and faking it? "Tactical" already sounds calculating.</summary>
+<div class="answer">Unpack the word calculating. <strong>The accuracy of your empathy can be deliberately trained, and that isn't fake. What's fake is a manufactured feeling, and understanding that gets used against the person who gave it to you.</strong> The research supports the distinction: in negotiation experiments, people told to work out cognitively what the other side was thinking did better than people told to feel what they felt (Galinsky et al., 2008). <strong>Train for accuracy, not for being moved.</strong><br/><br/>A line you can apply on the spot: <strong>if they saw your prep notes from today, would they feel understood or studied?</strong> "They have to answer to the VP; the real pain is having no metric that survives the room" is understanding — you wrote it in order to give them that metric. "Their boss is on holiday next week, squeeze them to sign before then" is study — you wrote it to use their time pressure.<br/><br/>Simpler self-check: <strong>did what you learned change your proposal, or only sharpen your pressure?</strong> This works so well in long relationships precisely because it can't be faked for long.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 23</footer>
+</div>
+</body>
+</html>
