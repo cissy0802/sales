@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 24: Anchors and Concessions</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 24 · Phase D</div>
+<h1>"Never Make the First Offer" Is the Most Expensive Advice in Negotiation</h1>
+<div class="meta"><span>Topic: who goes first · how to set the anchor · the rhythm of concessions · trading, not giving</span><span>·</span><span>4 moves · 3 diagrams</span></div>
+<div class="subtitle">You think two people are haggling. In fact both of you are orbiting the first number that hit the table — you included.</div>
+</header>
+<div class="intro">
+<strong>"Whoever speaks first loses" is the most widely repeated piece of negotiation folklore, and one of the costliest.</strong> The truth runs the other way: as long as you have a rough read on the market, the side that goes first takes more. Once a number lands, it stops being an offer and becomes the origin of the coordinate system for the whole conversation — every counter they make, every band they privately consider "reasonable," is an adjustment out from that origin. So the real question was never <em>should I go first</em>. It's <strong>how much do I actually know about this market</strong>.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Anchor first if you know the market — otherwise say nothing
+<span class="en">The test is informational, not tactical</span></h2>
+<span class="tag">anchoring</span><span class="tag">first offers</span><span class="tag">insufficient adjustment</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">A first offer isn't a statement of position — it <strong>pins where the other side starts searching</strong>. There's exactly one test for whether to make it: do you know the reasonable range for this deal? If yes, go first. If no, don't — you'd be doing their research for them and nailing yourself down in the process.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"People make estimates by starting from an initial value that is adjusted to yield the final answer… adjustments are typically insufficient."</span>
+<span class="source">— Tversky &amp; Kahneman, <em>Judgment under Uncertainty</em> (1974, <em>Science</em>)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Same person, same job — only the first number differs</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 316" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Wherever the first number lands, the deal lands near it</text>
+<rect fill="#f6e3da" height="114" rx="6" stroke="#c0603a" stroke-width="1.3" width="660" x="20" y="34"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.6" font-weight="700" x="34" y="56">① You say "whatever your standard band is"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="277" y="84">They open at 25k</text>
+<line stroke="#c0a08c" stroke-width="1.4" x1="150" x2="655" y1="96" y2="96"></line>
+<text fill="#a89080" font-family="Georgia" font-size="8.6" text-anchor="end" x="144" y="100">20k</text>
+<text fill="#a89080" font-family="Georgia" font-size="8.6" x="661" y="100">40k</text>
+<circle cx="277" cy="96" fill="#c0603a" r="5"></circle>
+<circle cx="328" cy="96" fill="#8a4a2a" r="5"></circle>
+<line marker-end="url(#a1)" stroke="#3f5c7a" stroke-width="1.5" x1="286" x2="320" y1="110" y2="110"></line>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="330" y="128">Settles at 27k</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.4" x="34" y="142">Their number is now the origin. A whole session of effort moves it 2k.</text>
+<rect fill="#dfeae2" height="134" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="660" x="20" y="160"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10.6" font-weight="700" x="34" y="182">② You open with a number you researched</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="405" y="210">They counter at 30k</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="end" x="655" y="210">You open at 38.5k · three comparable roles</text>
+<line stroke="#a8bda0" stroke-width="1.4" x1="150" x2="655" y1="222" y2="222"></line>
+<text fill="#8fa588" font-family="Georgia" font-size="8.6" text-anchor="end" x="144" y="226">20k</text>
+<text fill="#8fa588" font-family="Georgia" font-size="8.6" x="661" y="226">40k</text>
+<circle cx="405" cy="222" fill="#4e8a3f" r="5"></circle>
+<circle cx="481" cy="222" fill="#123f30" r="5"></circle>
+<circle cx="609" cy="222" fill="#2b5a1f" r="5"></circle>
+<line marker-end="url(#a1)" stroke="#3f5c7a" stroke-width="1.5" x1="601" x2="494" y1="236" y2="236"></line>
+<line marker-end="url(#a1)" stroke="#3f5c7a" stroke-width="1.5" x1="413" x2="468" y1="236" y2="236"></line>
+<text fill="#123f30" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="481" y="256">Settles at 33k</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.4" x="34" y="278">The origin moved, and "let's both give a little" moved with it.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="310">What moved isn't your value — it's the reference point. This assumes you can back the number up; an unsupported high anchor is a different animal.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: a recruiter asks on the phone, "what salary range are you looking for?" You already have a verbal yes; this is the last open item.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Hand over the first move</div>
+<p>"Whatever your standard band is — I care more about the work." It sounds gracious. What actually happened is that <strong>you gave away the power to set the origin, for free</strong>. They say 25k, you grind up to 27k and that counts as playing it well — and 33k never entered the conversation at any point.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Go first, and go first with evidence</div>
+<p>"I looked at three public bands for the same level in this city — roughly 32 to 40. <strong>Given that I can take this workstream over directly, I'm at 38.5.</strong>" (pause) "<strong>If that's outside your band, which part should I be evidencing better?</strong>"<br/>—— Reasoning first, precise number second, then a question that hands the problem back. Even if they counter at 30, the two of you are now negotiating inside 30–38 rather than 25–27.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: people don't price things from zero. They grab whatever number is nearby as a starting point and adjust outward — and the adjustment is systematically too small. So the first number isn't "a position." It quietly becomes the ruler the other side uses to judge what counts as reasonable, and they don't notice it happening.</strong></p>
+<ul>
+<li><strong>Hard evidence · the anchoring effect itself</strong>: Tversky &amp; Kahneman (1974, <em>Science</em>) had people spin a wheel for a random number, then estimate the percentage of African nations in the UN — <strong>the estimates were pulled significantly toward a number everyone knew was random</strong>. It's also one of the best-replicated effects in the field: in the Many Labs multi-site replication project (Klein et al., 2014), anchoring came back cleanly in nearly every sample.</li>
+<li><strong>Hard evidence · first movers do better</strong>: Galinsky &amp; Mussweiler (2001, <em>JPSP</em>) ran a series of negotiation experiments in which <strong>the side that made the first offer ended up with significantly better outcomes</strong>. The same paper supplies the antidote: participants directed to focus on <strong>their own target price or on the opponent's alternatives</strong> were markedly less affected by the other side's anchor. Peer-reviewed, multiple experiments.</li>
+<li><strong>The boundary matters more than the finding</strong>: the advantage rests on your having a read on the range. Going first from an informational deficit both reveals and caps you — the moment you say 28k, the budget that would have stretched to 35k stops existing.</li>
+</ul>
+<p class="caveat">Three times not to go first: <strong>you genuinely don't know the market</strong> (two hours of research beats any script here); <strong>they hold cost or budget information you don't</strong>, so going first is opening blind; <strong>they have a published price list</strong>, where going first only signals you didn't do the homework. Everywhere else, go first.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>38,500 survives the knife better than 40,000
+<span class="en">A precise number reads as a calculation; a round one reads as a guess</span></h2>
+<span class="tag">precise anchors</span><span class="tag">bolstering range</span><span class="tag">one real because</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">An anchor that holds has three properties: <strong>precise, evidenced, and defensible by you</strong>. A round number looks like it was pulled out of the air, so people feel free to counter out of the air; a precise one looks like an output, and countering it means arguing with your method.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts: four parts that make an anchor hard</div>
+<div class="template">
+<span class="label">None of the four costs you anything, and each one changes how far they counter</span>
+<p>· <strong>Part one · precision.</strong> Quote 38,500, not 40,000. Quote 9,600, not "around ten grand." Round numbers come with the words "or thereabouts" attached.</p>
+<p>· <strong>Part two · reasoning before the number.</strong> "Based on three comparable builds / on the hours this saves you" — give the ruler first, and their attention shifts from <em>is this expensive</em> to <em>is this the right ruler</em>.</p>
+<p>· <strong>Part three · if you use a range, use a bolstering one.</strong> Want 38? Say "38 to 42," never "35 to 40." The first puts your target at the bottom of the range; the second has already conceded 3.</p>
+<p>· <strong>Part four · stop talking.</strong> Adding "of course, that's negotiable" discounts you before they've even swung.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: you're freelance. A client asks what a website rebuild would cost. Your target is 38,000.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Round number plus self-inflicted discount</div>
+<p>"Around forty thousand, but the price is negotiable — depends on your budget." <strong>"Around" says you haven't costed it, "forty" says it's an approximation, and "negotiable" tells them where to start cutting.</strong> Their opening line is "could you do twenty-five?" — and they don't experience themselves as squeezing you. They're just catching the signal you threw.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Reasoning first, precise number, bolstering range</div>
+<p>"I cost these in three parts: rebuilding the information architecture, visual and responsive work across 12 pages, and the integration pass with your CMS. <strong>Against actual hours on my last three builds this size, it lands between 38,500 and 42,000, depending on whether I have to write the adapter layer.</strong>" (pause) "<strong>Is your CMS custom or off the shelf?</strong>"<br/>—— Precise, target at the bottom of the range, reasoning they can check, and a closing question that hands pricing over to the facts. To cut it, they first have to argue that 12 pages are really 8 — <strong>which is a scope negotiation, not a price negotiation, and scope was always the thing worth negotiating</strong>.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: precision is a signal about how much you know. Hearing 38,500, the default inference is that there's arithmetic behind it — and if you've done the arithmetic, their confidence in their own gut sense of "about what this should cost" drops, so their counter-step shrinks. A round number does the opposite: it openly admits to being an estimate.</strong></p>
+<ul>
+<li><strong>Hard evidence · precise offers move less</strong>: Mason, Lee, Wiley &amp; Ames (2013, <em>JESP</em>) found that <strong>precise first offers (9,115) drew smaller counter-adjustments than round ones (9,000)</strong>; Loschelder, Stuppi &amp; Trötschel (2014, <em>SPPS</em>) reproduced the same direction across several settings — the paper is literally titled "€14,875?" Peer-reviewed, several independent studies.</li>
+<li><strong>Hard evidence · bolstering ranges cost nothing and read better</strong>: Ames &amp; Mason (2015, <em>JPSP</em>) compared point offers with range offers systematically and found that <strong>a bolstering range — wanting 7,000 and asking 7,000–8,000 — did as well or better than a point offer while making the asker seem easier to deal with</strong>. It signals flexibility without actually surrendering the floor. A range with your target at the <em>top</em>, by contrast, is an automatic discount.</li>
+<li><strong>Moderate evidence · the because has to be real</strong>: in Langer, Blank &amp; Chanowitz's (1978) copy-machine study, giving a reason for cutting the line raised compliance sharply — even a placebic one ("because I need to make copies"). <strong>But once the request got bigger (20 pages), the empty reason stopped working and only substantive reasons did.</strong> Price is a big request: your justification has to survive follow-up questions.</li>
+</ul>
+<p class="caveat">Boundaries. <strong>One, precise doesn't license absurd</strong>: a precise number that's visibly off-market just reads as ignorance, and the anchoring advantage flips. <strong>Two, extreme anchors raise the odds of no deal</strong> — in long relationships and small industries, what people remember isn't the settled price but "that one quotes wild numbers." <strong>Three, don't use precision as camouflage</strong>: multiplying cost by 1.9 and dressing it up as 38,500 is the same class of move as inventing an alternative you don't have. It works once.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Equal concessions announce that another one is coming
+<span class="en">Your concession pattern is a sentence — make sure it says what you mean</span></h2>
+<span class="tag">concession ladder</span><span class="tag">shrinking steps</span><span class="tag">fairness signals</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle"><strong>The size and spacing of your concessions is itself a statement.</strong> Almost nobody believes you when you say "this really is the last one" — they watch how much you moved this time versus last time instead. Anyone can say the words. Nobody can fake a shrinking step.</div>
+</div>
+<div class="section">
+<div class="section-label">Two concession curves, two completely different messages</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#6a8577"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Both go from 40 to about 32 over four rounds. They do not end the same way.</text>
+<rect fill="#fdf6f2" height="168" rx="6" stroke="#c0603a" stroke-width="1.3" width="320" x="20" y="34"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.6" font-weight="700" x="34" y="56">✗ Equal steps: −2 / −2 / −2 / −2</text>
+<polyline fill="none" points="60,86 125,111 190,136 255,161 310,186" stroke="#c0603a" stroke-width="2"></polyline>
+<circle cx="60" cy="86" fill="#c0603a" r="4"></circle>
+<circle cx="125" cy="111" fill="#c0603a" r="4"></circle>
+<circle cx="190" cy="136" fill="#c0603a" r="4"></circle>
+<circle cx="255" cy="161" fill="#c0603a" r="4"></circle>
+<circle cx="310" cy="186" fill="#c0603a" r="4"></circle>
+<text fill="#8a4a2a" font-family="Georgia" font-size="8.8" x="46" y="78">40</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="8.8" x="296" y="178">32</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="34" y="212">They read: "there's more where that came from."</text>
+<rect fill="#f2f7ef" height="168" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="320" x="360" y="34"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10.6" font-weight="700" x="374" y="56">✓ Shrinking steps: −4 / −2 / −1 / −0.4</text>
+<polyline fill="none" points="400,86 465,136 530,161 595,174 650,179" stroke="#4e8a3f" stroke-width="2"></polyline>
+<circle cx="400" cy="86" fill="#4e8a3f" r="4"></circle>
+<circle cx="465" cy="136" fill="#4e8a3f" r="4"></circle>
+<circle cx="530" cy="161" fill="#4e8a3f" r="4"></circle>
+<circle cx="595" cy="174" fill="#4e8a3f" r="4"></circle>
+<circle cx="650" cy="179" fill="#4e8a3f" r="4"></circle>
+<text fill="#2b5a1f" font-family="Georgia" font-size="8.8" x="386" y="78">40</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="8.8" x="636" y="171">32.6</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.6" font-weight="700" x="374" y="212">They read: "near the floor — pushing buys little."</text>
+<line marker-end="url(#a2)" stroke="#6a8577" stroke-width="1.5" x1="20" x2="120" y1="232" y2="232"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="128" y="236">rounds</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="262">On the left, move four is as generous as move one — so why would move five not exist? They'll push again, and they're right to.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="286">Nearly identical ground given up. The difference is rhythm: shrinking steps let them compute your floor themselves.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Checklist: write the ladder before the conversation</div>
+<div class="template">
+<span class="label">On paper, never in the moment — concessions decided in the moment never shrink</span>
+<p>· <strong>Three numbers first: target, acceptable, walk-away.</strong> If you can't write the walk-away, you don't have an alternative yet — go build one (that's what the BATNA in the negotiation-basics piece is) rather than practising lines.</p>
+<p>· <strong>Each step no more than half the last.</strong> 4 → 2 → 1 → 0.4. Mathematically you've given real ground; perceptually you are visibly decelerating.</p>
+<p>· <strong>Longer gaps as you go.</strong> An instant concession costs nothing by definition. Sleeping on the third one makes "I ran the numbers again" a piece of information in itself.</p>
+<p>· <strong>Name the last step, and mean it.</strong> The second time you say "that's the last number I can sign," every floor you named before it is retroactively a bluff.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: you quoted 38,500. The client comes back with "our budget is 30,000." Your acceptable number is 34,000, your walk-away 32,000.</div>
+<div class="dialog bad">
+<div class="speaker">✗ One jump to "my real price"</div>
+<p>"Fine, let me give you my real number — 34,000, and I can't go lower." <strong>You surrendered your whole range in one move and proved the original quote carried 4,500 of air.</strong> Their next line is almost guaranteed to be "make it 32 and we sign today" — because you just taught them that one push is worth 4,500.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Shrinking steps, each with a condition attached</div>
+<p>"I can't do 30,000 at this scope. <strong>But if your engineers write the adapter layer, I can get to 36,000.</strong>"<br/>(they push again) "<strong>If half is paid at signature, I can go to 34,800.</strong>"<br/>(they push once more) "<strong>34,500, on the condition I can use your logo as a case study. That's my floor.</strong>"<br/>—— 4,500 of room spent across three moves of 2,500 / 1,200 / 300, each one traded for something. <strong>By the third, "that's my floor" doesn't need to be insisted on — they've already worked it out.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Two layers. One, they're extrapolating: from your sequence of concessions they estimate what one more push is worth. An equal sequence extrapolates to infinity; a shrinking one converges on a point, and that point becomes their belief about your floor. Two, an unconditional concession rewards the behaviour of pushing — and rewards it unpredictably, which is exactly the intermittent schedule that's hardest to extinguish.</strong></p>
+<ul>
+<li><strong>Hard evidence · feeling gamed beats the money</strong>: Sanfey et al. (2003, <em>Science</em>) ran the ultimatum game in an fMRI scanner and found that <strong>unfair splits activated bilateral anterior insula (associated with disgust and negative affect), and the stronger the activation the more likely the person was to reject — even though rejecting meant getting nothing at all</strong>. Managing your concession rhythm is managing exactly this: a sequence that reads as "you're playing me" can cost far more than the amount in dispute. <strong>Peer-reviewed classic, though inferring emotion from regions needs care.</strong> (cross-ref psychology / neuroscience)</li>
+<li><strong>Moderate evidence · your concessions do pull concessions back</strong>: in Cialdini et al.'s (1975, <em>JPSP</em>) door-in-the-face experiments, a large request (two years of weekly counselling work with juvenile offenders) refused and followed by a small one (chaperone them to the zoo once) produced <strong>about 50% compliance, versus about 17% for the small request alone</strong>. But O'Keefe &amp; Hale's (1998) meta-analysis shows <strong>the effect is real but small</strong>, and conditional: same person must make both requests, the gap must be short, and the first request can't be preposterous. Concessions buy reciprocity — just don't ask them to carry the whole negotiation.</li>
+<li><strong>Moderate evidence · giving more doesn't make them happier</strong>: Kwon &amp; Weingart (2004, <em>Journal of Applied Psychology</em>) found that <strong>people who received larger unilateral concessions were less satisfied with the outcome</strong> — a big move prompts them to reassess how much more they could have had. One line of studies, so don't over-generalise; but it does dispose of the intuition that generosity reliably buys goodwill.</li>
+</ul>
+<p class="caveat">Boundaries. <strong>One, shrinking is a rhythm, not a performance</strong>: declare a floor while sitting on 5,000 of room, get caught once, and every "final number" you ever quote is void. <strong>Two, don't turn it into a slow drip</strong>: three steps is the usual ceiling — beyond that you burn patience and the relationship. <strong>Three, when they're plainly stalling to wait you down</strong>, more shrinking steps aren't the answer — put an expiry on the quote, or just ask what's actually blocking a decision today.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>Never give a concession — put an "if" in front of it
+<span class="en">Never give a concession; trade it</span></h2>
+<span class="tag">conditional trades</span><span class="tag">if-then</span><span class="tag">equivalent packages</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Free ground doesn't buy goodwill; it <strong>resets their expectations</strong>. They won't remember you as generous — they'll treat the new price as the new starting line. So every move gets a condition: <strong>"if… then I can…"</strong>, and the order is not optional. The "if" comes first.</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts: build the list before you open your mouth</div>
+<div class="template">
+<span class="label">Two columns before the meeting: cheap for me, valuable to them</span>
+<p>· <strong>Usual currencies</strong>: payment terms and deposit size, contract length, delivery flexibility, scope trims, case-study rights and logo use, referrals, priority response tiers, renewal clauses. <strong>What these cost you and what they're worth to the other side are often an order of magnitude apart</strong> — that gap is the room you can trade out of.</p>
+<p>· <strong>Fixed sentence shape</strong>: "If you can <em>pay half up front</em>, then I can do <em>36,000</em>." Not "36,000 — oh, and could you pay early?", where you've already dropped the price and turned the condition into a favour.</p>
+<p>· <strong>Put three equivalent packages on the table at once (MESOs)</strong>: worth roughly the same to you, shaped completely differently for them. It turns "should I?" into "which one?" <strong>Whichever they pick tells you whether they're really protecting cash flow, headline price, or timeline.</strong></p>
+<p>· <strong>Make concessions revocable</strong>: "that price is attached to the deposit — if the deposit goes back to normal, so does the price." Say the binding out loud, or the condition gets quietly dropped and only the discount survives.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Three equivalent packages: turning "should I?" into "which one?"</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 302" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a3" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Worth about the same to you, shaped completely differently for them</text>
+<rect fill="#eef4f0" height="120" rx="6" stroke="#6a8577" stroke-width="1.3" width="200" x="20" y="36"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="10.4" font-weight="700" x="34" y="58">Package A</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.4" x="34" y="80">38,500 · full price</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.4" x="34" y="100">Net 60 after sign-off</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.4" x="34" y="120">Standard support · one project</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" font-style="italic" x="34" y="142">They want payment terms</text>
+<rect fill="#eef1f5" height="120" rx="6" stroke="#3f5c7a" stroke-width="1.3" width="200" x="250" y="36"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.4" font-weight="700" x="264" y="58">Package B</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.4" x="264" y="80">36,000 (−6.5%)</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.4" x="264" y="100">Paid in full at signature</text>
+<text fill="#4a6178" font-family="Georgia" font-size="9.4" x="264" y="120">Standard support · one project</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9" font-style="italic" x="264" y="142">They want the headline price</text>
+<rect fill="#dfeae2" height="120" rx="6" stroke="#4e8a3f" stroke-width="1.3" width="200" x="480" y="36"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10.4" font-weight="700" x="494" y="58">Package C</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="494" y="80">34,000 (−12%)</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="494" y="100">Two years · quarterly</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="494" y="120">Case study and logo rights</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9" font-style="italic" x="494" y="142">They want long-term certainty</text>
+<line marker-end="url(#a3)" stroke="#4e8a3f" stroke-width="1.6" x1="350" x2="350" y1="158" y2="186"></line>
+<rect fill="#f7faf6" height="76" rx="6" stroke="#4e8a3f" stroke-width="1.4" width="660" x="20" y="192"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10.4" font-weight="700" x="34" y="216">Whichever they pick answers the question you can't ask directly</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="34" y="238">A = cash is tight, price wasn't the issue. B = has money, needs a discount to report upward. C = values stability, will trade term for price.</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="34" y="258">All three refused is also information: the blocker isn't on these axes — go back and re-run discovery.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="292">Precondition: the three really must be worth about the same to you. If C loses money, you're digging your own hole.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: renewal with an existing client. Procurement says, "group policy this year — every supplier takes a 15% cut, you included."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Just give it, and hope goodwill comes back</div>
+<p>"Understood, we'll play along — 15% it is." <strong>You think you bought goodwill; what you bought is a new baseline.</strong> They'll be back next year, starting from this number. Worse, you just proved the original price contained 15% of air — and that travels to their other departments.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Convert the discount into a trade, then offer three</div>
+<p>"I understand the mandate, and you have to show a result. <strong>I can't do 15% off with the same service wrapped around it — but here are three that all land inside your number:</strong>"<br/>"<strong>A</strong>: 15% off, quarterly on-site inspection becomes remote. <strong>B</strong>: 15% off, on a two-year term paid annually. <strong>C</strong>: price unchanged, and I add the reporting module you've been asking for — the ratio looks better than a discount and reports upward more easily."<br/>(Them: …honestly, what they look at upstairs is total spend, not unit price.)<br/>—— <strong>There's the real requirement: they need a number they can report, not that 15%.</strong> C is often the answer, and you didn't drop a cent.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: trading is possible because the same item is almost never worth the same to both sides — payment terms are nearly free to a cash-rich party and worth several points to a cash-poor one. Deals stall not because there isn't room but because both sides assume price is the only axis, squashing a multi-dimensional problem into a zero-sum one.</strong></p>
+<ul>
+<li><strong>Hard evidence · most people assume a fixed pie</strong>: Thompson &amp; Hastie (1990, <em>OBHDP</em>) found negotiators walk in assuming their interests are directly opposed, and therefore <strong>systematically miss the integrative room created by differing preferences — even when a mutually better deal exists, they often fail to find it</strong>. The "fixed-pie perception" is among the most solidly replicated findings in negotiation research (Bazerman &amp; Neale's integrative-bargaining literature agrees). Breaking it means putting tradeable items on the table.</li>
+<li><strong>Moderate evidence · multiple equivalent offers</strong>: research around MESOs (multiple equivalent simultaneous offers), associated with Medvec, Galinsky and colleagues, indicates that <strong>presenting several equivalent packages at once yields better outcomes than testing them one at a time, and improves how the other side rates you</strong>. The mechanism is that it exposes their preference ordering while avoiding the "rejected once, so concede unilaterally" rhythm. <strong>Strength: lab work plus practitioner synthesis — not as hard as anchoring.</strong></li>
+<li><strong>Weaker evidence · the "never give it free" rule itself</strong>: it comes from practitioner tradition, <strong>with no clean controlled trial</strong>. What's solid is the reinforcement mechanism underneath: every unconditional concession rewards pushing, and a reward that comes intermittently is the hardest kind to extinguish. The cost of free concessions isn't in this deal — it's in the next one.</li>
+</ul>
+<p class="caveat">Boundaries. <strong>One, don't turn it into nickel-and-diming</strong>: pricing every small favour wrecks the relationship account. An occasional "this one's on us" has real value with a long-standing client — but say explicitly that it's an exception, or the exception becomes the new baseline automatically. <strong>Two, only trade things you can actually deliver</strong>: agreeing to an impossible deadline to protect a price converts a pricing problem into a trust problem, which is the more expensive one. <strong>Three, if they genuinely have only one axis</strong> (a hard budget mandate), three packages won't save it — at that point the question is whether the deal is still worth having (the logic from the qualifying piece).</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 24 Action</h3>
+<p>Pick something you actually have to negotiate this week: a quote, a raise, a renewal, rent. Twenty minutes of prep — but it has to be on paper. A ladder you didn't write down turns into equal steps in the moment, every time.</p>
+<div class="action">
+<strong>1 (5 min):</strong> Write three numbers — <strong>target / acceptable / walk-away</strong>. If you can't write the walk-away, stop there: what you're missing isn't a script, it's an alternative.<br/><br/><strong>2 (5 min):</strong> Find two comparables, make the anchor <strong>precise to the nearest ten</strong>, and write one <em>because</em> you'd be happy to be cross-examined on. If you use a range, bolster it: target at the bottom.<br/><br/><strong>3 (5 min):</strong> Draw the concession ladder — three steps, <strong>each no more than half the last</strong>, each with an "if" already attached.<br/><br/><strong>4 (5 min):</strong> List five things that are <strong>cheap for you and valuable to them</strong>, and assemble three equivalent packages out of them.<br/><br/><strong>5 (in the room):</strong> Go first if you have the information. Say the "if" before every move. Then stop talking and don't discount yourself.<br/><br/>One boundary: all of this assumes <strong>your offer is genuinely worth something to them</strong>. Anchors and concession rhythm decide how that value gets split; they don't create it. Used to sell someone something they shouldn't buy, they work in the short run and cost you repeat business and reputation in the long run.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. They accepted my number immediately. Did I go too low?</summary>
+<div class="answer">Probably — but two things are worth separating.<br/><br/><strong>First, an instant yes is information.</strong> It says your number sat inside their reserve, possibly well inside. Experienced buyers counter once as a formality even when they think it's cheap, precisely so you don't get that signal. So when someone says "great, done" without hesitating, write it down.<br/><br/><strong>Second, don't file it as a failure.</strong> Three rounds of grinding you didn't have, a relationship you didn't sand down, cash flow that starts on schedule — those are real gains. Spending days annoyed about a hypothetical extra 5% is itself a losing trade.<br/><br/><strong>Turn it into calibration data:</strong> on the next comparable deal, raise the anchor 8–10%, keep the reasoning just as explicit, and watch whether the counter gets stronger. If two or three in a row still say yes instantly, your pricing is low across the board — that's a pricing problem, and it should be fixed by raising prices, not recovered inside a single negotiation.</div>
+</details>
+<details>
+<summary>2. Won't a high anchor look greedy and scare people off? This is the part I dread.</summary>
+<div class="answer">The fear is reasonable, but it's aimed at the wrong thing. <strong>What scares people off isn't "high" — it's "high with nothing behind it."</strong> 38,500 with "against actual hours on my last three builds this size" may still feel expensive, but they can see you did arithmetic. 40,000 with "somewhere around there" leaves them unable to tell what's expensive about it, so all they can do is suspect they're being tested.<br/><br/>Which makes the real test this: <strong>can you take the number apart out loud?</strong> If you can, it isn't a high anchor, it's pricing. If you can't, you haven't thought it through either — go break the cost and the deliverables back into parts first.<br/><br/>One genuine boundary: <strong>extreme anchors really do raise the chance of no deal.</strong> In long relationships and small industries, what people remember is rarely the settled price — it's "that one quotes wild numbers," and the label follows you for years. The safe formulation: <strong>set the anchor at the highest number you can defend without flinching, not the highest number you dare say out loud.</strong> The gap between those two positions is the gap between professional and sleazy.</div>
+</details>
+<details>
+<summary>3. They opened with an absurdly low number. How do I dismantle that anchor?</summary>
+<div class="answer">The key is not to answer inside their coordinate system. Three steps, in order.<br/><br/><strong>First, do not counter.</strong> They say 15,000, you say "would 25,000 work?" — done, you've conceded that 15,000 is a legitimate starting point, and every piece of arithmetic from here happens between 15 and 25.<br/><br/><strong>Second, name the number, without heat.</strong> "15,000 is a long way from this range — I'm worried we're describing different things. <strong>How did you get to that number?</strong>" That puts the burden of proof back on them. Either they produce a basis (and you've learned something real: maybe they're holding a competitor's quote, or their idea of the scope is far smaller than yours), or they can't — in which case the anchor goes soft without your touching it.<br/><br/><strong>Third, change the ruler and start again.</strong> Don't adjust up and down around their figure; <strong>replace the reference point entirely</strong>: "let me walk through what a rebuild like this consists of and where comparable ones land," then give your own evidenced number. In Galinsky &amp; Mussweiler's (2001) experiments, participants told to focus on <strong>their own target price or the opponent's alternatives</strong> were noticeably less pulled by the other side's anchor. That isn't a mindset exercise — it's a thirty-second action before you walk in: write down your target and your "what do I do if this doesn't close," phone notes are fine.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 24</footer>
+</div>
+</body>
+</html>
