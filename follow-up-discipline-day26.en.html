@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 26: The Discipline of Follow-up</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 26 · Phase D</div>
+<h1>"Just checking in"<br/>is the most expensive sentence in sales</h1>
+<div class="meta"><span>The fake five-follow-up stat · follow-up with information in it · widening intervals and when-then · the walk-away line</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">The same person closes after eight touches and gets blocked after three. The difference was never the count — it's whether each touch carried something they'd miss if they deleted it.</div>
+</header>
+<div class="intro">
+<strong>The most-quoted follow-up statistic in sales is invented.</strong> "80% of deals close after the fifth follow-up; 44% of salespeople quit after one" is credited to the National Sales Executive Association — an organisation nobody can find any trace of, attached to a report nobody can produce. Every article citing it is citing another article citing it. Stop using it for courage. But it hides something true: <strong>deals don't die from too few follow-ups, they die because every follow-up was empty.</strong> An empty touch isn't zero — it's negative. It teaches them that opening your message gets them nothing.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>The five-follow-up stat is folklore. Speed isn't.
+<span class="en">Count is an effect, not a cause</span></h2>
+<span class="tag">source-checking</span><span class="tag">response speed</span><span class="tag">sunk discovery cost</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The first variable in follow-up isn't <em>how many times</em> — it's <strong>how long after they raised their hand</strong>. Count is an effect, not a cause: deals that took seven touches to close mostly got seven touches because they were warm enough to survive that long. <strong>Treat the count as the cause and you'll go harass a pile of people you should have disqualified.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Firms that tried to contact potential customers within an hour of receiving a query were nearly seven times as likely to qualify the lead."</span>
+<span class="source">— Oldroyd, McElheran &amp; Elkington, <em>The Short Life of Online Sales Leads</em>, HBR (2011)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Same leads, one difference: how long before contact</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 286" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="24">Relative odds of reaching a real conversation with a decision maker</text>
+<rect fill="#4e8a3f" height="26" rx="3" width="470" x="206" y="48"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="10.4" text-anchor="end" x="198" y="66">contacted within 1 hour</text>
+<text fill="#fbfaf4" font-family="Georgia" font-size="10.6" font-weight="700" x="218" y="66">60× and up</text>
+<rect fill="#8fb87e" height="26" rx="3" width="67" x="206" y="102"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="10.4" text-anchor="end" x="198" y="120">one hour later</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.4" font-weight="700" x="282" y="120">about 8.6× — i.e. ~7× below the first bar</text>
+<rect fill="#c0603a" height="26" rx="3" width="10" x="206" y="156"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="10.4" text-anchor="end" x="198" y="174">waited over 24 hours</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.4" font-weight="700" x="226" y="174">1× (baseline)</text>
+<line stroke="#c2ccbe" stroke-width="1.2" x1="206" x2="206" y1="42" y2="190"></line>
+<rect fill="#fbefe8" height="34" rx="4" stroke="#c0603a" stroke-width="1.1" width="656" x="20" y="204"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.6" font-weight="700" x="34" y="226">In the same audit, about 23% of companies never responded to the test enquiry at all.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="258">Multipliers as reported; bars scale to them, with the shortest drawn at a minimum visible width. Audit of 2,241 US</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="276">companies plus a separate analysis of ~1.25 million leads. Large-scale field audit, not a controlled trial — directional.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: someone fills in your web form and writes "interested in the reconciliation piece."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Batch them up and call on Friday</div>
+<p>Friday afternoon you work down the list: "Hi, I saw you left your details on our site a few days ago—" <strong>They can't remember what they filled in, and they've already spoken to two other vendors.</strong> Those two have defined what "comparing reconciliation systems" means, and you're now competing inside somebody else's scorecard.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Call within 25 minutes, using their own sentence</div>
+<p>"You mentioned reconciliation just now — I won't pitch anything yet. <strong>Can I ask how many people are doing it by hand today, and roughly how many transactions a month?</strong>"<br/>—— The value of speed isn't politeness. It's that the problem is still live in their head and nobody else's frame has claimed it. <strong>Arriving first isn't stealing the deal, it's defining the criteria.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: speed isn't diligence, it's catching attention before it files itself away. The moment they leave that page or that meeting, the topic moves from "open" to "archived," and reopening it costs something. Worse is the ordering: the later you arrive, the likelier you're the third or fourth caller, and the earlier ones have already written the evaluation criteria you now have to score inside.</strong></p>
+<ul>
+<li><strong>Hard evidence (field audit) · response speed</strong>: Oldroyd, McElheran &amp; Elkington (2011, <em>HBR</em>) audited <strong>2,241 US companies</strong> by submitting timed test enquiries, alongside an analysis of roughly <strong>1.25 million leads</strong>: <strong>contact within an hour was nearly 7× likelier to qualify the lead than contact an hour later, and over 60× likelier than waiting more than a day; about 23% never responded.</strong> Strength: large sample, real behaviour rather than self-report — but <strong>not a randomised trial</strong>, and the researchers were connected to lead-response tooling. Directional, not experimental.</li>
+<li><strong>No evidence · the "fifth follow-up" line</strong>: the 80%/44% pairing credited to the National Sales Executive Association has <strong>no traceable report and no traceable association</strong>; the citation chain loops back on itself. This isn't weak evidence, it's absent evidence — and any training deck that uses it to fire you up deserves a discount on everything else it says.</li>
+<li><strong>Weak evidence · more touches lift contact rates</strong>: vendor funnel data, no control group. And <strong>reverse causation is very live here</strong>: it isn't that more touches make deals close, it's that warm deals survive to touch seven.</li>
+</ul>
+<p class="caveat">The speed premium only exists while <strong>their hand is still up</strong> — a form, an enquiry, right after a meeting, a question they just asked. On a cold lead, "within the hour" isn't fast, it's startling. And speed means fast <strong>contact</strong>, not a fast <strong>quote</strong>: firing over a price before discovery is done just makes you a comparison line faster (the pain-digging piece is about exactly that step).</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>One test: if they deleted this unread, would they lose anything?
+<span class="en">Pestering is repetition without new content — not frequency</span></h2>
+<span class="tag">information content</span><span class="tag">inverted U</span><span class="tag">reward prediction</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Pestering isn't defined by how often, it's defined by <strong>repeating with nothing new in it</strong>. Every touch opens a small account in their head: bring something and you deposit, arrive empty-handed and you withdraw. <strong>The day the balance goes negative, they don't reject you — they stop seeing you.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">Two curves, the same number of touches</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="24">Closing at eight touches and getting blocked at three are two different curves</text>
+<line stroke="#c2ccbe" stroke-width="1.3" x1="62" x2="670" y1="286" y2="286"></line>
+<line stroke="#c2ccbe" stroke-width="1.3" x1="62" x2="62" y1="46" y2="286"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="9.4" x="68" y="42">willingness to reply</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.4" text-anchor="end" x="670" y="304">number of touches →</text>
+<line stroke="#9aab9f" stroke-dasharray="4 4" stroke-width="1.1" x1="356" x2="356" y1="60" y2="286"></line>
+<text fill="#697682" font-family="Georgia" font-size="9.2" text-anchor="middle" x="356" y="56">the peak sits not at some number of touches, but where your material runs out</text>
+<polyline fill="none" points="72,258 150,206 232,158 300,124 356,108 440,100 530,100 650,106" stroke="#1f7a5c" stroke-width="2.4"></polyline>
+<polyline fill="none" points="72,258 146,220 216,200 286,206 356,228 440,252 530,270 650,280" stroke="#c0603a" stroke-dasharray="6 4" stroke-width="2.2"></polyline>
+<circle cx="650" cy="106" fill="#1f7a5c" r="4.5"></circle>
+<circle cx="650" cy="280" fill="#c0603a" r="4.5"></circle>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10.2" font-weight="700" text-anchor="end" x="644" y="92">each touch carries something they'd miss</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.2" font-weight="700" text-anchor="end" x="644" y="238">each touch is "just checking in"</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.4" x="76" y="278">too few:</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.4" x="76" y="292">someone else sets the criteria</text>
+<rect fill="#fbefe8" height="20" rx="3" width="248" x="408" y="168"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.4" x="418" y="182">repetition without content → tedium plus reactance</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="326">Illustrative curves, not measured data. Bornstein (1989) meta-analysis: mere exposure is robust, but weakens with excessive exposure — an inverted U.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Checklist: the five follow-ups that carry information</div>
+<div class="template">
+<span class="label">If it isn't one of these five, ask first: would deleting it cost them anything?</span>
+<p>· <strong>A small piece of work you did for them.</strong> A one-page schedule, a calculation run on their own numbers, a comparison table. The cost is yours; what it saves is their time.</p>
+<p>· <strong>News from their industry.</strong> How a comparable company solved it, a rule change, a supplier price move. Requirement: <strong>they don't already know it</strong> — and it isn't sitting on your own website.</p>
+<p>· <strong>Finishing an answer you left hanging.</strong> "You asked about concurrency — I checked with engineering, the answer is X, with one caveat." The easiest one to do, and the rarest.</p>
+<p>· <strong>A process milestone.</strong> Contract version, a slot, <strong>the date they set themselves</strong>. This one is legitimate by construction, because the calendar came from them.</p>
+<p>· <strong>Something purely human.</strong> The go-live, the office move, their kid's exams. <strong>Only if you genuinely remember</strong> — concern performed off a CRM field lands worse than no concern at all.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Setting: the proposal went out nine days ago. Silence.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Empty-handed, and demanding a reply</div>
+<p>"Hi — just checking in on where things stand. Let me know when you get a chance?" <strong>Zero information, every cost pushed onto them:</strong> recall which thread this is, work out what to say, and now they owe you a reply. You're asking for their time and offering nothing. After the third message like this they don't dislike you — they've filed your name under "can wait," and nothing in that folder ever gets a later.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Bring something, and waive the obligation</div>
+<p>"You were worried the two systems define reconciliation differently. <strong>I ran your sample file — the gap is almost entirely in refunds. Three lines of findings attached.</strong>"<br/>"<strong>No reply needed, just so you have it. I'll send the schedule for the reconciliation-only version on Thursday.</strong>"<br/>—— Something delivered, no obligation created, and the next touch pre-announced. Even if this round goes nowhere, they've learned that opening your message costs them nothing.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: repetition on its own does raise liking — familiarity makes processing cheaper, and the brain reads cheap processing as "this is fine." But the curve has a ceiling. Once repetition stops carrying anything new, familiarity turns into tedium, with reactance stacked on top of it. What decides which side of the peak you're on isn't the count — it's whether each touch had something new in it.</strong></p>
+<ul>
+<li><strong>Hard evidence · exposure has a ceiling, and it's an inverted U</strong>: Zajonc (1968, <em>JPSP</em>) established the mere exposure effect; Bornstein's (1989, <em>Psychological Bulletin</em>) meta-analysis of over 200 studies confirmed it is robust <strong>but weakens when exposures become excessive</strong>. Peer-reviewed and meta-analytic — the sturdiest thing on this page.</li>
+<li><strong>Hard evidence (neural) · you are training their expectation</strong>: Schultz, Dayan &amp; Montague (1997, <em>Science</em>) showed <strong>midbrain dopamine neurons encode reward prediction error</strong> — firing above baseline when an outcome beats prediction, flat when it matches, suppressed when it falls short (the ventral tegmental area → nucleus accumbens pathway). So after a run of empty messages, your name carries a prediction error of zero or worse; they never have to <em>decide</em> to ignore you, skipping is automatic. <strong>Honest labelling: this is primate electrophysiology, and "your emails trained their prediction" is a mechanism transfer, not something measured in an inbox.</strong> (cross-ref neuroscience / psychology)</li>
+<li><strong>Moderate evidence · reactance</strong>: Brehm (1966) — people push back when a freedom feels threatened. "Can you get back to me?" converts a reply into an obligation, which is precisely the trigger. The construct replicates broadly, but there's no clean experiment on sales follow-up specifically.</li>
+</ul>
+<p class="caveat">"Adding value" is not "attaching an industry white paper." The test is <strong>whether deleting it would cost them</strong>, not how much effort it cost you. A mass-mailed report has zero information content for them and additionally proves you weren't listening. The real dividing line is plain: <strong>is this thing true only for them?</strong></p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Space it out — and never leave without a when-who-what
+<span class="en">A booked contact isn't follow-up, it's a calendar item</span></h2>
+<span class="tag">spacing effect</span><span class="tag">implementation intentions</span><span class="tag">permissioned follow-up</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The reason you have to <em>remember</em> to follow up is that the last conversation ended without a next one. <strong>The final sentence of every conversation should turn the next touch into something already agreed</strong> — and an agreed contact isn't follow-up, it's a calendar item. Calendar items don't require nerve.</div>
+</div>
+<div class="section">
+<div class="section-label">Cadence: widening intervals, something in every slot</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 306" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="f1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#1f7a5c"></path>
+</marker>
+<marker id="f2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="24">The same six touches, arranged two ways, with opposite results</text>
+<line marker-end="url(#f1)" stroke="#1f7a5c" stroke-width="2" x1="46" x2="674" y1="104" y2="104"></line>
+<circle cx="72" cy="104" fill="#1f7a5c" r="6"></circle>
+<circle cx="166" cy="104" fill="#1f7a5c" r="6"></circle>
+<circle cx="272" cy="104" fill="#1f7a5c" r="6"></circle>
+<circle cx="396" cy="104" fill="#1f7a5c" r="6"></circle>
+<circle cx="522" cy="104" fill="#1f7a5c" r="6"></circle>
+<circle cx="640" cy="104" fill="#1f7a5c" r="6"></circle>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="72" y="88">within 2h</text>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="166" y="88">day 3</text>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="272" y="88">day 7</text>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="396" y="88">day 21</text>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="522" y="88">day 60</text>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="640" y="88">quarterly</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="72" y="126">recap +</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="72" y="139">next step</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="166" y="126">the answer</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="166" y="139">left hanging</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="272" y="126">a small piece</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="272" y="139">of their work</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="396" y="126">news from</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="396" y="139">their industry</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="522" y="126">the date they</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="522" y="139">set themselves</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="640" y="126">one genuinely</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="640" y="139">useful thing</text>
+<line stroke="#e3ddc7" stroke-width="1.2" x1="20" x2="676" y1="166" y2="166"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="10.6" font-weight="700" x="20" y="192">The same six, crammed into one week:</text>
+<line marker-end="url(#f2)" stroke="#c0603a" stroke-width="2" x1="284" x2="470" y1="200" y2="200"></line>
+<circle cx="290" cy="200" fill="#c0603a" r="5"></circle>
+<circle cx="320" cy="200" fill="#c0603a" r="5"></circle>
+<circle cx="350" cy="200" fill="#c0603a" r="5"></circle>
+<circle cx="380" cy="200" fill="#c0603a" r="5"></circle>
+<circle cx="410" cy="200" fill="#c0603a" r="5"></circle>
+<circle cx="440" cy="200" fill="#c0603a" r="5"></circle>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="486" y="204">spam folder after the third</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="234">Widening intervals cover more of <tspan font-weight="700">their</tspan> trigger moments: the budget lands, their boss asks, a competitor</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="252">raises prices. Cramming just knocks repeatedly on one already-saturated moment.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="284">"Spaced beats massed" is meta-analytically supported (Cepeda et al., 2006). The specific day counts are a workable convention, not a research finding.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts: the three closing sentences</div>
+<div class="template">
+<span class="label">Say these three and the next follow-up stops requiring nerve</span>
+<p>· <strong>You commit first.</strong> "My next step is the schedule for the reconciliation-only version — <strong>you'll have it by Wednesday.</strong>" Give before you ask.</p>
+<p>· <strong>Let them commit, and let the date come from them.</strong> "You need to align with finance on this, right? <strong>Roughly when do you think that happens?</strong>" A date out of their mouth is the difference between a plan and a chase.</p>
+<p>· <strong>Turn the next touch into an appointment.</strong> "<strong>If nothing's moved by then, can I call you Thursday morning for five minutes?</strong>" Once they say yes, that call can never be pestering — it's a calendar item they approved.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Two mechanisms. Coverage: their decision doesn't advance evenly, it advances when something outside triggers it — so spread-out touches land on more triggers, while a cluster just knocks repeatedly at one saturated moment. Outsourcing: writing down when, under what condition, and what exactly, means the action no longer depends on whether anyone feels like it — useful for them, more useful for you.</strong></p>
+<ul>
+<li><strong>Hard evidence · spaced beats massed</strong>: Cepeda, Pashler, Vul, Wixted &amp; Rohrer (2006, <em>Psychological Bulletin</em>) meta-analysed <strong>254 studies and over 14,000 participants</strong>: distributed practice reliably outperforms massed practice. Peer-reviewed. Boundaries stated plainly: <strong>whether expanding intervals beat equal intervals is contested</strong> (Karpicke &amp; Roediger 2007 and others failed to find that advantage); what's solid is "spaced &gt; massed." And this is memory research — carrying it to purchase decisions is mechanism transfer.</li>
+<li><strong>Hard evidence · fixed times actually happen</strong>: Gollwitzer's (1999, <em>American Psychologist</em>) implementation intentions (if-then plans); Gollwitzer &amp; Sheeran's (2006) meta-analysis of <strong>94 independent studies</strong> reports a <strong>medium-to-large effect (d ≈ 0.65)</strong>. The implication is uncomfortably blunt: "I'll confirm with you soon" is close to saying nothing; <strong>"I'll call you Wednesday at 10" is the version that occurs.</strong></li>
+<li><strong>Moderate evidence · availability</strong>: Tversky &amp; Kahneman (1973) — whichever name surfaces first when the trigger arrives takes the opportunity. Classic and robust, but "therefore space your follow-ups" is an extrapolation, not the original finding.</li>
+</ul>
+<p class="caveat">Widening intervals assume <strong>the deal is still alive</strong>. Three touches with no response at all and you tighten the frequency? That makes it worse — what needs fixing then is qualification (wrong person, wrong level), not cadence. Also: agreed follow-ups expire. They said "answer by next Wednesday" and Wednesday passed — asking on Thursday is holding them to it; <strong>waiting until week three means that agreement no longer protects you.</strong></p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>Deals don't die of unwillingness — they die of not being written down
+<span class="en">Five columns, twenty minutes on Monday, one walk-away number</span></h2>
+<span class="tag">external memory</span><span class="tag">five columns</span><span class="tag">the walk-away line</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Run follow-up from memory and you will only stay on top of the people who are <strong>comfortable to contact</strong> — the fast repliers, the friendly ones, the ones you're not afraid to bother. Move it from "when I remember" to "what's due on the sheet" and the whole thing stops being a question of willpower, or of mood.</div>
+</div>
+<div class="section">
+<div class="section-label">One five-column sheet, one walk-away line</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 302" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="f3" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Five columns is enough — add a sixth and you'll stop filling it in</text>
+<rect fill="#dfeae2" height="30" width="646" x="24" y="34"></rect>
+<rect fill="none" height="112" stroke="#4e8a3f" stroke-width="1.2" width="646" x="24" y="34"></rect>
+<line stroke="#a8bfae" stroke-width="1" x1="140" x2="140" y1="34" y2="146"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="300" x2="300" y1="34" y2="146"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="500" x2="500" y1="34" y2="146"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="580" x2="580" y1="34" y2="146"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="670" y1="64" y2="64"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="670" y1="105" y2="105"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="82" y="54">who / which deal</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="220" y="54">what I gave last time</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="400" y="54">next: who · when · what</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="540" y="54">due</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="625" y="54">no-reply streak</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="82" y="89">Li / reconciliation</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="220" y="89">3-line gap analysis</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="400" y="89">me · 11/14 · send schedule</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="540" y="89">11/14</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="625" y="89">0</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="82" y="130">Zhang / renewal</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="220" y="130">(empty-handed ×3)</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="400" y="130">never written → never happened</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="540" y="130">9 days late</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="625" y="130">3 ← over line</text>
+<rect fill="#eef1f5" height="42" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="176" x="34" y="184"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="122" y="203">3 non-replies in a row</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="122" y="218">(number fixed in advance)</text>
+<line marker-end="url(#f3)" stroke="#3f5c7a" stroke-width="1.6" x1="212" x2="256" y1="205" y2="205"></line>
+<rect fill="#eef1f5" height="42" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="176" x="260" y="184"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="348" y="203">one closing note</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="348" y="218">an out · a door · no sulking</text>
+<line marker-end="url(#f3)" stroke="#3f5c7a" stroke-width="1.6" x1="438" x2="482" y1="205" y2="205"></line>
+<rect fill="#eef1f5" height="42" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="176" x="486" y="184"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="574" y="203">move to quarterly</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="574" y="218">stop counting, stop agonising</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="252">The walk-away line doesn't punish them. It turns "should I chase again?" from a daily mood question into a rule you set once.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="274">Twenty minutes on Monday morning scanning what's due — that is the only discipline this system needs.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Script: the closing note</div>
+<div class="template">
+<span class="label">Worth more than three more "any update?" messages</span>
+<p>"Li — I'm moving this to a quarterly reminder so it stops sitting in your inbox. <strong>If it isn't happening this year, that's a completely reasonable call</strong>, and you don't owe me an explanation. If it's just bad timing, I'll knock again around budget season. <strong>Meanwhile the reconciliation mapping sheet is yours whenever you want it — no strings.</strong>"</p>
+<p>· Three parts, none optional: <strong>an out</strong> (not doing it is reasonable), <strong>no obligation</strong> (don't reply), <strong>an unconditional open door</strong> (the thing is still yours).</p>
+<p>· A counterintuitive observation: this note often gets a higher reply rate than the three chasers before it — because it converts "reject you" into "do you a favour," and people much prefer the second.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: follow-up is low-frequency, many-threaded, and every thread has a different next step — precisely the shape human memory is worst at. Writing the next step somewhere lookup-able converts the load from remembering to reading. The walk-away line does the same job for judgement: fix the rule in advance so you don't have to decide on the day your mood is worst.</strong></p>
+<ul>
+<li><strong>Hard evidence (cross-domain) · externalise the steps</strong>: Haynes et al. (2009, <em>NEJM</em>) on the WHO surgical safety checklist, across eight hospitals in eight cities: <strong>inpatient death rate 1.5% → 0.8%, complications 11% → 7%.</strong> Three honest caveats: it's a before-and-after design, <strong>not randomised</strong>; large-scale replication has been inconsistent — Urbach et al. (2014, <em>NEJM</em>) found <strong>no significant improvement</strong> after rollout across more than a hundred Ontario hospitals; and cross-domain transfer is weaker still. <strong>A checklist won't save your deal. The one thing worth borrowing is the mechanism: steps that depend on memory should live outside it.</strong></li>
+<li><strong>Hard evidence · written down is what happens</strong>: that Gollwitzer &amp; Sheeran (2006) meta-analysis (94 studies, d ≈ 0.65) applies to you as much as to the buyer. "I must remember to call Li" doesn't happen. "Monday 9:20, scan what's due" does.</li>
+<li><strong>No evidence · the number three</strong>: purely a workable convention, with nothing behind it. The point was never three — it's <strong>fixing the number in advance</strong>, because otherwise you either talk yourself out of it at touch two or grind the relationship into dust by touch eleven.</li>
+</ul>
+<p class="caveat">The walk-away line protects the relationship; it isn't a punishment. Let one drop of "clearly this isn't a priority for you" leak into the closing note and you've converted someone who was merely busy into a permanent no. And one more practical check: <strong>before deciding the line has been crossed, ask whether you were chasing the right person at all</strong> — three silences sometimes mean you've spent a month talking to someone who neither pays nor decides (which is exactly what the decision-chain piece is about).</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 26 Action</h3>
+<p>Open your inbox and that follow-up sheet you probably don't have. Twenty minutes, on paper.</p>
+<div class="action">
+<strong>1 (5 min):</strong> List the five people you're stuck with and write one line each: <strong>what did I give them last time?</strong> If you can't name something concrete, mark it "empty-handed" — that's not them failing to reply, that's you failing to bring anything.<br/><br/><strong>2 (5 min):</strong> For every "empty-handed" name, write one thing <strong>they'd miss if they deleted it</strong>. Pick from the five: a small piece of their work, news from their industry, the answer you left hanging, a process milestone, or the personal thing you actually remember.<br/><br/><strong>3 (4 min):</strong> Write one when-then line per person: <strong>date · who · does what.</strong> Delete every "soon" and "when I get a chance" and replace it with a date.<br/><br/><strong>4 (3 min):</strong> Set your walk-away number (three or four works), pull out whoever is already past it, and <strong>send the closing note today</strong> — an out, no obligation, an unconditional open door.<br/><br/><strong>5 (3 min):</strong> Move those five rows into a five-column sheet and block "Monday 9:20, twenty minutes" in your calendar.<br/><br/>One boundary: all of this assumes <strong>the deal should happen anyway</strong>. Follow-up only rescues an exchange that ought to occur but would otherwise die of being forgotten. It cannot rescue a deal that shouldn't happen — it just drags that one out into a more expensive no, where you lose six months and they spend six months owing you a favour neither of you wanted. When silence persists, suspect your qualification before you suspect your diligence.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. How many touches counts as pestering? Is there a number?</summary>
+<div class="answer">There's no number, because pestering isn't a frequency problem. <strong>At the same count, bringing something is service and bringing nothing is extraction.</strong> Use two checks instead, both usable on the spot:<br/><br/><strong>One, the content check.</strong> If they deleted this unread, would they lose anything? If yes, eight touches isn't pestering. If no, the second one already was.<br/><br/><strong>Two, the permission check.</strong> When you last spoke, did they agree you'd get in touch at a specific time? <strong>A permissioned contact is a calendar item; only an unpermissioned one needs to be called follow-up.</strong><br/><br/>There's also an objective signal worth watching: their replies shrink from a paragraph to "ok" and then to nothing. <strong>That is a signal to lower the frequency and change the content — not to push harder.</strong> Most people get this exactly backwards: the quieter it gets, the more they send, converting "not a priority right now" into "I can't deal with this person."</div>
+</details>
+<details>
+<summary>2. Three messages, no reply. Should I change tone, change channel, push harder?</summary>
+<div class="answer">Pushing harder is the most common and most expensive mistake here. Lay out the three possibilities first — they have completely different fixes:<br/><br/><strong>One, not a priority.</strong> You're not wrong, you're seventh in line. Changing channel helps a little (a message app gets seen more than email), but what really needs changing is the content: send something that <strong>raises the priority</strong> — a number their boss cares about, a cost that's already burning.<br/><br/><strong>Two, you're talking to the wrong person.</strong> They neither pay nor decide, so replying to you means going and asking someone else first — too much trouble, so they don't. Pushing harder just makes them hide. What you want is a <strong>polite route around</strong>: "this probably needs finance in the room — is it better if I ask for a meeting with Wang directly, or would you rather raise it internally first?" Give them the choice and most people will point the way.<br/><br/><strong>Three, they can't retell your story internally.</strong> They're convinced, but they can't make the case to their boss. The fix is <strong>one page, three lines of conclusion, one number</strong> — something that can be forwarded verbatim.<br/><br/>One universal move as well: offer a zero-cost exit. "<strong>If this isn't happening this year that's completely fine — reply 'not this year' and I'll stop bothering you.</strong>" The reply rate on that sentence is counterintuitively high, because it converts "reject you" into "do you a favour," and the second one is far easier.</div>
+</details>
+<details>
+<summary>3. My sales cycle is long — one deal a year. How do I set the cadence?</summary>
+<div class="answer">The longer the cycle, the less you should live on chasing and the more you should live on <strong>being remembered</strong>. Move the effort from one-to-one prodding to two places:<br/><br/><strong>One, a fixed low-frequency useful output.</strong> One genuinely substantive letter a quarter: what prices did in their sector this year, three traps you hit on comparable projects, a template they can use as-is. The cost is yours, and the return is continuous presence — plus it's one-to-many, so the marginal cost is near zero.<br/><br/><strong>Two, event-driven touches.</strong> They change roles, the company raises money, a competitor moves, budget season, they roll out a new system. <strong>One short message at those moments beats ten rounds of "how's it going"</strong>, because it demonstrates attention rather than impatience.<br/><br/>Then tune one parameter: <strong>set the due dates longer than feels comfortable.</strong> In long-cycle business, sixty quiet days is normal, not bad news; running a seven-day cadence against an eighteen-month decision only burns you down into an annoying name well before the month they actually need you.<br/><br/>One last honest note: in long-cycle work, <strong>half the value of the follow-up sheet isn't closing at all — it's telling you whose problem deserves today's two hours.</strong> The most useful column is often "no-reply streak," because it's quietly doing your subtraction for you.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 26</footer>
+</div>
+</body>
+</html>
