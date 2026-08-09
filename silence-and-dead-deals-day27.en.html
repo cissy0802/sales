@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 27: Silence and Dead Deals</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 27 · Phase D</div>
+<h1>Silence isn't an answer<br/>It's a blank, and you filled it in with the ugliest reading available</h1>
+<div class="meta"><span>The information content of silence · a re-open they can answer in one second · triaging dead deals by trigger · getting the loss reason back on your way out</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">Their silence is probably not about you. But the script you wrote to explain it will make you send the worst message of the whole relationship.</div>
+</header>
+<div class="intro">
+<strong>"No reply" is an answer in your head; on their side it's just something that hasn't come up yet.</strong> One silence fits six or seven different causes, and the right response to each contradicts the others — so its information content is close to zero. What kills these deals isn't the silence, it's that you can't tolerate the blank: you fill it with the most self-relevant reading available (too expensive, they're sick of me) and then send the next message from that script — either pushing harder or vanishing in embarrassment. <strong>There is exactly one correct move: stop decoding the silence and drive the cost of replying down, low enough that one character is worth their while.</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Don't decode silence: there is no code, you just picked the reading that hurts most
+<span class="en">A default is not a signal</span></h2>
+<span class="tag">default ≠ signal</span><span class="tag">spotlight effect</span><span class="tag">attribution bias</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Silence isn't a no and it isn't a yes. It's a <strong>default</strong> — nothing happened. Read a non-event as an event and you'll take an expensive action on zero information: double the pestering, or disappear entirely. <strong>What those two have in common is that you're negotiating with your own imagination, and imagination never comes down on price.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">One silence, six unrelated situations</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="s1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="24">One silence fits all six of these — and the right response to each contradicts the others</text>
+<rect fill="#eef1f5" height="60" rx="6" stroke="#3f5c7a" stroke-width="1.2" width="134" x="24" y="118"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="91" y="144">no reply</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="91" y="163">(information ≈ 0)</text>
+<line marker-end="url(#s1)" stroke="#3f5c7a" stroke-width="1.4" x1="162" x2="248" y1="148" y2="58"></line>
+<line marker-end="url(#s1)" stroke="#3f5c7a" stroke-width="1.4" x1="162" x2="248" y1="148" y2="92"></line>
+<line marker-end="url(#s1)" stroke="#3f5c7a" stroke-width="1.4" x1="162" x2="248" y1="148" y2="126"></line>
+<line marker-end="url(#s1)" stroke="#3f5c7a" stroke-width="1.4" x1="162" x2="248" y1="148" y2="160"></line>
+<line marker-end="url(#s1)" stroke="#3f5c7a" stroke-width="1.4" x1="162" x2="248" y1="148" y2="194"></line>
+<line marker-end="url(#s1)" stroke="#3f5c7a" stroke-width="1.4" x1="162" x2="248" y1="148" y2="228"></line>
+<text fill="#37493f" font-family="Georgia" font-size="10.4" x="258" y="62">buried in the inbox — never actually seen</text>
+<text fill="#37493f" font-family="Georgia" font-size="10.4" x="258" y="96">saw it, but has to ask someone before answering</text>
+<text fill="#37493f" font-family="Georgia" font-size="10.4" x="258" y="130">someone internally objects; won't be the messenger</text>
+<text fill="#37493f" font-family="Georgia" font-size="10.4" x="258" y="164">budget or timeline slipped; nothing decided yet</text>
+<text fill="#37493f" font-family="Georgia" font-size="10.4" x="258" y="198">already chose a rival; refusing is more work than silence</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.4" font-weight="700" x="258" y="232">genuinely not interested — the box you assumed</text>
+<rect fill="#fbefe8" height="40" rx="4" stroke="#c0603a" stroke-width="1.1" width="656" x="20" y="250"></rect>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.4" font-weight="700" x="34" y="268">That last box is one in six, yet it decides the tone of your next message —</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="10.4" font-weight="700" x="34" y="284">and once the tone is wrong, the other five slowly turn into the sixth.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="312">Six categories from practice, not a measured distribution; no reliable public data on their relative frequency.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="328">The one certainty: silence itself cannot tell them apart.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Situation: the proposal went out eleven days ago. Not a word back.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Writing from the script in your head</div>
+<p>"Is there something in the proposal that doesn't work? If budget is tight we could look at that." <strong>You've walked "they think it's expensive" — a cause you invented — right up to them, and discounted on the way.</strong> If the real reason was that finance hadn't signed off, you just gave away a round of margin for nothing, and taught them something costly: stay quiet and the price falls on its own.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Admit you don't know; hand the decoding back</div>
+<p>"I've not heard anything, and I can't tell whether it's not a priority, stuck internally, or the direction changed — <strong>what I should be doing is completely different in each case.</strong> Reply with a number: 1 not a priority / 2 stuck internally / 3 dead."<br/>—— No decoding, no invented cause, no self-inflicted discount. The cost of telling you which box they're in is now one keystroke.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: the mind won't tolerate a blank, so it fills it with the most available explanation — and the most available one for you is always the one that involves you. You overestimate how much room you occupy in their head, and you overestimate how your last message landed. Stack the two and silence gets auto-translated into "they have a problem with me".</strong></p>
+<ul>
+<li><strong>Hard evidence · you're less noticed than you think</strong>: the spotlight effect, Gilovich, Medvec &amp; Savitsky (2000, <em>JPSP</em>). Participants walking into a room in an embarrassing T-shirt predicted <strong>about 46%</strong> of observers could name who was on it; the real figure was <strong>about 23%</strong> — off by a factor of two. Peer-reviewed, repeatedly replicated. Implication: the message you keep re-reading has most likely not been thought about once.</li>
+<li><strong>Hard evidence · tone distorts in text</strong>: Kruger, Epley, Parker &amp; Ng (2005, <em>JPSP</em>), <em>Egocentrism over e-mail</em>. Senders predicted recipients would detect whether they were serious or sarcastic about <strong>78%</strong> of the time; the actual rate was around <strong>56%</strong>, barely above a coin flip. Peer-reviewed experiment. It cuts both ways: your last message may not have read as well as you think, and their silence may not be as cold as you read it.</li>
+</ul>
+<p class="caveat">Add a layer of Ross's (1977) fundamental attribution error and you read circumstance as character: the likeliest reason is "seventeen more urgent things today", and you hear "they don't want to deal with me". That said, silence sometimes <strong>is</strong> a signal, and the test is baseline: someone who always replied within ten minutes going quiet past a date they set is a change; someone who always took three days taking five is nothing at all. And don't read any of this as "never reflect" — if your silent list gets longer every year, what you're selling simply isn't important to them.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasing</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"I'd rather ask than assume."</p>
+<p>"Reply with a number if that's easier — 1, 2 or 3."</p>
+<p>"No news is genuinely no news."</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>The job of a re-open isn't to get an answer — it's to make replying cost one word
+<span class="en">You can only move the cost side</span></h2>
+<span class="tag">cost of replying</span><span class="tag">one-word exit</span><span class="tag">freedom to refuse</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">They aren't silent because they don't want to reply. They're silent because <strong>replying costs more right now than it returns</strong>: recall which thread this is, ask around internally, take a position, then find a tone that doesn't offend. You can't remove any of those four for them — <strong>but you can rewrite the message so a reply is one digit, and the change in response rate will make you wonder what the last six months were for.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"No is the start of the negotiation, not the end of it."</span>
+<span class="source">— Chris Voss, <em>Never Split the Difference</em> (2016)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Four tiers, ranked by what it costs them</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="24">Four tiers of re-open, ranked by what it costs THEM — not by what you want to know</text>
+<rect fill="#f7faf6" height="50" rx="4" stroke="#e3ddc7" stroke-width="1" width="268" x="24" y="48"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.4" font-weight="700" x="38" y="69">Tier 1 · the one-word exit</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" x="38" y="86">“Should I take this off the list for this year?”</text>
+<rect fill="#4e8a3f" height="14" rx="3" width="40" x="308" y="66"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" x="356" y="77">one word</text>
+<rect fill="#f7faf6" height="50" rx="4" stroke="#e3ddc7" stroke-width="1" width="268" x="24" y="108"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.4" font-weight="700" x="38" y="129">Tier 2 · reply with a number</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" x="38" y="146">“1 not a priority 2 stuck internally 3 dead”</text>
+<rect fill="#7aa86a" height="14" rx="3" width="76" x="308" y="126"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" x="392" y="137">one digit</text>
+<rect fill="#f7faf6" height="50" rx="4" stroke="#e3ddc7" stroke-width="1" width="268" x="24" y="168"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.4" font-weight="700" x="38" y="189">Tier 3 · bring something, waive the reply</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" x="38" y="206">“One-page comparison attached. No reply needed.”</text>
+<rect fill="#c99a4a" height="14" rx="3" width="150" x="308" y="186"></rect>
+<text fill="#a37a26" font-family="Georgia" font-size="9.6" font-weight="700" x="466" y="197">a glance</text>
+<rect fill="#f7faf6" height="50" rx="4" stroke="#e3ddc7" stroke-width="1" width="268" x="24" y="228"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.4" font-weight="700" x="38" y="249">Tier 4 · ask for status outright</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" x="38" y="266">“Where is this now?”</text>
+<rect fill="#c0603a" height="14" rx="3" width="290" x="308" y="246"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="606" y="257">a paragraph</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="300">Start at tier 1, climb once you get a signal. Most do the reverse: gone two months, then straight to the priciest question.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="328">Carpenter (2013), meta-analysis of 42 studies: adding “you're free to refuse” significantly raises compliance (r ≈ .13), strongest face-to-face.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scripts: four tiers, cheapest first</div>
+<div class="template">
+<span class="label">Every tier carries its own exit — the exit is why it's cheap</span>
+<p>· <strong>Tier 1 · the one-word exit.</strong> "Should I take this off the list for this year? <strong>If so, just reply 'not this year' and I'll stop — no explanation needed, and it's a perfectly reasonable call.</strong>" It converts "reject you" into "do you a favour", and says out loud that refusing is allowed.</p>
+<p>· <strong>Tier 2 · reply with a number.</strong> "Just a number: 1 not a priority / 2 stuck internally / 3 direction changed." <strong>The options must include the one that's worst for you</strong> — leave it out and it's a leading question, which anyone can spot.</p>
+<p>· <strong>Tier 3 · bring something, waive the reply.</strong> "I put the new rules in your sector onto one page. Attached, no reply needed." It isn't there to get an answer; it's there to keep your record at "opening this pays".</p>
+<p>· <strong>Tier 4 · ask for status outright.</strong> "Where is this now?" The expensive one. Save it until you've got any signal at all. <strong>Opening a silence at tier 4 is asking someone who owes you money for another loan.</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Situation: a customer you got on well with, one you thought was safe, has gone quiet for two months.</div>
+<div class="dialog bad">
+<div class="speaker">✗ The quieter it gets, the harder you push</div>
+<p>"Are you around?" → "Got two minutes?" → "Just wondering whether this is still moving on your side?" <strong>Three messages, three demands for a paragraph, each one reminding them: you owe me a reply.</strong> People in debt hide. That's ordinary human behaviour, not a character flaw. Every message you add makes the debt heavier and hiding cheaper.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Tier 1, with the right to refuse handed over explicitly</div>
+<p>"I've left you alone for two months. <strong>Should I take this off the list for this year? If so, just reply 'not this year' and I'll stop — no explanation needed, it's a reasonable call.</strong> If it's only a priority thing, I'll knock again around budget season."<br/>—— If they say "not this year", you've saved six months of guessing. If they say "it's not dead, it's stuck internally", you've got the deal back. <strong>Both beat guessing — and that's exactly why it works: you genuinely accept either.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Two layers. The cost side: reply rate isn't set by how much they want to help you, it's set by how much effort the reply takes — and effort is the only side you control. And autonomy: saying "you're completely free to refuse" defuses reactance. People being pushed instinctively brace against it; people explicitly handed an exit are the ones willing to stay and say something. Which is why the sentence most likely to get a reply is the one that offers them a graceful way out.</strong></p>
+<ul>
+<li><strong>Hard evidence · affirming the freedom to refuse raises compliance</strong>: Carpenter (2013, <em>Communication Studies</em>), a meta-analysis of <strong>42 studies and over twenty thousand participants</strong> on the but-you-are-free technique: compliance rises significantly (<strong>r ≈ .13</strong>). Peer-reviewed meta-analysis. Boundary: the effect is strongest <strong>face-to-face and delivered right after the request</strong>, and smaller in written or delayed settings — in email it's a bonus, not magic.</li>
+<li><strong>Hard evidence · choice is itself motivating</strong>: Patall, Cooper &amp; Robinson (2008, <em>Psychological Bulletin</em>), a meta-analysis of <strong>41 studies</strong>: giving people a choice significantly raises intrinsic motivation and effort (<strong>d ≈ 0.30</strong>). Peer-reviewed. So "1 / 2 / 3" isn't only convenient; it converts being interrogated into making a choice.</li>
+<li><strong>Practitioner lore · the no-oriented question</strong>: Voss's "Have you given up on this project?" comes from negotiation practice, and <strong>no peer-reviewed experiment has tested that sentence directly</strong>. Mechanically it's the same family as the two above (replying only requires denying an unflattering claim, not committing to anything), but the evidence grade is lore, not law.</li>
+</ul>
+<p class="caveat">The one-word exit has to be a <strong>real</strong> exit. Keep sending after they say "not this year" and the sentence is dead for good; and what you've spent isn't one deal, it's the credibility of everything you say. One more boundary: these four tiers lower the cost of <strong>replying</strong>, not the cost of <strong>deciding</strong>. When they answer "2, stuck internally", the actual work begins — that's what the decision-chain and pain-digging pieces are for. A re-open only turns the lights on.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasing</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"Should I take this off my list for this year?"</p>
+<p>"A one-word yes is completely fine — and a reasonable call."</p>
+<p>"Of course, you're free to say no."</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Most of your dead deals didn't lose to a rival. They lost to doing nothing.
+<span class="en">The lever is what changed on their side</span></h2>
+<span class="tag">status quo bias</span><span class="tag">trigger events</span><span class="tag">triage</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The lever for reviving a dead deal is never your enthusiasm; it's <strong>what changed on their side</strong>. Inaction is the default, and changing costs decision effort, migration pain, and the risk of being the person who signed off on a mistake. The scales only move when the status quo starts hurting or the outside conditions flip. <strong>No trigger, no knock — otherwise you're just collecting the same no a second time, and harder.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Most real decisions, unlike those of economics texts, have a status quo alternative — that is, doing nothing or maintaining one's current or previous decision."</span>
+<span class="source">— Samuelson &amp; Zeckhauser, <em>Status Quo Bias in Decision Making</em> (1988)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Triage: four ways they die, four different switches</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 384" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Triage before you revive: not knowing how it died, you knock on the same shut door</text>
+<rect fill="#dfeae2" height="28" width="652" x="24" y="34"></rect>
+<rect fill="none" height="276" stroke="#4e8a3f" stroke-width="1.2" width="652" x="24" y="34"></rect>
+<line stroke="#a8bfae" stroke-width="1" x1="150" x2="150" y1="34" y2="310"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="300" x2="300" y1="34" y2="310"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="500" x2="500" y1="34" y2="310"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="676" y1="62" y2="62"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="676" y1="124" y2="124"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="676" y1="186" y2="186"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="676" y1="248" y2="248"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="87" y="53">what they really chose</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="225" y="53">the trigger to revive</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="400" y="53">your opening line</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="588" y="53">when to stop knocking</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="87" y="84">they chose</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="87" y="98">the status quo</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="87" y="112">(most common)</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="225" y="84">the status quo starts hurting:</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="225" y="98">an incident, costs rose,</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="225" y="112">the boss asked about it</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="400" y="91">“You said two people could still handle</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="400" y="105">it manually. Is that still true?”</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="588" y="91">asked twice in a year,</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="588" y="105">both times “we're fine”</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="87" y="160">no budget</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="225" y="153">new budget cycle, funding lands,</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="225" y="167">a merger, a new finance lead</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="400" y="153">“Is next year's budget set yet?</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="400" y="167">If not, ignore this message.”</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="588" y="153">two budget cycles running</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="588" y="167">and never on the list</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="87" y="215">no authority /</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="87" y="229">the wrong person</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="225" y="215">people changed: promotion,</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="225" y="229">new boss, your contact left</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="400" y="215">“Saw Wang picked this up —</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="400" y="229">can I send them that mapping sheet?”</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="588" y="215">you never once met</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="588" y="229">the person who pays</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="87" y="284">they chose a rival</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="225" y="270">honeymoon over: six to</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="225" y="284">twelve months in, or</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="225" y="298">90 days before renewal</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="400" y="277">“Coming up on a year now — how are</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="400" y="291">you handling refunds these days?”</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="588" y="277">they genuinely love it</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="588" y="291">(then go ask for a referral)</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="334">Reviving isn't “I thought of you again”, it's “what changed on your side”. No trigger: set a reminder, don't knock.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="358">Four categories from practice; no reliable public data on their relative shares, so don't read this as statistics.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="374">“Lost to inaction, not to a rival” does have theoretical support (Samuelson &amp; Zeckhauser, 1988, status quo bias).</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Script: the three-line revival message</div>
+<div class="template">
+<span class="label">All three lines are about them; none is about you</span>
+<p>· <strong>Line one: name the trigger.</strong> "Saw you folded the east region in last month —" rather than "it's been a while —". <strong>The first happened in their world, the second in yours, and only the first gets a reaction.</strong></p>
+<p>· <strong>Line two: quote them back to themselves.</strong> "You said two people could still handle reconciliation manually." That proves what you remembered was their problem, not your product. The whole weight of the line is in being <strong>accurate</strong>: misremembering is worse than not remembering.</p>
+<p>· <strong>Line three: a cheap question plus an exit.</strong> "Is that still true? If it's not relevant, say so and I'll drop it off the reminder list."</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: inaction is a default with gravity. Change costs decision effort and migration effort, and carries the "what if I was the one who signed off on this" exposure; when nothing changes and it goes wrong, the blame is diffuse. Add that losses weigh more than equivalent gains and the scales sit naturally on staying put. What actually moves them isn't the force of your persuasion, it's a change on their side.</strong></p>
+<ul>
+<li><strong>Hard evidence · status quo bias</strong>: Samuelson &amp; Zeckhauser (1988, <em>Journal of Risk and Uncertainty</em>): a series of experiments plus real pension and health-plan election data, all showing the default option is chosen far more often than it should be. Replicated across domains — the starkest being the organ-donation comparison in Johnson &amp; Goldstein (2003, <em>Science</em>): countries whose default is "enrolled unless you opt out" run consent above ninety percent, while opt-in countries sit in the single and low double digits.</li>
+<li><strong>Hard evidence (neural) · why losses pin people in place</strong>: Tom, Fox, Trepel &amp; Poldrack (2007, <em>Science</em>) scanned gambling decisions and found activity in the <strong>ventral striatum and ventromedial prefrontal cortex</strong> rising with potential gains and falling with potential losses, with a <strong>steeper slope on the loss side</strong>; an individual's neural steepness even predicted their behavioural loss aversion. Honest label: these are laboratory money gambles, and carrying them into corporate purchasing is mechanism extrapolation. Also De Martino, Camerer &amp; Adolphs (2010, <em>PNAS</em>): two patients with <strong>amygdala</strong> damage showed no behavioural loss aversion — a strong mechanistic clue, but n=2, suggestive rather than statistical.</li>
+</ul>
+<p class="caveat">There's also omission bias (Ritov &amp; Baron, 1990): the same bad outcome is harder to accept when caused by doing something than by doing nothing — buying the wrong thing gets you named, not buying just doesn't happen. As for "trigger", it means a <strong>verifiable, objective change on their side</strong>: people moved, a merger, funding, a new system, an incident, a budget cycle landing. "It's been three months since we spoke" is not a trigger; that's your calendar going off. And a harsher self-check: if a deal has stalled three times on the same person and you never once met whoever pays, it isn't a dead deal — it was never alive.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasing</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"Saw you merged the east-region team last month —"</p>
+<p>"You said two people could still handle it manually. Is that still true?"</p>
+<p>"If it's not relevant, say so and I'll drop it."</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>The moment you let go is the only moment you get the truth
+<span class="en">Ask for a letter, not an explanation</span></h2>
+<span class="tag">self-serving bias</span><span class="tag">survivorship</span><span class="tag">one-tap loss reason</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The post-mortem you write yourself isn't trustworthy. Self-serving attribution is systematic: wins are your playbook, losses are the price, the timing, the unprofessional customer. <strong>What those three have in common is that none of them requires you to change anything.</strong> So you keep choosing them, and keep losing the same kind of deal.</div>
+</div>
+<div class="section">
+<div class="section-label">Letting go: three steps, three things back</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 292" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="s4" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Letting go isn't the end — it's the only window where this deal tells you the truth</text>
+<rect fill="#eef1f5" height="56" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="176" x="24" y="44"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="112" y="68">declare you're done</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="112" y="85">“I'm closing this out”</text>
+<line marker-end="url(#s4)" stroke="#3f5c7a" stroke-width="1.6" x1="204" x2="242" y1="72" y2="72"></line>
+<rect fill="#eef1f5" height="56" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="196" x="248" y="44"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="346" y="68">closing note + one-tap reason</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="346" y="85">“just reply with a letter”</text>
+<line marker-end="url(#s4)" stroke="#3f5c7a" stroke-width="1.6" x1="448" x2="486" y1="72" y2="72"></line>
+<rect fill="#eef1f5" height="56" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="190" x="492" y="44"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="587" y="68">you get A / B / C / D</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="587" y="85">no explanation, just a category</text>
+<line marker-end="url(#s4)" stroke="#3f5c7a" stroke-width="1.4" x1="580" x2="130" y1="104" y2="144"></line>
+<line marker-end="url(#s4)" stroke="#3f5c7a" stroke-width="1.4" x1="584" x2="352" y1="104" y2="144"></line>
+<line marker-end="url(#s4)" stroke="#3f5c7a" stroke-width="1.4" x1="588" x2="578" y1="104" y2="144"></line>
+<rect fill="#e2efdc" height="52" rx="5" stroke="#4e8a3f" stroke-width="1.2" width="200" x="24" y="150"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="124" y="172">intelligence</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="124" y="189">changes qualification and pricing</text>
+<rect fill="#e2efdc" height="52" rx="5" stroke="#4e8a3f" stroke-width="1.2" width="200" x="250" y="150"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="350" y="172">a referral</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="350" y="189">“So who is this right for?”</text>
+<rect fill="#e2efdc" height="52" rx="5" stroke="#4e8a3f" stroke-width="1.2" width="200" x="476" y="150"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="576" y="172">a quarterly reminder</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="576" y="189">set by trigger, not by mood</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="232">The post-mortem you write yourself isn't trustworthy — self-serving attribution pushes it onto price and timing,</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="250">and neither of those asks you to change anything.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="278">Mezulis et al. (2004), meta-analysis of 266 studies: the self-serving attributional bias is robust in adults.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Script: the closing note plus a one-tap reason</div>
+<div class="template">
+<span class="label">One note doing three jobs: close it, hold the door, take the intelligence</span>
+<p>"I'm closing this out on my side, and you don't owe me an explanation. <strong>If you're willing to do me one small favour: just reply with a letter. A timing / B went with someone else / C no internal sign-off / D we didn't make the case.</strong> That's worth more to me than a win. The mapping sheet is yours whenever you want it, no strings."</p>
+<p>· <strong>Why ask only after letting go.</strong> While you still want the deal, what you get is a socially acceptable answer — "too expensive" is the cheapest refusal available and usually isn't the real one. Once you've said you're done, they no longer have to protect your feelings or their negotiating position. <strong>Practitioner lore, no experimental support.</strong></p>
+<p>· <strong>Never ask "why didn't you pick us".</strong> That invites them to invent a reason on the spot. Ask what they <strong>actually did</strong>: "What did you end up doing instead — or is it still as it was?" Behaviour is far more reliable than reasons, which is the core of the Mom Test piece.</p>
+<p>· <strong>A letter, not an essay.</strong> Raise the cost of replying and you get nothing at all. Ten letters in, you'll see a pattern you've been refusing to admit.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Two layers. Attribution: the loss reason you write gets pushed toward external causes, so the more diligently you review, the more consistently you're wrong. Sampling: you only draw lessons from deals that closed, so the sample is truncated on the surviving side and the pattern you extract has to be skewed. Neither hole can be fixed by thinking harder — only by buying a cheap, honest category from outside.</strong></p>
+<ul>
+<li><strong>Hard evidence · self-serving attribution</strong>: Mezulis, Abramson, Hyde &amp; Hankin (2004, <em>Psychological Bulletin</em>), a meta-analysis of <strong>266 studies</strong>: crediting success internally and failure externally is robust in adult samples, with systematic variation by age and culture.</li>
+<li><strong>Hard evidence (statistical) · survivorship bias</strong>: Abraham Wald and Columbia's Statistical Research Group (1943), analysing bullet-hole distributions on returning bombers: <strong>the armour belonged where there were fewest holes</strong>, because the planes hit there never came back. A real wartime memorandum — later retellings embellish it, the reasoning holds. The sales version is identical: your winning playbook was copied off the planes that made it home.</li>
+<li><strong>Contested · why rejection stings</strong>: Eisenberger, Lieberman &amp; Williams (2003, <em>Science</em>) reported that social exclusion in Cyberball activates <strong>dorsal anterior cingulate cortex and anterior insula</strong>, overlapping with physical pain. <strong>The dispute has to be flagged</strong>: Woo et al. (2014, <em>Nature Communications</em>) used multivoxel pattern analysis to show the two are separable representations within the same regions, so the strong "social pain is physical pain" claim doesn't hold. What's safe to say: rejection genuinely recruits negatively-valenced neural responses — so the reason you keep not sending that closing note isn't laziness, it's avoiding real discomfort.</li>
+</ul>
+<p class="caveat">Once you have the letter, act on it: <strong>lots of C means fixing how you work the decision chain, lots of B means differentiation and pricing, lots of D means how you tell it, and lots of A — the hardest to admit — means fixing qualification, because you've been chasing people whose timing was never right.</strong> One more thing: let a single drop of "clearly this wasn't a priority for you" into the closing note and you convert someone who was merely busy into a permanent no. Close it clean, with no feeling and no hint in it.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasing</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"I'm closing this out on my side — no reply needed."</p>
+<p>"If you're willing: just a letter. A timing, B someone else, C no sign-off, D we didn't make the case."</p>
+<p>"What did you end up doing instead?"</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 27 Action</h3>
+<p>Open your message list and pull out everyone who's been quiet for more than three weeks. Twenty minutes, on paper.</p>
+<div class="action">
+<strong>1 (4 min):</strong> List them all, and next to each write <strong>the reason I've invented</strong>. Read the column back — is nearly every line an explanation that involves you? That's the spotlight effect in person.<br/><br/><strong>2 (3 min):</strong> Tick one box per person: not a priority / stuck internally / wrong person / genuinely not doing it. If you can't tick one, write "don't know".<br/><br/><strong>3 (6 min):</strong> Send today, don't batch it. Half get tier 1, half get tier 2. <strong>Before you send, say it to yourself: I genuinely accept "not this year".</strong> If you can't, the sentence carries a hook and they can smell it.<br/><br/><strong>4 (4 min):</strong> Take three that are properly dead and check one thing only: <strong>what changed on their side in the last six months?</strong> If you find a trigger, send the three-line message; <strong>if you don't, set a quarterly reminder and send nothing.</strong><br/><br/><strong>5 (3 min):</strong> Send the closing note plus one-tap reason on the deal you most recently lost, and record the letter in a two-column sheet.<br/><br/>One boundary: none of this rescues a deal you shouldn't have been chasing. If more than half the people on your silent list belong to accounts where you never met whoever pays, the problem isn't your re-open script — it's qualification and the decision chain. And once you've offered the one-word exit, honour it. <strong>All of that sentence's power comes from the last time you meant it.</strong></div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. Is "read, no reply" a different signal from no reply at all?</summary>
+<div class="answer">The difference is much smaller than you think. <strong>"Read, no reply" tells you exactly one extra thing: the message entered their field of view. It tells you nothing about what they think.</strong> The most common reality is mundane: they opened it one-handed on a commute or in a meeting, couldn't answer then, and the message permanently lost its unread marker. Plenty of read-no-replies aren't verdicts, they're a mis-tap.<br/><br/>So don't decode — change the action. The only reliable inference is that <strong>replying still costs more than it returns right now</strong>, so make the next one answerable in a second.<br/><br/>There is one signal worth taking seriously, and it has nothing to do with read receipts: <strong>replies getting shorter.</strong> A paragraph, then "ok", then nothing. The correct reading is lower the frequency and change the content — not push harder. Most people do the opposite, and convert "not a priority right now" into "I can't deal with this person".</div>
+</details>
+<details>
+<summary>2. They're not replying. Should I go straight to their boss?</summary>
+<div class="answer">You can, but <strong>never behind their back</strong>. Going around them reads exactly one way: you don't trust them, and you've made them look passive in front of their boss. They'll remember it for a long time, and they probably have the standing to kill you off.<br/><br/>What works is <strong>going around transparently, with the choice handed to them</strong>: "This probably needs finance in the room to move. Do you think it's better if I ask for a meeting with Wang directly, or would you rather raise it internally first?" Both options lead to the same place, but the decision is theirs, and most people will point the way.<br/><br/>There's also an easily missed diagnosis: <strong>sometimes they're silent because they can't move it either.</strong> Replying means going and asking someone else first — too much trouble, so they don't. Pushing harder only makes them hide. What they need is something <strong>forwardable verbatim</strong>: one page, three lines of conclusion, one number.<br/><br/>Hard boundary: if you go around, accept that you may lose that relationship for good. Whether that's worth it depends on the size of the deal, not on how frustrated you feel today.</div>
+</details>
+<details>
+<summary>3. Revival rates are terrible. Is it worth the time at all?</summary>
+<div class="answer">The honest part first: <strong>I can't find a credible public source for any "X% of dead deals can be revived" figure.</strong> What circulates mostly comes from sales-tool vendors' own funnels, with no control group and no way to verify it. Don't make this decision on a percentage.<br/><br/>Decide on <strong>cost structure</strong> instead. <strong>The version that pays:</strong> a reminder fired by a trigger, costing five minutes and three lines when it fires. It doesn't eat your best hours or your mood. Even at a few percent the expected value is positive, because a dead deal carries one enormous advantage — <strong>the discovery cost is already sunk.</strong> You know their situation, their words, their worries; on a new account that's hours of digging.<br/><br/><strong>The version that doesn't:</strong> two hours every week "going through the old ones", riding the emotional swings — buying the lowest probability with your most expensive time.<br/><br/>So the real question isn't whether revival rates are high. It's <strong>whether you've made revival a low-cost action triggered by external events rather than a high-cost one triggered by your mood.</strong></div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 27</footer>
+</div>
+</body>
+</html>
