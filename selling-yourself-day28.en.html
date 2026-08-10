@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 28: Selling Yourself Is the Meta-Skill</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 28 · Phase E</div>
+<h1>Nobody is buying "you"<br/>They're buying the odds that they won't regret it</h1>
+<div class="meta"><span>Four scenes, one machine · a sentence that can be proven wrong · the ledger behind the cringe · a version of you that survives retelling</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">Job, funding, co-founder, resources — the buyer is asking the same question every time, and what you open with almost always answers a different one.</div>
+</header>
+<div class="intro">
+<strong>"I'm bad at selling myself" is usually not modesty. It's a mix-up of two different questions.</strong> You think they're assessing what kind of person you are, so you set about proving you're good. What they're actually computing is much narrower: <strong>if I pick this person and it goes wrong, how bad is it, and whose name is on it.</strong> That mismatch explains nearly all the awkwardness of self-promotion — you're answering a question about risk with adjectives, and the harder you push the more it reads as bluster. Fix the question and job-hunting, fundraising, partnerships and asking for resources become four configurations of one machine. <strong>The only thing genuinely special here is that this time you are both the salesperson and the goods, so every rejection takes a shortcut into a verdict on you personally. That's the hard part — not the technique.</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Four scenes, one machine: what they buy is never you, it's less uncertainty
+<span class="en">Signals only separate people when faking them is expensive</span></h2>
+<span class="tag">signalling theory</span><span class="tag">information asymmetry</span><span class="tag">whose name is on it</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">To them you are <strong>a product that can't be opened and inspected</strong>: ability, reliability, staying power — none of it becomes visible until they've already paid something (an offer, a wire, a project handed over). So they aren't admiring you, they're <strong>pricing uncertainty</strong>. The better you understand what they're afraid of, the more your sentences are worth.</div>
+</div>
+<div class="section">
+<div class="section-label">Four configurations of the same machine</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 372" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Four different-looking scenes, one arithmetic: if this goes wrong, who carries it</text>
+<rect fill="#dfeae2" height="28" width="652" x="24" y="34"></rect>
+<rect fill="none" height="264" stroke="#4e8a3f" stroke-width="1.2" width="652" x="24" y="34"></rect>
+<line stroke="#a8bfae" stroke-width="1" x1="130" x2="130" y1="34" y2="298"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="250" x2="250" y1="34" y2="298"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="460" x2="460" y1="34" y2="298"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="676" y1="62" y2="62"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="676" y1="121" y2="121"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="676" y1="180" y2="180"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="676" y1="239" y2="239"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="77" y="53">scene</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="190" y="53">who pays</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="355" y="53">what they're actually buying</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="568" y="53">what keeps them up at night</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="77" y="95">a job</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="190" y="95">hiring manager</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="355" y="95">not having to think about this in six months</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="568" y="95">a bad hire has their signature on it</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="77" y="154">funding</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="190" y="154">investor</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="355" y="154">a shot at something large, and you not leaving</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="568" y="154">zero is fine; looking foolish isn't</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="77" y="213">a co-founder</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="190" y="213">the person</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="355" y="213">two years they'd otherwise spend themselves</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="568" y="213">unwinding it costs more than a divorce</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="77" y="272">resources</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="190" y="272">whoever decides</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="355" y="272">their own goal moving one notch forward</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="568" y="272">spending their credit on you for nothing</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="322">The last column is never "are you any good" — it's "will I regret this, and who feels it";</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="340">if nothing in your material touches it, you're answering a question nobody asked.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="364">Four categories from practice; "buyers infer quality from signals under information asymmetry" has classic theoretical support (Spence 1973 / Akerlof 1970).</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Situation: you want to move internally into data analysis, and you have ten minutes with the head of that team.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Answering a question nobody asked</div>
+<p>"I'm really passionate about data, I learn fast, I've taught myself SQL and Python." <strong>All adjectives — and adjectives cost nothing, so someone who can do the work and someone who can't say them equally cheaply. Zero information.</strong> Worse, the risk stays entirely with them: if you can't do it, it's their signature.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Go straight at the thing keeping them up</div>
+<p>"The thing about an internal move is that <strong>if it doesn't work out you've got to run the whole process again</strong>. So I did something first: I re-ran last quarter's retention report in SQL. Two of the definitions don't reconcile — they're flagged in the attachment. <strong>If it's useful I'll do it alongside my job for two months, and you can stop it whenever, no explanation owed.</strong>"<br/>—— A checkable piece of work plus a real exit. You didn't ask them to believe you; you took their risk off them.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: this is a textbook market with information asymmetry — you know whether you're worth it, they don't, and they must pay before they can inspect. In such a market buyers can only infer quality from <em>signals</em>, and the single condition under which a signal separates the real from the fake is that faking it costs more. "I'm passionate" is free for everyone, so it gets discounted on arrival. A piece of work they can check on the spot, a person willing to put their name to you, a sentence like "stop it whenever" — those are expensive for a liar, which is why they land.</strong></p>
+<ul>
+<li><strong>Hard evidence · signals must be costly</strong>: Spence (1973, <em>Quarterly Journal of Economics</em>), <em>Job Market Signaling</em>. The core result: when employers can't observe ability directly, a signal only conveys information if <strong>the cost of acquiring it is negatively correlated with true ability</strong>. This model is one of the foundations of the 2001 Nobel in economics (shared with Akerlof and Stiglitz). The implication is blunt: anything you can say effortlessly, so can everyone else.</li>
+<li><strong>Hard evidence · markets you can't inspect get discounted automatically</strong>: Akerlof (1970, <em>QJE</em>), the used-car model — when buyers can't tell good cars from bad, they'll only pay the average price, so good cars leave the market. <strong>When every candidate is speaking in adjectives, the only rational move left to them is to treat you as average.</strong> That's not them failing to spot quality; that's you not handing them the tool to spot it.</li>
+</ul>
+<p class="caveat">Boundaries. Signalling theory explains why verifiable things work better; it doesn't promise that a signal closes the deal — budget, timing and internal politics aren't yours to control, and signals can be forged (padded résumés, bought endorsements), which is why the durable ones are the kind that can be <strong>checked on the spot</strong>. Second: taking risk off them can be overdone into self-devaluation. "Stop it whenever" transfers risk; "I'll take whatever you pay" transfers value, and it anchors your price permanently.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasing</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"Here's the thing you're actually taking a risk on, so let me take it off you."</p>
+<p>"You can stop it at any point, no explanation needed."</p>
+<p>"Don't take my word for it — here's the file."</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>The only test for a personal value proposition: can it be proven wrong?
+<span class="en">If the sentence can't be proven wrong, it isn't saying anything</span></h2>
+<span class="tag">falsifiable</span><span class="tag">past behaviour</span><span class="tag">concrete beats abstract</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Testing your own introduction takes one move: <strong>ask whether it can be negated.</strong> "Responsible, good communicator, product-minded" — no fact can overturn it, so it excludes nobody, so it's zero. "I took three small e-commerce teams from a two-day reconciliation to two hours, and one of those managers will take your call" — checkable, and capable of blowing up in my face. That's where the weight comes from.</div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"Signals are activities or attributes that alter the beliefs of others — and to be informative, they must be costly to acquire."</span>
+<span class="source">— Michael Spence, core argument of <em>Job Market Signaling</em> (1973)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">From zero information to falsifiable: the four parts</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="v1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Same person, two versions: the right one counts because it can be checked</text>
+<rect fill="#fbefe8" height="52" rx="5" stroke="#c0603a" stroke-width="1.2" width="290" x="24" y="36"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="38" y="56">zero information (cannot be negated)</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.6" x="38" y="74">"responsible, communicative, product-minded"</text>
+<line marker-end="url(#v1)" stroke="#3f5c7a" stroke-width="1.6" x1="320" x2="368" y1="62" y2="62"></line>
+<rect fill="#e2efdc" height="52" rx="5" stroke="#4e8a3f" stroke-width="1.2" width="302" x="374" y="36"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" x="388" y="56">falsifiable (checkable, and can blow up)</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.6" x="388" y="74">"took 3 small shops from 2 days to 2 hours"</text>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" x="24" y="116">It has only four parts — leave one out and they fill that slot with the worst option</text>
+<rect fill="#eef1f5" height="66" rx="5" stroke="#3f5c7a" stroke-width="1.1" width="152" x="24" y="130"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="100" y="158">① for whom (narrow)</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="100" y="178">"shops under 20 people"</text>
+<rect fill="#eef1f5" height="66" rx="5" stroke="#3f5c7a" stroke-width="1.1" width="152" x="190" y="130"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="266" y="158">② from what to what</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="266" y="178">"2 days → 2 hours"</text>
+<rect fill="#eef1f5" height="66" rx="5" stroke="#3f5c7a" stroke-width="1.1" width="152" x="356" y="130"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="432" y="158">③ where the proof is</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="432" y="178">a file, a number, a referee</text>
+<rect fill="#eef1f5" height="66" rx="5" stroke="#3f5c7a" stroke-width="1.1" width="152" x="522" y="130"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="598" y="158">④ who shouldn't hire you</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="598" y="178">"not for 1000-person firms"</text>
+<rect fill="#f7faf6" height="46" rx="4" stroke="#e3ddc7" stroke-width="1" width="652" x="24" y="212"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="38" y="232">Part ④ is the counter-intuitive one: naming what you're wrong for makes the other three</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="38" y="250">more credible — someone who can do anything has told you nothing.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="286">Strength: "concrete past behaviour predicts performance better than self-described traits" is stable in selection research,</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="302">but the coefficients were revised downward (Schmidt &amp; Hunter 1998 → Sackett et al. 2022): trust the ordering, not the numbers.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="322">"Naming who you're wrong for raises credibility" is a mechanism inference, not a tested result.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Template: swap adjectives for a sentence that can be wrong</div>
+<div class="template">
+<span class="label">Four parts — fill them in and you have your sentence</span>
+<p>· <strong>Formula:</strong> I help <strong>[a narrow group]</strong> in <strong>[a specific situation]</strong> get from <strong>[state A]</strong> to <strong>[state B]</strong>; the proof is <strong>[one checkable thing]</strong>; <strong>[when not to come to me]</strong>.</p>
+<p>· <strong>Job version:</strong> "What I do is take over the three-year-old report nobody dares touch and rewrite it. Twice now, both live inside two months; for one of them I wrote up the definition mismatches and can send that over. <strong>If what you need is a new system designed from scratch, I'm not your best option.</strong>"</p>
+<p>· <strong>Self-check:</strong> show the sentence to someone who doesn't know you and ask one question — <strong>"which part of this could be used to prove I'm bluffing?"</strong> If there isn't one, you haven't said anything.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Two layers. Information: a sentence that can't be falsified rules nothing out, so it changes none of their beliefs — it's zero. Prediction: what they're forecasting is how you'll perform, and the best available predictor is <em>your concrete past behaviour in comparable situations</em>, not your description of your own character.</strong></p>
+<ul>
+<li><strong>Hard evidence · structured, behavioural evidence predicts best</strong>: Schmidt &amp; Hunter (1998, <em>Psychological Bulletin</em>) synthesised eighty-plus years of personnel selection research; work samples, general mental ability and structured interviews came out well above unstructured interviews. <strong>The update must be flagged</strong>: Sackett, Zhang, Berry &amp; Lievens (2022, <em>Journal of Applied Psychology</em>) argue the old estimates over-corrected for artefacts such as range restriction, and their re-estimates are <strong>substantially lower across the board</strong> (structured interviews around .42 now top the list; general mental ability drops to roughly .31). <strong>The direction holds — behavioural evidence beats self-described traits — but the absolute figures are contested, so don't treat any single coefficient as law.</strong></li>
+<li><strong>The mirror-image use</strong>: The Mom Test issue applies "ask about past behaviour, never future intentions" to your customers; turn it on yourself — <strong>every "I can" should be rewritten as "I did, here, and this is what happened".</strong></li>
+</ul>
+<p class="caveat">Boundary one: falsifiable ≠ numerical. A manufactured "300% efficiency gain" is worse than an adjective, because it collapses the moment anyone probes. With no numbers, give a <strong>checkable thing</strong>: a document, a person who'll pick up the phone, code that runs. Boundary two: in service and management roles, outcomes are genuinely hard to attribute, so make the evidence <strong>a third party</strong> ("ask my old boss directly") rather than a medal you award yourself. Boundary three: naming who you're wrong for can genuinely get you screened out of a hundred-résumé first pass — it belongs where there's room for a conversation.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasing</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"I'm not the right person if what you need is X."</p>
+<p>"You don't have to take my word for it — call her."</p>
+<p>"Here's what I did, where, and what happened after."</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>The cringe comes from a ledger you're keeping wrong
+<span class="en">Talking about yourself is a reward — so don't take all of it</span></h2>
+<span class="tag">illusion of transparency</span><span class="tag">liking gap</span><span class="tag">reward of disclosure</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Self-promotion feels greasy because you've recorded it as <strong>"taking something from the other person"</strong>. The real entry is: someone who needs you can't find you right now, and you both lose. <strong>The cringe isn't ethics, it's a bookkeeping error — and the silence it produces is paid for entirely by you.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">In their words</div>
+<div class="quote">
+<span class="en">"People like us more than we know."</span>
+<span class="source">— Boothby, Cooney, Sandstrom &amp; Clark, <em>The Liking Gap in Conversations</em> (2018)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why a monologue grates: a real brain mechanism</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Talking about yourself is intrinsically rewarding — so who gets to do it has a price</text>
+<rect fill="#eef1f5" height="52" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="180" x="24" y="38"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="114" y="60">talking about yourself</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="114" y="77">(self-disclosure)</text>
+<line marker-end="url(#b1)" stroke="#3f5c7a" stroke-width="1.6" x1="208" x2="250" y1="64" y2="64"></line>
+<rect fill="#eef1f5" height="52" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="212" x="256" y="38"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="362" y="60">nucleus accumbens · VTA</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="362" y="77">dopamine reward circuit fires</text>
+<line marker-end="url(#b1)" stroke="#3f5c7a" stroke-width="1.6" x1="472" x2="514" y1="64" y2="64"></line>
+<rect fill="#eef1f5" height="52" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="162" x="520" y="38"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="601" y="60">they'll forgo money</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="601" y="77">for the chance to do it</text>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" x="24" y="118">So the same ten minutes, split two ways:</text>
+<rect fill="#fbefe8" height="76" rx="5" stroke="#c0603a" stroke-width="1.2" width="316" x="24" y="130"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="38" y="150">✗ you talk for 9, they talk for 1</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="38" y="172">you kept the reward; they got "being sold to",</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="38" y="192">and you still don't know what they care about.</text>
+<rect fill="#e2efdc" height="76" rx="5" stroke="#4e8a3f" stroke-width="1.2" width="316" x="360" y="130"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="374" y="150">✓ they talk for 6, you talk for 4</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.2" x="374" y="172">reward goes to them, and you collect their</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.2" x="374" y="192">exact words to aim your evidence at.</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="238">Asking first isn't politeness. It hands back the reward and tells you which piece of evidence to reach for.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="270">Tamir &amp; Mitchell (2012, PNAS): fMRI shows self-disclosure engaging nucleus accumbens and VTA, and participants</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="286">gave up money to do it. "Therefore people dislike your monologue" is my extrapolation; the time splits are illustrative.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Situation: an industry event. You'd like to be remembered, and the moment you open your mouth you feel ridiculous.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Force it, or say nothing at all</div>
+<p>Either "Hi, I work in X, we mainly provide…" — which casts them as an audience — or you smile and nod all evening and think on the way home: <strong>nobody needs me anyway.</strong> They look like opposites, but they share a root: you've filed speaking up under taking.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Give the reward first, then put yourself next to their problem</div>
+<p>"What's been the messiest part of your year?" — listen for three minutes, and note the <strong>exact words</strong> they use.<br/>Then: "You said reconciliation eats two days and the whole team works late at month-end — I've chewed on that one twice. <strong>Want me to send you the comparison sheet I made? Ignore it if it's useless.</strong>"<br/>—— You sold nothing. You put something that already exists next to a problem they just named out loud. <strong>The cringe disappears for a very physical reason: this genuinely isn't taking.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Three layers. Exposure: you think your nerves are written across your face; far less shows than you assume, so you're correcting your behaviour for an audience that doesn't exist. Feedback: after a conversation you systematically underestimate how much they liked you, and then decide "don't contact them again" off a biased reading. Reward: talking about yourself carries a neural reward, so monopolising ten minutes takes all of it, leaving them with "being sold to". That is the physical source of greasiness — not a defect in your character.</strong></p>
+<ul>
+<li><strong>Hard evidence · illusion of transparency, and knowing it helps</strong>: Gilovich, Savitsky &amp; Medvec (1998, <em>JPSP</em>) showed people overestimate how detectable their internal states are. Savitsky &amp; Gilovich (2003, <em>JESP</em>) then intervened: <strong>telling speakers about the effect before a talk lowered their anxiety and raised observers' ratings of the speech.</strong> One of the rare findings that pays out simply from knowing it — you've collected part of the effect by reading this.</li>
+<li><strong>Hard evidence · the liking gap</strong>: Boothby, Cooney, Sandstrom &amp; Clark (2018, <em>Psychological Science</em>), <em>The Liking Gap in Conversations</em> — five studies spanning strangers in first conversations, roommates over a year, and more; people <strong>systematically underestimate how much their conversation partner liked them</strong>. The conversation you keep replaying on the way home was probably rated higher by the other side than by you.</li>
+<li><strong>Hard evidence (neural) · disclosure is rewarding</strong>: Tamir &amp; Mitchell (2012, <em>PNAS</em>) — fMRI shows self-disclosure accompanied by activity in the <strong>nucleus accumbens and ventral tegmental area</strong>, core nodes of the dopamine reward system, and participants <strong>gave up real money</strong> for the chance to talk about themselves. Flagged honestly: it demonstrates that talking about yourself is pleasant; "therefore hearing someone else's monologue is unpleasant" is my extrapolation.</li>
+</ul>
+<p class="caveat">The boundary that matters most: <strong>the social cost of self-promotion is real, and it is unevenly distributed.</strong> Rudman (1998, <em>JPSP</em>) found that self-promoting women were rated more competent and simultaneously less likeable and less hireable — the backlash effect; later literature ties such backlash to gender and to culture (East Asian modesty norms in particular). So the conclusion here is <strong>not "be bold, oversell"</strong>: <strong>swap adjectives for facts a third party can verify and you remove most of the fuel</strong> — "I'm excellent" invites resistance; "here's the thing I built, ask him about it" rarely does. Also, both biases say you're better than you think, not that delivery is irrelevant: ten minutes with no follow-up question is a content problem.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasing</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"What's the messiest part of your year so far?"</p>
+<p>"You just said X — I've actually chewed on that twice."</p>
+<p>"Happy to send it over; ignore it if it's not useful."</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>What actually brings opportunities is the sentence someone else says about you
+<span class="en">Your opportunities arrive through a sentence you never get to say yourself</span></h2>
+<span class="tag">retellability</span><span class="tag">weak ties</span><span class="tag">transmission decay</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The biggest opportunities of your life mostly weren't pitched by you. <strong>Someone you barely know mentioned you in one sentence, in a room you weren't in.</strong> So the thing to polish isn't your introduction — it's <strong>the sentence they can remember and repeat verbatim</strong>: short enough to survive retelling, specific enough that it couldn't be about someone else.</div>
+</div>
+<div class="section">
+<div class="section-label">How your sentence shrinks its way into an opportunity — or vanishes</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 316" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">The last mile of an opportunity is one retelling you aren't present for</text>
+<rect fill="#eef1f5" height="46" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="150" x="24" y="36"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="99" y="55">you talk for 3 min</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="99" y="71">history · skills · ideas</text>
+<line marker-end="url(#t1)" stroke="#3f5c7a" stroke-width="1.6" x1="178" x2="212" y1="59" y2="59"></line>
+<rect fill="#eef1f5" height="46" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="150" x="218" y="36"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="293" y="55">next day they recall</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="293" y="71">one impression, one label</text>
+<line marker-end="url(#t1)" stroke="#3f5c7a" stroke-width="1.6" x1="372" x2="406" y1="59" y2="59"></line>
+<rect fill="#eef1f5" height="46" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="150" x="412" y="36"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="487" y="55">3 months on, they retell</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="487" y="71">one sentence, a dozen words</text>
+<line marker-end="url(#t1)" stroke="#3f5c7a" stroke-width="1.6" x1="566" x2="600" y1="59" y2="59"></line>
+<rect fill="#e2efdc" height="46" rx="5" stroke="#4e8a3f" stroke-width="1.2" width="70" x="606" y="36"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="641" y="55">a shot</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="641" y="71">or nothing</text>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" x="24" y="114">Same person, two ways of being retold:</text>
+<rect fill="#fbefe8" height="74" rx="5" stroke="#c0603a" stroke-width="1.2" width="316" x="24" y="126"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="38" y="146">✗ "a friend of mine's good, does internet stuff"</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="38" y="170">fits anybody → never recalled:</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="38" y="186">no concrete need can hook onto it.</text>
+<rect fill="#e2efdc" height="74" rx="5" stroke="#4e8a3f" stroke-width="1.2" width="316" x="360" y="126"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" x="374" y="146">✓ "he rescues reports nobody dares touch"</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.2" x="374" y="170">narrow, visual, repeatable → the moment</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.2" x="374" y="186">anyone names that mess, you're recalled.</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="216">Retelling levels the detail and sharpens one feature — all you control is which feature that is.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="248">Granovetter (1973/1974, n=282): among those who found work through contacts, about 55.6% heard it from someone</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="264">seen "occasionally", only about 16.7% from someone seen "often". Small, old, single-region sample.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="286">Rajkumar et al. (2022, Science): randomised experiments across ~20 million LinkedIn users over five years give causal</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="302">support that moderately weak ties help job mobility most — the hardest evidence available for this claim.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Template: build a sentence someone can carry off intact</div>
+<div class="template">
+<span class="label">The test isn't accuracy — it's whether they can still say it after a drink</span>
+<p>· <strong>Step one: write how you want to be introduced</strong>, in <strong>their voice</strong>, not your résumé's: "He rescues those ancient reports that have been running for years and nobody dares touch." A dozen words, visual, narrow.</p>
+<p>· <strong>Step two: run it backwards.</strong> Try the sentence on three peers you know. <strong>If it fits them, it describes a profession rather than you. Rewrite.</strong></p>
+<p>· <strong>Step three: hand it over with a cue attached.</strong> "If you ever hear someone moaning that nobody will touch their legacy reporting, throw my name in." <strong>People won't go looking for opportunities on your behalf, but they will retrieve a name when a cue appears.</strong></p>
+<p>· <strong>Step four: make it checkable.</strong> Attach a link or a file. The person retelling it is risking their own credibility, so something they can forward without effort lowers their risk too.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Two layers. Structure: opportunities travel along <em>weak ties</em> — close contacts share your information, so what they know you already know; only people you rarely see sit in other circles holding things you can't reach. Transmission: the information passes through at least one human retelling, and retelling <em>levels detail and sharpens one feature</em>. You can't stop the decay, only decide in advance which feature gets amplified — hence short, narrow and visual.</strong></p>
+<ul>
+<li><strong>Hard evidence · weak ties carry opportunity</strong>: Granovetter (1973, <em>American Journal of Sociology</em>, <em>The Strength of Weak Ties</em>, and the 1974 book <em>Getting a Job</em>) surveyed 282 professional, technical and managerial workers who had changed jobs: among those who heard about the job through a contact, about <strong>55.6%</strong> heard it from someone they saw "occasionally", about 27.8% from someone seen "rarely", and only about <strong>16.7%</strong> from someone seen "often". <strong>Strength: small, single-region, decades old — foundational but not conclusive.</strong></li>
+<li><strong>Hard evidence (causal) · confirmed by large randomised experiments</strong>: Rajkumar, Saint-Jacques, Bojinov, Brynjolfsson &amp; Aral (2022, <em>Science</em>) tested the hypothesis with multiple randomised experiments running over five years across roughly twenty million LinkedIn users: <strong>moderately weak ties help job mobility most</strong>, with stronger effects in more digitised industries. It moves a fifty-year-old sociological conjecture onto causal footing, far above the original survey.</li>
+<li><strong>Classic but methodologically loose · decay in transmission</strong>: Bartlett's (1932) serial reproduction studies and Allport &amp; Postman's (1947) leveling (detail flattened) and sharpening (a few features amplified). <strong>Old, without modern methodological controls — treat as a directional frame only.</strong> It does agree with something sturdier: the shorter, more concrete and more visual a thing is, the more intact it survives retelling.</li>
+</ul>
+<p class="caveat">Don't read this as "network more". Weak ties only work if <strong>the sentence was genuinely remembered</strong> — knowing five hundred people none of whom can say what you do is zero. Another limit: this solves <strong>"can the people who need you find you"</strong>, not "are you actually any good". The retelling gets you to the door; past it, falsifiable evidence takes over. Finally, the sentence has to be <strong>something you can actually deliver</strong> — whoever repeats it is staking their credibility on you, and one failure means they never mention you again.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasing</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"If you ever hear someone complaining about X, throw my name in."</p>
+<p>"Here's a link you can just forward."</p>
+<p>"How would you describe what I do, in one line?"</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 28 Action</h3>
+<p>Twenty-five minutes, one sheet of paper. You'll end up with two sentences and one fewer excuse.</p>
+<div class="action">
+<strong>1 (5 min):</strong> Write out your current self-introduction and ask of every line: <strong>could this be proven false?</strong> Cross out the ones that couldn't. Most people cross out eighty percent — the remaining fifth is the asset.<br/><br/><strong>2 (8 min):</strong> Rewrite it with the four parts: for whom / from what to what / where the proof is / who shouldn't hire you. <strong>The fourth is mandatory; if you can't write it, the first isn't narrow enough.</strong><br/><br/><strong>3 (4 min):</strong> Now write the sentence <strong>someone else would use to retell you</strong> — a dozen words, in their voice. Try it on three peers; if it fits them, rewrite it.<br/><br/><strong>4 (5 min):</strong> Ask someone you respect but don't know well: "<strong>If you had to introduce me in one line, what would you say?</strong>" Their answer is more accurate than yours, and the message costs almost nothing socially.<br/><br/><strong>5 (3 min):</strong> Put the sentence from step 2 somewhere real: an introduction, an email, the first line of your page. <strong>On paper doesn't count.</strong><br/><br/>Boundary: this makes you findable by the people who need you; it does not make an unqualified person qualified. <strong>If the evidence slot keeps coming up empty, the problem isn't your phrasing — you don't yet have one checkable piece of work. Go make one.</strong> And the social backlash against self-promotion is real and falls unfairly; the answer is swapping adjectives for third-party-verifiable facts, not silence.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. I genuinely have nothing to show yet. Does any of this work for me?</summary>
+<div class="answer">It does — you just change the kind of evidence. <strong>"Falsifiable" doesn't mean "accomplished"; the requirement is only "checkable".</strong> Someone with no projects can still say: "There are three inconsistent definitions in your published accounts — I've written them up on one page, it's attached. It may be useless, but I wanted you to see how I think about problems." That can blow up in their face on inspection, which is exactly what makes it a real signal.<br/><br/>It also reverses the order. <strong>Most people are waiting until they have work to show before speaking up, when the work usually only gets made after speaking up and landing a real need.</strong> What you need isn't an achievement, it's <strong>one small thing made specifically for this conversation</strong> — the textbook costly signal. It doesn't prove you're brilliant; it proves you were willing to pay first. It won't substitute for hard credentials, but it will get you seen individually inside a pile of identical people.</div>
+</details>
+<details>
+<summary>2. Where is the line between selling yourself and pretending to be someone else?</summary>
+<div class="answer">One line only: <strong>nothing you said should make them feel deceived when it's tested.</strong> Not "did I exaggerate" — "does it reconcile on delivery".<br/><br/>Apply it to the grey areas. <strong>Leading with your three strongest things and not volunteering your weakest is selective presentation — everyone writing a CV does it</strong>, and every item they receive is true. <strong>Claiming the team's outcome as yours, or turning "was on it" into "ran it", is fabrication</strong>; it surfaces in week three, and the cost then dwarfs the cost of not getting the job.<br/><br/>The subtler breach is <strong>pretending to be a different personality</strong>. An introvert can perform extroversion for an hour, not for three years, and the trust lost to that gap after you start is more expensive than not being picked. The stable move is to state your actual shape as a predictable condition: "I'm not the person who'll fight for airtime in a meeting; my output mostly lives in written things — does that work here?" <strong>Front-loading the difference is cheaper than hiding it.</strong> Self-check: <strong>if they could see the true sentence in your head right now, would you still say it this way?</strong></div>
+</details>
+<details>
+<summary>3. My field has no titles or big-name employers. I'm just an ordinary person — does this hold?</summary>
+<div class="answer">Ordinary is exactly who needs it. <strong>A title's whole function is to spare the other person the cost of verifying you</strong> — "senior engineer at a famous company" is a ready-made signal they don't have to evaluate themselves. You don't have that cheap signal, so you have to manufacture one: something checkable on the spot, or a person who'll attach their name to you.<br/><br/>What gets missed is that <strong>a self-made signal is often more accurate than a title</strong>. The title came from a platform in the past; the work is what you can do now. Titles dominate only where <strong>nobody has time to look closely</strong> — mass screening, a cold first impression — and those situations were never your best battlefield anyway.<br/><br/>The practical version: <strong>use your narrowness as your title.</strong> "An ordinary person who's done lots of things" has no position in the market; "an ordinary person who handles this one specific mess" does — and it needs no institution to vouch for it, only three people who can repeat it. Which is why part four (who shouldn't hire you) is worth more to you than to someone with a badge: <strong>the more precisely you give something up, the more solidly the rest stands.</strong></div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 28</footer>
+</div>
+</body>
+</html>

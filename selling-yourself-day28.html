@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 28：卖自己是元技能</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 28 · Phase E</div>
+<h1>没有人在买「你这个人」<br/>他们在买「选了你之后，我会不会后悔」</h1>
+<div class="meta"><span>主题：四个场景一台机器 · 可证伪的一句话 · 羞耻这本账 · 能被原样转述的自己</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">求职、融资、找合伙人、要资源——买家问的是同一个问题；你一开口回答的几乎总是另一个。</div>
+</header>
+<div class="intro">
+<strong>「我不擅长推销自己」多半不是谦虚，是把两件事搞混了。</strong>你以为对方在评估「你是个什么样的人」，于是努力证明自己好；对方其实在算一件很窄的事：<strong>选了你，我要担多大的翻车风险，翻了车谁背。</strong>这个错位解释了自我推销里几乎所有的别扭——你拿形容词回答一个关于风险的问题，越用力越像虚张声势。换回来之后，求职、融资、谈合作、要资源就是同一台机器的四种配置。<strong>它唯一特殊的是：这次你既是销售员又是货，每一次拒绝都会顺着捷径变成对你本人的判决——这才是难点，不是技巧。</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>四个场景，一台机器：买家买的从来不是你，是风险下降
+<span class="en">Nobody buys you. They buy the drop in the odds of regretting it.</span></h2>
+<span class="tag">信号理论</span><span class="tag">信息不对称</span><span class="tag">谁背锅</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">在对方眼里，你是<strong>无法拆开检验的商品</strong>：能力、靠谱程度、能撑多久，都要等他先付出代价（发 offer、打款、交项目）才看得见。所以他做的不是欣赏你，是<strong>压低不确定性</strong>。你越懂他怕什么，越值钱。</div>
+</div>
+<div class="section">
+<div class="section-label">同一台机器的四种配置</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 372" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">四个场景看着不同，买家算的是同一笔账：万一选错，代价落在谁头上</text>
+<rect fill="#dfeae2" height="28" width="652" x="24" y="34"></rect>
+<rect fill="none" height="264" stroke="#4e8a3f" stroke-width="1.2" width="652" x="24" y="34"></rect>
+<line stroke="#a8bfae" stroke-width="1" x1="130" x2="130" y1="34" y2="298"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="250" x2="250" y1="34" y2="298"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="460" x2="460" y1="34" y2="298"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="676" y1="62" y2="62"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="676" y1="121" y2="121"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="676" y1="180" y2="180"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="24" x2="676" y1="239" y2="239"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="77" y="53">场景</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="190" y="53">谁在掏钱</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="355" y="53">他真正在买的东西</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="568" y="53">他半夜担心的那件事</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="77" y="95">求职</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="190" y="95">用人经理</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="355" y="95">半年后这块事不用他再操心</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="568" y="95">招错人是他签的字</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="77" y="154">融资</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="190" y="154">投资人</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="355" y="154">一个能变很大的可能，加你不下车</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="568" y="154">钱归零能接受，看走眼不行</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="77" y="213">找合伙人</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="190" y="213">对方本人</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="355" y="213">省下他自己啃这块的两年</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="568" y="213">合不来时拆起来比离婚贵</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="77" y="272">要资源</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="190" y="272">拍板的人</text>
+<text fill="#2c382f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="355" y="272">他自己的目标往前挪一格</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="568" y="272">替你说了话却没结果</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="322">最后一列都不是「你好不好」，是「我会不会后悔、后悔了谁难受」；</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="340">材料里一句都没碰到它，就是在回答没人问的问题。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="364">四类为实践归纳；「信息不对称下买家靠信号推断质量」有经典理论支撑（Spence 1973 / Akerlof 1970）。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你想转岗做数据分析，跟对方部门负责人聊十分钟。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 回答一个没人问的问题</div>
+<p>「我对数据特别有热情，学习能力强，自学了 SQL 和 Python。」<strong>全是形容词，而形容词成本为零——真会的和不会的说起来一样便宜，所以不携带信息。</strong>更糟的是风险全留给了他：万一你不行，字是他签的。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 直接去接他半夜担心的那件事</div>
+「跨部门转岗最怕<strong>试完不合适还得重走流程</strong>。所以我先做了件事：你们上季度那份留存报表我用 SQL 重跑了一遍，有两处口径对不上，标在附件里。<strong>觉得能用，我先兼着做两个月，不合适你随时停。</strong>」<br/>—— 可验证的作品 + 真退出口。你没请他相信你，你把他的风险接了过来。</p>
+</div>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Nobody is buying you. In a hiring, funding, partnership or resource conversation, you are a product that cannot be opened and inspected before payment — so the buyer isn't admiring you, they're pricing uncertainty. And the sharpest part of that uncertainty is personal: if this goes wrong, whose signature is on it. Four scenes, one machine. The hiring manager buys not having to re-run the search in six months and fears being visibly wrong. The investor buys a shot at something large plus your not walking away, and fears looking foolish to peers. A prospective co-founder buys two years they don't have to spend themselves, and fears being locked in. A decision maker granting you resources buys their own goal moving forward, and fears spending their credibility on you for nothing. Adjectives — passionate, fast learner, hard working — cost nothing to say, which is exactly why they carry no information: signalling theory says a signal only separates people when it is cheaper for the genuine article than for the pretender. Verifiable work, a named referee, a real exit clause: those cost the faker more than they cost you.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：典型的信息不对称市场——你知道自己值不值，对方不知道，且要先付钱才验得了货。买家只能靠<em>信号</em>推断质量，而信号能区分真假的唯一条件是：装的人付出的代价更高。「我很有热情」对谁都免费，所以一进耳朵就被折价；一份能当场核对的作品、一个愿具名替你说话的人、一句「不合适你随时停」，对说谎者昂贵得多，因此才被当真。</strong></p>
+<ul>
+<li><strong>硬证据 · 信号必须昂贵才有效</strong>：Spence (1973, <em>Quarterly Journal of Economics</em>)《Job Market Signaling》。核心结论：雇主无法直接观察能力时，只有当<strong>获取信号的成本与真实能力负相关</strong>，信号才能传递信息。该模型是 2001 年诺贝尔经济学奖的奠基工作之一（与 Akerlof、Stiglitz 同获）。含义直白：你能轻松说出口的话，别人也能。</li>
+<li><strong>硬证据 · 无法验货的市场会自动折价</strong>：Akerlof (1970, <em>QJE</em>) 的二手车模型：买方分不出好车坏车时只肯出「平均价」，好车因此退出。<strong>当所有候选人都在说形容词，对方只能按平均值对待你</strong>——不是他不识货，是你没给他识货的工具。</li>
+</ul>
+<p class="caveat">边界：信号理论解释「为什么可验证的东西更管用」，不保证「有信号就能成」——预算、时机、内部政治不归你管；信号也能被伪造，所以稳的是<strong>可当场核对</strong>的那种。另一条：降低风险做过头会变成自我贬低——「不合适你随时停」是让渡风险，「工资多少都行」是让渡价值，后者直接把定价锚死。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Here's the thing you're actually taking a risk on, so let me take it off you." —— 主动接过风险。</p>
+<p>"You can stop it at any point, no explanation needed." —— 真退出口。</p>
+<p>"Don't take my word for it — here's the file." —— 用可核对的东西代替形容词。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>个人价值主张的唯一标准：这句话能不能被证伪
+<span class="en">If the sentence can't be proven wrong, it isn't saying anything</span></h2>
+<span class="tag">可证伪</span><span class="tag">过去行为</span><span class="tag">具体优于抽象</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">检验自我介绍只要一个动作：<strong>问它能不能被否定。</strong>「我很负责、擅长沟通、有产品思维」——没有事实能推翻它，也就没排除任何人，等于零。「我帮三家小电商把对账从两天压到两小时，其中一家的负责人可以直接问」——能被查、能被打脸，所以才有分量。</div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"Signals are activities or attributes that alter the beliefs of others — and to be informative, they must be costly to acquire."</span>
+<span class="zh">信号是那些能改变别人判断的行为或属性——而要携带信息，它必须获取起来是昂贵的。</span>
+<span class="source">— Michael Spence,《Job Market Signaling》(1973) 核心论点</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">从零信息到可证伪：一句话的四个零件</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="v1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同一个人，两种说法：右边那句能被查证，所以它才值钱</text>
+<rect fill="#fbefe8" height="52" rx="5" stroke="#c0603a" stroke-width="1.2" width="290" x="24" y="36"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="38" y="56">零信息版（无法被否定）</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.6" x="38" y="74">「我很负责，擅长沟通，有产品思维」</text>
+<line marker-end="url(#v1)" stroke="#3f5c7a" stroke-width="1.6" x1="320" x2="368" y1="62" y2="62"></line>
+<rect fill="#e2efdc" height="52" rx="5" stroke="#4e8a3f" stroke-width="1.2" width="302" x="374" y="36"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" x="388" y="56">可证伪版（能被查、能被打脸）</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.6" x="388" y="74">「帮 3 家小电商把对账从 2 天压到 2 小时」</text>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" x="24" y="116">拆开看，它只有四个零件——缺哪个，哪个位置就被对方默认填成最差的一种</text>
+<rect fill="#eef1f5" height="66" rx="5" stroke="#3f5c7a" stroke-width="1.1" width="152" x="24" y="130"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="100" y="158">① 帮谁（越窄越可信）</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="100" y="178">「20 人以下电商」</text>
+<rect fill="#eef1f5" height="66" rx="5" stroke="#3f5c7a" stroke-width="1.1" width="152" x="190" y="130"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="266" y="158">② 从什么到什么</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="266" y="178">「2 天 → 2 小时」</text>
+<rect fill="#eef1f5" height="66" rx="5" stroke="#3f5c7a" stroke-width="1.1" width="152" x="356" y="130"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="432" y="158">③ 证据在哪</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="432" y="178">作品 / 数据 / 可问的人</text>
+<rect fill="#eef1f5" height="66" rx="5" stroke="#3f5c7a" stroke-width="1.1" width="152" x="522" y="130"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="598" y="158">④ 不适合谁</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="598" y="178">「千人以上别找我」</text>
+<rect fill="#f7faf6" height="46" rx="4" stroke="#e3ddc7" stroke-width="1" width="652" x="24" y="212"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="38" y="232">第 ④ 件最反直觉：主动说出自己不适合什么，前三件会一起变得更可信——</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="38" y="250">一个什么都能做的人，等于没说自己能做什么。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="286">强度：「过去的具体行为比自述特质更能预测表现」是人事甄选研究的稳定结论，但效度数值</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="302">近年被下修（Schmidt &amp; Hunter 1998 → Sackett 等 2022）：方向可靠，数字别当定论。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="322">「主动说不适合谁会更可信」属机制推论，无直接实验。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">话术模板：把形容词换成可证伪的句子</div>
+<div class="template">
+<span class="label">四个零件，填完就是你的一句话</span>
+<p>· <strong>公式：</strong>我帮 <strong>[很窄的一群人]</strong> 在 <strong>[具体处境]</strong> 下，从 <strong>[A 状态]</strong> 到 <strong>[B 状态]</strong>；证据是 <strong>[一件能被查的事]</strong>；<strong>[什么情况下别找我]</strong>。</p>
+<p>· <strong>求职版：</strong>「我做的是把跑了三年、没人敢动的老报表接过来重写，做过两次，都在两个月内上线，其中一次的口径差异写了对照表，可以发你。<strong>如果要的是从零设计新系统，我不是最优人选。</strong>」</p>
+<p>· <strong>自检：</strong>把它给一个不认识你的人看，问——<strong>「哪一处能证明我在吹牛？」</strong>找不到，就说明你什么都没说。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> There is exactly one test for a personal value proposition: can it be proven wrong? "Responsible, good communicator, product-minded" excludes nobody and can be falsified by nothing, so it carries zero information. "I took three sub-twenty-person e-commerce teams from a two-day reconciliation to two hours, and one of them will take your call" can be checked, and can blow up in my face — which is why it counts. Four parts: who exactly, from what state to what state, where the evidence sits, and who should not hire you. The fourth is the counter-intuitive one: naming what you're bad at makes the other three more credible, because someone who can do anything has told you nothing. The underlying finding from personnel selection is that concrete past behaviour predicts future performance far better than self-described traits. Be honest about the strength of it, though: Schmidt and Hunter's famous 1998 validity table was substantially revised downward by Sackett and colleagues in 2022 after correcting for range-restriction artefacts. The ordering survived — structured, behaviour-based evidence still comes out on top — but treat the individual coefficients as contested, not settled.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制两层。一是信息：不可证伪的句子不排除任何可能，也就不改变对方的判断，等于零。二是预测：对方要预测「你未来干得怎么样」，而最好的预测源是<em>你过去在类似处境下的具体行为</em>，不是你对自己的形容。</strong></p>
+<ul>
+<li><strong>硬证据 · 结构化的行为证据预测力最强</strong>：Schmidt &amp; Hunter (1998, <em>Psychological Bulletin</em>) 汇总八十余年人事甄选研究，工作样本、一般心智能力、结构化面试的效度显著高于无结构面试。<strong>必须标注更新</strong>：Sackett、Zhang、Berry &amp; Lievens (2022, <em>Journal of Applied Psychology</em>) 指出旧估计对全距限制等假象校正过度，重估后<strong>普遍下调</strong>（结构化面试约 .42 居首，一般心智能力降到约 .31）。<strong>方向稳——行为化的证据胜过自述特质；绝对数值仍在争论，别拿单个系数当铁律。</strong></li>
+<li><strong>镜像用法</strong>：The Mom Test 那期讲的「问过去行为、别问未来意向」反过来用在自己身上——<strong>每一句「我会」都该改写成「我做过，在哪、结果是什么」。</strong></li>
+</ul>
+<p class="caveat">边界一：可证伪 ≠ 有数字。硬凑「效率提升 300%」比形容词更糟，一追问就碎。没数字就给<strong>可核对的事</strong>：一份文件、一个能联系上的人、一段能跑的代码。边界二：服务型、管理型的成果难归因，那就把证据换成<strong>第三方</strong>（「你可以直接问我前老板」），而不是自己给自己发奖状。边界三：主动说「不适合谁」在上百份简历的初筛里可能真把你筛掉，它适合有对话空间的场合。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"I'm not the right person if what you need is X." —— 主动划掉一块。</p>
+<p>"You don't have to take my word for it — call her." —— 把证据交给第三方。</p>
+<p>"Here's what I did, where, and what happened after." —— 行为，不是特质。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>自我推销的羞耻，来自一本记错的账
+<span class="en">The cringe comes from a ledger you're keeping wrong</span></h2>
+<span class="tag">透明度错觉</span><span class="tag">好感差距</span><span class="tag">自我披露的奖赏</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">你觉得推销自己很油腻，是因为把它记成了<strong>「我从对方那里拿走一点什么」</strong>。真实的账是：需要你的人此刻找不到你，双输。<strong>羞耻不是道德感，是记账方式错了；而它带来的沉默，代价全由你承担。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">名家原话</div>
+<div class="quote">
+<span class="en">"People like us more than we know."</span>
+<span class="zh">别人对我们的好感，比我们自己以为的多。</span>
+<span class="source">— Boothby, Cooney, Sandstrom &amp; Clark,《The Liking Gap in Conversations》(2018)</span>
+</div>
+</div>
+<div class="section">
+<div class="section-label">为什么单方面自述让人难受：一个真实的脑机制</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">谈论自己本身带奖赏——所以「谁在谈自己」这件事，是有价的</text>
+<rect fill="#eef1f5" height="52" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="180" x="24" y="38"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="114" y="60">谈论自己</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="114" y="77">（自我披露）</text>
+<line marker-end="url(#b1)" stroke="#3f5c7a" stroke-width="1.6" x1="208" x2="250" y1="64" y2="64"></line>
+<rect fill="#eef1f5" height="52" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="212" x="256" y="38"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="362" y="60">伏隔核 · 腹侧被盖区</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="362" y="77">多巴胺奖赏回路激活</text>
+<line marker-end="url(#b1)" stroke="#3f5c7a" stroke-width="1.6" x1="472" x2="514" y1="64" y2="64"></line>
+<rect fill="#eef1f5" height="52" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="162" x="520" y="38"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="601" y="60">愿意放弃报酬</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="601" y="77">换取谈自己的机会</text>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" x="24" y="118">于是同样十分钟，两种分配方式：</text>
+<rect fill="#fbefe8" height="76" rx="5" stroke="#c0603a" stroke-width="1.2" width="316" x="24" y="130"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="38" y="150">✗ 你讲 9 分钟，他讲 1 分钟</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="38" y="172">奖赏你自己拿走了，他只剩「被推销」；</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="38" y="192">你也不知道他在乎什么，只能广撒网。</text>
+<rect fill="#e2efdc" height="76" rx="5" stroke="#4e8a3f" stroke-width="1.2" width="316" x="360" y="130"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="374" y="150">✓ 他讲 6 分钟，你讲 4 分钟</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.2" x="374" y="172">奖赏给了他，你顺带拿到他的关切词；</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.2" x="374" y="192">最后 4 分钟只讲跟那些词有关的证据。</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="238">「先问再答」不是客气，它同时办两件事：把奖赏还给对方，让你知道该拿哪份证据出来。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="270">Tamir &amp; Mitchell (2012, PNAS)：fMRI 观察到自我披露激活伏隔核与腹侧被盖区，被试愿</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="286">放弃金钱换取谈自己的机会。「因此别人讨厌你自述」属机制外推；时间比例为示意。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：一场行业活动，你想让对方记住你，但一开口就觉得自己很尬。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 硬着头皮上，或者干脆不开口</div>
+<p>要么「您好，我是做 XX 的，我们主要提供……」——把对方架成听众；要么全程微笑点头，回家路上想：<strong>反正也没人需要我。</strong>两种看着相反，同一个根：你把开口当成了索取。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 先给奖赏，再把自己放进他的问题里</div>
+<p>「你们今年最难搞的是哪块？」——听三分钟，记下他用的<strong>原词</strong>。<br/>然后：「你刚说『对账要两天，月底全组加班』——这个我正好啃过两次。<strong>把当时那份对照表发你？没用就当没这回事。</strong>」<br/>—— 你没推销任何东西，只是把一件已存在的东西放到刚说出口的问题旁边。<strong>羞耻感消失的原因很物理：它确实不是索取。</strong></p>
+</div>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The cringe isn't modesty and it isn't ethics — it's a bookkeeping error. You've recorded self-promotion as taking something from the other person, when the actual entry is that someone who needs your kind of help currently can't find you, and you both lose. Three findings make the ledger clearer. First, the illusion of transparency: you badly overestimate how visible your nervousness is, and simply being told this reduces speech anxiety and improves how observers rate the talk. Second, the liking gap: after a conversation, people systematically underestimate how much the other person liked them — the version of you that just spoke landed better than the version replaying in your head. Third, and most usefully, disclosing information about yourself activates the dopamine reward circuit — nucleus accumbens and ventral tegmental area — strongly enough that people will give up money for the chance to do it. Which reframes the whole thing: talking about yourself is a reward, so a monologue takes that reward away from them. Ask first, listen for their exact words, then place your evidence next to the problem they just named. The honest boundary is that self-promotion does carry a real social cost, and the research shows it falls unevenly — which is an argument for third-party evidence over adjectives, not for silence.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制三层。曝光：你以为紧张全写在脸上，外面其实看不到那么多，于是你为一个不存在的观众修正行为。反馈：交谈后你对「他有多喜欢我」的估计系统性偏低，照着偏差读数决定「别再联系了」。奖赏：谈论自己本身有神经奖赏，你独占十分钟等于把它全拿走，对方只剩「被推销」——这才是「油腻」的物理来源，不是你人品有问题。</strong></p>
+<ul>
+<li><strong>硬证据 · 透明度错觉，且知道它就能缓解</strong>：Gilovich、Savitsky &amp; Medvec (1998, <em>JPSP</em>) 提出透明度错觉——人高估自己的内部状态被他人察觉的程度。Savitsky &amp; Gilovich (2003, <em>JESP</em>) 进一步干预：<strong>把这个效应讲给即将演讲的被试听，其焦虑下降，观察者给的演讲质量评分也上升。</strong>这是少数「知道原理就有用」的结论，你读到这里已拿到一部分效果。</li>
+<li><strong>硬证据 · 好感差距</strong>：Boothby、Cooney、Sandstrom &amp; Clark (2018, <em>Psychological Science</em>)《The Liking Gap in Conversations》：五项研究，涵盖初次交谈的陌生人、同住一年的室友等场景，人们<strong>系统性低估交谈对象对自己的好感</strong>。那场你回家路上反复回味的对话，对面的评价大概率比你给自己的高。</li>
+<li><strong>硬证据（神经）· 谈自己是有奖赏的</strong>：Tamir &amp; Mitchell (2012, <em>PNAS</em>)：fMRI 显示自我披露伴随<strong>伏隔核与腹侧被盖区</strong>（多巴胺奖赏系统的核心节点）激活，且被试愿意<strong>放弃真实金钱</strong>换取谈论自己的机会。诚实标注：它证明的是「谈自己让人愉快」，「所以听别人自述让人不快」是机制外推。</li>
+</ul>
+<p class="caveat">最重要的边界：<strong>自我推销的社会代价是真实存在的，而且分布不均。</strong>Rudman (1998, <em>JPSP</em>) 发现自我推销的女性被评为更有能力，同时更不讨喜、更不愿被录用——即 backlash 效应；后续文献显示这类反弹与性别、文化（尤其东亚的谦逊规范）有关。所以结论<strong>不是「大胆吹」</strong>：<strong>把形容词换成第三方能核对的事实，反弹的燃料就少一大半</strong>——「我很优秀」招人反感，「这是我做的，你可以问他」很难。两条偏差说的是「你比自己以为的好」，不等于「你怎么讲都行」。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"What's the messiest part of your year so far?" —— 先把奖赏给对方。</p>
+<p>"You just said X — I've actually chewed on that twice." —— 用他的原词接上。</p>
+<p>"Happy to send it over; ignore it if it's not useful." —— 把给予做成零负担。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>真正带来机会的，是别人转述你时说的那一句
+<span class="en">Your opportunities arrive through a sentence you never get to say yourself</span></h2>
+<span class="tag">可转述性</span><span class="tag">弱连接</span><span class="tag">传播衰减</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">你人生里最大的几个机会，多半不是你亲口 pitch 来的，而是<strong>某个不算熟的人，在你不在场的房间里，用一句话提了你一下</strong>。要打磨的不是自我介绍，是<strong>他能记住并原样复述的那一句</strong>——短到能被复述，具体到不会被复述成别人。</div>
+</div>
+<div class="section">
+<div class="section-label">你说的那句话，怎么一路缩水成机会（或者消失）</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 316" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">机会的最后一公里，是你不在场的一次转述</text>
+<rect fill="#eef1f5" height="46" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="150" x="24" y="36"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="99" y="55">你说了 3 分钟</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="99" y="71">经历 · 技能 · 想法</text>
+<line marker-end="url(#t1)" stroke="#3f5c7a" stroke-width="1.6" x1="178" x2="212" y1="59" y2="59"></line>
+<rect fill="#eef1f5" height="46" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="150" x="218" y="36"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="293" y="55">他第二天记得</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="293" y="71">一个印象 + 一个标签</text>
+<line marker-end="url(#t1)" stroke="#3f5c7a" stroke-width="1.6" x1="372" x2="406" y1="59" y2="59"></line>
+<rect fill="#eef1f5" height="46" rx="5" stroke="#3f5c7a" stroke-width="1.2" width="150" x="412" y="36"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="487" y="55">三个月后他转述</text>
+<text fill="#5a6b80" font-family="Georgia" font-size="9" text-anchor="middle" x="487" y="71">一句话，7 到 15 个字</text>
+<line marker-end="url(#t1)" stroke="#3f5c7a" stroke-width="1.6" x1="566" x2="600" y1="59" y2="59"></line>
+<rect fill="#e2efdc" height="46" rx="5" stroke="#4e8a3f" stroke-width="1.2" width="70" x="606" y="36"></rect>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="641" y="55">机会</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9" text-anchor="middle" x="641" y="71">或没有</text>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" x="24" y="114">同一个人，两种被转述的结局：</text>
+<rect fill="#fbefe8" height="74" rx="5" stroke="#c0603a" stroke-width="1.2" width="316" x="24" y="126"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="38" y="146">✗ 「有个朋友挺厉害的，做互联网的」</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="38" y="170">套在谁身上都行 → 不会被想起：</text>
+<text fill="#8a4a2a" font-family="Georgia" font-size="9.2" x="38" y="186">没有具体需求能勾住它。</text>
+<rect fill="#e2efdc" height="74" rx="5" stroke="#4e8a3f" stroke-width="1.2" width="316" x="360" y="126"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" x="374" y="146">✓ 「有个人专门救没人敢动的老报表」</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.2" x="374" y="170">窄、有画面、可复述 → 谁一提起</text>
+<text fill="#2b5a1f" font-family="Georgia" font-size="9.2" x="374" y="186">那个麻烦，你的名字自动被召回。</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="216">传播中细节被抹平、一个特征被放大——你能控制的只有：让被放大的那个是你选的。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="248">Granovetter (1973/1974, n=282)：靠人脉找到工作者中，约 55.6% 的信息来自「偶尔联系」的人，</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="264">仅约 16.7% 来自「经常联系」的人。样本小、年代久。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="286">Rajkumar 等 (2022, Science)：LinkedIn 五年、约两千万人的随机实验，因果性地支持</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="302">中等偏弱的连接对求职流动最有帮助——目前最硬的证据。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">话术模板：造一句能被别人原样搬走的话</div>
+<div class="template">
+<span class="label">标准不是「准确」，是「他喝完酒第二天还说得出来」</span>
+<p>· <strong>第一步：写下你希望别人怎么介绍你</strong>，用<strong>他的口气</strong>而不是简历口气：「他专门救那种跑了很多年、没人敢动的老报表。」——七到十五个字，有画面，窄。</p>
+<p>· <strong>第二步：反向测试。</strong>把它套在你认识的另外三个同行身上。<strong>套得上，说明它认的是职业不是你，重写。</strong></p>
+<p>· <strong>第三步：交出去，并给一个使用场景。</strong>「以后你要是听谁抱怨老报表没人敢碰，帮我提一句。」<strong>人不会主动帮你想机会，但会在触发词出现时想起你。</strong></p>
+<p>· <strong>第四步：让它可核对。</strong>附一个链接或一份文件。转述的人也在冒信誉的险，给他能随手转发的东西，等于替他降了风险。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The biggest opportunities in your life mostly don't arrive through a pitch you delivered. They arrive because someone you barely know mentioned you, in one sentence, in a room you weren't in. So the thing worth polishing isn't your self-introduction — it's the sentence they can remember and repeat. Two constraints: short enough to survive being retold, specific enough that it couldn't be retold about someone else. "A friend of mine's pretty good, does internet stuff" fits anybody and therefore hooks onto no actual need. "There's a guy who rescues the ancient reports nobody dares touch" is narrow and visual, so it fires automatically the moment someone complains about exactly that. Then hand it over with a trigger attached — "if you ever hear someone moaning about legacy reporting, throw my name in" — because people don't scan the world for opportunities on your behalf, they retrieve a name when a cue shows up. Granovetter's 1973 survey found most people who found work through contacts heard about it from someone they saw only occasionally; the sample was small and half a century old, but a 2022 Science paper running randomised experiments across roughly twenty million LinkedIn users over five years confirmed the causal version: moderately weak ties do the most for job mobility.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制两层。结构：机会主要沿<em>弱连接</em>传来——熟人和你信息重叠，他知道的你也知道；只有不常见面的人身处别的圈子，手里才有你接触不到的信息。传输：这条信息至少要经一次人脑转述，而转述会<em>抹平细节、放大某一个特征</em>。你挡不住衰减，只能预先决定被放大的是哪一个——所以那句话要短、要窄、要有画面。</strong></p>
+<ul>
+<li><strong>硬证据 · 弱连接带来机会</strong>：Granovetter (1973, <em>American Journal of Sociology</em>《The Strength of Weak Ties》及 1974 年《Getting a Job》) 调查 282 名换过工作的专业与管理人员：通过人脉获知机会的人里，约 <strong>55.6%</strong> 来自「偶尔联系」的人，约 27.8% 来自「很少联系」的，仅约 <strong>16.7%</strong> 来自「经常联系」的。<strong>强度：样本小、地域单一、年代久远，开创性但不足以定论。</strong></li>
+<li><strong>硬证据（因果）· 大规模随机实验证实</strong>：Rajkumar、Saint-Jacques、Bojinov、Brynjolfsson &amp; Aral (2022, <em>Science</em>) 用 LinkedIn 上历时五年、约两千万用户的多组随机对照实验检验这一假说：<strong>中等偏弱的连接对求职流动帮助最大</strong>，效应在数字化程度高的行业更强。把五十年的社会学猜想推进到因果证据，强度远高于原始调查。</li>
+<li><strong>经典但方法粗糙 · 传播衰减</strong>：Bartlett (1932) 的连续复述实验、Allport &amp; Postman (1947) 的 leveling（抹平细节）与 sharpening（放大少数特征）。<strong>年代久远、缺现代方法学控制，只当方向性框架。</strong>但它与常识一致：越短越具体越有画面，越容易被原样复述。</li>
+</ul>
+<p class="caveat">别读成「多加人脉」。弱连接起作用的前提是<strong>那句话真被记住了</strong>——认识五百个人却没人说得出你做什么，等于零。另一个限制：它解决<strong>「需要你的人能不能找到你」</strong>，不解决「你到底行不行」；转述把你送到门口，门里那关靠可证伪的证据。最后：那句话必须是<strong>你真能兑现的</strong>——转述者拿信誉替你担保，砸一次他一辈子不会再提你。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"If you ever hear someone complaining about X, throw my name in." —— 把触发词交出去。</p>
+<p>"Here's a link you can just forward." —— 让转述者零成本。</p>
+<p>"How would you describe what I do, in one line?" —— 直接问别人怎么转述你。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 28 Action</h3>
+<p>25 分钟，一张纸。做完你手上会多两句话、少一个借口。</p>
+<div class="action">
+<strong>一（5 分钟）：</strong>写下你现在的自我介绍，逐句问：<strong>这句能被证明是假的吗？</strong>不能的划掉。多数人会划掉八成——剩下两成才是资产。<br/><br/><strong>二（8 分钟）：</strong>用四个零件重写：帮谁 / 从什么到什么 / 证据在哪 / 不适合谁。<strong>第四件必须写，写不出来说明第一件不够窄。</strong><br/><br/><strong>三（4 分钟）：</strong>再写一句<strong>别人转述你时的话</strong>，十五字以内，用他的口气。套到三个同行身上，套得上就重写。<br/><br/><strong>四（5 分钟）：</strong>找一个不算熟但你尊重的人问：「<strong>如果让你用一句话跟别人介绍我，你会怎么说？</strong>」他的答案比你自己写的准，而这条消息几乎没有社交成本。<br/><br/><strong>五（3 分钟）：</strong>把第二步那句话用出去：一次自我介绍、一封邮件、或个人主页第一行。<strong>写在纸上不算数。</strong><br/><br/>边界：这套让「需要你的人找得到你」，不让「不行的人变行」。<strong>若证据那件始终填不出来，问题不在表达，是你手上还没有一件能被查的作品——先去做出一件。</strong>另外，自我推销的社会反弹是真的、且对不同的人不公平；应对是把形容词换成第三方可核对的事实，不是闭嘴。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我确实还没什么拿得出手的作品，这套是不是就用不了？</summary>
+<div class="answer">用得了，只是换一种证据。<strong>「可证伪」不等于「有成就」，要求只是「能被查」。</strong>没做过项目的人一样可以说：「你们公开财报里有三处口径不一致，我整理成了一页纸，附件在这，可能没用，但想让你看看我怎么想问题。」——这句完全可以被打脸，所以是有效信号。<br/><br/>它还把顺序对调了：<strong>多数人在等「有作品了再去说」，而作品往往正是先说了、拿到真实需求之后才做出来的。</strong>你需要的不是成绩，是一件<strong>为这次对话专门做的小东西</strong>——最标准的昂贵信号：证明的不是你多厉害，是你愿意先付代价。它替代不了硬资历，只能让你从一堆一样的人里被单独看见。</div>
+</details>
+<details>
+<summary>2. 「卖自己」和「装成另一个人」的界线在哪？</summary>
+<div class="answer">界线只有一条：<strong>你说的每一句，事后被验证时都不会让对方觉得受骗。</strong>不是「有没有夸张」，是「兑现时对不对得上」。<br/><br/>用它看灰区：<strong>挑最强的三件事讲、不主动提最弱的——这是选择性呈现，写简历的人都在做</strong>，因为对方拿到的每一条都真。<strong>把团队成果说成自己的、把「参与过」说成「负责过」——这是伪造</strong>，第三周就原形毕露，代价远高于没拿到这机会。<br/><br/>更隐蔽的越界是<strong>假装自己是另一种性格</strong>。内向的人演外向能撑一小时，撑不过三年，入职后落差带来的信任损失比没被选上更贵。稳的做法是把实际形态说成可预期的条件：「我不是会在会上抢话的人，输出主要在写下来的东西里——你看配合得上吗？」<strong>把差异前置比藏起来便宜。</strong>自检：<strong>如果对方此刻能看到你脑子里那句真话，你还会这么说吗？</strong></div>
+</details>
+<details>
+<summary>3. 我这行没有职级也没有名头，就是个普通人，这套还成立吗？</summary>
+<div class="answer">恰恰是没名头的人最需要它。<strong>名头的作用是替对方省掉验证成本——「某大厂 P8」是现成的、不用他自己判断的信号。</strong>你没有这个便宜信号，就必须自己造：一件能当场核对的东西，或一个愿具名替你说话的人。<br/><br/>容易被忽略的是：<strong>自造的信号往往比名头更准</strong>。名头是过去平台给的，作品是你现在能做的。名头只在<strong>对方没时间细看</strong>的场合（海量初筛、陌生第一印象）占绝对优势，而那类场合本来也不是你的主战场。<br/><br/>更实际的建议：<strong>把你的窄度当名头用。</strong>「做过很多东西的普通人」没有位置，「专门处理某一类具体麻烦的普通人」有——它不需要组织背书，只需要三个人能复述。这也是第四个零件（不适合谁）在你身上更值钱的原因：<strong>你放弃得越明确，剩下的那块才立得住。</strong></div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 28</footer>
+</div>
+</body>
+</html>
