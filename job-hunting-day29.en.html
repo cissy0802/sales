@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 29: Job Hunting Is Selling</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 29 · Phase E</div>
+<h1>Your CV isn't there to get you hired<br/>It's there to stop you being binned in seven seconds</h1>
+<div class="meta"><span>One conversion goal · diagnose before you demo · the leverage flips at the offer · get out of the pile</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">You're preparing for an exam. They're running a purchase — and a purchase starts by looking for reasons to reject.</div>
+</header>
+<div class="intro">
+<strong>The most expensive misunderstanding in job hunting: you treat it as an exam, they treat it as procurement.</strong> Exams reward correct answers and punish wrong ones, so you memorise and you're afraid of slipping. Procurement runs the other way — eliminate fast, compare what's left, then work out who carries the blame if it goes wrong. Different rules, so the effort goes in the wrong direction: you spend three days polishing wording on something they'll spend seven seconds deciding whether to keep reading; you prepare ten elegant answers when all they want to know is whether this thing will still be their problem in six months. <strong>Run the whole search as one sales process and the goal of each stage becomes obvious — and for three of the four stages, most people have never defined a goal at all, only "do well".</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Your CV is a landing page: the conversion is a conversation, not an offer
+<span class="en">One page, one job — survive the cut and make them want the hour.</span></h2>
+<span class="tag">elimination task</span><span class="tag">processing fluency</span><span class="tag">checkable</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">A landing page does exactly one thing: move a stranger to the next step. Same for a CV — it doesn't carry the persuading, it carries <strong>not being cut</strong> and <strong>making them want to talk to you</strong>. Packing a whole career into it hands a reading-comprehension exercise to someone who has seconds.</div>
+</div>
+<div class="section">
+<div class="section-label">One career, two ways to write it</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#c0603a"></path>
+</marker>
+<marker id="ar1b" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f6d2f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="20">One version waits to be read. The other delivers in seven seconds.</text>
+<rect fill="#fdf3ee" height="238" stroke="#c0603a" stroke-width="1.2" width="300" x="24" y="34"></rect>
+<rect fill="#f6e3da" height="26" width="300" x="24" y="34"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="36" y="52">The usual · a chronological record</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.6" x="36" y="78">Education: 2015–2019, State University</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.6" x="36" y="100">Experience: Company A · community ops</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.6" x="36" y="122">· Responsible for daily community ops</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.6" x="36" y="144">· Involved in the user growth project</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.6" x="36" y="166">· Assisted with monthly reporting</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.6" x="36" y="188">About me: proactive, works under pressure</text>
+<line marker-end="url(#ar1)" stroke="#c0603a" stroke-width="1.6" x1="304" x2="304" y1="70" y2="146"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="36" y="216">Three lines in, no reason to keep you → binned.</text>
+<text fill="#697682" font-family="Georgia" font-size="9.2" x="36" y="236">Every verb is responsible / involved / assisted —</text>
+<text fill="#697682" font-family="Georgia" font-size="9.2" x="36" y="254">anyone can write those, so they carry no information.</text>
+<rect fill="#f4faf1" height="238" stroke="#4e8a3f" stroke-width="1.2" width="300" x="376" y="34"></rect>
+<rect fill="#e2efdc" height="26" width="300" x="376" y="34"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" x="388" y="52">Landing page · one conversion goal</text>
+<rect fill="#ffffff" height="30" stroke="#b9d4b0" width="252" x="388" y="66"></rect>
+<text fill="#2c382f" font-family="Georgia" font-size="9.6" font-weight="700" x="396" y="86">Who you help · from A to B, one line</text>
+<rect fill="#ffffff" height="46" stroke="#b9d4b0" width="252" x="388" y="106"></rect>
+<text fill="#2c382f" font-family="Georgia" font-size="9.6" x="396" y="124">Three results: churn 9% → 3% a month</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" x="396" y="142">each one carrying how it was done</text>
+<rect fill="#ffffff" height="30" stroke="#b9d4b0" width="252" x="388" y="162"></rect>
+<text fill="#2c382f" font-family="Georgia" font-size="9.6" x="396" y="182">One thing they can open and check</text>
+<rect fill="#ffffff" height="30" stroke="#b9d4b0" width="252" x="388" y="202"></rect>
+<text fill="#2c382f" font-family="Georgia" font-size="9.6" x="396" y="222">One clear next step: what to talk about</text>
+<line marker-end="url(#ar1b)" stroke="#4e8a3f" stroke-width="1.6" x1="656" x2="656" y1="72" y2="226"></line>
+<text fill="#697682" font-family="Georgia" font-size="9.2" x="388" y="252">Seven seconds: what you do · what you did · proof · next step.</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="296">The CV doesn't do the persuading. It only has to survive round one and buy you the hour.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="320">"About seven seconds" comes from a 2018 eye-tracking report by the job board Ladders — small sample, not peer-reviewed.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Situation: three years running online communities, applying for a growth role.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Writing duties</div>
+<p>"Responsible for daily community operations and event planning, involved in the user growth project, assisted with monthly reporting." <strong>Nothing here says what changed, and none of it can be checked.</strong> It describes where you sat, not what was different after you left.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Writing from-what-to-what</div>
+<p>"Took 12 dying groups down to 3 live ones: monthly churn fell from 9% to 3%. The move was switching events from 'one a week' to triggers based on days since joining (write-up attached). Same approach reused once on the new product line, similar result." <strong>What changed, how, and where to verify it — all in one go.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: screening is an <em>elimination</em> task, not a selection task. Facing two hundred applications, the only workable strategy is to shrink the pile fast, so the reader is hunting for a reason to discard, not for highlights. Two things follow. If the top three lines give no reason to keep you, nothing below them was ever read. And <em>effort of reading is itself a reason to discard</em> — the brain mistakes ease of processing for quality, so jargon and cramped layout get filed as "this person hasn't thought it through either".</strong></p>
+<ul>
+<li><strong>Hard evidence · fluency gets misread as liking</strong>: Winkielman &amp; Cacioppo (2001, <em>JPSP</em>), <em>Mind at ease puts a smile on the face</em>: the more fluently something is processed, the stronger the <strong>EMG activity over the zygomaticus (smiling) muscle</strong> — and that faint positive affect gets misattributed to whatever is being judged. Physiological measures across several experiments; solid.</li>
+<li><strong>Peer-reviewed · complicating your language costs you marks</strong>: Oppenheimer (2006, <em>Applied Cognitive Psychology</em>): replacing words in the same passage with needlessly complex ones significantly lowered readers' ratings of <strong>the author's intelligence</strong>. "Leveraging holistic user-mindshare enablement" doesn't read as expert. It reads as suspicious.</li>
+<li><strong>Hard evidence · the machine itself is biased</strong>: Bertrand &amp; Mullainathan (2004, <em>American Economic Review</em>), a field experiment sending roughly 5,000 CVs: white-sounding names got about <strong>50% more callbacks</strong> than African-American-sounding ones, and <strong>the return to a higher-quality CV was larger for the white-sounding names</strong>. This isn't here to demoralise you: polishing the page improves your conditional odds, it does not repair the system — and it happens to explain why the channel where someone vouches for you pays off most for the people the system underrates.</li>
+</ul>
+<p class="caveat">Boundary: landing-page logic applies where <strong>a human actually reads</strong>. Keyword screening at a large employer is a different machine (words first, people second), so lift the exact terms from the job description rather than inventing synonyms. Small companies, referrals and mail sent straight to the hiring manager are where this pays best. And don't let "results" slide into puffery — every number has to survive one question: how was that calculated?</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Checklist · five questions for your CV</div>
+<ul class="checklist">
+<li>Is the first line a piece of positioning that <strong>could be proven false</strong>, rather than "proactive, works well under pressure"?</li>
+<li>Does every entry say from what to what, rather than what you were responsible for?</li>
+<li>Is there at least one thing they can open and check — a link, an attachment, a person you can name?</li>
+<li>Is there an explicit next step (what you'd like to discuss, when you're free)?</li>
+<li>Give it to a non-expert for thirty seconds: can they repeat back what you do?</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Say it like this</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"Here's the before and after — the method's in the link."</p>
+<p>"Happy to walk you through how that number was calculated."</p>
+<p>"I'd rather show you than describe it."</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>An interview isn't a quiz: ten minutes of diagnosis, forty minutes of doing the work
+<span class="en">Discovery first, then a demo. Question-and-answer is the worst use of the hour.</span></h2>
+<span class="tag">diagnose then prescribe</span><span class="tag">let them talk</span><span class="tag">work sample</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Prescribing without diagnosing is quackery. <strong>If you walk in not knowing which unattended problem caused this role to exist, every answer you give can only be a generic one</strong> — and generic answers cancel each other out in the ears of someone seeing five people today.</div>
+</div>
+<div class="section">
+<div class="section-label">Two ways to spend the hour</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="20">Same sixty minutes: change the order, and they leave with something else</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="20" y="52">Usual</text>
+<rect fill="#f6e3da" height="34" stroke="#c0603a" stroke-width="1" width="546" x="94" y="36"></rect>
+<text fill="#7a3a1f" font-family="Georgia" font-size="10" text-anchor="middle" x="367" y="58">they ask → you answer → they ask → you answer → "any questions for us?"</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" x="94" y="88">They end up knowing you speak well, still not knowing if you can take the problem off them.</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="20" y="132">Instead</text>
+<rect fill="#dfeae2" height="36" stroke="#4e8a3f" stroke-width="1" width="130" x="94" y="114"></rect>
+<rect fill="#e2efdc" height="36" stroke="#4e8a3f" stroke-width="1" width="186" x="224" y="114"></rect>
+<rect fill="#eef4f0" height="36" stroke="#4e8a3f" stroke-width="1" width="140" x="410" y="114"></rect>
+<rect fill="#dfeae2" height="36" stroke="#4e8a3f" stroke-width="1" width="90" x="550" y="114"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="159" y="137">diagnose · you ask</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="317" y="137">take apart what they named</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="480" y="137">they ask, you answer</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="595" y="137">next step</text>
+<line stroke="#a8bfae" stroke-width="1" x1="94" x2="640" y1="160" y2="160"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="94" y="174">0 min</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="224" y="174">10 min</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="410" y="174">35 min</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="550" y="174">50 min</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="640" y="174">60 min</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="94" y="200">"What isn't getting</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="94" y="214">handled right now?"</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="240" y="200">Use their exact words</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="240" y="214">for how, and where it broke</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="420" y="200">Keep every answer</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="420" y="214">hooked to that thing</text>
+<line marker-end="url(#ar2)" stroke="#3f5c7a" stroke-width="1.5" x1="159" x2="300" y1="236" y2="236"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" x="310" y="240">What you get in the first ten minutes is where the next fifty land</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="272">The order is the whole point: get their problem first and everything you say has somewhere to land;</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="290">reverse it and you are speaking in generalities.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Script · spend it in the first sixty seconds</div>
+<div class="template">
+<span class="label">Two diagnostic questions</span>
+<p>"Before I talk about myself, can I check one thing: <strong>does this role exist because something isn't getting handled, or isn't getting handled well enough?</strong>"</p>
+<p>"<strong>A year from now, what has to be different for you to say this hire worked?</strong>"</p>
+<p>Once you have the answer, every reply you give afterwards borrows words from the sentence they just said. Same experience, entirely different telling.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">In the room</div>
+<div class="scene">
+<div class="setup">Situation: their opening line is "so, tell me about yourself."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Reciting the CV in chronological order</div>
+<p>"I graduated in 2019, then spent two years at Company A where I was responsible for… after that I moved to Company B…" <strong>They are holding that CV right now.</strong> You've spent five minutes repeating what they already know, and used the most valuable stretch of the hour to let their attention drift.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Pick the piece that catches what they just named</div>
+<p>"I'll take the part that's closest to what you just described. You said the pain is new users dropping out in week two — I worked on exactly that at my last place: week-two retention went from 18% to 27% over a quarter, and the key wasn't running campaigns, it was noticing that the drop-off was concentrated in people who never finished setup. <strong>I can take you through how I landed on that right now — which part do you want?</strong>"</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Two mechanisms. Social: talking about yourself is genuinely rewarding at the neural level, so letting them talk makes the conversation feel better to them — and they will later file that feeling under "we clicked". Predictive: interviewers' confidence in their ability to read people vastly exceeds what unstructured conversation actually delivers, which means you cannot count on being discovered through chat. You have to put something <em>evaluable</em> into the room yourself.</strong></p>
+<ul>
+<li><strong>Hard evidence · self-disclosure is intrinsically rewarding</strong>: Tamir &amp; Mitchell (2012, <em>PNAS</em>): talking about oneself raised activity in the <strong>nucleus accumbens and ventral tegmental area</strong> — the mesolimbic dopamine reward pathway — along with medial prefrontal cortex; in companion behavioural studies people <strong>gave up real money</strong> for the chance to disclose about themselves. fMRI plus behaviour; solid.</li>
+<li><strong>Peer-reviewed · the illusion of the unstructured interview</strong>: Dana, Dawes &amp; Peterson (2013, <em>Judgment and Decision Making</em>): even when interviewees were instructed to answer <strong>at random</strong>, interviewers reported feeling they had learned about the person — and predictions made with interview information were worse than predictions from the objective record alone.</li>
+<li><strong>Meta-analytic, with a correction history · structure beats chat</strong>: Sackett et al. (2022, <em>Journal of Applied Psychology</em>) re-estimated the validity of selection methods: <strong>structured interviews around .42, unstructured around .19</strong>, work samples around .33. <strong>Note this is a revision of the classic Schmidt &amp; Hunter (1998) figures and the absolute values move with the correction method — read the ranking, not the decimals.</strong></li>
+</ul>
+<p class="caveat">Boundary: turning the questions round is diagnosis, not a coup. Two at the start and one at the end is plenty; keep it up all hour and they'll feel they're the ones being interviewed. Some stages (mass graduate rounds, an HR screen) leave no room to diagnose at all — clear the keywords there and save the diagnosis for the hiring manager's round. And demo only the step <strong>you can genuinely do</strong>; improvising through one you can't is worse than not demoing.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Say it like this</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"Before I talk about myself — what isn't getting handled right now?"</p>
+<p>"What would have to be true in a year for you to say this hire worked?"</p>
+<p>"I'd rather work through your actual problem than talk in general."</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>The moment the offer lands is the first time the leverage is yours
+<span class="en">And most people apologise straight through the only window they get.</span></h2>
+<span class="tag">BATNA</span><span class="tag">anchoring</span><span class="tag">repeated game</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">All the way through the interviews you're the one being assessed and the power sits with them. <strong>The instant they extend an offer, they've sunk cost</strong> — rounds of time, an internal approval, quite possibly a rejection already sent to someone else. The thing they now least want is to start over. That window is usually open for days, and inside it you don't have to prove yourself again.</div>
+</div>
+<div class="section">
+<div class="section-label">The shape of your leverage over time</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar3" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="20">Your leverage peaks at the moment you assume the process is over</text>
+<rect fill="#e6f0ea" height="150" width="120" x="424" y="44"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="484" y="60">negotiation window · days</text>
+<line stroke="#a8bfae" stroke-width="1" x1="60" x2="672" y1="194" y2="194"></line>
+<line stroke="#a8bfae" stroke-width="1" x1="60" x2="60" y1="44" y2="194"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="end" x="54" y="52">high</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="end" x="54" y="192">low</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" transform="rotate(-90 22 130)" x="22" y="130">your leverage</text>
+<polyline fill="none" points="80,182 190,176 300,160 424,150 470,72 544,68 620,150 664,168" stroke="#1f7a5c" stroke-width="2.4"></polyline>
+<circle cx="470" cy="72" fill="#123f30" r="4.5"></circle>
+<circle cx="544" cy="68" fill="#123f30" r="4.5"></circle>
+<text fill="#697682" font-family="Georgia" font-size="9.4" text-anchor="middle" x="130" y="212">you apply</text>
+<text fill="#697682" font-family="Georgia" font-size="9.4" text-anchor="middle" x="300" y="212">interview rounds</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="466" y="212">offer lands</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="566" y="212">before you sign</text>
+<text fill="#697682" font-family="Georgia" font-size="9.4" text-anchor="middle" x="650" y="212">after you start</text>
+<line marker-end="url(#ar3)" stroke="#3f5c7a" stroke-width="1.4" x1="200" x2="200" y1="238" y2="200"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="110" y="254">You're proving you deserve a look</text>
+<line marker-end="url(#ar3)" stroke="#3f5c7a" stroke-width="1.4" x1="516" x2="516" y1="238" y2="200"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.4" x="360" y="254">They've sunk cost: rounds of time, an approval, maybe a rejection sent</text>
+<text fill="#697682" font-family="Georgia" font-size="9.4" x="360" y="270">Re-running the search is expensive — that's your leverage</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="298">So the thing to prepare isn't your closing line — it's the forty-eight hours after the offer call;</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="316">once you sign, the terms are locked until the next review.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Script · after the offer call</div>
+<div class="template">
+<span class="label">Three sentences</span>
+<p>"<strong>I want this job — let's close out this last piece and I'll sign.</strong>" Certainty first, conditions second: you're not wavering, you're closing.</p>
+<p>"Based on my experience here and what I'm seeing for comparable roles, <strong>I'm looking at A to B.</strong>" A range with a reason behind it, not one bare number.</p>
+<p>"<strong>If base can't move this time, could we look at a signing bonus, level, or a review point at six months?</strong>" When price is stuck, negotiate structure — trade one dimension for several.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Three mechanisms. One, your BATNA — the best alternative you actually have if this falls through — sets your floor; you never state it, but it decides where you can stop. With no alternative, the honest move is to admit you're in the weaker position and put your chips on non-cash terms. Two, the first number spoken becomes an <em>anchor</em>, and adjustment away from it is usually insufficient. Three, this is a repeated game: you'll be working alongside this person next week, so winning too visibly gets collected later — which is why the framing is "how do we close this" rather than "here's what I want".</strong></p>
+<ul>
+<li><strong>Hard evidence · the first mover does better</strong>: Galinsky &amp; Mussweiler (2001, <em>JPSP</em>): across several negotiation experiments, <strong>the side making the first offer ended up with significantly better outcomes</strong>, because that number anchored the range everyone searched afterwards. (An anchor works by changing which information the other side retrieves, not by convincing them — the mechanism is unpacked in the piece on anchoring and concessions.)</li>
+<li><strong>Hard evidence · the social cost of negotiating isn't evenly distributed</strong>: Bowles, Babcock &amp; Lai (2007, <em>OBHDP</em>): evaluators penalised <strong>women who initiated salary negotiations</strong> more heavily, being less willing to work with them, with male evaluators penalising most. This isn't an argument for not negotiating; it's a warning that the cost lands unfairly. Framing the ask around the value of the role rather than personal want reduces the backlash — it does not remove it.</li>
+<li><strong>Hard evidence · change the rule and the gap changes</strong>: Leibbrandt &amp; List (2015, <em>Management Science</em>), a large field experiment in real hiring: when the advert <strong>explicitly said wages were negotiable</strong>, the gender gap in whether people negotiated largely disappeared and in places reversed. The difference comes far more from ambiguity about whether asking is allowed than from disposition.</li>
+</ul>
+<p class="caveat">Boundary: don't negotiate before an offer exists — you'd only be handing over a free reason to cut you. Don't invent a competing offer; it's a small world and a repeated game, and being caught costs for years. And more practically: <strong>you can only push if you're genuinely prepared to walk</strong>. If you know you'd accept regardless, put the effort into the non-cash terms — level, reporting line, starting budget, a review date — which often shape where you are in two years more than a few thousand does.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Say it like this</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"I want this job — let's close out this last piece and I'll sign."</p>
+<p>"Based on what I'm seeing for comparable roles, I'm looking at A to B."</p>
+<p>"If base can't move, can we look at level, or a review point at six months?"</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>Rather than queue in the pile, get one person to stake their name on you
+<span class="en">Two channels, same you: one asks why not reject you, the other asks when you're free.</span></h2>
+<span class="tag">costly signal</span><span class="tag">referrals</span><span class="tag">pay first</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The same person takes two channels and gets two fates. <strong>In the pile, the question you face is "why shouldn't I reject this one"; when someone vouches for you, their question becomes "when can we talk".</strong> The difference isn't how hard you tried. It's who is carrying the risk of being wrong.</div>
+</div>
+<div class="section">
+<div class="section-label">Two channels</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar4a" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#c0603a"></path>
+</marker>
+<marker id="ar4b" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="20">Same person, two paths — each box carries the question in their head</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="20" y="60">Channel A</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" x="20" y="76">the pile</text>
+<rect fill="#f6e3da" height="34" stroke="#c0603a" stroke-width="1" width="96" x="96" y="46"></rect>
+<rect fill="#f6e3da" height="34" stroke="#c0603a" stroke-width="1" width="110" x="240" y="46"></rect>
+<rect fill="#f6e3da" height="34" stroke="#c0603a" stroke-width="1" width="110" x="398" y="46"></rect>
+<rect fill="#f6e3da" height="34" stroke="#c0603a" stroke-width="1" width="110" x="556" y="46"></rect>
+<text fill="#7a3a1f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="144" y="67">your CV</text>
+<text fill="#7a3a1f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="295" y="67">a pile of 200</text>
+<text fill="#7a3a1f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="453" y="67">elimination task</text>
+<text fill="#7a3a1f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="611" y="67">the few left</text>
+<line marker-end="url(#ar4a)" stroke="#c0603a" stroke-width="1.5" x1="192" x2="234" y1="63" y2="63"></line>
+<line marker-end="url(#ar4a)" stroke="#c0603a" stroke-width="1.5" x1="350" x2="392" y1="63" y2="63"></line>
+<line marker-end="url(#ar4a)" stroke="#c0603a" stroke-width="1.5" x1="508" x2="550" y1="63" y2="63"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" x="96" y="100">In their head: why shouldn't I reject this one · the risk of being wrong is all theirs</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="20" x2="680" y1="124" y2="124"></line>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="20" y="166">Channel B</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="20" y="182">someone vouches</text>
+<rect fill="#e2efdc" height="34" stroke="#4e8a3f" stroke-width="1" width="96" x="96" y="152"></rect>
+<rect fill="#e2efdc" height="34" stroke="#4e8a3f" stroke-width="1" width="110" x="240" y="152"></rect>
+<rect fill="#e2efdc" height="34" stroke="#4e8a3f" stroke-width="1" width="110" x="398" y="152"></rect>
+<rect fill="#dfeae2" height="34" stroke="#4e8a3f" stroke-width="1" width="110" x="556" y="152"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" text-anchor="middle" x="144" y="173">work first</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" text-anchor="middle" x="295" y="173">send it to a person</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" text-anchor="middle" x="453" y="173">they stake their name</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="611" y="173">they reach out to you</text>
+<line marker-end="url(#ar4b)" stroke="#4e8a3f" stroke-width="1.5" x1="192" x2="234" y1="169" y2="169"></line>
+<line marker-end="url(#ar4b)" stroke="#4e8a3f" stroke-width="1.5" x1="350" x2="392" y1="169" y2="169"></line>
+<line marker-end="url(#ar4b)" stroke="#4e8a3f" stroke-width="1.5" x1="508" x2="550" y1="169" y2="169"></line>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" x="96" y="206">In their head: when can we talk · part of the risk now sits with the referrer</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="244">A referral is taken seriously because the referrer is staking their standing inside the company —</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="262">it costs a careless recommender more than an honest one, which is what makes the signal credible.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="288">Referred workers are more likely to be hired and less likely to quit (Burks, Cowgill, Hoffman &amp; Housman, 2015, QJE).</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Checklist · how to build channel B</div>
+<ul class="checklist">
+<li><strong>Do the work before you ask</strong>: pick three teams you actually want, spend 30–60 minutes on a small real thing for each — take apart a problem in their public product, rewrite one of their pages, run their published numbers — and send it, asking for nothing.</li>
+<li><strong>Route it through someone you know slightly</strong>, not your closest friends: close contacts mostly know what you already know; it's the people you rarely see who sit in a different pool of information.</li>
+<li><strong>Make the ask small enough to act on</strong>: "would you be willing to pass this to whoever owns growth? If it's not a fit, just say so." A costless exit for them.</li>
+<li><strong>Arm your referrer</strong>: hand them a copy-and-pasteable line plus one link. Saving them effort is also lowering their risk.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: a referral is a <em>costly signal</em> — the referrer is staking their own standing inside the company, and a bad call gets remembered. Precisely because it costs a careless recommender more than an honest one, employers take it seriously. It also spares the employer the most expensive step of all: working out which of two hundred applications is worth an hour. Doing a small piece of work before you ask runs on the same logic — someone willing to pay a cost up front is no longer filed alongside everyone declaring how passionate they are.</strong></p>
+<ul>
+<li><strong>Hard evidence · referred workers really are better, not just better-connected</strong>: Burks, Cowgill, Hoffman &amp; Housman (2015, <em>Quarterly Journal of Economics</em>), using data across several firms spanning call centres, trucking and high-skill roles: <strong>referred candidates are more likely to be hired, less likely to quit, and more profitable to the employer overall</strong>; the authors attribute this mainly to better matching and information rather than favouritism. Large samples, peer-reviewed.</li>
+<li><strong>Peer-reviewed · referrals are a deliberate investment</strong>: Fernandez, Castilla &amp; Moore (2000, <em>American Journal of Sociology</em>) tracked a call centre's entire hiring process and found the returns from referrals were large enough that the referral bonus was a sound investment for the firm.</li>
+<li><strong>The honest other side</strong>: referrals <strong>amplify existing network inequality</strong> — networks are homophilous, so people outside the circle get shut out systematically, which points at the same problem as the CV field experiment above (identical documents, different names, half the callbacks). This is exactly why "manufacture weak ties and do the work first" pays off most for people starting with no network: you have no ready-made channel, so you build one.</li>
+</ul>
+<p class="caveat">Boundary: doing work first is not free labour. <strong>A one-off small thing is a signal; a continuing stream of unpaid output is being taken advantage of</strong> — if they take the work and only want more of it, stop. And don't perform being in demand: inventing competing interest or pretending to be busy costs you the only genuinely valuable thing you have the moment it's spotted. As for polishing the sentence other people use to describe you, the piece on selling yourself as the meta-skill takes that apart.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Say it like this</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"I put something together for your team — no strings, just thought you'd find it useful."</p>
+<p>"Would you be willing to pass this to whoever owns growth? If it's not a fit, just say so."</p>
+<p>"Here's a line you can copy-paste if you do mention me."</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 29 Action</h3>
+<p>Sixty minutes, four things. You'll end up with material you can actually send and one fewer improvised performance.</p>
+<div class="action">
+<strong>1 (15 min):</strong> Take the three weakest entries on your CV and rewrite each as "from what to what + how + where to check". <strong>Any entry you can't rewrite never deserved the space — delete it.</strong><br/><br/><strong>2 (5 min):</strong> Write your two diagnostic opening questions and learn them well enough not to read them.<br/><br/><strong>3 (10 min):</strong> Write one sentence naming your BATNA: if this opportunity vanishes, what does next month look like. <strong>If you can't write it, go and make it true</strong> — booking one more interview changes your negotiating posture more than rehearsing lines ten times.<br/><br/><strong>4 (30 min):</strong> Pick one team you genuinely want, make one small thing, send it, ask for nothing.<br/><br/>Boundary: this raises the odds of being seen and being priced fairly. It does not change whether you can do the job. <strong>If several rounds keep breaking on the same technical question, the problem isn't the packaging.</strong> And the real misery of being rejected isn't fragility on your part: social exclusion activates brain regions that partly overlap with those for physical pain (Eisenberger, Lieberman &amp; Williams, 2003, <em>Science</em>; the strong "social pain is physical pain" reading was later challenged — Wager et al., 2013, showed the multivoxel patterns are distinguishable). So handle it as physiology: fix a steady sending rhythm and record outcomes as numbers rather than verdicts, instead of trying to talk yourself out of caring.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. My work genuinely has no numbers in it. What then?</summary>
+<div class="answer">Checkable isn't the same as numeric. Three substitutes all work: <strong>a contrast</strong> ("this used to take two people until ten at night every week; afterwards one person ran it in two hours" — no percentage, but the change is unmistakable); <strong>detail that survives questioning</strong> (being able to say how you judged it at the time, which detour you took, why you dropped the other approach — hard to fabricate if you weren't there); and <strong>a person you can name</strong> ("that part was mine, you can ask the PM at the time").<br/><br/>The strongest is the third: <strong>a third party willing to attach their name costs more than any number</strong>, because they're staking reputation on you. If you do use numbers, prefer one small and true (12 groups down to 3) over one large and vague ("increased user engagement by 300%") — the vague one shatters on the first follow-up question, and what shatters with it is the credibility of the whole page.</div>
+</details>
+<details>
+<summary>2. HR asks for my salary expectation up front. Should I say a number first?</summary>
+<div class="answer">The first-mover anchoring advantage is real, but it has a precondition: <strong>you know where the sensible range sits</strong>. Under information asymmetry, rushing to name a figure often anchors you against yourself. So work in order. <strong>Ask back first</strong> — "what's the budgeted range for this role? I'll tell you whether that works." If they insist on a number, give <strong>a range with a reason</strong> rather than a point: "for comparable roles I'm seeing A to B, depending on scope." If a form requires a single figure, use the upper part of your researched range and mark it negotiable.<br/><br/><strong>The one thing you must not do is state a false number</strong> — inflating your current salary, inventing an offer. It comes back at reference checks and at your first review, when you no longer have anywhere to stand. Worth adding: asking for the range isn't a trick. The budget already exists; you're asking for a number they've known all along.</div>
+</details>
+<details>
+<summary>3. Two hundred applications, no replies. Keep spraying, or go narrow?</summary>
+<div class="answer">These are two different funnels — don't average them. <strong>Mass applying</strong> converts terribly but costs little per shot; its job is keeping baseline flow so you're not betting everything on one place. <strong>Going narrow</strong> (work first, then a channel where someone vouches) costs far more per attempt, but it routes around the elimination step entirely. A workable split is <strong>eighty percent of your time on deep moves for two or three places you actually want, twenty percent maintaining baseline flow</strong> — most people do precisely the reverse and end up thin on both sides.<br/><br/>But at two hundred with zero replies, don't start by adjusting volume: <strong>check the first gate</strong>. Do your top three lines contain something falsifiable and written for this specific role? Is there one thing they can open and check? If both are there and it's still silence, the problem is usually fit rather than phrasing — they're buying something you don't currently have, and no rewording rescues that. Either go and acquire that thing, or change the pool.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 29</footer>
+</div>
+</body>
+</html>
