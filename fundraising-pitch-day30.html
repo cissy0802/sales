@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 30：融资 pitch</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 30 · Phase E</div>
+<h1>投资人不怕你亏钱<br/>他怕的是你全做对了，也只是个小生意</h1>
+<div class="meta"><span>主题：基金数学决定他在筛什么 · 一页一个信息 · 「为什么是你」只能用做过的事答 · 质疑是尽调不是攻击</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">你在证明这件事能成，他在算的是万一它成了，能不能大到把另外九笔的亏损一起赔回来。</div>
+</header>
+<div class="intro">
+<strong>大多数 pitch 失败的原因，和创始人以为的完全不同：不是「他觉得我做不成」，是「他信了，但算下来不够大」。</strong>这两种失败长得一模一样——都是一句客气的「保持联系」——所以创始人回去后往往在改错东西：把演示做得更精美、把数据补得更全，而对方心里那道没过的坎，从头到尾没被碰到过。<strong>要绕开这件事，先得知道对面那个人在替谁做决定、他的钱从哪来、他的错误成本长什么样——他不是你的客户，他是一个自己也要向别人交代业绩的人。</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>他不是在买一家能赚钱的公司，是在买一个「万一」
+<span class="en">A fund lives off outliers — so "safe and profitable" is the wrong product to pitch.</span></h2>
+<span class="tag">幂律分布</span><span class="tag">基金数学</span><span class="tag">错误成本不对称</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">风险投资的回报是极度偏斜的：大半项目亏掉，全部成绩靠极少数几笔撑起来。<strong>所以他听你讲的时候，心里那个问题不是「这能不能成」，而是「万一成了，天花板在哪」</strong>——一门稳赚三百万的生意，对他是个错误的商品，哪怕它是门好生意。</div>
+</div>
+<div class="section">
+<div class="section-label">钱是从哪一格来的</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar1" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="9" refy="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">一百笔风投交易，按最终回报倍数分格</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="170" y="76">回不到本金</text>
+<rect fill="#f6e3da" height="26" stroke="#c0603a" stroke-width="1" width="400" x="180" y="56"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" x="588" y="75">约 65%</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="170" y="116">1–5 倍</text>
+<rect fill="#eef4f0" height="26" stroke="#7a9c8a" stroke-width="1" width="154" x="180" y="96"></rect>
+<text fill="#5a7365" font-family="Georgia" font-size="9.6" x="342" y="115">约 25%</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="170" y="156">5–10 倍</text>
+<rect fill="#dfeae2" height="26" stroke="#4e8a3f" stroke-width="1" width="37" x="180" y="136"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" x="225" y="155">约 6%</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="end" x="170" y="196">10 倍以上</text>
+<rect fill="#1f7a5c" height="26" width="25" x="180" y="176"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="213" y="195">约 4%</text>
+<line marker-end="url(#ar1)" stroke="#3f5c7a" stroke-width="1.5" x1="150" x2="192" y1="240" y2="206"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" x="156" y="256">他一年看几百个项目，是在这一小格里找那一两笔——</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" x="156" y="274">因为上面三格加起来，撑不起一支基金要交的答卷。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="294">分布来自 Correlation Ventures 对 2004–2013 年约两万笔交易的分析（行业数据，非同行评审，量级参考）。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你做一套给宠物医院用的排班软件，已经有 40 家在付费。对方问：「这个市场有多大？」</div>
+<div class="dialog bad">
+<div class="speaker">✗ 用「稳」回答「大」</div>
+<p>「全国宠物医院大概几万家，我们做到千分之一就是几百万营收，明年就能打平。」<strong>每个字都真诚，每个字都在关掉他的兴趣。</strong>「打平」在他耳朵里等于「上限已经写好了」——他不需要一家能打平的公司，他需要一家可能翻二十倍的公司。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 先给可信的今天，再给一个可检验的路径</div>
+<p>「排班只是我们进门的那把钥匙：它拿到的是每家医院的人力排布和到店时段。<strong>现在 40 家在付费，续费的 38 家。</strong>同一套数据往下走是耗材补货和薪酬结算，那两块的客单价是排班的十倍以上。所以我们赌的不是排班这门生意，是<strong>成为这几万家小机构的后台</strong>——第一个能证伪它的节点是明年 Q2：如果补货模块在现有客户里跑不到三成渗透，这条路径就是假的。」</p>
+</div>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Venture returns are brutally skewed: most deals return less than the money put in, and a fund's entire result comes from a couple of outliers. That single fact reshapes the room. The investor is not asking "can this work" — they are asking "if it works, how big does it get", because a company that reliably nets a few million is, for them, the wrong product, however good a business it is. Their error costs are asymmetric too: passing on a winner costs them one line in a memo, while backing a company that quietly plateaus ties up capital and attention for a decade. So a pitch built on prudence — small team, break-even next year, low burn — reads to them as a ceiling, not as discipline. Give them a credible today (paying customers, retention, unit economics you can defend) and then one path to something much larger, with the milestone that would falsify it named out loud. And if your business genuinely is a good, steady, mid-sized business, the honest move is not to dress it up as a rocket — it's to go find money shaped like your business.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制是基金的结构，不是投资人的性格。他的钱来自有期限的基金，业绩由整支组合决定，而组合的回报被极少数赢家主宰——这就把他的两类错误做成了不对称：<em>错过一个赢家</em>只损失一次机会，<em>投中一个不温不火的公司</em>却要占住资金和席位十年。于是理性的做法是宁可错过很多，也要专挑「万一巨大」的那一类。你讲得越稳，他越确信天花板已经写好；你讲得越夸张而无证据，他越确信你自己也不知道要去哪。真正过关的是第三种：<em>今天可信、上限敞开</em>。</strong></p>
+<ul>
+<li><strong>行业数据 · 回报是幂律的</strong>：Correlation Ventures 对 2004–2013 年约两万笔风投交易的分析：约 <strong>65% 的交易回不到 1 倍本金</strong>，只有约 <strong>4% 回报超过 10 倍</strong>。<strong>证据强度：机构自研数据，非同行评审，样本口径依赖其数据源</strong>——当量级参考可以，别当精确常数引用。</li>
+<li><strong>大样本调查 · 他们筛得有多狠</strong>：Gompers、Gornall、Kaplan &amp; Strebulaev (2020, <em>Journal of Financial Economics</em>)《How do venture capitalists make decisions?》调查了近 900 名机构投资人：<strong>平均每完成一笔投资，要过手约 100 个机会</strong>。证据强度：大样本问卷 + 自我报告，说明的是他们<em>认为</em>自己怎么决策，不是因果。</li>
+<li><strong>边界 · 这套算术只属于风险资本</strong>：银行看的是你能不能还上，客户看的是你能不能交付，收入分成的资方看的是现金流稳不稳。同一家公司对不同的钱要讲完全不同的故事——不是撒谎，是因为他们真的在买不同的东西。</li>
+</ul>
+<p class="caveat">边界与失效场景：幂律逻辑适用于要「基金级回报」的机构钱。天使个人、战略投资方、产业基金的目标函数不同（有人图学习，有人图供应链协同），硬套「必须做到百亿」反而失焦。另外别把「敞开上限」做成编故事：<strong>你给的每一个大数字，都要能倒推回一个今天能查的小数字</strong>，否则第一轮尽调就碎。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Scheduling is the wedge, not the business." —— 用切入点区分眼下与终局。</p>
+<p>"Here's what would prove me wrong, and by when." —— 主动给出证伪节点。</p>
+<p>"That's a solid business, but it isn't venture-shaped — I'd rather say so." —— 诚实承认资金形状不匹配。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>十页，一页一个信息，讲稿绝不印在幻灯片上
+<span class="en">If they are reading your slide, they are not listening to you.</span></h2>
+<span class="tag">冗余效应</span><span class="tag">薄片印象</span><span class="tag">先痛后药</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">Deck 不是文档，是一场对话的骨架。<strong>每一页只回答对方心里的一个问题，回答完就翻页</strong>；你把整段讲稿印上去，他就会去读——人读字的时候听不进话，你等于亲手把自己静音了。</div>
+</div>
+<div class="section">
+<div class="section-label">十页各自要回答什么</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 348" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar2" markerheight="7" markerunits="userSpaceOnUse" markerwidth="9" orient="auto" refx="8" refy="3.5">
+<path d="M0,0 L9,3.5 L0,7 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="24">每一页的标题下面，写的是他心里那句没问出口的话</text>
+<rect fill="#e2efdc" height="86" stroke="#4e8a3f" stroke-width="1" width="120" x="20" y="46"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="8.6" text-anchor="middle" x="80" y="64">01</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="80" y="88">一句话定位</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="80" y="112">你们是干什么的</text>
+<line marker-end="url(#ar2)" stroke="#4e8a3f" stroke-width="1.4" x1="142" x2="156" y1="89" y2="89"></line>
+<rect fill="#f7faf6" height="86" stroke="#4e8a3f" stroke-width="1" width="120" x="158" y="46"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="8.6" text-anchor="middle" x="218" y="64">02</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="218" y="88">问题</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="218" y="112">谁现在很难受</text>
+<line marker-end="url(#ar2)" stroke="#4e8a3f" stroke-width="1.4" x1="280" x2="294" y1="89" y2="89"></line>
+<rect fill="#f7faf6" height="86" stroke="#4e8a3f" stroke-width="1" width="120" x="296" y="46"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="8.6" text-anchor="middle" x="356" y="64">03</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="356" y="88">解法</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="356" y="112">你怎么解的</text>
+<line marker-end="url(#ar2)" stroke="#4e8a3f" stroke-width="1.4" x1="418" x2="432" y1="89" y2="89"></line>
+<rect fill="#f7faf6" height="86" stroke="#4e8a3f" stroke-width="1" width="120" x="434" y="46"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="8.6" text-anchor="middle" x="494" y="64">04</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="494" y="88">为什么是现在</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="494" y="112">三年前为何不行</text>
+<line marker-end="url(#ar2)" stroke="#4e8a3f" stroke-width="1.4" x1="556" x2="570" y1="89" y2="89"></line>
+<rect fill="#dfeae2" height="86" stroke="#4e8a3f" stroke-width="1" width="108" x="572" y="46"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="8.6" text-anchor="middle" x="626" y="64">05</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="626" y="88">市场</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="626" y="112">能大到什么程度</text>
+<polyline fill="none" marker-end="url(#ar2)" points="626,134 684,134 684,156 80,156 80,170" stroke="#4e8a3f" stroke-width="1.4"></polyline>
+<rect fill="#dfeae2" height="86" stroke="#4e8a3f" stroke-width="1" width="120" x="20" y="176"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="8.6" text-anchor="middle" x="80" y="194">06</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="80" y="218">进展</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="80" y="242">有人买单了吗</text>
+<line marker-end="url(#ar2)" stroke="#4e8a3f" stroke-width="1.4" x1="142" x2="156" y1="219" y2="219"></line>
+<rect fill="#f7faf6" height="86" stroke="#4e8a3f" stroke-width="1" width="120" x="158" y="176"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="8.6" text-anchor="middle" x="218" y="194">07</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="218" y="218">怎么赚钱</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="218" y="242">钱怎么进来</text>
+<line marker-end="url(#ar2)" stroke="#4e8a3f" stroke-width="1.4" x1="280" x2="294" y1="219" y2="219"></line>
+<rect fill="#f7faf6" height="86" stroke="#4e8a3f" stroke-width="1" width="120" x="296" y="176"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="8.6" text-anchor="middle" x="356" y="194">08</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="356" y="218">竞争</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="356" y="242">凭什么打得过</text>
+<line marker-end="url(#ar2)" stroke="#4e8a3f" stroke-width="1.4" x1="418" x2="432" y1="219" y2="219"></line>
+<rect fill="#dfeae2" height="86" stroke="#4e8a3f" stroke-width="1" width="120" x="434" y="176"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="8.6" text-anchor="middle" x="494" y="194">09</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="494" y="218">团队</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="494" y="242">为什么是你们</text>
+<line marker-end="url(#ar2)" stroke="#4e8a3f" stroke-width="1.4" x1="556" x2="570" y1="219" y2="219"></line>
+<rect fill="#e2efdc" height="86" stroke="#4e8a3f" stroke-width="1" width="108" x="572" y="176"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="8.6" text-anchor="middle" x="626" y="194">10</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="626" y="218">融多少</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="626" y="242">这笔钱买到什么</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="292">前四页决定他还要不要认真听，市场那页决定他要不要动笔算，</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="312">后面五页是给他回去说服合伙人用的弹药——顺序不是随便排的。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="336">「十页 / 二十分钟 / 三十号字」是从业者经验法则（Kawasaki），不是实验结论。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">话术模板 · 开场三十秒</div>
+<div class="template">
+<span class="label">三句进门</span>
+<p>「<strong>我们帮 [具体的谁] 把 [某件事] 从 [现在的状态] 变成 [新的状态]。</strong>」——第一句就交付定位，不要用「我们是一个致力于赋能行业的平台」开场。</p>
+<p>「现在有 [数字] 在付费，其中 [数字] 续了第二年。」——把可核对的东西提到最前面。</p>
+<p>「我今天想跟你确认的是 [一个具体问题]，其余的都在材料里。」——给这场会一个明确目标，别让它变成漫谈。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> A deck is the skeleton of a conversation, not a document. One question per slide, answered, then move on. Two well-replicated findings govern the room. First, redundancy: when the same words appear on screen and come out of your mouth at once, comprehension drops — reading and listening compete for the same channel, so a slide crowded with your script effectively mutes you. Put the sentence in your mouth and one image or one number on the slide. Second, thin slices: strangers form remarkably stable impressions within seconds, and those early impressions steer how everything afterwards is interpreted — a strong first thirty seconds doesn't win the deal, but a weak one makes the next twenty minutes an uphill argument. Practically, that means the first line delivers the positioning rather than warming up to it, the checkable numbers come early rather than being saved for the end, and the meeting has a stated goal. Be honest about the status of the famous "10 slides / 20 minutes / 30-point font" rule: it's seasoned practitioner advice, not an experimental result.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制两条，都是加工带宽的问题。一、<em>冗余</em>：同样的文字同时出现在屏幕上和你嘴里，两路信息抢同一条通道，理解反而下降——所以幻灯片留一句话、一张图或一个数字，完整的话由你说。二、<em>薄片印象</em>：人在几秒到几十秒内就形成相当稳定的判断，之后的信息多半被拿去印证这个判断。这不是让你去表演自信，是让你把最有信息量的东西放在最前面：定位、以及一个别人能核对的数字。</strong></p>
+<ul>
+<li><strong>同行评审 · 冗余会降低理解</strong>：Mayer &amp; Moreno (2003, <em>Educational Psychologist</em>) 总结的多媒体学习原则中，<strong>「口头讲述 + 屏幕上重复同样文字」的组合，学习效果差于只有讲述加图示</strong>。这条在多个实验里重复出现，机制是工作记忆的通道竞争。</li>
+<li><strong>同行评审 · 薄片印象很快也很顽固</strong>：Ambady &amp; Rosenthal (1993, <em>JPSP</em>)：仅看<strong>三十秒无声视频片段</strong>给教师打的分，与学期末学生的正式评价高度相关。<strong>诚实标注：薄片能预测的是「别人会怎么评价你」，不等于能预测你的真实能力——这正是它既有用又危险的地方。</strong></li>
+<li><strong>经验法则（弱证据）</strong>：Kawasaki 的「10/20/30」（十页、二十分钟、三十号字）流传极广，但它是从业观察，不是对照实验——当纪律工具用可以，别当规律引用。</li>
+</ul>
+<p class="caveat">边界：并非所有场合都该「少即是多」。给合伙人内部传阅的版本、以及尽调阶段的材料，需要的是完整可查，那一版可以厚；<strong>面对面讲的那一版必须薄</strong>。两版都要，别互相冒充。还有一点：真正把 deck 讲垮的通常不是页数，是你自己讲到第七页才交代你们究竟是干什么的。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">照做清单 · deck 自检四问</div>
+<ul class="checklist">
+<li>每一页能不能用<strong>一句话概括</strong>？概括不出来，说明这页塞了两页的内容。</li>
+<li>把幻灯片全部关掉，你能不能<strong>用五句话讲完</strong>？讲不完，说明结构还没成形。</li>
+<li>第一页有没有出现一个<strong>能核对的具体数字</strong>，而不只是形容词？</li>
+<li>最后一页有没有写清楚<strong>这笔钱要买到哪个里程碑</strong>，而不只是一个金额？</li>
+</ul>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>「为什么是你」不能用形容词回答，只能用你已经付过的代价回答
+<span class="en">A signal only counts when it would cost an impostor more than it costs you.</span></h2>
+<span class="tag">昂贵信号</span><span class="tag">创始人-市场匹配</span><span class="tag">进展</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">对面那个人无法验证你的能力——他只见过你两次。<strong>他能验证的只有一件事：你为这件事已经付出过什么，而这个代价对一个装的人来说贵不贵。</strong>「我们非常热爱这个领域」谁都能说，所以它不携带任何信息；「我们上个月的复购率是 61%」不是谁都能说，所以它值钱。</div>
+</div>
+<div class="section">
+<div class="section-label">同一句「为什么是我」，五种可信度</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 306" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar3" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="9" refy="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">可信度不取决于你说得多真诚，取决于别人复制它要花多大代价</text>
+<line marker-end="url(#ar3)" stroke="#3f5c7a" stroke-width="1.5" x1="60" x2="600" y1="60" y2="60"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" x="60" y="50">越往右，说谎的成本越高，所以话才越值钱</text>
+<rect fill="#f6e3da" height="40" stroke="#c0603a" stroke-width="1" width="120" x="20" y="190"></rect>
+<text fill="#7a3a1f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="80" y="212">我很热爱</text>
+<text fill="#7a3a1f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="80" y="226">这个领域</text>
+<rect fill="#f7f2e8" height="62" stroke="#c9a86a" stroke-width="1" width="120" x="152" y="168"></rect>
+<text fill="#6a5326" font-family="Georgia" font-size="9.4" text-anchor="middle" x="212" y="190">我在这行</text>
+<text fill="#6a5326" font-family="Georgia" font-size="9.4" text-anchor="middle" x="212" y="204">干过五年</text>
+<rect fill="#eef4f0" height="84" stroke="#7a9c8a" stroke-width="1" width="120" x="284" y="146"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="344" y="168">我已经做出了</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="344" y="182">能用的东西</text>
+<rect fill="#dfeae2" height="106" stroke="#4e8a3f" stroke-width="1" width="120" x="416" y="124"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" text-anchor="middle" x="476" y="146">已经有人</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" text-anchor="middle" x="476" y="160">掏钱买了</text>
+<rect fill="#c9e2d3" height="128" stroke="#1f7a5c" stroke-width="1.4" width="120" x="548" y="102"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="608" y="124">他们复购</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="608" y="138">还介绍了别人</text>
+<line stroke="#a8bfae" stroke-width="1" x1="20" x2="676" y1="230" y2="230"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle" x="80" y="246">谁都能说</text>
+<text fill="#6a5326" font-family="Georgia" font-size="9" text-anchor="middle" x="212" y="246">可核对但常见</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="344" y="246">花了时间</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" text-anchor="middle" x="476" y="246">别人替你背书</text>
+<text fill="#123f30" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="608" y="246">装不出来</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="274">他不是不信你，是没有办法验证你——所以他只认那些「一个骗子付不起」的东西。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="298">昂贵信号的逻辑出自 Spence (1973) 信号理论：只有对低质量者更贵的信号才可信。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：对方问「你们团队为什么适合做这件事？」——这是全场最容易被浪费的一个问题。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 报履历</div>
+<p>「我们 CTO 是名校计算机硕士，我做过五年运营，我们都非常看好这个方向，执行力很强。」<strong>这段话换一家公司照样能用，所以它等于什么都没说。</strong>名校和年限是资格证明，不是「为什么偏偏是你们」。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 说你踩过而别人还没踩过的坑</div>
+<p>「我在这个行业做过四年运营，<strong>被一次排班事故坑过一次赔了六万</strong>——所以我知道医院真正怕的不是排不出班，是排错班没人兜。这套东西我们在自己前公司先手工跑了半年，跑到第三个月才发现真正卡住的是<strong>换班时的责任交接</strong>，而不是排班算法。市面上的产品都在做算法。<strong>这个判断是我们花了半年才买到的，别人从零开始也得花半年。</strong>」</p>
+</div>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The person across the table cannot verify your ability — they have met you twice. What they can verify is what this has already cost you, and whether that cost would be prohibitive for someone merely pretending. That's the whole logic of a costly signal: it carries information precisely because a low-quality sender couldn't afford it. "We're passionate about this space" is free to say, so it transmits nothing. "Forty paying customers, thirty-eight renewed" is not free, so it does. Rank your evidence by how expensive it would be to fake — enthusiasm, then relevant years, then a working thing you built, then someone paying, then someone paying again and bringing a friend — and lead with the most expensive item you honestly have. The same applies to the "why you" question, which most founders waste on credentials: degrees and years are qualifications, not answers. The answer is the specific expensive mistake you already made, the wrong turn you already took, the thing you now know that a smart newcomer would need six months to learn.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制是信息不对称下的<em>昂贵信号</em>：当接收方无法直接验证质量时，能传递信息的只有那些「对冒充者来说更贵」的行为。热情、决心、看好某个方向，成本为零，所以在均衡里被完全忽略——不是投资人冷漠，是这些话在数学上不携带信息。反过来，一个已经付过的代价（做出来的东西、有人付的钱、复购、你踩过的具体的坑）无法零成本伪造，所以它才被当真。<em>这也解释了为什么早期融资里「团队」的权重最高</em>：产品会变、市场会变，最难伪造的是这群人已经在这件事上花掉的东西。</strong></p>
+<ul>
+<li><strong>硬证据（理论基石）· 信号必须贵才有用</strong>：Spence (1973, <em>Quarterly Journal of Economics</em>)《Job Market Signaling》：在信息不对称市场中，只有<strong>对低质量者成本更高</strong>的信号才能形成分离均衡。该工作获 2001 年诺贝尔经济学奖，是被反复验证与扩展的理论基石。</li>
+<li><strong>大样本调查 · 早期最看团队</strong>：Gompers 等 (2020, <em>JFE</em>) 对近 900 名投资人的调查中，<strong>约 47% 把「团队」列为最重要因素</strong>，且他们把已投公司的成败也主要归因于团队而非商业模式。证据强度：自我报告，可能高估了他们对自己判断过程的洞察。</li>
+<li><strong>同行评审（定性）· 早期本来就是在赌人</strong>：Huang &amp; Pearce (2015, <em>Administrative Science Quarterly</em>) 对天使投资人的研究显示，在数据极少的极早期阶段，投资人明确依赖「直觉」作为判断工具。<strong>诚实标注：这是访谈 + 观察为主的研究，说明的是决策实况，不构成「直觉很准」的背书。</strong></li>
+</ul>
+<p class="caveat">边界：昂贵信号也会被伪造——虚报用户数、把试用算成付费、把朋友的订单算成市场验证。这类伪造在尽调期几乎必然暴露，而且损失的不是一轮融资，是你在一个很小的圈子里的名字。另有一条不公平的现实：<strong>信号的「贵」是相对个人资源而言的</strong>，全职烧半年积蓄做原型，对有家庭负担的人贵得多。这不改变机制，但值得在评价别人时记得。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"We paid for that lesson the hard way." —— 把学费变成资历。</p>
+<p>"Forty paying, thirty-eight renewed — happy to walk you through the churn." —— 给数字并主动开放核对。</p>
+<p>"Anyone starting today would need six months to learn what we already know." —— 把认知差说成时间差。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>质疑不是攻击，是他在替你做尽调——最贵的错误是把它答成辩论
+<span class="en">The frame of the question quietly decides the frame of your answer.</span></h2>
+<span class="tag">模糊厌恶</span><span class="tag">双面论证</span><span class="tag">重框</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">他挑刺，多数时候不是不想投，是在替你把风险清单过一遍——真不想投的人会说「很有意思，保持联系」然后再不出现。<strong>所以 Q&amp;A 环节要打的不是赢，是让他看见你已经想过这件事、而且知道怎么办。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">同一家公司，两种提问框架</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 306" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar4" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="9" refy="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+<marker id="ar4b" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="9" refy="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">问题的框架不同，同一家公司会被讲成两个故事</text>
+<rect fill="#eef1f5" height="34" stroke="#3f5c7a" stroke-width="1" width="200" x="250" y="40"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.4" font-weight="700" text-anchor="middle" x="350" y="62">投资人抛过来的问题</text>
+<line marker-end="url(#ar4)" stroke="#3f5c7a" stroke-width="1.4" x1="322" x2="180" y1="76" y2="104"></line>
+<line marker-end="url(#ar4)" stroke="#3f5c7a" stroke-width="1.4" x1="378" x2="520" y1="76" y2="104"></line>
+<rect fill="#f6e3da" height="52" stroke="#c0603a" stroke-width="1" width="250" x="40" y="108"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="54" y="128">防守型提问</text>
+<text fill="#7a3a1f" font-family="Georgia" font-size="9.2" x="54" y="148">你怎么防止流失？护城河守得住吗？</text>
+<rect fill="#e2efdc" height="52" stroke="#4e8a3f" stroke-width="1" width="250" x="410" y="108"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="424" y="128">进攻型提问</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" x="424" y="148">你打算怎么扩十倍？市场能有多大？</text>
+<line marker-end="url(#ar4)" stroke="#3f5c7a" stroke-width="1.4" x1="165" x2="165" y1="164" y2="182"></line>
+<line marker-end="url(#ar4)" stroke="#3f5c7a" stroke-width="1.4" x1="535" x2="535" y1="164" y2="182"></line>
+<rect fill="#fbefe8" height="40" stroke="#c0603a" stroke-width="1" width="250" x="40" y="186"></rect>
+<text fill="#7a3a1f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="165" y="211">顺着答 → 全场变成风险清单</text>
+<rect fill="#dfeae2" height="40" stroke="#4e8a3f" stroke-width="1" width="250" x="410" y="186"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" text-anchor="middle" x="535" y="211">顺着答 → 全场变成增长故事</text>
+<line marker-end="url(#ar4b)" stroke="#4e8a3f" stroke-width="1.6" x1="296" x2="404" y1="206" y2="206"></line>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="350" y="198">重框</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="252">先老实答完那三十秒（躲开等于承认没想过），再自己把话头切回增长——</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="272">让每一个防守问题，最后都落在一个进攻答案上。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="296">提问框架与后续融资额的关联出自 Kanze 等 (2018, AMJ)：观察编码为主，配套实验支持「重框有效」。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">话术模板 · 被问住时的三步</div>
+<div class="template">
+<span class="label">承认 → 应对 → 切框</span>
+<p>「<strong>这是我们目前最大的不确定。</strong>」——先承认，别绕。绕一次，他后面每句话都会打折。</p>
+<p>「我们的应对是 [具体动作]，判断它有没有用的指标是 [具体指标]，时间点是 [具体时间]。」——承认之后必须给出应对，<strong>光认不答会掉分</strong>。</p>
+<p>「而且同一件事往前看是这样：[把它接回增长]。」——把防守问题的落点搬回增长框架。</p>
+<p>真不知道的数字：「<strong>我不知道，我不想编。</strong>下周三之前给你，我会用 [方法] 去算。」——给期限和方法，比给一个假数字强一百倍。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Pushback in a pitch is usually diligence, not rejection — someone who has already decided against you says "very interesting, let's keep in touch" and disappears. So the goal in Q&amp;A isn't to win the exchange; it's to show you've already thought about the thing and know what you'd do. Three mechanisms matter. First, ambiguity is worse than risk: people react far more negatively to unknown odds than to known bad odds, so "I don't know yet, here's how I'll find out and by when" beats both a bluff and a dodge. Second, two-sided arguments work — but only the refutational kind. Naming the weakness and answering it raises credibility; naming it and leaving it hanging lands below saying nothing. Third, the frame of the question tends to become the frame of the answer, and defensive questions answered defensively turn the whole meeting into a risk inventory. Answer the thirty seconds honestly, then move the endpoint back to growth. And never invent a number: a fabricated figure survives one meeting and dies in diligence.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制三条。一、<em>模糊比风险更让人退缩</em>：人对「概率未知」的反应远比对「概率已知但不高」更负面，所以「我还不知道，但我会这样去查、什么时候给你答案」比含糊搪塞或硬编一个数字都强——它把模糊换成了风险。二、<em>双面论证</em>：主动说出弱点并给出应对，比只讲优点更有说服力；但必须带反驳，<em>只承认不应对反而比不提还差</em>。三、<em>框架黏性</em>：问题的框架会顺势变成答案的框架，防守型提问顺着答，整场会被讲成一份风险清单。</strong></p>
+<ul>
+<li><strong>硬证据（脑机制）· 模糊与风险走的不是同一套系统</strong>：Hsu、Bhatt、Adolphs、Tranel &amp; Camerer (2005, <em>Science</em>)：面对<strong>模糊</strong>（概率未知）时，<strong>杏仁核与眶额皮层</strong>激活更强；面对<strong>已知概率的风险</strong>时，<strong>纹状体</strong>反应更强；而眶额皮层受损的病人对二者几乎不加区分。fMRI + 病灶病人双路证据，硬。把「不知道」转成「已知的不确定 + 查证计划」，正是在做这个转换。</li>
+<li><strong>元分析 · 承认弱点要带反驳才有用</strong>：O'Keefe (1999) 对单面 / 双面信息的元分析：<strong>「承认反面并加以反驳」的双面信息说服力高于单面；而「承认了却不反驳」的双面信息，效果低于单面。</strong>元分析、方向稳定，硬。这条直接给出话术形状：认 → 答，缺一不可。</li>
+<li><strong>观察 + 实验 · 提问框架影响拿到多少钱</strong>：Kanze、Huang、Conley &amp; Higgins (2018, <em>Academy of Management Journal</em>)：对创业大赛现场问答的编码显示，投资人对男性创始人更多问「怎么赢」（promotion）、对女性更多问「怎么不输」（prevention）；<strong>被问防守型问题且顺着框架作答的创始人，后续融到的资金显著更少（差距达数量级）</strong>；配套实验显示，<strong>把防守型问题重新框成进攻型回答，能改善结果</strong>。诚实标注：现场数据是观察性的，存在混淆因素；重框有效这一条有实验支持。这不是把结构性偏差的责任推给被问的人——是在系统改之前，给身处其中的人一个能立刻用的动作。</li>
+</ul>
+<p class="caveat">边界：重框不等于回避。<strong>躲开一个尖锐问题的代价，比答得不完美大得多</strong>——你躲一次，他会默认所有没细看的地方都有类似的洞。也别把「承认弱点」做成表演式的谦虚（「我们最大的缺点是太拼了」），那比不承认更伤。这套动作和「异议不是拒绝」那期的结构是同一个：先接住，再回应，最后把话头带回你要去的地方。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"That's our biggest open question, and here's how we're testing it." —— 认 + 答一次给全。</p>
+<p>"I don't know — I'd rather not make one up. You'll have it by Wednesday." —— 不编数字，给期限。</p>
+<p>"Same thing looking forward, that's actually our fastest channel." —— 把防守落点搬回增长。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 30 Action</h3>
+<p>九十分钟，四件事。做完你手上会有一份能发出去的东西，而不是一份还在改的东西。</p>
+<div class="action">
+<strong>一（20 分钟）：</strong>写下你这门生意的「万一」：<strong>如果五年后它成了，那时候它是什么形状、有多大</strong>，以及支持这个形状的第一个可检验节点（时间 + 指标）。写不出来不丢人，说明你要找的可能不是风险资本。<br/><br/><strong>二（30 分钟）：</strong>把 deck 砍到十页，每页只留一句话加一个数字或一张图。<strong>砍不下来的页，说明它同时在回答两个问题。</strong><br/><br/><strong>三（20 分钟）：</strong>列出你已经付过的五个代价（做出来的东西、付费用户、复购、踩过的具体的坑），按「别人复制它要多贵」排序，把最贵的那一个放进开场三十秒。<br/><br/><strong>四（20 分钟）：</strong>写下你最怕被问的三个问题，每个按「承认 → 应对 → 切回增长」写一段，出声念一遍。<br/><br/>边界提醒：这套动作提高的是你被理解、被正确定价的概率，<strong>它不能把一个不适合风险资本的生意变成适合的</strong>。如果连续十几次会面都卡在同一处，别再改措辞——那多半是商业本身在说话，不是 pitch。还有：绝不编造并不存在的其它投资人——圈子小，被戳穿一次的代价远超这一轮融资。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我不创业也不融资，这一期对我有什么用？</summary>
+<div class="answer">融资是一个更极端的通用问题：<strong>向一个不掌握你信息、也不容易验证你的人，索取一笔他很难撤回的承诺。</strong>找工作、拉一个合伙人、说服父母把养老钱投进你要开的店、劝一个资深同事跳到你的项目组——形状完全一样。<br/><br/>四个动作照样可用：先搞清楚对方的目标函数（他要的是稳还是大），别用自己的价值观替他回答；把要说的东西砍到一句话加一个可核对的数字；把「相信我」换成你已经付过的代价；被质疑时先认再答，别辩。<strong>最通用的一条是第一条</strong>——大多数说服失败，是因为你在很努力地回答一个对方根本没在问的问题。</div>
+</details>
+<details>
+<summary>2. 我这门生意就是稳稳赚钱的小生意，是不是就没人投了？</summary>
+<div class="answer">不是没人投，是<strong>风险资本这一种钱不合适</strong>——而钱是有形状的。稳定现金流的生意，更匹配的是自有利润滚动、银行经营贷、收入分成融资（按营收比例还款，不稀释股权），或者一个图长期分红而非退出的个人投资人。这些钱问的问题完全不同：关心还款能力和现金流，不关心天花板。<br/><br/><strong>最贵的错误是明知不匹配还去装火箭。</strong>装成功了更糟：拿了要求高速增长的钱，你会被迫做一堆伤害这门好生意的动作——烧钱抢份额、放弃赚钱的老客户去追不赚钱的新客户，两头落空。对着不匹配的资方直接说「这大概不是一笔风险投资该做的生意」，短期损失一次会面，长期赚回信誉：他记住的是一个诚实且清楚自己在干什么的人，而这种人他愿意在下一件事上接电话。</div>
+</details>
+<details>
+<summary>3. 「三年后做到 X 亿」这种预测，我明知道是编的，还要写吗？</summary>
+<div class="answer">要写数字，但要改变它的性质：<strong>把「预测」写成「假设 + 可检验的推导」。</strong>投资人不会真信你第三年的营收数字——他们看的是这个数字怎么来的，因为那才暴露你对这门生意的理解。所以别写「第三年 3 亿」这样一个孤零零的结论，写成一串能被逐条质疑的东西：现在的客单价是多少、获客成本多少、留存曲线什么形状、按目前的转化率要拿到这个数需要多少销售人手、这条链条上最脆弱的假设是哪一个。<br/><br/>然后主动把最脆弱那一环点出来：「<strong>整套推导最不确定的是留存能不能维持在 80%，如果掉到 60%，这个数字就要打三折。</strong>」这一句会让整份预测变得可信，因为它证明你不是在许愿，你在算账——而一个愿意主动指出自己模型弱点的人，比一个把每格都填满绿色的人更像能管好钱的人。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 30</footer>
+</div>
+</body>
+</html>
