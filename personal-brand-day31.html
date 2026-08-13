@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 31：个人品牌</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 31 · Phase E</div>
+<h1>个人品牌不是让更多人认识你<br/>是让很少的人在一件很具体的事上先想到你</h1>
+<div class="meta"><span>主题：被想起 &gt; 被知道 · 别做「更好的谁」 · 内容复利 · 一句话转述</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">你缺的不是曝光量，是一个让人在需要的那一秒把你从记忆里捞出来的钩子。</div>
+</header>
+<div class="intro">
+<strong>绝大多数「做个人品牌」的努力，输在一个隐蔽的地方：它在扩大知道你的人数，却没有提高被想起的概率。</strong>这两件事看起来是一回事，其实常常反向——你什么都发一点，认识你的人确实变多了，而每个人对你的印象都被摊得更薄，薄到具体机会出现时，没有一条足够粗的线通向你的名字。<strong>真正要解决的是两件很实际的事：一个人在需要找人的那三秒钟里，你的名字凭什么冒出来；以及你不在场时，别人到底能替你说出哪一句。</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>目标不是被知道，是在一个具体线索出现时被提取出来
+<span class="en">A brand is not awareness. It's the probability your name surfaces when a specific problem shows up.</span></h2>
+<span class="tag">线索依赖提取</span><span class="tag">扇效应</span><span class="tag">窄即杠杆</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">没有人会「搜索你」。人只在遇到问题时问自己一句：<strong>「这事找谁？」</strong>——个人品牌真正的产出，就是这句话出现时你被想起来的概率。所以要做的不是把自己铺开，是把自己和一个具体问题焊死：<strong>连接越少，每一条越粗。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">为什么「什么都会」等于「什么都想不起」</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerHeight="7" markerUnits="userSpaceOnUse" markerWidth="9" orient="auto" refX="8" refY="3.5">
+<path d="M0,0 L9,3.5 L0,7 z" fill="#8d9aa8"></path>
+</marker>
+<marker id="a1b" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="11" refY="5">
+<path d="M0,0 L12,5 L0,10 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">别人心里的线索，是问题；能不能到你，看线有多粗</text>
+<line stroke="#d5dce4" stroke-width="1" x1="350" x2="350" y1="38" y2="262"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="178" y="50">六个领域各挂一点</text>
+<rect fill="#f6e3da" height="22" stroke="#c0603a" stroke-width="0.8" width="112" x="24" y="62"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="80" y="77">前端开发</text>
+<rect fill="#f6e3da" height="22" stroke="#c0603a" stroke-width="0.8" width="112" x="24" y="90"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="80" y="105">后端架构</text>
+<rect fill="#f6e3da" height="22" stroke="#c0603a" stroke-width="0.8" width="112" x="24" y="118"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="80" y="133">产品设计</text>
+<rect fill="#f6e3da" height="22" stroke="#c0603a" stroke-width="0.8" width="112" x="24" y="146"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="80" y="161">数据分析</text>
+<rect fill="#f6e3da" height="22" stroke="#c0603a" stroke-width="0.8" width="112" x="24" y="174"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="80" y="189">品牌咨询</text>
+<rect fill="#f6e3da" height="22" stroke="#c0603a" stroke-width="0.8" width="112" x="24" y="202"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="80" y="217">摄影剪辑</text>
+<line marker-end="url(#a1)" stroke="#8d9aa8" stroke-width="1" x1="140" x2="246" y1="73" y2="136"></line>
+<line marker-end="url(#a1)" stroke="#8d9aa8" stroke-width="1" x1="140" x2="246" y1="101" y2="138"></line>
+<line marker-end="url(#a1)" stroke="#8d9aa8" stroke-width="1" x1="140" x2="246" y1="129" y2="140"></line>
+<line marker-end="url(#a1)" stroke="#8d9aa8" stroke-width="1" x1="140" x2="246" y1="157" y2="144"></line>
+<line marker-end="url(#a1)" stroke="#8d9aa8" stroke-width="1" x1="140" x2="246" y1="185" y2="146"></line>
+<line marker-end="url(#a1)" stroke="#8d9aa8" stroke-width="1" x1="140" x2="246" y1="213" y2="148"></line>
+<rect fill="#eceee8" height="34" stroke="#9aa89c" stroke-width="1" width="64" x="252" y="125"></rect>
+<text fill="#8a988c" font-family="Georgia" font-size="13" font-weight="700" text-anchor="middle" x="284" y="147">你</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.8" text-anchor="middle" x="178" y="250">同一个名字挂了六件事</text>
+<text fill="#8d9aa8" font-family="Georgia" font-size="9.8" text-anchor="middle" x="178" y="266">每条线上的激活都被摊薄</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="522" y="50">一个问题焊死</text>
+<rect fill="#dfeae2" height="26" stroke="#1f7a5c" stroke-width="1.2" width="176" x="368" y="128"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" text-anchor="middle" x="456" y="145">咖啡店的点单小程序</text>
+<line marker-end="url(#a1b)" stroke="#1f7a5c" stroke-width="4" x1="548" x2="586" y1="141" y2="141"></line>
+<rect fill="#1f7a5c" height="34" width="64" x="592" y="124"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="13" font-weight="700" text-anchor="middle" x="624" y="146">你</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.8" text-anchor="middle" x="522" y="250">只有一条路通向你</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.8" text-anchor="middle" x="522" y="266">线索一出现，你就是那个答案</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="296">左图的机制叫扇效应（Anderson, 1974）：一个概念挂的事实越多，取出任一条越慢、越易出错。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你是想接私活的工程师，朋友要在一个群里用一句话推荐你。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 把自己铺开</div>
+<p>「他是个全栈工程师，前后端都能写，也懂点产品和设计，什么都能聊。」<strong>听的人礼貌点头，然后什么都不会发生。</strong>因为没有人心里的问题长成「我要找个什么都能聊的人」，他们心里的是「我这个下单流程太难用了」。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 焊死在一个线索上</div>
+<p>「他专门给咖啡店改点单小程序，<strong>做过十来家，最典型的是把下单从七步压到三步。</strong>」——能力没变，可提取性变了。谁正被点单流程折磨，这句就是钥匙；没这个问题的人本来也不会成为你的客户。</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">话术模板 · 一句话定位</div>
+<div class="template">
+<span class="label">三个空</span>
+<p>「我帮 <strong>[窄到能想象出一张脸的谁]</strong>，解决 <strong>[他自己会用原话说出来的那个问题]</strong>，做法是 <strong>[一个别人复制起来有成本的方式]</strong>。」</p>
+<p>自检：念给一个圈外朋友听，他能<strong>原样复述</strong>就过关；他要问「所以你具体做什么」，就还没窄够。</p>
+<p>反面清单：赋能、连接、一站式、多年经验、专业团队——共同点是，删掉它们句子的信息量不变。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Nobody searches for you. What actually happens is that a problem shows up and someone asks themselves, "who do I know for this?" A personal brand is nothing more than the probability that your name surfaces in that three-second window. That reframes the work entirely: the goal is not reach, it's retrievability. Memory is cue-dependent — what gets recalled is whatever was bound tightly to the cue that's now present — and activation spreading from a concept is divided among everything attached to it, so the more things your name is linked to, the weaker every single link becomes. This is why "I do a bit of everything" is not versatility in the market's eyes; it's invisibility. The move is to weld yourself to one concrete problem, stated in the words the other person would actually use, and to accept that you're deliberately becoming unfindable for everything else. Narrowness feels like giving up opportunity. In practice it's the only thing that makes any opportunity reach you at all — because the alternative isn't six chances, it's six links too thin to carry anything.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制是记忆的取出方式，不是别人的注意力多少。人脑不按名字检索，是<em>按线索检索</em>：当下的线索（一个具体问题）和当初存进去时的线索重合越多，越容易被捞出来。而一个概念挂的东西越多，激活就在这些连接之间摊得越散——你多标注一个身份，其余每个身份被提取的强度就掉一点。所以「窄」不是谦虚，是把有限的激活集中到一条线上。</strong></p>
+<ul>
+<li><strong>硬证据 · 提取靠线索重合</strong>：Tulving &amp; Thomson (1973, <em>Psychological Review</em>) 的编码特异性原则：能不能想起来，取决于<strong>提取时的线索与编码时的线索是否匹配</strong>——当时没被一起存进去的线索，哪怕语义上很相关也捞不出那段记忆。经典范式，复现充分，硬。神经层面上，这类线索驱动的提取依赖<strong>海马与内侧颞叶</strong>的模式补全（用一部分线索还原整段记忆），是记忆神经科学的共识机制。诚实说明：外推到「个人品牌」是推论，没有针对它本身的脑成像研究。</li>
+<li><strong>硬证据 · 挂得越多，取得越慢</strong>：Anderson (1974, <em>Cognitive Psychology</em>) 的扇效应：一个概念关联的事实条数越多，被试判断其中任意一条的<strong>反应时越长、错误率越高</strong>。稳定复现，是 ACT-R 记忆模型的基石，硬。这几乎就是「什么都会」的代价核算。</li>
+<li><strong>相关证据 · 能想起来的更容易被选中</strong>：Tversky &amp; Kahneman (1973) 的可得性启发：人用「例子有多容易浮现」估计概率和重要性。找人时，被最先想起的那个往往直接拿走机会——多数人根本不会做一次完整搜索。证据强度：现象稳固，但从「容易想起」到「拿到订单」是推论。</li>
+</ul>
+<p class="caveat">边界：窄定位是<strong>还没被想起的人</strong>的杠杆；一旦你在某个位置已被牢牢想起，窄就从杠杆变成天花板，那时该往相邻一格扩，而不是继续钉死。另外，窄的是<strong>对外的标签</strong>，不是能力边界——私下什么都做没关系，但对外每多讲一件，钩子就钝一分。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"I'm the person you call when your checkout flow is a mess." —— 用「什么时候找我」定义自己。</p>
+<p>"That's adjacent to what I do, but it's not what I'd want to be hired for." —— 礼貌地把自己排除在别的格子外。</p>
+<p>"If you remember one thing about me, make it this." —— 指定别人该记住哪一条。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>别做「更好的谁」，做那个没法拿来比价的
+<span class="en">"Better" puts you in a ranked list. "Different" takes you out of it.</span></h2>
+<span class="tag">可评价性</span><span class="tag">联合评估 vs 单独评估</span><span class="tag">类别原型</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">你说自己是「更好的设计师」，对方就把你放进一张有五个名字的表里排序；<strong>而表里唯一能被外行明显比较的维度，永远是价格。</strong>你说自己「只做某一类东西」，表里就只剩你一行——他的问题从「谁更便宜」变成「这事值不值」，而后一个问题你有机会答。</div>
+</div>
+<div class="section">
+<div class="section-label">同一个人，两种被评估的方式</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">你怎么描述自己，决定他把你放进哪种比较</text>
+<line stroke="#d5dce4" stroke-width="1" x1="350" x2="350" y1="38" y2="256"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="176" y="52">「我是更好的设计师」</text>
+<rect fill="#f7faf6" height="24" stroke="#c2ccbe" stroke-width="0.8" width="264" x="44" y="66"></rect>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" x="54" y="82">设计师 A</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" text-anchor="end" x="298" y="82">￥8,000</text>
+<rect fill="#f7faf6" height="24" stroke="#c2ccbe" stroke-width="0.8" width="264" x="44" y="94"></rect>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" x="54" y="110">设计师 B</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" text-anchor="end" x="298" y="110">￥6,500</text>
+<rect fill="#f6e3da" height="24" stroke="#c0603a" stroke-width="1.2" width="264" x="44" y="122"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" x="54" y="138">你</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="end" x="298" y="138">￥7,000</text>
+<rect fill="#f7faf6" height="24" stroke="#c2ccbe" stroke-width="0.8" width="264" x="44" y="150"></rect>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" x="54" y="166">设计师 D</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" text-anchor="end" x="298" y="166">￥5,200</text>
+<rect fill="#f7faf6" height="24" stroke="#c2ccbe" stroke-width="0.8" width="264" x="44" y="178"></rect>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" x="54" y="194">设计师 E</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" text-anchor="end" x="298" y="194">￥4,800</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.8" text-anchor="middle" x="176" y="228">他的动作是「排序」</text>
+<text fill="#8d9aa8" font-family="Georgia" font-size="9.8" text-anchor="middle" x="176" y="244">而唯一好比的那一列，是价格</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="524" y="52">「我只做小家电详情页的首图」</text>
+<rect fill="#dfeae2" height="34" stroke="#1f7a5c" stroke-width="1.4" width="264" x="392" y="117"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" x="404" y="139">你</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="end" x="646" y="139">￥12,000</text>
+<line marker-end="url(#a2)" stroke="#3f5c7a" stroke-width="1.4" x1="524" x2="524" y1="176" y2="196"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.8" text-anchor="middle" x="524" y="212">没有第二行可以拿来对照</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.8" text-anchor="middle" x="524" y="230">他的动作变成「判断这事值不值」</text>
+<text fill="#8d9aa8" font-family="Georgia" font-size="9.8" text-anchor="middle" x="524" y="246">而这个问题，你有资格替他回答</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="288">机制：可评价性假说（Hsee, 1996）——难以独立判断的属性，只在有对照时才影响决定。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你是自由摄影师，一个小家电品牌来问价。你已经报了 12,000，对方说「我看到别人报 5,000」。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 在同一张表里辩护</div>
+<p>「我的设备更好，经验也更多，出片质量不一样。」<strong>这句默认接受了「我们在同一列里比」这个前提。</strong>而「更好」是买方下单前无法验证的属性——他能验证的只有价格，于是你输在价格上。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 换掉被比较的那张表</div>
+<p>「5,000 那种是通用商拍，拍得漂亮。<strong>我做的是另一件事：只拍详情页第一张图，因为那一张决定点进来的人走不走。</strong>我有三个同类目的前后数据，最近那家的首图点击率从 2.1% 到 3.4%。所以你要判断的不是 12,000 贵不贵，是<strong>多出来的那点点击值不值 7,000</strong>——这个我们可以一起算。」</p>
+</div>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Claiming you're "better" quietly accepts the buyer's frame: a list of five names to be ranked. The trouble is that the only column an outsider can actually compare before buying is price, so every "better" argument eventually loses to the cheapest row. Claiming you're the only person who does one specific thing removes the list. Now the question isn't who's cheapest, it's whether the thing is worth doing — and that's a question you're qualified to answer with them. The mechanism is evaluability: attributes people can't judge in isolation only start driving decisions when there's something to compare against, which is why the same person is valued completely differently in joint versus separate evaluation. Two guardrails. Differentiation isn't inventing a category nobody wants — if nobody is already spending money on the problem you named, you haven't positioned yourself, you've hidden. And the category has to be one they can hold in their head: recognisable enough to be filed somewhere, narrow enough that you're the obvious occupant. The test isn't whether the label sounds clever. It's whether someone can repeat it and someone else immediately knows what it's for.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制两层。一、<em>可评价性</em>：有些属性人单独看根本判断不了好坏，只有摆在一起才有意义——所以一旦进入被并排比较的状态，那些难评价的优点（品味、判断力、经验）自动失效，只剩最好比的那一列在起作用。二、<em>类别归属</em>：人按「最像这一类的典型」归类和记忆，你要争的不是旧类别里名次靠前，是成为一个新的窄类别里唯一的典型。两层合起来，解释了同一个人为什么报价能差两倍。</strong></p>
+<ul>
+<li><strong>硬证据 · 单独看和并排看，答案会反转</strong>：Hsee (1996, <em>OBHDP</em>) 的词典实验：一本条目少但全新，另一本条目多一倍但封面破损。<strong>单独评估时人们愿意为「全新」那本出更多钱；两本并排时，出价顺序反转。</strong>因为「一万条 vs 两万条」这个数字，没有对照时人不知道该算多还是算少。多次复现的稳定效应，硬。它直接说明：<strong>你被放进的比较方式，比你本身的优劣更能决定价格。</strong></li>
+<li><strong>硬证据 · 人按原型归类</strong>：Rosch (1975, <em>JEP: General</em>) 的原型效应：同一类别里，越接近典型的成员被判断、被回忆得越快越准。稳固的认知心理学结果，硬。<strong>做窄类别的典型胜过做大类别的第七名</strong>是推论，不是原实验结论。</li>
+<li><strong>经验之谈 · 技能交叉点</strong>：「不必在任何一项做到顶尖，只要在两三项的交叉处足够罕见」（Scott Adams 的 talent stack）。<strong>纯经验总结，无对照研究，有幸存者偏差</strong>。当思路可以，别当定律。</li>
+</ul>
+<p class="caveat">边界：差异化不等于生造一个没人要的类别。检验只有一条——<strong>你划出的类别里，现在有没有人正在为它花钱？</strong>没有就不是定位，是隐身。另一种常见失败：窄到对方脑子里没格子可放，他不知道把你归到哪儿，于是既不记住也不转述——要落在一个他已有的概念旁边。报价怎么被接住，「太贵了怎么办」那期的拆分与对比直接可用。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"That's a different service, not a cheaper version of mine." —— 拒绝被并排。</p>
+<p>"The question isn't whether I'm expensive — it's whether this is worth doing at all." —— 换掉他要回答的问题。</p>
+<p>"I'd rather be the obvious choice for a few people than an option for everyone." —— 一句能说出口的定位宣言。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>内容复利：把一次一次的证明，做成一次投入无限次交付
+<span class="en">One-to-one trust is linear. Content is the only way it compounds.</span></h2>
+<span class="tag">单纯曝光</span><span class="tag">加工流畅性</span><span class="tag">重复抑制</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">一对一建立信任是线性的：每多一个人，从头再来一遍。内容让「证明自己」变成一次投入、无限次交付。<strong>但复利的前提不是更新频率，是同一个位置被反复击中</strong>——五十篇讲同一个窄问题叠成一个专家，五十篇什么都讲只叠成一个陌生人。</div>
+</div>
+<div class="section">
+<div class="section-label">两种建立信任的方式，形状不一样</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a3" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">纵轴：已经信任你的人数　　横轴：坚持的月数</text>
+<line stroke="#8d9aa8" stroke-width="1.2" x1="70" x2="70" y1="48" y2="270"></line>
+<line stroke="#8d9aa8" stroke-width="1.2" x1="70" x2="660" y1="270" y2="270"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="70" y="286">0</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="217" y="286">6</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="364" y="286">12</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="511" y="286">18</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="658" y="286">24</text>
+<line stroke="#c0603a" stroke-width="2" x1="70" x2="658" y1="268" y2="182"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="420" y="252">一对一：一顿饭换一个人</text>
+<path d="M70,269 C 190,266 280,258 364,236 C 470,208 560,130 658,58" fill="none" stroke="#1f7a5c" stroke-width="2.4"></path>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" x="390" y="52">内容：同一个位置反复击中</text>
+<line stroke="#8d9aa8" stroke-dasharray="4 4" stroke-width="1" x1="290" x2="290" y1="80" y2="270"></line>
+<line marker-end="url(#a3)" stroke="#3f5c7a" stroke-width="1.4" x1="196" x2="278" y1="96" y2="128"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" x="96" y="82">大部分人在这一段停下来：</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" x="96" y="98">投入已经付掉了，回报还没开始</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="308">注：曲线形状是示意，不是数据。真实时间尺度取决于领域、渠道和运气，没有普适曲线。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">照做清单 · 让内容真的复利的四条纪律</div>
+<ul class="checklist">
+<li><strong>同一个问题，讲够五十次。</strong>每次换角度、换案例、换反例，落点始终是那一个窄问题——重复的是位置，不是句子。</li>
+<li><strong>每一篇都要能被单独看懂。</strong>大部分人是从中间某一篇进来的，没有前面的上下文。写「上一篇说过」等于把新读者赶走。</li>
+<li><strong>每一篇留一个可核对的东西。</strong>一个数字、一个真实案例、一段能跑的代码、一次失败复盘。观点不可核对，只有它们能把「像懂」变成「真懂」。</li>
+<li><strong>每一篇都有一个能回来的地址。</strong>平台会变、账号会没，你要有个自己能带走的落点。这条现在最没成就感，两年后最值钱。</li>
+</ul>
+</div>
+<p class="en-brief"><b>EN</b> Trust built one meeting at a time is linear: each new person costs you the whole process again. Content is the only mechanism that makes it compound — one investment, delivered indefinitely. But the compounding doesn't come from posting often; it comes from hitting the same narrow spot repeatedly. Three mechanisms do the work. Repeated exposure raises liking on its own, even when people don't consciously register the exposure. Repetition also makes things easier to process, and the brain misreads that ease as familiarity and truth — which is exactly why this is a tool with an ethical edge, not a neutral one. And neurally, repeated stimuli produce weaker, cheaper cortical responses over time; the subjective feel of that efficiency is "I know this person". Two honest caveats. Repetition does not make a wrong claim right, and the same effect works on you: a positioning line you've repeated for three years starts to feel true to you too, long after it's expired. Second, the effect isn't unbounded — past a point, more exposure produces tedium rather than warmth. Say the same thing from new angles, not the same sentence again.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制三层叠加。一、<em>单纯曝光</em>：反复见到同一个东西，好感会自己上升，不需要理由。二、<em>加工流畅性</em>：见得多了处理更省力，大脑会把这份「省力」误读成「熟悉」和「这话大概是真的」。三、<em>重复抑制</em>：同一刺激反复出现时，皮层的神经反应减弱、处理成本真的下降——这是前两层的物理底座。结果是：你反复出现在同一个位置，别人不必读完你的全部作品，也会先觉得「这人应该是懂的」。</strong></p>
+<ul>
+<li><strong>硬证据 · 见得多就更喜欢</strong>：Zajonc (1968, <em>JPSP</em>) 的单纯曝光效应；Bornstein (1989, <em>Psychological Bulletin</em>) 对两百多项研究的元分析确认效应稳定，且<strong>被试没意识到自己看过时效应反而更强</strong>——说明它不依赖「记住你说了什么」。元分析级别，硬。同一份元分析也显示<strong>曝光过多后效应会回落</strong>：是倒 U，不是越多越好。</li>
+<li><strong>硬证据 · 重复会让人觉得更真</strong>：Hasher、Goldstein &amp; Toppino (1977) 首次报告真相错觉；Dechêne 等 (2010, <em>PSPR</em>) 元分析确认：<strong>同一句陈述重复出现后，被判定为真的程度上升</strong>。方向稳定，硬。</li>
+<li><strong>硬证据（脑机制）· 重复让处理变便宜</strong>：Grill-Spector、Henson &amp; Martin (2006, <em>Trends in Cognitive Sciences</em>) 综述的重复抑制：刺激重复出现时，<strong>相关皮层区域（如枕颞视觉通路）的神经反应显著减弱</strong>，行为上更快更准。fMRI 与单细胞记录一致，硬。主观上，这份「变容易」就是被读成熟悉与可信的感觉。</li>
+</ul>
+<p class="caveat">伦理边界必须写清楚：<strong>重复只能让一句话更容易被接受，不能让错的变成对的。</strong>用在你没验证过的主张上，就是拿别人的认知捷径换曝光——这正是说服与操纵的分界，「影响力六原理」那期讲的是同一条界。真相错觉<strong>对你自己一样起作用</strong>：重复了三年的定位你自己也会越来越信，哪怕它早已过期，所以每年要做一次外部检验，问真实客户而不是问自己的读者。失效场景：复利的是「同一个位置」被重复，重复同一句话只会腻。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"I've been writing about this one thing for two years." —— 用时长本身当资历。</p>
+<p>"Same idea, different angle — here's what changed my mind since." —— 重复位置而非重复句子。</p>
+<p>"Everything I know about this is public; hiring me is just faster." —— 把公开内容变成信任凭据。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>真正带来机会的，是你不在场时别人替你说的那一句
+<span class="en">Your growth ceiling isn't how many people you meet — it's what they can say about you when you're not there.</span></h2>
+<span class="tag">弱连接</span><span class="tag">可转述性</span><span class="tag">分享的动机</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">机会几乎从不来自你正在维护的那几个熟人——他们的信息和你高度重合。它来自偶尔才想起你的人，在一场你不知道的对话里替你说的那句话。<strong>而他只带得走一句。</strong>所以该打磨的不是作品集，是那一句：短到能完整搬运，具体到搬运时不走样。</div>
+</div>
+<div class="section">
+<div class="section-label">从你到机会，中间被压缩了三次</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a4" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">每一跳都在压缩，你唯一能控制的是最后那一句的措辞</text>
+<rect fill="#dfeae2" height="88" stroke="#1f7a5c" stroke-width="1.2" width="158" x="20" y="62"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="99" y="88">你做过的全部</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="99" y="108">作品 · 案例 · 文章</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="99" y="124">聊过的每一次天</text>
+<line marker-end="url(#a4)" stroke="#4e8a3f" stroke-width="1.6" x1="180" x2="204" y1="106" y2="106"></line>
+<rect fill="#e2efdc" height="64" stroke="#4e8a3f" stroke-width="1" width="140" x="206" y="74"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="276" y="98">他脑子里剩下的</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="276" y="118">大约一句话</text>
+<line marker-end="url(#a4)" stroke="#4e8a3f" stroke-width="1.6" x1="348" x2="372" y1="106" y2="106"></line>
+<rect fill="#f7faf6" height="48" stroke="#7a9c8a" stroke-width="1" width="126" x="374" y="82"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="437" y="102">他在饭桌上说出口的</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="437" y="120">半句话</text>
+<line marker-end="url(#a4)" stroke="#4e8a3f" stroke-width="1.6" x1="502" x2="526" y1="106" y2="106"></line>
+<rect fill="#eef4f0" height="48" stroke="#7a9c8a" stroke-width="1" width="152" x="528" y="82"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="604" y="102">一个陌生人</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="604" y="120">此刻正好有这个问题</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="180">问题不是「我的作品够不够好」，是「只跟我吃过一次饭的人，</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="198">能不能不走样地在十秒里把我介绍出去」。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="230">机会多来自偶尔才见的人：Granovetter (1973) 的观察，以及 Rajkumar 等 (2022, Science) 在 LinkedIn 两千万人上的随机实验。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：一个跟你只吃过一次饭的人，在别人的饭局上听到「谁认识做小程序的」。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 你给他的是一个头衔</div>
+<p>他记得的是「我认识一个挺厉害的工程师」。<strong>这句话在饭桌上不会被说出口</strong>——说了会被追问「厉害在哪」，他答不上来，显得随便。<strong>为了不尴尬，他选择不说。</strong>你损失了一个机会，而且永远不会知道。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 你给他的是一句能安全转述的话</div>
+<p>他记得的是「我认识一个专门给咖啡店改点单流程的，说是能把下单从七步压到三步」。<strong>这句话他敢说</strong>：具体、有画面、被追问也答得上（「他做过十来家」），说出来还显得他消息灵通。<strong>让转述者不丢脸，是你能给他的最大帮助。</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">话术模板 · 主动给出那一句</div>
+<div class="template">
+<span class="label">递给对方的转述句</span>
+<p>见完一个人，临走补一句：「以后碰到有人 <strong>[具体问题]</strong>，你就说 <strong>[一句话定位 + 一个数字]</strong>，记这一句就够。」<strong>直接把稿子给他，别指望他自己总结。</strong></p>
+<p>三条缺一不可：<strong>不超过二十个字、含一个能追问的细节、说出来对他有面子。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Opportunity rarely arrives through the handful of people you actively maintain — they know roughly what you know. It arrives through people who only occasionally think of you, in a conversation you'll never hear about, and all they can carry is one sentence. That makes the sentence, not the portfolio, the thing worth polishing. The bottleneck is social, not artistic: a vague compliment ("she's really good") won't get said out loud, because saying it invites a follow-up question the speaker can't answer, and looking careless in front of others is a cost they'd rather avoid. A concrete line with a number in it is safe to repeat — it survives the follow-up and makes the speaker look well-connected. So hand people the script instead of hoping they'll compose one: keep it short enough to carry intact, specific enough that it doesn't drift, and flattering enough to the person repeating it that they want to. And when someone does pass your name on, close the loop and tell them what happened. That's not politeness; it's the only signal that tells them the referral was worth making.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制两条。一、<em>信息的新鲜度来自距离</em>：密友和你活动在同一个圈子，知道的机会和你高度重合；真正的新信息来自那些不常联系、因而处在别的圈子里的人。二、<em>转述有社交成本</em>：替你说话的人在意的不只是帮不帮得上你，还有说这句话会不会让他自己显得没谱。模糊的夸奖会招来追问，答不上就丢脸，所以他宁可不说。你把话写具体，本质上是在替他消除风险——这才是他愿意开口的原因。</strong></p>
+<ul>
+<li><strong>硬证据 · 弱连接带来机会，而且是因果</strong>：Granovetter (1973, <em>AJS</em>) 最早发现，通过熟人找到工作的人里，多数联系人是<strong>「偶尔见」或「很少见」的（约八成），不是亲密朋友</strong>——但这是观察数据，只能说相关。把因果钉死的是 Rajkumar 等 (2022, <em>Science</em>)：LinkedIn 在<strong>约两千万用户</strong>上做的多年随机实验显示，<strong>「中等偏弱」的连接对换工作的因果贡献最大</strong>，最强和最弱的都不如它。大规模随机实验，硬。</li>
+<li><strong>硬证据 · 什么样的东西才会被转发</strong>：Berger &amp; Milkman (2012, <em>JMR</em>) 分析近七千篇《纽约时报》文章并配对照实验：<strong>引发高唤醒情绪（敬畏、愤怒、焦虑）的内容更易被分享，低唤醒的悲伤反而更不会；实用性强的内容也显著更易转发。</strong>大样本 + 实验，硬。含义：让人转述你的是「有用」和「有反差」，不是「很棒」。</li>
+<li><strong>推论 · 转述句要给转述者做面子</strong>：没有直接的对照研究，是从上面两条加日常观察推出的经验规则。<strong>证据强度：弱，属经验之谈</strong>，但成本极低、失败无害。</li>
+</ul>
+<p class="caveat">边界：弱连接的价值来自「关系还在」，不是「关系很浅」——五年没说过话、也从没帮过对方的人不会替你转述，前置是长期的、不带即时目的的给予（「networking 不油腻」那期专门讲）。也别把递转述句做成群发模板。最后一条常被忽略：<strong>有人替你转述之后，一定要回头告诉他结果</strong>——闭环一次，他下次才会再开口。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"If it ever comes up, here's the one line to use." —— 主动递稿。</p>
+<p>"That intro you made turned into a project — thank you, here's how it went." —— 闭环回报。</p>
+<p>"I'd rather be easy to describe than impressive to describe." —— 可转述优先于漂亮。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 31 Action</h3>
+<p>九十分钟，四件事。做完你手上会有一句能被别人原样搬运的话。</p>
+<div class="action">
+<strong>一（20 分钟）：</strong>用三空模板写一句定位，然后<strong>去问三个认识你但不熟的人</strong>：「你会怎么跟别人介绍我？」把原话和你那句并排放。<strong>差距有多大，问题就有多大</strong>——在市场上生效的是他们那句。<br/><br/><strong>二（20 分钟）：</strong>挑一个窄问题，列十二个你能就它反复讲的角度（案例、反例、失败、数字…）。列不满，说明它不够你吃两年。<br/><br/><strong>三（30 分钟）：</strong>就其中一个角度写一篇能单独看懂的东西，必须含<strong>一个可核对的细节</strong>，末尾留一个能回来的地址。今天发出去，别存草稿。<br/><br/><strong>四（20 分钟）：</strong>把定位改写成一句<strong>二十字以内、带一个数字、说出来显得转述者消息灵通</strong>的话，发给最近见过的两个人：「以后有人问起，你就说这一句。」<br/><br/>边界提醒：这套动作提高的是被想起和被转述的概率，<strong>替代不了你真的有本事</strong>。转述句里的数字要是编的，第一个客户就会拆穿，代价远高于你原本能赚的。定位也不是文身，每年检验一次、过期就换——但别每三个月换，那等于从头开始。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我很内向，一想到「经营个人品牌」就浑身不自在，是不是不适合？</summary>
+<div class="answer">先把这个词拆开：让你不适合的那部分——出镜、造人设、把日常表演成成功——本来就不是这里讲的东西，而且它复利最差，人设要持续供养，一停就塌。<strong>上面四件事没有一件需要你外向</strong>，全都可以在自己桌子前做完。<br/><br/>内向在这件事上还有个真实优势：<strong>可信度来自具体，而具体来自做过的事</strong>，不来自表达的密度。只写十篇但每篇都有可核对细节的人，比每天发三条观点的人更容易被记成「靠谱」。要克服的不是性格，是「让人看见我算不算不要脸」那种羞耻感——解法是把叙述从「我很厉害」换成「这件事我这样做的，数据在这」：后者说出口不尴尬，它只是陈述事实。</div>
+</details>
+<details>
+<summary>2. 我还什么都没做出来，现在做个人品牌是不是本末倒置？</summary>
+<div class="answer">如果它指的是先立人设、等本事以后补上，那确实本末倒置，而且是最贵的那种错误——名声跑在能力前面时，来的机会你接不住，接不住一次，信任要好几年才补得回来。<br/><br/>但理解成「<strong>公开地做你本来就在做的事</strong>」就完全不冲突，甚至更快。你在学、在踩坑、在把一件事从不会做到会做，把这个过程写出来本身就是可核对的证据，而且比事后总结更可信——没人能伪造一个真实的困惑。这时你的定位不是「某某专家」，是「<strong>正在把某个具体问题弄明白的人</strong>」，这句话你现在就能诚实说出口，也真的吸引得到同样卡在这里的人。<br/><br/>唯一红线是别把「正在学」说成「已经会」。</div>
+</details>
+<details>
+<summary>3. 平台会变、算法会变、粉丝也不真属于我，做这些会不会几年后归零？</summary>
+<div class="answer">分开看。<strong>会归零的是渠道</strong>：平台流量、算法给的推荐位、账号本身——这些从来不是你的资产，是租来的通道。<strong>不会归零的有三样</strong>：因为你解决过他的问题而记住你的人；你写下的那批作品（可以搬到任何地方）；以及反复讲同一件事的过程里真正长出来的判断力。<br/><br/>对策不是不做，是把重心压在这三样上：内容写在自己能带走的地方，把「关注」尽量转成一个你手上有的联系方式（邮件列表最土也最耐用），始终用作品说话而不是用平台头衔说话。<br/><br/>更根本的一条：<strong>就算渠道全部归零，「一个具体问题出现时你被想起来」也不会归零</strong>——它存在别人脑子里，不在任何公司的服务器上。这也是定位要做窄的原因：窄的东西才在人脑里存得住，而人脑是唯一不改算法的平台。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 31</footer>
+</div>
+</body>
+</html>

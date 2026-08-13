@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 31: Personal Branding</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 31 · Phase E</div>
+<h1>A personal brand isn't more people knowing you<br/>It's a few people thinking of you first, for one specific thing</h1>
+<div class="meta"><span>Retrievability &gt; reach · don't be a "better someone" · content that compounds · one repeatable sentence</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">What you're short of isn't exposure. It's a hook that pulls your name out of someone's memory the second they need it.</div>
+</header>
+<div class="intro">
+<strong>Most personal-brand effort fails in a place nobody looks: it grows the number of people who know you without raising the odds that anyone thinks of you.</strong> Those sound like the same thing and they often run in opposite directions — post a bit of everything and yes, more people know your name, but each person's impression of you gets spread thinner, thin enough that when a concrete opportunity appears there's no link strong enough to reach you. <strong>So the real problem is two practical ones: in the three seconds when someone needs to find a person, what makes your name surface — and in the conversations you're not in, what exactly can somebody say on your behalf.</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>The goal isn't to be known — it's to be retrieved when one specific cue appears
+<span class="en">A brand is not awareness. It's the probability your name surfaces when a specific problem shows up.</span></h2>
+<span class="tag">cue-dependent recall</span><span class="tag">fan effect</span><span class="tag">narrow is leverage</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Nobody searches for you. People only hit a problem and ask themselves one question: <strong>"who do I know for this?"</strong> — and what a personal brand actually produces is the probability your name surfaces at that moment. So the work isn't spreading yourself out. It's welding yourself to one concrete problem: <strong>fewer links, and every one of them thicker.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">Why "I can do anything" means "nobody can recall you"</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerHeight="7" markerUnits="userSpaceOnUse" markerWidth="9" orient="auto" refX="8" refY="3.5">
+<path d="M0,0 L9,3.5 L0,7 z" fill="#8d9aa8"></path>
+</marker>
+<marker id="a1b" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="11" refY="5">
+<path d="M0,0 L12,5 L0,10 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">The cue in their head is a problem. Whether it reaches you depends on link strength.</text>
+<line stroke="#d5dce4" stroke-width="1" x1="350" x2="350" y1="38" y2="262"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="178" y="50">A little of six things</text>
+<rect fill="#f6e3da" height="22" stroke="#c0603a" stroke-width="0.8" width="112" x="24" y="62"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="80" y="77">front-end dev</text>
+<rect fill="#f6e3da" height="22" stroke="#c0603a" stroke-width="0.8" width="112" x="24" y="90"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="80" y="105">back-end architecture</text>
+<rect fill="#f6e3da" height="22" stroke="#c0603a" stroke-width="0.8" width="112" x="24" y="118"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="80" y="133">product design</text>
+<rect fill="#f6e3da" height="22" stroke="#c0603a" stroke-width="0.8" width="112" x="24" y="146"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="80" y="161">data analysis</text>
+<rect fill="#f6e3da" height="22" stroke="#c0603a" stroke-width="0.8" width="112" x="24" y="174"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="80" y="189">brand consulting</text>
+<rect fill="#f6e3da" height="22" stroke="#c0603a" stroke-width="0.8" width="112" x="24" y="202"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="80" y="217">photo and video</text>
+<line marker-end="url(#a1)" stroke="#8d9aa8" stroke-width="1" x1="140" x2="246" y1="73" y2="136"></line>
+<line marker-end="url(#a1)" stroke="#8d9aa8" stroke-width="1" x1="140" x2="246" y1="101" y2="138"></line>
+<line marker-end="url(#a1)" stroke="#8d9aa8" stroke-width="1" x1="140" x2="246" y1="129" y2="140"></line>
+<line marker-end="url(#a1)" stroke="#8d9aa8" stroke-width="1" x1="140" x2="246" y1="157" y2="144"></line>
+<line marker-end="url(#a1)" stroke="#8d9aa8" stroke-width="1" x1="140" x2="246" y1="185" y2="146"></line>
+<line marker-end="url(#a1)" stroke="#8d9aa8" stroke-width="1" x1="140" x2="246" y1="213" y2="148"></line>
+<rect fill="#eceee8" height="34" stroke="#9aa89c" stroke-width="1" width="64" x="252" y="125"></rect>
+<text fill="#8a988c" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="284" y="147">YOU</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.8" text-anchor="middle" x="178" y="250">One name carrying six things</text>
+<text fill="#8d9aa8" font-family="Georgia" font-size="9.8" text-anchor="middle" x="178" y="266">activation is divided across every link</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="522" y="50">Welded to one problem</text>
+<rect fill="#dfeae2" height="26" stroke="#1f7a5c" stroke-width="1.2" width="176" x="368" y="128"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" text-anchor="middle" x="456" y="145">coffee-shop ordering apps</text>
+<line marker-end="url(#a1b)" stroke="#1f7a5c" stroke-width="4" x1="548" x2="586" y1="141" y2="141"></line>
+<rect fill="#1f7a5c" height="34" width="64" x="592" y="124"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="624" y="146">YOU</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.8" text-anchor="middle" x="522" y="250">Only one path leads to you</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.8" text-anchor="middle" x="522" y="266">cue appears, and you are the answer</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="296">The mechanism on the left is the fan effect (Anderson, 1974): the more facts attached to a concept, the slower and less accurate retrieval of any one of them.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: you're an engineer looking for freelance work, and a friend is about to introduce you in a group chat in one sentence.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Spread thin</div>
+<p>"He's a full-stack engineer, writes front and back end, knows some product and design, good to talk to about anything." <strong>People nod politely and nothing happens.</strong> Nobody's problem is shaped like "I need someone good to talk to about anything" — their problem is "our checkout flow is painful."</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Welded to one cue</div>
+<p>"He rebuilds ordering apps for coffee shops. <strong>Done a dozen or so — the standard result is cutting the order from seven taps to three.</strong>" Your ability didn't change; your retrievability did. To anyone currently suffering through a checkout flow, that sentence is a key. Anyone without the problem was never going to be your client.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Script template · your one-line position</div>
+<div class="template">
+<span class="label">Three blanks</span>
+<p>"I help <strong>[someone narrow enough that you can picture a face]</strong> with <strong>[the problem in the words they'd actually use]</strong>, by <strong>[a method that costs something to copy]</strong>."</p>
+<p>Self-check: say it to a friend outside your field. If they can <strong>repeat it back verbatim</strong>, it passes. If they ask "so what do you actually do", it isn't narrow enough yet.</p>
+<p>Words to delete: empower, connect, end-to-end, years of experience, professional team. What they share is that removing them changes nothing.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>The mechanism is how memory is retrieved, not how much attention people pay you. Brains don't index by name, they <em>index by cue</em>: the more the cue present now overlaps with the cue that was there at encoding, the easier the recall. And the more things a concept carries, the more thinly activation spreads across those links — every extra label you claim costs a little strength on all the others. So "narrow" isn't modesty. It's concentrating limited activation on a single line.</strong></p>
+<ul>
+<li><strong>Hard evidence · retrieval runs on cue overlap</strong>: Tulving &amp; Thomson (1973, <em>Psychological Review</em>), the encoding specificity principle — whether something comes back depends on <strong>whether the retrieval cue matches the cue present at encoding</strong>; a cue that wasn't stored alongside the memory fails to reach it even when it's semantically related. A classic paradigm, well replicated, hard. Neurally, cue-driven retrieval of this kind depends on <strong>hippocampal and medial temporal lobe</strong> pattern completion (a partial cue restoring the whole trace), which is consensus in memory neuroscience. Honest note: extending it to personal branding is an inference — there's no imaging work on branding itself.</li>
+<li><strong>Hard evidence · more attached, slower to retrieve</strong>: Anderson (1974, <em>Cognitive Psychology</em>), the fan effect — the more facts associated with a concept, the <strong>longer the response time and the higher the error rate</strong> for verifying any single one. Reliably replicated, and the foundation of the ACT-R memory model. Hard. This is close to a direct costing of "I do a bit of everything".</li>
+<li><strong>Related evidence · what comes to mind gets chosen</strong>: Tversky &amp; Kahneman (1973), the availability heuristic — people judge probability and importance by how easily examples come to mind. When someone is looking for a person, whoever surfaces first often just takes the opportunity, because most people never run a full search. Strength: the phenomenon is solid, but the step from "easily recalled" to "gets the work" is an inference.</li>
+</ul>
+<p class="caveat">Boundaries: narrow positioning is leverage for <strong>someone who isn't being thought of yet</strong>. Once you're firmly recalled in a slot, narrow turns from leverage into a ceiling, and the move is to extend into the adjacent slot rather than keep hammering the same nail. Also, what's narrow is the <strong>label you show outward</strong>, not your actual capability. Do whatever you like privately — but every extra thing you announce blunts the hook.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"I'm the person you call when your checkout flow is a mess." —— define yourself by when to call you.</p>
+<p>"That's adjacent to what I do, but it's not what I'd want to be hired for." —— politely stay out of other boxes.</p>
+<p>"If you remember one thing about me, make it this." —— tell them which one thing to keep.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>Don't be a better someone — be the one that can't be price-compared
+<span class="en">"Better" puts you in a ranked list. "Different" takes you out of it.</span></h2>
+<span class="tag">evaluability</span><span class="tag">joint vs separate evaluation</span><span class="tag">category prototype</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Say you're "a better designer" and they slot you into a list of five names to rank — <strong>and the only dimension an outsider can clearly compare on that list is price.</strong> Say you're "the person who only does one particular thing" and the list has one row. Their question shifts from "who's cheapest" to "is this worth doing", and the second question is one you can help answer.</div>
+</div>
+<div class="section">
+<div class="section-label">Same person, two ways of being evaluated</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">How you describe yourself decides which comparison you land in</text>
+<line stroke="#d5dce4" stroke-width="1" x1="350" x2="350" y1="38" y2="256"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="176" y="52">"I'm a better designer"</text>
+<rect fill="#f7faf6" height="24" stroke="#c2ccbe" stroke-width="0.8" width="264" x="44" y="66"></rect>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" x="54" y="82">Designer A</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" text-anchor="end" x="298" y="82">$1,100</text>
+<rect fill="#f7faf6" height="24" stroke="#c2ccbe" stroke-width="0.8" width="264" x="44" y="94"></rect>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" x="54" y="110">Designer B</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" text-anchor="end" x="298" y="110">$900</text>
+<rect fill="#f6e3da" height="24" stroke="#c0603a" stroke-width="1.2" width="264" x="44" y="122"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" x="54" y="138">You</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="end" x="298" y="138">$970</text>
+<rect fill="#f7faf6" height="24" stroke="#c2ccbe" stroke-width="0.8" width="264" x="44" y="150"></rect>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" x="54" y="166">Designer D</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" text-anchor="end" x="298" y="166">$720</text>
+<rect fill="#f7faf6" height="24" stroke="#c2ccbe" stroke-width="0.8" width="264" x="44" y="178"></rect>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" x="54" y="194">Designer E</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.8" text-anchor="end" x="298" y="194">$660</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.8" text-anchor="middle" x="176" y="228">Their action is to rank</text>
+<text fill="#8d9aa8" font-family="Georgia" font-size="9.8" text-anchor="middle" x="176" y="244">and the only comparable column is price</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="524" y="52">"I only shoot hero images for appliance listings"</text>
+<rect fill="#dfeae2" height="34" stroke="#1f7a5c" stroke-width="1.4" width="264" x="392" y="117"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" x="404" y="139">You</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="end" x="646" y="139">$1,650</text>
+<line marker-end="url(#a2)" stroke="#3f5c7a" stroke-width="1.4" x1="524" x2="524" y1="176" y2="196"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.8" text-anchor="middle" x="524" y="212">There is no second row to compare against</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.8" text-anchor="middle" x="524" y="230">their action becomes "is this worth doing"</text>
+<text fill="#8d9aa8" font-family="Georgia" font-size="9.8" text-anchor="middle" x="524" y="246">and that question you're qualified to answer</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="288">Mechanism: the evaluability hypothesis (Hsee, 1996) — attributes people can't judge alone only move decisions when there's something to compare.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: you're a freelance photographer. You quoted $1,650 to a small appliance brand and they say "someone else quoted $700".</div>
+<div class="dialog bad">
+<div class="speaker">✗ Defending inside the same list</div>
+<p>"My gear is better, I've got more experience, the quality isn't the same." <strong>That sentence accepts the premise that you're in the same column.</strong> And "better" is exactly the attribute a buyer can't verify before ordering — the one they can verify is price, so price is where you lose.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Replace the list they're comparing on</div>
+<p>"That $700 is general product photography, and it'll look good. <strong>I do a different thing: only the first image on the listing, because that one decides whether the person who clicked stays.</strong> I have before-and-after numbers from three brands in your category — the last one went from 2.1% to 3.4% click-through. So the question isn't whether $1,650 is expensive, it's <strong>whether the extra clicks are worth $950</strong> — and we can work that out together."</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Two layers. First, <em>evaluability</em>: some attributes simply can't be judged good or bad in isolation, so the moment you're placed side by side, the hard-to-evaluate strengths (taste, judgement, experience) go inert and only the most comparable column drives the decision. Second, <em>category membership</em>: people classify and remember by "what's most typical of this kind", so what you want isn't a higher rank inside an old category — it's being the only obvious occupant of a new, narrow one. Together those two explain how the same person can be worth twice as much.</strong></p>
+<ul>
+<li><strong>Hard evidence · judged alone and side by side, the answer flips</strong>: Hsee (1996, <em>OBHDP</em>), the dictionary study — one dictionary with fewer entries but in perfect condition, another with twice the entries but a torn cover. <strong>Evaluated separately, people pay more for the intact one; evaluated side by side, the order reverses.</strong> Because "10,000 versus 20,000 entries" means nothing to someone with no reference point. A repeatedly replicated effect, hard. It says directly: <strong>the comparison you're placed in determines price more than your actual merit does.</strong></li>
+<li><strong>Hard evidence · people classify by prototype</strong>: Rosch (1975, <em>JEP: General</em>), prototype effects — within a category, the more typical a member is, the faster and more accurately it's judged and recalled. Solid cognitive psychology, hard. That <strong>being the prototype of a narrow category beats being seventh in a broad one</strong> is my inference, not the original finding.</li>
+<li><strong>Practitioner lore · the skill stack</strong>: "you don't need to be top at any one thing, only rare at the intersection of two or three" (Scott Adams' talent stack). <strong>Pure anecdote, no controlled work, heavy survivorship bias.</strong> Fine as a way of thinking, not as a law.</li>
+</ul>
+<p class="caveat">Boundaries: differentiation is not inventing a category nobody wants. There's exactly one test — <strong>is anyone already spending money on the thing you just named?</strong> If not, that isn't positioning, it's hiding. The other common failure is going so narrow that the listener has no existing slot to file you under, so they neither remember nor repeat you — narrow, but adjacent to a concept they already hold. As for the price itself, the unbundling-and-comparison work from the "that's too expensive" issue applies directly here.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"That's a different service, not a cheaper version of mine." —— refuse the side-by-side.</p>
+<p>"The question isn't whether I'm expensive — it's whether this is worth doing at all." —— swap the question.</p>
+<p>"I'd rather be the obvious choice for a few people than an option for everyone." —— a stateable positioning line.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Content compounds: one investment, delivered indefinitely
+<span class="en">One-to-one trust is linear. Content is the only way it compounds.</span></h2>
+<span class="tag">mere exposure</span><span class="tag">processing fluency</span><span class="tag">repetition suppression</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Building trust one person at a time is linear: every new person costs you the whole process again. Content turns "proving myself" into one investment delivered an unlimited number of times. <strong>But what compounds isn't posting frequency — it's the same spot being hit over and over.</strong> Fifty pieces on one narrow problem stack into an expert; fifty pieces on everything stack into a stranger.</div>
+</div>
+<div class="section">
+<div class="section-label">Two ways of building trust, two different shapes</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a3" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Vertical: people who already trust you　　Horizontal: months of sticking with it</text>
+<line stroke="#8d9aa8" stroke-width="1.2" x1="70" x2="70" y1="48" y2="270"></line>
+<line stroke="#8d9aa8" stroke-width="1.2" x1="70" x2="660" y1="270" y2="270"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="70" y="286">0</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="217" y="286">6</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="364" y="286">12</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="511" y="286">18</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="658" y="286">24</text>
+<line stroke="#c0603a" stroke-width="2" x1="70" x2="658" y1="268" y2="182"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="400" y="252">one-to-one: one lunch, one person</text>
+<path d="M70,269 C 190,266 280,258 364,236 C 470,208 560,130 658,58" fill="none" stroke="#1f7a5c" stroke-width="2.4"></path>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" x="360" y="52">content: the same spot, hit repeatedly</text>
+<line stroke="#8d9aa8" stroke-dasharray="4 4" stroke-width="1" x1="290" x2="290" y1="80" y2="270"></line>
+<line marker-end="url(#a3)" stroke="#3f5c7a" stroke-width="1.4" x1="196" x2="278" y1="96" y2="128"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" x="96" y="82">most people quit in this stretch:</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" x="96" y="98">the cost is paid, the return hasn't started</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="308">Note: the curve shapes are illustrative, not data. Real timescales depend on field, channel and luck — there is no universal curve.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Checklist · four disciplines that make content actually compound</div>
+<ul class="checklist">
+<li><strong>Say the same problem fifty times.</strong> New angle, new case, new counter-example each time, but always landing on that one narrow problem — you repeat the position, not the sentence.</li>
+<li><strong>Every piece must stand alone.</strong> Most people arrive at something in the middle with none of the earlier context. "As I said last time" is a way of turning new readers away.</li>
+<li><strong>Every piece leaves something checkable.</strong> A number, a real case, code that runs, a post-mortem of a failure. Opinions can't be checked; only these turn "sounds like he knows" into "he knows".</li>
+<li><strong>Every piece has an address people can come back to.</strong> Platforms change and accounts vanish; you need a landing point you can carry away. This is the least satisfying item today and the most valuable in two years.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Three layers stacked. One, <em>mere exposure</em>: seeing the same thing repeatedly raises liking on its own, no reason required. Two, <em>processing fluency</em>: familiar material is cheaper to process, and the brain misreads that ease as familiarity and as "this is probably true". Three, <em>repetition suppression</em>: repeated stimuli genuinely produce weaker cortical responses and lower processing cost — the physical floor under the first two. Net effect: appear in the same spot often enough and people conclude you probably know your subject without reading your whole body of work.</strong></p>
+<ul>
+<li><strong>Hard evidence · seeing more means liking more</strong>: Zajonc (1968, <em>JPSP</em>), the mere exposure effect; Bornstein (1989, <em>Psychological Bulletin</em>), a meta-analysis of 200-plus studies, confirms the effect is robust and that it is <strong>stronger when participants don't consciously register having seen the stimulus</strong> — meaning it doesn't depend on remembering what you said. Meta-analytic, hard. The same meta-analysis also shows the effect <strong>declines past a certain number of exposures</strong>: it's an inverted U, not "more is always better".</li>
+<li><strong>Hard evidence · repetition makes things feel true</strong>: Hasher, Goldstein &amp; Toppino (1977) first reported the illusory truth effect; Dechêne et al. (2010, <em>PSPR</em>) confirmed by meta-analysis that <strong>a repeated statement is rated as more likely to be true</strong>. Direction stable, hard.</li>
+<li><strong>Hard evidence (brain mechanism) · repetition makes processing cheap</strong>: Grill-Spector, Henson &amp; Martin (2006, <em>Trends in Cognitive Sciences</em>) review repetition suppression — when a stimulus repeats, <strong>neural responses in the relevant cortical regions (e.g. the occipitotemporal visual pathway) drop markedly</strong> while behaviour gets faster and more accurate. Consistent across fMRI and single-unit recording, hard. Subjectively, that "this got easier" is precisely the feeling read as familiarity and credibility.</li>
+</ul>
+<p class="caveat">The ethical line has to be stated plainly: <strong>repetition can only make a sentence easier to accept — it cannot make a wrong claim right.</strong> Apply it to something you haven't verified and you're trading someone else's cognitive shortcut for your own reach, which is exactly the persuasion-versus-manipulation boundary the six principles of influence issue draws. And illusory truth <strong>works on you too</strong>: a positioning line you've repeated for three years will feel true to you long after it expired, so run an external check once a year — ask real clients, not your own readers. Failure mode: what compounds is the same <em>position</em> being repeated; repeating the same sentence just becomes tiresome.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"I've been writing about this one thing for two years." —— duration as a credential.</p>
+<p>"Same idea, different angle — here's what changed my mind since." —— repeat the position, not the sentence.</p>
+<p>"Everything I know about this is public; hiring me is just faster." —— public work as proof.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>What actually brings work is the sentence someone says when you're not there
+<span class="en">Your growth ceiling isn't how many people you meet — it's what they can say about you when you're not there.</span></h2>
+<span class="tag">weak ties</span><span class="tag">repeatability</span><span class="tag">why things get shared</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Opportunity almost never comes from the handful of close contacts you actively maintain — their information overlaps with yours. It comes from people who only occasionally think of you, in a conversation you'll never hear about. <strong>And all they can carry is one sentence.</strong> So the thing worth polishing isn't your portfolio, it's that sentence: short enough to carry intact, specific enough not to drift.</div>
+</div>
+<div class="section">
+<div class="section-label">From you to the opportunity, compressed three times</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a4" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Every hop compresses. The only part you control is the wording of the last one.</text>
+<rect fill="#dfeae2" height="88" stroke="#1f7a5c" stroke-width="1.2" width="158" x="20" y="62"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="99" y="88">everything you've done</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="99" y="108">work · cases · writing</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="99" y="124">every conversation</text>
+<line marker-end="url(#a4)" stroke="#4e8a3f" stroke-width="1.6" x1="180" x2="204" y1="106" y2="106"></line>
+<rect fill="#e2efdc" height="64" stroke="#4e8a3f" stroke-width="1" width="140" x="206" y="74"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="276" y="98">what stayed in his head</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="276" y="118">about one sentence</text>
+<line marker-end="url(#a4)" stroke="#4e8a3f" stroke-width="1.6" x1="348" x2="372" y1="106" y2="106"></line>
+<rect fill="#f7faf6" height="48" stroke="#7a9c8a" stroke-width="1" width="126" x="374" y="82"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="437" y="102">what he says at dinner</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="437" y="120">half a sentence</text>
+<line marker-end="url(#a4)" stroke="#4e8a3f" stroke-width="1.6" x1="502" x2="526" y1="106" y2="106"></line>
+<rect fill="#eef4f0" height="48" stroke="#7a9c8a" stroke-width="1" width="152" x="528" y="82"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="604" y="102">a stranger</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="604" y="120">who happens to have that problem</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="180">So the question isn't "is my work good enough". It's "can someone who had lunch</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" x="20" y="198">with me once introduce me in ten seconds without it drifting".</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="230">Opportunity mostly arrives via people seen occasionally: Granovetter (1973), and the randomized LinkedIn experiment on ~20M users in Rajkumar et al. (2022, Science).</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: someone who had lunch with you exactly once hears "does anyone know a good app developer?" at a dinner.</div>
+<div class="dialog bad">
+<div class="speaker">✗ What you gave him was a title</div>
+<p>What he remembers is "I know a really good engineer". <strong>That sentence never gets said out loud</strong> — saying it invites "good at what", he can't answer, and he looks careless. <strong>To avoid the awkwardness he says nothing.</strong> You lost an opportunity, and you'll never know it existed.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ What you gave him was a safe sentence</div>
+<p>What he remembers is "I know someone who only rebuilds ordering flows for coffee shops — says he gets it from seven taps down to three". <strong>He'll say that one</strong>: concrete, visual, survivable under follow-up ("he's done a dozen"), and saying it makes him look well-connected. <strong>Not making the messenger look bad is the biggest favour you can do him.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Script template · hand them the line</div>
+<div class="template">
+<span class="label">The sentence you leave behind</span>
+<p>As you're leaving a meeting, add: "If you ever run into someone with <strong>[specific problem]</strong>, just say <strong>[your one-line position + one number]</strong> — that one line is enough." <strong>Hand them the script; don't expect them to write it.</strong></p>
+<p>All three are required: <strong>under twenty words, containing one detail that survives a follow-up, and flattering to the person repeating it.</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Two mechanisms. One, <em>fresh information comes from distance</em>: close friends move in your circles and know roughly the openings you already know; genuinely new information comes from people you're not in regular contact with, precisely because they sit in other circles. Two, <em>passing your name on has a social cost</em>: the person speaking for you cares not only whether they help you but whether saying it makes them look unreliable. A vague compliment invites a follow-up they can't answer, so they'd rather stay quiet. Writing the line concretely is really removing their risk — and that's why they open their mouth.</strong></p>
+<ul>
+<li><strong>Hard evidence · weak ties bring opportunity, causally</strong>: Granovetter (1973, <em>AJS</em>) first found that among people who found jobs through contacts, most of those contacts were seen <strong>"occasionally" or "rarely" (roughly 80%), not close friends</strong> — but that's observational, so correlation only. What nails causality is Rajkumar et al. (2022, <em>Science</em>): multi-year randomized experiments on <strong>about 20 million LinkedIn users</strong> showing <strong>moderately weak ties contribute the most causally to job mobility</strong>, more than either the strongest or the weakest. Large-scale randomized experiment, hard.</li>
+<li><strong>Hard evidence · what actually gets passed on</strong>: Berger &amp; Milkman (2012, <em>JMR</em>) analysed nearly 7,000 <em>New York Times</em> articles alongside controlled experiments: <strong>content producing high-arousal emotion (awe, anger, anxiety) is shared more, low-arousal sadness less; practically useful content is also shared significantly more.</strong> Large sample plus experiment, hard. The implication: what gets you repeated is "useful" and "surprising", not "impressive".</li>
+<li><strong>Inference · the line should flatter the messenger</strong>: no direct controlled work on this one; it's a rule of thumb derived from the two above plus ordinary observation. <strong>Weak evidence, practitioner lore</strong> — but the cost is near zero and failure is harmless.</li>
+</ul>
+<p class="caveat">Boundaries: the value of weak ties comes from "the relationship still exists", not from "the relationship is thin" — someone you haven't spoken to in five years and have never helped won't speak for you, so the precondition is long-run giving with no immediate agenda (the networking issue covers exactly this). Don't turn the handed-over line into a mass-mailed template either. And the most-skipped step: <strong>when someone does pass your name on, go back and tell them what happened</strong> — close the loop once, and they'll speak up again.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"If it ever comes up, here's the one line to use." —— hand over the script.</p>
+<p>"That intro you made turned into a project — thank you, here's how it went." —— close the loop.</p>
+<p>"I'd rather be easy to describe than impressive to describe." —— repeatable beats polished.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 31 Action</h3>
+<p>Ninety minutes, four things. You'll end up with a sentence someone else can carry verbatim.</p>
+<div class="action">
+<strong>1 (20 min):</strong> Write a position using the three-blank template, then <strong>ask three people who know you but aren't close</strong>: "how would you introduce me to someone?" Put their exact words next to yours. <strong>The gap is the size of your problem</strong> — theirs is the version operating in the market.<br/><br/><strong>2 (20 min):</strong> Pick one narrow problem and list twelve angles you could keep writing about it from (a case, a counter-example, a failure, a number...). If you can't fill twelve, it won't feed you for two years.<br/><br/><strong>3 (30 min):</strong> Write one of those angles up so it stands alone, containing <strong>one checkable detail</strong>, ending with an address people can come back to. Publish it today; don't save a draft.<br/><br/><strong>4 (20 min):</strong> Rewrite the position as a line <strong>under twenty words, with one number, that makes whoever repeats it look well-informed</strong>, and send it to two people you've seen recently: "if it ever comes up, just say this."<br/><br/>Boundary note: this raises the odds of being recalled and repeated. <strong>It doesn't substitute for actually being good.</strong> If the number in that line is made up, the first client it brings will find out, and that costs far more than you'd have earned. A position isn't a tattoo either — check it once a year and change it when it expires, but don't change it every three months, which is the same as starting over.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. I'm introverted and the phrase "building a personal brand" makes my skin crawl. Is this not for me?</summary>
+<div class="answer">Split the phrase first. The part that repels you — being on camera, constructing a persona, performing your daily life as success — isn't what any of this is about, and it compounds worst anyway: a persona needs constant feeding and collapses the moment you stop. <strong>None of the four moves above requires you to be extroverted</strong>; every one of them can be done at your own desk.<br/><br/>Introversion carries a real advantage here too: <strong>credibility comes from specifics, and specifics come from things you've done</strong>, not from volume of output. Someone who publishes ten pieces that each contain a checkable detail is remembered as reliable more readily than someone posting three opinions a day. What you actually have to get past isn't your temperament, it's the shame in "is letting people see me shameless?" — and the fix is switching the narration from "I'm very good" to "here's how I did this, here's the data". The second one isn't awkward to say. It's just a statement of fact.</div>
+</details>
+<details>
+<summary>2. I haven't built anything yet. Isn't working on a personal brand backwards?</summary>
+<div class="answer">If it means erecting a persona now and backfilling the ability later, then yes, backwards — and it's the expensive kind of mistake: when reputation runs ahead of ability, the opportunities that arrive are ones you can't hold, and one dropped catch takes years of trust to repair.<br/><br/>But read it as "<strong>doing in public what you were doing anyway</strong>" and there's no conflict at all — it's faster. You're learning, hitting walls, moving something from can't-do to can-do, and writing that process down is itself checkable evidence, more credible than a retrospective because nobody can fake a real confusion. At this stage your position isn't "expert in X", it's "<strong>the person currently working out one specific problem</strong>" — which you can say honestly today, and which genuinely attracts people stuck on the same thing.<br/><br/>The one red line is not describing "learning it" as "know it".</div>
+</details>
+<details>
+<summary>3. Platforms change, algorithms change, and followers aren't really mine. Won't all of this go to zero?</summary>
+<div class="answer">Separate the two. <strong>What goes to zero is channel</strong>: platform traffic, whatever slot the algorithm gives you, the account itself — these were never your assets, they're rented conduits. <strong>Three things don't</strong>: the people who remember you because you solved their problem; the body of work you wrote, which moves anywhere; and the judgement that actually grew while you explained the same thing over and over.<br/><br/>So the response isn't to skip it, it's to put the weight on those three: write where you can take it with you, convert "follows" into a contact method you hold (a mailing list, unglamorous and durable), and speak through work rather than through a platform title.<br/><br/>The deeper answer: <strong>even if every channel resets, "your name surfacing when a specific problem appears" doesn't</strong> — it lives in other people's heads, not on any company's servers. Which is also why the position has to be narrow: narrow things survive in human memory, and human memory is the only platform that never changes its algorithm.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 31</footer>
+</div>
+</body>
+</html>
