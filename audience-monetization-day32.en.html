@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 32: Monetizing an Audience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 32 · Phase E</div>
+<h1>The content that grows an audience<br/>is exactly the content that doesn't sell</h1>
+<div class="meta"><span>Attention → trust → revenue · the ladder sells risk · community · never overdraw trust</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">"It went viral and nobody bought" isn't bad luck. Those two stages run on completely different fuel.</div>
+</header>
+<div class="intro">
+<strong>What stops most people isn't that nobody is watching. It's treating attention, trust and revenue as one thing.</strong> The content each demands actively conflicts: what spreads runs on surprise and emotion, what closes runs on specifics you can check. So the better you get at going viral, the more people arrive and the thinner each one's impression of you becomes — until the day you sell something and the conversion looks like a different account's. <strong>Two things to do: count the three stages separately and fix only the narrowest one, and remember that every pitch is a withdrawal from a finite account.</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Three funnels, three different fuels — one kind of content can't feed all three
+<span class="en">Attention, trust and revenue are three funnels, not one. Each runs on a different fuel.</span></h2>
+<span class="tag">emotional arousal</span><span class="tag">competence vs warmth</span><span class="tag">timing</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Attention runs on <strong>surprise and emotion</strong>, trust runs on <strong>checkable specifics</strong>, and closing needs one more thing: <strong>they happen to have that problem right now</strong>. Different fuels, so "followers up, revenue flat" is the default outcome. Until you count the stages separately, you'll keep pouring effort into the one you're least short of.</div>
+</div>
+<div class="section">
+<div class="section-label">Each stage: its fuel, its trap, its move</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="f1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">One account, three funnels, three completely different jobs</text>
+<rect fill="#dfeae2" height="52" stroke="#1f7a5c" stroke-width="1.2" width="400" x="150" y="46"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="68">ATTENTION · they see you</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="86">fuel: surprise / arousal / instantly usable</text>
+<line marker-end="url(#f1)" stroke="#1f7a5c" stroke-width="1.6" x1="350" x2="350" y1="100" y2="118"></line>
+<rect fill="#e2efdc" height="52" stroke="#4e8a3f" stroke-width="1.2" width="280" x="210" y="120"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="142">TRUST · they think you're solid</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="160">fuel: checkable specifics + time</text>
+<line marker-end="url(#f1)" stroke="#1f7a5c" stroke-width="1.6" x1="350" x2="350" y1="174" y2="192"></line>
+<rect fill="#1f7a5c" height="52" width="170" x="265" y="194"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="216">REVENUE · they pay</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="234">fuel: they have it now</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.3" font-weight="700" x="16" y="62">common trap</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.3" x="16" y="80">more arousal = better</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.3" x="16" y="140">keep chasing virality</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.3" x="16" y="156">more people, thinner trace</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.3" x="16" y="214">sudden pivot to selling</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.3" x="16" y="230">"he's changed"</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.3" font-weight="700" x="562" y="62">the move</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.3" x="562" y="80">keep hooks, narrow</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.3" x="562" y="96">the landing line</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.3" x="562" y="140">one checkable</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.3" x="562" y="156">detail per post</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.3" x="562" y="214">speak only to those</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.3" x="562" y="230">who have it today</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="268" y2="268"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="288">Mechanism: what gets shared skews to high-arousal emotion (Berger &amp; Milkman, 2012); what gets bought skews to the checkable. They conflict.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="308">Note: there is no universal conversion rate between stages — fields differ by orders of magnitude. Treat any round "1% rule" as folklore.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">A worked scene</div>
+<div class="scene">
+<div class="setup">Setup: you teach Excel. A post titled "the shortcut 99% of people don't know" blows up, you gain 20,000 followers, you launch a $30 course. Seven people buy.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Blaming it on "not enough followers yet"</div>
+<p>So you chase more virality, hit 100,000 followers, and sell twenty courses — <strong>a lower conversion rate than before.</strong> People pulled in by "99% don't know this" weren't carrying a problem; they were tickled by a contrast. However many of them arrive, they don't constitute buyers.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Counting the three stages separately</div>
+<p>Keep posting the hooks, but end each one with a line: <strong>"If you're manually merging a dozen department spreadsheets every month, I have a free template for that."</strong> That line grows nothing. What it does is filter broad attention down to people being tormented by that specific thing right now. Twenty thousand may yield three hundred — and those three hundred are the actual entrance to stage two.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Each stage has its own gate. <em>Spread</em> runs on arousal: awe, anger and anxiety drive sharing; calm sadness doesn't. <em>Impression</em> runs along two independent axes — is he capable, and is he on my side — and the warmth judgement comes earlier and weighs more, so a stream of pure expertise grows only one leg. <em>Closing</em> adds timing: no amount of trust converts someone who doesn't have the problem today. The three gates don't substitute for each other.</strong></p>
+<ul>
+<li><strong>Hard evidence · what gets shared</strong>: Berger &amp; Milkman (2012, <em>JMR</em>) analysed nearly seven thousand <em>New York Times</em> articles and ran matched experiments: <strong>content evoking high-arousal emotions (awe, anger, anxiety) is significantly more likely to be shared, while low-arousal sadness is less likely; practically useful content also travels further.</strong> Large-sample observation plus experiment, hard. The implication is direct: the force that moves content and the force that opens wallets are not the same force.</li>
+<li><strong>Hard evidence · trust has two legs</strong>: Fiske, Cuddy &amp; Glick (2007, <em>Trends in Cognitive Sciences</em>) review the <strong>warmth–competence model</strong>: people evaluate others along these two dimensions almost universally, and <strong>warmth is judged faster and weighted more heavily</strong> in the overall impression. Replicated cross-culturally, hard. It's why an account of pure hard-core tips gets read as "impressive but distant" — and distant people don't get handed money. Neurally, forming impressions of others engages <strong>medial prefrontal cortex (especially dorsal mPFC)</strong>, and the strength of that activity predicts whether the information about that person is remembered later (Mitchell, Macrae &amp; Banaji, 2004, <em>J. Neuroscience</em>) — impressions have their own processing, they aren't a by-product of exposure count.</li>
+<li><strong>Weak evidence · specific conversion numbers</strong>: the widely circulated "1–3% of followers convert" is an <strong>industry figure, not a research finding</strong>. It varies by orders of magnitude across categories, and whoever reports it has a strong selective-disclosure incentive. <strong>Use only your own historical numbers as a baseline.</strong></li>
+</ul>
+<p class="caveat">Boundary: separating the stages doesn't mean working all three. <strong>If your price point is high and you only need two or three sales a month, stage one is nearly skippable</strong> — only low-priced standardised products genuinely need volume. Also, warmth can't be faked: its checkable forms are the times you saved a reader money, told them not to buy, or admitted you didn't know. All of those reduce short-term revenue.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"Big audience, small business — those are two different problems." —— name the stage you're short of.</p>
+<p>"This one's not for everyone; here's who should skip it." —— buy warmth with a disqualifier.</p>
+<p>"If that's not your situation, don't buy it." —— saying this is what gives your recommendations weight.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>Every rung of the ladder sells a smaller cost of checking you out, not a lower price
+<span class="en">Each rung doesn't sell a lower price. It sells a cheaper way to check you out.</span></h2>
+<span class="tag">loss aversion</span><span class="tag">risk reversal</span><span class="tag">foot-in-the-door</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">An account with one expensive offer converts badly not because it's expensive, but because there's no step between "scrolled past you" and "wire five thousand". <strong>What the ladder does isn't tier by price, it's let someone verify you at a very small cost.</strong> So the first rung or two aren't for revenue — their KPI is how many people have received one real delivery from you.</div>
+</div>
+<div class="section">
+<div class="section-label">Four rungs, and what each is actually for</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 342" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="f2" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Rightward = more money and trust handed over — which is why the left must be genuinely cheap</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="110" y="242">for: being found</text>
+<rect fill="#eef4f0" height="44" stroke="#7a9c8a" stroke-width="1" width="140" x="40" y="250"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="110" y="270">free content</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="110" y="286">cost: a few minutes</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="260" y="198">for: one verification</text>
+<rect fill="#dfeae2" height="88" stroke="#4e8a3f" stroke-width="1.1" width="140" x="190" y="206"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="260" y="228">the sample</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="260" y="246">one small finished thing</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="260" y="262">template / audit / checklist</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="260" y="278">cost: price of breakfast</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="410" y="142">for: most of the income</text>
+<rect fill="#c9ddd1" height="144" stroke="#1f7a5c" stroke-width="1.2" width="140" x="340" y="150"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="410" y="172">the main offer</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="410" y="190">course / tool / service</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="410" y="206">cost: a real decision</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="565" y="86">for: margin and deep cases</text>
+<rect fill="#1f7a5c" height="200" width="150" x="490" y="94"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="565" y="116">high-end · one-to-one</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9" text-anchor="middle" x="565" y="134">coaching / consulting</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9" text-anchor="middle" x="565" y="150">cost: money, time, face</text>
+<line marker-end="url(#f2)" stroke="#3f5c7a" stroke-width="1.4" x1="40" x2="655" y1="306" y2="306"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="326">Mechanism: loss aversion — "what if it's useless" weighs roughly twice "it might help" (Tversky &amp; Kahneman, 1992, λ≈2). Rungs cut that weight down.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">A worked scene</div>
+<div class="scene">
+<div class="setup">Setup: you're a freelance brand designer with a few thousand followers. Your main offer is a $1,200 identity package. Two sales in six months.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Patching the gap with a discount</div>
+<p>Drop it to $750 and you get three sales — <strong>and annoy the two clients who paid full price.</strong> The discount never touched the real barrier. What they fear isn't that $1,200 is a lot; it's handing $1,200 to someone they've only ever seen online. You lowered the price; their worry was the risk.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Add a sample rung and leave the price alone</div>
+<p>Launch a $30 "brand consistency audit": <strong>they send their existing materials, you return a two-page list within three days naming the three things hurting conversion most, ending with "you can fix these three yourself — if you still want the full system afterwards, come find me."</strong> Thirty dollars didn't buy a discount, it bought a real delivery: your judgement, your response time, what working with you feels like. Someone who's been through that hears $1,200 as a number attached to a person they've worked with, not a stranger.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Script template · four questions per rung</div>
+<div class="template">
+<span class="label">Every rung has to pass these</span>
+<p><strong>1. What risk are they taking?</strong> Money, time, or the face-cost of "buying this makes me look foolish". If you can't answer, you're tiering by price, not by risk.</p>
+<p><strong>2. How big is the jump?</strong> Zero to $1,200 is a cliff. Zero → $30 → $1,200 is two steps.</p>
+<p><strong>3. Does this rung deliver something complete?</strong> The sample must be <strong>useful on its own</strong>. Build it purely to sell the next rung and readers smell it.</p>
+<p><strong>4. Can you take some of the risk yourself?</strong> "Refund if it doesn't help, keep the file" — the refund rate is usually far below the sales it unlocks. It beats discounting because it attacks loss aversion head-on instead of dodging it (the same risk reversal as in the irresistible-offer piece).</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>The barrier is <em>risk, not price</em>. People are markedly more sensitive to losses than to equivalent gains, so "I paid and it was useless" outweighs "this might help". Since the obstacle sits on the loss side, only two moves address it: shrink the amount that can be lost in one go (rungs), or move part of the loss onto yourself (refunds, guarantees, deliver-then-invoice). Discounting does neither — it shrinks the bet without changing the structure of the gamble. One more layer: once someone has bought from you at a small price, "I'm your customer" is already established, so the larger decision no longer starts from zero.</strong></p>
+<ul>
+<li><strong>Hard evidence · losses outweigh gains</strong>: Kahneman &amp; Tversky (1979, <em>Econometrica</em>), prospect theory, with the cumulative version (Tversky &amp; Kahneman, 1992) putting the loss-aversion coefficient <strong>around 2</strong> — an equivalent loss carries roughly twice the psychological weight of a gain. Nobel-level result, direction extremely well replicated, hard. Honest caveat: <strong>2 is an estimate, not a constant</strong>; it shifts with stake size and context, and some work finds loss aversion disappears for small amounts. Use the direction, not the number.</li>
+<li><strong>Moderate evidence · say yes small, then yes big</strong>: Freedman &amp; Fraser (1966, <em>JPSP</em>), the foot-in-the-door effect — people who accept a small request accept a later large one at a significantly higher rate. Classic, but Burger's (1999, <em>PSPR</em>) systematic review notes the <strong>effect is real yet modest and condition-dependent</strong> (no payment for the small request, the two requests must be related). Moderate. Treat it as a bonus, not the load-bearing wall.</li>
+<li><strong>Practitioner lore · the specific ladder shape</strong>: the "lead magnet → core offer → high ticket" structure comes from marketing practitioners (Hormozi, Brunson and similar). <strong>No controlled research supports that particular structure, and the case examples carry heavy survivorship bias — evidence strength: weak.</strong> What's credible is the loss aversion underneath, not "you must have four rungs".</li>
+</ul>
+<p class="caveat">Three failure modes. <strong>One, the sample is too thin</strong>: they open it, see an advert, and the trust you lose is worth more than the extra sales. <strong>Two, too many rungs</strong>: each one spends a decision, and two or three is usually enough. <strong>Three, mismatch</strong>: in genuine high-ticket B2B, what they want is a peer referral and prior case work, not a $30 trial — there the rung should be a free deep-dive diagnostic session. Different form, same mechanism.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"Try the small one first — it's useful even if you never buy the big one." —— make the sample self-sufficient.</p>
+<p>"If it doesn't help, I'll refund it and you keep the file." —— take the risk onto yourself.</p>
+<p>"It's not that it's expensive. It's that you don't know me yet." —— name the real barrier.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>The turning point: you stop being the only source of trust and become one node
+<span class="en">A community works the day members start trusting each other instead of only you.</span></h2>
+<span class="tag">need to belong</span><span class="tag">peer testimony</span><span class="tag">network effects</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">While you're the only source of trust, your ceiling is your own time — stop posting and the value hits zero. <strong>The day members start answering each other is the first time you own something that appreciates without you.</strong> But a community is not a shortcut: a quiet group is a negative asset, telling every member daily that nobody's here.</div>
+</div>
+<div class="section">
+<div class="section-label">Star vs mesh: where the trust is stored</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 306" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Same eight people. The difference is where the lines run.</text>
+<line stroke="#d5dce4" stroke-width="1" x1="350" x2="350" y1="36" y2="258"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="175" y="46">STAR: every line runs to you</text>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="263" y1="156" y2="156"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="237" y1="156" y2="94"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="175" y1="156" y2="68"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="113" y1="156" y2="94"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="87" y1="156" y2="156"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="113" y1="156" y2="218"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="175" y1="156" y2="244"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="237" y1="156" y2="218"></line>
+<circle cx="263" cy="156" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="237" cy="94" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="175" cy="68" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="113" cy="94" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="87" cy="156" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="113" cy="218" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="175" cy="244" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="237" cy="218" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="175" cy="156" fill="#c0603a" r="24"></circle>
+<text fill="#fbf4f0" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="175" y="161">YOU</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="175" y="274">ceiling = your own time</text>
+<text fill="#8d9aa8" font-family="Georgia" font-size="9.6" text-anchor="middle" x="175" y="290">you stop, value goes to zero</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="525" y="46">MESH: members connected too</text>
+<line stroke="#7a9c8a" stroke-width="1" x1="613" x2="587" y1="156" y2="94"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="587" x2="525" y1="94" y2="68"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="525" x2="463" y1="68" y2="94"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="463" x2="437" y1="94" y2="156"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="437" x2="463" y1="156" y2="218"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="463" x2="525" y1="218" y2="244"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="525" x2="587" y1="244" y2="218"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="587" x2="613" y1="218" y2="156"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="587" x2="463" y1="94" y2="218"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="525" x2="525" y1="68" y2="244"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="613" x2="437" y1="156" y2="156"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="463" x2="587" y1="94" y2="218"></line>
+<circle cx="613" cy="156" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="587" cy="94" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="525" cy="68" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="463" cy="94" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="463" cy="218" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="525" cy="244" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="587" cy="218" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="437" cy="156" fill="#1f7a5c" r="18"></circle>
+<text fill="#f3f1ea" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="437" y="160">YOU</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" text-anchor="middle" x="525" y="274">value accrues while you're away</text>
+<text fill="#8d9aa8" font-family="Georgia" font-size="9.6" text-anchor="middle" x="525" y="290">but an empty room is worse than none</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Checklist · four rules that turn a star into a mesh</div>
+<ul class="checklist">
+<li><strong>The first thing on joining is an intro template, not a welcome message.</strong> "What you're working on / where you're stuck / <strong>what you can help with</strong>" — the third prompt is where the mesh starts, and it's the one most groups omit.</li>
+<li><strong>Don't jump on questions.</strong> Wait six hours. If you always answer fast and well, members never answer each other. The first peer-to-peer reply is worth more than a hundred brilliant ones from you.</li>
+<li><strong>Small on purpose.</strong> Thirty people doing the same thing beat three thousand who came for a free file. Volume doesn't bring energy, it brings dilution — once the topics scatter, everyone feels there's nobody here like them.</li>
+<li><strong>Praise mutual help in public, not just results.</strong> What you praise is what grows. Praise "look how much X earned" and you get comparison and silence; praise "she solved that problem for someone yesterday" and you get a mesh.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Two mechanisms. First, <em>belonging is itself a motive</em>: a large part of why people stay isn't information, it's "there are others in my situation" — a basic need rather than a bonus, which is why community retention curves look nothing like content-account curves. Second, <em>who says it decides what it's worth</em>: the same sentence, "this genuinely helped", carries an obvious incentive when you say it and none when an unaffiliated member does. A community's value is that it makes the second kind of voice common, visible and interrogable.</strong></p>
+<ul>
+<li><strong>Hard evidence · belonging is a basic motive</strong>: Baumeister &amp; Leary (1995, <em>Psychological Bulletin</em>) review extensive evidence for the need-to-belong hypothesis: <strong>forming and maintaining a few stable, positive bonds is a fundamental human motivation</strong>, and exclusion produces broad cognitive and emotional consequences. Classic review, hard. Implication: what keeps people can have nothing to do with you.</li>
+<li><strong>Hard evidence · other people's choices drive individual choices</strong>: Salganik, Dodds &amp; Watts (2006, <em>Science</em>) built an artificial music market where roughly <strong>fourteen thousand participants</strong> were randomly assigned to worlds that either showed other people's download counts or didn't. <strong>In the social-influence worlds, hits got bigger and outcomes became far less predictable</strong> — the same song's fate diverged wildly across worlds. Large randomised experiment, hard. A community is exactly the machinery that makes "other people are using this" visible.</li>
+<li><strong>Contested evidence · Dunbar's number</strong>: the widely cited "ceiling of about 150 stable relationships" (Dunbar, 1992) extrapolates from primate brain size and group size, and <strong>Lindenfors et al. (2021, <em>Biology Letters</em>) re-analysed it and found the confidence interval far too wide to support any specific figure</strong>. Fine as a rough prompt, not as a law — what sets the ceiling is how narrow the topic is, not the headcount.</li>
+</ul>
+<p class="caveat">Boundary first: <strong>a community is the highest-operating-cost way to monetise anything.</strong> It wants your presence daily, not an update weekly, and a group that's lively for three months and dead by six does more damage than never starting. Also, the moment peer testimony is arranged by you — plants, perks in exchange for praise — it stops being social proof and becomes fabrication. One discovery zeroes the credibility of the whole room, and the first people it destroys are your most loyal.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"I'll let someone who's actually done it answer that one." —— hand the answer away.</p>
+<p>"Small on purpose — everyone here is working on the same thing." —— sell the smallness as filtering.</p>
+<p>"Who here has solved this already?" —— one sentence that turns a star into a mesh.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>Every pitch is a withdrawal from a finite account
+<span class="en">Selling to your audience is a withdrawal. The account is finite and the overdraft rate is brutal.</span></h2>
+<span class="tag">negativity bias</span><span class="tag">discounting principle</span><span class="tag">over-justification</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Good content is a deposit and every pitch is a withdrawal, but the exchange rate is wildly unequal: <strong>one moment where people feel farmed outweighs dozens of good posts.</strong> Not because readers are stingy — because brains weigh bad more heavily than good. So the core discipline isn't "how do I sell more", it's "how do I withdraw without triggering a run".</div>
+</div>
+<div class="section">
+<div class="section-label">The trust account: deposits are linear, withdrawals aren't</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="f4" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Vertical: trust balance    Horizontal: time</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="40">balance</text>
+<line stroke="#8d9aa8" stroke-width="1.2" x1="70" x2="70" y1="46" y2="252"></line>
+<line stroke="#8d9aa8" stroke-width="1.2" x1="70" x2="668" y1="252" y2="252"></line>
+<path d="M70,232 L130,208 L142,218 L200,194 L212,204 L270,178 L282,190 L340,160 L352,174 L410,140 L422,154 L480,118 L492,216 C 540,210 600,198 660,186" fill="none" stroke="#1f7a5c" stroke-width="2.4"></path>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" x="96" y="80">each climb = one checkable, useful piece</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" x="96" y="98">each small notch = one ordinary pitch</text>
+<line marker-end="url(#f4)" stroke="#3f5c7a" stroke-width="1.3" x1="248" x2="278" y1="106" y2="180"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" x="506" y="70">one "I've been farmed"</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" x="506" y="88">six months of deposits, gone</text>
+<line marker-end="url(#f4)" stroke="#3f5c7a" stroke-width="1.3" x1="540" x2="498" y1="96" y2="196"></line>
+<text fill="#697682" font-family="Georgia" font-size="9.6" x="520" y="236">every step after is harder</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="70" y="270">time →</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="292">Note: the curve is illustrative, not data. The asymmetry rests on negativity bias (Baumeister et al., 2001): bad weighs more than equivalent good.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Checklist · four rules against overdrawing</div>
+<ul class="checklist">
+<li><strong>Let people know from day one that you sell things.</strong> Not a sudden turn once you've accumulated enough. If the expectation was always there, selling isn't a betrayal; the longer you cultivate "I don't write for money", the bigger the drop when you do.</li>
+<li><strong>Only recommend what you've actually used or actually delivered.</strong> No exceptions. Taking money to promote something you haven't used is discounting other people's trust in you and selling it to a third party, at a fixed price.</li>
+<li><strong>If it's an ad, say so, at the top.</strong> Disclosure lowers that post's conversion — that's its cost. Being caught by readers instead costs an order of magnitude more: the first loses a sale, the second loses an identity.</li>
+<li><strong>Always ship the version that's useful to someone who buys nothing.</strong> The pitch itself has to leave people better off: explain the method, then say "buy the template if you want the weekend back, but you can absolutely do this yourself." That sentence costs revenue every time, and deposits every time.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Three layers. One, <em>negativity bias</em>: bad events of equal magnitude weigh systematically more than good ones — noticed faster, remembered longer, longer-lasting in effect — so the trust curve naturally climbs slowly and drops fast. Two, <em>discounting</em>: when an obvious external incentive is present (you're selling), people discount the "he genuinely believes this" explanation, and they do it retroactively — everything you said before gets reassessed. Three, the layer almost nobody mentions: <em>it retrains you</em>. Once revenue becomes the feedback signal, you drift toward what sells and away from what's true but hard to sell, and every step looks reasonable, so it's invisible from the inside.</strong></p>
+<ul>
+<li><strong>Hard evidence · bad is stronger than good</strong>: Baumeister, Bratslavsky, Finkenauer &amp; Vohs (2001, <em>Review of General Psychology</em>), "Bad Is Stronger Than Good", reviews impression formation, relationships, emotion and learning and finds <strong>negative events systematically outweigh equivalent positive ones</strong>; Rozin &amp; Royzman (2001) catalogued the forms of negativity dominance the same year. Review-level, direction extremely stable, hard. "One bad episode outweighs dozens of good posts" is a direct implication, not a rhetorical flourish.</li>
+<li><strong>Moderate evidence · disclosure changes how readers respond</strong>: Boerman, van Reijmersdal &amp; Neijens (2012, <em>Journal of Communication</em>) show experimentally that <strong>sponsorship disclosure activates viewers' persuasion knowledge and makes their responses to the content and brand more guarded</strong>. Limited number of studies and strongly context-dependent, <strong>moderate strength</strong>. Disclosure does carry an immediate cost — which is precisely why it's worth paying, since skipping it just pushes the cost onto your later self.</li>
+<li><strong>Hard evidence (extrapolate carefully) · extrinsic reward erodes intrinsic motivation</strong>: Deci, Koestner &amp; Ryan (1999, <em>Psychological Bulletin</em>), a meta-analysis of 128 experiments: <strong>expected, tangible extrinsic rewards significantly undermine intrinsic motivation for tasks that were interesting to begin with</strong>. Meta-analytic, hard. <strong>But it measured laboratory tasks — using it to explain "revenue metrics will bend what you write" is an inference, not the original finding.</strong></li>
+</ul>
+<p class="caveat">The boundary that matters most: <strong>everything here raises the efficiency of cashing in trust you already have. None of it creates trust.</strong> With nothing real underneath, a smoother funnel just crashes you faster — you've only made more people discover it sooner. The persuasion/manipulation line sits here too: <strong>making it easier for a fully informed person to make a decision that's good for them is persuasion; closing on the strength of what they don't know is manipulation</strong> (the influence-principles piece draws the same line). A practical test: <strong>if the buyer later knew everything you know now, would they still think it was worth it?</strong> If you can't answer yes, don't sell.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"Heads up: this one's a paid recommendation." —— at the top, not in the footer.</p>
+<p>"You can absolutely do this yourself — the paid version just saves you a weekend." —— leave a road for non-buyers.</p>
+<p>"I turned that sponsorship down; I haven't used the product." —— a refusal said out loud is itself a deposit.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 32 Action</h3>
+<p>Ninety minutes, four things. You'll know which stage you're stuck at, and have a sample product ready to ship.</p>
+<div class="action">
+<strong>1 (15 min):</strong> Draw your three funnel stages and put a <strong>real number</strong> on each (monthly reads / how many people reached out / how many sales). <strong>Where you have no data, write "don't know" — no guessing</strong>; "don't know" is itself the most important finding. Circle the narrowest stage and fix only that this month.<br/><br/><strong>2 (25 min):</strong> Design one sample rung: <strong>deliverable within an hour, cheap enough that hesitating feels silly, and genuinely useful even if they never buy the next rung.</strong> Write down its name and format.<br/><br/><strong>3 (30 min):</strong> Write three sentences for it — who it's for / what it fixes / <strong>who shouldn't buy</strong>. The third is the hardest and the most valuable; it filters refunds and builds warmth at the same time. Publish it today.<br/><br/><strong>4 (20 min):</strong> Write the recommendation message, containing three things: why now, whether you've used it yourself, and what a non-buyer can do instead. Before sending, run the test: <strong>if they later knew everything I know now, would they still think it was worth it?</strong><br/><br/>Boundary note: these moves raise conversion efficiency; they don't create trust. Without something checkable underneath, get one thing good enough to produce a number first — a funnel only helps people discover faster that it's empty.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. I only have a few hundred followers. Isn't it too early to monetise?</summary>
+<div class="answer">Usually the opposite. <strong>A few hundred people who followed you because of one specific problem are closer to buying than tens of thousands hooked by a viral post.</strong> And at small scale you have a luxury you'll never get back: <strong>you can talk to people one at a time.</strong><br/><br/>Do this: find five who'll give you twenty minutes and ask three questions — why did you follow me, what's the single thing you're most stuck on, and have you already spent money on it (where, how much). <strong>The third question is the one that matters: plenty of people say a problem is important; the ones who've already paid are the market.</strong> Five conversations will tell you what to build, which beats another ten thousand followers.<br/><br/>On the much-quoted "1,000 true fans": that's an essay by Kevin Kelly — an insightful frame, but <strong>not a research finding and not backed by controlled data</strong>. The real threshold depends on your price point; someone selling a $5,000 service opens for business on thirty of the right readers.</div>
+</details>
+<details>
+<summary>2. Won't charging early scare people off and make me look mercenary?</summary>
+<div class="answer">Some will leave, and the ones who leave weren't going to buy — you lose a number, not income. The real risk was never charging; it's <strong>charging in a way that feels like an ambush</strong>: spend a year cultivating "I don't write for money", then launch, and the jolt comes from your earlier posture, not the price.<br/><br/>So the fix is expectation management: <strong>make "this is also how I eat" a public fact from day one</strong>, and sell things that are the natural extension of the free work (free explains the method, paid sells the time saved) rather than a swerve into another lane.<br/><br/>The other half is also true: <strong>staying free too long has its own cost.</strong> Give only free work for years and you cultivate an audience that treats you as a free resource, whose conversion can run below that of new readers — and they're the ones you've spent the most time on. I can only mark this as experience, <strong>no hard evidence</strong>, but it's the same logic as the sample rung: the sooner someone gives up something small, the sooner the relationship becomes real.</div>
+</details>
+<details>
+<summary>3. I'm afraid that after I take sponsorships, readers will feel I've changed.</summary>
+<div class="answer">Unpack "changed" first. What readers resent generally isn't that you earn money — it's three concrete things: <strong>promoting something you haven't used; promoting something unrelated to what you're known for; not making clear it's an ad.</strong> All three are within your control, so the question isn't whether to accept, it's whether you hold those three lines.<br/><br/>A simple test: <strong>if you'd recommend it unpaid, take it; if you wouldn't, no fee is enough.</strong> That sounds like ethics, but it's arithmetic: what one bad partnership pays is usually far less than the crater it leaves, and the crater takes many pieces to fill.<br/><br/>The direction worth more worry, though, is the other one: <strong>the danger isn't only that readers think you changed — it's that you actually will.</strong> Once income is the main feedback signal, you drift toward saleable topics and away from true-but-unsaleable ones, each step looking reasonable, which makes it invisible from inside. The only defence is an external anchor: set one rule that money can't move (say, at least one piece a month that points at no product), and once a quarter reread what you published and ask <strong>"is this what I wanted to write, or what sold?"</strong></div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 32</footer>
+</div>
+</body>
+</html>

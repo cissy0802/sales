@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 32：自媒体变现</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 32 · Phase E</div>
+<h1>能让你涨粉的那类内容<br/>恰好是最不会让人掏钱的那类</h1>
+<div class="meta"><span>主题：注意力 → 信任 → 变现 · 阶梯卖的是风险 · 社群 · 不透支信任</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">「爆了但没人买」不是运气差，是这两段漏斗压根由不同的东西驱动。</div>
+</header>
+<div class="intro">
+<strong>大多数人卡住的地方不是没人看，是把注意力、信任、成交当成了同一件事。</strong>它们要的内容互相打架：能传播的靠意外和情绪，能成交的靠具体和可核对。于是你越会做爆款，来的人越多、每个人对你的印象越薄，开口卖那天转化低得像另一个账号。<strong>该做两件事：三段分开各自计数，只修最窄那段；以及记住每次开口卖都是从一个有限账户里取钱。</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>三段漏斗各由不同的东西驱动，别用一种内容打三段
+<span class="en">Attention, trust and revenue are three funnels, not one. Each runs on a different fuel.</span></h2>
+<span class="tag">情绪唤醒</span><span class="tag">能力信任 vs 善意信任</span><span class="tag">时机</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">注意力靠<strong>反差与情绪</strong>，信任靠<strong>可核对的具体</strong>，成交还要加一条<strong>他此刻正好有这个问题</strong>。三段的燃料不同，所以「粉丝涨了，钱没来」是默认结果。不先分开算，你永远在补最不缺的那一段。</div>
+</div>
+<div class="section">
+<div class="section-label">三段各自的燃料、误区与动作</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="f1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同一个账号，三段漏斗，三种完全不同的打法</text>
+<rect fill="#dfeae2" height="52" stroke="#1f7a5c" stroke-width="1.2" width="400" x="150" y="46"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="68">注意力 · 有人看见</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="86">燃料：意外 / 情绪唤醒 / 立刻能用</text>
+<line marker-end="url(#f1)" stroke="#1f7a5c" stroke-width="1.6" x1="350" x2="350" y1="100" y2="118"></line>
+<rect fill="#e2efdc" height="52" stroke="#4e8a3f" stroke-width="1.2" width="280" x="210" y="120"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="142">信任 · 觉得你靠谱</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="160">燃料：可核对的具体 + 时间</text>
+<line marker-end="url(#f1)" stroke="#1f7a5c" stroke-width="1.6" x1="350" x2="350" y1="174" y2="192"></line>
+<rect fill="#1f7a5c" height="52" width="170" x="265" y="194"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="216">变现 · 愿意付钱</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9.5" text-anchor="middle" x="350" y="234">燃料：他此刻有这个问题</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.3" font-weight="700" x="16" y="62">常见误区</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.3" x="16" y="80">唤醒度越高越好</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.3" x="16" y="140">继续用爆款打法</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.3" x="16" y="156">人变多，印象变浅</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.3" x="16" y="214">突然开卖</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.3" x="16" y="230">读者觉得「他变了」</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.3" font-weight="700" x="562" y="62">该做的动作</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.3" x="562" y="80">钩子照发，落点写窄</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.3" x="562" y="140">每篇留一个</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.3" x="562" y="156">可核对的细节</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.3" x="562" y="214">只对此刻</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.3" x="562" y="230">有问题的人开口</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="268" y2="268"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="288">机制：易转发的内容偏高唤醒情绪（Berger &amp; Milkman, 2012），易买单的偏可核对——两者常互斥。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="308">注：三段间没有普适转化率，领域间差几十倍。「1% 法则」这类整数当传说听。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你做 Excel 教程，一条「99% 的人不知道的快捷键」爆了，涨两万粉，随后卖 199 的课，卖出七份。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 归因成「粉丝还不够多」</div>
+<p>于是继续追爆款，涨到十万粉，课卖了二十份——<strong>转化率还降了。</strong>被「99% 的人不知道」钩来的人心里没有待解决的问题，只是被反差挠了一下。这类人再多也不构成买家。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 把三段分开各自计数</div>
+<p>钩子内容照发，但每条末尾多一句：<strong>「如果你每个月都要手动合并十几张部门表，我这里有个免费模板。」</strong>——这句不涨粉，它把泛注意力筛成「此刻正被这件事折磨的人」。两万人里也许只筛出三百个，但那三百个才是第二段的入口。</p>
+</div>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Attention, trust and revenue are three separate funnels running on three different fuels, and most people treat them as one. What spreads is surprise and emotional arousal; what earns trust is checkable specifics accumulated over time; what closes is someone happening to have that problem right now. Those requirements actively conflict, which is why "it went viral and nobody bought" is the default outcome rather than bad luck — the people a shock headline pulls in were never carrying a problem, they were just tickled. Getting more of them changes nothing. So stop reading one number. Count the three stages separately, find the narrowest one, and fix that. And notice what trust actually requires: not just looking capable but looking like you're on their side — people read competence and warmth as two distinct dimensions, and warmth is judged first and weighted heavier. A stream of impressive tips builds only half of it. The half you're missing is usually the reason a big audience converts like a small one.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>三段各有各的门槛。<em>传播</em>看唤醒水平：敬畏、愤怒、焦虑推动分享，平静的悲伤反而不会。<em>印象</em>沿两条独立的轴走：他行不行（能力）、他站不站在我这边（善意），善意判断得更早、权重更大——只输出干货只长了一条腿。<em>成交</em>还要加时机：再高的信任也换不来一个此刻没这个问题的人的钱。</strong></p>
+<ul>
+<li><strong>硬证据 · 什么内容会被转出去</strong>：Berger &amp; Milkman (2012, <em>JMR</em>) 分析近七千篇《纽约时报》文章并配对照实验：<strong>引发高唤醒情绪（敬畏、愤怒、焦虑）的内容显著更易被分享，低唤醒的悲伤反而更不易；实用性强的也更易转发。</strong>大样本 + 实验双重验证，硬。含义很直接：让内容跑起来的力，和让人掏钱的力不是同一种。</li>
+<li><strong>硬证据 · 信任有两条腿</strong>：Fiske、Cuddy &amp; Glick (2007, <em>Trends in Cognitive Sciences</em>) 综述的<strong>善意—能力两维模型</strong>：人评价他人几乎总沿这两个维度，且<strong>善意被判断得更快、对整体印象权重更大</strong>。跨文化多次复现，硬。所以只发硬核干货的账号常被评成「厉害但离得远」，而离得远的人不会把钱交给你。神经层面，形成他人印象时<strong>内侧前额叶（尤其背侧 mPFC）</strong>活跃，其活动强度还能预测之后记不记得住这个人的信息（Mitchell、Macrae &amp; Banaji, 2004, <em>J. Neuroscience</em>）——印象有自己一套加工，不是曝光次数的副产品。</li>
+<li><strong>证据较弱 · 转化率数字</strong>：流传的「关注→付费 1%～3%」是<strong>行业口径不是研究结论</strong>，品类间差几十倍，报数字的人还有选择性披露动机。<strong>只用你自己的历史数字做基线。</strong></li>
+</ul>
+<p class="caveat">边界：分段不等于每段都要做。<strong>客单价高、每月只需成交两三个的人，第一段几乎可以不做</strong>；只有低客单价标准品才真需要量。另外善意信任装不出来，它的可核对形式是你替读者省过钱、劝过他别买、承认过自己不会——短期都在减少收入。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Big audience, small business — those are two different problems." —— 先分清你缺哪一段。</p>
+<p>"This one's not for everyone; here's who should skip it." —— 用劝退换善意信任。</p>
+<p>"If that's not your situation, don't buy it." —— 说得出这句，你的推荐才有分量。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>产品阶梯的每一级，卖的都不是价格，是更小的验证成本
+<span class="en">Each rung of the ladder doesn't sell a lower price. It sells a cheaper way to check you out.</span></h2>
+<span class="tag">损失厌恶</span><span class="tag">风险逆转</span><span class="tag">登门槛</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">只挂一个高价产品的账号，转化差不是因为贵，是从「刷到你」到「掏五千」中间没有台阶。<strong>阶梯的作用不是分价位，是让对方用很小的代价验证你一次。</strong>所以前一两级不是为了赚钱——它们的 KPI 是「多少人拿到过一次真实的交付体验」。</div>
+</div>
+<div class="section">
+<div class="section-label">四级阶梯：每一级的真实作用</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 342" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="f2" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">越往右，他要交出的钱和信任越多——所以左边必须真的便宜</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="110" y="242">作用：被发现</text>
+<rect fill="#eef4f0" height="44" stroke="#7a9c8a" stroke-width="1" width="140" x="40" y="250"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="110" y="270">免费内容</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="110" y="286">代价：几分钟注意力</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="260" y="198">作用：让他验证你一次</text>
+<rect fill="#dfeae2" height="88" stroke="#4e8a3f" stroke-width="1.1" width="140" x="190" y="206"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="260" y="228">取样品</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="260" y="246">一次交付完的小东西</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="260" y="262">模板 / 清单 / 诊断</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="260" y="278">代价：一顿早饭的钱</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="410" y="142">作用：收入主体</text>
+<rect fill="#c9ddd1" height="144" stroke="#1f7a5c" stroke-width="1.2" width="140" x="340" y="150"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="410" y="172">主力产品</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="410" y="190">课程 / 工具 / 服务包</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="410" y="206">代价：一次认真的决定</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.5" font-weight="700" text-anchor="middle" x="565" y="86">作用：利润与深案例</text>
+<rect fill="#1f7a5c" height="200" width="150" x="490" y="94"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="565" y="116">高价 · 一对一</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9" text-anchor="middle" x="565" y="134">陪跑 / 咨询 / 定制</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9" text-anchor="middle" x="565" y="150">代价：钱 + 时间 + 面子</text>
+<line marker-end="url(#f2)" stroke="#3f5c7a" stroke-width="1.4" x1="40" x2="655" y1="306" y2="306"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="326">机制：损失厌恶——「万一没用」的分量约是「可能有用」的两倍（Tversky &amp; Kahneman, 1992，λ≈2）。台阶就是切小它。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你是自由品牌设计师，几千关注，主力产品是 8,000 元的整套视觉方案，半年成交两单。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 用降价补台阶</div>
+<p>打到 5,000，成交变成三单，<strong>还把付过全价的老客户得罪了。</strong>降价没碰到真正的障碍——对方怕的不是八千贵，是「花八千给一个只在网上看过的人」。你降的是价格，他担心的是风险。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 加一级取样品，价格不动</div>
+<p>加一个 199 元的「品牌一致性体检」：<strong>他把物料发来，你三天内出两页问题清单，指出最伤转化的三处，附一句「这三处你自己也能改，改完还想做系统方案再来找我」。</strong>——两百块买到的不是折扣，是一次真实交付体验：你的判断力、响应速度、跟你合作是什么感觉。做完这步的人再听到八千，评估对象已从「陌生人」变成「合作过的人」。</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">话术模板 · 阶梯自检四问</div>
+<div class="template">
+<span class="label">每一级都要过这四问</span>
+<p><strong>一、他要冒什么风险？</strong>钱、时间、还是「买了显得蠢」的面子。答不上来说明你在按价格分级，不是按风险分级。</p>
+<p><strong>二、风险跳跃有多大？</strong>0 到 8,000 是悬崖；0 → 199 → 8,000 是两级台阶。</p>
+<p><strong>三、这一级能独立交付完吗？</strong>取样品必须<strong>自己就有用</strong>。做成「只为让你买下一级」的半成品，读者闻得出来。</p>
+<p><strong>四、能不能把风险接过来一部分？</strong>「不满意退款，清单你留着」——退款率通常远低于它带来的成交增量。它比降价有效，因为它直接对着损失厌恶下手而不是绕开（即「做一个无法拒绝的报价」那期的风险逆转）。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> An account with one expensive offer converts badly not because the price is high but because there's no step between "scrolled past you" and "wire five thousand". What a ladder actually sells isn't a cheaper tier, it's a cheaper way to check you out — so the bottom rungs shouldn't be measured in revenue at all. Their KPI is how many people received one real delivery from you. The mechanism is loss aversion: the dread of "what if it's useless" weighs roughly twice as much as the equivalent hope that it works, so the barrier is risk, not price. That's also why discounting is the wrong fix — it lowers the number they're worried about losing without touching the reason they're worried. Two rules keep a ladder honest. Every rung has to be genuinely useful on its own; a sample built purely to sell the next rung reads as bait, and that smell lingers. And take some risk onto yourself — a refund with the deliverable kept usually costs far less than the sales it unlocks, because it attacks the loss term directly instead of dodging it.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>障碍是<em>风险，不是价格</em>。人对损失的敏感度显著高于同等收益，「花了钱结果没用」压得过「可能挺有用」。既然障碍在损失那一侧，能做的只有两件：把单次可能损失的金额切小（台阶），或把损失搬一部分到自己身上（退款、保证、先做后收）。降价两件都没做，它只是把赌注调小，赌局结构没变。另有一层：小额买过一次之后「我是你的客户」已经成立，后面的大额决定不再从零起步。</strong></p>
+<ul>
+<li><strong>硬证据 · 损失比收益重</strong>：Kahneman &amp; Tversky (1979, <em>Econometrica</em>) 前景理论，及 Tversky &amp; Kahneman (1992) 的累积版本给出损失厌恶系数<strong>约 2</strong>：同等金额的损失，心理分量约为收益的两倍。诺奖级结果，方向复现极稳，硬。诚实标注：<strong>2 是估计值不是常数</strong>，随金额与情境变化，也有研究发现小额时损失厌恶会消失——只把方向当依据，别当公式算。</li>
+<li><strong>中等证据 · 先答应小的，更容易答应大的</strong>：Freedman &amp; Fraser (1966, <em>JPSP</em>) 的登门槛效应——先接受小请求的人，之后接受大请求的比例显著更高。经典实验，但 Burger (1999, <em>PSPR</em>) 的系统综述指出<strong>效应真实但不大且依赖条件</strong>（小请求不能给报酬、两个请求要相关）。中等强度，当增益用别当主力。</li>
+<li><strong>经验之谈 · 阶梯的具体形态</strong>：「引流品—主力品—高价品」这套分级来自营销从业者的实践总结（Hormozi、Brunson 一类），<strong>没有对照研究支撑，案例有强幸存者偏差，证据强度弱</strong>。可信的是底下的损失厌恶，不是「必须四级」。</li>
+</ul>
+<p class="caveat">三个失效场景。<strong>一、取样品太薄</strong>：拿到手发现只是广告，损失的信任比多卖几单值钱得多。<strong>二、台阶太多</strong>：每级都消耗一次决策成本，两三级够了。<strong>三、错配</strong>：高价 B2B 里对方要的是同行推荐和案例，不是 199 元试用——那里的台阶该是一次免费的深度诊断会，形式不同，机制一样。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Try the small one first — it's useful even if you never buy the big one." —— 让取样品自足。</p>
+<p>"If it doesn't help, I'll refund it and you keep the file." —— 把风险接过来。</p>
+<p>"It's not that it's expensive. It's that you don't know me yet." —— 说破真实障碍。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>社群的转折点：你从唯一的信任来源，变成其中一个节点
+<span class="en">A community works the day members start trusting each other instead of only you.</span></h2>
+<span class="tag">归属需要</span><span class="tag">同伴证言</span><span class="tag">网络效应</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">只要你是信任的唯一来源，规模上限就是你的时间——一停更价值立刻归零。<strong>成员开始互相回答问题的那天，你才第一次拥有「不靠你也在增值」的东西。</strong>但社群绝不是捷径：冷清的群是负资产，它每天都在提醒每个人「这里没什么人」。</div>
+</div>
+<div class="section">
+<div class="section-label">星型与网状：信任装在谁身上</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 306" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同样八个人，价值差别在于线连在哪里</text>
+<line stroke="#d5dce4" stroke-width="1" x1="350" x2="350" y1="36" y2="258"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="175" y="46">星型：所有线都连着你</text>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="263" y1="156" y2="156"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="237" y1="156" y2="94"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="175" y1="156" y2="68"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="113" y1="156" y2="94"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="87" y1="156" y2="156"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="113" y1="156" y2="218"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="175" y1="156" y2="244"></line>
+<line stroke="#c0603a" stroke-width="1" x1="175" x2="237" y1="156" y2="218"></line>
+<circle cx="263" cy="156" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="237" cy="94" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="175" cy="68" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="113" cy="94" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="87" cy="156" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="113" cy="218" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="175" cy="244" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="237" cy="218" fill="#f6e3da" r="15" stroke="#c0603a" stroke-width="1"></circle>
+<circle cx="175" cy="156" fill="#c0603a" r="24"></circle>
+<text fill="#fbf4f0" font-family="Georgia" font-size="12" font-weight="700" text-anchor="middle" x="175" y="161">你</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" text-anchor="middle" x="175" y="274">上限 = 你的时间</text>
+<text fill="#8d9aa8" font-family="Georgia" font-size="9.6" text-anchor="middle" x="175" y="290">你一停更，价值归零</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="525" y="46">网状：成员之间也连上了</text>
+<line stroke="#7a9c8a" stroke-width="1" x1="613" x2="587" y1="156" y2="94"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="587" x2="525" y1="94" y2="68"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="525" x2="463" y1="68" y2="94"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="463" x2="437" y1="94" y2="156"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="437" x2="463" y1="156" y2="218"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="463" x2="525" y1="218" y2="244"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="525" x2="587" y1="244" y2="218"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="587" x2="613" y1="218" y2="156"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="587" x2="463" y1="94" y2="218"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="525" x2="525" y1="68" y2="244"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="613" x2="437" y1="156" y2="156"></line>
+<line stroke="#7a9c8a" stroke-width="1" x1="463" x2="587" y1="94" y2="218"></line>
+<circle cx="613" cy="156" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="587" cy="94" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="525" cy="68" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="463" cy="94" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="463" cy="218" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="525" cy="244" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="587" cy="218" fill="#dfeae2" r="15" stroke="#1f7a5c" stroke-width="1"></circle>
+<circle cx="437" cy="156" fill="#1f7a5c" r="18"></circle>
+<text fill="#f3f1ea" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="437" y="160">你</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" text-anchor="middle" x="525" y="274">你不在时也在产生价值</text>
+<text fill="#8d9aa8" font-family="Georgia" font-size="9.6" text-anchor="middle" x="525" y="290">但空群比没群更伤</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">照做清单 · 让社群从星型长成网状的四条</div>
+<ul class="checklist">
+<li><strong>入群第一件事是自我介绍模板，不是欢迎语。</strong>「你在做什么 / 卡在哪 / <strong>你能帮别人什么</strong>」——第三句是网状的起点，多数群缺的就是它。</li>
+<li><strong>别抢答。</strong>有人提问先等六小时。你每次都答得又快又好，成员就永远不会互相回答。等出来的第一个同伴回答，比你一百条精彩回复值钱。</li>
+<li><strong>宁小勿大。</strong>三十个真在做同一件事的人胜过三千个来领资料的。人多带来的不是热闹是稀释：话题一散，每个人都觉得「这里没我的同类」。</li>
+<li><strong>公开表扬互助，别只表扬成绩。</strong>你夸什么群里就长什么。夸「谁又赚了多少」长出攀比和沉默，夸「他昨天帮谁解决了问题」长出互助。</li>
+</ul>
+</div>
+<p class="en-brief"><b>EN</b> As long as you're the only source of trust, your ceiling is your own time: stop posting and the value goes to zero. The turning point is the day members start answering each other — that's the first asset you own that keeps compounding without you. Two mechanisms carry it. Belonging is a basic human motive, not a nice-to-have, so people stay for "others like me" long after the content stops being novel; and a peer's account of a result is weighed differently from yours, because you have an obvious reason to say it and they don't. Be honest about the cost, though. A quiet group is worse than no group: every day it silently tells each member that nobody's here. Small and specific beats big and vague — thirty people doing the same thing outperform three thousand who came for a free file. And resist answering everything. If you reply fast and well every time, the star shape locks in permanently; the first peer-to-peer answer is worth more than a hundred brilliant ones from you.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>两条。一、<em>归属本身就是动机</em>：人留在群里很大一部分不为信息，而为「有人和我处境一样」本身——这是基本需要不是附加值，所以社群的留存曲线和内容账号完全不同。二、<em>谁说的，决定这句话值多少</em>：同一句「这东西真有用」，从你嘴里说带着明显的利益动机，从一个和你没关系的成员嘴里说则没有。社群就是把后一种声音变得常见、可追问。</strong></p>
+<ul>
+<li><strong>硬证据 · 归属是基本动机</strong>：Baumeister &amp; Leary (1995, <em>Psychological Bulletin</em>) 的归属需要假说综述了大量证据：<strong>建立并维持少量稳定、正向的人际联结是人的基本动机</strong>，被排除会引发广泛的认知与情绪后果。经典综述，硬。含义：留住人的东西可以完全不是你。</li>
+<li><strong>硬证据 · 别人的选择强烈影响个人选择</strong>：Salganik、Dodds &amp; Watts (2006, <em>Science</em>) 的人造音乐市场实验，约<strong>一万四千名参与者</strong>被随机分到「能看到他人下载量」与「看不到」的平行世界：<strong>能看到社会影响的世界里，热门更热门、结果更不可预测</strong>，同一首歌在不同世界命运迥异。大规模随机实验，硬。社群正是把「别人也在用」从不可见变成可见。</li>
+<li><strong>证据有争议 · 邓巴数</strong>：「稳定社交关系上限约 150 人」（Dunbar, 1992）来自灵长类脑容量与群体规模的外推，<strong>Lindenfors 等 (2021, <em>Biology Letters</em>) 重新分析指出原推算置信区间极宽，撑不起一个具体数字</strong>。当粗略提示可以，别当定律——决定上限的是话题有多窄，不是人数。</li>
+</ul>
+<p class="caveat">边界：<strong>社群是所有变现方式里运营成本最高的</strong>，它要每天在场，不是每周更新；三个月热闹、半年冷掉的群，伤害大于从没做过。另外同伴证言一旦被你安排（找托、给好处换好评），就从社会证明变成造假——一次被发现整个群的可信度归零，先毁掉的正是最忠诚的那批人。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"I'll let someone who's actually done it answer that one." —— 主动把回答权交出去。</p>
+<p>"Small on purpose — everyone here is working on the same thing." —— 把「小」讲成筛选。</p>
+<p>"Who here has solved this already?" —— 一句话把星型转成网状。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>每一次开口卖，都是从一个有限的账户里取钱
+<span class="en">Selling to your audience is a withdrawal. The account is finite and the interest rate on overdraft is brutal.</span></h2>
+<span class="tag">负面偏差</span><span class="tag">动机折扣</span><span class="tag">过度合理化</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">好内容是存款，每次推销是取款——但汇率极不对等：<strong>一次让人觉得「被当韭菜」，抵得过几十篇好内容。</strong>不是读者小气，是人脑对坏事的分量本来就打得比好事重。所以变现的核心纪律不是「怎么卖得更多」，是「怎么让每次取款不引发挤兑」。</div>
+</div>
+<div class="section">
+<div class="section-label">信任账户：存款线性，取款不是</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="f4" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">纵轴：信任余额　　横轴：时间</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="40">信任余额</text>
+<line stroke="#8d9aa8" stroke-width="1.2" x1="70" x2="70" y1="46" y2="252"></line>
+<line stroke="#8d9aa8" stroke-width="1.2" x1="70" x2="668" y1="252" y2="252"></line>
+<path d="M70,232 L130,208 L142,218 L200,194 L212,204 L270,178 L282,190 L340,160 L352,174 L410,140 L422,154 L480,118 L492,216 C 540,210 600,198 660,186" fill="none" stroke="#1f7a5c" stroke-width="2.4"></path>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" x="96" y="80">每一段上升 = 一次可核对的好内容</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" x="96" y="98">每个小缺口 = 一次正常的推销</text>
+<line marker-end="url(#f4)" stroke="#3f5c7a" stroke-width="1.3" x1="248" x2="278" y1="106" y2="180"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" x="506" y="70">一次「被当韭菜」</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.6" x="506" y="88">半年的存款一次取空</text>
+<line marker-end="url(#f4)" stroke="#3f5c7a" stroke-width="1.3" x1="540" x2="498" y1="96" y2="196"></line>
+<text fill="#697682" font-family="Georgia" font-size="9.6" x="520" y="236">之后每一步都更难</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="70" y="270">时间 →</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="292">注：曲线是示意，不是数据。不对称的依据是负面偏差（Baumeister 等, 2001）：坏事的分量系统性大于同等好事。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">照做清单 · 不透支的四条规矩</div>
+<ul class="checklist">
+<li><strong>从第一天就让人知道你会卖东西。</strong>不是等积累够了突然转身。预期一开始就摆着，卖的时候就不是背叛；你越长期塑造「我不为钱写」，开卖的落差越大。</li>
+<li><strong>只推你真的用过、或真的交付过的。</strong>没有例外。收钱推一个没用过的东西，等于把别人对你的信任贴现卖给第三方，还是一口价。</li>
+<li><strong>是广告就说是广告，放开头。</strong>披露会降低这条的转化，这是它的成本；但被读者自己发现的代价高一个量级——前者损失一单，后者损失一个身份。</li>
+<li><strong>永远给「不买也有用」的那一版。</strong>推销那条内容本身就要让人有收获：讲清方法，再说「想省时间可以买我的模板，自己动手也做得到」。这句每次都在减少当期收入，也每次都在存款。</li>
+</ul>
+</div>
+<p class="en-brief"><b>EN</b> Good content is a deposit and every pitch is a withdrawal, but the exchange rate is badly asymmetric: one moment where people feel farmed outweighs dozens of good posts. That isn't readers being stingy, it's how attention to bad news works — negative events carry systematically more psychological weight than equivalent positive ones, so the crash in the curve is steeper than any climb. There's a second, quieter mechanism: once an obvious external incentive is visible, people discount the internal explanation for your behaviour, so everything you said before gets silently reassessed. Four rules follow. Let people know from day one that you sell things, so selling is never a reversal. Only recommend what you've actually used or delivered. Label ads as ads at the top — disclosure does cost you conversions on that post, and being caught costs you a category. And always ship the version that's useful to someone who buys nothing. The most dangerous overdraft isn't the audience's trust, though. It's that revenue metrics quietly retrain you to write what sells rather than what's true, and that one is invisible from the inside.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>三层。一、<em>负面偏差</em>：同等强度的坏事分量系统性大于好事——注意得更快、记得更牢、影响更久，所以信任曲线天然「爬得慢、掉得快」。二、<em>动机折扣</em>：存在明显外部诱因（你在卖东西）时，人会把「他是真心这么想」打折，而且是回溯性的——你过去说的话会被重新评估一遍。三、最容易被忽略的是<em>它反过来驯化你</em>：收入一旦成为反馈信号，你会不知不觉多写好卖的、少写真实但难卖的，而每一步都显得合理，所以从内部看不见。</strong></p>
+<ul>
+<li><strong>硬证据 · 坏比好强</strong>：Baumeister、Bratslavsky、Finkenauer &amp; Vohs (2001, <em>Review of General Psychology</em>) 的跨领域综述「Bad Is Stronger Than Good」：在印象形成、人际关系、情绪、学习等领域，<strong>负面事件的影响系统性强于同等强度的正面事件</strong>；Rozin &amp; Royzman (2001) 同期归纳了负面优势的多种表现。综述级证据，方向极稳，硬。「一次翻车抵几十篇好内容」是它的直接推论。</li>
+<li><strong>中等证据 · 披露赞助会改变读者反应</strong>：Boerman、van Reijmersdal &amp; Neijens (2012, <em>Journal of Communication</em>) 的实验显示，<strong>赞助披露会激活受众的「说服知识」，使其对该内容与品牌的反应更审慎</strong>。研究数量有限、情境依赖强，<strong>中等强度</strong>。披露确实要付即期代价——这正是它值得做的理由，不付的人是把成本推给以后的自己。</li>
+<li><strong>硬证据（外推需谨慎）· 外在奖励侵蚀内在动机</strong>：Deci、Koestner &amp; Ryan (1999, <em>Psychological Bulletin</em>) 对 128 项实验的元分析：<strong>预期的、有形的外在奖励显著削弱对原本有趣任务的内在动机</strong>。元分析级别，硬。<strong>但它测的是实验室任务——用来解释「你会被收入指标带偏」是推论，不是原结论。</strong></li>
+</ul>
+<p class="caveat">最重要的一条边界：<strong>本期所有东西提高的都是兑现已有信任的效率，它们不创造信任。</strong>底下没真本事时，漏斗越顺翻车越快——你只是让更多人更快发现这一点。说服与操纵的界线也在这里：<strong>让对方在充分知情下更容易做出对他有利的决定是说服；靠他不知道的信息差促成交易是操纵</strong>（「影响力六原理」那期讲的是同一条线）。自检：<strong>如果买家事后知道你现在知道的全部，还会觉得划算吗？</strong>答不出「会」就别卖。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Heads up: this one's a paid recommendation." —— 放在开头，不放在角落。</p>
+<p>"You can absolutely do this yourself — the paid version just saves you a weekend." —— 给不买的人一条路。</p>
+<p>"I turned that sponsorship down; I haven't used the product." —— 说出来的拒绝，本身就是存款。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 32 Action</h3>
+<p>九十分钟，四件事。做完你会知道卡在哪一段，手上还有一个能立刻上线的取样品。</p>
+<div class="action">
+<strong>一（15 分钟）：</strong>画三段漏斗，每段填一个<strong>真实数字</strong>（月阅读量 / 多少人主动联系过你 / 成交几单）。<strong>没数据就写「不知道」，不许拍脑袋填</strong>——「不知道」本身就是最重要的发现。圈出最窄那段，这个月只修它。<br/><br/><strong>二（25 分钟）：</strong>设计一个取样品：<strong>一小时内交付得完、代价小到几乎不用犹豫、而且他不买下一级也确实有用。</strong>写下名字和交付形式。<br/><br/><strong>三（30 分钟）：</strong>给它写三句话——给谁 / 解决什么 / <strong>谁不该买</strong>。第三句最难写也最值钱，它同时在筛掉退款和建立善意信任。今天就发出去。<br/><br/><strong>四（20 分钟）：</strong>写一条推荐消息，包含三样：为什么是现在、你自己用过没、不买的人怎么办。发之前先自检：<strong>如果他事后知道我现在知道的全部，还会觉得划算吗？</strong><br/><br/>边界提醒：这些动作提高的是兑现效率，不创造信任。没有可核对的本事时，先把一件事做到能拿出数字来——漏斗只会让人更快发现里面是空的。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我只有几百个关注，是不是还不到变现的时候？</summary>
+<div class="answer">通常是反的。<strong>几百个「因为一个具体问题」关注你的人，比几万个被爆款钩来的更接近成交</strong>。而且小规模时你有一件以后再没有的奢侈品：<strong>能一个一个跟人聊。</strong><br/><br/>动作：找五个愿意聊二十分钟的，问三个问题——你为什么关注我、现在最卡的一件事是什么、为这件事你已经花过钱吗（花在哪、多少）。<strong>第三问最关键：说「这问题很重要」的人很多，掏过钱的才是市场。</strong>聊完你会知道该做什么产品，比再涨一万粉有用。<br/><br/>顺带说流传很广的「1000 个铁粉」：那是 Kevin Kelly 的随笔，思路有洞察力，但<strong>不是研究结论、没有对照数据</strong>。真实门槛取决于客单价——卖 5,000 元服务的人，三十个精准读者就够开张。</div>
+</details>
+<details>
+<summary>2. 一开始就收费，会不会把人吓跑、显得很功利？</summary>
+<div class="answer">会跑一部分，但跑掉的本来也不会买——你损失的是数字，不是收入。真正的风险从来不是收费，是<strong>收费的方式让人觉得被埋伏</strong>：先用一年塑造「我不为钱写」，再突然上架，落差来自你之前的姿态，不来自价格。<br/><br/>解法是预期管理：<strong>从第一天就让「我靠这个吃饭」成为公开事实</strong>，并且卖的东西是免费内容的自然延伸（免费讲方法，付费卖省时间的工具），而不是拐进另一个赛道。<br/><br/>另一半也得说：<strong>免费太久有它自己的代价。</strong>长期只给免费的会养出一批把你当免费资源的人，转化率有时比新读者还低，而你为他们花的时间最多。这条只能标成经验观察、<strong>没有硬证据</strong>，但和取样品是同一个思路：越早让人付出一点点，关系越早变成真实的。</div>
+</details>
+<details>
+<summary>3. 我很怕接广告之后，读者觉得我变了。</summary>
+<div class="answer">先把「变了」拆开。读者反感的一般不是你赚钱，是三件具体的事：<strong>推了你自己没用过的；推的东西和你的定位无关；没说清这是广告。</strong>三条都在你控制之内——问题不是要不要接，是有没有守住它们。<br/><br/>一个简单判据：<strong>不收钱你也会推荐的就接，不会的多少钱都别接。</strong>听起来道德，其实是算账：一次错误合作赚的钱通常远小于它砸出来的坑，而坑要很多期内容才填得平。<br/><br/>但更该警惕的是另一个方向：<strong>危险的不只是读者觉得你变了，是你真的会变。</strong>收入一旦成为主要反馈信号，你会不知不觉多写好卖的、少写真实但难卖的，每一步都显得合理，所以从内部看不见。对策只有外部锚：定一条不因钱改变的规则（比如每月至少写一篇明确不导向任何产品的），每季度翻一遍自己发过的东西，问<strong>「这些是我真想写的，还是好卖的」</strong>。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 32</footer>
+</div>
+</body>
+</html>
