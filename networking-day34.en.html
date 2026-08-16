@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 34: Networking Without the Ick</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 34 · Phase E</div>
+<h1>The ick comes from<br/>arriving empty-handed</h1>
+<div class="meta"><span>Give first · why weak ties pay · the relationship account · how to actually ask</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">Someone measured this: building ties for professional gain produces a genuine feeling of wanting to wash your hands — and the switch isn't your nerve.</div>
+</header>
+<div class="intro">
+<strong>Most people avoid networking not because they're lazy or introverted, but because it feels bad — and the bad feeling has a specific source: all you brought was a request.</strong> If you're taking the whole time and have nothing to give, you are the first person to classify the encounter as using someone, and that classification leaks into your posture and your wording, where the other side picks it up. <strong>So the fix isn't a thicker skin. It's four different things: find something you can give; work out which contacts opportunities actually come from (not your closest ones); treat the relationship as an account you deposit into rather than draw on; and when you do ask, know that you badly underestimate how often people say yes.</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>The ick is real — and its switch is whether you brought anything
+<span class="en">The ick is real. Its switch is whether you brought anything to give.</span></h2>
+<span class="tag">instrumental ties</span><span class="tag">give first</span><span class="tag">reward circuit</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Don't read the discomfort as "I'm bad at socialising". It's your own verdict on the encounter sounding an alarm: <strong>a purely extractive approach is something you reject before they do.</strong> Find one thing you can give — five minutes of value is enough — and the alarm stops.</div>
+</div>
+<div class="section">
+<div class="section-label">Two things to arrive with, two endings</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+<marker id="a2" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Same person, same goal — only what you brought differs</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="195" y="46">PATH A · you bring only a request</text>
+<rect fill="#f6e3da" height="44" stroke="#c0603a" stroke-width="1.2" width="250" x="70" y="56"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="195" y="76">"could I pick your brain sometime?"</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="195" y="92">he spends an hour, you spend nothing</text>
+<line marker-end="url(#a1)" stroke="#c0603a" stroke-width="1.6" x1="195" x2="195" y1="102" y2="120"></line>
+<rect fill="#f6e3da" height="44" stroke="#c0603a" stroke-width="1.2" width="250" x="70" y="122"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="195" y="142">you label it first: I'm using him</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="195" y="158">that's the source of the ick, not shyness</text>
+<line marker-end="url(#a1)" stroke="#c0603a" stroke-width="1.6" x1="195" x2="195" y1="168" y2="186"></line>
+<rect fill="#f6e3da" height="44" stroke="#c0603a" stroke-width="1.2" width="250" x="70" y="188"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="195" y="208">stiff posture, scripted words, avoidance</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="195" y="224">so you do less of it, and do it worse</text>
+<path d="M70,210 C 26,208 26,80 66,78" fill="none" marker-end="url(#a1)" stroke="#c0603a" stroke-dasharray="4,3" stroke-width="1.4"></path>
+<text fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle" x="195" y="248">more avoidance, colder ties, an even bigger ask next time</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="505" y="46">PATH B · you bring one thing to give</text>
+<rect fill="#e2efdc" height="44" stroke="#4e8a3f" stroke-width="1.2" width="250" x="380" y="56"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="505" y="76">one concrete thing he can use</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="505" y="92">it needn't be equivalent — five minutes will do</text>
+<line marker-end="url(#a2)" stroke="#1f7a5c" stroke-width="1.6" x1="505" x2="505" y1="102" y2="120"></line>
+<rect fill="#e2efdc" height="44" stroke="#4e8a3f" stroke-width="1.2" width="250" x="380" y="122"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="505" y="142">the label becomes: I'm contributing</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="505" y="158">and giving itself runs on the reward circuit</text>
+<line marker-end="url(#a2)" stroke="#1f7a5c" stroke-width="1.6" x1="505" x2="505" y1="168" y2="186"></line>
+<rect fill="#1f7a5c" height="44" width="250" x="380" y="188"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="505" y="208">you relax — and you'll do it again</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9.2" text-anchor="middle" x="505" y="224">repeatable is where all the compounding lives</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="505" y="248">the cost: this particular gift may never be repaid</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="268" y2="268"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="288">Evidence: networking for professional gain produced measurable discomfort and less actual networking (Casciaro et al., 2014).</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="308">Mechanism: giving isn't pure cost — donating money raises activity in the nucleus accumbens, core of the reward system (Harbaugh et al., 2007).</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="328">Note: in that same work, lower-power people felt it most — beginners especially need something to give.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Situation: you want to know a senior person in your field who has no reason to know you.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Arriving with only the request</div>
+<p>"I've read your writing and got so much out of it — could we find a time for me to pick your brain?" — <strong>the actual content of that sentence is: please give me an hour.</strong> He gets ten of these a week, all identical; and you felt bad the moment you hit send, because you knew you brought nothing.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Arrive with one concrete thing, and ask for nothing this time</div>
+<p>"That rota method you wrote up last month — I ran it for two weeks across a twelve-person crew. <strong>One result went against your prediction: the night shift needed fewer people, not more, because the handovers merged.</strong> Numbers attached, in case they're useful." — you're bringing first-hand data he can't get. <strong>Put no request in this message</strong>; that comes later.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">You already hold four cheap currencies</div>
+<ul class="checklist">
+<li><strong>First-hand observation</strong>: what you actually see on the front line — the lower your seat, the more exclusive it is.</li>
+<li><strong>Specific public credit</strong>: say what was good and how you used it, somewhere their peers can see. Costs nothing, worth plenty.</li>
+<li><strong>An introduction</strong>: connect them to someone, having asked both sides first. The heaviest currency here.</li>
+<li><strong>Real feedback</strong>: proof you actually used the thing, plus one point they hadn't noticed. Praise alone doesn't count.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>The discomfort is a signal, not a defect. When an encounter is all take and no give, you are the one who files it under "using someone" — and once it's filed there, your posture and phrasing distort, and what reaches the other side is tension and calculation. Arriving with something genuine reclassifies the encounter, and the alarm switches off. Giving also isn't pure cost: it runs on the reward circuit itself, which is why give-first is one of the few approaches anyone sustains for years.</strong></p>
+<ul>
+<li><strong>Direct evidence · instrumental networking feels dirty</strong>: Casciaro, Gino &amp; Kouchaki (2014, <em>Administrative Science Quarterly</em>) combined experiments with field data from a law firm: networking for professional gain, versus out of genuine interest, <strong>triggered more feelings of impurity and led to less networking</strong>, and <strong>the effect was strongest for people lower in the hierarchy</strong>. <strong>Discount honestly</strong>: one measure was a cleansing-word completion task, kin to the poorly-replicating Macbeth effect (Earp et al., 2014 failed to replicate) — the finding that people report discomfort and consequently do less holds up; the "moral impurity" interpretation shouldn't be treated as settled.</li>
+<li><strong>Hard evidence · giving activates the reward system</strong>: Harbaugh, Mayr &amp; Burghart (2007, <em>Science</em>), an fMRI study: when money went to a charity, activity rose in the <strong>nucleus accumbens and ventral striatum</strong> (core of the dopaminergic reward system), and rose further when the giving was voluntary. Moll et al. (2006, <em>PNAS</em>) found the same direction independently. This is why give-first is sustainable and grinding through cold networking isn't.</li>
+<li><strong>Hard evidence · reciprocity is intrinsically rewarding</strong>: Rilling et al. (2002, <em>Neuron</em>) scanned people playing the prisoner's dilemma: <strong>mutual cooperation</strong> activated the <strong>nucleus accumbens, caudate and orbitofrontal cortex</strong> more strongly than winning alone did.</li>
+</ul>
+<p class="caveat">Boundary: giving first is not ingratiation. If you give and then start a private ledger, waiting to collect, people can feel it — that's just deferred extraction. The test: <strong>if they could never repay you, would you still do this?</strong> If you can't say yes, don't dress it as generosity; asking outright is more dignified.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"No ask attached — just thought you'd want to see this." —— saying it explicitly changes how the message reads.</p>
+<p>"I actually ran it, and here's what surprised me." —— "I used it" beats "I read it".</p>
+<p>"Happy to make the intro if you want it." —— ask before connecting people, never after.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>Opportunities come from the middle distance, not your inner circle
+<span class="en">Opportunities don't come from your closest people. They come from the middle distance.</span></h2>
+<span class="tag">weak ties</span><span class="tag">structural holes</span><span class="tag">inverted U</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Your three closest friends swim in the same information pool you do; the opportunities they know about, you mostly know already. <strong>New things arrive across the line that reaches another cluster.</strong> But don't overcorrect: total strangers can't help you either — the useful band is "we talk occasionally and they remember me".</div>
+</div>
+<div class="section">
+<div class="section-label">Where the bridge is, where the peak is</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+<marker id="b2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#9aab9f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Top: information inside a dense cluster is redundant　Bottom: the most useful strength isn't at either end</text>
+<line stroke="#9aab9f" stroke-width="1" x1="65" x2="158" y1="78" y2="78"></line>
+<line stroke="#9aab9f" stroke-width="1" x1="158" x2="158" y1="78" y2="163"></line>
+<line stroke="#9aab9f" stroke-width="1" x1="158" x2="65" y1="163" y2="163"></line>
+<line stroke="#9aab9f" stroke-width="1" x1="65" x2="65" y1="163" y2="78"></line>
+<line stroke="#4e8a3f" stroke-width="1.4" x1="110" x2="65" y1="120" y2="78"></line>
+<line stroke="#4e8a3f" stroke-width="1.4" x1="110" x2="158" y1="120" y2="78"></line>
+<line stroke="#4e8a3f" stroke-width="1.4" x1="110" x2="65" y1="120" y2="163"></line>
+<line stroke="#4e8a3f" stroke-width="1.4" x1="110" x2="158" y1="120" y2="163"></line>
+<circle cx="65" cy="78" fill="#4e8a3f" r="6.5"></circle>
+<circle cx="158" cy="78" fill="#4e8a3f" r="6.5"></circle>
+<circle cx="65" cy="163" fill="#4e8a3f" r="6.5"></circle>
+<circle cx="158" cy="163" fill="#4e8a3f" r="6.5"></circle>
+<circle cx="110" cy="120" fill="#123f30" r="11"></circle>
+<text fill="#f3f1ea" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="110" y="124">you</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="110" y="192">your dense cluster · strong ties</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="110" y="208">they all know each other, and know what you know</text>
+<line marker-end="url(#b1)" stroke="#1f7a5c" stroke-dasharray="6,4" stroke-width="2" x1="170" x2="322" y1="120" y2="120"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="246" y="108">this line is a bridge</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="246" y="140">the only route new information takes</text>
+<circle cx="335" cy="120" fill="#1f7a5c" r="8"></circle>
+<line stroke="#9aab9f" stroke-width="1.2" x1="335" x2="410" y1="120" y2="70"></line>
+<line stroke="#9aab9f" stroke-width="1.2" x1="335" x2="455" y1="120" y2="112"></line>
+<line stroke="#9aab9f" stroke-width="1.2" x1="335" x2="430" y1="120" y2="170"></line>
+<line stroke="#9aab9f" stroke-width="1.2" x1="335" x2="380" y1="120" y2="185"></line>
+<circle cx="410" cy="70" fill="#8aa89a" r="6"></circle>
+<circle cx="455" cy="112" fill="#8aa89a" r="6"></circle>
+<circle cx="430" cy="170" fill="#8aa89a" r="6"></circle>
+<circle cx="380" cy="185" fill="#8aa89a" r="6"></circle>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="420" y="212">their cluster</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="430" y="228">everything you can't reach sits over here</text>
+<rect fill="#eef1f5" height="96" stroke="#c8d2dc" stroke-width="1" width="130" x="545" y="86"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="610" y="108">keep your strong ties</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="610" y="132">weak ties give you</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="610" y="150">information; strong ties</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="610" y="168">vouch, and catch you</text>
+<line stroke="#9aab9f" stroke-width="1.2" x1="60" x2="60" y1="252" y2="348"></line>
+<line marker-end="url(#b2)" stroke="#9aab9f" stroke-width="1.2" x1="60" x2="668" y1="348" y2="348"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="66" y="248">↑ help in moving to a new job</text>
+<polyline fill="none" points="72,336 130,314 200,280 280,264 360,276 460,300 560,320 650,332" stroke="#1f7a5c" stroke-width="2.6"></polyline>
+<circle cx="280" cy="264" fill="#1f7a5c" r="5"></circle>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="280" y="252">peak: moderately weak ties</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="86" y="300">too weak: they don't know you</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="end" x="620" y="292">too strong: same information as you</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="66" y="364">near strangers</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="300" y="364">occasional contact · around ten mutuals</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="end" x="664" y="364">people you see daily</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="380" y2="380"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="398">Evidence: five years of randomised experiments on ~20 million LinkedIn users — moderately weak ties had the largest causal effect on job mobility (Rajkumar et al., 2022).</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="414">The curve is indicative, not raw data; "around ten mutuals" is where that study's effect was strongest.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Situation: you're changing direction in your career, or hunting the first ten customers for a new product.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Asking only your three closest people</div>
+<p>"Anything going on your end?" — they're in the same group chats, reading the same feeds, knowing the same people. <strong>Whatever you get back, you probably already knew.</strong> Then you conclude there's nothing out there.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Go to the middle band, and bring a specific coordinate</div>
+<p>Go through your contacts and pull out people you <strong>haven't spoken to in over a year but genuinely worked with</strong> — an ex-colleague's ex-colleague, a partner from three years ago, a client from your last job. To one of them:<br/>"It's been a while. I'm moving toward A, specifically looking for teams doing B. <strong>Not asking for an intro — I just want to know who's been most active in this space these last two years.</strong>" — swapping "any opportunities?" for a question they can actually answer changes the reply rate completely.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>The mechanism is information redundancy, not headcount. You and your close friends soak in the same pool, so the marginal information they can hand you approaches zero. The line reaching another cluster — structurally, a bridge — is the entry point for anything new, not because that person is smarter but because they stand where you can't see. Yet weaker isn't uniformly better: someone too distant doesn't know you well enough to vouch. The valuable band is the middle: they remember you and know roughly what you're worth, but they've left your information pool.</strong></p>
+<ul>
+<li><strong>Hard evidence · large-scale causal experiment</strong>: Rajkumar et al. (2022, <em>Science</em>) used five years of randomised connection-recommendation experiments across roughly <strong>20 million LinkedIn users</strong>, tracking subsequent job changes: <strong>moderately weak ties (around ten mutual connections) produced the largest increase, while the strongest ties contributed least causally</strong>. Rare genuine causal evidence in this area — hard. <strong>Boundary</strong>: it covers white-collar job search only; don't extrapolate to selling products or raising money.</li>
+<li><strong>Classic, but discount it</strong>: Granovetter (1973, <em>American Journal of Sociology</em>) introduced the weak-tie argument; the interview data in his 1974 <em>Getting a Job</em> found that among people who landed a job through a contact, <strong>only about one in six came from someone they saw often, while more than half came from someone seen occasionally</strong>. <strong>A few hundred respondents, 1970s, all male professionals</strong> — read it as a direction, not a universal ratio.</li>
+<li><strong>Hard evidence · strong ties do things weak ties can't</strong>: Krackhardt (1992) on "the strength of strong ties": where <strong>trust, risk, and real effort</strong> are required — vouching for you internally, helping during a crisis — strong ties clearly outperform. <strong>The two kinds of tie do different jobs.</strong></li>
+</ul>
+<p class="caveat">Boundary: weak ties pay only if they genuinely cross into another cluster. Two hundred people you added in an industry group chat aren't weak ties, they're strangers in the same pool — same redundant information, minus the history. And this rule is most reliable for finding jobs and information; when you need someone to actually put in effort, go back to strong ties.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"You're the only person I know who'd know this." —— says why them, which a broadcast never does.</p>
+<p>"Not asking for an intro — just who's doing interesting work here?" —— ask for information before favours.</p>
+<p>"It's been a while, and that's on me." —— the best opener after a long silence.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Show up only when you need something and you're always withdrawing
+<span class="en">If you only show up when you need something, you are only ever withdrawing.</span></h2>
+<span class="tag">relationship account</span><span class="tag">dormant ties</span><span class="tag">repeated game</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Other people's memory of you carries a balance: appear only when you want something and it drops a notch each time, until nobody replies. <strong>Deposits, though, are absurdly cheap — one useful piece of information, one piece of public credit with your name on it, one introduction.</strong> And the most underrated asset on the ledger is the people you haven't spoken to in three years.</div>
+</div>
+<div class="section">
+<div class="section-label">How to deposit, and why dormant ties pay</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+<marker id="c2" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Top: three cheap deposits　Bottom: why dormant contacts are more useful</text>
+<rect fill="#e2efdc" height="40" stroke="#4e8a3f" stroke-width="1.2" width="190" x="20" y="46"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="32" y="63">public credit, by name</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="32" y="78">what was good, how you used it</text>
+<rect fill="#e2efdc" height="40" stroke="#4e8a3f" stroke-width="1.2" width="190" x="20" y="98"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="32" y="115">an introduction</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="32" y="130">both sides asked first</text>
+<rect fill="#e2efdc" height="40" stroke="#4e8a3f" stroke-width="1.2" width="190" x="20" y="150"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="32" y="167">"saw this, thought of you"</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="32" y="182">something they can really use</text>
+<line marker-end="url(#c1)" stroke="#1f7a5c" stroke-width="1.6" x1="212" x2="288" y1="66" y2="106"></line>
+<line marker-end="url(#c1)" stroke="#1f7a5c" stroke-width="1.6" x1="212" x2="288" y1="118" y2="118"></line>
+<line marker-end="url(#c1)" stroke="#1f7a5c" stroke-width="1.6" x1="212" x2="288" y1="170" y2="130"></line>
+<rect fill="#1f7a5c" height="76" width="150" x="292" y="80"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="367" y="108">the account</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9" text-anchor="middle" x="367" y="128">balance = willingness to</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9" text-anchor="middle" x="367" y="144">name you when you're absent</text>
+<line marker-end="url(#c1)" stroke="#1f7a5c" stroke-width="1.6" x1="444" x2="502" y1="118" y2="118"></line>
+<rect fill="#eef1f5" height="64" stroke="#3f5c7a" stroke-width="1.2" width="178" x="506" y="86"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="595" y="108">withdrawal: one concrete ask</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="595" y="126">with a balance it isn't awkward;</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="595" y="142">without one, the third ask is ignored</text>
+<rect fill="#f7faf6" height="46" stroke="#cbb98f" stroke-width="1.2" width="176" x="20" y="214"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="108" y="234">an ex-colleague, 3 years cold</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="108" y="250">you assume the line is dead</text>
+<line marker-end="url(#c2)" stroke="#5a7365" stroke-width="1.6" x1="198" x2="238" y1="237" y2="237"></line>
+<rect fill="#f7faf6" height="46" stroke="#cbb98f" stroke-width="1.2" width="176" x="242" y="214"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="330" y="234">one message, no ask</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="330" y="250">the old trust is still there</text>
+<line marker-end="url(#c2)" stroke="#5a7365" stroke-width="1.6" x1="420" x2="460" y1="237" y2="237"></line>
+<rect fill="#dfeae2" height="46" stroke="#1f7a5c" stroke-width="1.2" width="216" x="464" y="214"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="572" y="234">their advice is often more novel</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="572" y="250">three years apart means no overlap left</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="278" y2="278"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="296">Evidence: 224 executives reconnected with contacts they hadn't spoken to in 3+ years and rated that advice above their active contacts' (Levin et al., 2011).</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="314">Mechanism: a dormant tie holds both advantages — old trust needs no rebuilding, and the information no longer overlaps.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="332">Note: self-rated, executive sample; trust the direction, not the precision.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Situation: an ex-colleague you haven't spoken to in three years, and now you need a favour.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Pretending the gap never happened</div>
+<p>"Hey! Busy? How've you been?" — two lines of warm-up, then the swerve into the request, while they spend the whole exchange waiting for the "actually, I wanted to ask". <strong>Papering over the silence damages more than the silence did</strong>: even the friendliness now reads as procedure.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Name the gap, then give a concrete memory anchor</div>
+<p>"It's been ages, and that's on me. <strong>We were reviewing our release process last week and I lifted your old staged-rollout order wholesale — saved us a pile of grief, and I thought you should know.</strong> What are you working on these days?"<br/>— naming the gap (no pretending) + specific credit (a deposit) + a question they can answer (not a request). <strong>The favour waits for next time</strong>; this message exists only to reopen the account.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>This is a repeated game, and what people evaluate isn't this particular request but your pattern. Someone who surfaces only when they need something has an unmistakable pattern, and by the third time nobody replies — not out of meanness, but because their time is being consumed in one direction. What a cheap deposit changes isn't a debt, it's your retrievability: whether your name comes to mind when they're talking to someone else. A dormant tie, meanwhile, holds two advantages at once — the trust doesn't need rebuilding, and the years apart mean your information no longer overlaps.</strong></p>
+<ul>
+<li><strong>Medium · dormant ties are more useful</strong>: Levin, Walter &amp; Murnighan (2011, <em>Organization Science</em>) had <strong>224 EMBA executives</strong> reconnect with people they hadn't spoken to in at least three years and ask for advice: that advice was rated <strong>more valuable and more novel than advice from their currently active contacts</strong>. <strong>Discount</strong>: self-rated, executive sample, no randomised control.</li>
+<li><strong>Hard evidence · reciprocity is intrinsically rewarding</strong>: Rilling et al. (2002, <em>Neuron</em>): rounds where cooperation held significantly activated the <strong>nucleus accumbens and caudate</strong>. Which is why mutual-help relationships don't run on willpower, and one-directional ones can't survive — one side is collecting no reward at all.</li>
+<li><strong>Counter-example (stop treating 150 as a hard number)</strong>: Dunbar's number circulates everywhere, but Lindenfors et al. (2021, <em>Biology Letters</em>) reanalysed the original brain-size-to-group-size data and found <strong>confidence intervals far too wide to support any such precise figure</strong>. "Maintenance has a real cost, so prioritise" is fine; <strong>planning your network around a ceiling of 150 has no basis</strong>.</li>
+</ul>
+<p class="caveat">Boundary: the account metaphor has one dangerous use — recording every gift as a receivable and waiting to collect. Once you're keeping that ledger the flavour changes and people smell it. Safer to treat each deposit as spent: assume no return, and count any return as a surprise. Also, don't turn deposits into pestering — a weekly check-in with no substance drains the same balance.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"It's been three years and that's on me." —— more credible than pretending otherwise.</p>
+<p>"I used your thing and it worked — wanted you to know." —— the smallest possible deposit.</p>
+<p>"No ask this time." —— spell it out, or they won't relax.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>You think you need twenty people. Ten is usually enough
+<span class="en">You think you need to ask twenty people. Ten is usually enough.</span></h2>
+<span class="tag">underestimating yes</span><span class="tag">channel</span><span class="tag">concrete asks</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">What stops people asking isn't temperament, it's a measurable estimation error: <strong>we systematically underestimate how many people will say yes, by roughly half.</strong> You priced what saying yes costs them and left out what refusing you to your face costs them. That same awkwardness is why email barely works and asking in person almost always does.</div>
+</div>
+<div class="section">
+<div class="section-label">What you underestimate, and the three dials on an ask</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">To get five people to agree, how many do you have to ask?</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="end" x="104" y="66">your prediction</text>
+<rect fill="#f6e3da" height="26" stroke="#c0603a" stroke-width="1.2" width="200" x="112" y="48"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="124" y="66">about 20 people</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="end" x="104" y="106">actually needed</text>
+<rect fill="#e2efdc" height="26" stroke="#4e8a3f" stroke-width="1.2" width="100" x="112" y="88"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="124" y="106">about 10</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="126">You counted the time saying yes costs them, and missed</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="140">the awkwardness of refusing you — often the larger cost.</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="360" x2="360" y1="40" y2="140"></line>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" x="386" y="52">Same sentence, different channel</text>
+<rect fill="#e2efdc" height="50" stroke="#4e8a3f" stroke-width="1.2" width="130" x="386" y="64"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="451" y="84">in person / voice</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="451" y="101">refusing costs them, live</text>
+<rect fill="#f6e3da" height="50" stroke="#c0603a" stroke-width="1.2" width="130" x="536" y="64"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="601" y="84">email / message</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="601" y="101">ignoring it is free</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="526" y="133">Say it in person when you can — you badly overrate email</text>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" x="20" y="172">Three dials: set right, saying yes costs less than saying no</text>
+<rect fill="#dfeae2" height="62" stroke="#1f7a5c" stroke-width="1.2" width="205" x="20" y="186"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="122" y="206">① concrete enough to answer</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="122" y="224">"20 minutes, three questions,</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="122" y="240">listed below"</text>
+<rect fill="#dfeae2" height="62" stroke="#1f7a5c" stroke-width="1.2" width="205" x="245" y="186"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="347" y="206">② a dignified way out</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="347" y="224">"just say it's a bad time —</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="347" y="240">I won't read anything into it"</text>
+<rect fill="#dfeae2" height="62" stroke="#1f7a5c" stroke-width="1.2" width="215" x="465" y="186"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="572" y="206">③ say what you'll send back</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="572" y="224">"I'll write up the comparison</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="572" y="240">and send it over"</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="286" y2="286"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="304">Evidence: across five experiments people predicted ~20 asks to get 5 yeses; the real figure was ~10 (Flynn &amp; Lake, 2008).</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="322">Evidence: the identical request succeeds far more often in person than by email, and people overrate email (Roghanizad &amp; Bohns, 2017).</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Situation: you want someone you barely know to look over your portfolio.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Vague, open-ended, no exit</div>
+<p>"I don't know if this is convenient at all, but would you mind taking a look sometime when you're free? Thank you so much!" — <strong>they can't answer this</strong>: look for how long? at what? by when? So it goes into "when I get a moment", and that moment never arrives. And you'll read the silence as a no.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ All three dials at once</div>
+<p>"Asking for 20 minutes. <strong>Three specific questions, written out here: 1… 2… 3…</strong> Thursday this week or Tuesday next, your pick.<br/><strong>If it's a bad time just say so — genuinely, I won't read anything into it.</strong><br/>Afterwards I'll write up the comparison across these firms and send it over; you'll probably find it useful too."</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Your forecast runs on an incomplete ledger: you can see the time a yes costs them, and you can't see what a no costs them — the social price of refusing someone to their face, which for most people outweighs the small favour. The blind spot is systematic and always points the same way, so "they probably won't say yes" is wrong as a default. That same asymmetry explains channel: email hands them a zero-cost refusal. And all three dials do one job — push the cost of yes below the cost of no.</strong></p>
+<ul>
+<li><strong>Hard evidence · people underestimate compliance</strong>: Flynn &amp; Lake (2008, <em>Journal of Personality and Social Psychology</em>), five experiments: participants predicted they'd need to approach about <strong>20 strangers</strong> to get 5 to fill in a questionnaire; the real number was <strong>about 10</strong>, with the same pattern for borrowing a phone or asking directions. The authors attribute it precisely to underweighting the social cost of refusal. Multiple experiments, widely replicated since (Bohns, 2016, <em>Current Directions in Psychological Science</em>) — hard.</li>
+<li><strong>Fairly hard · channel decides it</strong>: Roghanizad &amp; Bohns (2017, <em>Journal of Experimental Social Psychology</em>): the same request succeeded <strong>far more often in person than by email</strong>, while participants predicted the two would be similar. <strong>Discount</strong>: the headline multiple is a ratio from specific experimental conditions — the direction is reliable, the number shouldn't be extrapolated.</li>
+<li><strong>Hard evidence · rejection genuinely hurts, but don't overstate it</strong>: Eisenberger, Lieberman &amp; Williams (2003, <em>Science</em>) found social exclusion raised activity in the <strong>dorsal anterior cingulate cortex</strong>, overlapping regions that process physical pain — the fear of asking isn't precious. <strong>But discount</strong>: Woo et al. (2014, <em>Nature Communications</em>) used multivoxel pattern analysis to show the two kinds of pain have separable neural representations, so "social rejection is literally the same pain system" goes too far.</li>
+</ul>
+<p class="caveat">Boundary: this holds for <strong>small favours</strong>. The bigger the ask — a reference, a guarantee, money — the less the underestimation applies, and the answer there is to build the balance first rather than borrow courage from statistics. Also, "in person works better" is not a licence to corner people: leaning on someone's inability to refuse in the moment crosses the same persuasion-versus-manipulation line the influence-principles piece draws. The test is whether <strong>you dare write "saying no is completely fine" into the ask, and mean it</strong>.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Useful phrasing</span>
+<p>"Twenty minutes, three specific questions — here they are." —— answerable in one line.</p>
+<p>"A no costs you nothing with me." —— spell out the exit; hints don't land.</p>
+<p>"Thanks for saying so directly." —— what buys you the next ask.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 34 Action</h3>
+<p>Sixty minutes, four steps. Today is deposits only — except the last step.</p>
+<div class="action">
+<strong>1 (15 min):</strong> Go through your contacts, inbox and old project groups and list <strong>20 people you haven't spoken to in over a year but genuinely worked with</strong>. Not heroes, not strangers you once added — <strong>the middle band</strong>.<br/><br/><strong>2 (10 min):</strong> Write one line per person: what you could give them. Pick from the four currencies — first-hand observation / public credit / an introduction / real feedback. Cross out anyone you can't answer for.<br/><br/><strong>3 (20 min):</strong> Pick 5 and send each a <strong>give-only</strong> message. Hard rule: <strong>no request in it</strong>, not even a "while I'm at it". Open by naming the gap, put a concrete memory anchor in the middle, end with a question they can answer.<br/><br/><strong>4 (15 min):</strong> Take one thing you've been putting off asking for and rewrite it on the three dials: how long + what exactly (questions listed) + when + a genuine "just say it's a bad time" + what you'll send back. <strong>If you can say it in person or by voice, don't type it.</strong><br/><br/>Boundary note: this raises reply rates and keeps relationships alive. <strong>It guarantees no individual outcome.</strong> And the red line: giving first is not investing. If you're keeping a private ledger every time you give, people eventually smell it — at which point you've both given the thing away and emptied the account. The self-check is one sentence: <strong>if they could never help you as long as they live, would you still send this message?</strong></div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. I'm new and have no resources. What could I possibly give?</summary>
+<div class="answer">First, drop an assumption: <strong>giving doesn't have to be equivalent.</strong> You're not running a fair trade, you're moving the encounter out of the "pure extraction" bucket — and that takes exactly one real thing, worth five minutes.<br/><br/>And beginners happen to hold an asset nobody else does: <strong>first-hand observation.</strong> The specific things you see on the front line — the numbers, the actual words users say — get harder to reach the higher someone sits. "I ran your method across a twelve-person crew for two weeks and one result contradicted your prediction" is information only you have. The other three currencies cost nothing either: public credit by name, an introduction, real feedback.<br/><br/>One more thing: in that study of instrumental networking, <strong>people lower in the hierarchy felt the discomfort most strongly</strong>. So a beginner's awkwardness isn't thin skin — it's pointing you at exactly the right task, which is finding the thing you can give. It's the same point the trust-as-currency piece makes from the other side: trust isn't accumulated by meeting people, it's accumulated by what you've delivered.</div>
+</details>
+<details>
+<summary>2. I've been giving for ages and got nothing back. Am I being used?</summary>
+<div class="answer">Separate two cases; they're handled differently.<br/><br/><strong>One is a timescale problem.</strong> Returns often run in years, and frequently don't come from the person you gave to — you help A, and two years later it comes back via C, whom A mentioned you to once. Judging "was there a return" inside a one-year window will nearly always mislead you.<br/><br/><strong>The other is genuine one-way consumption.</strong> The test isn't whether they've repaid you; it's <strong>whether they appear only when they need something and never ask what you're working on</strong>. The right move then isn't a rupture, it's a <strong>downgrade</strong>: move them from "an account I actively deposit into" to "someone I'm perfectly friendly to when they come to me". No announcement needed, no falling-out.<br/><br/>But the case to watch hardest is a third one, and it's on your side: <strong>if you were waiting the whole time you were giving, that wasn't giving, it was investing.</strong> Nothing shameful about investing — but then run it like an investment: accept it might not pay, size the position, and don't keep a ledger the other person can't see. Performed generosity is the most damaging version of all of this, because people almost always catch the "you owe me" undertone, and by then you have neither the return nor the relationship.</div>
+</details>
+<details>
+<summary>3. So what actually separates this from oily card-handing networking?</summary>
+<div class="answer">Not whether your motive is self-interested — of course it is, and pretending otherwise reads worse. The difference is <strong>whether the other person figures in your plan as nothing but a means</strong>. Three tests you can run on the spot:<br/><br/><strong>One: if they could never help you again starting tomorrow, would you stay in touch?</strong> If you can't say yes, the relationship is a tool in your own head, and they'll read that eventually.<br/><br/><strong>Two: is there a request in your first message?</strong> If so, all you brought was a need.<br/><br/><strong>Three: could you say your purpose to their face without cringing?</strong> "I'm looking for opportunities in B, which is why I wanted to talk" — fine out loud. "I added you because you might have useful connections" — collapses on contact, and what it was running on was precisely their not knowing. Same line the influence-principles piece draws: <strong>what survives being named is persuasion; what collapses is manipulation.</strong><br/><br/>Finally, a more practical standard that cuts away most useless socialising: <strong>the output of networking isn't "who I've met", it's "who would say my name when I'm not in the room".</strong> By that measure, two hundred business cards plus a pile of silent contacts score zero, while the one person you shipped a project with three years ago — and spoke well of afterwards — scores higher than all of them combined.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 34</footer>
+</div>
+</body>
+</html>

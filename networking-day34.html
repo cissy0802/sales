@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 34：networking 不油腻</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 34 · Phase E</div>
+<h1>觉得油腻<br/>是因为你手上没东西可给</h1>
+<div class="meta"><span>主题：给予优先 · 弱连接 · 关系账户与休眠联系人 · 怎么开口求助</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">有人真的测过：为功利目的去攒关系会让人产生一种「想去洗手」的不适感——而这个开关不在脸皮上。</div>
+</header>
+<div class="intro">
+<strong>大多数人躲 networking 不是因为懒或内向，是因为它让人不舒服，而这份不舒服有具体来源：你带去的只有需求。</strong>一段接触里你全程在取、没有任何可给的东西，你自己会先把它定性成「我在利用他」——姿态因此变紧，话变得像话术，对方也接得到。<strong>所以解法不是练脸皮，是换四件事：先找到你能给的东西；搞清楚机会真正来自哪一类联系人（不是最熟的那几个）；把关系当账户来存而不是等着提；开口时知道你严重低估了别人会答应的比例。</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>油腻感是真的，但它的开关是「我有没有东西可给」
+<span class="en">The ick is real. Its switch is whether you brought anything to give.</span></h2>
+<span class="tag">功利性关系</span><span class="tag">给予优先</span><span class="tag">奖赏回路</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">别把不适感当成「我不擅长社交」。那是你对这段接触的定性在报警：<strong>纯索取的接触，你自己第一个不认可。</strong>先找到一样能给的东西，哪怕只值五分钟，报警就停。</div>
+</div>
+<div class="section">
+<div class="section-label">两种带去的东西，两种结局</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+<marker id="a2" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同一个人、同一个目的，只差你带了什么</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="195" y="46">路径 A · 只带需求</text>
+<rect fill="#f6e3da" height="44" stroke="#c0603a" stroke-width="1.2" width="250" x="70" y="56"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="195" y="76">「能跟您聊聊、学习一下吗」</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="195" y="92">他付出时间，你付出零</text>
+<line marker-end="url(#a1)" stroke="#c0603a" stroke-width="1.6" x1="195" x2="195" y1="102" y2="120"></line>
+<rect fill="#f6e3da" height="44" stroke="#c0603a" stroke-width="1.2" width="250" x="70" y="122"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="195" y="142">你先给自己定性：我在利用他</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="195" y="158">不适感来自这里，不是内向</text>
+<line marker-end="url(#a1)" stroke="#c0603a" stroke-width="1.6" x1="195" x2="195" y1="168" y2="186"></line>
+<rect fill="#f6e3da" height="44" stroke="#c0603a" stroke-width="1.2" width="250" x="70" y="188"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="195" y="208">姿态紧、话像话术、事后回避</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="195" y="224">做得更少，也做得更差</text>
+<path d="M70,210 C 26,208 26,80 66,78" fill="none" marker-end="url(#a1)" stroke="#c0603a" stroke-dasharray="4,3" stroke-width="1.4"></path>
+<text fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle" x="195" y="248">越回避越生疏，下次更像索取</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="505" y="46">路径 B · 先带一样能给的</text>
+<rect fill="#e2efdc" height="44" stroke="#4e8a3f" stroke-width="1.2" width="250" x="380" y="56"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="505" y="76">一条他用得上的信息</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="505" y="92">不必对等，值五分钟就够</text>
+<line marker-end="url(#a2)" stroke="#1f7a5c" stroke-width="1.6" x1="505" x2="505" y1="102" y2="120"></line>
+<rect fill="#e2efdc" height="44" stroke="#4e8a3f" stroke-width="1.2" width="250" x="380" y="122"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="505" y="142">定性变成：我在贡献</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="505" y="158">给予本身就走奖赏回路</text>
+<line marker-end="url(#a2)" stroke="#1f7a5c" stroke-width="1.6" x1="505" x2="505" y1="168" y2="186"></line>
+<rect fill="#1f7a5c" height="44" width="250" x="380" y="188"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="505" y="208">姿态松，你愿意重复做</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9.2" text-anchor="middle" x="505" y="224">能重复，才有后面的复利</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="505" y="248">代价：这次给出去，可能真没有回报</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="268" y2="268"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="288">证据：为职业目的主动结交，会让人报告出明显的不适感与回避倾向（Casciaro 等, 2014）。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="308">机制：给予不是纯成本——捐出钱财时伏隔核（奖赏系统核心）活动上升（Harbaugh 等, 2007）。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="328">注意：同一研究里位置越低的人不适感越强——新人尤其要先找到可给的东西。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你想认识一位同行前辈，他没理由认识你。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 只带需求去</div>
+<p>「拜读了您的文章，非常受益，能不能约时间向您请教？」——<strong>这句话的实际内容是：请你给我一小时。</strong>他每周收十条，全一样；而你发出去那一刻自己就不舒服——你知道你什么都没带。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 带一件具体的东西去，且这次不提要求</div>
+<p>「你上个月写的那套排班法，我在十二个人的班组照着跑了两周。<strong>有个跟你预期相反的结果：夜班那组反而更省人，因为交接被合并了。</strong>数据在这，也许有用。」——你带的是他拿不到的一手观察。<strong>这一条里不要有任何请求</strong>，要留到下一次。</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">你手上其实有四种低成本货币</div>
+<ul class="checklist">
+<li><strong>一手观察</strong>：你在一线看到的真实现象与数字——位置越低反而越独有。</li>
+<li><strong>具名的公开认可</strong>：在他同行看得见的地方说清「哪一点好、我怎么用的」。成本零，价值不零。</li>
+<li><strong>牵一条线</strong>：把他和另一个人接上，两边都先问过。这是最重的一种货币。</li>
+<li><strong>具体反馈</strong>：证明你真用了，指出一个他没注意到的点。空夸不算。</li>
+</ul>
+</div>
+<p class="en-brief"><b>EN</b> Most people avoid networking not out of laziness but because it makes them feel slightly dirty — and that feeling has a specific trigger. Research on instrumental networking found that people asked to build ties for professional gain reported measurably more moral discomfort and did less of it, with the effect strongest among those in lower-power positions. The useful reading is that the discomfort isn't a character flaw, it's an accurate read on a lopsided exchange: if all you bring is a request, you are the first person to classify the interaction as using someone, and that classification leaks into your posture and your wording. The fix isn't a thicker skin, it's arriving with something. It doesn't have to be equivalent — five minutes of value is enough — and the four cheapest currencies are usually available to a beginner: a first-hand observation from the front line that a senior person can't get, public and specific credit, an introduction where both sides were asked first, and real feedback that proves you actually used the thing. Giving also isn't pure cost: donating money raises activity in the ventral striatum, the core of the reward system, which is why the give-first version is the one you can keep doing.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>不适感是信号，不是缺陷。一次接触里你只取不给，你自己会先给它贴上「利用」的标签——标签一贴，姿态和措辞全都变形，对方接到的是紧绷和算计。带上一样真能给的东西，等于把这次接触重新归类，报警就解除。而且给予不是单纯的成本：它自己走奖赏回路，所以「先给」是少数能长期坚持的打法。</strong></p>
+<ul>
+<li><strong>直接证据 · 功利性社交让人不适</strong>：Casciaro、Gino &amp; Kouchaki (2014, <em>Administrative Science Quarterly</em>) 用实验加律所田野数据发现：为职业目的主动结交比因兴趣结交<strong>更易触发不洁感、也做得更少</strong>，且<strong>位置越低的人感受越强</strong>。<strong>打折</strong>：其中一项指标是「清洁类词汇」补全，与复现不佳的麦克白效应同源（Earp 等, 2014 未复现）——「人确实报告不适、因此少做」这层稳，「不洁隐喻」这层解释别当铁。</li>
+<li><strong>硬证据 · 给予激活奖赏系统</strong>：Harbaugh、Mayr &amp; Burghart (2007, <em>Science</em>) 的 fMRI 研究：钱被转给慈善机构时<strong>伏隔核与腹侧纹状体</strong>（多巴胺奖赏系统核心）活动上升，自愿给出时更强；Moll 等 (2006, <em>PNAS</em>) 同方向。这解释了为什么「先给」能坚持、硬社交坚持不了。</li>
+<li><strong>硬证据 · 互惠本身有奖赏价值</strong>：Rilling 等 (2002, <em>Neuron</em>) 的囚徒困境实验：<strong>双方合作</strong>的回合比自己单赢更强地激活<strong>伏隔核、尾状核与眶额皮层</strong>。</li>
+</ul>
+<p class="caveat">边界：先给不等于讨好。给了就在心里记账等着提，对方能感觉到——那只是把索取延后。判据：<strong>如果他永远没法回报你，这件事你还做吗？</strong>答不出「做」，就别用「先给」包装，直接开口要还更体面。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"No ask attached — just thought you'd want to see this." —— 明说这次不要东西，可信度立刻不同。</p>
+<p>"I actually ran it, and here's what surprised me." —— 用「我真的做了」区别于「我读了」。</p>
+<p>"Happy to make the intro if you want it." —— 牵线之前先问，别自作主张。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>机会不来自最熟的人，来自「有点熟」的人
+<span class="en">Opportunities don't come from your closest people. They come from the middle distance.</span></h2>
+<span class="tag">弱连接</span><span class="tag">结构洞</span><span class="tag">倒 U</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">最熟的三个朋友和你泡在同一个信息池，他们知道的机会你多半已经知道。<strong>新东西来自跨到别的圈子的那条线。</strong>但别走到另一个极端：完全不认识的人也帮不了你——最有用的是「偶尔联系、还记得你」那一档。</div>
+</div>
+<div class="section">
+<div class="section-label">结构与强度：桥在哪，峰值在哪</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+<marker id="b2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#9aab9f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">上：密圈里的信息是重复的　下：帮助最大的不在两端</text>
+<line stroke="#9aab9f" stroke-width="1" x1="65" x2="158" y1="78" y2="78"></line>
+<line stroke="#9aab9f" stroke-width="1" x1="158" x2="158" y1="78" y2="163"></line>
+<line stroke="#9aab9f" stroke-width="1" x1="158" x2="65" y1="163" y2="163"></line>
+<line stroke="#9aab9f" stroke-width="1" x1="65" x2="65" y1="163" y2="78"></line>
+<line stroke="#4e8a3f" stroke-width="1.4" x1="110" x2="65" y1="120" y2="78"></line>
+<line stroke="#4e8a3f" stroke-width="1.4" x1="110" x2="158" y1="120" y2="78"></line>
+<line stroke="#4e8a3f" stroke-width="1.4" x1="110" x2="65" y1="120" y2="163"></line>
+<line stroke="#4e8a3f" stroke-width="1.4" x1="110" x2="158" y1="120" y2="163"></line>
+<circle cx="65" cy="78" fill="#4e8a3f" r="6.5"></circle>
+<circle cx="158" cy="78" fill="#4e8a3f" r="6.5"></circle>
+<circle cx="65" cy="163" fill="#4e8a3f" r="6.5"></circle>
+<circle cx="158" cy="163" fill="#4e8a3f" r="6.5"></circle>
+<circle cx="110" cy="120" fill="#123f30" r="11"></circle>
+<text fill="#f3f1ea" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="110" y="124">你</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="110" y="192">密圈 · 强连接</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="110" y="208">他们彼此也认识，知道的跟你重叠</text>
+<line marker-end="url(#b1)" stroke="#1f7a5c" stroke-dasharray="6,4" stroke-width="2" x1="170" x2="322" y1="120" y2="120"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="246" y="108">这条线叫「桥」</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="246" y="140">新信息的唯一通道</text>
+<circle cx="335" cy="120" fill="#1f7a5c" r="8"></circle>
+<line stroke="#9aab9f" stroke-width="1.2" x1="335" x2="410" y1="120" y2="70"></line>
+<line stroke="#9aab9f" stroke-width="1.2" x1="335" x2="455" y1="120" y2="112"></line>
+<line stroke="#9aab9f" stroke-width="1.2" x1="335" x2="430" y1="120" y2="170"></line>
+<line stroke="#9aab9f" stroke-width="1.2" x1="335" x2="380" y1="120" y2="185"></line>
+<circle cx="410" cy="70" fill="#8aa89a" r="6"></circle>
+<circle cx="455" cy="112" fill="#8aa89a" r="6"></circle>
+<circle cx="430" cy="170" fill="#8aa89a" r="6"></circle>
+<circle cx="380" cy="185" fill="#8aa89a" r="6"></circle>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="420" y="212">他的圈子</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="430" y="228">你接触不到的信息在这边</text>
+<rect fill="#eef1f5" height="96" stroke="#c8d2dc" stroke-width="1" width="130" x="545" y="86"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="610" y="108">别丢掉强连接</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="610" y="132">弱连接给信息，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="610" y="150">强连接给背书、</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="610" y="168">出事时托底</text>
+<line stroke="#9aab9f" stroke-width="1.2" x1="60" x2="60" y1="252" y2="348"></line>
+<line marker-end="url(#b2)" stroke="#9aab9f" stroke-width="1.2" x1="60" x2="668" y1="348" y2="348"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="66" y="248">↑ 对换到新工作的帮助</text>
+<polyline fill="none" points="72,336 130,314 200,280 280,264 360,276 460,300 560,320 650,332" stroke="#1f7a5c" stroke-width="2.6"></polyline>
+<circle cx="280" cy="264" fill="#1f7a5c" r="5"></circle>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="280" y="252">峰值：中等弱连接</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="86" y="300">太弱：他不了解你</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="end" x="620" y="292">太强：信息跟你重复</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="66" y="364">几乎不认识</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="300" y="364">偶尔联系 · 约十个共同好友</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="end" x="664" y="364">天天见的密友</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="380" y2="380"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="398">证据：LinkedIn 五年多轮随机实验（约 2000 万人）：中等弱连接对换工作的因果效应最大（Rajkumar 等, 2022）。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="414">曲线为示意，非原始数据；「约十个共同好友」是该研究效应最强的区段。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你想换方向找工作，或给新产品找前十个客户。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 只问最熟的三个人</div>
+<p>「你那边有没有什么机会？」——他们和你在同一个群、看同样的消息、认识同一批人。<strong>你问到的多半是你已经知道的。</strong>问完还会误以为「市场上没机会」。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 往中间那一档去找，而且带上具体坐标</div>
+<p>翻通讯录，挑出<strong>一年以上没联系、但当年真共事过</strong>的人——前同事的前同事、三年前的合作方、上一份工作的客户。发给其中一个：<br/>「好久没联系。我在往 A 方向走，想找做 B 的团队。<strong>不用帮我介绍，我只想知道：这两年这块最活跃的是谁？</strong>」——把「有机会吗」换成他答得出的具体问题，回复率完全不同。</p>
+</div>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Your three closest contacts sit in the same information pool you do: they read the same feeds, know the same people, and the opportunities they know about are largely ones you've already heard of. New information arrives across bridges — the single link connecting you to a cluster you're not part of. That's the classic weak-tie argument, and it now has causal backing rather than just correlational: five years of randomised experiments on roughly twenty million LinkedIn users found that moderately weak ties produced the largest increase in job mobility, while the strongest ties helped least. The important refinement is that the curve is an inverted U, not a slope. Complete strangers can't help you either — they don't know you well enough to vouch. The valuable band is people who worked with you once and still remember you: roughly the "haven't spoken in a year but it wouldn't be strange to write" distance. And don't liquidate your strong ties in the process — weak ties supply information, but strong ties are what supply effort, vouching, and help when something goes wrong.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制是信息冗余，不是人数。你和密友泡在同一个信息池，他们能给你的边际信息接近零。跨到另一个圈子的那条线（结构上叫「桥」）才是新信息入口——不是那个人更厉害，是他站在你看不到的地方。但也不是越弱越好：太弱的人不了解你，没法替你说话。值钱的是中间那一档：还记得你、知道你什么水平，但已不在你的信息池里。</strong></p>
+<ul>
+<li><strong>硬证据 · 大规模因果实验</strong>：Rajkumar 等 (2022, <em>Science</em>) 用 LinkedIn 五年间对约 <strong>2000 万用户</strong>做的多轮随机化推荐实验，追踪其后的换工作行为：<strong>中等弱连接（共同好友约十个）带来的提升最大，最强连接的因果贡献最小</strong>。少有的真因果证据，很硬。<strong>边界</strong>：只覆盖白领求职，别外推到卖货、找投资。</li>
+<li><strong>经典但要打折</strong>：Granovetter (1973, <em>American Journal of Sociology</em>) 提出弱连接理论；他 1974 年《Getting a Job》的访谈里，靠人脉找到工作的人中<strong>只有约六分之一来自「经常见面」的人，超过一半来自「偶尔见面」的</strong>。<strong>样本数百人、1970 年代、清一色男性专业人士</strong>——当方向读，别当普适数字。</li>
+<li><strong>硬证据 · 强连接不可替代</strong>：Krackhardt (1992) 的「强连接的力量」指出：需要<strong>信任、冒风险、真出力</strong>的场合（内推背书、危机中帮忙），强连接明显更管用。<strong>两种连接办的是不同的事</strong>。</li>
+</ul>
+<p class="caveat">边界：弱连接值钱的前提是它真的跨圈。同一个行业群里加的两百个人不是弱连接，是同一池子里的陌生人——信息一样重复，还没交情。另外这条最稳的场景是找工作与找信息；要人真出力时，该回到强连接。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"You're the only person I know who'd know this." —— 点明你为什么问他，比群发有效得多。</p>
+<p>"Not asking for an intro — just who's doing interesting work here?" —— 先要信息，不要人情。</p>
+<p>"It's been a while, and that's on me." —— 长期没联系时最好用的一句开场。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>只在需要的时候出现，你就一直在提款
+<span class="en">If you only show up when you need something, you are only ever withdrawing.</span></h2>
+<span class="tag">关系账户</span><span class="tag">休眠联系人</span><span class="tag">重复博弈</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">别人对你的记忆是有余额的：只在有事时冒出来，余额就掉一格，掉到底就没人回你。<strong>存入却可以极便宜——一条他用得上的信息、一次具名的公开认可、一次牵线。</strong>而账上被低估最狠的资产，是那些三年没联系的人。</div>
+</div>
+<div class="section">
+<div class="section-label">账户怎么存，休眠联系人为什么更值钱</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+<marker id="c2" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">上：三种便宜的存入　下：休眠联系人为何更有用</text>
+<rect fill="#e2efdc" height="40" stroke="#4e8a3f" stroke-width="1.2" width="190" x="20" y="46"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="32" y="63">具名的公开认可</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="32" y="78">说清哪点好、怎么用的</text>
+<rect fill="#e2efdc" height="40" stroke="#4e8a3f" stroke-width="1.2" width="190" x="20" y="98"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="32" y="115">牵一条线</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="32" y="130">两边都先问过再接</text>
+<rect fill="#e2efdc" height="40" stroke="#4e8a3f" stroke-width="1.2" width="190" x="20" y="150"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="32" y="167">「看到这个想起你」</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="32" y="182">一条他真用得上的信息</text>
+<line marker-end="url(#c1)" stroke="#1f7a5c" stroke-width="1.6" x1="212" x2="288" y1="66" y2="106"></line>
+<line marker-end="url(#c1)" stroke="#1f7a5c" stroke-width="1.6" x1="212" x2="288" y1="118" y2="118"></line>
+<line marker-end="url(#c1)" stroke="#1f7a5c" stroke-width="1.6" x1="212" x2="288" y1="170" y2="130"></line>
+<rect fill="#1f7a5c" height="76" width="150" x="292" y="80"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="367" y="108">关系账户</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9" text-anchor="middle" x="367" y="128">余额 = 他愿不愿意</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9" text-anchor="middle" x="367" y="144">在你不在场时提你</text>
+<line marker-end="url(#c1)" stroke="#1f7a5c" stroke-width="1.6" x1="444" x2="502" y1="118" y2="118"></line>
+<rect fill="#eef1f5" height="64" stroke="#3f5c7a" stroke-width="1.2" width="178" x="506" y="86"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="595" y="108">提款：一次具体的求助</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="595" y="126">余额够，开口才不别扭；</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="595" y="142">只提不存，第三次没人回</text>
+<rect fill="#f7faf6" height="46" stroke="#cbb98f" stroke-width="1.2" width="176" x="20" y="214"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="108" y="234">三年没联系的旧同事</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="108" y="250">你以为这线断了</text>
+<line marker-end="url(#c2)" stroke="#5a7365" stroke-width="1.6" x1="198" x2="238" y1="237" y2="237"></line>
+<rect fill="#f7faf6" height="46" stroke="#cbb98f" stroke-width="1.2" width="176" x="242" y="214"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="330" y="234">一条不带请求的重连</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="330" y="250">信任是旧的，还在</text>
+<line marker-end="url(#c2)" stroke="#5a7365" stroke-width="1.6" x1="420" x2="460" y1="237" y2="237"></line>
+<rect fill="#dfeae2" height="46" stroke="#1f7a5c" stroke-width="1.2" width="216" x="464" y="214"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="572" y="234">他给的建议往往更新颖</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="572" y="250">三年里你俩的信息已不重叠</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="278" y2="278"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="296">证据：224 名高管重新联系三年以上没说过话的人，得到的建议被评为比活跃联系人更有价值（Levin 等, 2011）。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="314">机制：休眠连接同时占两个好处——旧信任还在不用重建，而信息已不重叠。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="332">注意：该研究是自评打分、样本是高管；方向可信，别当精确结论。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：一个三年没说过话的前同事，你现在需要他帮忙。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 假装没断过</div>
+<p>「哈喽在忙吗～最近怎么样呀？」——两句寒暄之后拐到请求，对方全程都在等那个「其实是想问你」。<strong>掩饰断联比断联本身更伤</strong>：连这几句热络都成了工序。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 先承认间隔，再给一个具体的记忆锚点</div>
+<p>「好久没联系，这点是我的问题。<strong>前几天我们在复盘上线流程，我把你当年那套灰度顺序原样搬过来用了，省了一堆事，想起来该跟你说一声。</strong>你现在在做什么方向？」<br/>——承认间隔 + 具名认可（存入）+ 一个他答得出的问题（不是请求）。<strong>要帮的忙下次再提</strong>，这一条只为把账户重新打开。</p>
+</div>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Other people's willingness to help you behaves like an account balance, and showing up only when you need something is a pure withdrawal every time. What most people miss is how cheap the deposits are: public, specific credit that names what you actually used; an introduction where you asked both sides first; a single message that says "saw this, thought of you" and attaches something genuinely useful. None of these cost you an hour. The most underrated asset on that ledger is the dormant contact — someone you worked with once and haven't spoken to in years. In one study, executives asked to reconnect with contacts they hadn't spoken to in three years or more rated the advice they got as more valuable and more novel than advice from their currently active contacts, which makes sense structurally: the old trust survives without needing to be rebuilt, while three years of separate lives means their information no longer overlaps with yours. The one rule when reconnecting is not to paper over the gap. Name it, give a concrete memory anchor, and don't attach the ask to the first message.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>这是重复博弈，对方评估的不是这次的请求，是你这个人的模式。只在有事时出现的人模式清清楚楚，第三次就没人回——不是他小气，是他的时间在被单向消耗。低成本存入改变的不是人情账，是你在他脑子里的检索位置：他跟别人聊到某件事时会不会想起你。休眠连接则占了两个好处——旧信任不用重建，而分开这几年让你们的信息不再重叠。</strong></p>
+<ul>
+<li><strong>中等 · 休眠连接更有用</strong>：Levin、Walter &amp; Murnighan (2011, <em>Organization Science</em>) 让 <strong>224 名 EMBA 高管</strong>重新联系至少三年没说过话的人并求教：这些建议被评为<strong>比活跃联系人给的更有价值、更新颖</strong>。<strong>打折</strong>：自评打分、样本是高管、无随机对照。</li>
+<li><strong>硬证据 · 互惠有内在奖赏</strong>：Rilling 等 (2002, <em>Neuron</em>)：双方合作成立的回合显著激活<strong>伏隔核与尾状核</strong>。所以互相帮忙的关系不靠意志力维护，单向消耗的关系则一定维持不住——一边根本没在拿奖赏。</li>
+<li><strong>反例（别拿 150 当硬数字）</strong>：邓巴数流传极广，但 Lindenfors 等 (2021, <em>Biology Letters</em>) 重新分析原始的脑容量—群体规模数据后指出<strong>置信区间极宽，撑不起这样一个精确数字</strong>。「维护成本真实存在、要排优先级」没问题，<strong>拿 150 当上限规划人脉则没有依据</strong>。</li>
+</ul>
+<p class="caveat">边界：账户这个比喻有个危险用法——把每次给予记成债权等着收。真记了账，味道就变了，对方能闻出来。更稳的是给的时候就当没回报，回报来了算意外。另外别把存入做成骚扰：每周一次没有实质内容的问候，消耗的是同一个余额。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"It's been three years and that's on me." —— 承认间隔，比装作没断过可信。</p>
+<p>"I used your thing and it worked — wanted you to know." —— 存入的最小单位。</p>
+<p>"No ask this time." —— 明确写出来，对方才会真的放松。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>你以为要问二十个人，其实十个就够
+<span class="en">You think you need to ask twenty people. Ten is usually enough.</span></h2>
+<span class="tag">低估依从</span><span class="tag">渠道</span><span class="tag">具体请求</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">不敢开口的核心不是性格，是一个可测量的错误估计：<strong>人系统性地低估别人会答应的比例，大约低估一半。</strong>因为你只算了他答应要花的成本，没算他当面拒绝要付的尴尬。而这个尴尬，正是邮件不管用、当面管用的原因。</div>
+</div>
+<div class="section">
+<div class="section-label">你低估了什么，以及请求的三个旋钮</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="d1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">要凑够 5 个人答应，得开口问多少个？</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="end" x="104" y="66">你的预测</text>
+<rect fill="#f6e3da" height="26" stroke="#c0603a" stroke-width="1.2" width="200" x="112" y="48"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="124" y="66">约 20 人</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="end" x="104" y="106">实际需要</text>
+<rect fill="#e2efdc" height="26" stroke="#4e8a3f" stroke-width="1.2" width="100" x="112" y="88"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="124" y="106">约 10 人</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="132">你算了他答应要付的时间，漏算了他当面拒绝的尴尬——后者常常更贵。</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="360" x2="360" y1="40" y2="140"></line>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" x="386" y="52">同样一句话，换个渠道</text>
+<rect fill="#e2efdc" height="50" stroke="#4e8a3f" stroke-width="1.2" width="130" x="386" y="64"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="451" y="84">当面 / 通话</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="451" y="101">拒绝要当场付代价</text>
+<rect fill="#f6e3da" height="50" stroke="#c0603a" stroke-width="1.2" width="130" x="536" y="64"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="601" y="84">邮件 / 消息</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="601" y="101">不回没有任何成本</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="526" y="132">能当面说的事别写成邮件——你严重高估了邮件</text>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" x="20" y="172">三个旋钮：调对了，答应的成本就低于拒绝的成本</text>
+<rect fill="#dfeae2" height="62" stroke="#1f7a5c" stroke-width="1.2" width="205" x="20" y="186"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="122" y="206">① 具体到可以直接答</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="122" y="224">「20 分钟、三个问题，</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="122" y="240">我先写在下面」</text>
+<rect fill="#dfeae2" height="62" stroke="#1f7a5c" stroke-width="1.2" width="205" x="245" y="186"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="347" y="206">② 留一个体面的出口</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="347" y="224">「不方便直接说，</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="347" y="240">我完全不会多想」</text>
+<rect fill="#dfeae2" height="62" stroke="#1f7a5c" stroke-width="1.2" width="215" x="465" y="186"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="572" y="206">③ 说清你能回给什么</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="572" y="224">「聊完我把整理好的</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="572" y="240">对比表发你」</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="286" y2="286"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="304">证据：五个实验里被试预测要问约 20 人才有 5 人答应，实际约 10 人（Flynn &amp; Lake, 2008）。</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="322">证据：同样的请求，当面问的成功率远高于邮件，而人们高估邮件（Roghanizad &amp; Bohns, 2017）。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你想请一位不太熟的人帮你看一眼作品集。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 模糊、开放、无出口</div>
+<p>「不知道方不方便，能不能麻烦您有空帮我看看？非常感谢！」——<strong>他没法直接回答</strong>：看多久？看什么？什么时候？于是这条被留到「等我有空再说」，然后永远没有那一天。而你会把沉默读成拒绝。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 三个旋钮同时拧到位</div>
+<p>「想占你 20 分钟。<strong>就三个具体问题，我先写在这：①…… ②…… ③……</strong>这周四或下周二都行，你挑。<br/><strong>忙的话直接说不方便就好，我完全不会多想。</strong><br/>聊完我把这几家的对比表整理好发你，你那边应该也用得上。」</p>
+</div>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The reason people don't ask isn't temperament, it's a measurable estimation error. Across five experiments, participants predicted they would have to approach about twenty strangers to get five to agree to a request; the real number was closer to ten. The asymmetry has a clean explanation: when you imagine the request you compute what saying yes costs them, and you leave out what saying no costs them — the awkwardness of refusing a person to their face, which is often the larger of the two. That same asymmetry explains why channel matters so much. A request made in person, where declining has to be done out loud, succeeds at a far higher rate than the identical request sent by email, where ignoring it is free; and people reliably overestimate how well email works. So: say it in person or by voice when you can, and turn three dials on the ask itself — make it concrete enough to answer in one line (how long, what exactly, when), hand them a dignified way out and mean it, and state what you'll send back. And when someone does decline, thank them for saying so directly. That one sentence is what makes it possible to ask again in six months.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>你算的是一套不完整的账：看得见他答应要付的时间，看不见他拒绝要付的东西——当面说「不」的社交代价，对多数人比帮这个小忙更贵。这个盲点是系统性的，方向永远是低估，所以「反正人家不会答应」这个直觉本身就错。同一个不对称也解释了渠道：邮件给了对方一个零成本的拒绝方式。三个旋钮做的是同一件事：把答应的成本压到低于拒绝的成本。</strong></p>
+<ul>
+<li><strong>硬证据 · 人低估别人会答应</strong>：Flynn &amp; Lake (2008, <em>Journal of Personality and Social Psychology</em>) 的五个实验：被试预测要问约 <strong>20 个陌生人</strong>才能凑够 5 个答应填问卷的，<strong>实际约 10 个</strong>；借手机、带路等请求结果一致。机制正是低估了拒绝的社交成本。多实验、后续大量复现（Bohns, 2016, <em>Current Directions in Psychological Science</em>），硬。</li>
+<li><strong>较硬 · 渠道决定成败</strong>：Roghanizad &amp; Bohns (2017, <em>Journal of Experimental Social Psychology</em>)：同样内容的请求，<strong>当面提出的成功率远高于邮件</strong>，而被试预测两者差不多。<strong>打折</strong>：原文那个倍数是特定实验条件下的比值，方向可靠，数值别外推。</li>
+<li><strong>硬证据 · 被拒真会疼，但别讲过头</strong>：Eisenberger、Lieberman &amp; Williams (2003, <em>Science</em>) 发现被社交排斥时<strong>背侧前扣带回</strong>活动上升，与生理疼痛的处理区域重叠——开口的恐惧不是矫情。<strong>但要打折</strong>：Woo 等 (2014, <em>Nature Communications</em>) 用多体素模式分析显示两种痛的脑内表征可分离，「社交拒绝就是同一套疼痛系统」讲过头了。</li>
+</ul>
+<p class="caveat">边界：这条说的是<strong>小忙</strong>。请求越大（写推荐信、担保、投钱），低估越不成立，那时该先把账户存够，别靠统计学壮胆。另外「当面更有效」不是让你去堵人：利用对方当场无法拒绝的处境施压，已越过「影响力六原理」那期讲的说服与操纵的界线——检验是<strong>你敢不敢在请求里明写「拒绝我完全没关系」，并且说到做到</strong>。</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">地道表达</span>
+<p>"Twenty minutes, three specific questions — here they are." —— 具体到他一行字就能回。</p>
+<p>"A no costs you nothing with me." —— 台阶要明写，暗示没人接得到。</p>
+<p>"Thanks for saying so directly." —— 被拒后的这一句，买的是下一次。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 34 Action</h3>
+<p>六十分钟，四步。今天只做存入，不做提款——除了最后一步。</p>
+<div class="action">
+<strong>一（15 分钟）：</strong>翻通讯录、邮箱、旧项目群，列出 <strong>20 个一年以上没联系、但当年真共事过</strong>的人。别列偶像，别列只加过好友的陌生人——<strong>要「有点熟」那一档</strong>。<br/><br/><strong>二（10 分钟）：</strong>给每人写一句「我能给他什么」，四种货币里挑：一手观察 / 具名认可 / 牵线 / 具体反馈。写不出的直接划掉。<br/><br/><strong>三（20 分钟）：</strong>挑 5 个各发一条<strong>只给、不求</strong>的消息。硬规则：<strong>不许出现任何请求</strong>，哪怕一句「顺便问一下」。开头承认间隔，中间给具体的记忆锚点，结尾问一个他答得出的问题。<br/><br/><strong>四（15 分钟）：</strong>挑一件你拖了很久不敢开口的事，按三个旋钮重写：要多久 + 要什么（问题先列出来）+ 什么时候 + 一句真心的「不方便直接说」+ 你能回给什么。<strong>能当面或语音说，就别发文字。</strong><br/><br/>边界提醒：这套提高的是回复率和关系的存续，<strong>不保证任何一次成功</strong>。红线是：先给不是投资，你每给一次都在心里记账等着提，对方迟早闻得出来——那时候你不只白给，还把账户清零了。自检只有一句：<strong>如果他这辈子都帮不上你，你还愿意发这条消息吗？</strong></div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我是刚入行的新人，什么资源都没有，能给什么？</summary>
+<div class="answer">先破一个前提：<strong>给予不需要对等。</strong>你不是在做等价交换，你是在把这次接触从「纯索取」挪出去——挪出去只需要一样真东西，五分钟的价值就够。<br/><br/>而新人恰好有一样别人没有的资产：<strong>一手观察。</strong>你在一线看到的具体现象、数字、用户原话，位置越高越接触不到。「我照你的方法在十二人的班组跑了两周，结果和你预期相反」——这条只有你有。其余三样货币（具名认可、牵线、具体反馈）成本同样是零。<br/><br/>还有一点：那个功利性社交的研究里<strong>位置越低的人不适感越强</strong>。所以新人的别扭不是脸皮薄，它恰恰在提醒你先去找能给的东西。这跟「信任是唯一的货币」那期是一件事的两面：信任不是靠见面次数攒的，是靠你交付过的东西攒的。</div>
+</details>
+<details>
+<summary>2. 我给了很久，对方一直没回报，是不是被当工具了？</summary>
+<div class="answer">先分清两种情况，处理完全不同。<br/><br/><strong>一是时间尺度问题。</strong>回报周期常以年计，而且往往不来自你给的那个人——你帮 A 的事，可能两年后由 A 提过一嘴的 C 还给你。用一年以内的窗口判断「有没有回报」，基本都会错。<br/><br/><strong>二是真的单向消耗。</strong>判据不是「他有没有还」，而是<strong>他是不是只在需要时才出现、且从不问你在做什么</strong>。这时正确的动作不是绝交，是<strong>降级</strong>：把他从「我会主动存入的账户」挪到「他来找我照常客气」。不需要通知，也不必翻脸。<br/><br/>但最该警惕的是第三种，问题在你这边：<strong>如果你在给的时候一直在等，那不是给予，是投资。</strong>投资不可耻，但要按投资的规矩来——承认可能亏，控制仓位，别记一本对方看不见的账。装大方是这套里最伤的做法：对方几乎总能闻出那股「你欠我」的味道，那时候你既没拿到回报，也没留下关系。</div>
+</details>
+<details>
+<summary>3. 这跟到处递名片的油腻社交，到底差在哪？</summary>
+<div class="answer">差别不在动机有没有功利——你当然有目的，装没有反而更假。差别在<strong>对方在你的计划里是不是只是一个手段</strong>。三个当场能跑的检验：<br/><br/><strong>其一：如果他明天起永远帮不上你了，你还会保持联系吗？</strong>答不出「会」，这条关系在你心里就是工具，对方迟早读得出来。<br/><br/><strong>其二：你的第一条消息里有没有请求？</strong>有的话，你带去的就只有需求。<br/><br/><strong>其三：你能不能把目的当面说出来而不尴尬？</strong>「我在找 B 方向的机会，所以想跟你聊」说出来没事；「我加你是因为你可能有资源」说出来就崩——崩掉的那种，靠的正是对方不知道。这跟「影响力六原理」那期是同一条线：<strong>说破了还成立的是说服，说破了就垮的是操纵。</strong><br/><br/>最后一个更实的标准，能一刀砍掉大部分无效社交：<strong>networking 的产出不是「我认识了谁」，是「有谁愿意在我不在场时提我的名字」。</strong>按这个标准，两百张名片加不说话的好友产出全是零；而三年前一起把项目做完、你替他说过好话的那个人，产出比它们加起来都高。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 34</footer>
+</div>
+</body>
+</html>
