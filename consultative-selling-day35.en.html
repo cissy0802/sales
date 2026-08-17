@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 35: Consultative Selling</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.quote{background:#eef4f0;padding:16px 20px;border-radius:4px;font-style:italic;color:#37493f}
+.quote .en{display:block;color:#24312a;margin-bottom:8px}
+.quote .zh{display:block;color:#3d5548;font-style:normal;font-size:0.94rem}
+.quote .source{display:block;margin-top:8px;font-size:0.82rem;color:#6a8577;font-style:normal;text-align:right}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.pitfall{background:#fbefe8;padding:14px 18px;border-radius:4px;border-left:3px solid #c0603a;font-size:0.94rem;color:#6a3a22}
+.pitfall ul{margin-left:20px;margin-top:6px}
+.pitfall li{margin:4px 0}
+.ref{font-size:0.9rem;color:#37493f}
+.ref strong{color:#123f30}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 35 · Phase F</div>
+<h1>Prescribing before you<br/>examine isn't efficiency</h1>
+<div class="meta"><span>Diagnose before you prescribe · rule something out · when not to sell · leave with an action</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">Three studies across three decades measured the same thing: doctors interrupt patients within seconds. Selling is faster — the interruption just wears the costume of describing the product.</div>
+</header>
+<div class="intro">
+<strong>Consultative selling isn't "be nicer and push less". It reverses the order, and it costs something real.</strong> The order: take the situation apart down to the actual bottleneck before you talk about a solution. The cost: once the diagnosis is done, you have to be free to say "you shouldn't buy this" — without that, every question you asked was just packaging on a pitch. <strong>Four moves: four questions to clear before you name a solution; a three-tier prescription where you say out loud which tier you don't recommend; the conditions under which you should actively talk someone out of buying; and the one that gets skipped — making sure each meeting ends with the buyer holding an action.</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Name a solution, and you drop back to being a vendor
+<span class="en">The moment you name a solution, you stop being a consultant.</span></h2>
+<span class="tag">diagnose first</span><span class="tag">interruption</span><span class="tag">self-reference</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The buyer names one symptom and the matching product is already in your head — <strong>say it out loud now and you've demoted yourself to an option being price-checked.</strong> All they can do with it is compare you to two other quotes. And where the problem actually sits, you don't know — and neither, usually, do they.</div>
+</div>
+<div class="section">
+<div class="section-label">One complaint, two paths</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+<marker id="a2" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">All the buyer said was "our hiring is too slow"</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="190" y="46">PATH A · symptom, then solution</text>
+<rect fill="#f6e3da" height="44" stroke="#c0603a" stroke-width="1.2" width="250" x="65" y="56"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="190" y="76">second 10: "we have exactly that"</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="190" y="92">you are now a quote to be shopped</text>
+<line marker-end="url(#a1)" stroke="#c0603a" stroke-width="1.6" x1="190" x2="190" y1="102" y2="120"></line>
+<rect fill="#f6e3da" height="44" stroke="#c0603a" stroke-width="1.2" width="250" x="65" y="122"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="190" y="142">he switches to comparison mode</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="190" y="158">he evaluates features and price, not the problem</text>
+<line marker-end="url(#a1)" stroke="#c0603a" stroke-width="1.6" x1="190" x2="190" y1="168" y2="186"></line>
+<rect fill="#f6e3da" height="44" stroke="#c0603a" stroke-width="1.2" width="250" x="65" y="188"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="190" y="208">two more quotes · cheapest wins</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="190" y="224">and where it's slow, nobody knows yet</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle" x="190" y="248">cards played, diagnosis not started</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="510" y="46">PATH B · segment down to the bottleneck</text>
+<rect fill="#e2efdc" height="44" stroke="#4e8a3f" stroke-width="1.2" width="250" x="385" y="56"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="510" y="76">"which step eats the most time?"</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="510" y="92">job posted to offer sent, segment by segment</text>
+<line marker-end="url(#a2)" stroke="#1f7a5c" stroke-width="1.6" x1="510" x2="510" y1="102" y2="120"></line>
+<rect fill="#e2efdc" height="44" stroke="#4e8a3f" stroke-width="1.2" width="250" x="385" y="122"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="510" y="142">"would twice-faster screening loosen that?"</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.2" text-anchor="middle" x="510" y="158">you rule out your own product, out loud</text>
+<line marker-end="url(#a2)" stroke="#1f7a5c" stroke-width="1.6" x1="510" x2="510" y1="168" y2="186"></line>
+<rect fill="#1f7a5c" height="44" width="250" x="385" y="188"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="510" y="208">he says it: it's interviewer time</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9.2" text-anchor="middle" x="510" y="224">his conclusion; the solution just follows from it</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="510" y="248">cost: slower, and it may end in "don't buy"</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="268" y2="268"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="288">Evidence: doctors interrupted a mean of 18 seconds in; only 23% of patients finished (Beckman &amp; Frankel, 1984).</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="308">Fifteen years later, 264 visits re-recorded: still only 28% finished (Marvel et al., 1999).</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="328">Selling has no recording study this good, but the impulse is the same — it just becomes describing the product.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Situation: you sell recruiting software. The buyer opens with "our hiring is too slow".</div>
+<div class="dialog bad">
+<div class="speaker">✗ Solution at second ten</div>
+<p>"We have exactly that — AI CV screening, cuts your cycle in half. Shall I send a proposal?" — from that second you are no longer someone looking at the problem with him, you're a quote. <strong>The only thing he'll do next is ask two more vendors.</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Segment it until your own product gets ruled out</div>
+<p>"From posting the job to sending the offer, which step takes longest?" — "Interview scheduling." — "Is it that interviewers won't take slots, or that coordination bounces around?" — "They won't take slots." — "So <strong>if screening were twice as fast, would that bottleneck loosen?</strong>"<br/>— That last question is the whole meeting: <strong>you just ruled out the thing you came to sell.</strong> He'll finish the thought for you: "So what I actually need to fix is interviewer time." He said it, not you.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Four signs the diagnosis isn't done (any one = don't propose)</div>
+<ul class="checklist">
+<li>You can't describe <strong>how the process actually runs</strong> — who, which step, how long each takes.</li>
+<li>You can't say <strong>what happens if nothing changes</strong> — the cost in three months, in their numbers.</li>
+<li>You can't say <strong>why they haven't fixed it already</strong> — money, people, or nobody treating it as a problem.</li>
+<li>You can't say <strong>what success looks like</strong> — which metric tells them it worked.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Naming a solution is an identity claim. The moment it's on the table you go from "someone looking at the problem with him" to "someone selling him something", and his evaluation frame switches with you: no longer "what's actually wrong here" but "is this price right for these features". And the real value of diagnosis isn't the information you gather — it's that the conclusion comes out of his mouth. A conclusion you generate yourself and a fact you were told do not travel the same route.</strong></p>
+<ul>
+<li><strong>Hard evidence · professionals interrupt far sooner than they think</strong>: Beckman &amp; Frankel (1984, <em>Annals of Internal Medicine</em>) recorded 74 office visits — physicians interrupted a mean of <strong>18 seconds</strong> into the patient's opening statement, and only <strong>23%</strong> got to finish. Marvel et al. (1999, <em>JAMA</em>) re-measured 264 visits fifteen years later: still only <strong>28%</strong> finished, mean <strong>23.1 seconds</strong>. Singh Ospina et al. (2019, <em>J Gen Intern Med</em>) found a median of <strong>11 seconds</strong>. Three samples, three decades, one direction. <strong>Discount</strong>: this is clinical, not sales — read it as evidence of the impulse, not as sales data.</li>
+<li><strong>Hard evidence · saying it yourself isn't the same as being told</strong>: self-referential processing — relating information to "me" — reliably activates the <strong>medial prefrontal cortex (mPFC) and posterior cingulate</strong> and produces markedly better memory (Kelley et al., 2002, <em>Journal of Cognitive Neuroscience</em>; Northoff et al., 2006, review); the generation effect points the same way (Slamecka &amp; Graf, 1978). <strong>Discount</strong>: the materials are word lists and trait judgements, not purchasing decisions — don't stretch it into "good questions close deals".</li>
+<li><strong>Field observation · proposing early correlates with losing large deals</strong>: the Huthwaite team (Rackham, 1988, <em>SPIN Selling</em>) observed roughly <strong>35,000 sales calls</strong>: in small transactions, leading with features costs almost nothing; in large ones, successful sellers introduced solutions notably later. <strong>Discount</strong>: observational, 1980s B2B, no randomised control, and the firm sold sales training — read it as direction, not causation.</li>
+</ul>
+<p class="caveat">Boundary: diagnosis is not stalling, and it isn't an intake form. When someone already knows exactly what they want and is only comparing prices (repeat purchase, commodity), more questions just annoy them. One test: <strong>if answering the question gives them nothing new, don't ask it.</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasing</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"Before I suggest anything — walk me through how it works today." —— put "diagnose first" on the table.</p>
+<p>"What happens if you do nothing for another quarter?" —— cost of inaction beats asking about needs.</p>
+<p>"Honestly, faster screening wouldn't fix that." —— ruling out your own product is the cheapest proof you're a consultant.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>A prescription has to rule something out
+<span class="en">A prescription that rules nothing out isn't a prescription.</span></h2>
+<span class="tag">against self-interest</span><span class="tag">persuasion knowledge</span><span class="tag">three tiers</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">"This is perfect for you", from a vendor, carries zero information — you'd say it either way. <strong>How much weight your words carry depends on what true thing you've said that costs you.</strong> So give three tiers, and say out loud which one you don't recommend, and why.</div>
+</div>
+<div class="section">
+<div class="section-label">The discount the listener applies automatically</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 344" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Same sentence — what survives depends on who it favours</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="20" y="60">A · "the full suite is best value"</text>
+<rect fill="#e8e4d8" height="26" width="380" x="250" y="44"></rect>
+<rect fill="#f6e3da" height="26" stroke="#c0603a" stroke-width="1.2" width="104" x="250" y="44"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" x="260" y="61">this much left</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="364" y="61">← discounted away as "he would say that"</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="80">Favours your interests → he attributes it to your position, not to the facts</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="20" y="122">B · "don't buy that part"</text>
+<rect fill="#e8e4d8" height="26" width="380" x="250" y="106"></rect>
+<rect fill="#e2efdc" height="26" stroke="#4e8a3f" stroke-width="1.2" width="330" x="250" y="106"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" x="260" y="123">survives almost intact</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="142">Against your interests → "it pays him to say it" is ruled out; only "he means it" is left</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="20" x2="680" y1="164" y2="164"></line>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" x="20" y="188">So: three tiers, and tier one is the part you're talking them out of</text>
+<rect fill="#f6e3da" height="76" stroke="#c0603a" stroke-width="1.2" width="205" x="20" y="202"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="122" y="224">① don't buy this</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="122" y="244">"multi-site won't be used</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="122" y="260">this year — it's waste"</text>
+<line marker-end="url(#b1)" stroke="#1f7a5c" stroke-width="1.6" x1="228" x2="242" y1="240" y2="240"></line>
+<rect fill="#dfeae2" height="76" stroke="#1f7a5c" stroke-width="1.2" width="205" x="246" y="202"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="348" y="224">② smallest tier worth buying</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="348" y="244">"fix interviewer scheduling</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="348" y="260">first — today's bottleneck"</text>
+<line marker-end="url(#b1)" stroke="#1f7a5c" stroke-width="1.6" x1="454" x2="468" y1="240" y2="240"></line>
+<rect fill="#eef1f5" height="76" stroke="#3f5c7a" stroke-width="1.2" width="208" x="472" y="202"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="576" y="224">③ when to move up</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="576" y="244">"at your third city, I'll</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="576" y="260">come to you about upgrading"</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="292" y2="292"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="312">Evidence: communicators whose position runs against their own interest are judged less biased and more credible (Eagly, Wood &amp; Chaiken, 1978).</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="332">Mechanism: once "this is persuasion" is recognised, evaluation shifts from the content to the motive (Friestad &amp; Wright, 1994).</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Situation: the buyer has budget and volunteers that they want the top package.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Go with the flow</div>
+<p>"Sure — the full suite is the best value, it works out cheaper long term." It may even be true, but they can't verify it, so they apply the standard "vendors say that" discount. <strong>You traded a chance to build credibility for this quarter's revenue.</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Cut your own deal size</div>
+<p>"At the volumes you just described, the multi-site coordination and approval flows in the full suite won't get used this year — <strong>buying that now is waste.</strong> I'd take the middle tier and get interviewer scheduling working. <strong>Upgrade when you open the third city; we don't re-charge implementation.</strong>"<br/>— You signed less, and every later sentence you say now carries a lower discount. What he remembers is: this person will stop me.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Every vendor sentence arrives pre-discounted, and the discount comes from the listener's inference about your motive: they know you have a stake, so everything you say gets marked down as "you would say that". The only thing that lowers the rate is a true statement that costs you — it rules out "he says it because it pays him". So what the three tiers really sell isn't the tiers; it's that you're free to say "don't buy".</strong></p>
+<ul>
+<li><strong>Hard evidence · statements against self-interest are more credible</strong>: Eagly, Wood &amp; Chaiken (1978, <em>JPSP</em>): when a communicator's position <strong>disconfirms</strong> what the audience expected from their background and interests, participants judged them <strong>less biased, more credible, and shifted attitudes more</strong>; when the message conformed neatly to the communicator's interests, participants attributed the position to the stake rather than to the facts. A foundational result in attributional persuasion research — solid.</li>
+<li><strong>Theory plus large evidence base · once persuasion knowledge fires, the object of evaluation changes</strong>: Friestad &amp; Wright's (1994, <em>Journal of Consumer Research</em>) Persuasion Knowledge Model — the moment someone recognises "this is an attempt to persuade me", they switch into coping mode, start inferring motive, and discount content accordingly. Which is why "we're perfect for you" gets weaker the harder you push it: <strong>the pushing is the recognition cue</strong>. Strength: a framework with a lot of downstream evidence, so a little softer than a single clean experiment.</li>
+<li><strong>Related, with discounts · admitting a weakness helps, under conditions</strong>: two-sided messages — stating the downside as well as the upside, with a response to it — persuade better than purely positive ones, especially with knowledgeable or already-sceptical audiences. <strong>Discount</strong>: effect sizes are modest, and it depends heavily on whether the weakness you admit is <strong>actually relevant to their decision</strong>. Strategic self-deprecation about something irrelevant backfires harder than a straight pitch once it's seen through.</li>
+</ul>
+<p class="caveat">Boundary: this only works while you're telling the truth. Turn "I don't recommend that" into a routine — always cutting the module nobody buys anyway, to look honest — and they'll see it the second time. Worse, once you start performing honesty you have to remember your performances. And a failure in the other direction: <strong>if the thing you cut is something they genuinely need, that isn't honesty, it's malpractice.</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasing</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"You don't need that module — not at your size." —— specific and checkable.</p>
+<p>"Here's where we're genuinely worse than the alternative." —— naming the weakness beats praising yourself.</p>
+<p>"I'd wait a quarter, honestly." —— say this, and "buy now" becomes believable.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Being able not to sell is the whole difference
+<span class="en">Being able to say "don't buy this yet" is the whole difference.</span></h2>
+<span class="tag">expectation gap</span><span class="tag">negativity bias</span><span class="tag">repeated game</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Sell to someone who shouldn't buy and the money lands today while the bill arrives in instalments: it doesn't get used → they don't renew → they mention it to three peers. <strong>Satisfaction isn't set by how well you deliver, it's set by delivered-minus-expected</strong> — and you drew that expectation line yourself on signing day.</div>
+</div>
+<div class="section">
+<div class="section-label">On signing day you set the review they'll write in six months</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 396" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#9aab9f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Identical delivery, two expectation lines, opposite endings</text>
+<line stroke="#9aab9f" stroke-width="1.2" x1="70" x2="70" y1="44" y2="240"></line>
+<line marker-end="url(#c1)" stroke="#9aab9f" stroke-width="1.2" x1="70" x2="656" y1="240" y2="240"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="48">felt</text>
+<line stroke="#c0603a" stroke-dasharray="6,4" stroke-width="2" x1="80" x2="620" y1="72" y2="72"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="82" y="64">line drawn by overpromising: "this will halve your cycle"</text>
+<polyline fill="none" points="82,208 190,192 300,176 420,160 540,150 620,146" stroke="#1f7a5c" stroke-width="2.6"></polyline>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="150" y="203">actual delivery (identical in both cases)</text>
+<line stroke="#3f5c7a" stroke-dasharray="6,4" stroke-width="2" x1="80" x2="620" y1="218" y2="218"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" x="82" y="232">line drawn by stating the boundary: "this fixes scheduling only"</text>
+<line stroke="#c0603a" stroke-width="1.2" x1="540" x2="540" y1="72" y2="150"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="548" y="104">gap = disappointment</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" x="548" y="120">"this thing is useless"</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" x="548" y="136">with your name attached</text>
+<line stroke="#1f7a5c" stroke-width="1.2" x1="420" x2="420" y1="160" y2="218"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="430" y="194">gap = trust</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="76" y="256">signing day</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="360" y="256">three months</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="end" x="640" y="256">renewal table</text>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" x="20" y="284">Two or more of these, and you should say "not yet"</text>
+<rect fill="#f6e3da" height="52" stroke="#c0603a" stroke-width="1.2" width="158" x="20" y="296"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="99" y="316">① you fix one slice</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="99" y="333">he thinks you fix all of it</text>
+<rect fill="#f6e3da" height="52" stroke="#c0603a" stroke-width="1.2" width="158" x="188" y="296"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="267" y="316">② conditions absent</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="267" y="333">and not fixable soon</text>
+<rect fill="#f6e3da" height="52" stroke="#c0603a" stroke-width="1.2" width="158" x="356" y="296"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="435" y="316">③ expectations inflated</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="435" y="333">and you can't correct them</text>
+<rect fill="#c0603a" height="52" width="158" x="524" y="296"></rect>
+<text fill="#f6e3da" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="603" y="316">④ needs concealment</text>
+<text fill="#f3ded4" font-family="Georgia" font-size="9" text-anchor="middle" x="603" y="333">sufficient on its own</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="362" y2="362"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="380">Mechanism: satisfaction is driven by performance relative to prior expectation (Oliver, 1980); curves illustrative, not data.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Situation: budget is there and they want to buy, but you can see nobody internally will own the rollout.</div>
+<div class="dialog bad">
+<div class="speaker">✗ "Just start — it'll sort itself out"</div>
+<p>Six months later nobody's using it, and <strong>they won't blame themselves for not staffing it. They'll remember "this thing was useless"</strong> — and that sentence travels their industry with your name on it. You think you won a deal; you bought a piece of negative word of mouth with it.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Put the failure mode on the table first</div>
+<p>"At your size buying makes sense, but I have to say one thing first: <strong>the usual reason projects like this fail isn't the product, it's that nobody internally owns the rollout</strong> — and right now you don't have that person. Two options: name someone and we build their time into the plan, or take module A only and expand once it's working. <strong>I'd take the second — half the deal, completely different survival odds.</strong>"</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Satisfaction is a difference, not a level. The same delivery becomes disappointment if expectation was set one notch high and becomes trust if expectation was set accurately — so every promise made on signing day is pricing the future. And the difference is asymmetric: the bad side carries systematically more weight, so one disappointment takes several satisfactions to repair.</strong></p>
+<ul>
+<li><strong>Hard evidence · satisfaction = delivered minus expected</strong>: Oliver's (1980, <em>Journal of Marketing Research</em>) expectancy-disconfirmation model — satisfaction is driven mainly by <strong>performance relative to prior expectation</strong>, not absolute performance; the foundation of consumer satisfaction research for decades, repeatedly replicated. The neural version has the same shape: midbrain dopamine neurons encode <strong>reward prediction error</strong> — firing rises when things beat expectation and dips below baseline when they fall short (Schultz, Dayan &amp; Montague, 1997, <em>Science</em>). <strong>Overpromising doesn't excite the buyer; it raises the baseline you then have to clear.</strong></li>
+<li><strong>Hard evidence · bad is stronger than good</strong>: the reviews by Baumeister et al. (2001, <em>Review of General Psychology</em>) and Rozin &amp; Royzman (2001): across impression formation, close relationships, word of mouth and much else, <strong>negative events systematically outweigh equally intense positive ones</strong>. So a bad sale can't be costed as "one refund".</li>
+<li><strong>Industry analysis · right direction, don't copy the number</strong>: Reichheld &amp; Sasser (1990, <em>Harvard Business Review</em>) put a 5% improvement in retention at <strong>25%–85%</strong> more profit. <strong>Heavy discount</strong>: a consultancy's cross-industry calculation, method not fully published, enormous variation between industries. The direction holds; <strong>don't take the multiple into a budget</strong>.</li>
+</ul>
+<p class="caveat">Boundary: don't turn "willing not to sell" into a pose. Using "I'd advise against buying" as an advanced closing line, hoping they'll chase you, is manipulation — and it's dead permanently once seen. Real refusal costs something: this month's number looks bad. Which is why this is hardest for a new rep on full commission, and why it belongs in how a company sets targets rather than resting on individual conscience. The test is the one from the influence-principles piece: what still works when said out loud is persuasion.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasing</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"I don't think you should buy this yet — here's what I'd fix first." —— refusal needs a replacement action.</p>
+<p>"Let me tell you where this usually fails." —— failure modes are more credible than case studies.</p>
+<p>"Smaller scope, much better odds of it actually working." —— shrinking the deal is the most practical way to keep the relationship.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>Consulting for free is not consultative selling
+<span class="en">Every meeting has to end with an action in their hands.</span></h2>
+<span class="tag">advance vs continuation</span><span class="tag">commitment</span><span class="tag">next step</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The characteristic crash: you diagnose deeply and accurately, turn it into a beautiful proposal, and they take it in-house or use it to brief a cheaper vendor. <strong>The difference isn't how expert you are, it's whether the meeting ended with them holding an action.</strong> "Let's stay in touch" isn't progress, it's a polite closing line.</div>
+</div>
+<div class="section">
+<div class="section-label">Circling in place vs climbing one step at a time</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="d1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+<marker id="d2" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Did the meeting end with an action in their hands?</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="20" y="48">CONTINUATION · warm room, nobody acts</text>
+<rect fill="#f6e3da" height="40" stroke="#c0603a" stroke-width="1.2" width="212" x="52" y="60"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="158" y="85">great chat, nodding throughout</text>
+<line marker-end="url(#d1)" stroke="#c0603a" stroke-width="1.6" x1="158" x2="158" y1="102" y2="118"></line>
+<rect fill="#f6e3da" height="40" stroke="#c0603a" stroke-width="1.2" width="212" x="52" y="120"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="158" y="145">"I'll write up a proposal"</text>
+<line marker-end="url(#d1)" stroke="#c0603a" stroke-width="1.6" x1="158" x2="158" y1="162" y2="178"></line>
+<rect fill="#f6e3da" height="40" stroke="#c0603a" stroke-width="1.2" width="212" x="52" y="180"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="158" y="205">"let's stay in touch"</text>
+<path d="M52,200 C 16,196 16,84 48,80" fill="none" marker-end="url(#d1)" stroke="#c0603a" stroke-dasharray="4,3" stroke-width="1.4"></path>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="158" y="236">all the work is yours; he did nothing</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="158" y="252">two weeks later you're guessing why he's quiet</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="330" x2="330" y1="40" y2="258"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" x="356" y="48">ADVANCE · one step up each time</text>
+<rect fill="#e2efdc" height="40" stroke="#4e8a3f" stroke-width="1.2" width="196" x="356" y="180"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="454" y="198">a range for time-to-hire</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="454" y="213">his numbers, not industry averages</text>
+<line marker-end="url(#d2)" stroke="#1f7a5c" stroke-width="1.6" x1="470" x2="470" y1="176" y2="164"></line>
+<rect fill="#e2efdc" height="40" stroke="#4e8a3f" stroke-width="1.2" width="196" x="412" y="122"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="510" y="140">30 minutes with W, who owns scheduling</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="510" y="155">this spends his internal credit</text>
+<line marker-end="url(#d2)" stroke="#1f7a5c" stroke-width="1.6" x1="526" x2="526" y1="118" y2="106"></line>
+<rect fill="#1f7a5c" height="40" width="196" x="468" y="64"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="566" y="82">read-only account, one week trial</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9" text-anchor="middle" x="566" y="97">if it stalls, that is the answer</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="505" y="236">each step is worth something to him even if he never buys</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="505" y="252">"sign a letter of intent" doesn't count: that's worth something only to you</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="278" y2="278"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="298">Evidence: specifying when, where and how raises follow-through markedly; meta-analysis of 94 studies, d≈0.65 (Gollwitzer &amp; Sheeran, 2006).</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="318">Field: Rackham (1988) separates an advance (they took a step) from a continuation (warm room, no agreement).</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Situation: a very successful diagnostic meeting; they nodded the whole way through.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Take all the work onto yourself</div>
+<p>"Great — I'll write this up and send you a proposal." He did nothing. <strong>You'll send it, wait two weeks, and start guessing why he hasn't replied.</strong> (Silence is usually not a refusal, it's the absence of a next step — the piece on going quiet and dead deals covers reading it.)</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Swap the proposal for two small actions of theirs</div>
+<p>"I'll write up what we mapped out on one page. <strong>Before that, two things to lock in: one, on interviewer scheduling, can we get W in the room for thirty minutes? Two, a rough range for last quarter's time-to-hire — I want to run your numbers, not industry averages.</strong><br/>If either of those is hard to arrange, it probably isn't the right moment for a proposal."</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Writing a next step that is actually a step</div>
+<div class="template">
+<span class="label">Template</span>
+<p><strong>Who:</strong> a named person or role, not "your team".</p>
+<p><strong>When:</strong> a date, not "some time next week".</p>
+<p><strong>What:</strong> one verb — bring someone in / send a number / open a read-only account / walk one screen internally.</p>
+<p><strong>What they get:</strong> the action has to be worth something to them even if they never buy. Fail that test and it's just pressure.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Value created by diagnosis that doesn't land on an action of theirs becomes an asset they take for free; and a meeting with no action generates no commitment pressure, so your priority on their calendar resets to zero the next day. Asking for a small action does a second job too: it's the most honest qualifying signal available — saying "very interested" costs nothing, while pulling a colleague into a room spends their internal credit.</strong></p>
+<ul>
+<li><strong>Hard evidence · specifying when, where and how raises follow-through</strong>: Gollwitzer &amp; Sheeran's (2006) meta-analysis of <strong>94 studies</strong> found that turning an intention into an if-then implementation intention produces a medium-to-large effect on completion (d≈0.65). Which is why <strong>"let's find time next week" and "Thursday 10am, you, me and W, thirty minutes" are not the same thing</strong>.</li>
+<li><strong>Field observation · an advance and a continuation are different events</strong>: Rackham (1988) splits call outcomes into an <strong>advance</strong> (the buyer commits to a specific step that moves things forward) and a <strong>continuation</strong> (warm meeting, no agreed action), and notes how many salespeople log the second as progress. <strong>Discount</strong>: observational, no randomised control — but anyone who has run a pipeline can verify this one themselves.</li>
+<li><strong>Fairly hard · small commitments shift later behaviour, but don't use them as leverage</strong>: the foot-in-the-door line of work (Freedman &amp; Fraser, 1966 and successors) shows that agreeing to a small request raises compliance with a larger one later; Burger's (1999) meta-analysis confirms the effect is <strong>real but small and condition-dependent</strong>. So read it as a signal, don't press it as a lever.</li>
+</ul>
+<p class="caveat">Boundary: asking for an advance is not pressure, and the difference is whether the action <strong>has independent value to them</strong> — "thirty minutes with W" gets an internal bottleneck talked through even if they never buy; "sign a letter of intent" is worth something only to you. Another failure mode: the action isn't theirs to authorise in their own organisation, and you read the stall as disinterest. What to ask then isn't "are you still interested", it's <strong>"who has to nod for this to move?"</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Useful phrasing</div>
+<div class="english">
+<span class="label">Say it like this</span>
+<p>"Before I write anything up — could we get W in the room for thirty minutes?" —— swap the proposal for an action of theirs.</p>
+<p>"If that's hard to arrange, it probably isn't the right time." —— gives the stall a dignified reading, and gives you a criterion.</p>
+<p>"Who has to nod for this to move?" —— ask this when it stalls, not "are you still interested".</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 35 Action</h3>
+<p>Forty minutes, three steps. Pick one live deal that isn't moving — finding customers, finding a job, finding a partner all count.</p>
+<div class="action">
+<strong>1 (15 min):</strong> Audit the diagnosis against four questions. How does their process actually run? What does another three months of nothing cost them (<strong>in their numbers</strong>)? Why haven't they fixed it already? Which metric tells them it worked? <strong>Miss two of the four and you haven't earned the right to propose</strong> — pull the proposal, book a meeting where you only ask.<br/><br/><strong>2 (10 min):</strong> Write your three tiers, and put the work into tier one: <strong>which part of this deal should you be talking them out of right now?</strong> If you can't answer, you haven't costed their actual situation — you're pushing the standard package.<br/><br/><strong>3 (15 min):</strong> Write one advance for the next contact: who (by name) + when (a date) + what (one verb) + what they get out of the action itself. Then send it.<br/><br/>Boundary note: consultative selling raises hit rate and retention, and <strong>it is slower than pitching</strong>. On commodities, small tickets, and purchases they've made three times before, it's pure waste — there, the professional move is a fast quote. One red line: <strong>a deal you can only close if they don't know something is a deal you shouldn't close.</strong> That's a boundary, not a tactic.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. My company only measures this month's number. Isn't "willing not to sell" just starving myself?</summary>
+<div class="answer">It's a real conflict — don't paper over it with "long-term thinking". Three cases.<br/><br/><strong>One: purely one-shot transactions</strong> (umbrellas at a tourist site) where the customer never returns and never refers. The economics that make consultative selling pay simply aren't there. Don't force it.<br/><br/><strong>Two: a business with repeat purchase or referrals.</strong> Then you have an arithmetic you can actually do — the cost of a bad sale isn't only the refund, it's the negative word of mouth and the information source in that circle that closes to you. And it's asymmetric: negative events outweigh positive ones, so "the next good sale makes up for it" usually doesn't hold. That arithmetic is worth opening up with your manager rather than carrying alone.<br/><br/><strong>Three: the company knows it will fail and wants it sold anyway.</strong> That's an institutional problem, not a test of your character. If it can't be changed, what you're deciding is whether to stay — don't expect personal integrity to outlast a commission structure.<br/><br/>One practical note: <strong>not selling isn't zero revenue.</strong> Usually the right move isn't "I won't sell to you", it's "not this tier — let's start smaller". The deal shrinks but it survives, and the trust it earns is the entry ticket to the next one.</div>
+</details>
+<details>
+<summary>2. If I diagnose that deeply, won't the buyer feel I'm wasting their time?</summary>
+<div class="answer">Yes — if your questions are only useful to you. One test: <strong>after they answer, did they get anything out of it?</strong><br/><br/>"What's your annual revenue", "what does your approval process look like" are worth nothing to them; that's you filling in a form, and it belongs in public sources. Whereas "from posting the job to sending the offer, which step takes longest" makes them do the arithmetic while answering — for many people it's the first time anyone has forced them to break the process apart. You can ask ten of those without irritating anyone, because each answer teaches them something about their own operation.<br/><br/>There's also a practical difference: <strong>say out loud what you're doing.</strong> "I want fifteen minutes to understand how things run before we talk about solutions, and if it turns out we can't help, I'll say so" — that one sentence converts questioning into collaboration, and it earns you the standing to say "I don't think you should buy" later.<br/><br/>Conversely, if they already know exactly what they want and are only comparing prices, digging layer by layer really is wasting their time. <strong>Depth of diagnosis should scale inversely with their clarity</strong>, not run as a fixed procedure.</div>
+</details>
+<details>
+<summary>3. Consultative selling versus the "challenger" approach of correcting the buyer's thinking — which is right?</summary>
+<div class="answer">They aren't opposites. The difference is <strong>where the information advantage sits</strong>.<br/><br/>Consultative selling assumes the buyer understands their own situation best and your value is helping them take it apart. That's most effective when they genuinely do know it and simply haven't systematised it — the conclusion comes out of their mouth, which is the cheapest form to accept.<br/><br/>But when you've seen a hundred comparable customers and they've seen exactly one — their own — questions alone won't produce the conclusion: <strong>they don't know what they don't know.</strong> The valuable move then is to lay out your cross-sectional observation: "Across the teams I've seen stuck at this step, the real cause is usually scheduling rather than CV volume. Is that true here?" Note that it still ends in a question — that's the line between this and lecturing a customer. You supply the observation; the judgement stays theirs.<br/><br/>Both share one precondition: <strong>your judgement has to be real.</strong> Faking insight without the hundred samples isn't challenging, it's bluffing; and only ever asking "what do you think?" when you genuinely hold a unique observation isn't humility, it's failing the consultant's job.<br/><br/>In practice the order is usually: diagnose first, then bring out the cross-sectional view once you're holding their specific numbers — otherwise it's just industry small talk.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 35</footer>
+</div>
+</body>
+</html>
