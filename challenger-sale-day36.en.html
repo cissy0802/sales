@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 36: The Challenger Sale</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 36 · Phase F</div>
+<h1>The best relationship-builders<br/>are the worst on complex deals</h1>
+<div class="meta"><span>Teach a counterintuitive insight · retell it in each person's numbers · dare to talk money · land it as a question</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">A study of roughly six thousand salespeople landed on a counterintuitive result: on complex deals, the people best at rapport rank last — what wins is daring to make the customer look at their own business again.</div>
+</header>
+<div class="intro">
+<strong>A "Challenger" isn't someone with a short temper. It's someone who holds an insight the customer can't see yet — and dares to put it on the table.</strong> Last time, consultative selling assumed the buyer understands their own situation best and your job is to help them take it apart. But when you've seen a hundred customers like them and they've seen only their own one, questions alone won't get you to the conclusion — they don't know what they don't know. <strong>Four moves: Teach (an insight that reorders their criteria and happens to point at your strength); Tailor (translate that one insight into each decision-maker's own numbers); Take control (dare to talk money and hold your ground — constructive tension, not a bulldozer); and land the insight as a question, not a lecture.</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Your value isn't rapport — it's teaching them something new about their own business
+<span class="en">The moment you open with the product, you become a quote to shop.</span></h2>
+<span class="tag">reframe</span><span class="tag">commercial insight</span><span class="tag">insight / aha</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">What the buyer wants is not "a vendor who gets me" but "someone who can tell me where I'm thinking wrong." A real Challenger doesn't open with the product — they open with a counterintuitive insight, <strong>recasting the familiar problem as a bigger one the buyer hasn't measured. And that new frame is built so only your solution fits it.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">Pitch-led vs insight-led opening (the six-step teach)</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 344" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+<marker id="a2" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Same solution, two openings</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="20" y="52">Pitch-led: jump to step 6</text>
+<rect fill="#f6e3da" height="42" stroke="#c0603a" stroke-width="1.2" width="160" x="20" y="64"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="100" y="82">"Our product has…"</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="8.8" text-anchor="middle" x="100" y="98">he flips to compare mode</text>
+<line marker-end="url(#a2)" stroke="#c0603a" stroke-width="1.6" x1="100" x2="100" y1="106" y2="128"></line>
+<rect fill="#f6e3da" height="34" stroke="#c0603a" stroke-width="1.2" width="160" x="20" y="130"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="8.8" text-anchor="middle" x="100" y="151">feature vs feature, cheapest wins</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" text-anchor="middle" x="100" y="178">you taught him nothing new</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="205" x2="205" y1="44" y2="304"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" x="228" y="52">Insight-led: walk 1–5, then name it</text>
+<rect fill="#e2efdc" height="30" stroke="#4e8a3f" stroke-width="1.1" width="210" x="224" y="62"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" font-weight="700" x="234" y="81">① Warmer — I get your world</text>
+<line marker-end="url(#a1)" stroke="#1f7a5c" stroke-width="1.5" x1="329" x2="329" y1="92" y2="102"></line>
+<rect fill="#cfe6d8" height="30" stroke="#1f7a5c" stroke-width="1.8" width="210" x="224" y="104"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="9.2" font-weight="700" x="234" y="123">② Reframe — real problem's elsewhere ★</text>
+<line marker-end="url(#a1)" stroke="#1f7a5c" stroke-width="1.5" x1="329" x2="329" y1="134" y2="144"></line>
+<rect fill="#e2efdc" height="30" stroke="#4e8a3f" stroke-width="1.1" width="210" x="224" y="146"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" font-weight="700" x="234" y="165">③ Rational drowning — quantify it</text>
+<line marker-end="url(#a1)" stroke="#1f7a5c" stroke-width="1.5" x1="329" x2="329" y1="176" y2="186"></line>
+<rect fill="#e2efdc" height="30" stroke="#4e8a3f" stroke-width="1.1" width="210" x="224" y="188"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" font-weight="700" x="234" y="207">④ Emotional impact — they own it</text>
+<line marker-end="url(#a1)" stroke="#1f7a5c" stroke-width="1.5" x1="329" x2="329" y1="218" y2="228"></line>
+<rect fill="#e2efdc" height="30" stroke="#4e8a3f" stroke-width="1.1" width="210" x="224" y="230"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" font-weight="700" x="234" y="249">⑤ A new way (before naming you)</text>
+<line marker-end="url(#a1)" stroke="#1f7a5c" stroke-width="1.5" x1="329" x2="329" y1="260" y2="270"></line>
+<rect fill="#1f7a5c" height="30" width="210" x="224" y="272"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="9.2" font-weight="700" x="234" y="291">⑥ Only now: so it's us</text>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="452" y="118">★ The reframe is the hinge</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="452" y="138">recast "hiring is slow"</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="452" y="153">into "you bleed hidden</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="452" y="168">vacancy cost each month"</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="452" y="192">the new frame swaps his</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="452" y="207">criteria — and you set them,</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="452" y="222">so you win on the rules,</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="452" y="237">not on price</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="320" y2="320"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="337">Six-step teach from Dixon &amp; Adamson, The Challenger Sale (2011); the ★ reframe only counts if it points to your unique strength.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: you sell a recruiting platform; the buyer opens with "we want a tool to speed up hiring."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Relationship / pitch opening</div>
+<p>"Totally get it, hiring's exhausting. Our AI resume-screening cuts time in half — shall I send a proposal?" — you taught him nothing and turned yourself into a quote to shop. <strong>What he remembers is the price, not you.</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Open with a number he hasn't run</div>
+<p>"Here's a figure most teams don't track: every day a role sits open, you're bleeding the output that person should be producing. Across teams like yours, <strong>the real cost isn't slow hiring — it's the hidden loss during the vacancy window</strong>, usually several times the direct cost of recruiting. What's your average days-to-fill right now?" — no product mentioned, yet you've already swapped the ruler he measures this by.</p>
+</div>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The counterintuitive core of the Challenger model is that in complex sales the warmest relationship-builder is the weakest performer. What customers reward is not a vendor who understands them but one who teaches them something they didn't know about their own business. So the Challenger doesn't open with the product; they open with a reframe — recasting the customer's familiar problem as a bigger, unmeasured one — and the new frame is built so that only their solution fits it. Reframe the criteria and you compete on the rules, not on price.</p>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>A reframe changes the ruler the other side evaluates with. The same thing seen through the old frame is "buy this tool or not"; through the new frame it's "stop a loss that's already flowing." Change the criteria and the object of evaluation shifts from features and price to the value only you provide. And because you supplied the new frame, you've rewritten the rules of the comparison.</strong></p>
+<ul>
+<li><strong>Hard evidence · reframe a choice and preference reverses</strong>: Tversky &amp; Kahneman (1981, <em>Science</em>) — the framing effect: describe the same outcomes as "lives saved" vs "lives lost" and most people's choice flips. This is the floor under reframing: people never evaluate raw facts, only the frame they're shown. Classic, replicable, hard.</li>
+<li><strong>Hard-ish · insight-born conclusions stick better</strong>: problems solved by a sudden "aha" show a burst of high-frequency activity in the right anterior superior temporal gyrus (Jung-Beeman et al., 2004, <em>PLoS Biology</em>; Kounios &amp; Beeman reviews), and insight-solved items are remembered better than analytically-solved ones (Danek et al., 2013). <strong>Discount</strong>: the materials are word puzzles, not purchases — don't stretch it to "an insight guarantees the deal," but the direction supports "a reframe-born aha is stickier than feature-talk."</li>
+<li><strong>Industry research · Challengers win complex deals</strong>: Dixon &amp; Adamson (2011, <em>The Challenger Sale</em>), on CEB's survey of ~<strong>6,000</strong> reps: of five profiles, Challengers were the largest share of star performers (~<strong>40%</strong>), while Relationship Builders came last in complex solution selling. <strong>Discount heavily</strong>: proprietary consulting data, cross-sectional self- and manager-report, not peer-reviewed, no independent replication, and the profile clustering has been questioned — read it as direction, not a causal law.</li>
+</ul>
+<p class="caveat">Boundary: the insight has to be real and point to your strength. Fake a "unique observation" you haven't earned across a hundred customers and the first knowledgeable person sees through it — that's not challenging, it's bluffing. A reframe that doesn't lead to what you can do just gives the buyer a free lesson.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>One insight, retold in each stakeholder's own numbers
+<span class="en">"Valuable for the company" lands on no one.</span></h2>
+<span class="tag">tailor</span><span class="tag">self-relevance</span><span class="tag">multi-stakeholder</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">One insight delivered to a room as "this is valuable for the company" is delivered to no one. <strong>The CFO, the line owner and the frontline manager care about three completely different numbers.</strong> The same insight has to split into three versions, each landing on the metric that person is personally graded against — otherwise nobody carries it forward for you internally.</div>
+</div>
+<div class="section">
+<div class="section-label">One insight → three people, three ledgers</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<rect fill="#cfe6d8" height="52" stroke="#1f7a5c" stroke-width="1.8" width="300" x="200" y="24"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="350" y="46">Insight: the vacancy window bleeds output</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="350" y="64">worth zero to any one person until it's translated</text>
+<line marker-end="url(#b1)" stroke="#1f7a5c" stroke-width="1.6" x1="300" x2="150" y1="78" y2="108"></line>
+<line marker-end="url(#b1)" stroke="#1f7a5c" stroke-width="1.6" x1="350" x2="350" y1="78" y2="108"></line>
+<line marker-end="url(#b1)" stroke="#1f7a5c" stroke-width="1.6" x1="400" x2="550" y1="78" y2="108"></line>
+<rect fill="#eef1f5" height="150" stroke="#3f5c7a" stroke-width="1.2" width="196" x="18" y="112"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="116" y="132">To the CFO</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="116" y="152">graded on: cash / margin</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="116" y="172">"20 openings × 90 days ×</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="116" y="187">daily output = profit</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="116" y="202">missed this quarter"</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" text-anchor="middle" x="116" y="226">unit: money</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="8.8" text-anchor="middle" x="116" y="248">→ he'll run the ROI</text>
+<rect fill="#eef1f5" height="150" stroke="#3f5c7a" stroke-width="1.2" width="196" x="252" y="112"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="350" y="132">To the line owner</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="350" y="152">graded on: delivery / goals</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="350" y="172">"understaffed, your roadmap</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="350" y="187">slips this quarter — and</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="350" y="202">the blame lands on you"</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" text-anchor="middle" x="350" y="226">unit: schedule / risk</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="8.8" text-anchor="middle" x="350" y="248">→ he'll back you</text>
+<rect fill="#eef1f5" height="150" stroke="#3f5c7a" stroke-width="1.2" width="196" x="486" y="112"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="584" y="132">To the frontline lead</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="584" y="152">graded on: overtime / morale</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="584" y="172">"the team covers the gap</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="584" y="187">on overtime — they're</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="584" y="202">about to burn out"</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" text-anchor="middle" x="584" y="226">unit: time / morale</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="8.8" text-anchor="middle" x="584" y="248">→ he'll be your insider</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="284" y2="284"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="302">A B2B deal now moves through 5–7 stakeholders on average (Adamson et al., The Challenger Customer, 2015) — nobody champions "good for the company."</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Checklist: before you deliver the insight, fill one row per key person</div>
+<ul class="checklist">
+<li><strong>Who grades them, on which number</strong> — not their title, the metric in their year-end review.</li>
+<li><strong>Does this insight move that number up or down</strong> — translated into their unit (money / schedule / time / risk).</li>
+<li><strong>What pushing it costs them</strong> — budget, political capital, or making an enemy; the higher the cost, the more ammunition they need.</li>
+<li><strong>Who can carry the tempo internally for you</strong> — not the friendliest person, the one most eager to change the status quo.</li>
+</ul>
+</div>
+<p class="en-brief"><b>EN</b> An insight delivered to a room as "this is valuable for the company" lands on no one. The CFO, the line owner and the frontline manager are each measured on a different number, so the one insight has to be retold three times, each version landing on the metric that person is personally graded against. Otherwise no one carries it forward internally — and the average B2B deal now moves through five to seven stakeholders, so a champion who can't sell it in your absence is where deals quietly die. Tailoring isn't flattery; it's translating one truth into three currencies.</p>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>A generic "valuable for the company" lands on no individual's incentive, so no one has a reason to bear the cost of pushing it internally. Bind the insight to "the number you personally get graded on" and it turns from information into something that touches them and is worth spending political capital on. The person who actually decides is often not in the room; the one who carries it for you when you're absent decides the outcome.</strong></p>
+<ul>
+<li><strong>Hard evidence · self-relevant information is processed deeper and remembered better</strong>: self-referential encoding reliably activates the <strong>medial prefrontal cortex (mPFC) and posterior cingulate</strong>, with markedly better recall than generic processing (Kelley et al., 2002, <em>J. Cognitive Neuroscience</em>; Rogers et al., 1977, original effect). <strong>Discount</strong>: materials are trait-word judgments; the mechanism's direction transfers, but don't read it as "name the pain and the deal closes." Worth cross-reading with the psychology and neuroscience sites.</li>
+<li><strong>Industry research · deals die from lack of consensus, not lack of interest</strong>: The Challenger Customer (Adamson, Dixon, Toman &amp; Spenner, 2015) reports B2B decisions now involve <strong>5+ people</strong> on average, and the sticking point is usually internal disagreement; change is driven by "Mobilizers" (people who want the status quo to change), not the friendly "Talkers" who can't move anything. <strong>Discount</strong>: same-lineage consulting data — trust the direction, not the exact ratios.</li>
+</ul>
+<p class="caveat">Boundary: tailoring is not switching your position to please each person. The core is one insight, one fact — only the unit and the landing point change. The moment the versions contradict each other, one cross-check burns it all down. This is the same underlying honesty as daring to say a truth against your own interest.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Dare to talk money and hold your ground: constructive tension, not a bulldozer
+<span class="en">Take control — assertive, not aggressive.</span></h2>
+<span class="tag">constructive tension</span><span class="tag">assertiveness U-curve</span><span class="tag">loss aversion</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The Challenger's third pillar is control: talk money directly, don't fold the instant you're pushed on price, be able to say "I don't agree." <strong>But control has an optimum — too soft carries no weight, too hard reads as a bulldozer, and both lose trust.</strong> The goal isn't to win this round of the argument; it's to make the buyer willing to sit with a little discomfort in service of a better decision.</div>
+</div>
+<div class="section">
+<div class="section-label">The assertiveness U-curve: too soft and too hard both fail</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="9" refy="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#9aab9f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Assertiveness → their trust / your effectiveness</text>
+<line stroke="#9aab9f" stroke-width="1.2" x1="60" x2="60" y1="44" y2="238"></line>
+<line marker-end="url(#c1)" stroke="#9aab9f" stroke-width="1.2" x1="60" x2="660" y1="238" y2="238"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="16" y="140">effect</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="66" y="256">low assertiveness</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="360" y="256">optimal zone</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="end" x="656" y="256">high assertiveness</text>
+<path d="M75,222 Q 360,40 645,222" fill="none" stroke="#1f7a5c" stroke-width="2.8"></path>
+<line stroke="#c0603a" stroke-dasharray="5,4" stroke-width="1.4" x1="120" x2="120" y1="150" y2="238"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="120" y="140">Accommodator</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="8.8" text-anchor="middle" x="120" y="120">folds on price</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="8.8" text-anchor="middle" x="120" y="106">reads as no conviction</text>
+<line stroke="#1f7a5c" stroke-dasharray="5,4" stroke-width="1.4" x1="360" x2="360" y1="70" y2="238"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="360" y="60">Challenger</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="360" y="86">holds + gives the reason</text>
+<line stroke="#c0603a" stroke-dasharray="5,4" stroke-width="1.4" x1="600" x2="600" y1="150" y2="238"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="600" y="140">Bulldozer</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="8.8" text-anchor="middle" x="600" y="120">wins the argument only</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="8.8" text-anchor="middle" x="600" y="106">reads as not listening</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="282" y2="282"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="300">Schematic curve; assertiveness relates to leadership as an inverted-U (Ames &amp; Flynn, 2007, JPSP) — too little and too much both logged as flaws.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: near the end, procurement says "you're 20% above the other vendor — can you match it?"</div>
+<div class="dialog bad">
+<div class="speaker">✗ Accommodate: fold instantly</div>
+<p>"Let me see about a discount…" — the moment you cave, you've refuted your own value: if you can drop it, it was padded to begin with. <strong>Going soft reads as no conviction.</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Control: hold, and give the reason</div>
+<p>"I'm not going to match that price — honestly, giving you that discount wouldn't help you. <strong>The 20% is the implementation hand-holding, and given you've got no one internal owning the rollout, that's exactly the part that decides whether this works at all.</strong> You ran the cheaper version once and it didn't land, right? I'd rather this deal be smaller than run that again." <br/>— you didn't argue, but you stood your ground and said something against your own interest, which makes you more credible, not less.</p>
+</div>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The third pillar is control: talk about money directly, don't fold the instant you're pushed on price, be willing to say "I don't agree." But assertiveness has an optimum — too little reads as no conviction, too much reads as not listening, and both cost trust. The aim isn't to win the exchange; it's to make the buyer willing to sit with a little productive discomfort in service of a better decision. Holding your price and giving the honest reason — even a reason that costs you the discount — signals conviction a folding vendor can't fake.</p>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Folding at the first push announces that the value you described was padded — a price you can drop was inflated to begin with. Holding and giving the reason signals "I'm confident in this judgment," which an accommodator can't produce. But assertiveness isn't better the more you have: it tracks effectiveness as an inverted-U, and too hard slides from "has a spine" to "isn't listening."</strong></p>
+<ul>
+<li><strong>Hard evidence · assertiveness and leadership form an inverted-U</strong>: Ames &amp; Flynn (2007, <em>JPSP</em>) measured it directly — <strong>both too little and too much</strong> assertiveness were logged by peers as weaknesses, with the most effective in the middle. "Assertive but not pushy" isn't a platitude; it has a curve. Peer-reviewed, fairly hard.</li>
+<li><strong>Hard evidence · a loss stings more than an equal gain, and moves people more</strong>: Kahneman &amp; Tversky (1979) prospect theory — losses carry roughly twice the psychological weight of equivalent gains. That explains two things: reps fear talking money (fear of losing the deal), and framing "the cost of not changing" as a loss already underway moves people more than framing a gain. Solid; the multiple is debated, the direction is hard.</li>
+<li><strong>Hard evidence · saying something against your own interest is more credible</strong>: Eagly, Wood &amp; Chaiken (1978, <em>JPSP</em>) — a communicator whose position runs against their own interest is judged less biased and more credible. So "I don't recommend that discount" stands up better than "let me get you a discount" — it removes the "he'd say that anyway" explanation. (Same underlying rule as the consultative-selling piece.)</li>
+</ul>
+<p class="caveat">Boundary: constructive tension and plain stubbornness sit a hair apart — the divide is <strong>whether you have a reason when you push back, and whether you're actually listening.</strong> Firmness with no insight behind it is just a bulldozer: win the round, lose the relationship. Control also doesn't mean winning every round — stand firm where it matters, give ground freely everywhere else.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>Land the insight as a question, not a lecture
+<span class="en">Prove them wrong and they defend the wrong thing.</span></h2>
+<span class="tag">reactance</span><span class="tag">generation effect</span><span class="tag">teach without lecturing</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">"Challenging" most often curdles into "lecturing": the harder you prove them wrong, the harder they fight you to save face. <strong>The same insight framed as a conclusion is a slap; framed as a question it's an invitation.</strong> Let them say the last line themselves — your only job is to walk them to the spot where they can see it.</div>
+</div>
+<div class="section">
+<div class="section-label">Correcting them vs walking them to see it</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="d1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+<marker id="d2" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="20" y="26">Lecture: slap the conclusion on him</text>
+<rect fill="#f6e3da" height="40" stroke="#c0603a" stroke-width="1.2" width="160" x="30" y="40"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="110" y="58">"You're aiming wrong —</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="110" y="73">fix X instead"</text>
+<line marker-end="url(#d1)" stroke="#c0603a" stroke-width="1.6" x1="195" x2="245" y1="60" y2="60"></line>
+<rect fill="#f6e3da" height="40" stroke="#c0603a" stroke-width="1.2" width="150" x="250" y="40"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.4" text-anchor="middle" x="325" y="58">threatens his</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.4" text-anchor="middle" x="325" y="73">autonomy / face</text>
+<path d="M325,84 C 325,122 160,122 112,86" fill="none" marker-end="url(#d1)" stroke="#c0603a" stroke-dasharray="4,3" stroke-width="1.4"></path>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="220" y="128">reactance: to defend his stance, he picks at yours</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="20" x2="680" y1="150" y2="150"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" x="20" y="176">Question: give the material, he assembles the conclusion</text>
+<rect fill="#e2efdc" height="40" stroke="#4e8a3f" stroke-width="1.2" width="160" x="30" y="190"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="110" y="208">"Teams like yours stall</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="110" y="223">at X — do you too?"</text>
+<line marker-end="url(#d2)" stroke="#1f7a5c" stroke-width="1.6" x1="195" x2="245" y1="210" y2="210"></line>
+<rect fill="#e2efdc" height="40" stroke="#4e8a3f" stroke-width="1.2" width="150" x="250" y="190"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="325" y="208">the judgment</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="325" y="223">stays his</text>
+<line marker-end="url(#d2)" stroke="#1f7a5c" stroke-width="1.6" x1="405" x2="455" y1="210" y2="210"></line>
+<rect fill="#1f7a5c" height="40" width="215" x="460" y="190"></rect>
+<text fill="#f3f1ea" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="567" y="208">"Yeah — we really should fix X"</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="8.6" text-anchor="middle" x="567" y="223">his conclusion, so he defends it</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="252" y2="252"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="270">Mechanism: being corrected triggers reactance (Brehm, 1966); a self-generated conclusion is remembered better and held harder (generation effect, Slamecka &amp; Graf, 1978).</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Template: rewrite the insight as a question</div>
+<div class="template">
+<span class="label">Template</span>
+<p><strong>Don't say</strong> "Your mistake is fixating on hiring speed."</p>
+<p><strong>Say</strong> "Across teams like yours, the real cost turns out to be the <strong>vacancy window</strong>, not speed — <strong>have you ever measured your cost of an open role?</strong>"</p>
+<p><strong>Keys:</strong> ① lead with the cross-sectional observation (you've seen a hundred, they've seen one); ② leave the conclusion as a question they can answer; ③ the line they say back is the insight you meant to deliver — but now it's theirs.</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The Challenger's most common failure is turning into a lecture: the harder you prove someone wrong, the harder they defend their position to save face. The same insight framed as a conclusion is a slap; framed as a question it's an invitation. Give the cross-sectional observation you've earned — you've seen a hundred customers, they've seen one — then leave the conclusion as a question they can answer, so the last line is theirs. People defend conclusions they generated themselves; they resist ones pushed onto them.</p>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>People run an instinct that protects a sense of autonomy: the moment they feel "you're forcing me to admit I'm wrong," they push back to reclaim control — even when you're right. Leaving the conclusion as a question sidesteps that defense: they aren't persuaded by you, they figured it out themselves. And a conclusion you generate yourself is remembered better and held harder than one you were handed.</strong></p>
+<ul>
+<li><strong>Hard evidence · a threat to autonomy triggers reactance</strong>: Brehm (1966) and a large downstream literature — when people sense a freedom being taken away, a counter-motivation to restore it kicks in, and being corrected head-on is exactly that threat. This is why "the more you prove him wrong, the more he digs in." Theory plus extensive empirical support, solid. Worth cross-reading with the psychology site.</li>
+<li><strong>Hard evidence · self-generated beats received</strong>: the generation effect (Slamecka &amp; Graf, 1978, <em>JEP:HLM</em>) — information you produce yourself is remembered better than information you passively read; stable and replicable. So making them say the conclusion out loud isn't just courtesy — it's how the insight actually takes root in their head.</li>
+</ul>
+<p class="caveat">Boundary: the question isn't a scripted "so what do you think?" If you have a genuine unique observation and still only lob back "how do you see it?", you've failed the consultant's duty — give the cross-sectional observation in full, and only leave the last step to them. Conversely, if you don't actually have the hundred-customer sample, don't dress a bluff up as an insight-shaped question — that's just empty technique.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">English Insight</div>
+<div class="english">
+<span class="label">Handy phrasing</span>
+<p>"Most teams like yours discover the real cost is elsewhere — have you measured that?" —— observation first, then the question.</p>
+<p>"I don't think you should match that price, honestly." —— control stands up only when you'll say a truth against your own interest.</p>
+<p>"Who has to be convinced for this to move?" —— aim the insight at the person who can actually push it.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 36 Action</h3>
+<p>Forty minutes, three steps. Pick a deal you're really chasing that's stuck at "the customer sees you as just one option among many."</p>
+<div class="action">
+<strong>1 (15 min) · Build a reframe:</strong> write down the problem the customer thinks they have, then one line: "but the real cost / opportunity is actually in ____" — where ____ is something your unique strength can catch, and something you could only conclude from seeing several customers like them. Can't write it? You don't yet have a real information advantage — don't play Challenger yet.<br/><br/><strong>2 (10 min) · Split into three ledgers:</strong> list three key people in the deal, one line each — the number they're graded on, and whether this insight moves it up or down (in their unit: money / schedule / time).<br/><br/><strong>3 (15 min) · Turn it into a question + set your control point:</strong> rewrite the step-1 reframe as a question they can answer (observation first, conclusion left open); then get clear on where in this deal you'll be pushed, and how you'll hold your ground and give the reason.<br/><br/>Boundary: the Challenger wins on complex, high-stakes deals where the customer "doesn't know what they don't know." On commodity, small-ticket, already-decided purchases it's pure friction — there the professional move is a fast quote. One red line: <strong>the insight has to be real.</strong> Faking one with no information advantage isn't challenging, it's arrogance, and the first knowledgeable person sees through it.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. Challengers "teach the customer" — but don't we always say "never contradict the customer, go with them"?</summary>
+<div class="answer">The two only sound like they clash. The key distinction: <strong>you push back on their problem definition, not on them as a person.</strong><br/><br/>Going with their emotion and respecting their situation is a different thing from going along with their (possibly wrong) read of the problem. A Challenger respects the person and empathizes with the situation, yet dares to say "the cause you assume may not be the real cause." What people actually resent is never "you have a different view" — it's "you left me no way to save face." That's exactly why move four lands the insight as a question: <strong>the view can be sharp, but the posture must leave them a door.</strong><br/><br/>One prerequisite gets skipped a lot: the license to challenge comes from an information advantage. You've seen a hundred customers like them and they've seen only their own one — that's what earns you the right to say "the pattern I see isn't what you assume." Without that edge, "challenging" decays into arguing, and then you really should just ask honestly and go with them.</div>
+</details>
+<details>
+<summary>2. How much can we actually trust the claim that "Challenger is the strongest profile"?</summary>
+<div class="answer">Trust the direction, don't use it as a law.<br/><br/>It comes from CEB's (now Gartner) survey of about six thousand reps — <strong>industry research, not peer review</strong>: cross-sectional, based on self- and manager ratings, proprietary consulting data, no independent replication, and the five-profile clustering has been questioned. So specific numbers like "Challengers are 40% of stars, Relationship Builders last" shouldn't become a KPI.<br/><br/>But the mechanisms underneath are hard and independently verifiable: reframing changes the criteria (framing effect), insight sticks (insight memory), self-relevance goes deeper (self-reference), assertiveness runs an inverted-U, plus reactance and the generation effect — all with peer-reviewed support. <strong>So the right reading is: treat The Challenger Sale as a useful set of moves, not a proven causal law.</strong> Its most durable contribution is really putting the counterintuitive fact "rapport ≠ results" on the table.</div>
+</details>
+<details>
+<summary>3. I'm mild-mannered and hate confrontation — does that rule me out as a Challenger?</summary>
+<div class="answer">It's an advantage — but first correct a misread: the core of a Challenger isn't "confrontation," it's "having an insight." Confrontation is just the bit of tension when you put the insight on the table, and that tension specifically <strong>shouldn't be high</strong> — assertiveness runs an inverted-U, and too hard actually loses trust. Mild people sit far from the "bulldozer" end of the curve, which is a natural head start.<br/><br/>What you usually lack isn't force, it's two things: a real insight (that comes from accumulating samples and reviewing a hundred customers, not from personality); and the one beat of "don't fold instantly" (when pushed on price, pause three seconds before reaching for a discount).<br/><br/>And "control" can be very quiet: a calm "I don't recommend you do that, and here's why…" is far stronger than banging the table. Deep listening plus one truth you'll dare to say is the introvert's version of a Challenger — a path the introverted-selling piece will get into.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 36</footer>
+</div>
+</body>
+</html>
