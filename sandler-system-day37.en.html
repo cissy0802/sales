@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 37: The Sandler System</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 37 · Phase F</div>
+<h1>Hand them permission to say no<br/>and the deal gets easier to close</h1>
+<div class="meta"><span>The up-front contract · the pain funnel · the un-needy posture · money and process before the proposal</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">The strange thing about this system is that the first thing it teaches isn't how to get a yes — it's how to hear a no sooner. What actually drags you under was never rejection; it's "let me think about it."</div>
+</header>
+<div class="intro">
+<strong>Consultative selling is about how you diagnose; the Challenger model is about the insight you bring. Sandler's system is about something else: how you avoid being consumed by the deal.</strong> David Sandler built it around 1967 on a plain assumption — the buyer is running a script: extract information, commit to nothing, squeeze on price at the end. Follow their script and you're playing the part of an unpaid consultant. <strong>Four moves: open with a spoken "up-front contract"; use the pain funnel to turn a complaint into a number he owns; get the smell of "I need this deal" off you; and ask about money and the decision process before you write anything.</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Agree how the meeting ends before it begins
+<span class="en">The up-front contract.</span></h2>
+<span class="tag">up-front contract</span><span class="tag">uncertainty</span><span class="tag">procedural fairness</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">Spend ninety seconds agreeing on five things: how long you have, what you need to find out, what they want to walk away with, which outcomes are allowed (explicitly including "this isn't a fit, let's stop"), and that you'll close by fixing a dated next step. <strong>A meeting with no agreed ending defaults to "let me think about it."</strong></div>
+</div>
+<div class="section">
+<div class="section-label">Same thirty minutes, two endings</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 372" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="u1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+<marker id="u2" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">The ending is set in the first ninety seconds</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="25" y="50">No up-front contract</text>
+<rect fill="#f6e3da" height="34" stroke="#c0603a" stroke-width="1.2" width="250" x="25" y="62"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.4" x="35" y="84">Small talk, then you pitch the company</text>
+<line marker-end="url(#u1)" stroke="#c0603a" stroke-width="1.5" x1="150" x2="150" y1="96" y2="110"></line>
+<rect fill="#f6e3da" height="34" stroke="#c0603a" stroke-width="1.2" width="250" x="25" y="112"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.4" x="35" y="134">Forty minutes of demo, polite nodding</text>
+<line marker-end="url(#u1)" stroke="#c0603a" stroke-width="1.5" x1="150" x2="150" y1="146" y2="160"></line>
+<rect fill="#f6e3da" height="34" stroke="#c0603a" stroke-width="1.2" width="250" x="25" y="162"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.4" x="35" y="184">"Looks good — send us something"</text>
+<line marker-end="url(#u1)" stroke="#c0603a" stroke-width="1.5" x1="150" x2="150" y1="196" y2="210"></line>
+<rect fill="#eddcd3" height="50" stroke="#c0603a" stroke-width="1.6" width="250" x="25" y="212"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="35" y="233">Ending: left hanging</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" x="35" y="250">You don't know why, can't let go</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="330" x2="330" y1="42" y2="300"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" x="378" y="50">With a contract: ninety seconds, five things</text>
+<rect fill="#e2efdc" height="26" stroke="#4e8a3f" stroke-width="1.1" width="290" x="378" y="60"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="388" y="77">① Time — we have thirty minutes, right?</text>
+<rect fill="#e2efdc" height="26" stroke="#4e8a3f" stroke-width="1.1" width="290" x="378" y="92"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="388" y="109">② My agenda — three things to find out</text>
+<rect fill="#e2efdc" height="26" stroke="#4e8a3f" stroke-width="1.1" width="290" x="378" y="124"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="388" y="141">③ Your agenda — what do you want?</text>
+<rect fill="#cfe6d8" height="26" stroke="#1f7a5c" stroke-width="1.8" width="290" x="378" y="156"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="388" y="173">④ "No" allowed — just say it's not a fit ★</text>
+<rect fill="#e2efdc" height="26" stroke="#4e8a3f" stroke-width="1.1" width="290" x="378" y="188"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" x="388" y="205">⑤ Close by fixing a dated next step</text>
+<line marker-end="url(#u2)" stroke="#1f7a5c" stroke-width="1.6" x1="523" x2="523" y1="214" y2="232"></line>
+<rect fill="#eaf3ee" height="30" stroke="#1f7a5c" stroke-width="1.2" width="90" x="378" y="234"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="423" y="253">Move ahead</text>
+<rect fill="#eaf3ee" height="30" stroke="#1f7a5c" stroke-width="1.2" width="90" x="478" y="234"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="523" y="253">Stop here</text>
+<rect fill="#eaf3ee" height="30" stroke="#1f7a5c" stroke-width="1.2" width="90" x="578" y="234"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="623" y="253">Dated next step</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="378" y="286">All three are conclusions; only "let me think" isn't</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="322" y2="322"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="342">★ Item ④ is the counterintuitive one: make "no" legitimate up front and refusal no longer has to disguise itself as delay.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="360">The contract is spoken and 60–90 seconds long; recited like terms and conditions, it curdles.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: you sell corporate training and have thirty minutes with an HR director.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Handing away the right to define the meeting</div>
+<p>"Thanks for making time! Let me take ten minutes to walk you through our company and our curriculum…" — from that sentence on, his only job for thirty minutes is to listen politely. <strong>You already know the ending: "Looks good, send me something."</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Settle the ending in ninety seconds</div>
+<p>"Before we start, let me line this up: we have thirty minutes, right? Three things I want to understand — the capability gap that hurts most this year, what you've tried before, and how it went. What do you want to walk away with?</p>
+<p><strong>And one more thing: if it isn't a fit when we're done, just say so. I won't chase you — it saves us both time.</strong> If it does look promising, we spend the last two minutes fixing a concrete next step. Works?"</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Say it as written · the 90-second contract</span>
+<p>1. <strong>Time</strong>: "We have thirty minutes, right?"</p>
+<p>2. <strong>Your agenda</strong>: "I want to understand A, B and C."</p>
+<p>3. <strong>Their agenda</strong>: "What do you want to walk away with?"</p>
+<p>4. <strong>A door for "no"</strong>: "Not a fit? Just say so. I won't chase."</p>
+<p>5. <strong>The close</strong>: "Last two minutes we set a next step — okay?"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>The up-front contract removes two things at once: uncertainty about the process (they don't know where this meeting is pushing them, so the safest move is to commit to nothing) and the cost of refusing (saying "no" is awkward, so "let me think about it" does the job instead). What you buy is truth and time — not a higher close rate.</strong></p>
+<ul>
+<li><strong>Hard evidence · change one word and the withheld concern comes out</strong>: Heritage et al. (2007, <em>JGIM</em>), a randomized trial — when physicians ended visits with "is there <em>something</em> else you want to address?" instead of "is there <em>anything</em> else?", patients' <strong>unmet concerns dropped by about 78%</strong>; the "anything" version did nothing. The wording makes "say more" the default, and people do. Peer-reviewed RCT, hard; boundary is the clinical setting.</li>
+<li><strong>Hard evidence · being left hanging is itself costing you</strong>: Grupe &amp; Nitschke (2013, <em>Nature Reviews Neuroscience</em>) review — anticipating an <strong>uncertain</strong> threat sustains recruitment of the amygdala, anterior insula and bed nucleus of the stria terminalis (BNST), producing more persistent vigilance and avoidance than certain bad news does. So "where is this salesperson taking me" raises the buyer's guard all on its own.</li>
+<li><strong>Hard evidence · let people help set the rules and they accept the outcome</strong>: the voice effect in procedural justice — Colquitt et al. (2001, <em>JAP</em>) meta-analysis finds procedural fairness (rules stated in advance, the person has a say) reliably predicts acceptance of the outcome <strong>even when the outcome goes against them</strong>. The contract makes the agenda jointly owned, so the eventual "no" is easier to say calmly.</li>
+</ul>
+<p class="caveat">Boundary: don't recite it at a formal RFP, a panel review, or with a long-standing client — it reads as mechanical; keep it short and human. It governs process, not conclusions: a contract won't turn an unfit buyer into a fit one, it will only let you find out sooner.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>The pain funnel: from "it's a bit annoying" to his own numbers
+<span class="en">Ask down three layers, and let him say it.</span></h2>
+<span class="tag">pain funnel</span><span class="tag">change talk</span><span class="tag">illusion of explanatory depth</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">A complaint is not a need. The pain funnel is a ladder of increasingly concrete questions that drills down three layers: <strong>surface problem → quantified impact → what it costs him personally.</strong> The first two layers only get nods; the third is where the energy to act lives — and all of it has to come out of his mouth, not yours.</div>
+</div>
+<div class="section">
+<div class="section-label">Three layers and the questions that reach them</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 370" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="p1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">The deeper you ask, the more concrete — and the more it moves him</text>
+<polygon fill="#eaf3ee" points="40,54 400,54 358,126 82,126" stroke="#4e8a3f" stroke-width="1.2"></polygon>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="220" y="80">Layer 1 · the surface problem</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="220" y="102">"our support is a bit slow"</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="220" y="118">describing it, not acting on it</text>
+<polygon fill="#cfe6d8" points="82,134 358,134 322,206 118,206" stroke="#1f7a5c" stroke-width="1.3"></polygon>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="220" y="160">Layer 2 · the quantified impact</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" text-anchor="middle" x="220" y="182">"about twenty renewals a month"</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="220" y="198">a number — but still the company's</text>
+<polygon fill="#1f7a5c" points="118,214 322,214 292,290 148,290" stroke="#123f30" stroke-width="1.3"></polygon>
+<text fill="#eef7f2" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="220" y="240">Layer 3 · what it costs him</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9.4" text-anchor="middle" x="220" y="262">"then I miss my number"</text>
+<text fill="#b9dcc9" font-family="Georgia" font-size="9" text-anchor="middle" x="220" y="278">only here does he want to move</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="424" x2="424" y1="48" y2="300"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" x="440" y="62">Ask in order — then shut up</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="446" y="88">① Tell me more — what happens exactly?</text>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.3" x1="454" x2="454" y1="94" y2="106"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="446" y="120">② Can you give me a concrete example?</text>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.3" x1="454" x2="454" y1="126" y2="138"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="446" y="152">③ How long has it run? What have you tried?</text>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.3" x1="454" x2="454" y1="158" y2="170"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="446" y="184">④ Roughly what did that cost in money or time?</text>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.3" x1="454" x2="454" y1="190" y2="202"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="446" y="216">⑤ Why fix it now rather than last year?</text>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.3" x1="454" x2="454" y1="222" y2="234"></line>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="446" y="248">⑥ If it stays this way, what does that mean for you?</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="446" y="276">⑥ is the one you must reach;</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="446" y="292">the first five only pave the way.</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="322" y2="322"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="342">The funnel comes from the Sandler training system, which has no peer-reviewed outcome test of its own; but "let them say it,"</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="358">"force out the detail" and "frame it as loss" each have independent research behind them — see the evidence below.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: the buyer mentions in passing that "support response is a bit slow."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Treat the remark as a need and start selling</div>
+<p>"We can fix that — our ticketing system auto-assigns and flags overdue items…" — he only mentioned it in passing; he hasn't conceded it's worth money. <strong>From here you spend the whole meeting selling medicine for a disease nobody has admitted to.</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Drill down three layers and let him say it</div>
+<p><strong>You:</strong> "Slow how? Can you give me a recent example?"<br/><strong>Him:</strong> "Last week a big account waited two days for a reply."<br/><strong>You:</strong> "How often does that happen? What have you tried?"<br/><strong>Him:</strong> "We added a person once. Fine for two months, then back."<br/><strong>You:</strong> "In those two months, roughly how many renewals did this cost you?"<br/><strong>Him:</strong> "…honestly, maybe twenty a month."<br/><strong>You:</strong> "And if next year looks the same, what does that mean for you?"<br/><strong>Him:</strong> "Then I miss my renewal number at year end."</p>
+<p>— that last line is one you could never have sold him. <strong>The moment he says it out loud, this stops being "a small company problem" and becomes "his problem."</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Pain you name, he can argue with; pain he names, he has to own. The funnel performs exactly that transfer: it forces a vague, deniable complaint into a concrete number, then into a consequence tied to how he's measured. Abstract problems don't produce action; a loss that's already running does.</strong></p>
+<ul>
+<li><strong>Hard evidence · only the change talk they say themselves predicts real change</strong>: Magill et al. (2014, <em>JCCP</em>), a meta-analysis of motivational interviewing's technical hypothesis — the counselor's open questions and reflective listening → more client "change talk" → actual behavior change; whereas the counselor supplying arguments and lecturing correlates with <em>worse</em> outcomes. <strong>Discount</strong>: the evidence is from addiction and health behavior; transferring it to purchases is an analogy.</li>
+<li><strong>Hard evidence · asking for detail punctures "I thought I understood this"</strong>: the illusion of explanatory depth (Rozenblit &amp; Keil, 2002) — people believe they understand something until asked to explain exactly how it works, and then can't; Fernbach et al. (2013, <em>Psychological Science</em>) found positions soften automatically after people attempt the mechanistic explanation. The middle of the funnel is that same move: it collapses "we're fine" on the spot.</li>
+<li><strong>Hard evidence · a loss weighs more in the brain than an equal gain</strong>: Tom, Fox, Trepel &amp; Poldrack (2007, <em>Science</em>) — in gambles, the ventral striatum and ventromedial prefrontal cortex respond with a markedly steeper slope to <strong>potential losses</strong> than to equivalent gains ("neural loss aversion"), and the size of that neural asymmetry predicts a person's behavioral loss aversion. So framing the status quo as something already leaking moves people more than framing it as upside. <strong>Discount</strong>: the generality of loss aversion has been challenged in recent years (Gal &amp; Rucker, 2018) — don't treat it as a universal law.</li>
+</ul>
+<p class="caveat">Boundary: the funnel is a set of questions, not an interrogation. Touch layer three only when he's willing to go there; push through resistance and diagnosis turns into cross-examination. There's one red line: <strong>you can help him see a cost that already exists; you cannot invent one.</strong> A buyer with no pain won't grow pain under questioning — then the right move is to admit it isn't a fit and leave cleanly, which is the heart of qualifying.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Un-needy: the deal you're afraid to lose is the one you overpay for
+<span class="en">No need for approval.</span></h2>
+<span class="tag">neediness</span><span class="tag">the cost of anxiety</span><span class="tag">reactance</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">You can <strong>want</strong> the deal; you can't <strong>need</strong> it. Neediness leaks — through how fast you reply, how quickly you volunteer a discount, how easily you accept a meeting that ends with no next step. Once the buyer reads "he needs this," squeezing you becomes the rational move. <strong>And posture isn't a performance: it comes from actually having other live opportunities.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">The neediness loop, and two places to break it</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 348" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="n1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">The more you fear losing it, the more it costs you</text>
+<rect fill="#f6e3da" height="44" stroke="#c0603a" stroke-width="1.3" width="190" x="55" y="48"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="150" y="68">One deal in the pipeline</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="150" y="84">the month rides on it</text>
+<line marker-end="url(#n1)" stroke="#c0603a" stroke-width="1.6" x1="245" x2="450" y1="70" y2="70"></line>
+<rect fill="#f6e3da" height="44" stroke="#c0603a" stroke-width="1.3" width="190" x="455" y="48"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="550" y="68">You start fearing the loss</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="550" y="84">expectations quietly drop</text>
+<line marker-end="url(#n1)" stroke="#c0603a" stroke-width="1.6" x1="550" x2="550" y1="92" y2="196"></line>
+<rect fill="#f6e3da" height="56" stroke="#c0603a" stroke-width="1.3" width="190" x="455" y="200"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="550" y="220">Offer a discount · free proposal</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="550" y="236">a fifth "any progress?"</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="550" y="250">each one shouts: I need this</text>
+<line marker-end="url(#n1)" stroke="#c0603a" stroke-width="1.6" x1="450" x2="250" y1="228" y2="228"></line>
+<rect fill="#f6e3da" height="56" stroke="#c0603a" stroke-width="1.3" width="190" x="55" y="200"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="150" y="220">He reads "he needs this"</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="150" y="238">so he squeezes, stalls, goes quiet</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9" text-anchor="middle" x="150" y="252">longer cycle, lower win rate</text>
+<line marker-end="url(#n1)" stroke="#c0603a" stroke-width="1.6" x1="150" x2="150" y1="200" y2="98"></line>
+<text fill="#123f30" font-family="Georgia" font-size="11.5" font-weight="700" text-anchor="middle" x="350" y="140">the neediness loop</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="350" y="160">each turn empties the pipeline further</text>
+<text fill="#697682" font-family="Georgia" font-size="9" text-anchor="middle" x="350" y="175">so the next deal scares you more</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="288" y2="288"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="308">Break it ① (the cure): put two more real opportunities in the pipeline — posture is a by-product of alternatives.</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="328">Break it ② (the patch): offer them a graceful "no" and clear the hanging deal out of your head.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: you quoted, then they vanished for two weeks. You've already sent two unanswered messages.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Messages three, four and five</div>
+<p>"Did you get a chance to review the proposal?" "Just checking on progress?" "Free for a quick call this week?" — each repeats the same subtext: <strong>I need this deal.</strong> And the harder you push, the more they want their autonomy back, so they stop replying entirely.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Open the door for "no" — and get a real answer</div>
+<p>"You've gone quiet, so my guess is this didn't make the priority list this year. <strong>If that's right, just reply 'not this year' and I'll take it off my list and stop bothering you.</strong> If I've guessed wrong, tell me where it's stuck and I'll see if I can help."</p>
+<p>— this only works if you <strong>genuinely accept</strong> "not this year." It does two things at once: hands autonomy back (so silence is no longer their only defense) and forces out a true answer. <strong>Use it once per deal; as a catchphrase it becomes cheap theater.</strong></p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Neediness hurts you along two paths. Outward: the buyer reads that you can't afford to lose, so squeezing becomes a zero-risk move. Inward: anxiety directly lowers your own expectations, so you offer a lower number sooner and accept "let's just do that" sooner. "No need for approval" isn't mindset fluff — it's protecting your pricing and your judgment.</strong></p>
+<ul>
+<li><strong>Hard evidence · anxious negotiators earn less</strong>: Brooks &amp; Schweitzer (2011, <em>OBHDP</em>) — with anxiety experimentally induced, negotiators held lower expectations, made lower first offers, exited earlier, and ended up roughly <strong>12% worse off</strong> than controls, and were quicker to concede under pressure. Peer-reviewed experiments, hard; boundary is the lab setting and short-term induced emotion.</li>
+<li><strong>Hard evidence · posture rests on having alternatives</strong>: Magee, Galinsky &amp; Gruenfeld (2007, <em>PSPB</em>) — the higher-power side (including whoever holds the better alternative) is more likely to <strong>make the first offer</strong>, and first offers produce better outcomes through anchoring. It's the same thing as BATNA in the negotiation-basics piece: nerve isn't temperament, it's a real fallback.</li>
+<li><strong>Hard evidence · the harder you push, the more they reclaim autonomy</strong>: psychological reactance (Brehm, 1966; Rains, 2013 meta-analysis confirms the effect is real and stable) — when freedom feels threatened, people push back to restore it. So a fifth "any progress?" isn't a reminder, it's a pressure source; "just tell me it's not this year" hands the freedom back and often returns a truthful answer.</li>
+</ul>
+<p class="caveat">Boundary: all of this assumes there really are other opportunities in the pipeline. Performing detachment on an empty pipeline isn't un-needy, it's passive — go build pipeline instead. And permission-to-say-no loses its force with overuse and can read as sulking; the test is simple: <strong>you can say it because you actually accept the answer.</strong></p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>Money and the decision process come before the proposal
+<span class="en">Stop doing free consulting.</span></h2>
+<span class="tag">budget up front</span><span class="tag">decision process</span><span class="tag">no free consulting</span>
+</div>
+<div class="section">
+<div class="section-label">The principle, in one line</div>
+<div class="principle">Get the order wrong and you're doing free consulting: writing the proposal before asking about money bets your most expensive hours on an untested premise. <strong>The order that protects you is pain (is there a real problem) → money (is there budget, and will he spend it on this) → decision (who signs, what path) → and only then a proposal.</strong> Also: every meeting ends with a dated next step or an explicit no.</div>
+</div>
+<div class="section">
+<div class="section-label">Same five steps, different order</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 318" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="s1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#c0603a"></path>
+</marker>
+<marker id="s2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Same five steps, reordered — different ending</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.2" font-weight="700" x="34" y="48">Common order: money and process asked last</text>
+<rect fill="#f6e3da" height="38" stroke="#c0603a" stroke-width="1.2" width="112" x="34" y="58"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="90" y="82">Talk needs</text>
+<line marker-end="url(#s1)" stroke="#c0603a" stroke-width="1.5" x1="146" x2="162" y1="77" y2="77"></line>
+<rect fill="#f6e3da" height="38" stroke="#c0603a" stroke-width="1.2" width="112" x="164" y="58"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="220" y="82">Write the proposal</text>
+<line marker-end="url(#s1)" stroke="#c0603a" stroke-width="1.5" x1="276" x2="292" y1="77" y2="77"></line>
+<rect fill="#f6e3da" height="38" stroke="#c0603a" stroke-width="1.2" width="112" x="294" y="58"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="350" y="82">Quote</text>
+<line marker-end="url(#s1)" stroke="#c0603a" stroke-width="1.5" x1="406" x2="422" y1="77" y2="77"></line>
+<rect fill="#f6e3da" height="38" stroke="#c0603a" stroke-width="1.2" width="112" x="424" y="58"></rect>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="480" y="74">"we have to run</text>
+<text fill="#6a3a22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="480" y="88">a process"</text>
+<line marker-end="url(#s1)" stroke="#c0603a" stroke-width="1.5" x1="536" x2="552" y1="77" y2="77"></line>
+<rect fill="#eddcd3" height="38" stroke="#c0603a" stroke-width="1.6" width="112" x="554" y="58"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="610" y="74">Silence</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="610" y="88">(no decision)</text>
+<text fill="#697682" font-family="Georgia" font-size="9.2" x="34" y="122">You pay your most expensive cost at step 2; he only reveals the real constraints at step 4.</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="20" x2="680" y1="140" y2="140"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.2" font-weight="700" x="34" y="166">Sandler order: money and process move ahead of the proposal</text>
+<rect fill="#e2efdc" height="38" stroke="#4e8a3f" stroke-width="1.2" width="112" x="34" y="176"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="90" y="192">Pain</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="90" y="206">is it real?</text>
+<line marker-end="url(#s2)" stroke="#1f7a5c" stroke-width="1.5" x1="146" x2="162" y1="195" y2="195"></line>
+<rect fill="#cfe6d8" height="38" stroke="#1f7a5c" stroke-width="1.8" width="112" x="164" y="176"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="220" y="192">Money ★</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="220" y="206">is there? will he?</text>
+<line marker-end="url(#s2)" stroke="#1f7a5c" stroke-width="1.5" x1="276" x2="292" y1="195" y2="195"></line>
+<rect fill="#cfe6d8" height="38" stroke="#1f7a5c" stroke-width="1.8" width="112" x="294" y="176"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="350" y="192">Decision ★</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="350" y="206">who signs / what path</text>
+<line marker-end="url(#s2)" stroke="#1f7a5c" stroke-width="1.5" x1="406" x2="422" y1="195" y2="195"></line>
+<rect fill="#e2efdc" height="38" stroke="#4e8a3f" stroke-width="1.2" width="112" x="424" y="176"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="480" y="192">Now the proposal</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="480" y="206">only for the qualified</text>
+<line marker-end="url(#s2)" stroke="#1f7a5c" stroke-width="1.5" x1="536" x2="552" y1="195" y2="195"></line>
+<rect fill="#1f7a5c" height="38" width="112" x="554" y="176"></rect>
+<text fill="#eef7f2" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="610" y="192">Yes · or a clear no</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9.2" text-anchor="middle" x="610" y="206">both count as a win</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="34" y="240">★ Swap those two steps and your free labor stops being a bet and becomes a payoff. A proposal isn't there to persuade — it's there to be signed.</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="262" y2="262"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="282">A clear no is a win too: it gives you time back, while a hanging deal keeps renting space in your head.</text>
+<text fill="#697682" font-family="Georgia" font-size="9" x="20" y="300">Pain comes first: ask about budget with no pain established and you'll get "it depends."</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: the conversation went well and they say "send us a proposal and we'll take a look."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Say yes instantly</div>
+<p>"Sure, you'll have it next week." — the three days you're about to spend may end up as leverage to squeeze their current vendor. <strong>And you don't know whether they have money or who signs.</strong></p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Ask three things first, then decide whether to write it</div>
+<p>"Happy to. But for it to be any use, I need three things first —</p>
+<p><strong>1. Money:</strong> is there budget set aside for this year, and roughly what size? I'd rather not build something outside your range and waste both our time.<br/><strong>2. Process:</strong> once it's in, what path does it take, who signs it, and what do they care about?<br/><strong>3. Timing:</strong> if you like it, how soon could this actually be decided?"</p>
+<p>— if none of the three has an answer, the problem isn't the proposal. <strong>The professional move then is: "Sounds like this isn't at proposal stage yet — should we nail down A first?"</strong> People who dare to say that find their quotes are worth more.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<ul class="checklist">
+<li>Before writing, have answers to at least two of: money, signer, timing</li>
+<li>No pain, no budget question — pain first, money second</li>
+<li>End every meeting with "who, on what date, does what" — confirm by email</li>
+<li>On "let me think about it," ask: "usually that means a concern — which part?"</li>
+<li>Put an option you don't recommend in the proposal — same logic as consultative selling</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism &amp; evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>"Proposal first, money later" puts the entire cost on your side, so the buyer has no reason to refuse — he takes your thinking for free while you bet your most expensive resource on an untested assumption. Asking about money and process first pulls that asymmetry back. As for why most people won't ask: putting money openly into a conversation that still carries a whiff of "relationship" triggers something close to offense — and that discomfort is badly overestimated.</strong></p>
+<ul>
+<li><strong>Hard evidence · awkwardness is systematically overestimated</strong>: Kardas, Kumar &amp; Epley (2022, <em>JPSP</em>), a series of experiments — people consistently overestimate how awkward deeper or more sensitive topics will be and underestimate the other side's interest and goodwill; after the conversation, both sides report it went better than expected. Peer-reviewed, multi-experiment, hard. It applies directly to asking about budget: the reaction you fear mostly doesn't happen.</li>
+<li><strong>Mechanistic evidence · why money talk feels like an offense</strong>: the taboo trade-off — Tetlock et al. (2000, <em>JPSP</em>); McGraw &amp; Tetlock (2005): once an interaction is coded as "relational," bringing money into it triggers moral discomfort and even anger. So the answer isn't avoidance; it's framing the conversation explicitly as business first — which is exactly what the up-front contract does. Solid experiments, but largely hypothetical scenarios; moderate strength.</li>
+<li><strong>Industry data · more deals are lost to "no decision" than to rivals</strong>: Dixon &amp; McKenna (2022, <em>The JOLT Effect</em>), based on analysis of roughly <strong>2.5 million</strong> recorded sales conversations: <strong>40–60%</strong> of pipeline is lost to no decision at all, driven mainly by buyers' fear of choosing wrong rather than contentment with the status quo. <strong>Discount heavily</strong>: proprietary vendor data, not peer-reviewed, no independent replication — read it as direction.</li>
+</ul>
+<p class="caveat">Boundary: asking about budget on a first cold call reads as abrupt, and small standardized purchases don't need any of this — there the professional move is a fast quote. "Up front" means relative to the <strong>proposal</strong>, not budget as an opening line. Don't turn the process question into an interrogation either: "how do these usually get decided here?" lands better than "who signs?" and yields the same information. <em>One more: write the next step as "who, on what date, does what" — turning an intention into an if-then plan with a time and place markedly raises follow-through (Gollwitzer &amp; Sheeran, 2006, meta-analysis of 94 studies, d ≈ 0.65).</em></p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 37 Action</h3>
+<p>Forty minutes, three steps. Pick one meeting you actually have this week, and one deal that's been hanging for over three weeks.</p>
+<div class="action">
+<strong>1 (10 min) · Write a 90-second up-front contract:</strong> put all five items in your own words, then read it aloud against a timer — over ninety seconds, cut. Say it as written in the meeting; don't improvise.<br/><br/><strong>2 (15 min) · Drill one complaint to the bottom:</strong> take a vague complaint a customer actually made, write the six questions out in order, and draft a plausible answer for each until you reach "if it stays this way, what does that mean for you?" If you can't write layer three, you don't yet know why they should buy — that's not a scripting problem, it's missing information.<br/><br/><strong>3 (15 min) · Send a permission-to-say-no message:</strong> for that hanging deal, write a note that explicitly allows "not this year." Before sending, ask yourself: <strong>do I actually accept that answer?</strong> If not, don't send it — the problem isn't this deal, it's an empty pipeline, and today's real job is building pipeline.<br/><br/>Boundary: this is <strong>process discipline</strong>, not a license to go cold. The contract, the exit permission, the early money question all exist to reduce waste on both sides; performed as coy manipulation, the same sentences flip into exactly that, and buyers can tell. And Sandler is a training methodology, not a validated law — use it as a checklist of moves, not an article of faith.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. Telling them up front that they can reject me — isn't that digging my own grave?</summary>
+<div class="answer">Depends what you count as the cost. <strong>The rejection was going to happen; all you control is how long it takes to surface.</strong> Without a door for "no," refusal doesn't disappear — it disguises itself as "let me think about it" or "maybe next quarter," and then occupies your pipeline, your forecast and your head for three months.<br/><br/>Mechanically the sentence does two things: it drops the social cost of saying no to zero (they don't have to invent a reason), and it hands autonomy back (threatened freedom makes people push back — that's reactance). Notably, explicitly freedom-granting phrasing like "of course, you're free to say no" actually <strong>raises</strong> compliance across a 42-study meta-analysis (Carpenter, 2013) — a small but stable effect.<br/><br/>The real trap is offering the door with your mouth but not your gut. If "then let's drop it" makes you panic, everything before it is wasted. So the threshold isn't the script — it's whether your pipeline holds anything else.</div>
+</details>
+<details>
+<summary>2. How much evidence is there for Sandler, really — or is it just more training patter?</summary>
+<div class="answer">Honestly: <strong>the Sandler system itself has no peer-reviewed outcome test.</strong> It's a methodology David Sandler distilled from training practice starting in 1967, and the public support is essentially franchisee case studies and participant self-ratings — evidence that is almost guaranteed to come out positive, with no control group. Don't read it as data.<br/><br/>Its <strong>components</strong> are a different matter; each has independent support: stating rules in advance and giving the other side a voice raises acceptance of outcomes (procedural justice); sustained uncertainty keeps the buyer's guard up (amygdala / anterior insula); only self-generated change talk predicts real change (motivational interviewing meta-analysis); asking for detail punctures the illusion of explanatory depth; anxiety costs negotiators about 12%.<br/><br/>So the right reading: <strong>a set of moves ground out in practice whose underlying mechanisms hold up individually — not a proven causal system.</strong> Its biggest contribution is really about posture: few systems explicitly teach you that being rejected early is good news.</div>
+</details>
+<details>
+<summary>3. If I keep drilling with the pain funnel, am I manufacturing anxiety?</summary>
+<div class="answer">The line is clear, and there's only one: <strong>is the cost you surfaced already there, or did you imagine it for him?</strong><br/><br/>"How many renewals did that cost you over those two months?" — he did that arithmetic himself; you just made him do it for the first time. That's helping him see. "Without us you'll be in real trouble next year" — you made that up, with no data behind it. That's manufacturing fear. He'll thank you for the first later; the second he'll remember as being handled, and memories of being handled outlast memories of any product.<br/><br/>Two brakes: <strong>stop when he doesn't want to answer</strong> — the questions are an invitation, not a cross-examination; and <strong>allow "there is no pain" as an answer</strong> — if the pain genuinely isn't there, the deal shouldn't be, and leaving cleanly beats inventing a wound.</div>
+</details>
+<details>
+<summary>4. Doesn't "un-needy" contradict "most deals close after the fifth follow-up"?</summary>
+<div class="answer">No — the two govern different variables: one is <strong>frequency</strong>, the other is <strong>posture</strong>.<br/><br/>Follow-up discipline says don't quit after the second silence, and bring something new each time. This says: what do you smell like when you follow up — <strong>are you delivering something, or begging for a status update?</strong> "Any progress?" is begging: zero value to them, pure exposure of your anxiety. "A company almost identical to yours did this; here are the numbers" is delivering, and you can send that ten times without losing standing.<br/><br/>A quick self-check: take your last follow-up message, delete every pleasantry, and see whether what remains is useful to them. If nothing remains, that message shouldn't have been sent.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 37</footer>
+</div>
+</body>
+</html>
