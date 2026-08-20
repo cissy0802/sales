@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 38: Value Selling</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 38 · Phase F</div>
+<h1>Translate your product into a single number on his ledger</h1>
+<div class="meta"><span>Quantifying ROI · the cost of doing nothing · the business case · talking to finance and the C-suite</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">Executives don't buy because your feature list is long. They buy because there is one number they can repeat in a room, own in front of their boss, and sign. Your job isn't to persuade them — it's to hand them the ammunition.</div>
+</header>
+<div class="intro">
+<strong>Consultative selling teaches you to diagnose; the Challenger model teaches you to bring the insight; value selling settles one hard question: how do you convert the benefit you bring into a number that lines up with the buyer's own P&amp;L?</strong> Once the money gets big enough to need approval, decisions stop running on "seems good" and start running on one sentence someone can say out loud: months to payback, dollars saved this year, dollars quietly bleeding out every month if nothing changes. <strong>Four moves: translate features into money; put a price on doing nothing; write a one-page business case (an internal document that makes the case that this spend is worth it) in finance's own language; and quote a conservative number you can defend line by line instead of a big one you can't.</strong> This isn't the emotional-persuasion chapter. It's the chapter about how a check gets past someone else's abacus.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Feature → outcome → money: you haven't finished until you reach the last cell</h2>
+<span class="tag">quantified value</span><span class="tag">common currency</span><span class="tag">anchoring</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">A feature is what you have; an outcome is the change it creates; <strong>money is what that change writes into his ledger.</strong> "We support automated reconciliation" is a feature. "Finance works forty fewer hours a month" is an outcome. "You save $110k a year in labor and cut another $60k of error loss" is the cell he can actually sign off on. If you don't get to the last cell, you're still talking to yourself.</div>
+</div>
+<div class="section">
+<div class="section-label">The same claim, translated one more column and now it can decide</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="24">Each column right is one step closer to a signature</text>
+<rect fill="#eef4f0" height="70" rx="5" stroke="#8aa79a" stroke-width="1.2" width="180" x="20" y="46"></rect>
+<text fill="#5a7365" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="110" y="70">1. Feature (what you have)</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="110" y="92">Automated reconciliation</text>
+<text fill="#8aa79a" font-family="Georgia" font-size="8.8" text-anchor="middle" x="110" y="108">Buyer: "So what?"</text>
+<line marker-end="url(#a1)" stroke="#1f7a5c" stroke-width="1.6" x1="204" x2="256" y1="81" y2="81"></line>
+<rect fill="#e2efdc" height="70" rx="5" stroke="#4e8a3f" stroke-width="1.3" width="180" x="260" y="46"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="350" y="70">2. Outcome (what it changes)</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="350" y="92">40 fewer finance hours / month</text>
+<text fill="#6a8a5a" font-family="Georgia" font-size="8.8" text-anchor="middle" x="350" y="108">Buyer: "Sounds nice"</text>
+<line marker-end="url(#a1)" stroke="#1f7a5c" stroke-width="1.6" x1="444" x2="496" y1="81" y2="81"></line>
+<rect fill="#1f7a5c" height="70" rx="5" stroke="#123f30" stroke-width="1.6" width="184" x="500" y="46"></rect>
+<text fill="#eef7f2" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="592" y="70">3. Money (his ledger)</text>
+<text fill="#ffffff" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="592" y="92">$110k / year saved</text>
+<text fill="#cfe6d8" font-family="Georgia" font-size="8.8" text-anchor="middle" x="592" y="108">Buyer: "I can take this upstairs"</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="684" y1="150" y2="150"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="20" y="176">Most reps stop at column 2 and assume "I explained the benefit" is enough.</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.8" x="20" y="200">Column 2 gets nods. Only column 3 gives him a reason to act, because the brain</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.8" x="20" y="218">can only compare two options after converting both into the same currency.</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.8" x="20" y="234">Don't do the conversion for him and he has to — and most people won't bother.</text>
+<rect fill="#eef1f5" height="50" rx="5" stroke="#3f5c7a" stroke-width="1.1" width="664" x="20" y="244"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" x="34" y="266">Value = (revenue gained + losses avoided + hours saved × loaded rate) − your price</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="34" y="282">Every input must trace back to a number he gave you — never an industry average you pulled from the air.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">You sell a finance-automation tool. Across the table is the company's Head of Finance.</div>
+<div class="dialog bad">
+<div class="speaker">✗ Stopping at feature and benefit</div>
+<p>"We do multi-account reconciliation, smart anomaly alerts, one-click reports — a big lift for finance efficiency, fewer human errors." Every sentence is true, but nothing in his head can travel to his boss's office, so all you get back is "sounds interesting, we'll evaluate."</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Translated to column 3 using his data</div>
+<p>"You said month-close currently takes three people five days. At your loaded rate that's about $33k a year on this activity. Auto-reconciliation conservatively takes sixty percent off — call it $20k. Add the $60k you told me the last error cost the client, even if it happens only once a year. <strong>Our software is $80k. If you take this math to approval, does the conversation get easier?</strong>"</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Script · nailing the claim to money</span>
+<p>1. <strong>Use his numbers</strong>: "How many people, how many hours, how much has the last mistake cost you here?"</p>
+<p>2. <strong>Only discount, don't inflate</strong>: "Even if we cut that in half…" — err low.</p>
+<p>3. <strong>Show the net</strong>: "Savings, minus our price, nets ___; payback in ___ months."</p>
+<p>4. <strong>Hand him the calculator</strong>: "Do you buy these numbers? Any one you think I've overshot, let's change it."</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>When the brain chooses, it converts options into a common currency and compares those. If you don't convert your benefit into money, the decision maker has to — friction rises, and the default action becomes no action. A concrete number then anchors the whole discussion around itself.</strong></p>
+<ul>
+<li><strong>Hard evidence · value is encoded in a common currency</strong>: Bartra, McGuire &amp; Kable (2013, <em>NeuroImage</em>), meta-analyzing 200+ fMRI studies, show that subjective value — for money, food, or other goods — converges on the same signal in <strong>ventromedial prefrontal cortex (vmPFC) and ventral striatum</strong> (Levy &amp; Glimcher, 2012 reach the same conclusion). Translating benefit into dollars is doing the vmPFC's job for him. Peer-reviewed meta-analysis; strong. Cross-ref: psychology / neuroscience.</li>
+<li><strong>Hard evidence · concrete numbers anchor everything downstream</strong>: Tversky &amp; Kahneman (1974, <em>Science</em>) — even a random number biases subsequent magnitude estimates. Whatever price for your value hits the table first frames the entire negotiation. Classic, repeatedly replicated; strong. (For how to set the anchor and who moves first, see the anchoring and concessions piece.)</li>
+<li><strong>Mechanism · use his numbers, not your averages</strong>: this isn't mystical — he owns the numbers he told you and won't argue with them; industry averages you inject are trivially dismissed. Getting him to say the number himself lifts acceptance (same underlying dynamic as the pain funnel).</li>
+</ul>
+<p class="caveat">Edges: garbage in, garbage out. Inventing numbers means the first serious CFO tears you apart, and the blowback is worse than not quoting numbers at all. When real data is out of reach, quote ranges and flag "rough estimate" rather than reporting a false precise figure.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>The strongest number isn't the upside — it's what doing nothing costs every month</h2>
+<span class="tag">cost of inaction</span><span class="tag">loss aversion</span><span class="tag">status-quo bias</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Your real competitor isn't a rival vendor — it's "keep doing what we do," which is free, risk-free, and requires no meeting. To move it, put a price on the status quo: how much is the company quietly bleeding each month by not changing? Reframing "what you could gain" as "what you're currently losing" multiplies the pull of the very same number.</div>
+</div>
+<div class="section">
+<div class="section-label">Doing nothing isn't zero cost — it's a rising line</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Two lines: one-time investment vs. inaction cost that keeps climbing</text>
+<line marker-end="url(#b1)" stroke="#5a7365" stroke-width="1.4" x1="70" x2="70" y1="270" y2="52"></line>
+<line marker-end="url(#b1)" stroke="#5a7365" stroke-width="1.4" x1="70" x2="660" y1="270" y2="270"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" transform="rotate(-90 30 165)" x="30" y="165">Cumulative cost ($)</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="600" y="288">Time (months)</text>
+<!-- inaction rising line -->
+<line stroke="#c0603a" stroke-width="2.4" x1="70" x2="620" y1="268" y2="92"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="460" y="86">Doing nothing: −$27.5k / month, forever</text>
+<!-- investment step: one-time then flat -->
+<line stroke="#1f7a5c" stroke-width="2.4" x1="70" x2="70" y1="268" y2="196"></line>
+<line stroke="#1f7a5c" stroke-width="2.4" x1="70" x2="620" y1="196" y2="196"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" x="340" y="188">Investment: one-time $80k, then roughly flat</text>
+<!-- breakeven -->
+<line stroke="#3f5c7a" stroke-dasharray="4 3" stroke-width="1.2" x1="298" x2="298" y1="150" y2="270"></line>
+<circle cx="298" cy="196" fill="#3f5c7a" r="4"></circle>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="298" y="144">Payback ≈ month 3</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="298" y="288">Net savings after this</text>
+<!-- annotation -->
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="70" y="312">Draw the red line and "let's wait" is no longer free — it costs $27.5k every month you delay.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Script · pricing the status quo</span>
+<p>1. <strong>Compute the monthly bleed</strong>: "This problem is currently costing you about $___ / ___ hours a month."</p>
+<p>2. <strong>Multiply by the decision cycle</strong>: "Your evaluation usually runs three months, so that's ___ before you even start."</p>
+<p>3. <strong>Contrast with the investment</strong>: "Ours pays back in ___ months, then nets ___ each month after."</p>
+<p>4. <strong>Make waiting visible</strong>: "So it isn't 'spend this money or not.' It's 'keep bleeding ___ each month or not.'"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>The same dollar packaged as "what you'll save" pulls less than the same dollar packaged as "what you're losing" — losses weigh roughly twice as much as equivalent gains, and the status quo enjoys a free inertia bonus on top. Unless you price that bonus explicitly, it wins by looking like zero.</strong></p>
+<ul>
+<li><strong>Hard evidence · losses weigh about 2× gains</strong>: Kahneman &amp; Tversky (1979, <em>Econometrica</em>) prospect theory — the disutility of a loss is roughly twice the utility of the same-size gain. Neurally, Tom, Fox, Trepel &amp; Poldrack (2007, <em>Science</em>) found the response in <strong>striatum and vmPFC</strong> for potential losses is steeper than for equivalent gains — "fear of losing" is literally louder than "hope of gaining." Behavioral + fMRI convergence; strong. Cross-ref: psychology / neuroscience.</li>
+<li><strong>Hard evidence · the status quo carries a free inertia bonus</strong>: Samuelson &amp; Zeckhauser (1988, <em>J. Risk &amp; Uncertainty</em>) — the "status-quo bias" experiments show people systematically prefer defaults and no-change options even when a better alternative is on the table. Unless you put a visible price on the status quo, it wins by looking like zero. Peer-reviewed, repeatedly replicated; strong.</li>
+<li><strong>Mechanism · the bleed has to be real</strong>: the loss frame only works because he believes the loss is actually happening. The moment a number is caught as scare tactics, loss aversion turns on you — what he remembers is "this rep tried to manipulate me," and people remember manipulation better than they remember products.</li>
+</ul>
+<p class="caveat">Edges: the loss frame is an amplifier, not a manufacturing plant — it magnifies costs that already exist and doesn't invent crises. "If you don't buy, next year is going to be dangerous for you" without data is where selling slides into manipulation (that boundary is drawn in the piece on the six principles of influence). If you truly can't compute a monthly bleed, that may just mean this deal isn't painful enough — don't force it.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>You won't be in the room where it's signed — so hand your champion one page</h2>
+<span class="tag">business case</span><span class="tag">processing fluency</span><span class="tag">internal selling</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">You can't get into the meeting where it's actually decided; the person speaking for you is your champion — the internal advocate who wants this to happen. What you hand them isn't a thirty-page deck but a <strong>one-page business case</strong>: problem, cost of inaction, solution, investment, payback, sources of assumptions — written in language finance can paste straight into an approval form. The more fluently they can read it aloud, the more credible your proposal looks in a room you're not in.</div>
+</div>
+<div class="section">
+<div class="section-label">The skeleton of a one-page business case</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 360" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fbfaf4" height="320" rx="6" stroke="#cbb98f" stroke-width="1.5" width="440" x="20" y="24"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="11.5" font-weight="700" x="40" y="52">Business case · Finance automation tool</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="40" x2="440" y1="62" y2="62"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="40" y="84">1. Problem (one line)</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="40" y="100">Month-close = 3 people × 5 days, error-prone, heavy overtime</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="40" y="124">2. Cost of inaction / year</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="40" y="140">Labor $33k + error loss ~$60k = ~$93k</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="40" y="164">3. Solution (one line)</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="40" y="180">Auto-reconciliation + anomaly alerts, into existing ERP</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="40" y="204">4. Investment (year 1)</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="40" y="220">Software $80k + implementation $20k = $100k</text>
+<rect fill="#e2efdc" height="30" rx="4" stroke="#1f7a5c" stroke-width="1.4" width="400" x="40" y="232"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="9.8" font-weight="700" x="52" y="251">5. Payback ≈ 3.8 months · year-1 net savings ≈ $260k</text>
+<text fill="#3f5c7a" font-family="Georgia" font-size="9.4" font-weight="700" x="40" y="284">6. Assumption sources: all numbers from your June close records</text>
+<text fill="#8aa79a" font-family="Georgia" font-size="8.6" x="40" y="300">(conservative — improvement rate at 60%, not the vendor-claimed 85%)</text>
+<!-- right side note -->
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" x="484" y="52">Why one page</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="484" y="78">Your champion must</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="484" y="94">recite it in 30 seconds</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="484" y="110">and survive the CFO's</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="484" y="126">line-by-line questions.</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" font-weight="700" x="484" y="156">30-page deck =</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="484" y="172">they can't recite it,</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="484" y="188">so your value simply</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="484" y="204">vanishes at the vote.</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="484" x2="668" y1="222" y2="222"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" font-weight="700" x="484" y="246">More fluent =</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" font-weight="700" x="484" y="262">looks more true</text>
+<text fill="#8aa79a" font-family="Georgia" font-size="8.6" x="484" y="284">(processing fluency)</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Script · when you hand it over</span>
+<p>"I compressed it to one page — <strong>your boss can read it in thirty seconds, the CFO can grill it line by line.</strong> Every number is yours; I just discounted them conservatively. Tell me which line you think your boss will push on and let's line up the answer now."</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>B2B money is almost never decided by the one person in front of you — a group votes, and you're not there. What you can send into that room is whatever your champion is carrying. The cleaner and more concrete the page, the more credible your proposal looks.</strong></p>
+<ul>
+<li><strong>Hard evidence · easier to read = judged more true (processing fluency)</strong>: Reber &amp; Schwarz (1999, <em>Consciousness &amp; Cognition</em>) and a series of follow-ups show that a claim easier for the brain to process — higher contrast, rhyme, clean layout — is rated more likely to be true; the truth hasn't changed, only the fluency. Alter &amp; Oppenheimer (2009) survey the effect across dozens of studies. A clean one-pager literally earns credibility. Peer-reviewed; strong. Cross-ref: psychology.</li>
+<li><strong>Industry data · it's a group, not an individual, that decides</strong>: Gartner / CEB research (Adamson, Dixon &amp; Toman, <em>The Challenger Customer</em>, 2015) puts the average B2B purchase at <strong>about 6.8</strong> stakeholders, with consensus difficulty correlating strongly with "no decision" outcomes. <strong>Heavily discount</strong>: vendor / consulting survey, not peer-reviewed, and the number shifts with definitions — treat as an order of magnitude, not a law. But the direction — "you're not there; you rely on an internal advocate" — is solid.</li>
+<li><strong>Mechanism · the one-pager is ammo for your champion, not homework for you</strong>: it exists to serve his thirty seconds and his boss's follow-ups, so every number must have its source hanging off it so he can answer "where did this come from?" A number without a source in that meeting equals no number at all.</li>
+</ul>
+<p class="caveat">Edges: one page doesn't mean amputated — detail goes in an appendix; the page holds the approval-form bones. And don't let it become a flyer: one "industry-leading" or "empower" slips in and finance's trust drops. The more it reads like an internal memo and the less it reads like marketing, the more useful it is.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>A conservative number you can defend line by line beats a big one you can't</h2>
+<span class="tag">credibility</span><span class="tag">precise anchor</span><span class="tag">persuasion knowledge</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Executives apply an automatic discount to any vendor's ROI claim — say 300% and they've already mentally cut it to 80%. So don't compete on who quotes the biggest number: <strong>quote a conservative one you'll happily let finance tear apart line by line, and you've done the discounting for them.</strong> Counterintuitively, a figure precise to the last digit ("saves $437k") is believed more than a round one ("saves about $500k") — it reads as "someone actually did the math."</div>
+</div>
+<div class="section">
+<div class="section-label">Claim too big and the number believed collapses</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Your claimed ROI (x) ↑; past a point, the value they believe (y) ↓</text>
+<line marker-end="url(#c1)" stroke="#5a7365" stroke-width="1.4" x1="70" x2="70" y1="250" y2="52"></line>
+<line marker-end="url(#c1)" stroke="#5a7365" stroke-width="1.4" x1="70" x2="660" y1="250" y2="250"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" transform="rotate(-90 30 150)" x="30" y="150">Value they believe</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="470" y="268">Your claimed ROI →</text>
+<!-- inverted-U curve -->
+<path d="M70,236 Q250,70 360,84 Q470,98 620,220" fill="none" stroke="#1f7a5c" stroke-width="2.4"></path>
+<!-- sweet spot -->
+<line stroke="#3f5c7a" stroke-dasharray="4 3" stroke-width="1.2" x1="340" x2="340" y1="84" y2="250"></line>
+<circle cx="340" cy="82" fill="#1f7a5c" r="5"></circle>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="340" y="72">Sweet spot: conservative, checkable</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="340" y="266">"saves $437k"</text>
+<!-- too big point -->
+<circle cx="600" cy="212" fill="#c0603a" r="5"></circle>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="590" y="200">Overreach: discount triggered</text>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="600" y="234">"500% ROI"</text>
+<!-- too small point -->
+<circle cx="110" cy="228" fill="#8aa79a" r="4"></circle>
+<text fill="#5a7365" font-family="Georgia" font-size="8.8" text-anchor="middle" x="150" y="222">Too small: not worth moving</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="90" y="290">Mechanism: the wilder the number, the louder the "this is a pitch" alarm — precise, sourced middle wins.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="scene">
+<div class="setup">The CFO is staring at the line on your slide that reads "average customer sees 300% ROI."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Competing on the size of the number</div>
+<p>"On average our customers see 300% ROI!" The CFO's inner voice: vendor average, cut to a fraction. This sentence didn't help you — it stamped "yet another sales pitch" across your forehead.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Quote something conservative and defendable</div>
+<p>"I'm not going to hand you an industry average. Using your own June close records, I only counted labor and that one error, and I discounted improvement to a conservative 60%. Year-one net savings come out to about $437k, payback 3.8 months. <strong>Here's the sheet — every line traces to its source. Have finance take it apart.</strong>"</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Script · handing the discount over yourself</span>
+<p>1. <strong>Preempt the vendor filter</strong>: "You won't believe a vendor average — we're not using one."</p>
+<p>2. <strong>Show the conservative assumption</strong>: "Improvement rate at ___%, lower than what we've measured."</p>
+<p>3. <strong>Hand over the model</strong>: "Here's the sheet, formulas unlocked — change any input and it recomputes."</p>
+<p>4. <strong>Use precise numbers</strong>: quote "$437k," not "about $500k" — precision = "someone did the math."</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>People run a defense against anything obviously a sales pitch — the bigger the exaggeration, the louder the defense, and the puffed portion doesn't just fail to add value, it drags the credible part down with it. Precise numbers, by contrast, carry a silent signal: "this was calculated, not made up."</strong></p>
+<ul>
+<li><strong>Hard evidence · precise numbers are believed more and adjusted less</strong>: Janiszewski &amp; Uy (2008, <em>Psychological Science</em>) found precise anchors ($362,000) produce smaller mental adjustments than round ones ($350,000); Thomas, Simon &amp; Kadiyali (2010) confirm the pattern in real housing-price data. So "$437k" both looks calculated and resists being cut. Peer-reviewed; strong. (Same underlying pattern as in the piece on anchoring and concessions.)</li>
+<li><strong>Hard evidence · anything read as a pitch gets discounted</strong>: Friestad &amp; Wright (1994, <em>J. Consumer Research</em>) persuasion-knowledge model — once people identify an attempt to influence them, they activate coping strategies and actively discount the claim. An inflated ROI is the strongest possible trigger. Theory plus extensive empirical support; strong. Handing over the discount yourself ("take it apart") disarms the defense.</li>
+<li><strong>Mechanism · conservatism is a signal, not just a smaller number</strong>: saying "I've used a low estimate" transmits "I'm not afraid to be audited" — which itself lowers perceived risk on the other side. Same root as "dare not to sell" in the consultative selling piece: small acts of surrender buy trust.</li>
+</ul>
+<p class="caveat">Edges: precise ≠ fake-precise. Sprinkling decimals to look calculated, then not surviving one query from finance, is worse than reporting round numbers — precision must be the output of a real computation. And don't overdo conservatism to the point of erasing the actual value; the sweet spot is "credible lower bound," not "smallest number I can quote."</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 38 Action</h3>
+<p>Forty minutes. Turn one live opportunity into a ledger finance can read.</p>
+<div class="action">
+<strong>1 (15 min) · Translate to column 3:</strong> pick the customer you most want to close. Write the three sentences you say most often about your value, then translate each one across — feature → outcome → number on their ledger. The ones you can't reach column 3 on tell you what data you're missing; write down "the number I need to ask about" — that's your next open.<br/><br/><strong>2 (15 min) · Draw the two lines:</strong> estimate a monthly bleed (rough is fine), and your one-time investment. Sketch the payback on paper. Then write one sentence that puts a price on doing nothing: "It isn't 'spend or not.' It's 'keep bleeding ___ every month or not.'"<br/><br/><strong>3 (10 min) · Compress into one page:</strong> pour the above into six boxes — problem / cost of inaction / solution / investment / payback / sources — conservative throughout, precise numbers. Before you send it to your champion, ask yourself: <strong>if the CFO grills me line by line, can I answer every line?</strong> Any line you can't is homework you haven't finished.<br/><br/>Boundary: this is <strong>helping them build the case cleanly</strong>, not bullying with numbers. The whole force of an ROI sheet is credibility; the moment you invent, inflate, or bury an assumption to close, the same sheet becomes manipulation — and the most easily busted kind. Value selling is strongest where real value is quantifiable, and most brittle when you fabricate ROI.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. What I sell is soft — experience, brand, feel. It can't be turned into money. Now what?</summary>
+<div class="answer">Separate "can't be quantified" from "hasn't been quantified." Most soft value can be <strong>proxied</strong>: better service → repeat rate / return rate / NPS → revenue; better brand → pricing power → margin. If you can't reach money directly, find <strong>the metric he's already paying money to measure</strong>, and hook your value onto it.<br/><br/>For the parts that genuinely can't be quantified (pure aesthetics, the boss's face) don't fabricate a number — that will destroy the credibility of the other numbers around it. Do it <strong>honestly stacked</strong> instead: quantify what you can with a conservative floor, and list the rest as "in addition, there is…" so the buyer prices it themselves. <strong>A page that's 70% hard numbers plus 30% honest whitespace beats one that's 100% invented.</strong> Decision-makers don't need you to eliminate soft value — they need you to stop dressing soft value up as hard.</div>
+</details>
+<details>
+<summary>2. I'm just a rep. Doing my customer's ROI for them — isn't that overstepping? Their finance team knows more than I do.</summary>
+<div class="answer">Whether it's overstepping depends on whether you hand them a <strong>conclusion or a draft</strong>. Show up with a polished, precise number and say "that's the amount," and yes, finance will instinctively poke holes. Hand them a sheet with <strong>formulas unlocked, assumptions exposed, explicitly inviting edits</strong> — "here's a rough cut using your data; if you disagree with an assumption, let's change it" — and you're not out of your depth; you've saved finance the two hours of building the model.<br/><br/>Mechanism: this leans on ownership. Numbers finance has touched become theirs to defend internally, not something you shoved at them. You don't need to be "better at the math than finance" — you need them to sign the draft you set up. <strong>The best ROI sheets end up looking like the customer built them.</strong></div>
+</details>
+<details>
+<summary>3. Shorter payback closes better. Can't I just shrink the payback window on paper?</summary>
+<div class="answer">Short-term you win the deal, long-term you plant a landmine. Payback is a <strong>verifiable promise</strong>: if you quoted two months, they'll compare your promise to their real data after purchase. Miss it and what you lose isn't this deal's trust — it's <strong>renewals, expansions, referrals</strong>, which is where a customer actually becomes valuable (the close is where the relationship starts — the long view in the consultative selling piece).<br/><br/>The safer play is the reverse: <strong>quote payback conservatively and let reality outrun your promise</strong>. Say four months and land at three, and the customer starts telling other people "better than they said" — the cheapest word-of-mouth on earth. Almost every "precisely under-promise, then over-deliver" habit beats "elegantly over-promise" over time. ROI sheets are no exception.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 38</footer>
+</div>
+</body>
+</html>
