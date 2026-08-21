@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 39：解决方案销售的陷阱</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 39 · Phase F</div>
+<h1>「这个我们可以定制」是一单里最贵的一句话</h1>
+<div class="meta"><span>主题：过度定制 · 复杂化 · 解决方案疲劳 · 何时回归简单直接</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">顾问式那一套用过头，就变成了它自己的反面：你越努力"给方案"，客户越难做决定——而多数单子真正需要的，是你少给他两个选项、然后闭嘴报价。</div>
+</header>
+<div class="intro">
+<strong>诊断、定制、整体方案——前面几期教的都是它们怎么用得对。这一期讲它们怎么用坏：什么时候「解决方案」这三个字反而在杀单。</strong>四个陷阱按顺序咬人：<strong>一、过度定制</strong>——每句"我们可以改"在签单那天都免费，账单两年后才到；<strong>二、复杂化</strong>——多给一个选项、多列一条卖点，成交率不升反降；<strong>三、解决方案疲劳</strong>——"端到端一站式赋能"买家已经听到自动屏蔽；<strong>四、场合错配</strong>——对一个只想问价的人做四十分钟诊断，你不是专业，你是障碍。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>定制在签单那天是免费的，账单两年后才寄到你手上
+<span class="en">Customization is free the day you sign. The invoice arrives two years later.</span></h2>
+<span class="tag">过度定制</span><span class="tag">激励错配</span><span class="tag">延迟贴现</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">你答应的每一处定制，成本都不落在你身上、也不落在这个月——它落在交付、支持、升级团队，落在两年后接手的人身上。<strong>所以销售系统性地过度定制，不是人品问题，是结构问题</strong>：好处即时且归你，代价延迟且归别人。知道这一点，才可能给自己装刹车。</div>
+</div>
+<div class="section">
+<div class="section-label">销售只看得见第一格，成本发生在后面三格</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">一处定制的全生命周期成本</text>
+<line marker-end="url(#a1)" stroke="#5a7365" stroke-width="1.4" x1="70" x2="70" y1="250" y2="46"></line>
+<line marker-end="url(#a1)" stroke="#5a7365" stroke-width="1.4" x1="70" x2="660" y1="250" y2="250"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" transform="rotate(-90 32 148)" x="32" y="148">累计投入</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="596" y="270">时间 →</text>
+<rect fill="#e2efdc" height="22" rx="3" stroke="#4e8a3f" stroke-width="1.2" width="130" x="72" y="226"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="137" y="241">① 签单：几乎为零</text>
+<rect fill="#f2e4d4" height="54" rx="3" stroke="#c9925f" stroke-width="1.2" width="130" x="206" y="194"></rect>
+<text fill="#8a5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="271" y="225">② 交付：排期插队</text>
+<rect fill="#f6e3da" height="92" rx="3" stroke="#c0603a" stroke-width="1.3" width="130" x="340" y="156"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="405" y="200">③ 支持：单独的坑</text>
+<text fill="#a8461f" font-family="Georgia" font-size="8.6" text-anchor="middle" x="405" y="216">只有一个人会修</text>
+<rect fill="#eccfc4" height="146" rx="3" stroke="#a8461f" stroke-width="1.5" width="130" x="474" y="102"></rect>
+<text fill="#8f3a17" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="539" y="164">④ 升级：跟不上主版本</text>
+<text fill="#8f3a17" font-family="Georgia" font-size="8.6" text-anchor="middle" x="539" y="180">每次更新都要重新适配</text>
+<line stroke="#3f5c7a" stroke-dasharray="5 4" stroke-width="1.4" x1="70" x2="206" y1="214" y2="214"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.4" font-weight="700" x="76" y="208">销售的视野到这里为止</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="288">机制：好处即时且归你，代价延迟且落在别的部门。人对延迟成本本来就系统性低估，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="306">再加上它不进你的账——于是"可以定制"永远说得太快。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：客户说「你们这个审批流不符合我们的习惯，能不能按我们的来做一版？」</div>
+<div class="dialog bad">
+<div class="speaker">✗ 条件反射式点头</div>
+<p>「可以的，我回去让产品排一下。」——你以为在展示灵活，其实是在没定价、没排期、没进合同的情况下替交付团队签了一张欠条。而客户会把它当成已经承诺的东西。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 先要结果，再谈代价</div>
+<p>「做得了，但代价先说清楚：定制版没法跟着主版本自动升级，以后每次更新要单独适配，出问题的响应也慢一档。<strong>你要的其实是"部门经理不用逐单点"这个结果吧？</strong>标准功能里用批量规则绕一下八成能拿到，而且明年它会自己变好。先试这条？真不行，定制那条我单独报价和排期。」</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 收到定制请求先问四句</span>
+<p>1. <strong>要结果不要规格</strong>：「这个改动是为了解决什么结果？」——他要的常常是结果，说出口的是他想象的实现方式。</p>
+<p>2. <strong>标准路绕一下</strong>：「用现成功能这么绕，能不能拿到八成？」</p>
+<p>3. <strong>用价格过滤</strong>：「这块我单独报价、单独排期，你愿意为它多付 / 多等吗？」——愿意掏钱的定制需求通常是真的。</p>
+<p>4. <strong>数人头</strong>：「这个只有你提过，还是十个客户都提过？」只有他 → 是定制；十个人 → 那是你的路线图漏了。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Every customization you agree to costs you nothing today and nothing this month — the bill lands on delivery, support and upgrades, and on whoever inherits the account two years from now. That's why reps systematically over-customize: it isn't a character flaw, it's a structural one. The upside is immediate and yours; the cost is delayed and someone else's, and people discount delayed costs steeply even when they do land on them. So before you nod, ask four questions: what outcome is this change actually for (people describe an implementation when they mean a result); can a standard workaround get eighty percent of it; are you willing to pay separately and wait separately for it (price is the cleanest filter there is); and has one customer asked or have ten. One customer means customization. Ten means your roadmap has a hole.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>人对"现在的好处"和"以后的代价"用的不是同一把尺子：延迟越远，权重掉得越狠。再叠上一层组织错配——代价还不落在你的部门——"可以定制"就成了一句几乎没有阻力的话。</strong></p>
+<ul>
+<li><strong>硬证据 · 延迟贴现是双曲型的，近期被系统性放大</strong>：Ainslie (1975, <em>Psychological Bulletin</em>) 与 Kirby &amp; Herrnstein (1995, <em>Psychological Science</em>) 显示，人对延迟收益 / 成本的贴现曲线是双曲型而非指数型——越靠近当下权重被抬得越离谱，偏好因而随时间反转（今天觉得划算的承诺，到期时后悔）。同行评审、跨物种反复复现，硬。</li>
+<li><strong>硬证据（含争议标注）· 即时可得的东西在脑内更"响"</strong>：McClure、Laibson、Loewenstein &amp; Cohen (2004, <em>Science</em>) 发现选择立即可得的奖励时，<strong>腹侧纹状体、内侧前额叶（vmPFC）与后扣带</strong>激活更强，而跨期比较更依赖<strong>外侧前额叶与后顶叶</strong>。<strong>需诚实标注</strong>：其"双系统"解释后来被 Kable &amp; Glimcher (2007, <em>Nature Neuroscience</em>) 挑战——单一价值系统即可解释同样数据。<strong>现象极稳，两系统那版机制有争议。</strong>cross-ref psychology / neuroscience。</li>
+<li><strong>较弱 · 复杂度的成本上升快于收入</strong>：Gottfredson &amp; Aspinall (2005, <em>HBR</em>) 论证产品与流程复杂度的成本呈非线性上升，存在一个"创新极限"。管理实务分析 + 咨询案例，非同行评审，<strong>当方向参考、别当定律</strong>。但做过交付的人都认得这条曲线。</li>
+</ul>
+<p class="caveat">边界：这不是"永远别定制"。有些定制是真护城河，有些客户大到值得为他改。规则是：<strong>定制要当一笔生意来算——单独定价、单独排期、单独写进合同</strong>，而不是当促成交的赠品扔出去。免费送出去的定制，是你在拿别人的时间买自己的业绩。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>你多讲一条卖点，正在稀释最强的那条
+<span class="en">Each extra selling point you add dilutes the strongest one you have.</span></h2>
+<span class="tag">稀释效应</span><span class="tag">决策冲突</span><span class="tag">提案减法</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">加东西感觉是零风险的：多一个方案、多一条卖点、多一页 PPT，最坏也就是没用。<strong>错。多余的信息不是中性的。</strong>印象更接近"平均"而不是"累加"——一条硬证据和三条平庸卖点并排，结果不是四条，是一条被稀释过的。而选项一多，最容易被选中的是"先不选"。</div>
+</div>
+<div class="section">
+<div class="section-label">印象是被平均的，不是被累加的</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同一条硬证据，旁边站着谁，决定了它剩多少分量</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" x="20" y="52">A · 只讲最强的那一条</text>
+<rect fill="#e2efdc" height="26" rx="3" stroke="#4e8a3f" stroke-width="1.2" width="250" x="20" y="62"></rect>
+<text fill="#2c4a22" font-family="Georgia" font-size="9.2" x="30" y="80">同规模客户月结 5 天 → 1.5 天</text>
+<rect fill="#1f7a5c" height="30" rx="4" width="250" x="20" y="106"></rect>
+<text fill="#ffffff" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="145" y="126">对方接收到的分量：满格</text>
+<line marker-end="url(#b1)" stroke="#1f7a5c" stroke-width="1.6" x1="145" x2="145" y1="92" y2="100"></line>
+<line stroke="#cbb98f" stroke-width="1" x1="310" x2="310" y1="40" y2="234"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="340" y="52">B · 强的那条 + 三条凑数的</text>
+<rect fill="#e2efdc" height="20" rx="3" stroke="#4e8a3f" stroke-width="1.2" width="320" x="340" y="60"></rect>
+<text fill="#2c4a22" font-family="Georgia" font-size="9.2" x="350" y="74">同规模客户月结 5 天 → 1.5 天</text>
+<rect fill="#f0efe6" height="15" rx="3" stroke="#b9b6a4" stroke-width="1" width="320" x="340" y="84"></rect>
+<text fill="#8a8778" font-family="Georgia" font-size="8.6" x="350" y="95">界面友好、上手快</text>
+<rect fill="#f0efe6" height="15" rx="3" stroke="#b9b6a4" stroke-width="1" width="320" x="340" y="103"></rect>
+<text fill="#8a8778" font-family="Georgia" font-size="8.6" x="350" y="114">支持多种导出格式</text>
+<rect fill="#f0efe6" height="15" rx="3" stroke="#b9b6a4" stroke-width="1" width="320" x="340" y="122"></rect>
+<text fill="#8a8778" font-family="Georgia" font-size="8.6" x="350" y="133">7×24 小时客服</text>
+<line marker-end="url(#b1)" stroke="#1f7a5c" stroke-width="1.6" x1="500" x2="500" y1="140" y2="152"></line>
+<rect fill="#8fb3a2" height="30" rx="4" width="320" x="340" y="158"></rect>
+<rect fill="#1f7a5c" height="30" rx="4" width="120" x="340" y="158"></rect>
+<text fill="#ffffff" font-family="Georgia" font-size="10" font-weight="700" x="352" y="178">被稀释后</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="470" y="178">← 三条弱的把平均值拉下来了</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="212" y2="212"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="20" y="236">"反正多说无害"是这行最贵的错觉。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="258">删掉一条卖点，对方的决定不会变 → 它不是卖点，是噪音。而噪音会收费：</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="276">它稀释强证据，还把"选哪个"变成"这事有点复杂，回头再说"。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 提案减法四刀</span>
+<p>1. <strong>方案砍到一个</strong>：只留一个推荐方案（最多加一个备选，且两者必须在同一维度上明显不同——"贵但快"对"便宜但慢"，不是三个长得差不多的 A/B/C）。</p>
+<p>2. <strong>卖点做删除测试</strong>：逐条问「删掉它，他的决定会变吗？」不会 → 删。</p>
+<p>3. <strong>弱证据下沉</strong>：强证据单独站，弱的全部移到附录——别让它们并排。</p>
+<p>4. <strong>敢推荐</strong>：「这几种我们都做得了，但按你刚说的情况，我只推荐这一个，原因是……」——广度亮了，决定也替他收敛了。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Adding feels risk-free: one more option, one more bullet, one more slide — worst case it's just unused. Wrong. Extra information isn't neutral. Impressions behave more like an average than a sum, so a hard piece of evidence standing next to three mediocre ones doesn't read as four points, it reads as one diluted point. And the more options are on the table, the more likely the winner is "not yet." Cut proposals to one recommendation (two at most, and they must differ obviously on one axis — expensive-and-fast versus cheap-and-slow, not three near-identical tiers). Run the deletion test on every claim: if removing it wouldn't change the decision, it isn't a claim, it's noise, and noise charges rent. Then dare to recommend — "we can do all of these, but given what you just told me I'd only recommend this one, because…" shows range and converges the decision in the same sentence.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>两条独立机制在同时收你的费：一，平庸或无关的信息会稀释诊断性信息的力度；二，选项间的冲突越难解，人越倾向推迟决定——而推迟的去处不是竞品，是"什么都不做"。</strong></p>
+<ul>
+<li><strong>硬证据 · 稀释效应</strong>：Nisbett、Zukier &amp; Lemley (1981, <em>Cognitive Psychology</em>)——在有诊断价值的信息旁加入与判断无关的中性信息，被试的判断会显著向"中性"回归，强信息被稀释。同方向上，Anderson (1965, <em>JPSP</em>) 的信息整合研究发现：给一个人的描述里加入"中等好"的形容词，整体评价反而下降——大脑在平均，不在累加。同行评审、复现良好，硬。</li>
+<li><strong>硬证据 · 冲突导致延迟与不作为</strong>：Tversky &amp; Shafir (1992, <em>Psychological Science</em>) 发现，两个选项各有明显优势、难以取舍时，人显著更可能<strong>推迟决定或选择"都不要"</strong>——哪怕两个都比现状好。这正是三个平行方案的下场。经典、反复复现，硬。</li>
+<li><strong>要打折的名篇 · 果酱实验</strong>：Iyengar &amp; Lepper (2000, <em>JPSP</em>) 的超市试吃研究（24 种果酱吸引更多驻足，但 6 种那桌购买率高得多）被引用了二十多年，<strong>但必须标注</strong>：Scheibehenne、Greifeneder &amp; Todd (2010, <em>JCR</em>) 的元分析发现"选择过载"的<strong>平均效应接近零</strong>；Chernev、Böckenholt &amp; Goodman (2015, <em>JCP</em>) 进一步指出效应只在特定条件下稳定——选项复杂、偏好不明确、有时间压力。<strong>B2B 提案恰好三条都占</strong>，方向可信；但别把"24 vs 6"当普适定律背。</li>
+</ul>
+<p class="caveat">边界：减法不等于藏信息。该给的细节要有，只是放进附录、放到他问的时候，而不是堆在决策页上。反例：当买家的核心疑虑就是"你们能不能覆盖我们所有场景"，广度本身就是那条硬证据——这时候该罗列，但罗列在能力附页，别混进推荐方案那一页。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>「端到端一站式解决方案」这句话已经不携带任何信息了
+<span class="en">"End-to-end integrated solution" now carries exactly zero information.</span></h2>
+<span class="tag">解决方案疲劳</span><span class="tag">信号成本</span><span class="tag">具体性</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">一句话有没有信息量，取决于<strong>说不出这句话的人多不多</strong>。当每家厂商首页都写着"一站式端到端、赋能业务增长"，它的信号强度就归零——买家的耳朵早把它编进了噪音过滤器。能穿过去的只有两种：<strong>具体到可被证伪的句子</strong>，和一句"我们不做什么"。</div>
+</div>
+<div class="section">
+<div class="section-label">买家耳朵里的那道过滤器</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#8aa79a"></path>
+</marker>
+<marker id="c2" markerheight="10" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="11" refy="5">
+<path d="M0,0 L12,5 L0,10 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">竞品也能原样说的话，一律被挡在外面</text>
+<rect fill="#f0efe6" height="20" rx="3" stroke="#b9b6a4" stroke-width="1" width="180" x="20" y="48"></rect>
+<text fill="#8a8778" font-family="Georgia" font-size="9" x="30" y="62">端到端一站式解决方案</text>
+<rect fill="#f0efe6" height="20" rx="3" stroke="#b9b6a4" stroke-width="1" width="180" x="20" y="76"></rect>
+<text fill="#8a8778" font-family="Georgia" font-size="9" x="30" y="90">赋能业务、降本增效</text>
+<rect fill="#f0efe6" height="20" rx="3" stroke="#b9b6a4" stroke-width="1" width="180" x="20" y="104"></rect>
+<text fill="#8a8778" font-family="Georgia" font-size="9" x="30" y="118">行业领先、值得信赖</text>
+<rect fill="#f0efe6" height="20" rx="3" stroke="#b9b6a4" stroke-width="1" width="180" x="20" y="132"></rect>
+<text fill="#8a8778" font-family="Georgia" font-size="9" x="30" y="146">以客户为中心的服务</text>
+<rect fill="#e2efdc" height="20" rx="3" stroke="#4e8a3f" stroke-width="1.3" width="180" x="20" y="164"></rect>
+<text fill="#2c4a22" font-family="Georgia" font-size="9" x="30" y="178">月结 5 天 → 1.5 天</text>
+<rect fill="#e2efdc" height="20" rx="3" stroke="#4e8a3f" stroke-width="1.3" width="180" x="20" y="192"></rect>
+<text fill="#2c4a22" font-family="Georgia" font-size="9" x="30" y="206">跨境结算我们不做</text>
+<line marker-end="url(#c1)" stroke="#c9c6b6" stroke-width="1.3" x1="206" x2="288" y1="58" y2="96"></line>
+<line marker-end="url(#c1)" stroke="#c9c6b6" stroke-width="1.3" x1="206" x2="288" y1="86" y2="104"></line>
+<line marker-end="url(#c1)" stroke="#c9c6b6" stroke-width="1.3" x1="206" x2="288" y1="114" y2="116"></line>
+<line marker-end="url(#c1)" stroke="#c9c6b6" stroke-width="1.3" x1="206" x2="288" y1="142" y2="128"></line>
+<line marker-end="url(#c2)" stroke="#1f7a5c" stroke-width="2" x1="206" x2="288" y1="174" y2="146"></line>
+<line marker-end="url(#c2)" stroke="#1f7a5c" stroke-width="2" x1="206" x2="288" y1="202" y2="158"></line>
+<rect fill="#eef1f5" height="120" rx="6" stroke="#3f5c7a" stroke-width="1.6" width="86" x="292" y="72"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="335" y="120">买家的</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="335" y="136">噪音过滤器</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.4" text-anchor="middle" x="335" y="156">"人人都这么说"</text>
+<line marker-end="url(#c2)" stroke="#1f7a5c" stroke-width="2.2" x1="382" x2="452" y1="148" y2="148"></line>
+<rect fill="#1f7a5c" height="96" rx="6" stroke="#123f30" stroke-width="1.5" width="222" x="456" y="100"></rect>
+<text fill="#ffffff" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="567" y="126">穿过去的只有两种句子</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9.2" text-anchor="middle" x="567" y="150">① 具体到能被证伪的结果</text>
+<text fill="#d8ecdf" font-family="Georgia" font-size="9.2" text-anchor="middle" x="567" y="172">② 你主动说"我们不做什么"</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="232" y2="232"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="256">机制：信号要可信，必须"对没那个本事的人更贵"。人人免费可说的形容词成本为零，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="274">不构成信号。而"我们不做跨境结算"是有成本的——吹牛的人不肯说，所以它反而被信。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="300">检查法：把你的介绍念给自己听，凡是竞品能原样照抄的句子，全划掉。剩下的才是你的。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：三十秒自我介绍，对面是一家零售公司的财务负责人。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 通用词堆砌</div>
+<p>「我们是行业领先的端到端一体化解决方案提供商，帮助企业实现数字化转型与降本增效。」——每个字他这个月都听过八遍。这段话唯一的作用是让他确认"又来一个"，然后开始想下一个会议。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 具体 + 主动排除</div>
+<p>「我们只做一件事：把对账里最脏的那一段——多渠道流水和 ERP 对不上——自动化掉。上个月一家门店数和你们差不多的公司，月结从 5 天压到 1 天半。<strong>跨境结算和税务筹划我们不做，那块得找别人。</strong>」</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 三步洗掉口号</span>
+<p>1. <strong>竞品测试</strong>：逐句问「我最大的竞争对手能不能把这句话原样搬走？」能 → 划掉。</p>
+<p>2. <strong>形容词换硬通货</strong>：每个形容词换成一个数字、一个客户名字或一个场景。「高效」→「月结 5 天压到 1 天半」。</p>
+<p>3. <strong>补一句排除</strong>：「── 我们不做。」——这是最便宜的可信信号，因为吹牛的人说不出口。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> A sentence carries information only to the extent that some people couldn't say it. When every vendor's homepage promises an end-to-end integrated solution that empowers growth, the phrase's signal strength is zero — buyers filtered it into noise years ago. Two kinds of sentence still get through. First, results concrete enough to be falsified: "a retailer your size went from a five-day close to a day and a half" survives where "highly efficient" does not. Second, an explicit exclusion — "we don't do cross-border settlement, you'll need someone else for that" — which works precisely because it is expensive to say and people who are bluffing won't say it. The test takes one minute: read your own pitch aloud and strike every sentence your biggest competitor could lift verbatim. Whatever is left is actually yours.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>信号只有在"对冒充者更贵"时才可信；零成本的形容词人人都能说，所以不传递任何东西。而当对方有动机认真加工（要花钱、要担责的采购正是如此），空洞的修辞不但无效，还会把你归进"营销话术"那一类。</strong></p>
+<ul>
+<li><strong>硬证据 · 信号必须有差别成本</strong>：Spence (1973, <em>Quarterly Journal of Economics</em>) 的信号理论——一个信号能区分高低品质，前提是它对低品质方来说成本更高。这条后来拿了诺贝尔经济学奖，是"人人免费可说的话没有信息量"的正式版本。也解释了为什么"我们不做 X"这种自曝其短的话反而涨可信度：吹牛的人不肯付这个成本。</li>
+<li><strong>硬证据 · 有动机时，边缘线索失效</strong>：Petty &amp; Cacioppo (1986) 的精细加工可能性模型（ELM）——当听众有动机且有能力仔细加工时走"中心路径"：只有具体、可检验的论据能改变态度，且改变得更持久；漂亮口号这类"边缘线索"只在对方不上心时才起作用。B2B 采购几乎总是高动机场景。同行评审，硬。cross-ref psychology。</li>
+<li><strong>硬证据 · 具体的东西更快被加工、更牢被记住</strong>：Paivio、Yuille &amp; Madigan (1968, <em>JEP Monograph</em>) 起始的双编码研究反复显示，具体词比抽象词加工更快、回忆率更高。冠军要在会上转述的那句话必须是具体的——抽象口号在他嘴里会当场蒸发（怎么给冠军配弹药，见「价值销售」那期）。</li>
+<li><strong>行业数据（打折看）· 买家早就自己查完了</strong>：Adamson、Dixon &amp; Toman (2012, <em>HBR</em>) 引用 CEB 调研称，B2B 买家平均在联系供应商前已完成约 <strong>57%</strong> 的采购流程。<strong>咨询自有调研、口径随年份变、非同行评审——当量级参考。</strong>但方向扎实：通用介绍那部分，你还没开口他已经看过了。</li>
+</ul>
+<p class="caveat">边界：具体不等于把技术参数糊人一脸。"99.99% SLA、分布式多活"对 CTO 是硬通货，对财务负责人还是噪音——<strong>具体是相对于听众而言的</strong>，要具体到他的账、他的流程、他的一天。另外，主动排除只在你确实有取舍时才成立；为显得可信而假装"我们不做"，一问就穿帮。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>多数单子不需要方案，需要你闭嘴报价
+<span class="en">Most deals don't need a solution. They need you to shut up and quote.</span></h2>
+<span class="tag">场合匹配</span><span class="tag">交易型 vs 顾问型</span><span class="tag">摩擦成本</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">诊断是有成本的：占对方时间、拖长周期、还传递一层元信息——"跟这家买很麻烦"。<strong>当买家已经知道要什么、需求标准化、金额小到他一个人能签，你多问的每一轮都在减分。</strong>顾问式不是姿态，是一笔投入；投入要跟决策复杂度成正比，不跟你的职业自豪感成正比。</div>
+</div>
+<div class="section">
+<div class="section-label">按"他多清楚"和"这决定多重"选打法</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="d1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<line marker-end="url(#d1)" stroke="#5a7365" stroke-width="1.4" x1="88" x2="88" y1="290" y2="24"></line>
+<line marker-end="url(#d1)" stroke="#5a7365" stroke-width="1.4" x1="88" x2="640" y1="290" y2="290"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" transform="rotate(-90 34 160)" x="34" y="160">决策的风险与复杂度 →</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="320" y="312">他对"自己要什么"有多清楚 →</text>
+<rect fill="#f6e3da" height="118" rx="5" stroke="#c0603a" stroke-width="1.3" width="256" x="98" y="36"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="112" y="60">高风险 · 说不清</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="112" y="82">→ 完整顾问式：诊断、教育、洞见</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="112" y="100">这是唯一值得投四十分钟的格子。</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="112" y="116">先改变他的问题定义，再谈方案。</text>
+<text fill="#8aa79a" font-family="Georgia" font-size="8.6" x="112" y="140">典型：数字化转型、组织级采购</text>
+<rect fill="#eef1f5" height="118" rx="5" stroke="#3f5c7a" stroke-width="1.3" width="256" x="368" y="36"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.5" font-weight="700" x="382" y="60">高风险 · 很清楚</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="382" y="82">→ 别再诊断，改去降风险</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="382" y="100">他知道要什么，怕的是买错。</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="382" y="116">给案例、试点、保证、退出条款。</text>
+<text fill="#8aa79a" font-family="Georgia" font-size="8.6" x="382" y="140">典型：换掉一个用了五年的系统</text>
+<rect fill="#f2e4d4" height="118" rx="5" stroke="#c9925f" stroke-width="1.3" width="256" x="98" y="164"></rect>
+<text fill="#8a5a24" font-family="Georgia" font-size="10.5" font-weight="700" x="112" y="188">低风险 · 说不清</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="112" y="210">→ 两句话帮他收敛，别开会</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="112" y="228">「你们主要是 A 还是 B？</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="112" y="244">是 A 的话就选这个。」</text>
+<text fill="#8aa79a" font-family="Georgia" font-size="8.6" x="112" y="268">典型：小团队选工具、选套餐</text>
+<rect fill="#e2efdc" height="118" rx="5" stroke="#4e8a3f" stroke-width="1.5" width="256" x="368" y="164"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" x="382" y="188">低风险 · 很清楚</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="382" y="210">→ 直接报价。诊断=减分</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="382" y="228">他问价你却要约 45 分钟电话，</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="382" y="244">他会去官网找你的竞品。</text>
+<text fill="#8aa79a" font-family="Georgia" font-size="8.6" x="382" y="268">典型：续费、加座席、标准套餐</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="98" y="330">走错格子的代价是不对称的：该诊断没诊断，丢一单；不该诊断硬诊断，丢的是"好打交道"这个名声。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：客户微信上直接问「你们基础版多少钱，能开专票吗？」</div>
+<div class="dialog bad">
+<div class="speaker">✗ 条件反射掏出诊断流程</div>
+<p>「报价之前我想先了解下贵司的业务流程和主要痛点，方便的话约个 45 分钟电话？」——他要的是一个数字和一个是 / 否。你把一次两分钟的成交，换成了一道他随时可以放弃的作业题。多数人放弃。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 先给答案，再留一个小钩子</div>
+<p>「基础版一年 6800，能开专票，今天下单明天就能用。<strong>唯一可能影响选型的点：你们有多个门店要打通吗？有的话那块得单独聊十分钟。</strong>没有就按基础版走，我把链接发你。」</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 三个"该闭嘴"的信号</span>
+<p>1. <strong>他上来就问价格 / 交期 / 合同</strong>——他已经在最后一步，你却想把他拽回第一步。</p>
+<p>2. <strong>他能准确说出规格、型号、座席数</strong>——需求已标准化，诊断没有新信息可挖。</p>
+<p>3. <strong>金额小到他一个人能签</strong>——没有第二个人要被说服，没有内部推销的活要干。</p>
+<p>命中两条以上 → <strong>直接报价，把整套诊断压成一个问句</strong>（就像上面那句"有没有多门店"）。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Diagnosis has a price: it costs the buyer's time, stretches the cycle, and quietly signals "buying from these people is a project." When someone already knows what they want, the requirement is standard, and the amount is small enough for one person to sign, every extra round of questions loses you points. Match effort to the complexity of the decision, not to your professional pride. Three signals to shut up and quote: they open with price, lead time or contract terms; they can state the exact spec, model or seat count; and the spend is small enough that nobody else has to be convinced. Two or more, and you compress the whole discovery into a single question — "the only thing that might change the recommendation: do you need multiple locations connected?" — then send the number. The asymmetry matters: failing to diagnose costs you one deal, while diagnosing when nobody asked costs you your reputation as someone who is easy to buy from.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>销售技巧不是绝对好坏，是跟场合配对的：同一套动作在复杂大单里提高胜率，在简单小单里降低胜率。诊断的收益来自"发现对方不知道的东西"，对方全知道时收益归零、成本照收。</strong></p>
+<ul>
+<li><strong>大样本行业研究 · 技巧的有效性会随交易规模翻转</strong>：Rackham《SPIN Selling》(1988) 基于对约 <strong>3.5 万次</strong>销售拜访的实地观察发现：封闭式提问和经典成交技巧在小额交易里有效，在大额复杂交易里<strong>反而降低</strong>成功率。<strong>打折看</strong>——非同行评审、原始方法未完全公开；但样本量极大、方向被后续实践反复印证。（提问漏斗怎么用，见「会问才会卖」那期。）</li>
+<li><strong>硬证据 · 工作记忆有硬上限，超了整体质量下降</strong>：Sweller (1988, <em>Cognitive Science</em>) 的认知负荷理论——工作记忆容量有限，与目标无关的负荷（extraneous load）会挤占用于真正决策的资源。你在一个简单采购上加四十分钟诊断，加的正是这种无关负荷。同行评审、大量复现，硬。</li>
+<li><strong>硬证据 · 更少信息有时判断更准</strong>：Gigerenzer &amp; Goldstein (1996, <em>Psychological Review</em>) 的"少即是多"效应——特定环境里，掌握更少线索的人判断反而更准，因为无关线索稀释了有效线索（和上一节同一条底层）。同行评审，硬，但<strong>边界明确</strong>：不能当成"信息越少越好"的通行证。</li>
+<li><strong>机制 · 诊断本身在传递元信息</strong>：对一个只想买把螺丝刀的人问十个问题，他学到的不是"这家很专业"，是"这家很麻烦"——你的流程复杂度会被读成未来合作的复杂度。</li>
+</ul>
+<p class="caveat">边界：别把这条当偷懒的许可证。真正危险的格子是"他很清楚、但他清楚错了"——张口就要 A，而 A 解决不了他的问题。判断法：<strong>他说得出要什么，也说得出为什么要吗？</strong>说得出"为什么"就直接报价；只说得出"什么"，就值得用一个问句探一下（这是「挑战者销售」那期的用武之地——但用一个问句，不是一场会议）。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 39 Action</h3>
+<p>四十分钟，给你手上的单子装三个刹车。</p>
+<div class="action">
+<strong>一（15 分钟）· 定制减法：</strong>翻出你正在推的一单，把口头答应过的"我们可以帮你改 / 加"全列出来，逐条走四问（要什么结果？标准路能不能拿到八成？愿不愿意单独付钱和等待？只有他提过还是十个人提过？）。给至少一条准备好换回标准做法的话术。<br/><br/><strong>二（15 分钟）· 提案减法：</strong>打开你最近发出去的一份方案，数清楚给了几个选项、列了几条卖点。方案砍到一个（最多两个且必须明显不同轴），卖点做删除测试留最强的三条，其余移到附录。然后念一遍那句敢推荐的话。<br/><br/><strong>三（10 分钟）· 洗掉口号：</strong>写下你的三十秒自我介绍，划掉所有竞品能原样搬走的句子，每个形容词换成一个数字或一个客户名字，末尾补一句"── 我们不做"。<br/><br/>边界提醒：这一期不是反对顾问式销售，是反对把它变成条件反射。诊断、定制、整体方案都是好工具，价值取决于场合——<strong>该用不用是懒，不该用硬用是自我表演</strong>。判断标准只有一条：这一步是让对方更容易做决定，还是让我看起来更专业？冲突时选前者。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 客户明确点名要一个定制功能，不给就走人，我怎么办？</summary>
+<div class="answer">先分清他要的是<strong>这个功能</strong>还是<strong>它带来的结果</strong>——人描述需求时，说出口的往往是自己想象的实现方式。一句"这个改动最终为了解决什么"经常能把"必须定制"变成"标准功能绕一下也行"。<br/><br/>如果确实是硬需求，那就<strong>把它当成一笔生意来算，而不是当赠品扔出去</strong>：单独定价、单独排期、单独写进合同。价格是最好的过滤器——愿意多付钱、多等两个月的需求通常是真的；一听要加钱就说"那算了"的，本来就是加分项。<br/><br/>最坏的情况不是丢单，是你免费答应、内部插队、交付延期、功能还做不好——那时候你赔了钱、赔了交付团队的信任，还是丢了这个客户。<strong>宁可现在诚实说一句"这个我们不做"</strong>，也别用一个做不好的承诺换签字。敢说不卖，见「顾问式销售」那期。</div>
+</details>
+<details>
+<summary>2. 只给一个方案，会不会显得我们能力单薄、不灵活？</summary>
+<div class="answer">这是把"展示能力"和"帮人决定"混成了一件事。该分开办：<strong>能力用"我们做过什么"体现</strong>（案例、客户名字、数字），<strong>选项用"我推荐哪个"体现</strong>。一句话就能两样都办到：「这几种我们都做得了，但按你刚说的情况，我只推荐这一个，原因是……」——广度亮了，决定也替他收敛了。<br/><br/>而且从对方视角看，<strong>敢推荐比摆选项更专业</strong>：推荐是要担责的，摆三个平行方案让他自己挑，本质上是把风险还给他，还顺便告诉他"我没搞懂你的情况"。<br/><br/>真需要给选项时，让它们<strong>在同一个维度上明显不同</strong>——"贵但两周上线"对"便宜但要三个月"，这种选择好做；三个只差一两行的 A/B/C 套餐，才是逼人拖延的那种。</div>
+</details>
+<details>
+<summary>3. 我们产品本来就复杂（多模块的 B2B 平台），怎么可能讲简单？</summary>
+<div class="answer">复杂的是产品，不是第一次对话。分开两件事：<strong>产品的复杂度</strong>和<strong>这次决定的复杂度</strong>。你不需要让他一次理解整个平台，只需要让他做出下一个决定——而下一个决定通常小得多（开不开试点、要不要拉财务来听一次）。<br/><br/>做法是打<strong>一个楔子</strong>：只讲他最痛的那一个场景、一个模块、一个可验证的结果，其余能力等他上船之后自然会发现（扩购比首单好卖得多）。<br/><br/>另外，"复杂产品必须复杂地讲"多半是个错觉。<strong>能把它压成一句话是真懂的标志；讲不简单，通常说明你自己还没想清楚他要的是哪一块。</strong>自检：如果只能留一句话给冠军在会上转述，你留哪句？留不出来时，问题不在产品复杂，在你还没做完选择。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 39</footer>
+</div>
+</body>
+</html>
