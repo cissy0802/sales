@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 40：销售漏斗与管道</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 40 · Phase G</div>
+<h1>「这个月管道涨了」通常不是好消息，是堵车</h1>
+<div class="meta"><span>主题：阶段划分 · 转化率 · 管道价值与预测 · 漏斗健康度诊断</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">管道总额是四个数里最没信息量、也最容易骗自己的那一个——而多数人只看它。真正决定这个季度的是另外三个：判据、流速、和你敢不敢把单子标死。</div>
+</header>
+<div class="intro">
+<strong>管道（pipeline）＝你手上所有还没关闭的单子；漏斗（funnel）＝它们按阶段排开的形状。</strong>这两个词被当成汇报道具用了太多年，以至于大部分人的管道表其实是一份自我安慰书。四个动作按顺序拆它：<strong>一、阶段判据换成买家的动作</strong>——凡是你自己就能完成的事都不算数；<strong>二、赢率按同一批线索算</strong>——按"本月关闭"算出来的赢率几乎必然虚高；<strong>三、别信加权预测那个数</strong>——它对应的现实根本不存在；<strong>四、健康度看流速不看存量</strong>——总额涨了，八成是走得慢了，不是进得多了。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>阶段的判据是他做了什么，不是你做了什么
+<span class="en">Stages are defined by what the buyer did, not by what you did.</span></h2>
+<span class="tag">退出判据</span><span class="tag">有成本的信号</span><span class="tag">意图-行为落差</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">「已发方案」「已做 demo」「已跟进」——这类阶段名有一个共同毛病：<strong>动作全在你这边，你想推进随时可以推进。</strong>凡是你能单方面完成的事，在"这单会成"和"这单会黄"两种未来里一样容易发生，因此不携带任何信息。能把单子往下挪的判据只有一种：<strong>买家付出了成本的动作</strong>——他花了时间、暴露了信息、或者把第三个人拉了进来。</div>
+</div>
+<div class="section">
+<div class="section-label">每个阶段配一个"他必须做的动作"</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 344" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">阶段能不能挪，只看右边那一列</text>
+<polygon fill="#dfeae2" points="60,44 300,44 285.5,84 74.5,84" stroke="#8aa79a" stroke-width="1.1"></polygon>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="180" y="69">线索</text>
+<polygon fill="#d3e4d9" points="76,88 284,88 269.5,128 90.5,128" stroke="#8aa79a" stroke-width="1.1"></polygon>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="180" y="113">发现</text>
+<polygon fill="#c2dacd" points="92,132 268,132 253.5,172 106.5,172" stroke="#6f9a87" stroke-width="1.1"></polygon>
+<text fill="#17513c" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="180" y="157">方案</text>
+<polygon fill="#a9cbbb" points="108,176 252,176 237.5,216 122.5,216" stroke="#57866f" stroke-width="1.1"></polygon>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="180" y="201">议价</text>
+<polygon fill="#1f7a5c" points="124,220 236,220 221.5,260 138.5,260" stroke="#123f30" stroke-width="1.2"></polygon>
+<text fill="#ffffff" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="180" y="245">成交</text>
+<line marker-end="url(#a1)" stroke="#1f7a5c" stroke-width="1.5" x1="304" x2="336" y1="64" y2="64"></line>
+<line marker-end="url(#a1)" stroke="#1f7a5c" stroke-width="1.5" x1="304" x2="336" y1="108" y2="108"></line>
+<line marker-end="url(#a1)" stroke="#1f7a5c" stroke-width="1.5" x1="304" x2="336" y1="152" y2="152"></line>
+<line marker-end="url(#a1)" stroke="#1f7a5c" stroke-width="1.5" x1="304" x2="336" y1="196" y2="196"></line>
+<line marker-end="url(#a1)" stroke="#1f7a5c" stroke-width="1.5" x1="304" x2="336" y1="240" y2="240"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.6" font-weight="700" x="344" y="36">他必须做的、对他有成本的那个动作</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="344" y="68">他回了消息，并且约了第一次会</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="344" y="112">他说出了一个自己的数字（现状成本）</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="344" y="156">他给了预算区间，或让你见了掏钱的人</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="344" y="200">他把文件送进了法务／采购</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="344" y="244">他签了字</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="278" y2="278"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="300">✗ 不是判据：你发了资料、你做完 demo、你把报价寄出去了。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="322">这些你一个人就能完成，所以它们既能出现在会成的单里，也能出现在黄掉的单里。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="340">兜底问句：这一步之后我什么都不做，他还会主动找我吗？不会 → 别挪。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：会开完，客户说「这个我们挺感兴趣的，你把方案发我，我内部推动一下。」</div>
+<div class="dialog bad">
+<div class="speaker">✗ 把礼貌话当成推进</div>
+<p>把阶段从"发现"挪到"方案"，赢面填 50%。——你收到的只是一句体面的结束语。「内部推动」没有名字、没有日期、没有下一步，它却在你的表格里变成了一个数字，还会被加进预测。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 用一个小要求换出真信息</div>
+<p>「好。发之前我想确认两件事：<strong>这份材料主要给谁看？</strong>（等他说出名字）——那我做成他关心的版本。<strong>另外他大概什么时候能看？我们要不要直接约个三方的二十分钟？</strong>」他说出名字并且愿意约 → 阶段可以挪；他含糊过去 → 阶段不动、赢面也不动，但关系没损失。</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 把阶段名改写成买家动作</span>
+<p>1. <strong>逐个体检</strong>：把现在用的阶段名列出来，每个问「这一步是我能单方面完成的，还是他必须做点什么？」</p>
+<p>2. <strong>改写</strong>：「已发方案」→「他约了下一次会并指定了参会人」；「已跟进」→「他回复了并给出了时间」。</p>
+<p>3. <strong>兜底判据</strong>：这一步之后我什么都不做，他还会主动找我吗？</p>
+<p>4. <strong>只降不升的原则</strong>：判据没满足时阶段绝不往前挪，但停太久要往回挪——管道最贵的谎话是"停在议价阶段三个月"。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> "Proposal sent," "demo delivered," "followed up" — these stage names share one flaw: the action is entirely on your side, so you can advance the deal whenever you feel like it. Anything you can do unilaterally is equally likely to appear in a deal that closes and a deal that dies, which means it carries no information about the outcome. Only one kind of criterion moves a deal forward: an action the buyer paid for — with time, with disclosed information, or by pulling a third person in. So audit your stage names one at a time and ask whether the step is something you complete or something they must do, then rewrite it: "proposal sent" becomes "they booked the next meeting and named who attends." When you're unsure, use the fallback question — if I do nothing at all after this step, will they still come to me? If the answer is no, the deal has not moved, however good the meeting felt.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>一个动作只有在"不打算买的人做起来更贵"时才是信号。你自己的动作对双方成本相同，因此不含信息；而买家腾时间、报数字、拉人进来是要付代价的，只有真打算往下走才划算。另一头，"我们很感兴趣"是意图——意图和行为之间的落差已经被反复量到。</strong></p>
+<ul>
+<li><strong>硬证据 · 意图涨很多，行为只涨一点</strong>：Webb &amp; Sheeran (2006, <em>Psychological Bulletin</em>) 对 47 项实验性干预做元分析：把意图推高一个中到大的幅度（<em>d</em> ≈ 0.66），带来的实际行为改变只有小到中等（<em>d</em> ≈ 0.36）。同行评审 + 元分析，硬。翻成销售语言：拿"他说他想买"当阶段判据，你是在用一个已知会打对折的指标做预测。</li>
+<li><strong>硬证据 · 信号必须对冒充者更贵</strong>：Spence (1973, <em>Quarterly Journal of Economics</em>) 的信号理论——一个动作能区分真假，前提是它对"假的那一方"成本更高。所以「他答应下周开会并让你见了财务」比「他说很感兴趣」值钱得多：前者要付出日程和政治成本。这条后来拿了诺贝尔经济学奖。</li>
+<li><strong>中等强度 · 小承诺预测大承诺</strong>：Freedman &amp; Fraser (1966, <em>JPSP</em>) 的"登门槛"效应——先答应一个小请求的人，更可能答应之后的大请求。Burger (1999, <em>Personality and Social Psychology Review</em>) 的元分析确认效应真实，但<strong>量级不大、依赖条件</strong>。当方向用（所以要在会上就要一个小承诺），别当杠杆用。cross-ref psychology。</li>
+</ul>
+<p class="caveat">边界：有成本的动作也会骗人——有人拉三方会只是为了凑够三家比价，你是陪标。补一个判据：他愿不愿意让你接触他这边的其他人、愿不愿意说时间表和替代方案。全程只肯跟一个人对话、什么都不透露的单子，阶段再深也该打折（怎么认出真冠军，见「找到决策链」那期）。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>赢率要按同一批线索算，不能按这个月关闭的算
+<span class="en">Measure win rate on a cohort, never on this month's closed deals.</span></h2>
+<span class="tag">分母</span><span class="tag">幸存者偏差</span><span class="tag">基础率</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">「本月关闭 20 单、赢 12、赢率 60%」——这个 60% 几乎一定是假的。<strong>毛病出在分母：只有"关闭"的单才进得了分母，而现实里最大的一类结局根本不关闭</strong>——它们卡着、拖着、慢慢老掉，永远不被标为输。要看真赢率，只有一条路：盯住同一批线索，从它们进来那天算到最终去向。</div>
+</div>
+<div class="section">
+<div class="section-label">同一批单子，两种算法差五倍</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同一批单子，两种算法差五倍</text>
+<rect fill="#f6e3da" height="102" rx="5" stroke="#c0603a" stroke-width="1.3" width="310" x="20" y="40"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="34" y="64">① 快照算法 · 看"本月关闭"</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="34" y="88">本月关闭 20 单，其中赢 12 单</text>
+<text fill="#8f3a17" font-family="Georgia" font-size="11" font-weight="700" x="34" y="110">赢率 = 12 / 20 = 60%</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="34" y="130">分母里只有"已经有结论"的单</text>
+<rect fill="#e2efdc" height="102" rx="5" stroke="#4e8a3f" stroke-width="1.5" width="310" x="370" y="40"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.5" font-weight="700" x="384" y="64">② 队列算法 · 盯同一批线索</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="384" y="88">三月进来 100 条，至今：赢 12 · 输 28 · 仍卡着 60</text>
+<text fill="#2c4a22" font-family="Georgia" font-size="11" font-weight="700" x="384" y="110">赢率 = 12 / 100 = 12%</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="384" y="130">分母是这批线索的全部</text>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="20" y="176">三月那 100 条线索，今天的真实去向：</text>
+<rect fill="#4e8a3f" height="30" width="79.2" x="20" y="188"></rect>
+<rect fill="#c9925f" height="30" width="184.8" x="99.2" y="188"></rect>
+<rect fill="#b9b6a4" height="30" width="396" x="284" y="188"></rect>
+<rect fill="none" height="30" stroke="#5a7365" stroke-width="1" width="660" x="20" y="188"></rect>
+<text fill="#ffffff" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="59.6" y="207">赢 12</text>
+<text fill="#ffffff" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="191.6" y="207">输 28</text>
+<text fill="#ffffff" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="482" y="207">无决定 60 —— 快照算法永远看不见这一段</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="240" y2="240"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="264">那 60 单里大部分永远不会"关闭"：没人愿意去点那个"输"，它们只是一年年老下去。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="286">于是快照赢率报的是 60%，而你按它做的一切资源规划都建立在一个五倍的高估上。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="310">最大的对手不是竞品，是"无决定"——它在你的报表里不占任何一格。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 四个必须按队列算的数</span>
+<p>1. <strong>队列赢率</strong>：某月进来的 N 条线索，六个月后赢了几条——分母是 N，不是"已关闭数"。</p>
+<p>2. <strong>段间转化率</strong>：相邻两个阶段之间掉了多少，找掉得最狠的那一段。</p>
+<p>3. <strong>真实周期</strong>：赢单天数和输单天数分开算——混在一起两个都不准，而且通常输单拖得更久。</p>
+<p>4. <strong>无决定占比</strong>：既没赢也没输的那一坨占多少。多数人第一次算出来会被吓一跳，而这个数才是你真正的改进空间。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> "We closed twenty deals this month and won twelve, so our win rate is sixty percent" is almost always false, and the fault is in the denominator: only deals that closed get counted, while the largest single category of outcome never closes at all. Those deals stall, drag, and quietly age, because nobody enjoys clicking "lost." Take one month's intake instead and follow that whole cohort to its final destination — a hundred leads that produced twelve wins, twenty-eight losses and sixty deals still sitting there gives a real win rate of twelve percent, not sixty. Four numbers only mean anything computed this way: cohort win rate, stage-to-stage conversion, cycle length calculated separately for wins and losses, and the share that ended in no decision. That last figure usually shocks people the first time, and it is where your improvement actually lives.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>分母里少了一整类结局，估计就会系统性偏高——这是幸存者偏差的标准形态：你只统计了走完流程的那些，而没走完的恰恰携带最重要的信息。再叠一层基础率忽视：预测单个单子时，人会用"这客户看着挺热"替代"这个阶段历史上只有两成能过"。</strong></p>
+<ul>
+<li><strong>硬证据 · 基础率被代表性挤掉</strong>：Kahneman &amp; Tversky (1973, <em>Psychological Review</em>) 的经典研究显示，当人拿到一份"看起来像某类人"的个案描述时，会几乎完全无视该类别的基础比例。同行评审、反复复现，硬。销售版本：管道里每一条你都在做这种"像不像"的判断，而阶段转化率就是那个被你无视的基础率。cross-ref psychology。</li>
+<li><strong>经典案例（非实验）· 幸存者偏差</strong>：Wald (1943) 在二战统计研究组分析返航飞机的弹着分布，指出该加装甲的恰是"返航飞机身上没有弹孔"的部位——中那儿的飞机没回来。原始备忘录真实存在，Mangel &amp; Samaniego (1984, <em>JASA</em>) 有系统重述。<strong>但流传版本被戏剧化过</strong>，当直觉说明用，别当实验证据。</li>
+<li><strong>中等强度 · 外部视角比内部视角准</strong>：Flyvbjerg (2006, <em>Project Management Journal</em>) 在大型工程上主张"参考类预测"——用同类项目的历史分布、而不是本项目的细节来预测，能显著压低系统性乐观；理论根源是 Kahneman &amp; Tversky 的内 / 外部视角之分。观察性研究加方法论主张、非随机对照，<strong>方向可信、力度打折</strong>。</li>
+</ul>
+<p class="caveat">边界：队列算法要等队列成熟——周期三个月的业务得等三个月以上，所以它是复盘工具，不是本周的仪表盘。样本太小时（一个月只进来五条线索）任何比率都别当真：改看绝对数和停留天数。另外，"无决定"里有一部分是你当初就不该接的单（怎么早点说不，见「资格判定」那期）。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>加权管道算出来的那个数，从来不会真的发生
+<span class="en">The weighted-pipeline number is a value that never actually occurs.</span></h2>
+<span class="tag">小数定律</span><span class="tag">过度自信</span><span class="tag">校准</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">把每单金额乘以赢面百分比再加总，得到一个很像答案的数。它的问题不是"不够准"，是<strong>它对应的现实根本不存在</strong>：单子是二值的，要么全额进来要么零。期望值只在多次重复里才收敛，你一个季度只有八个单——那是一个方差极大的赌局，不是一个预测。更糟的是，那些百分比是你自己填的，而人填的主观概率系统性偏高。</div>
+</div>
+<div class="section">
+<div class="section-label">八个五五开的单，"应该赢四个"只占 27%</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">8 个单、每个赢面 50%，加权预测说"4 单"。实际发生的是这个分布</text>
+<line marker-end="url(#c1)" stroke="#5a7365" stroke-width="1.4" x1="72" x2="72" y1="252" y2="42"></line>
+<line marker-end="url(#c1)" stroke="#5a7365" stroke-width="1.4" x1="72" x2="676" y1="252" y2="252"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" transform="rotate(-90 34 150)" x="34" y="150">发生概率</text>
+<rect fill="#b9b6a4" height="2.1" width="50" x="90" y="249.9"></rect>
+<rect fill="#b9b6a4" height="17.2" width="50" x="154" y="234.8"></rect>
+<rect fill="#c9c6b6" height="60" width="50" x="218" y="192"></rect>
+<rect fill="#8fb3a2" height="120.5" width="50" x="282" y="131.5"></rect>
+<rect fill="#1f7a5c" height="150" width="50" x="346" y="102"></rect>
+<rect fill="#8fb3a2" height="120.5" width="50" x="410" y="131.5"></rect>
+<rect fill="#c9c6b6" height="60" width="50" x="474" y="192"></rect>
+<rect fill="#b9b6a4" height="17.2" width="50" x="538" y="234.8"></rect>
+<rect fill="#b9b6a4" height="2.1" width="50" x="602" y="249.9"></rect>
+<text fill="#8a8778" font-family="Georgia" font-size="8.4" text-anchor="middle" x="115" y="244">0.4%</text>
+<text fill="#8a8778" font-family="Georgia" font-size="8.4" text-anchor="middle" x="179" y="229">3.1%</text>
+<text fill="#5a7365" font-family="Georgia" font-size="8.4" text-anchor="middle" x="243" y="186">10.9%</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="307" y="125">21.9%</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="371" y="95">27.3%</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="435" y="125">21.9%</text>
+<text fill="#5a7365" font-family="Georgia" font-size="8.4" text-anchor="middle" x="499" y="186">10.9%</text>
+<text fill="#8a8778" font-family="Georgia" font-size="8.4" text-anchor="middle" x="563" y="229">3.1%</text>
+<text fill="#8a8778" font-family="Georgia" font-size="8.4" text-anchor="middle" x="627" y="244">0.4%</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="115" y="268">0</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="179" y="268">1</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="243" y="268">2</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="307" y="268">3</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="371" y="268">4</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="435" y="268">5</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="499" y="268">6</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="563" y="268">7</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="627" y="268">8</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="440" y="286">实际赢下的单数 →</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="288">"4"只是最可能的那一个点，也只占 27%；落在 3–5 之间约 71%。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="306">也就是说每三个季度就有一个，你要向老板解释一个"没道理"的数字。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 把一个数换成三档</span>
+<p>1. <strong>承诺档（commit）</strong>：只放买家已完成某个有成本动作的单——给了日期、进了法务、报了预算。这一档你敢打包票。</p>
+<p>2. <strong>最好情况（best case）</strong>：有真实推进、但还缺一个关键动作的。</p>
+<p>3. <strong>其余（pipeline）</strong>：剩下的全在这，不参与预测，只用来判断线索够不够。</p>
+<p>4. <strong>记账</strong>：每次预测写下来，季度末回算——你说 70% 的那批，实际赢了几成？这是唯一被验证过的、能让你变准的动作。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Multiply each deal by a probability, add them up, and you get something that looks like an answer. The problem isn't that it's imprecise — it's that the number corresponds to no possible reality. Deals are binary: the money arrives in full or not at all. An expected value only converges over many repetitions, and eight deals in a quarter is a high-variance gamble rather than a forecast. With eight coin-flip deals, "four wins" is the single most likely outcome and still happens only twenty-seven percent of the time; roughly three quarters in ten land outside the three-to-five band, which is when you find yourself explaining a number that makes no sense. Worse, you wrote those percentages yourself, and self-reported confidence runs systematically high. Replace the single number with three tiers — commit, best case, pipeline — putting a deal in commit only when the buyer has done something costly. Then write your forecasts down and score them at quarter end. Calibration comes from feedback, not from effort.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>两层错误叠在一起。第一层：在小样本上用期望值当预测，等于假装方差不存在。第二层：喂进期望值的那些概率没有经过校准——人普遍"过度精确"，给出的把握高于实际命中率。两层都不修，加权管道就是把主观情绪算了一遍小数点。</strong></p>
+<ul>
+<li><strong>硬证据 · 小数定律</strong>：Tversky &amp; Kahneman (1971, <em>Psychological Bulletin</em>) 指出，人错误地相信小样本会表现出大样本的统计性质，因而严重低估随机波动。"八个五五开的单应该赢四个"正是这个错的教科书形态。同行评审、经典。</li>
+<li><strong>硬证据 · 主观概率系统性偏高</strong>：Lichtenstein、Fischhoff &amp; Phillips (1982) 对校准文献的综述显示，人给出的把握普遍高于实际命中率；Moore &amp; Healy (2008, <em>Psychological Review</em>) 进一步拆成三种（高估自己、觉得比别人强、区间给得太窄），并指出"过度精确"这一种最顽固、最难消除。同行评审，硬。</li>
+<li><strong>硬证据 · 只有反馈能治</strong>：Murphy &amp; Winkler 等对气象预报员的长期研究发现，他们的降水概率预报<strong>校准得相当好</strong>——报 70% 的那些日子里，大约七成真的下雨。这在校准文献里是少数的例外，差别不在聪明，在于他们每天都拿到明确记分的反馈。所以上面第 4 条不是形式主义，它是文献里唯一稳定管用的路子。</li>
+<li><strong>争议标注 · 乐观从哪来</strong>：Sharot、Korn &amp; Dolan (2011, <em>Nature Neuroscience</em>) 报告人更新信念时对"好消息"的吸收强于"坏消息"，并把这种不对称与<strong>额下回（inferior frontal gyrus）</strong>的信号追踪对应起来。<strong>方法学受过实质质疑</strong>（Shah 等 2016 指出该更新范式可能产生统计假象），<strong>当假说、别当定论</strong>。cross-ref psychology / neuroscience。</li>
+</ul>
+<p class="caveat">边界：加权管道不是完全没用。当样本够大（几十上百个单）、而且百分比来自历史阶段转化率、不是手填时，它是一个合理的资源规划工具。它坏在被当成"这个季度会进多少钱"的答案——那是一个账面规模，不是一个承诺。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>管道健康是一个流速，不是一个存量
+<span class="en">Pipeline health is a flow rate, not a stock.</span></h2>
+<span class="tag">Little's Law</span><span class="tag">停留时间</span><span class="tag">现状偏好</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">「我们管道有 260 万」是一句没有信息量的话——不知道它多久走得完，260 万和 2600 万一样可以等于零。<strong>排队论有一条定理：稳态下，在制品 = 到达率 × 平均停留时间。</strong>所以管道总额变大只有两个来源：新进的多了，或者东西走得慢了。第二种远比第一种常见——那不是变壮，是堵车。</div>
+</div>
+<div class="section">
+<div class="section-label">三种形状，三个完全不同的病</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">总额一样，病完全不同</text>
+<rect fill="#eef1f5" height="40" rx="5" stroke="#3f5c7a" stroke-width="1.3" width="660" x="20" y="34"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.5" font-weight="700" x="36" y="59">管道存量 L ＝ 每月新进 λ × 平均停留 W</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="330" y="59">（Little 1961，排队论定理；稳态下无条件成立）</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="end" x="96" y="131">线索</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="end" x="96" y="153">发现</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="end" x="96" y="175">方案</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="end" x="96" y="197">议价</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="108" y="106">健康</text>
+<rect fill="#4e8a3f" height="14" width="66.7" x="108" y="120"></rect>
+<rect fill="#4e8a3f" height="14" width="40" x="108" y="142"></rect>
+<rect fill="#4e8a3f" height="14" width="23.3" x="108" y="164"></rect>
+<rect fill="#4e8a3f" height="14" width="13.3" x="108" y="186"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="8.4" x="108" y="220">逐段均匀收窄</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.4" x="108" y="234">停留天数稳定</text>
+<line stroke="#cbb98f" stroke-width="1" x1="296" x2="296" y1="98" y2="244"></line>
+<text fill="#8a5a24" font-family="Georgia" font-size="10" font-weight="700" x="310" y="106">头重脚轻</text>
+<rect fill="#c9925f" height="14" width="150" x="310" y="120"></rect>
+<rect fill="#c9925f" height="14" width="33.3" x="310" y="142"></rect>
+<rect fill="#c9925f" height="14" width="13.3" x="310" y="164"></rect>
+<rect fill="#c9925f" height="14" width="6.7" x="310" y="186"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="8.4" x="310" y="220">线索一堆、进不去</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.4" x="310" y="234">问题在资格判定与首会</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.4" x="310" y="248">不在线索数量</text>
+<line stroke="#cbb98f" stroke-width="1" x1="498" x2="498" y1="98" y2="244"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="512" y="106">腰部堵塞</text>
+<rect fill="#c0603a" height="14" width="66.7" x="512" y="120"></rect>
+<rect fill="#c0603a" height="14" width="56.7" x="512" y="142"></rect>
+<rect fill="#c0603a" height="14" width="50" x="512" y="164"></rect>
+<rect fill="#c0603a" height="14" width="10" x="512" y="186"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="8.4" x="512" y="220">方案段平均停 61 天</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.4" x="512" y="234">决策链缺掏钱的人</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.4" x="512" y="248">或压根没约下一步</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="266" y2="266"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="288">三个管道的总额可以完全一样，该做的事却毫无交集：左边补销量，中间修资格判定，右边去要日期。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="310">所以指标是三个——阶段停留天数、段间转化率、老化单占比。总额是它们的结果，不是指标。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：例会上老板问「这个季度稳吗？」</div>
+<div class="dialog bad">
+<div class="speaker">✗ 报存量</div>
+<p>「管道有 260 万，目标 100 万，够了。」——你报的是账面规模。如果这 260 万里有 180 万卡在同一个阶段超过九十天，它今年能落地的可能不到 40 万，而你已经把"够了"说出口了。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 报流速 + 一个具体缺口</div>
+<p>「按队列赢率 22% 算，260 万只是 2.6 倍覆盖，我需要 4.5 倍。<strong>但缺口不在线索：方案后平均停 61 天，十二个单里有七个没有约定的下一步日期。</strong>这周我做两件事：七个单每个要一个日期，要不到的当场标死；然后按标死后的真实缺口补线索。」</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 每周十分钟四问诊断</span>
+<p>1. <strong>哪一段掉最狠？</strong>——段间转化率最低的那一段是你这季度唯一该修的东西，别平均用力。</p>
+<p>2. <strong>哪一段停最久？</strong>——某阶段平均停留天数是别的三倍，那不是慢，那是缺一个人或缺一个决定。</p>
+<p>3. <strong>老化单占多少？</strong>——停留超过该阶段平均值两倍的单全拎出来：要么给一个新的下一步日期，要么当场标死。</p>
+<p>4. <strong>覆盖够不够？</strong>——管道金额 ÷ 目标 ÷ 队列赢率。赢率两成就得有五倍覆盖，这个数骗不了人。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> "We have 2.6 million in pipeline" carries no information, because 2.6 million can equal zero just as easily as 26 million can. Queueing theory settles it: in steady state, work in progress equals arrival rate times average time in system. So a growing pipeline has exactly two possible sources — more coming in, or things moving slower — and the second is far more common. That is congestion, not strength. Three pipelines with identical totals can need completely unrelated fixes: too many leads that never convert means the problem is qualification, not lead volume, while a fat middle means deals are sitting sixty days after the proposal because nobody with a budget is in the room. So run four questions weekly: which stage leaks hardest, which stage sits longest, how much of the pipeline is aged past twice its stage average, and whether coverage clears target divided by your real cohort win rate. Total value is the output of those numbers, not a metric of its own.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>存量是结果，流速才是原因。而管道之所以只胀不缩，是两股力在同时推：买家侧的现状偏好（不做决定永远是最安全的选项），和你这一侧的沉没成本（投入越多越舍不得标死）。两股力都指向"先留着"，所以除非定期强制清仓，管道天然会越来越像一座坟场。</strong></p>
+<ul>
+<li><strong>数学定理（不是心理学证据）· Little's Law</strong>：Little (1961, <em>Operations Research</em>) 证明稳态排队系统中 <em>L = λW</em>。这不是经验规律而是定理，在稳态假设下无条件成立，与业务无关。所以"总额涨了"必然拆成"进得多"或"走得慢"，没有第三种解释。</li>
+<li><strong>硬证据 · 现状偏好</strong>：Samuelson &amp; Zeckhauser (1988, <em>Journal of Risk and Uncertainty</em>) 的系列实验显示，仅仅把某个选项标成"现状"，它被选中的概率就显著上升，而且选项越多、这个偏好越强。买家的默认永远是"什么都不做"——所以最大的竞争对手常常不是竞品。同行评审、复现良好，硬。</li>
+<li><strong>单一 fMRI 研究（打折看）· 越过默认要费额外的力</strong>：Fleming、Thomas &amp; Dolan (2010, <em>PNAS</em>) 发现被试推翻默认选项时，<strong>丘脑底核（STN）与额下皮层</strong>活动增强，提示"改变现状"需要动用额外的抑制控制。单研究、样本不大，<strong>当机制线索，别当定论</strong>。cross-ref neuroscience。</li>
+<li><strong>硬证据 · 你为什么不肯把它标死</strong>：Staw (1976, <em>OBHDP</em>) 的承诺升级实验与 Arkes &amp; Blumer (1985, <em>OBHDP</em>) 的沉没成本研究一致显示，已投入的资源会让人继续给一个正在变坏的选择加注。跟了十一个月的单，难的不是判断它死没死，是承认那十一个月白花了。同行评审、复现良好，硬。</li>
+</ul>
+<p class="caveat">边界：Little's Law 要求稳态——季节性极强、或者刚换过打法的团队，短期内套它会跑偏。另外"标死"不等于删掉这个人：标死只是把它移出预测，不是把人拉黑，有些单半年后会自己回来（怎么复活，见「处理没回复与死单」那期；有价值的跟进节奏见「跟进的纪律」那期）。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 40 Action</h3>
+<p>一小时，把你手上的管道从"安慰书"改回"工作台"。</p>
+<div class="action">
+<strong>一（20 分钟）· 重划判据：</strong>写下你现在用的阶段名，逐个问「这一步是我能单方面完成的，还是他必须做点什么？」凡是前者，改写成一句买家动作，并给每个阶段配一个兜底问句：这一步之后我什么都不做，他还会主动找我吗？<br/><br/><strong>二（20 分钟）· 算两个真数：</strong>挑三个月前进来的那批线索，数今天赢了几条——分母是全部，不是已关闭的；再算每个阶段的平均停留天数。这两个数大概率会推翻你原来对"稳不稳"的判断。<br/><br/><strong>三（20 分钟）· 清仓 + 三档：</strong>把停留超过该阶段两倍时间的单全拎出来，每个去要一个新的下一步日期，要不到的当场标死；剩下的分成承诺 / 最好情况 / 其余，只把承诺档报出去。<br/><br/>边界提醒：这套东西是给"有一定量"的管道用的。手上只有三五个单时别算比率——样本撑不住任何结论，看绝对数和天数就够了。另外别把清仓当成惩罚自己：<strong>标死一个单释放出来的时间，是你能拿到的最便宜的新线索</strong>。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我一共就五六个单，谈这些统计是不是没意义？</summary>
+<div class="answer">比率确实没意义——五个单算出来的"赢率 40%"和抛硬币差不多。但这一期里<strong>只有第二、三个动作依赖样本量，第一和第四个不依赖</strong>。<br/><br/>阶段判据换成买家动作，一个单就能用，而且单子越少越该用：你只有五个单，其中两个其实早就死了却还占着你的注意力，这个损失比大团队严重得多。停留天数也不需要样本——「这个单上一次他主动做事是四十天前」本身就是结论。<br/><br/>五六个单该看的是<strong>绝对数和日期</strong>：每个单的下一步是什么、日期定在哪天、上次他做了什么。真需要预测时，别报一个加权数，报「这两个我有把握，那两个要看下周」——诚实的区间比精确的假数字管用。</div>
+</details>
+<details>
+<summary>2. 老板要一个确定的数字，我跟他讲二值和方差，会不会显得在推卸责任？</summary>
+<div class="answer">会——如果你只讲统计不给承诺。所以别把它讲成免责声明，讲成<strong>一个更有用的结构</strong>：不是「我不知道」，而是「我把它拆成三档」。<br/><br/>照读版本：「承诺档 60 万，这三个单买家都给了日期，我按这个数担责。最好情况再加 40 万，卡在同一件事上——他们的财务还没进来。剩下的我不算进预测。」<br/><br/>这段话比一个 132 万的加权数强在三处：<strong>你担责的部分更硬</strong>（不是打折的软数，是敢押的硬数）；<strong>缺口有原因</strong>（财务没进来，是一个能被派活的具体动作）；<strong>老板可以做资源决定</strong>。而且季度末回算时你会发现，敢报三档的人比报加权数的人更快变准——因为三档能被打脸，加权数永远打不着。</div>
+</details>
+<details>
+<summary>3. 自由职业者、求职的人，也有"管道"吗？</summary>
+<div class="answer">有，而且这套东西对他们更管用，因为个人的机会数量少、每一个都贵。求职的管道就是：投出去的岗位 → 有回音的 → 进面的 → 到终面的 → 拿到 offer 的。自由职业是：聊过的人 → 问过报价的 → 要了方案的 → 付定金的。<br/><br/>规则完全一样。<strong>阶段判据仍然是对方的动作</strong>：「HR 说保持联系」不是一个阶段，「约了下一轮并给了时间」才是。<strong>停留时间仍然是最早的死亡信号</strong>：一个岗位面完两周没消息，它在你的表格里就该降级，而不是继续占着你的希望。<strong>覆盖倍数仍然骗不了人</strong>：终面转化率两成，那你就需要五个终面，不是一个"感觉很稳"的终面——大部分人求职时的痛苦，来自把全部希望押在一个还没给日期的机会上。<br/><br/>唯一要改的是频率：机会少的时候，别每周算比率，每周只做一件事——给每个还活着的机会要一个下一步日期。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 40</footer>
+</div>
+</body>
+</html>
