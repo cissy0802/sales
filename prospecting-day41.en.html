@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 41: Prospecting</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 41 · Phase G</div>
+<h1>"Make the list longer" is the one effort in prospecting that reliably does nothing</h1>
+<div class="meta"><span>Cold start · ideal customer profile · choosing channels · the numbers game</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">What's scarce at a cold start was never names. It's a sentence you can say that is true of this person and no one else. And the numbers game is a game about variance — it rewards people willing to change audiences and punishes people who polish wording.</div>
+</header>
+<div class="intro">
+<strong>Prospecting is the work of narrowing "everyone alive" down to the few dozen people worth an hour of your time, and getting them to start a first conversation.</strong> Four moves take it apart, in order. <strong>One, subtract your profile from wins minus losses</strong> — a profile that can't shorten your list isn't a profile. <strong>Two, run the first thirty conversations for their words, not for a sale.</strong> <strong>Three, compare channels by minutes per real conversation</strong>, and run only two at a time. <strong>Four, treat the numbers game as a variance game</strong> — small samples can't detect your optimizations, so bet on step changes and track absolute counts.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>A profile is only worth writing if it excludes people
+<span class="en">The test of a customer profile is how many names it deletes.</span></h2>
+<span class="tag">discrimination</span><span class="tag">positive testing</span><span class="tag">scorecards</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">"Mid-sized, growing fast, cares about efficiency, has budget." The problem with an ICP (ideal customer profile) like that isn't that it's wrong — it's that <strong>it excludes nobody</strong>. A trait is worth something only if the share of your <em>won</em> deals that have it differs sharply from the share of your <em>lost</em> deals that have it; a trait running equally high on both sides is self-consolation in list form. So a profile can't be reasoned outward from your product. It has to be <strong>subtracted</strong> from a side-by-side comparison of the last twelve months of wins and dead deals.</div>
+</div>
+<div class="section">
+<div class="section-label">A trait matters only by the gap between the two sides</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 344" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Same set of deals, four candidate traits</text>
+<rect fill="#4e8a3f" height="9" width="9" x="400" y="14"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="414" y="22">share of won deals</text>
+<rect fill="#c9925f" height="9" width="9" x="520" y="14"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="534" y="22">share of lost deals</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="60">New owner in last 6 mo.</text>
+<rect fill="#4e8a3f" height="12" width="267" x="200" y="46"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" font-weight="700" x="473" y="56">89%</text>
+<rect fill="#c9925f" height="12" width="30" x="200" y="62"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="9" font-weight="700" x="236" y="72">10%</text>
+<text fill="#2c4a22" font-family="Georgia" font-size="10" font-weight="700" x="560" y="66">gap 79 → keep</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="122">Already running the numbers</text>
+<rect fill="#4e8a3f" height="12" width="234" x="200" y="108"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" font-weight="700" x="440" y="118">78%</text>
+<rect fill="#c9925f" height="12" width="45" x="200" y="124"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="9" font-weight="700" x="251" y="134">15%</text>
+<text fill="#2c4a22" font-family="Georgia" font-size="10" font-weight="700" x="560" y="128">gap 63 → keep</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="184">10–200 employees</text>
+<rect fill="#4e8a3f" height="12" width="270" x="200" y="170"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" font-weight="700" x="476" y="180">90%</text>
+<rect fill="#c9925f" height="12" width="255" x="200" y="186"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="9" font-weight="700" x="461" y="196">85%</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="560" y="190">gap 5 → cut</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="246">Has an online store</text>
+<rect fill="#4e8a3f" height="12" width="300" x="200" y="232"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" font-weight="700" x="506" y="242">100%</text>
+<rect fill="#c9925f" height="12" width="285" x="200" y="248"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="9" font-weight="700" x="491" y="258">95%</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="560" y="252">gap 5 → cut</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="278" y2="278"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="300">The bottom two aren't wrong. They're empty: they describe your wins and your losses equally well.</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="322">Acceptance test: adding this line, does my list of 3,000 shrink? Still 3,000 → delete the line.</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="20" y="340">(Numbers illustrative — replace them with the proportions you counted in your own two columns.)</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Scene</div>
+<div class="scene">
+<div class="setup">Setup: you're about to run a round of outreach to "small and mid-sized e-commerce companies."</div>
+<div class="dialog bad">
+<div class="speaker">✗ Filtering on criteria that exclude nobody</div>
+<p>The criteria are "has an online store, 10–200 employees," and the list comes back with three thousand names. Neither criterion rules anyone out, so all three thousand emails have to say the same thing — a sentence true of everybody, and therefore true of nobody.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ Putting last year's wins beside last year's dead deals</div>
+<p>Nine wins, twenty dead. Only two traits differ sharply across the two columns: eight of the nine wins had <strong>changed the owner of this area within six months</strong>, against two of the twenty losses; seven of the nine were <strong>already running the numbers on it in a spreadsheet</strong>, against three of the twenty. The list drops from three thousand to sixty — and every email can finally name something true of that one company.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Read-aloud template · subtracting a profile in three steps</span>
+<p>1. <strong>Two columns.</strong> Last twelve months of wins in one, dead deals in the other (losses and no-decisions both count as dead). Small sample — go back twenty-four months.</p>
+<p>2. <strong>Count both proportions per trait.</strong> What share of wins has it, what share of losses. Gap under about twenty points → delete it on the spot. It has no power to discriminate.</p>
+<p>3. <strong>Write what survives as a 0/1 scorecard.</strong> One point per trait, score the list, work only the top band. <strong>Don't substitute "this one feels like a fit" for the score.</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>A profile is a classifier, and a trait carries information only when its rate differs between the two classes; equally high on both sides means zero discriminating power. Meanwhile people write profiles by recalling the customers who bought — sampling positive cases and never the negative ones is a default cognitive strategy that has been measured over and over, and it grows exactly the kind of profile that is wide, comfortable, and unable to separate anything.</strong></p>
+<ul>
+<li><strong>Hard evidence · people only generate examples that fit their hypothesis</strong>: in Wason's (1960, <em>Quarterly Journal of Experimental Psychology</em>) 2-4-6 task, subjects guessing a number-sequence rule almost exclusively proposed sequences consistent with their current guess and rarely tried one that could overturn it, leaving them stuck for long stretches on a rule that was too narrow and wrong. Classic and repeatedly replicated. Your ICP is that guess, and your lost deals are the test you never ran.</li>
+<li><strong>Hard evidence · the positive test strategy</strong>: Klayman &amp; Ha (1987, <em>Psychological Review</em>) made that precise — people default to examining cases where the hypothesis holds. Under some structures it's an efficient heuristic, but when the task is <strong>telling two classes apart</strong> it fails systematically. Prospecting is the second kind of task.</li>
+<li><strong>Hard evidence (meta-analysis) · the scorecard beats the gut</strong>: Grove et al. (2000, <em>Psychological Assessment</em>) pooled 136 studies comparing mechanical prediction (formulas, scorecards) against expert clinical judgement. Mechanical was on average equal or superior, and clearly worse only in rare cases. So the ugly 0/1 table will probably outperform a veteran rep's "I have a good feeling about this one."</li>
+</ul>
+<p class="caveat">Boundary: with fewer than five wins, everything this subtraction produces is noise. Skip the proportions and use one qualitative signal instead — what had just happened inside the company the last time someone bought. Profiles also expire: recompute when the product or the market moves, rather than running a table you subtracted two years ago. (Whether one specific name on the list deserves more of your time is the qualification piece.)</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>The first thirty conversations exist to harvest their words
+<span class="en">Not to close anything. To bring their sentences back.</span></h2>
+<span class="tag">processing fluency</span><span class="tag">phrase pool</span><span class="tag">cold start</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">At a cold start what you're short of isn't names — it's that <strong>you can't say a single concrete thing about these people</strong>. Sending three hundred emails at that point just mass-prints a hypothesis you haven't found the language for. Do thirty real conversations first (twenty minutes is plenty), with exactly one job: <strong>copy down the words they use</strong> when they describe the problem. When one phrase has come up six times in thirty people, you have your opening line — and you didn't write it, they did.</div>
+</div>
+<div class="section">
+<div class="section-label">Language is refined out of people, not invented at a desk</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 306" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="p1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Four steps that refine an opening line out of their mouths</text>
+<rect fill="#dfeae2" height="64" rx="5" stroke="#8aa79a" stroke-width="1.1" width="148" x="20" y="44"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="94" y="70">30 conversations,</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="94" y="86">20 minutes each</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.4" text-anchor="middle" x="94" y="101">not selling</text>
+<rect fill="#d3e4d9" height="64" rx="5" stroke="#8aa79a" stroke-width="1.1" width="148" x="195" y="44"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="269" y="70">copy their nouns</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="269" y="86">and verbs verbatim</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.4" text-anchor="middle" x="269" y="101">never translate</text>
+<rect fill="#c2dacd" height="64" rx="5" stroke="#6f9a87" stroke-width="1.1" width="148" x="370" y="44"></rect>
+<text fill="#17513c" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="444" y="70">phrases heard 3+</text>
+<text fill="#17513c" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="444" y="86">times go in a pool</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.4" text-anchor="middle" x="444" y="101">ranked by count</text>
+<rect fill="#1f7a5c" height="64" rx="5" stroke="#123f30" stroke-width="1.2" width="148" x="545" y="44"></rect>
+<text fill="#ffffff" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="619" y="70">top phrase =</text>
+<text fill="#ffffff" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="619" y="86">your first line</text>
+<text fill="#cfe6da" font-family="Georgia" font-size="8.4" text-anchor="middle" x="619" y="101">not one word changed</text>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.6" x1="170" x2="191" y1="76" y2="76"></line>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.6" x1="345" x2="366" y1="76" y2="76"></line>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.6" x1="520" x2="541" y1="76" y2="76"></line>
+<rect fill="#f6e3da" height="76" rx="5" stroke="#c0603a" stroke-width="1.3" width="320" x="20" y="140"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="34" y="162">✗ Your wording (you wrote it)</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="34" y="184">"We provide end-to-end inventory</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="34" y="202">optimization that lifts turnover."</text>
+<rect fill="#e2efdc" height="76" rx="5" stroke="#4e8a3f" stroke-width="1.5" width="320" x="360" y="140"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="374" y="162">✓ Their words (you copied them)</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="374" y="184">"Does month-end stocktake still</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="374" y="202">shut you down for a day?"</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="238" y2="238"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="260">Every word on the left is correct, and not one of them is his.</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="282">Test: can your opening line be found verbatim in your notes? If not, you are still talking to yourself.</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="20" y="300">Thirty is enough — by the low twenties, new phrases have essentially stopped appearing.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Read-aloud template · booking and using the thirty</span>
+<p>1. <strong>The ask</strong>: "I'm working on something around X, <strong>I'm not selling anything</strong>, I'd like to hear how you handle it today — twenty minutes." And then genuinely don't sell. Sell once and that door shuts permanently.</p>
+<p>2. <strong>Ask about the past, not the future</strong>: "When did you last run into this? What did you actually do about it?" (The discipline for not getting misled by polite answers is the Mom Test material.)</p>
+<p>3. <strong>Write it down verbatim</strong>: nouns and verbs exactly as spoken. Translating into your own vocabulary destroys the entire value of the conversation.</p>
+<p>4. <strong>Count</strong>: any phrase heard three or more times goes in the pool, ranked by frequency, and the top one becomes your opening line unedited.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Using words the other person already uses reads as "this one gets it" more reliably than your more accurate phrasing does, because familiar words take less work to process — and that feeling of ease gets misread as true, credible, warm. This is processing fluency: people cannot tell "I understood this easily" apart from "this is right," so they treat the first as evidence of the second.</strong></p>
+<ul>
+<li><strong>Hard evidence · easier to process means better liked</strong>: Reber, Winkielman &amp; Schwarz (1998, <em>Psychological Science</em>) raised only the <em>processing fluency</em> of a stimulus via contrast and priming, leaving content untouched, and liking rose significantly — with subjects entirely unaware of the cause. Peer-reviewed, solid.</li>
+<li><strong>Hard evidence · fluency even shifts judgements of truth</strong>: McGlone &amp; Tofighbakhsh (2000, <em>Psychological Science</em>) found that semantically equivalent aphorisms were rated as <em>more accurate descriptions of human behaviour</em> when they rhymed. Fluency doesn't just move liking; it gets counted as evidence that the statement is correct.</li>
+<li><strong>Hard evidence (meta-analysis) · mere exposure</strong>: Bornstein (1989, <em>Psychological Bulletin</em>) pooled more than 200 studies confirming the exposure effect — familiarity alone produces liking, and it holds even without conscious recognition. Translated to outreach: in the first second a stranger isn't judging your logic, they're judging whether the sentence parses.</li>
+</ul>
+<p class="caveat">Boundary: these experiments measured liking and truth judgements, not reply rates, so the crossing into sales deserves a discount — they give you a direction, not an effect size. The reverse risk is real too: fluent isn't correct, and their own phrasing may be repeating a wrong self-diagnosis. So use their words in <strong>the opening</strong>, where the job is getting them to talk, and never in <strong>the diagnosis</strong>, which only follow-up questions can do.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Compare channels by minutes per real conversation
+<span class="en">Reach is large everywhere, so it can't be the thing you choose on.</span></h2>
+<span class="tag">explore–exploit</span><span class="tag">unit cost</span><span class="tag">only two at a time</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Most people pick a channel by how many people it reaches, but that number is large on every channel, so it can't function as a choice at all. The unit that decides it is <strong>your minutes divided by the real conversations you get back</strong> — a channel producing three twenty-minute conversations beats one reaching thirty thousand people. And don't run five at once: each gets too thin to teach you anything, and you'll never have the nerve to cut any of them.</div>
+</div>
+<div class="section">
+<div class="section-label">Spread small bets first, then concentrate fast</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="q1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Minutes this channel costs you per twenty-minute conversation</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="58">Referral from a client</text>
+<rect fill="#4e8a3f" height="18" width="27" x="190" y="44"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" font-weight="700" x="225" y="58">18 min</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="94">Where you publish</text>
+<rect fill="#7aa86a" height="18" width="68" x="190" y="80"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" font-weight="700" x="266" y="94">45 min</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="130">Bulk cold email</text>
+<rect fill="#c9925f" height="18" width="180" x="190" y="116"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="9.4" font-weight="700" x="378" y="130">120 min</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="166">Pure cold calling</text>
+<rect fill="#c0603a" height="18" width="300" x="190" y="152"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="498" y="166">200 min</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="20" y="188">(Illustrative — replace with two weeks of your own log. Reach never enters this chart.)</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="204" y2="204"></line>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" x="20" y="226">Four candidate channels, how to spend four weeks</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="255">Weeks 1–2</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" x="20" y="270">equal small bets</text>
+<rect fill="#dfeae2" height="26" rx="4" stroke="#8aa79a" width="120" x="150" y="240"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" text-anchor="middle" x="210" y="257">A · 25 each</text>
+<rect fill="#dfeae2" height="26" rx="4" stroke="#8aa79a" width="120" x="278" y="240"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" text-anchor="middle" x="338" y="257">B · 25 each</text>
+<rect fill="#dfeae2" height="26" rx="4" stroke="#8aa79a" width="120" x="406" y="240"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" text-anchor="middle" x="466" y="257">C · 25 each</text>
+<rect fill="#dfeae2" height="26" rx="4" stroke="#8aa79a" width="120" x="534" y="240"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" text-anchor="middle" x="594" y="257">D · 25 each</text>
+<line marker-end="url(#q1)" stroke="#1f7a5c" stroke-width="1.6" x1="400" x2="400" y1="272" y2="290"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="313">Weeks 3–4</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" x="20" y="328">cut the worst two</text>
+<rect fill="#1f7a5c" height="26" rx="4" stroke="#123f30" width="252" x="150" y="298"></rect>
+<text fill="#ffffff" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="276" y="315">winner A · double the volume</text>
+<rect fill="#4e8a3f" height="26" rx="4" stroke="#123f30" width="252" x="410" y="298"></rect>
+<text fill="#ffffff" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="536" y="315">winner C · double the volume</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="345">One number decides the cut: real conversations from this channel. Opens, likes and new followers don't count.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Read-aloud template · the four-week channel trial</span>
+<p>1. <strong>Pick four candidates</strong> and give each an identical small budget (25 touches each, or two hours each). Don't start by going all in on your favourite.</p>
+<p>2. <strong>Score one number only</strong>: real conversations this channel produced. Opens, likes and followers stay off the sheet — none of them convert into revenue.</p>
+<p>3. <strong>Cut two in week three</strong> and push all the time into the survivors. Retest a cut channel with a small bet six months later.</p>
+<p>4. <strong>Note one more thing</strong>: can I be recognised here? <strong>Channels where you have work, shared people or an identity get cheaper over time; a purely cold channel's unit cost is a constant.</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>This is a standard explore–exploit problem: each candidate channel is a slot machine whose true payout you don't know, and you're allocating between trying more of them and concentrating on the best one so far. The optimal shape is always the same — equal small bets first, then fast concentration — which is neither going all in at the start nor spreading five ways forever. There's a second layer: channels where you have an identity have decreasing unit cost, because what you leave there gets seen repeatedly, while a purely cold channel starts from zero on every single touch.</strong></p>
+<ul>
+<li><strong>Mathematical result (not psychological evidence) · multi-armed bandits</strong>: Gittins (1979, <em>JRSS Series B</em>) proved the optimal index policy for the discounted multi-armed bandit. That's a theorem, not an empirical regularity, and the practical "spread small, then concentrate" recipe is a crude approximation of that family of results.</li>
+<li><strong>Industry practice (not experimental, weaker evidence)</strong>: Ross &amp; Tyler's <em>Predictable Revenue</em> (2011) argues for splitting lead generation and closing between different people, on the grounds that the two require different rhythms and skills. Widely adopted — but what supports it is company case studies rather than controlled trials, so hold it as a hypothesis, not a conclusion.</li>
+<li><strong>Moderate strength · saturate one small circle before expanding</strong>: the recurring pattern in Rogers's <em>Diffusion of Innovations</em> survey is that new practices work through a small, homogeneous circle before spreading outward. A synthesis of observational research — direction credible, force discounted.</li>
+</ul>
+<p class="caveat">Boundary: channel economics drift, and a channel that is cheap this year may be crowded next year, so retest what you cut with a small bet every six months. And "real conversations" fails as a counting unit in very low-price, very high-volume businesses — nobody needs a twenty-minute call before buying a coffee. There, count conversion steps instead.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>The numbers game is a variance game, not a diligence game
+<span class="en">At low reply rates, differences inside a small sample are noise.</span></h2>
+<span class="tag">law of small numbers</span><span class="tag">statistical power</span><span class="tag">step changes only</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">"Outreach is a numbers game" is true, and nearly everyone reads it backwards. It doesn't mean send more. It means <strong>at a low reply rate, differences inside a small sample are noise</strong>. Fifty emails yielding one reply against fifty yielding three looks like a threefold win; the two intervals sit almost entirely on top of each other. So: <strong>stop polishing wording and bet on step changes</strong> — a different audience, a different concrete fact about the person in your opening line, a different channel. Then track absolute counts only: how many real conversations this week.</div>
+</div>
+<div class="section">
+<div class="section-label">B beat A threefold? The intervals overlap</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">One outreach round, 95% intervals for two arms of 50</text>
+<rect fill="#e6ecf3" height="96" width="240" x="149" y="46"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="269" y="60">the whole stretch where they overlap</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.8" font-weight="700" x="90" y="82">Arm A: 50 sent → 1 reply (point estimate 2%)</text>
+<line stroke="#4e8a3f" stroke-width="2.4" x1="101" x2="389" y1="96" y2="96"></line>
+<line stroke="#4e8a3f" stroke-width="2.4" x1="101" x2="101" y1="88" y2="104"></line>
+<line stroke="#4e8a3f" stroke-width="2.4" x1="389" x2="389" y1="88" y2="104"></line>
+<circle cx="147" cy="96" fill="#123f30" r="4.5"></circle>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="101" y="118">0.4%</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="371" y="118">10.5%</text>
+<text fill="#8f5a22" font-family="Georgia" font-size="9.8" font-weight="700" x="149" y="142">Arm B: 50 sent → 3 replies (point estimate 6%)</text>
+<line stroke="#c9925f" stroke-width="2.4" x1="149" x2="552" y1="156" y2="156"></line>
+<line stroke="#c9925f" stroke-width="2.4" x1="149" x2="149" y1="148" y2="164"></line>
+<line stroke="#c9925f" stroke-width="2.4" x1="552" x2="552" y1="148" y2="164"></line>
+<circle cx="261" cy="156" fill="#8f5a22" r="4.5"></circle>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="149" y="178">2.1%</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="532" y="178">16.2%</text>
+<line stroke="#5a7365" stroke-width="1.2" x1="90" x2="660" y1="198" y2="198"></line>
+<line stroke="#5a7365" stroke-width="1" x1="90" x2="90" y1="198" y2="204"></line>
+<line stroke="#5a7365" stroke-width="1" x1="232" x2="232" y1="198" y2="204"></line>
+<line stroke="#5a7365" stroke-width="1" x1="375" x2="375" y1="198" y2="204"></line>
+<line stroke="#5a7365" stroke-width="1" x1="517" x2="517" y1="198" y2="204"></line>
+<line stroke="#5a7365" stroke-width="1" x1="660" x2="660" y1="198" y2="204"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="90" y="216">0%</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="232" y="216">5%</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="375" y="216">10%</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="517" y="216">15%</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="660" y="216">20%</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="236" y2="236"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="258">Wilson intervals. B's point estimate is triple A's, yet the bands lie almost on top of each other.</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="280">Telling 2% from 4% reliably takes upwards of a thousand sends per arm. Your sample detects nothing small.</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="20" y="298">Consequence: small changes are untestable, so only make big ones — change the audience, not the adjectives.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Read-aloud template · four rules for the numbers game</span>
+<p>1. <strong>Fix the batch</strong>: one audience, one sentence, minimum thirty, and no edits until it's finished. A batch you changed halfway through is void.</p>
+<p>2. <strong>Change one variable at a time, and only big ones</strong>: audience &gt; the concrete fact about them in your opening &gt; channel &gt; wording. <strong>Wording ranks last because its effect is smallest and its sample demand highest.</strong></p>
+<p>3. <strong>Put only absolute counts on the wall</strong>: sent this week, real conversations this week. The second number is the one worth displaying; a reply rate's decimal place is not.</p>
+<p>4. <strong>Commit to a volume before you're allowed to judge</strong> — say a hundred attempts, no conclusions and no changes of mind before then. Otherwise what you kill is the unlucky batch, not the bad one.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>The lower the reply rate, the less information a given sample size can carry — one reply's worth of random fluctuation can double the ratio. Yet people systematically believe small samples represent the population, so they read "this opening doesn't work" off twenty emails and kill an approach that was actually fine. There's a second layer, and it's emotional: every rejection genuinely stings, so people substitute "let me tweak the wording" for "let me send another batch" — because tweaking wording requires facing no new rejection at all.</strong></p>
+<ul>
+<li><strong>Hard evidence · the law of small numbers</strong>: Tversky &amp; Kahneman (1971, <em>Psychological Bulletin</em>) showed that even statistically trained researchers overestimate how representative small samples are, and consequently conclude too early and abandon effective approaches. Peer-reviewed and classic. Staring at the reply rate on twenty emails is exactly this.</li>
+<li><strong>A calculation, not a citation · how big a sample</strong>: by the standard two-proportion power calculation (α = 0.05, power = 0.8), reliably distinguishing a 2% from a 4% reply rate needs upwards of a thousand sends per arm. That's computed rather than cited — but its implication is hard: your sample size cannot detect any small change.</li>
+<li><strong>Contested — treat as a mechanism hint only</strong>: Eisenberger, Lieberman &amp; Williams (2003, <em>Science</em>) found in the Cyberball paradigm that social exclusion raised activity in <strong>dorsal anterior cingulate cortex (dACC) and anterior insula</strong>, regions overlapping with the distress component of physical pain — the sting of rejection isn't purely metaphorical. But the strong version has been weakened: Woo et al. (2014, <em>Nature Communications</em>) used multivoxel pattern analysis to show that physical and social pain are separably represented within those same regions. Fine as an explanation for why outreach is hard to sustain; not a settled fact.</li>
+</ul>
+<p class="caveat">Boundary: all of this holds only for outreach with low reply rates, modest deal sizes, and enough volume to accumulate a sample. If your total addressable set is forty companies, the statistics collapse entirely — the right move there is to research and design for each one separately, treating outreach as forty projects rather than one batch.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 41 Action</h3>
+<p>One hour to trade "a very long list" for "a very short list where you can say something about every name."</p>
+<div class="action">
+<strong>One (20 minutes) · subtract the list:</strong> write out the last twelve months of wins and dead deals, count both proportions per trait, find the two traits that run high only among the wins, turn them into a 0/1 scorecard, score your current list and keep only the top band.<br/><br/><strong>Two (20 minutes) · book three conversations:</strong> pick three names from that band and send "I'm not selling anything, I'd like to hear how you handle this today — twenty minutes." <strong>Sending counts as done</strong> — whether they say yes isn't your score.<br/><br/><strong>Three (20 minutes) · fix the batch:</strong> write down the one number you'll track for four weeks (real conversations this week) and one commitment: no conclusions and no changes of mind before a hundred attempts.<br/><br/>Boundary: this machinery is for businesses with hundreds or thousands of possible customers. With a few dozen, skip the batches and the ratios entirely — research each one separately instead. One more thing: the most valuable of your thirty conversations are usually the people who say plainly "we don't need this." What they tell you is where the profile should be subtracted next.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. I'm an individual — freelancing, or job hunting. I have no "wins and losses" to compare. How does this apply?</summary>
+<div class="answer">You have them, you just never wrote them down. Wins are the people who actually paid, made an offer, or talked seriously to the end; losses are the people you talked to who went quiet. Three or four of each is enough to subtract one line.<br/><br/>Put them side by side and look for what appears only among the ones that worked. The category that shows up most often is a <strong>trigger event</strong>: they'd just changed who owned this, they'd just had something go wrong, or there was a hard date pressing on them. Triggers beat industry and company size, because they don't determine whether you're a fit — they determine whether it's urgent now, and urgency is why the door opens at all.<br/><br/>At that sample size don't compute proportions. Write one sentence instead ("look for people who've just inherited this area and haven't built a process yet") and test it against your next ten. As for the thirty conversations, individuals actually book them more easily: without a company badge, people's guard is far lower.</div>
+</details>
+<details>
+<summary>2. Isn't cold email or cold calling just spam? I can't get comfortable with it.</summary>
+<div class="answer">The test isn't "they didn't invite you" — by that standard every act of commercial initiative is spam. It's these three:<br/><br/><strong>One, can you say something true of this person and nobody else?</strong> If you can't, it is a blast, and it is spam. <strong>Two, how expensive is it for them to refuse?</strong> An email deleted in two seconds and a phone call at ten at night are not the same object. <strong>Three, would you be comfortable letting them see exactly how you reasoned about contacting them?</strong> If not, some part of you already knows the answer — this is the sharpest of the three.<br/><br/>Clear all three and cold outreach is ordinary commercial behaviour, no guilt required. One practical addition: anyone who says plainly "not interested" comes off the list and genuinely never hears from you again. The value at stake was never this one deal — it's whether you can still be recommended inside that circle, and that pool is worth far more than this round's list.</div>
+</details>
+<details>
+<summary>3. I've sent a hundred following all of this and got zero replies. Is the list wrong or the message wrong?</summary>
+<div class="answer">Find out which layer is empty first. A hundred sends and zero replies is <strong>almost never a wording problem</strong> — wording moves you between 2% and 4%, not between 0 and 2%. Zero usually means one of exactly three things: <strong>wrong audience</strong> (these people simply don't have the problem you're describing), <strong>wrong trigger</strong> (they have it, but nothing makes it urgent right now), or <strong>wrong channel</strong> (the message was never seen — it went to spam, or nobody reads that account).<br/><br/>Check them in reverse order, cheapest first. Ask one or two people you actually know: "did my email reach you, did you open it?" Ten minutes rules out a whole class of cause. Then check the trigger: does your list have a "what recently happened" column at all? Without one you're pitching people who aren't in a hurry. Change the audience after that, and touch the wording last — always last.<br/><br/>And if you've swapped audiences twice and it's still zero, you may be selling a problem nobody is in a rush to solve. What that calls for is going back to the thirty conversations, not attempt one hundred and one.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 41</footer>
+</div>
+</body>
+</html>

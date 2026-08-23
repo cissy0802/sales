@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 41：找客户（prospecting）</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 41 · Phase G</div>
+<h1>「名单再长一点」是找客户里唯一确定无效的努力</h1>
+<div class="meta"><span>主题：冷启动 · 理想客户画像 · 触达渠道选择 · 外联的数字游戏</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">冷启动时稀缺的从来不是人名，是你说得出的、只对这个人成立的那句话。而外联的数字游戏是个方差游戏——它奖励敢换人群的人，惩罚精修措辞的人。</div>
+</header>
+<div class="intro">
+<strong>找客户（prospecting）＝把「世界上所有人」缩到「值得你花一小时的那几十个」，并让他们愿意开始第一次对话。</strong>四个动作按顺序拆它：<strong>一、画像用赢单减输单反推</strong>——砍不掉名单的画像等于没画像；<strong>二、冷启动的头 30 次对话不为成交</strong>，为拿他们的原话；<strong>三、渠道比「每次真实对话花掉你多少分钟」</strong>，而且一次只跑两条；<strong>四、数字游戏是方差游戏</strong>——小样本分辨不出你的优化，只赌质变、只盯绝对数。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>画像的唯一考核标准：它能砍掉多少人
+<span class="en">A customer profile is only worth writing if it excludes people.</span></h2>
+<span class="tag">判别力</span><span class="tag">只看正例</span><span class="tag">打分表</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">「中型企业、增长快、重视效率、有预算」——这种 ICP（ideal customer profile，理想客户画像）的毛病不是不准，是<strong>它谁都不排除</strong>。一条特征有没有用，只看它在赢单里出现的比例和在输单里出现的比例差多少；两边一样高的特征，写下来只是自我安慰。所以画像不能从产品往外想，只能从过去 12 个月的赢单和输单对照里<strong>减</strong>出来。</div>
+</div>
+<div class="section">
+<div class="section-label">一条特征有没有用，只看两边差多少</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 344" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同一批单子，四条候选特征</text>
+<rect fill="#4e8a3f" height="9" width="9" x="470" y="14"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="484" y="22">赢单里的占比</text>
+<rect fill="#c9925f" height="9" width="9" x="576" y="14"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="590" y="22">输单里的占比</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="60">刚换了负责人</text>
+<rect fill="#4e8a3f" height="12" width="267" x="200" y="46"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" font-weight="700" x="473" y="56">89%</text>
+<rect fill="#c9925f" height="12" width="30" x="200" y="62"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="9" font-weight="700" x="236" y="72">10%</text>
+<text fill="#2c4a22" font-family="Georgia" font-size="10" font-weight="700" x="560" y="66">差 79 → 留下</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="122">自己已在算这笔账</text>
+<rect fill="#4e8a3f" height="12" width="234" x="200" y="108"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" font-weight="700" x="440" y="118">78%</text>
+<rect fill="#c9925f" height="12" width="45" x="200" y="124"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="9" font-weight="700" x="251" y="134">15%</text>
+<text fill="#2c4a22" font-family="Georgia" font-size="10" font-weight="700" x="560" y="128">差 63 → 留下</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="184">员工 10–200 人</text>
+<rect fill="#4e8a3f" height="12" width="270" x="200" y="170"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" font-weight="700" x="476" y="180">90%</text>
+<rect fill="#c9925f" height="12" width="255" x="200" y="186"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="9" font-weight="700" x="461" y="196">85%</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="560" y="190">差 5 → 划掉</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="246">开了网店</text>
+<rect fill="#4e8a3f" height="12" width="300" x="200" y="232"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" font-weight="700" x="506" y="242">100%</text>
+<rect fill="#c9925f" height="12" width="285" x="200" y="248"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="9" font-weight="700" x="491" y="258">95%</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="560" y="252">差 5 → 划掉</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="278" y2="278"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="300">下面两条不是错的，是空的：它们描述了你的赢单，也描述了你的输单。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="322">兜底问句：加上这一条，我的名单从三千缩到几个？答案是三千，就划掉它。</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="20" y="340">（图中数字为示意，请换成你自己那两栏数出来的比例）</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你要给「做电商的中小公司」发一轮外联。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 用不排除人的条件筛名单</div>
+<p>标准是「有网店、员工 10–200 人」，名单三千个。这两条几乎不排除任何人，于是三千封信只能写同一句话——一句对谁都成立、因此对谁都不成立的话。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 把去年的赢单和黄单摆一起</div>
+<p>9 个赢单、20 个黄单。只有两条特征两边差得明显：赢单里 8 家「半年内换过这块的负责人」，输单里只有 2 家；赢单里 7 家「自己已经拿表格在算这件事」，输单里 3 家。名单从三千砍到 60——每封信终于可以写一件只对他成立的事。</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 三步把画像减出来</span>
+<p>1. <strong>列两栏</strong>：过去 12 个月赢的单、黄的单（输掉的和无决定的都算黄）。样本少就往前拉到 24 个月。</p>
+<p>2. <strong>逐条数两个比例</strong>：这条特征在赢单里占几成、在输单里占几成。差不到两成的，当场划掉——它没有判别力。</p>
+<p>3. <strong>写成 0/1 打分表</strong>：剩下的每条计 1 分，给名单打分，只做分数最高的那一档。<strong>别用「我感觉这家像」代替打分</strong>。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> "Mid-sized, growing fast, cares about efficiency, has budget" — the problem with a profile like that isn't that it's wrong, it's that it excludes nobody. A trait is only worth writing down if the share of your won deals that have it differs sharply from the share of your lost deals that have it; a trait that runs equally high on both sides carries zero information and is pure self-consolation. So a profile can't be reasoned outward from your product. It has to be subtracted from a comparison: put last year's wins in one column and last year's dead deals in the other, count both proportions for each candidate trait, and delete every trait where the gap is under about twenty points. What survives becomes a crude scorecard, one point per trait — and you work only the top band. Use the scorecard rather than your instinct, and give every profile the same acceptance test: adding this criterion, does my list of three thousand shrink? If it's still three thousand, the criterion is decoration.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>画像本质是个分类器：一条特征只有在两类里出现率不同时才携带信息，两边一样高就是零判别力。而人写画像时只回忆成交过的客户——只找正例、不看反例，是被反复量到的默认认知策略，它天然会长出一个又宽又舒服、但什么都分不开的画像。</strong></p>
+<ul>
+<li><strong>硬证据 · 人只生成符合自己假设的例子</strong>：Wason (1960, <em>Quarterly Journal of Experimental Psychology</em>) 的 2-4-6 任务里，受试要猜一条数列规则，却几乎只提出符合自己当前猜想的数列，很少主动去试可能推翻它的，于是长期卡在一个过窄的错误规则上。经典、反复复现，硬。你的 ICP 就是那条猜想，而输掉的单正是你从来没试的那一类。</li>
+<li><strong>硬证据 · 正性检验策略</strong>：Klayman &amp; Ha (1987, <em>Psychological Review</em>) 把上面那件事讲精确了：人默认使用「正性检验策略」——去看假设成立的情形。在某些结构下这是有效启发，但当任务是<strong>区分两类</strong>时会系统性出错。找客户正是后一种任务。</li>
+<li><strong>硬证据（元分析）· 打分表打得过直觉</strong>：Grove 等 (2000, <em>Psychological Assessment</em>) 汇总 136 项研究，比较机械式预测（打分表 / 公式）与专家的临床直觉：机械式平均等于或优于直觉，明显更差的情形极少。所以那张丑陋的 0/1 表，大概率比一位资深销售的「我感觉这家能成」准。</li>
+</ul>
+<p class="caveat">边界：赢单不到五个时这套减法减出来的全是噪声——那就先别减比例，改用一条定性线索：上一次成交时，对方内部刚发生了什么。另外画像会过期，产品变了、市场变了都得重算，别把两年前那张表一直用下去（名单里某一家该不该继续追，见「资格判定」那期）。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>头 30 次对话不为成交，为把他们的原话抄回来
+<span class="en">The first thirty conversations are for harvesting their words, not for closing.</span></h2>
+<span class="tag">加工流畅性</span><span class="tag">原话池</span><span class="tag">冷启动</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">冷启动时你最缺的不是人名，是<strong>你说不出一句关于他们的具体的话</strong>。这时候发 300 封信，只是把一个还没找到语言的假设批量打印。先做 30 次真实对话（20 分钟就够），任务只有一个：把他们描述问题时用的<strong>原词</strong>抄下来。等某个短语在 30 个人里出现了六次，你的开场第一句就有了——而那句话不是你写的，是他们写的。</div>
+</div>
+<div class="section">
+<div class="section-label">语言是炼出来的，不是想出来的</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 306" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="p1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">四步，把开场白从他们嘴里炼出来</text>
+<rect fill="#dfeae2" height="64" rx="5" stroke="#8aa79a" stroke-width="1.1" width="148" x="20" y="44"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="94" y="70">30 次 20 分钟</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="94" y="86">的对话</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="94" y="101">不卖东西</text>
+<rect fill="#d3e4d9" height="64" rx="5" stroke="#8aa79a" stroke-width="1.1" width="148" x="195" y="44"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="269" y="70">逐字抄他的</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="269" y="86">名词和动词</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="269" y="101">别翻成行话</text>
+<rect fill="#c2dacd" height="64" rx="5" stroke="#6f9a87" stroke-width="1.1" width="148" x="370" y="44"></rect>
+<text fill="#17513c" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="444" y="70">出现 ≥3 次的</text>
+<text fill="#17513c" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="444" y="86">短语进池子</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="444" y="101">按次数排序</text>
+<rect fill="#1f7a5c" height="64" rx="5" stroke="#123f30" stroke-width="1.2" width="148" x="545" y="44"></rect>
+<text fill="#ffffff" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="619" y="70">最高频那句</text>
+<text fill="#ffffff" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="619" y="86">＝开场第一句</text>
+<text fill="#cfe6da" font-family="Georgia" font-size="8.6" text-anchor="middle" x="619" y="101">一个字不改</text>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.6" x1="170" x2="191" y1="76" y2="76"></line>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.6" x1="345" x2="366" y1="76" y2="76"></line>
+<line marker-end="url(#p1)" stroke="#1f7a5c" stroke-width="1.6" x1="520" x2="541" y1="76" y2="76"></line>
+<rect fill="#f6e3da" height="76" rx="5" stroke="#c0603a" stroke-width="1.3" width="320" x="20" y="140"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="34" y="162">✗ 你的措辞（自己想的）</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="34" y="184">「我们提供端到端的库存优化方案，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="34" y="202">帮助企业提升周转效率。」</text>
+<rect fill="#e2efdc" height="76" rx="5" stroke="#4e8a3f" stroke-width="1.5" width="320" x="360" y="140"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="374" y="162">✓ 他的原话（抄回来的）</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="374" y="184">「你们月底盘点，是不是还要</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="374" y="202">停一天？」</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="238" y2="238"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="260">左边每个词都对，但没有一个词是他说过的；右边这句是听到第六次「停一天」之后抄下来的。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="282">检验：你的开场第一句，是否能在你的对话记录里被逐字找到？找不到，说明还是你在自说自话。</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="20" y="300">30 次是个够用的量：跑到二十几次时新短语基本已经不再出现。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 30 次对话怎么约、怎么用</span>
+<p>1. <strong>怎么约</strong>：「我在做一件跟 X 有关的事，<strong>不卖东西</strong>，想听听你们现在是怎么处理的，20 分钟。」——真的别卖，卖了这条路当场就断。</p>
+<p>2. <strong>问过去不问未来</strong>：「上一次遇到这个是什么时候？当时你们具体怎么弄的？」（怎么问才不被善意谎言带偏，见「The Mom Test」那期）</p>
+<p>3. <strong>逐字记</strong>：名词和动词照抄，别顺手翻译成你的行话——你一翻译，这次对话的全部价值就没了。</p>
+<p>4. <strong>统计</strong>：出现三次以上的短语进池子，按次数排序，最高频那句原样当开场第一句。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> What you're short of at a cold start isn't names — it's a single concrete sentence you can say about these people. Sending three hundred emails at that point just mass-prints a hypothesis you haven't found the language for yet. Do thirty real conversations first, twenty minutes each, with exactly one job: copy down the words they use when they describe the problem. Ask for them honestly — "I'm working on something around X, I'm not selling anything, I'd like to hear how you handle it today" — and then genuinely don't sell, because selling closes that door permanently. Ask about the past rather than the future, write nouns and verbs down verbatim, and resist the urge to translate anything into your own vocabulary; the moment you translate, the conversation's entire value evaporates. Any phrase that shows up three times or more goes into a pool, and the most frequent one becomes your opening line, unedited. The test is simple: can your first sentence be found word for word in your notes? If not, you're still talking to yourself.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>用对方已经在用的词，比用你「更正确」的说法更容易被判成「这人懂我」——因为大脑处理熟悉的词更省力，而这种省力感会被误读成真、可信、亲切。这叫加工流畅性（processing fluency）：人分不清「我理解得轻松」和「这说得对」，于是把前者当成后者的证据。</strong></p>
+<ul>
+<li><strong>硬证据 · 好处理＝更喜欢</strong>：Reber、Winkielman &amp; Schwarz (1998, <em>Psychological Science</em>) 用对比度和启动只提高刺激的<em>加工流畅度</em>、不改内容，受试对它的喜好就显著上升，而且完全意识不到原因。同行评审，硬。</li>
+<li><strong>硬证据 · 流畅甚至改变真值判断</strong>：McGlone &amp; Tofighbakhsh (2000, <em>Psychological Science</em>) 发现语义相同的格言，押韵版本被判为「更准确地描述人性」。也就是说流畅感不只影响喜好，会直接被算进「这话对不对」。</li>
+<li><strong>硬证据（元分析）· 单纯曝光</strong>：Bornstein (1989, <em>Psychological Bulletin</em>) 汇总 200 多项研究确认曝光效应——熟悉本身就产生好感，且在受试没有有意识识别时依然成立。翻成外联：陌生人第一秒判断的不是你的逻辑，是这句话他听不听得懂。</li>
+</ul>
+<p class="caveat">边界：这些实验测的是喜好和真值判断，不是回复率，跨到销售场景要打折——它给方向，不给效应量。反向风险也是真的：流畅≠正确，对方的原话有可能是在复述一个错误的自我诊断。所以原话用在<strong>开场</strong>（让他愿意开口），不能用在<strong>诊断</strong>（那要靠往下追问）。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>渠道比的是每次真实对话花掉你多少分钟
+<span class="en">Compare channels by minutes per real conversation, not by reach.</span></h2>
+<span class="tag">探索-利用</span><span class="tag">单位成本</span><span class="tag">只跑两条</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">大部分人选渠道时比的是「能触达多少人」，可这个数在所有渠道上都很大，所以它根本不构成选择。真正的单位是<strong>你花掉的分钟 ÷ 换来的真实对话数</strong>——一条能带来三次 20 分钟对话的渠道，比一条能触达三万人的渠道值钱。另外别同时铺五条：每条都太薄，你既学不到东西，也没有底气砍掉任何一条。</div>
+</div>
+<div class="section">
+<div class="section-label">先均分小额，再快速集中</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="q1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">换来一次 20 分钟对话，这条渠道要花你多少分钟</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="58">老客户引荐</text>
+<rect fill="#4e8a3f" height="18" width="27" x="190" y="44"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" font-weight="700" x="225" y="58">18 分钟</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="94">你写东西的地方</text>
+<rect fill="#7aa86a" height="18" width="68" x="190" y="80"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" font-weight="700" x="266" y="94">45 分钟</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="130">群发冷邮件</text>
+<rect fill="#c9925f" height="18" width="180" x="190" y="116"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="9.4" font-weight="700" x="378" y="130">120 分钟</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="166">纯陌生电话</text>
+<rect fill="#c0603a" height="18" width="300" x="190" y="152"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="498" y="166">200 分钟</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="20" y="188">（示意值；请用你自己两周的记录替换。触达量再大也不进这张图。）</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="204" y2="204"></line>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" x="20" y="226">四条候选渠道，四周怎么分配</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="255">第 1–2 周</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" x="20" y="270">四条各投同样小额</text>
+<rect fill="#dfeae2" height="26" rx="4" stroke="#8aa79a" width="120" x="150" y="240"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" text-anchor="middle" x="210" y="257">A · 各 25 次</text>
+<rect fill="#dfeae2" height="26" rx="4" stroke="#8aa79a" width="120" x="278" y="240"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" text-anchor="middle" x="338" y="257">B · 各 25 次</text>
+<rect fill="#dfeae2" height="26" rx="4" stroke="#8aa79a" width="120" x="406" y="240"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" text-anchor="middle" x="466" y="257">C · 各 25 次</text>
+<rect fill="#dfeae2" height="26" rx="4" stroke="#8aa79a" width="120" x="534" y="240"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" text-anchor="middle" x="594" y="257">D · 各 25 次</text>
+<line marker-end="url(#q1)" stroke="#1f7a5c" stroke-width="1.6" x1="400" x2="400" y1="272" y2="290"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="313">第 3–4 周</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" x="20" y="328">砍掉最差两条</text>
+<rect fill="#1f7a5c" height="26" rx="4" stroke="#123f30" width="252" x="150" y="298"></rect>
+<text fill="#ffffff" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="276" y="315">胜出的 A · 量翻倍</text>
+<rect fill="#4e8a3f" height="26" rx="4" stroke="#123f30" width="252" x="410" y="298"></rect>
+<text fill="#ffffff" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="536" y="315">胜出的 C · 量翻倍</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="345">砍的依据只有一个数：这条渠道带来了几次真实对话。点开、点赞、加好友都不算。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 四周渠道试验</span>
+<p>1. <strong>挑四条候选</strong>，每条只投同样的小额（各 25 次触达，或各两小时）。别一开始就 all in 在你最喜欢那条上。</p>
+<p>2. <strong>只记一个数</strong>：这条渠道带来了几次真实对话。点开数、点赞数、加上的好友数一律不记——它们不能换成收入。</p>
+<p>3. <strong>第三周砍两条</strong>，把时间全压到剩下两条上；被砍掉的半年后再拿小额重试一次。</p>
+<p>4. <strong>额外记一句</strong>：我在这条渠道里能不能被认出来？<strong>有作品、有共同的人、有身份的渠道，单位成本会一路下降；纯陌生的渠道，成本是个常数。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Most people pick a channel by how many people it reaches, but that number is large everywhere, so it can't function as a choice. The unit that decides it is your minutes divided by the real conversations you get back: a channel producing three twenty-minute conversations beats one reaching thirty thousand people. Structurally this is an explore-exploit problem — each channel is a slot machine whose true payout you don't know — and the optimal shape is always the same: spread small equal bets first, then concentrate fast. So run four candidates at an identical small budget for two weeks, score each on one number only (conversations, never opens or likes), cut the worst two in week three, and double down on the survivors. Retest a cut channel with a small bet six months later, because channel economics drift. And track one more thing: whether you can be recognized there. Channels where you have work, shared people, or an identity get cheaper over time; a purely cold channel costs the same on the thousandth attempt as on the first.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>这是标准的探索-利用问题：候选渠道像一排回报未知的老虎机，你要在「多试几条」和「把资源压到目前最好那条」之间分配。最优策略的形状必然是先均分小额、再快速集中——既不是一开始 all in，也不是永远五条平摊。还有一层：有身份的渠道单位成本递减，因为你在里面留下的东西会被反复看见；纯冷渠道每一次触达都从零开始，成本不下降。</strong></p>
+<ul>
+<li><strong>数学定理（不是心理学证据）· 多臂老虎机</strong>：Gittins (1979, <em>JRSS Series B</em>) 证明了折现多臂老虎机的最优指标策略。这是定理不是经验规律；实践里那套「先均匀小额探索、逐步集中」就是这一族结果的粗近似。</li>
+<li><strong>行业实践（非实验，证据较弱）</strong>：Ross &amp; Tyler《Predictable Revenue》(2011) 主张把「找线索」和「成交」拆给不同的人做，理由是两件事需要的节奏和技能不同。这个做法被广泛采用，但支撑它的是公司案例而不是对照实验——当假设用，别当结论。</li>
+<li><strong>中等强度 · 先打透一小圈再外扩</strong>：Rogers《Diffusion of Innovations》综述里反复出现的模式是，新做法先在小而同质的圈子里跑通、再向外扩散。观察性研究的汇总，方向可信、力度打折。</li>
+</ul>
+<p class="caveat">边界：渠道回报会随时间变——今年便宜的渠道明年可能挤满了人，所以砍掉的每半年该小额重试。另外「真实对话数」这个计数单位在极低价、极高量的生意里不适用（一杯咖啡不需要先聊 20 分钟）：那种生意该数的是转化步骤，不是对话。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>数字游戏是方差游戏，不是勤奋游戏
+<span class="en">Outreach is a numbers game about variance, not about effort.</span></h2>
+<span class="tag">小数定律</span><span class="tag">功效</span><span class="tag">只赌质变</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">「外联是个数字游戏」这句话是对的，但几乎所有人理解反了。它的意思不是「发得越多越好」，是<strong>在低回复率下，小样本里的差异全是噪声</strong>。你发 50 封 A 得 1 个回复、50 封 B 得 3 个，看起来 B 好三倍，其实两个区间几乎完全重叠。所以：<strong>别精修措辞，只赌质变</strong>——换人群、换开场那句关于他的事实、换渠道；然后只盯绝对数：这周产生了几次真实对话。</div>
+</div>
+<div class="section">
+<div class="section-label">B 比 A 好三倍？这两个区间是重叠的</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同一轮外联，两组各 50 封的 95% 区间</text>
+<rect fill="#e6ecf3" height="96" width="240" x="149" y="46"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="269" y="60">两个区间重叠的这一整段</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.8" font-weight="700" x="90" y="82">A 组：50 封 → 1 个回复（点估计 2%）</text>
+<line stroke="#4e8a3f" stroke-width="2.4" x1="101" x2="389" y1="96" y2="96"></line>
+<line stroke="#4e8a3f" stroke-width="2.4" x1="101" x2="101" y1="88" y2="104"></line>
+<line stroke="#4e8a3f" stroke-width="2.4" x1="389" x2="389" y1="88" y2="104"></line>
+<circle cx="147" cy="96" fill="#123f30" r="4.5"></circle>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="101" y="118">0.4%</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="371" y="118">10.5%</text>
+<text fill="#8f5a22" font-family="Georgia" font-size="9.8" font-weight="700" x="149" y="142">B 组：50 封 → 3 个回复（点估计 6%）</text>
+<line stroke="#c9925f" stroke-width="2.4" x1="149" x2="552" y1="156" y2="156"></line>
+<line stroke="#c9925f" stroke-width="2.4" x1="149" x2="149" y1="148" y2="164"></line>
+<line stroke="#c9925f" stroke-width="2.4" x1="552" x2="552" y1="148" y2="164"></line>
+<circle cx="261" cy="156" fill="#8f5a22" r="4.5"></circle>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="149" y="178">2.1%</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="532" y="178">16.2%</text>
+<line stroke="#5a7365" stroke-width="1.2" x1="90" x2="660" y1="198" y2="198"></line>
+<line stroke="#5a7365" stroke-width="1" x1="90" x2="90" y1="198" y2="204"></line>
+<line stroke="#5a7365" stroke-width="1" x1="232" x2="232" y1="198" y2="204"></line>
+<line stroke="#5a7365" stroke-width="1" x1="375" x2="375" y1="198" y2="204"></line>
+<line stroke="#5a7365" stroke-width="1" x1="517" x2="517" y1="198" y2="204"></line>
+<line stroke="#5a7365" stroke-width="1" x1="660" x2="660" y1="198" y2="204"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="90" y="216">0%</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="232" y="216">5%</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="375" y="216">10%</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="517" y="216">15%</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="660" y="216">20%</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="236" y2="236"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="258">区间按 Wilson 法算。B 的点估计是 A 的三倍，可两段几乎盖在一起——这一轮什么都没证明。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="280">要可靠分辨 2% 与 4%，每组约需一千封以上。你手上的样本，分辨不了任何小改动。</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="20" y="298">推论：小改动测不出来，所以只做大改动——换人群，别换形容词。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 数字游戏的四条规矩</span>
+<p>1. <strong>批次固定</strong>：每批同一人群、同一句话，批量不小于 30，跑完再改。中途改的批次直接作废。</p>
+<p>2. <strong>一次只改一个变量，且只改大的</strong>：人群 &gt; 开场那句关于他的事实 &gt; 渠道 &gt; 措辞。<strong>措辞排最后，因为它效应最小、最需要样本。</strong></p>
+<p>3. <strong>只把绝对数上墙</strong>：本周发出 X、真实对话 Y。Y 是唯一值得挂出来的数，回复率的小数点不是。</p>
+<p>4. <strong>定一个「做完才允许评价」的量</strong>（比如 100 次），在这之前不许下结论、也不许改主意——否则你砍掉的多半是运气差的那批，不是差的那批。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> "Outreach is a numbers game" is true, and almost everyone reads it backwards. It doesn't mean send more; it means that at low reply rates, differences inside a small sample are noise. Fifty emails yielding one reply against fifty yielding three looks like a threefold win, but the two confidence intervals sit almost entirely on top of each other, and telling two percent from four percent reliably takes upwards of a thousand sends per arm. The practical consequence is that polishing wording is unfalsifiable at your sample size, so bet on step changes instead: a different audience, a different concrete fact about the person in your opening line, a different channel — wording ranks last. Fix your batches at thirty or more, hold the audience and the sentence constant until the batch is done, put only absolute numbers on the wall (sent this week, real conversations this week), and commit to a volume — say a hundred attempts — before you're allowed to draw any conclusion at all. Otherwise what you kill is the unlucky batch, not the bad one.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>回复率越低，同样的样本量能提供的信息越少——一次回复的随机波动就能让比率翻倍。人却系统性地相信小样本能代表总体，于是从 20 封信里读出「这个开场不行」的结论，把一个其实可行的做法砍掉。还有一层是心理成本：每一次被拒都真的不舒服，于是人会用「再改改措辞」替代「再发一批」——改措辞不用面对新的拒绝。</strong></p>
+<ul>
+<li><strong>硬证据 · 小数定律</strong>：Tversky &amp; Kahneman (1971, <em>Psychological Bulletin</em>) 发现连受过统计训练的研究者也高估小样本的代表性，并据此过早下结论、过早放弃有效的做法。同行评审、经典，硬。你盯着 20 封信的回复率时，做的正是这件事。</li>
+<li><strong>计算（不是研究）· 需要多大样本</strong>：按标准的两比例功效计算（α=0.05、power=0.8），要可靠分辨 2% 与 4% 的回复率，每组约需一千封以上。这是算出来的、不是引用的——但它的含义很硬：你那点样本量分辨不了任何小改动。</li>
+<li><strong>有争议、只当机制线索</strong>：Eisenberger、Lieberman &amp; Williams (2003, <em>Science</em>) 的 Cyberball 实验发现社会排斥时<strong>背侧前扣带回（dACC）与前脑岛</strong>活动增强，与生理痛的痛苦成分区域重叠——被拒的「疼」不完全是比喻。但强版本已被削弱：Woo 等 (2014, <em>Nature Communications</em>) 用多体素模式分析显示，身体痛与社会痛在同一区域内的表征其实可分。所以拿它解释「为什么外联这么难坚持」可以，别当定论。</li>
+</ul>
+<p class="caveat">边界：这一套只在「回复率低、单价不高、样本攒得起来」的外联里成立。如果你的目标客户一共只有 40 家（大客户生意），统计全部失效——那时正确做法是每一家单独研究、单独设计，把外联当成 40 个项目，而不是一个批次。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 41 Action</h3>
+<p>一小时，把「名单很长」换成「名单很短，但每个人你都说得出话」。</p>
+<div class="action">
+<strong>一（20 分钟）· 减名单：</strong>列出过去 12 个月赢的单和黄的单，逐条数比例，找出只在赢单里高的那两条特征，做成 0/1 打分表，给你现在的名单打分，只留最高那一档。<br/><br/><strong>二（20 分钟）· 约三个对话：</strong>从这一档里挑三个人，用「我不卖东西，想听你们现在是怎么处理的，20 分钟」发出去。<strong>发出去就算完成</strong>——答不答应不算你的成绩。<br/><br/><strong>三（20 分钟）· 定批次：</strong>写下这四周唯一要盯的数（本周真实对话数），和一句承诺：做完 100 次之前不下结论、不改主意。<br/><br/>边界提醒：这套是给「目标客户成百上千」的生意用的。目标客户只有几十家时别做批次、别算比率，正确动作是每家单独研究。还有一条：30 次对话里最有价值的，往往是那些明确说「我们不需要」的人——他们告诉你的是画像该往哪儿减。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我是个人（自由职业 / 求职），没有「赢单和输单」可以对照，这套怎么用？</summary>
+<div class="answer">你有，只是没记。赢单＝真的付过钱、给过 offer、或者认真谈到最后的；输单＝聊过但没下文的。哪怕各三五个也能减出一条。<br/><br/>把它们摆一起找「只在成了的那几个里出现的事」，最常出现的一类是<strong>触发事件</strong>：对方当时刚换了人、刚出过一次事故、或者有一个明确的日期压着。触发事件比行业和规模都强，因为它决定的不是「合不合适」，是「现在急不急」——而急不急才是你能不能进门的原因。<br/><br/>样本这么小别算比例，只写一句话结论（比如「找刚接手这摊事、还没来得及建流程的人」），然后在接下来 10 次里验证它。至于那 30 次对话，个人反而更容易约到：你不带公司身份，对方的防备低得多。</div>
+</details>
+<details>
+<summary>2. 冷邮件 / 冷电话是不是骚扰？我心里过不去。</summary>
+<div class="answer">判断标准不是「人家没请你来」——那样任何主动的商业行为都成了骚扰。是这三条：<br/><br/><strong>一、你能不能说出一句只对这个人成立的话。</strong>说不出来，那就是群发，确实是骚扰。<strong>二、对方拒绝的成本高不高。</strong>一封两秒能删掉的邮件，和一个晚上十点的电话，不是一回事。<strong>三、你敢不敢让他看到你怎么算这笔账。</strong>不敢，说明你自己也知道不对——这一条最灵。<br/><br/>三条都过得去，冷外联就是正常的商业行为，用不着愧疚。再加一条实操：明确说了「不需要」的人，从名单里划掉、并且真的不再发。这一次的价值不在这一单，在你还能不能在这个圈子里被人推荐——而那个池子远比你这轮名单值钱。</div>
+</details>
+<details>
+<summary>3. 我按这套发了 100 次，一个回复都没有，是名单错了还是话错了？</summary>
+<div class="answer">先看是哪一层空的。100 次零回复，<strong>绝大多数情况下不是措辞问题</strong>——措辞影响的是 2% 和 4% 的差别，不是 0 和 2% 的差别。零回复通常只意味着三件事之一：<strong>人群不对</strong>（这些人根本没有你说的那个问题）、<strong>触发不对</strong>（有这个问题，但现在不急）、<strong>渠道不对</strong>（信压根没被看见，进了垃圾箱，或者那个账号没人管）。<br/><br/>查的顺序反过来，先查最便宜的第三条：找一两个认识的人，问「我这封信你收得到吗、点开了吗」。十分钟就能排除一整类原因。第二查触发：你的名单里有没有「最近发生了什么」这一列，没有就等于在向不着急的人推销。最后才动人群，措辞永远排最后。<br/><br/>要是你已经换过两次人群还是零——那可能是你在卖一个大家不急着解决的问题。这时该回去做的是那 30 次对话，不是第 101 次外联。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 41</footer>
+</div>
+</body>
+</html>
