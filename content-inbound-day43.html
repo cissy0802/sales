@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 43：内容与 inbound</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 43 · Phase G</div>
+<h1>inbound 卖的不是内容，是让他自己得出那个结论</h1>
+<div class="meta"><span>主题：让客户来找你 · 教育式内容 · 线索培育 · 搜索与自媒体入口</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">外联是你去找今天正在买的那一小部分人；inbound 是替其余那一大批人保管一个位置，直到他自己走到要买的那天。</div>
+</header>
+<div class="intro">
+<strong>内容要过四关：选对那件他真的卡着的事、让结论从他嘴里出来、在他今天还不买的那段长时间里不被忘掉、以及有一条他能走过来的路。</strong>四个动作各解一关：<strong>一、选题在你的聊天记录里，不在关键词工具里</strong>；<strong>二、把「怎么做」给全</strong>，因为自己得出的结论不打折；<strong>三、培育不是催熟，是留在他的候选名单上</strong>；<strong>四、入口是一句具体到不像话的问题</strong>——流量和成交距离几乎总是反着的。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>选题不在关键词工具里，在你这个月重复讲了三遍的那段话里
+<span class="en">Your best topic is the paragraph you've already explained three times this month.</span></h2>
+<span class="tag">重复即信号</span><span class="tag">知识的诅咒</span><span class="tag">用他的原话</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">别先问「什么话题有人搜」，先翻自己的聊天记录：这个月你对着不同的人，把同一段话重复讲了几遍？<strong>重复三遍以上的那段，就是一篇。</strong>理由不神秘——那段话已经被真人验证过能起作用，你亲眼见过它让人点头；而你每讲一遍都在付一次全价，写下来是把这笔重复劳动一次性买断。真正难的是你会觉得它「<strong>太基础了，不值得写</strong>」——这个判断几乎总是错的，因为你已经知道答案，就再也没法估计不知道的人有多不知道。</div>
+</div>
+<div class="section">
+<div class="section-label">同一段话：每次现讲 vs 写一次</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="d1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">内容不是营销活动，是把重复劳动一次性买断</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="44">↑ 你累计花掉的时间</text>
+<line marker-end="url(#d1)" stroke="#8a9a90" stroke-width="1.4" x1="80" x2="80" y1="250" y2="52"></line>
+<line marker-end="url(#d1)" stroke="#8a9a90" stroke-width="1.4" x1="80" x2="662" y1="250" y2="250"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="560" y="272">同一个问题被问的次数 →</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="137" y="266">1</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="251" y="266">3</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="365" y="266">5</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="479" y="266">7</text>
+<polyline fill="none" points="80,250 620,70" stroke="#c0603a" stroke-width="2.2"></polyline>
+<polyline fill="none" points="80,250 130,150 620,132" stroke="#4e8a3f" stroke-width="2.2"></polyline>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="430" y="60">每次都现讲：每次都付全价</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" x="150" y="120">写一次：一次固定成本，之后近乎为零</text>
+<line stroke="#8f5a22" stroke-dasharray="4,3" stroke-width="1.2" x1="412" x2="412" y1="139" y2="250"></line>
+<circle cx="412" cy="139" fill="#8f5a22" r="4"></circle>
+<text fill="#8f5a22" font-family="Georgia" font-size="9.2" font-weight="700" x="420" y="176">大约第六次以后，</text>
+<text fill="#8f5a22" font-family="Georgia" font-size="9.2" font-weight="700" x="420" y="192">写下来的那次更便宜</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="284" y2="284"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="298">选题问的不是「什么话题有流量」，是「这个月我重复讲了几遍」。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你做小微企业的代理记账，最近三周有五个小老板问过同一件事。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 从流量倒推选题</div>
+<p>查了一圈发现「代理记账」搜索量最大，于是写了一篇《代理记账全解析》。这个词下面站着的是同行、学生和找工作的人——真正会付钱的人不这么搜，他搜的是今天卡住他的那件事。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 从重复的原话倒推选题</div>
+<p>五个人都问过同一句：「我个体户和公司哪个更划算？」于是写《月流水 8 万以下，个体户还是公司：一张表算完》，把两边的税、社保、注销成本全列出来。这句话只有正在做这个决定的人会打出来，而正在做这个决定的人就是要买的人。</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 四步找到本月选题</span>
+<p>1. <strong>翻最近 10 次真实对话</strong>（销售电话、聊天记录、客服工单），把对方的<strong>原话抄下来</strong>，别顺手改写成书面语——原话就是标题。</p>
+<p>2. <strong>数频次</strong>：出现三次以上的问题，一条一篇；只出现过一次的先攒着。</p>
+<p>3. <strong>越觉得「这也要写？」越要写</strong>。你的「太基础」正好是他的「终于有人讲人话」。</p>
+<p>4. <strong>标题别翻译成行话</strong>：他不会搜「税务架构选择」，他搜「个体户和公司哪个划算」。术语是给同行看的，同行不买。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Don't start from what has search volume; start from your own message history. Which paragraph have you explained to three different people this month? That paragraph is your article. It has already been tested on real humans — you watched it land — and every time you deliver it live you pay full price again, so writing it down buys out the repetition once and for all. The hard part is that you will dismiss it as too basic to be worth writing, and that judgment is almost always wrong: once you know something, you can no longer estimate how much someone who doesn't know it is missing. So: read your last ten real conversations, copy the other person's words verbatim rather than rewriting them into industry language, count which questions came up three times or more, and write those. Their phrasing is your headline. Jargon speaks to peers, and peers don't buy.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制两层。一是杠杆：讲一次的成本是线性的，写一次是固定成本换近零边际成本——内容替代的是你的重复劳动，不是广告。二是纠偏：你选题会系统性选错，因为回不到「不知道」的状态，这个偏差叫知识的诅咒。频次统计的作用就是把选择权从你的直觉手里拿走。</strong></p>
+<ul>
+<li><strong>硬证据（实验经济学）· 知识的诅咒</strong>：Camerer、Loewenstein &amp; Weber (1989, <em>Journal of Political Economy</em>) 在市场实验中发现，掌握了内幕信息的一方在预测不知情者的判断时，无法把自己已有的信息剔除掉，系统性地高估对方知道多少。同行评审、设计干净。</li>
+<li><strong>中等强度 · 敲击者实验</strong>：Newton (1990, 斯坦福博士论文) 让人用手指敲出熟悉歌曲的节奏，敲的人预测听者能猜出约 50%，实际约 2.5%。被广泛引用（Heath 兄弟《让创意更有黏性》即取自此），但它是单一实验、未正式发表的学位论文，当直觉图示看，别当效应量。</li>
+</ul>
+<p class="caveat">边界：这两条只说明「你会选错话题」，不说明「重复三次的问题一定值得写」——频次是便宜的筛子，不是保证。另有一层幸存者偏差：你的样本是已经找上门的人，所以每隔一阵要往名单外面问一轮（怎么问才不被误导，见 The Mom Test 那期）。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>把「怎么做」给全，因为他自己得出的结论不打折
+<span class="en">Give the whole method away — a conclusion he reached himself doesn't get discounted.</span></h2>
+<span class="tag">自我说服</span><span class="tag">生成效应</span><span class="tag">别藏第三步</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">教育式内容的目的不是让他知道，是<strong>让那句结论从他自己嘴里出来</strong>。你写「这事你该请人做」，这句话要先过他心里的一道防线——他知道你在卖这个，任何对你有利的结论从你嘴里出来都会被打个折。你写「怎么自己做：第一步、第二步、这三处最费时间」，他照着在脑子里跑一遍，得出的结论是他自己的，不打折、还记得牢。所以<strong>「怎么做」要给全</strong>；藏一半的教程是最差的一种，既没帮到人，又暴露了你在钓鱼。</div>
+</div>
+<div class="section">
+<div class="section-label">同一个结论，两条路径</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="d2" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同一句「这事值得外包」，走两条路进他脑子</text>
+<rect fill="#f6e3da" height="46" rx="4" stroke="#c0603a" stroke-width="1.2" width="176" x="20" y="44"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="32" y="64">你直接给结论</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="32" y="80">「自己剪太费时间了」</text>
+<line marker-end="url(#d2)" stroke="#5a7365" stroke-width="1.6" x1="200" x2="234" y1="67" y2="67"></line>
+<rect fill="#f6e3da" height="46" rx="4" stroke="#c0603a" stroke-width="1.2" width="176" x="238" y="44"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="250" y="64">先被打一道折</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="250" y="80">「你当然这么说」</text>
+<line marker-end="url(#d2)" stroke="#5a7365" stroke-width="1.6" x1="418" x2="452" y1="67" y2="67"></line>
+<rect fill="#f0d9d0" height="46" rx="4" stroke="#a8461f" stroke-width="1.4" width="208" x="456" y="44"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="468" y="64">记住的是「他在推销」</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="468" y="80">结论没进去</text>
+<rect fill="#e2efdc" height="46" rx="4" stroke="#4e8a3f" stroke-width="1.3" width="176" x="20" y="126"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" font-weight="700" x="32" y="146">你给完整做法</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="32" y="162">每步几分钟都写出来</text>
+<line marker-end="url(#d2)" stroke="#1f7a5c" stroke-width="1.6" x1="200" x2="234" y1="149" y2="149"></line>
+<rect fill="#e2efdc" height="46" rx="4" stroke="#4e8a3f" stroke-width="1.3" width="176" x="238" y="126"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" font-weight="700" x="250" y="146">他自己跑一遍</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="250" y="162">在「40 分钟」那行停住</text>
+<line marker-end="url(#d2)" stroke="#1f7a5c" stroke-width="1.6" x1="418" x2="452" y1="149" y2="149"></line>
+<rect fill="#1f7a5c" height="46" rx="4" stroke="#123f30" stroke-width="1.3" width="208" x="456" y="126"></rect>
+<text fill="#ffffff" font-family="Georgia" font-size="9.4" font-weight="700" x="468" y="146">结论是他自己说的</text>
+<text fill="#cfe6da" font-family="Georgia" font-size="8.8" x="468" y="162">不打折 · 记得牢</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="190" y2="190"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="216">藏起来的那一步会让整篇失效——他看得出哪里被掐了，连前面信过的也一起收回。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景示范</div>
+<div class="scene">
+<div class="setup">情境：你做播客/短视频的剪辑外包，要写一篇给潜在客户看的内容。</div>
+<div class="dialog bad">
+<div class="speaker">✗ 直接给对你有利的结论</div>
+<p>「自己剪片子太费时间了，交给专业团队，效率提升 3 倍。」——他的第一反应不是「有道理」，是「你当然这么说」。而「效率提升 3 倍」这种没出处的数字，只会把他刚建立的一点信任一起抹掉。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">✓ 把做法全给出去，让他自己算</div>
+<p>《一个人剪一期播客的完整流程：我的时间轴、快捷键、和三个最费时间的地方》——每一步花多少分钟都写出来，把「口型对齐要 40 分钟」那段讲透。读的人有两种：一种照着做成了，他会记得是谁教的；另一种看到「40 分钟」那行就停住了——他自己得出了结论，而这个结论没被打折。</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 教育式内容的四条</span>
+<p>1. <strong>步骤给全，包括你收费做的那一步</strong>。你怕的那一步恰恰是最有说服力的一步——它证明你真的每天在做这件事。</p>
+<p>2. <strong>每步标上时间或钱</strong>。成本是那个让他自己算账的东西，不是你的说服句。</p>
+<p>3. <strong>写清坑在哪</strong>。「这里我踩过，第二次才发现是因为……」比任何资历介绍都好用。</p>
+<p>4. <strong>结尾不要转折成推销</strong>。留一句「不想自己弄的话我做这个」就够了，把要价压到最小、且不要求交换——这跟冷邮件那期的先给后要是同一件事。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Educational content isn't there to inform; it's there to get the conclusion out of the reader's own mouth. Write "you should outsource this" and it has to clear a defence — he knows you sell that, so anything favourable to you gets discounted on arrival. Write the full method instead — step one, step two, here are the three places that eat your afternoon — and he runs it in his head and reaches the conclusion himself, undiscounted and better remembered. Which is why the method has to be complete, including the part you charge for: a half-hidden tutorial is the worst version, since it neither helps anyone nor hides that you're fishing. Put a time or a cost on every step, because the cost is what makes him do the arithmetic; say where you personally got stuck; and don't pivot into a pitch at the end — one line saying you do this for people is enough. The readers who follow the method successfully were never going to pay you anyway, and now they repeat what you said.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>自己生成的结论比听来的结论更牢、也更能改变行为。两条机制叠在一起：一是生成本身加深了编码（自己想出来的东西记得更好）；二是它绕开了心理逆反——当人感到「你在推我往哪走」，他会本能地往反方向用力，而这个力对你自己产生的念头不发作。</strong></p>
+<ul>
+<li><strong>硬证据 · 生成效应</strong>：Slamecka &amp; Graf (1978, <em>JEP: Human Learning and Memory</em>) 发现，自己补全生成的词比直接读到的词记得显著更好；Bertsch 等 (2007, <em>Memory &amp; Cognition</em>) 的元分析确认效应稳定存在。经典且有元分析支持。</li>
+<li><strong>硬证据（经典）· 自己论述过的观点，自己更信</strong>：Janis &amp; King (1954, <em>Journal of Abnormal and Social Psychology</em>) 让一组人即兴为某观点做口头论述、另一组只听同样内容，论述者的态度改变显著更大。这就是「让他自己讲出来」的原始出处。</li>
+<li><strong>理论框架 · 心理逆反</strong>：Brehm (1966) 提出，人觉得选择自由被威胁时会朝相反方向用力。这是理论框架加大量后续研究，不是单个实验——它解释的正是「你的结论一出口就被打折」。</li>
+<li><strong>脑机制（谨慎看待）</strong>：Falk 等 (2010, <em>Journal of Neuroscience</em>) 让受试看防晒宣传并做 fMRI，发现<strong>内侧前额叶皮层（mPFC，处理「这跟我有关」的区域）</strong>的活动能预测他们之后一周真实的防晒行为变化，预测力还超过他们自己口头说的意向。样本仅约 20 人的单一研究，别当定论；提示很实在：预测行为的是「他把这件事接到自己身上」那一刻，不是他嘴上答应了没有。</li>
+</ul>
+<p class="caveat">边界：这条打法在「知道了也做不了」的品类最安全（要设备、要时间、要资质、要担风险）；在「看完就能自己做」的品类，你确实会失去一部分本来会付钱的人——这是它真实的成本。判断标准：如果你的全部价值就是「知道那三步」，那你卖的东西本来就不牢。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>培育不是把人催熟，是他进场那天你还在那几个名字里
+<span class="en">Nurturing doesn't ripen anyone; it keeps you on the shortlist for the day they show up.</span></h2>
+<span class="tag">今天不买≠不需要</span><span class="tag">检索线索</span><span class="tag">宁低频勿刷屏</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">内容没带来客户，最常见的原因不是写得差，是<strong>他今天不买</strong>：设备还能撑、合同没到期、还没被坑过。任何时点，一个品类里正在做购买决定的人都只是一小部分，其余的人不是不需要，是还没到那个时点。所以培育的目标不是把没需求的人催熟（催不熟），是<strong>在他终于进场的那一天，你还在他能想起来的那两三个名字里</strong>。这也决定了培育的形状：宁可低频、每次都值钱，也别高频刷存在感——被划成噪音就等于不在名单上。</div>
+</div>
+<div class="section">
+<div class="section-label">你面对的其实是两批人</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 296" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="d3" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">任何一天，看到你内容的人分成两批</text>
+<rect fill="#1f7a5c" height="30" width="46" x="20" y="40"></rect>
+<rect fill="#d8dcd6" height="30" stroke="#b9c2ba" width="614" x="66" y="40"></rect>
+<text fill="#4a5a50" font-family="Georgia" font-size="9.8" x="86" y="60">今天不在买 · 大多数（不是不需要，是还没到那个时点）</text>
+<line stroke="#1f7a5c" stroke-width="1.2" x1="36" x2="36" y1="72" y2="88"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="102">今天正在买 · 一小部分</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="20" y="118">外联抢今天这一格，inbound 挣右边那片的未来</text>
+<line marker-end="url(#d3)" stroke="#8a9a90" stroke-width="1.5" x1="40" x2="664" y1="168" y2="168"></line>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="20" y="140">而右边那片人，是一个月一个月分批进场的：</text>
+<circle cx="120" cy="168" fill="#4e8a3f" r="5"></circle>
+<circle cx="240" cy="168" fill="#4e8a3f" r="5"></circle>
+<circle cx="330" cy="168" fill="#4e8a3f" r="5"></circle>
+<circle cx="470" cy="168" fill="#4e8a3f" r="5"></circle>
+<circle cx="590" cy="168" fill="#4e8a3f" r="5"></circle>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="120" y="188">合同到期</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="240" y="188">出了一次事故</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="330" y="188">换了负责人</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="470" y="188">预算批下来</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="590" y="188">规模翻倍撑不住</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" x="26" y="160">第 1 月</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" x="620" y="160">第 12 月</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="208" y2="208"></line>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="20" y="230">进场那天他不会去搜「谁最专业」，他只从脑子里捞出两三个名字。</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="256">要争的是「被想起」：把内容绑在他将来身处的场景上，别绑在你的品类名上。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 让他在进场那天想起你</span>
+<p>1. <strong>把内容绑在触发场景上，别绑在产品名上</strong>。他不会突然想起「那家代理记账」，他会想起「上次社保被卡时看过一篇讲这个的」。所以标题里放那个场景：「换办公室那个月，社保怎么不断」。</p>
+<p>2. <strong>拿一个能直接联系他的地址</strong>（邮箱、微信），别只留平台关注——平台随时能掐掉你和他之间那条线，而你连他是谁都不知道。</p>
+<p>3. <strong>频率宁低勿高，每封只做一件事</strong>：给一个他今天能用的东西。做不到就那个月别发。</p>
+<p>4. <strong>退出写清楚、一键能退</strong>。留下来的人的价值远大于名单长度。</p>
+<p>5. <strong>别做「没回就加频次」的自动化</strong>。那是把还没进场的人提前赶走，而他本来是明年的客户。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> When content doesn't produce customers, the usual reason isn't the writing — it's that they aren't buying today. At any given moment only a small slice of a category is actually in a purchase decision; everyone else isn't uninterested, they just haven't hit their trigger yet: the contract hasn't expired, nothing has broken, the budget hasn't landed. So nurturing can't ripen anyone, and shouldn't try. Its job is to keep you among the two or three names he can retrieve on the day he does show up. That shapes everything: tie your content to the situation he'll be standing in, not to your category name — he won't suddenly think "that bookkeeping firm," he'll think "I read something about this when our filings got stuck." Get an address you own rather than a platform follow, since the platform can cut the line between you at any moment. Keep the frequency low and make every send carry one usable thing; skip the month if you have nothing. Make unsubscribing easy, and never escalate frequency because someone didn't reply — that just evicts next year's customer early.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>两条机制。一是基础比例：在市场的人本来就少，你看到的低转化有一大半是这个数在起作用，不是你的文案。二是记忆的可及性：买的时候他脑子里只捞得出几个名字，能不能被捞出来取决于他当时的情境跟你当初绑的线索对不对得上。</strong></p>
+<ul>
+<li><strong>硬证据 · 检索线索决定捞不捞得出来</strong>：Tulving &amp; Thomson (1973, <em>Psychological Review</em>) 的编码特异性原则证明，能不能想起来取决于提取时的线索是否与编码时的情境匹配——单纯「记得牢」不够，线索得对上。这条直接给出可操作结论：内容要绑在他将来身处的场景上，而不是绑在你的品类名上。</li>
+<li><strong>硬证据 · 考虑集很小</strong>：Hauser &amp; Wernerfelt (1990, <em>Journal of Consumer Research</em>) 汇总多个品类的数据发现，消费者真正纳入考虑的品牌只有个位数，远小于市面上可选的数量。</li>
+<li><strong>硬证据（有明确上限）· 单纯曝光</strong>：Zajonc (1968, <em>JPSP</em>) 发现仅仅是重复接触就能提高好感；Bornstein (1989, <em>Psychological Bulletin</em>) 的元分析确认效应真实，但同时指出<strong>它会饱和甚至反转</strong>——曝光过量后收益趋平，且对一开始就令人反感的刺激并不成立。所以「多露面」有用，但不是线性的，更不是刷屏的许可证。</li>
+<li><strong>较弱（行业估算，不是实验）· 「95-5」</strong>：Ehrenberg-Bass 研究所的 John Dawes 提出，任何时点约 5% 的 B2B 买家处在采购中。这个数是按品类平均购买周期倒推的模型估算，不是测量常数，不同品类差别极大（每年换的和七年换一次的完全不同）。当量级提醒用就好，别拿它算你自己的账——用你自己的合同周期粗算更靠谱。</li>
+</ul>
+<p class="caveat">边界：这条最容易被拿来给「没结果」找借口。区分方法：内容连一次真实对话都没换来过，那不是时点问题，是入口或人群问题（下一节）；时点问题长的是另一副样子——有人来找你了，但说「先了解一下，明年再说」。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>入口是一句具体到不像话的问题：流量和成交距离反着走
+<span class="en">The door is an absurdly specific question — traffic and closeness to a sale run opposite.</span></h2>
+<span class="tag">搜索即资格判定</span><span class="tag">一手信息</span><span class="tag">别押单一平台</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">入口不是靠热门词抢来的，是靠一句具体到不像话的问题捡到的。<strong>搜索框里的字自带资格判定</strong>：打「什么是 X」的人在学习，打「X 报错怎么修」「A 和 B 哪个划算」的人在当场解决问题。流量和成交距离几乎总是反着走——最大的词把同行、学生和好奇的人一起带来，最小的词一个月只来五个人，但那五个人正在痛。至于挑哪个渠道，判断标准只有一个：<strong>在这条路上，被你说服的人能不能直接找到你？</strong></div>
+</div>
+<div class="section">
+<div class="section-label">同一个人，四种搜法，四种身份</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 316" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">他在搜索框里打的字，已经替你做完了资格判定</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="32" y="46">他打出来的那句话</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="392" y="46">流量</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="552" y="46">他其实是谁</text>
+<rect fill="#f6e3da" height="40" rx="4" stroke="#c0603a" stroke-width="1.2" width="660" x="20" y="56"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="32" y="81">「什么是代理记账」</text>
+<rect fill="#c0603a" height="10" width="140" x="392" y="71"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="552" y="81">同行 · 学生</text>
+<rect fill="#faf0e2" height="40" rx="4" stroke="#c9925f" stroke-width="1.2" width="660" x="20" y="108"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="32" y="133">「小公司记账怎么做」</text>
+<rect fill="#c9925f" height="10" width="90" x="392" y="123"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="9.4" font-weight="700" x="552" y="133">在了解 · 还早</text>
+<rect fill="#eaf3ee" height="40" rx="4" stroke="#8aa79a" stroke-width="1.2" width="660" x="20" y="160"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="32" y="185">「个体户和公司哪个更划算」</text>
+<rect fill="#6f9a87" height="10" width="40" x="392" y="175"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="552" y="185">正在选 · 近了</text>
+<rect fill="#e2efdc" height="40" rx="4" stroke="#4e8a3f" stroke-width="1.5" width="660" x="20" y="212"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="32" y="237">「换了地址社保断了一个月怎么补」</text>
+<rect fill="#4e8a3f" height="10" width="14" x="392" y="227"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" font-weight="700" x="552" y="237">正在痛 · 今天</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="264" y2="264"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="284">最大的词带来读者，最小的词带来客户。一个月来五个人不是失败。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="306">选渠道只看一条：在这条路上，被你说服的人能不能直接找到你？</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 入口清单</span>
+<p>1. <strong>标题写成他会打出来的那句问句</strong>，能带上限定条件更好（人数、金额、场景）。「月流水 8 万以下」比「小微企业」精确得多。</p>
+<p>2. <strong>一篇只回答一个问题，并在开头三行内把答案给了</strong>。绕圈子的写法现在连被摘录的机会都没有。</p>
+<p>3. <strong>放只有你才有的东西</strong>：你自己的一手数据、你经手的具体数字、可核对的过程。二手总结的边际价值已经接近零——任何人都能一秒生成一篇。</p>
+<p>4. <strong>每篇留一条能直接找到你的路</strong>：一个邮箱，或一句「卡在哪一步可以直接问我」。别只留平台关注。</p>
+<p>5. <strong>别把入口全押在一个平台的推荐上</strong>，它的规则不归你管。<strong>指标也换掉</strong>：别数流量和排名，数「这个月产生了几次真实对话」——渠道会变，这个指标不会失效。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Doors aren't won by chasing high-volume terms; they're picked up from absurdly specific questions. What someone types has already done your qualifying: "what is X" is a student, "how do I fix X error" or "is A or B cheaper for me" is someone solving a problem right now. Volume and closeness to a sale run in opposite directions — the biggest phrase brings competitors, students and the curious, while the smallest brings five people a month who are actually in pain. So write the question the way he'd type it, add the qualifier (headcount, revenue, situation), answer one question per piece and give the answer in the first three lines. Put in what only you have — your own numbers, your own process, something checkable — because second-hand summaries are now worth roughly nothing when anyone can generate one in a second. Always leave a direct line back to you rather than a platform follow, never bet every door on one platform's recommender, and change your metric from traffic and rankings to real conversations started this month. Channels change; that number doesn't expire.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制一：搜索是一次自我筛选。他用的词泄露了他在哪个阶段，入口的精度不靠你判断，靠他自己打出来的字——跟资格判定那期是同一件事，只是这次他替你做完了。机制二（要用也要防）：写得越顺口的东西越容易被当成对的。</strong></p>
+<ul>
+<li><strong>硬证据（单一实验，方向有较广支持）· 流畅性会被误读成真实</strong>：Reber &amp; Schwarz (1999, <em>Consciousness and Cognition</em>) 发现同一句陈述，印刷对比度高、更容易看清时被判为「真」的比例更高；McGlone &amp; Tofighbakhsh (2000, <em>Psychological Science</em>) 发现押韵版本的格言比意思相同的不押韵版本被判为更准确。样本都不大，但「加工流畅性影响判断」这个方向有较广的后续支持。</li>
+<li><strong>这条同时是红线</strong>：把话写清楚是服务；但读者给你的信任有一部分来自「好读」，不是「对」。所以越流畅的地方越要自己回头核一遍数字和出处——让人容易懂是本分，让人因为容易懂就不再验证，是占便宜。</li>
+<li><strong>机制推理，不是实验 · 搜索词 = 购买阶段</strong>：这条我按机制推荐，没有干净的公开实验支持；广告平台的转化数据支持它，但那些数据自选择、原始样本也不公开。自己验一遍比任何行业报告都可信：把最近成交的十个客户当初怎么找到你的挨个问一遍。</li>
+</ul>
+<p class="caveat">边界与不确定：搜索结果页直接给答案的比例这几年在上升，靠「排到第一再被点进来」的路子更不稳了——这是我基于当下产品形态的判断，不是研究结论，别拿它当事实。更稳的推论只有一条：越是人人都能生成的内容越不值钱，越是只有你才有的一手信息越可能被引用。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 43 Action</h3>
+<p>90 分钟，把「我该写点什么」换成「一篇被真人验证过的东西 ＋ 一条能找到你的路」。</p>
+<div class="action">
+<strong>一（20 分钟）· 翻 10 次对话：</strong>把最近十次真实对话里对方的原话抄下来，标出出现三次以上的问题，挑一个。<strong>越觉得「这也要写？」越选它。</strong><br/><br/><strong>二（40 分钟）· 写一篇「怎么自己做」：</strong>完整步骤，包括你收费做的那一步；每步标上时间或钱；写清坑在哪。结尾只留一句「不想自己弄可以找我」。<br/><br/><strong>三（15 分钟）· 起标题：</strong>用他的原话 ＋ 一个触发场景或限定条件，别用行话。<br/><br/><strong>四（15 分钟）· 修一条路：</strong>建一个能直接联系的名单（邮箱最稳），并写死你多久发一次——宁可一个月一次。<br/><br/>边界提醒：inbound 的账期以季度计，别拿两周的数据下结论；在它起效之前，现金流还是从主动外联来（见找客户 prospecting 和冷邮件那两期）。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我从零开始，没受众没流量，写多久才能靠 inbound 拿到客户？</summary>
+<div class="answer">诚实的答案：慢，而且账期以季度计——如果有人告诉你三十天见效，他卖的是课不是结果。<br/><br/>但有个办法让这个等待不那么亏：<strong>把 inbound 写成你外联工作的副产品</strong>。你写的就是你本来已经在重复讲的那几段，写完立刻能贴进邮件、发给正在犹豫的客户、当作品用——即使一年没有陌生人找上门，这些时间也没白花。反过来，写「据说这个话题有流量」的东西，除了等排名没有第二个用途，一旦不涨就全亏。<br/><br/>还有一句不动听的实话：<strong>inbound 不是每个生意的渠道。</strong>如果你的客户一辈子只买一两次、且根本不搜索（很多本地服务就是这样），你真正的杠杆是转介绍，不是写文章。判断方法：问最近成交的十个客户当初怎么找到你的——答案里一个「搜到的」都没有，先别投入。</div>
+</details>
+<details>
+<summary>2. 把「怎么做」全公开，客户不就自己做了、不来找我了吗？</summary>
+<div class="answer">看你的品类里「知道」和「做到」之间隔多远。<br/><br/><strong>距离小</strong>——一个模板、三个步骤就能替代你——你确实会掉一部分单。但坏消息不是公开，是你的价值本来就薄：这种业务迟早被别人的教程或一个工具替掉，公开只是让你提前半年知道，还来得及往上走一层。<br/><br/><strong>距离大</strong>——要时间、要设备、要资质、要有人担风险——公开是净赚。读者看完完整流程，最常见的反应不是「我也能做」，是「原来这么多坑，还是找个每天做这个的人」。<br/><br/>还有一个常被算错的账：<strong>照着做成功的人本来就不会付钱。</strong>他们不是流失的客户，是免费的传播者——他照你的方法做成了，会在别人问起时说出你的名字，而名字出现在别人嘴里比你自己说一百遍管用。当然，代价是真实的：确实会有一小部分本来会付钱的人自己做了。这就是这个打法的价钱，换回的是规模和信任。</div>
+</details>
+<details>
+<summary>3. 现在搜索结果直接给答案，点击都被吃掉了，还值得写吗？</summary>
+<div class="answer">先说清楚我不确定的部分：入口形态正在变，没人有可靠数据说三年后流量怎么分。跟你打包票的人都在猜。<br/><br/>但有两条推论比较稳。<strong>一、可复制的二手内容在贬值，一手的具体信息在升值。</strong>「什么是 X」的科普稿一秒能生成一万篇，边际价值趋近于零；而「我经手的这 40 单里，有 11 单卡在同一处，数据在这里」——没有第二个人写得出来，它既更容易被引用，也更容易让人想找你聊。<strong>二、别把入口押在任何单一平台上</strong>，包括搜索。至少要有一个你自己拥有的地址，那是唯一不会被别人改规则切断的连接。<br/><br/>还有一个更实际的调整：<strong>把指标从流量换成「这个月产生了几次真实对话」。</strong>流量随平台规则起落，真实对话不会。按这个指标，一篇只带来五个人、其中两个来找你聊的文章，远强过一篇十万阅读、零对话的。所以答案不是停写，是<strong>少写、写只有你能写的那种</strong>。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 43</footer>
+</div>
+</body>
+</html>
