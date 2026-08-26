@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 44: SaaS &amp; Product-Led Growth</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 44 · Phase G</div>
+<h1>The product can sell for you — but only if it finishes all four jobs on its own</h1>
+<div class="meta"><span>PLG vs sales-led · freemium · trial conversion · net revenue retention</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">Freemium isn't a marketing tactic. It's a pricing decision — which slice of value you give away forever, and where he starts hitting a wall.</div>
+</header>
+<div class="intro">
+<strong>Subscription businesses split selling in two: half moves into the product and runs itself, half stays with people. The hard parts are drawing that line, and making the money still grow in year two.</strong> One move per part. <strong>One, count how many of selling's four jobs the product can finish alone.</strong> <strong>Two, cut the free tier along the axis where the better it works for him, the sooner it runs out.</strong> <strong>Three, a trial's real opponent is "no time this week," not a competitor.</strong> <strong>Four, tie the price to a unit that grows as the customer grows</strong> — because the money is in year two and year three.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Don't ask "should we do PLG." Ask how many of selling's four jobs the product can finish alone.
+<span class="en">PLG doesn't delete the selling. It moves it into the product.</span></h2>
+<span class="tag">the four jobs</span><span class="tag">time to first success</span><span class="tag">user ≠ payer</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">A sale always requires four things done by somebody: <strong>find out where he's stuck, get him to trust you, prove the thing actually works for him, and ask for the money</strong>. Product-led growth doesn't delete those four — it moves them into the product: onboarding does the asking, one free run does the trusting, running his own data through it does the proving, and hitting a usage wall does the asking for money. So there's only one test: <strong>with nobody holding his hand, can a stranger get one real success by himself?</strong> If he can't, PLG hasn't saved you anything — it has moved the cost from a salesperson's salary to your churn rate, and churn doesn't send you an invoice.</div>
+</div>
+<div class="section">
+<div class="section-label">Let the product run it, or send a person?</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">The dividing line isn't price — it's how complicated the decision is</text>
+<line marker-end="url(#a1)" stroke="#8a9a90" stroke-width="1.4" x1="150" x2="150" y1="298" y2="44"></line>
+<line marker-end="url(#a1)" stroke="#8a9a90" stroke-width="1.4" x1="150" x2="670" y1="298" y2="298"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" x="20" y="62">↑ the user IS</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" x="20" y="76">the one who pays</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" x="20" y="270">↓ procurement /</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" x="20" y="284">legal / IT in between</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" x="164" y="318">← first success takes minutes</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="end" x="668" y="318">weeks · integration · other people →</text>
+<line stroke="#cbb98f" stroke-dasharray="4 4" stroke-width="1" x1="410" x2="410" y1="44" y2="298"></line>
+<line stroke="#cbb98f" stroke-dasharray="4 4" stroke-width="1" x1="150" x2="670" y1="170" y2="170"></line>
+<rect fill="#e2efdc" height="102" rx="5" stroke="#4e8a3f" stroke-width="1.5" width="240" x="162" y="56"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.4" font-weight="700" x="176" y="78">Pure self-serve · full PLG</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="98">A free tier and a usage wall do it all.</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="116">No room for a rep here: one seller's</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="134">annual cost takes hundreds of small</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="152">subscriptions to cover.</text>
+<rect fill="#eaf3ee" height="102" rx="5" stroke="#8aa79a" stroke-width="1.2" width="248" x="418" y="56"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.4" font-weight="700" x="432" y="78">Free tier, then a human takes over</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="98">He wants it, can't get it running alone.</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="116">The product gives the first taste; a</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="134">person moves him from interesting</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="152">to in production. Usage picks who.</text>
+<rect fill="#faf0e2" height="102" rx="5" stroke="#c9925f" stroke-width="1.2" width="240" x="162" y="182"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="10.4" font-weight="700" x="176" y="204">Self-serve in, sales closes</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="224">Let the actual users start free; when</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="242">several accounts appear in one team,</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="260">a rep goes in for the company deal —</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="278">not to argue it's worth trying.</text>
+<rect fill="#f6e3da" height="102" rx="5" stroke="#c0603a" stroke-width="1.5" width="248" x="418" y="182"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.4" font-weight="700" x="432" y="204">Sales-led · don't force a free tier</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="224">Integration, config and a security</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="242">review are mandatory. A free tier here</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="260">only mass-produces accounts that</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="278">never ran — and you clean it up.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · who owns each of the four jobs</span>
+<p>Write these four lines down and fill one box each: <strong>is a person doing it, or the product?</strong></p>
+<p>1. <strong>Find out where he's stuck</strong> ｜ product version: the two required questions at sign-up, plus what he clicked in his first three days.</p>
+<p>2. <strong>Get him to trust you</strong> ｜ product version: one free run. It's the cheapest and strongest trust there is — he doesn't have to believe you, he believes what he just saw.</p>
+<p>3. <strong>Prove it works</strong> ｜ product version: he runs <strong>his own data</strong> through it once. Running your sample doesn't count; that only proves your sample is good.</p>
+<p>4. <strong>Ask for the money</strong> ｜ product version: the moment he hits the usage wall. A product asking is never awkward and never mistimes it — but it has no flexibility, which is why where you build the wall is the next move.</p>
+<p><strong>All four say "person"</strong> → move the easiest one into the product (usually #3). <strong>All four say "product" but conversion is bad</strong> → move one back to a person (usually #4: someone says a sentence when he hits the wall).</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: who does those four jobs isn't set by your preference, it's set by two facts — whether the user is the person who pays, and how long a first success takes. The moment somebody your product can never touch stands in the middle (procurement, legal, the boss who signs), that stretch has to be walked by a human.</strong></p>
+<ul>
+<li><strong>Unit economics — arithmetic, not research</strong>: a product at a few hundred a year can't support anyone chasing the deal; one salesperson's fully loaded annual cost takes hundreds of small subscriptions to cover. And something at six figures rarely closes fully self-serve, because the buyer's own compliance process needs a human on your side. You can check this reasoning against your own numbers without trusting anybody.</li>
+<li><strong>Industry report, self-selected sample, read as a trend only</strong>: the usual source for "more and more companies are product-led" is OpenView's annual PLG report, running since 2019. It's an investor's industry observation — self-selected sample, definitions that shift year to year, no peer review. I'm citing it to label its weight: it can tell you where things are moving; it can't be evidence that you should do the same.</li>
+<li><strong>Industry research, moderate strength</strong>: Gartner reports repeatedly that a typical B2B purchase involves 6–10 people in the decision. This kind of research doesn't publish its sampling and isn't reproducible, but the direction matches what anyone selling B2B sees: <strong>the more deciders, the less any product can close on its own</strong> — at best it convinces one of them.</li>
+</ul>
+<p class="caveat">A boundary: don't read this as "cheap means PLG, expensive means sales." The real divider is decision complexity; price is only its shadow. There are cheap things that are nearly impossible to self-serve (a small tool that must be wired into a legacy system) and expensive things that get bought self-serve every day (usage-billed infrastructure an engineer opens with a card).</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>Cut the free tier along the axis where the better it works for him, the sooner it runs out
+<span class="en">Where you cut the free tier is a pricing decision, not a marketing one.</span></h2>
+<span class="tag">a pricing decision</span><span class="tag">the right axis</span><span class="tag">endowment effect</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Freemium — a permanently free base tier plus paid upgrades — dies two ways: cut too deep and he's blocked before he ever gets one real success; cut too loosely and he never hits the wall at all. The escape isn't tuning the ratio, it's <strong>changing the axis</strong>. Don't cut by "how advanced a feature feels" — he won't miss what he doesn't use. Cut by <strong>a unit that grows as he succeeds</strong>: people using it together, things stored, messages sent, money handled. On that axis, the better it works the more certainly he hits the wall — and by the time he does, he no longer wants to move house.</div>
+</div>
+<div class="section">
+<div class="section-label">Same user, wall built on two different axes</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Build the wall on the wrong axis and he never reaches it</text>
+<rect fill="#fdf6f2" height="240" rx="6" stroke="#e0cfc0" stroke-width="1" width="320" x="14" y="40"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.6" font-weight="700" x="30" y="62">Cut by "how advanced it feels"</text>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.3" x1="52" x2="52" y1="248" y2="76"></line>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.3" x1="52" x2="322" y1="248" y2="248"></line>
+<line stroke="#c0603a" stroke-dasharray="5 4" stroke-width="1.6" x1="52" x2="318" y1="92" y2="92"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" x="60" y="86">Paywall: reports / permissions / SSO</text>
+<polyline fill="none" points="60,240 110,228 165,216 225,206 310,196" stroke="#4e8a3f" stroke-width="2.2"></polyline>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" x="112" y="188">the one thing he actually uses</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="212" y="243">how long he's used it →</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="30" y="268">still enough however well it goes → free forever</text>
+<rect fill="#f5faf5" height="240" rx="6" stroke="#c3d8c8" stroke-width="1" width="330" x="356" y="40"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.6" font-weight="700" x="372" y="62">Cut by "a unit that grows with him"</text>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.3" x1="394" x2="394" y1="248" y2="76"></line>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.3" x1="394" x2="674" y1="248" y2="248"></line>
+<line stroke="#1f7a5c" stroke-dasharray="5 4" stroke-width="1.6" x1="394" x2="670" y1="152" y2="152"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" x="402" y="146">Free allowance: 3 collaborators / 500 sends</text>
+<polyline fill="none" points="402,240 452,216 512,186 566,148 660,96" stroke="#4e8a3f" stroke-width="2.2"></polyline>
+<circle cx="571" cy="152" fill="#fbfaf4" r="6.5" stroke="#c0603a" stroke-width="2.2"></circle>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="470" y="122">hitting the wall = upgrade day</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="554" y="243">how long he's used it →</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="372" y="268">the better it works, the more certainly he hits it</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Template · three questions that draw the line</span>
+<p>1. <strong>Can the free tier get him one real success alone?</strong> If not, put whatever blocks him back on the free side. People who never succeeded don't upgrade, they disappear — and you never even get to ask why.</p>
+<p>2. <strong>What will he inevitably need once he succeeds?</strong> That's where payment belongs. The test: say the sentence "you'll start paying when you <em>____</em>." The blank has to take a <strong>good thing</strong> — more people, more orders, more volume. If it only takes a bad or irrelevant one (wanting to export, wanting a different theme), the axis is wrong.</p>
+<p>3. <strong>How much of his own stuff is in there when he hits the wall?</strong> Data, settings, habits, colleagues he invited — that's the real reason to upgrade. So the free period's job isn't showing features, it's <strong>getting him to put things in</strong>; anything he could set up himself, don't set up for him.</p>
+<p><strong>The reverse case</strong>: if all three answers come easily and free users still don't upgrade, don't cut the free tier — most likely the thing he does in your product simply doesn't grow. That's a product problem, not a pricing one.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: the free period isn't marketing, it's getting him to put things into the product. Once they're in, "not upgrading" changes category in his head — it stops being "missing out on a benefit" and becomes "losing what I already have," and those two carry very different prices.</strong></p>
+<ul>
+<li><strong>Hard evidence (classic, methodologically contested) · the endowment effect</strong>: Kahneman, Knetsch &amp; Thaler (1990, <em>Journal of Political Economy</em>) found that people randomly given a mug asked roughly twice what people without one were willing to pay. The dispute has to be stated: Plott &amp; Zeiler (2005, <em>American Economic Review</em>) showed that with improved procedure — proper practice rounds, anonymous bidding — the effect shrinks sharply or vanishes. So use it as "real, but the size depends on the setting," not as a law.</li>
+<li><strong>Hard evidence (neural, single study) · gains and losses aren't symmetric</strong>: Tom, Fox, Trepel &amp; Poldrack (2007, <em>Science</em>) used fMRI to show that for equal-sized potential gains and losses, activity in the <strong>ventral striatum and ventromedial prefrontal cortex</strong> fell more steeply with losses than it rose with gains — losses weigh more inside the reward circuit. Small sample (16 people), and replication of "neural loss aversion" is contested, so treat it as a mechanistic clue rather than settled fact.</li>
+<li><strong>Several experiments, moderate effect · what you built yourself is worth more</strong>: Norton, Mochon &amp; Ariely (2012, <em>Journal of Consumer Psychology</em>) — the "IKEA effect": people value objects they assembled themselves significantly above identical pre-built ones. In a product: letting a new user configure his own workflow is worth more than configuring it for him, even though doing it for him makes your onboarding numbers look better.</li>
+</ul>
+<p class="caveat">Where the red line runs: the same mechanism can make someone reluctant to leave a product that genuinely helps him, or simply make leaving hard. The practical test — <strong>can he export all his data in one click?</strong> If yes, your stickiness comes from value. If no, that isn't stickiness, it's a locked door. Also, the endowment effect is strongest for <strong>what he already has</strong>: cutting an existing user's allowance provokes far more backlash than a new user seeing the same small free tier.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>A trial's real opponent isn't a competitor. It's "no time this week."
+<span class="en">A trial converts on one real job finished — not on features seen.</span></h2>
+<span class="tag">empty state</span><span class="tag">default effect</span><span class="tag">correlation ≠ cause</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">In a 14-day trial, most of the people who don't convert didn't compare you with a competitor and pick them — <strong>they never started</strong>. So trial design has exactly one goal: get him to run <strong>his own real work</strong> through it in the first few days, even a small slice of it. Three levers, strongest first: <strong>one, kill the empty state</strong> — open onto a sample that's already loaded and running, not a "new project" button; <strong>two, set the defaults to the path you want him on</strong>, so he isn't re-deciding at every step; <strong>three, push one action</strong> — a five-step tour is a zero-step tour.</div>
+</div>
+<div class="section">
+<div class="section-label">Same 14 days, two ways through</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#b0a898"></path>
+</marker>
+<marker id="c2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Churn happens before he starts, not after he compares</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="20" y="52">Empty state · five-step tour</text>
+<rect fill="#f6e3da" height="34" rx="4" stroke="#c0603a" stroke-width="1.2" width="86" x="56" y="64"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="99" y="85">sign up</text>
+<line marker-end="url(#c1)" stroke="#b0a898" stroke-width="1.3" x1="144" x2="176" y1="81" y2="81"></line>
+<rect fill="#f6e3da" height="34" rx="4" stroke="#c0603a" stroke-width="1.2" width="96" x="178" y="64"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="226" y="85">a blank page</text>
+<line marker-end="url(#c1)" stroke="#b0a898" stroke-width="1.3" x1="276" x2="308" y1="81" y2="81"></line>
+<rect fill="#f6e3da" height="34" rx="4" stroke="#c0603a" stroke-width="1.2" width="110" x="310" y="64"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="365" y="85">"when I have time"</text>
+<line marker-end="url(#c1)" stroke="#b0a898" stroke-dasharray="4 4" stroke-width="1.3" x1="422" x2="524" y1="81" y2="81"></line>
+<rect fill="#efe4dc" height="34" rx="4" stroke="#a8907e" stroke-width="1.2" width="146" x="526" y="64"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="9.4" text-anchor="middle" x="599" y="85">expired · never ran once</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" x="20" y="146">Sample data · defaults · one action</text>
+<rect fill="#e2efdc" height="34" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="86" x="56" y="158"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="99" y="179">sign up</text>
+<line marker-end="url(#c2)" stroke="#4e8a3f" stroke-width="1.3" x1="144" x2="176" y1="175" y2="175"></line>
+<rect fill="#e2efdc" height="34" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="96" x="178" y="158"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="226" y="179">result in 3 min</text>
+<line marker-end="url(#c2)" stroke="#4e8a3f" stroke-width="1.3" x1="276" x2="308" y1="175" y2="175"></line>
+<rect fill="#e2efdc" height="34" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="110" x="310" y="158"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="365" y="179">swaps in his data</text>
+<line marker-end="url(#c2)" stroke="#4e8a3f" stroke-width="1.3" x1="422" x2="454" y1="175" y2="175"></line>
+<rect fill="#e2efdc" height="34" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="86" x="456" y="158"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="499" y="179">adds a teammate</text>
+<line marker-end="url(#c2)" stroke="#4e8a3f" stroke-width="1.3" x1="544" x2="576" y1="175" y2="175"></line>
+<rect fill="#cfe6c6" height="34" rx="4" stroke="#3f6d2f" stroke-width="1.5" width="96" x="578" y="158"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="626" y="179">renews on expiry</text>
+<line stroke="#cbb98f" stroke-width="1" x1="20" x2="680" y1="212" y2="212"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="99" y="230">Day 1</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="226" y="230">Day 1</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="365" y="230">Day 2–3</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="499" y="230">Day 5</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="626" y="230">Day 14</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="256">Both paths have identical features. The only difference is the first screen: an empty button, or something already running.</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="278">So the trial metric isn't "how many features he tried" — it's "has he finished one real job."</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Script · the day-3 trial email</span>
+<p><strong>Don't write</strong>: "11 days left in your trial — go explore all our features!" That email reminds him of exactly one thing: he owes you something he hasn't done, and the first reaction to owing something is avoidance.</p>
+<p><strong>Rewrite it as doing the work for him</strong>: "I see you imported {his real data} but haven't run your first {core action} yet. It's about five minutes: {one sentence on how}. If you're stuck on {the most common trap}, reply and I'll just set it up for you."</p>
+<p><strong>Why that one lands</strong>: it acknowledges what he already did, asks for one action, gives a time budget (five minutes is more credible than "go explore"), and drops the reply threshold to a sentence.</p>
+<p><strong>The near-expiry email shouldn't just count days</strong>: offer an extension on the condition that <strong>he tells you where he got stuck</strong>. What you get back is worth more than the deal — it's the most honest user interview available, and the people who reply are the ones most likely to pay.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: defaults and samples work not because people are lazy, but because every place that requires a fresh decision costs attention — and someone in a trial has no attention budget to spend. A default drops the decision cost to zero, and a sample turns "start from nothing" into "change this a bit," which is an order of magnitude easier to begin.</strong></p>
+<ul>
+<li><strong>Hard evidence (classic, strong) · the default effect</strong>: Johnson &amp; Goldstein (2003, <em>Science</em>) compared organ donation consent across European countries: where the default was "not enrolled, opt in if you want" (Germany, for instance) consent sat around a tenth of the population, while where the default was "enrolled, opt out if you don't" (Austria and others) it ran near 99%. Same decision, only the default changed, and the gap is close to an order of magnitude; the authors reproduced the same direction in a controlled experiment.</li>
+<li><strong>The boundary (important)</strong>: the default effect is strongest when the decision is hard, the consequences are distant and the person's own motivation is low. On something he cares about and understands well, it gets small. Don't expect a default to sell him something he doesn't want — it only saves him effort at forks he was indifferent about.</li>
+<li><strong>The red line</strong>: the same mechanism can reduce friction or keep people who never noticed they stayed (auto-renew pre-ticked, cancellation buried three levels down). The test is the old one: <strong>would he feel tricked if he found out later?</strong> If yes, don't — what you make on that charge is far less than what it costs when he tells people about it.</li>
+<li><strong>One honest word about activation thresholds</strong>: the famous numbers you've read — "10 friends in 7 days," "2,000 messages" — trace back to talks and interviews, not checkable papers, and worse, they're <strong>correlations</strong>: someone who already intended to stay naturally does more of everything. Copying another company's number is meaningless. Do it properly: compare what stayers and leavers did in their first 7 days, find the <strong>pushable</strong> action with the widest separation, then A/B test whether pushing it actually raises retention. Skip that test and you're probably pushing people toward something that changes nothing.</li>
+</ul>
+<p class="caveat">What I'm unsure about: I've seen no clean public experiment on which categories benefit most from sample data — my basis is the mechanism and first-hand observation, not research. One thing is certain, though: <strong>the empty state is a measurable drop-off point</strong>, so go look at the bounce rate on that exact step.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>The money is in year two and three, so the price has to grow with the customer
+<span class="en">Net revenue retention is the only number that compounds on its own.</span></h2>
+<span class="tag">NRR</span><span class="tag">the billing unit</span><span class="tag">status quo bias</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">NRR (net revenue retention) = what the same cohort of existing customers pays you this year ÷ what they paid last year, counting upgrades, downgrades and churn but <strong>never new logos</strong>. It's the one number that grows by itself: at 100% you tread water without new sales; at 120% revenue rises even if you never sign anyone again. The route above 100% isn't nagging customers to upgrade, it's <strong>tying the price to a unit that grows as they succeed</strong> — the same axis your free tier should be cut on. Charge a flat price per company and their growth is none of your business; charge by seats, usage or volume handled and you grow when they do.</div>
+</div>
+<div class="section">
+<div class="section-label">Revenue five years on, with zero new customers</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="e1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">One more deal is addition. Getting the billing unit right is multiplication.</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="44">↑ revenue from this same cohort (year 0 = 100)</text>
+<line marker-end="url(#e1)" stroke="#8a9a90" stroke-width="1.4" x1="70" x2="70" y1="280" y2="52"></line>
+<line marker-end="url(#e1)" stroke="#8a9a90" stroke-width="1.4" x1="70" x2="668" y1="280" y2="280"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="70" y="298">Year 0</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="184" y="298">Year 1</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="298" y="298">Year 2</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="412" y="298">Year 3</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="526" y="298">Year 4</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="640" y="298">Year 5</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="70" x2="640" y1="191.5" y2="191.5"></line>
+<polyline fill="none" points="70,191.5 184,173.8 298,152.6 412,127.1 526,96.6 640,59.9" stroke="#1f7a5c" stroke-width="2.6"></polyline>
+<polyline fill="none" points="70,191.5 640,191.5" stroke="#8f5a22" stroke-dasharray="6 4" stroke-width="2"></polyline>
+<polyline fill="none" points="70,191.5 184,200.4 298,208.3 412,215.5 526,222 640,227.8" stroke="#c0603a" stroke-width="2.4"></polyline>
+<circle cx="640" cy="59.9" fill="#1f7a5c" r="4"></circle>
+<circle cx="640" cy="191.5" fill="#8f5a22" r="4"></circle>
+<circle cx="640" cy="227.8" fill="#c0603a" r="4"></circle>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" x="424" y="80">NRR 120% → 249 by year 5</text>
+<text fill="#8f5a22" font-family="Georgia" font-size="10" font-weight="700" x="424" y="185">NRR 100% → still 100</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="424" y="248">NRR 90% → down to 59</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="316">Below 100%, part of every new deal is just patching the bucket. Fix the bucket, then add water.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<ul class="checklist">
+<li><strong>Calculate your real NRR once</strong>: take last year's customer list as of this month, and divide what they paid this month by what they paid a year ago. Don't include new customers — that's self-deception.</li>
+<li><strong>Find your billing unit</strong>: write the sentence "the more successful the customer, the bigger <em>____</em> gets." If you can't fill it in, your pricing can't participate in your customer's growth and your NRR ceiling is 100%.</li>
+<li><strong>Fix the downgrade path</strong>: a customer who can downgrade doesn't churn, he shrinks. A customer whose only options are renew-or-don't disappears the moment budgets tighten. Downgrades feel bad; what they save is the whole relationship.</li>
+<li><strong>Separate two kinds of NRR</strong>: the kind built on price increases and the kind grown from usage. The first takes revenge at renewal; only the second compounds.</li>
+<li><strong>Watch the customer count alongside it</strong>: high NRR with a shrinking number of accounts means you're getting more entangled with a few big customers. That's concentration risk, not achievement.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism one is arithmetic: NRR multiplies, it doesn't add. 90% leaves 59 after five years; 120% reaches 249 — same cohort, four times apart. Mechanism two is psychological: renewals are easier than new sales largely because not moving is the cheapest option, not because the customer loves you more.</strong></p>
+<ul>
+<li><strong>Hard evidence (classic, direction well supported) · status quo bias</strong>: Samuelson &amp; Zeckhauser (1988, <em>Journal of Risk and Uncertainty</em>) found that when one option in a set is labelled "the one you're already on," it gets chosen significantly more often; the authors also saw the same inertia in real retirement- and health-plan choices, and found that <strong>the more options there are, the stronger the pull to stay put</strong>. That explains two things at once: why existing customers' money really is easier to earn, and why adding tiers can freeze people in place instead of moving them up.</li>
+<li><strong>Unreliable-citation warning</strong>: "keeping a customer is 5–25× cheaper than acquiring one" is everywhere, but it doesn't trace to a checkable original study and the definition is never stated (which businesses? does expansion count?). <strong>Don't build on it.</strong> Your own books answer the question directly: the same cohort's net revenue in year two ÷ year one. That number beats any industry multiple, because it's yours.</li>
+<li><strong>The red line</strong>: status quo bias can be used to remove friction (auto-renew so he doesn't re-sign every year) or to make him forget to cancel (two steps to subscribe, five to leave). In many places that line is now a legal question, not only an ethical one. The safe version: <strong>send a reminder before the charge, with one-click cancellation in it.</strong> You lose a small slice of revenue you'd have got from forgetfulness, and you avoid the resentment that otherwise detonates all at once at renewal.</li>
+</ul>
+<p class="caveat">Boundaries and definitions: NRR only applies where customers can renew and expand on their own — one-off projects, perpetual licences and on-premise deployments don't fit, so don't force it. Cross-company comparison is limited too: whether downgrades count, which cohort is used, how currencies are converted all differ, so don't treat somebody's published figure as your benchmark. There's only one useful comparison: your own last quarter.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 44 Action</h3>
+<p>Two hours to land these four on whatever you're actually selling — software or not.</p>
+<div class="action">
+<strong>One (30 min) · The four-jobs table:</strong> write the four rows — find the pain, build trust, prove it works, ask for the money — and mark whether a person or the product does each today. All person → move the easiest one into the product. All product but converting badly → move one back to a person.<br/><br/><strong>Two (20 min) · Find your axis:</strong> write the sentence "the more successful the customer, the bigger ____ gets." That one line decides both where the free tier gets cut and whether your price can grow with him.<br/><br/><strong>Three (40 min) · Walk through as a brand-new account:</strong> sign-up to first real success, with a stopwatch. For every step over 10 minutes ask whether it can be pre-filled, sampled, or deleted outright.<br/><br/><strong>Four (30 min) · Calculate real NRR:</strong> last year's customers as of this month, and what they paid this month. Under 100%, don't spend more on acquisition yet — the bucket is leaking.<br/><br/>A boundary: all of this assumes customers who renew and expand by themselves. If you sell one-off projects, perpetual licences or on-premise software, skip the fourth job entirely rather than forcing a metric that doesn't belong to your business model.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. We sell six-figure enterprise software. Does any of this apply to us?</summary>
+<div class="answer">Yes, but not as "switch to free self-serve."<br/><br/>What applies is the part where the product walks one stretch of the sale by itself: build a small tool or a sandbox the actual user can run without anyone holding his hand, and let him get one success in it. The order then flips — instead of convincing the payer first and rolling it down to the users, you let the users have something to say and let them convince the payer for you. And when your rep does walk in, the conversation isn't "is this worth trying," it's "how do we roll it out."<br/><br/>What you shouldn't force is freemium. If your thing requires integration, configuration and a security review, a free tier only mass-produces accounts that never got running — they won't pay, and they'll tell people "I tried it, it didn't work." <strong>One test decides it</strong>: can the user, with nobody helping, get one meaningful small thing done in 30 minutes? If not, skip the free tier and run a guided pilot instead.</div>
+</details>
+<details>
+<summary>2. Free users never upgrade. Should we make the free tier thinner?</summary>
+<div class="answer">First separate which kind of non-upgrader, because the three need opposite treatments.<br/><br/><strong>One: those who never succeeded.</strong> Cutting won't help — they aren't economising, they never got it working. A thinner tier only lowers the success rate further and turns "didn't upgrade" into "never heard of you." What they need is a shorter path to first success, not a higher wall.<br/><br/><strong>Two: those using it happily who never hit the wall.</strong> That means the wall is on the wrong axis: either the thing they do in your product simply doesn't grow, or you cut by how advanced features feel and they don't want that advancement. Change the billing unit, not the ratio.<br/><br/><strong>Three: those who will never pay but bring people.</strong> Accept them. Their value is carrying your name into the next company they join — they're a channel, not a cost.<br/><br/>And one piece of ballast: <strong>cutting the free tier is the least reversible move on the list.</strong> Taking back an allowance existing users already have provokes far more backlash than a new user seeing an identically small tier — that's loss aversion. If you must tighten, apply the new rules to new accounts only.</div>
+</details>
+<details>
+<summary>3. Should the trial be 14 days or 30?</summary>
+<div class="answer">That question almost always points the wrong way. The right one is: <strong>how long does one real piece of work take him, and does he have to wait on anyone or on some cycle?</strong><br/><br/>For something one person can finish in a day, 14 days is already too long — the main side effect of a long trial is that nothing feels urgent, so he puts it off until the last day and then it expires without ever starting. Conversely, if he needs colleagues involved, or has to wait for a monthly cycle (a month-end close, a monthly report), 14 days can't work: the thing he'd actually use it for hasn't happened yet this month.<br/><br/>So the more useful version is <strong>don't count days, count whether he's completed that one run</strong>: someone moving fast should see the upgrade prompt on day 3, when the value is most vivid, not on day 14 when he's forgotten; someone stuck gets one extension in exchange for telling you where he's stuck — which is the most honest user interview you'll ever get, and the people who reply are the likeliest to pay.<br/><br/>If you want a starting value: 7–14 days for products that produce a result the same day, 30 for anything depending on a cycle or on several people. <strong>That's experience, not a research finding</strong> — change it once you have your own data.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 44</footer>
+</div>
+</body>
+</html>

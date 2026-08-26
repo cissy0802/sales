@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 44：SaaS 与产品驱动增长</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 44 · Phase G</div>
+<h1>产品能替你卖，前提是它自己能做完销售的那四件事</h1>
+<div class="meta"><span>主题：PLG vs 销售驱动 · 免费增值 · 试用转化 · 扩张收入 NRR</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">免费增值不是获客手段，是一次定价决策——你在决定把哪一块价值永久送人，以及他从哪里开始必然撞墙。</div>
+</header>
+<div class="intro">
+<strong>SaaS 把销售劈成两半：一半搬进产品里自己跑，一半留给人；难的是划这条线，以及让钱在第二年还长得出来。</strong>四个动作各解一段：<strong>一、先看销售的四件事产品能自己做完几件</strong>；<strong>二、免费的边界要切在「他越成功越不够用」的那根轴上</strong>；<strong>三、试用期真正的对手是「这周没时间」，不是竞品</strong>；<strong>四、把价格绑在一个会跟着客户一起长大的计量单位上</strong>——SaaS 的钱在第二年、第三年。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>别问「要不要做 PLG」，问「销售的这四件事，产品能自己做完几件」
+<span class="en">PLG doesn't delete the selling. It moves it into the product.</span></h2>
+<span class="tag">四件事</span><span class="tag">首次成功要多久</span><span class="tag">使用者≠掏钱的人</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">一笔生意能成，永远得有人做完四件事：<strong>问清他卡在哪、让他信、证明这东西对他真有用、开口要钱</strong>。PLG（product-led growth，产品驱动增长）不是把这四件事省掉，是把它们搬进产品里——引导流程替你问，免费用一次替你建立信任，他拿自己的数据跑通替你证明，撞到用量墙那一刻替你开口。所以判断标准只有一条：<strong>没有人陪着，一个陌生用户能不能自己拿到一次真实的成功？</strong>做不到，PLG 只是把成本从销售工资挪到了流失率上——而流失不开发票，你在账上看不见它。</div>
+</div>
+<div class="section">
+<div class="section-label">该让产品自己跑，还是该派人去？</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">分界不是客单价，是「决策有多复杂」——客单价只是它的影子</text>
+<line marker-end="url(#a1)" stroke="#8a9a90" stroke-width="1.4" x1="150" x2="150" y1="298" y2="44"></line>
+<line marker-end="url(#a1)" stroke="#8a9a90" stroke-width="1.4" x1="150" x2="670" y1="298" y2="298"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" x="24" y="62">↑ 使用者就是</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" x="24" y="76">掏钱的那个人</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" x="24" y="270">↓ 中间隔着</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" x="24" y="284">采购 / 法务 / IT</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" x="176" y="318">← 几分钟就能拿到第一次成功</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="end" x="668" y="318">要几周 · 要集成 · 要拉人 →</text>
+<line stroke="#cbb98f" stroke-dasharray="4 4" stroke-width="1" x1="410" x2="410" y1="44" y2="298"></line>
+<line stroke="#cbb98f" stroke-dasharray="4 4" stroke-width="1" x1="150" x2="670" y1="170" y2="170"></line>
+<rect fill="#e2efdc" height="102" rx="5" stroke="#4e8a3f" stroke-width="1.5" width="240" x="162" y="56"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10.4" font-weight="700" x="176" y="78">纯自助 · 完整 PLG</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="98">免费版 + 用量墙就够了。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="116">这里养不起跟单的人：一个</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="134">销售一年的成本，要几百单</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="152">小额年费才摊得平。</text>
+<rect fill="#eaf3ee" height="102" rx="5" stroke="#8aa79a" stroke-width="1.2" width="248" x="418" y="56"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.4" font-weight="700" x="432" y="78">免费版 + 有人接手</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="98">他想用，但一个人跑不起来。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="116">产品负责让他先尝到，人负责</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="134">把他从「有意思」推到「上线」。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="152">用量信号决定谁值得派人。</text>
+<rect fill="#faf0e2" height="102" rx="5" stroke="#c9925f" stroke-width="1.2" width="240" x="162" y="182"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="10.4" font-weight="700" x="176" y="204">自助起量 · 销售收口</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="224">让实际使用者先免费用起来，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="242">等一个团队里冒出好几个账号，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="260">再由销售去谈全公司那一单。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="278">进场时不必再谈值不值得试。</text>
+<rect fill="#f6e3da" height="102" rx="5" stroke="#c0603a" stroke-width="1.5" width="248" x="418" y="182"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.4" font-weight="700" x="432" y="204">销售驱动 · 别硬做免费版</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="224">必须集成、必须调、必须过审。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="242">免费版在这里只会造出一堆</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="260">永远跑不起来的失败样本，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="432" y="278">最后还得你派人去收拾。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 四件事归属表</span>
+<p>把这四行写下来，每行只填一格：<strong>现在是「人」在做，还是「产品」在做</strong>。</p>
+<p>1. <strong>问清他卡在哪</strong> ｜ 产品版：注册时那两个必填问题、以及他前三天点了什么。</p>
+<p>2. <strong>让他信</strong> ｜ 产品版：免费用一次。这是最便宜也最强的信任——他不用信你，他信自己刚才看见的。</p>
+<p>3. <strong>证明真有用</strong> ｜ 产品版：他<strong>拿自己的数据</strong>跑通一次。用你的样例跑通不算，那只证明你的样例是好的。</p>
+<p>4. <strong>开口要钱</strong> ｜ 产品版：撞到用量墙的那一刻。产品开口的好处是不尴尬、不挑时间，坏处是没有弹性——所以墙砌在哪儿是下一节的事。</p>
+<p><strong>四行全是「人」</strong> → 挑最容易的一件搬进产品（通常是第 3 件）。<strong>四行全是「产品」但转化很差</strong> → 挑一件搬回给人（通常是第 4 件：撞墙时让人接一句话）。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Every sale still needs four things done: find out where he's stuck, get him to trust you, prove the thing actually works for him, and ask for the money. Product-led growth doesn't delete those four — it moves them into the product, so onboarding does the asking, a free tier does the trusting, running his own data through it does the proving, and hitting a usage wall does the asking-for-money. So the only real test is this: with nobody holding his hand, can a stranger get one real success on his own? If he can't, PLG hasn't saved you anything — it has simply moved the cost from a salesperson's salary to your churn rate, and churn doesn't send you an invoice. What actually decides the model isn't price, it's how complicated the decision is: when the user is the person who pays and the first success takes minutes, self-serve carries the whole thing; when the user is not the one who pays and it takes integration, procurement or a security review, there's a human in the middle your product can never touch.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：谁做那四件事，不由你的偏好定，由两个客观条件定——使用者是不是掏钱的人，以及一次成功要多久。中间只要站着一个产品碰不到的人（采购、法务、要签字的老板），那一段就必须由人走。</strong></p>
+<ul>
+<li><strong>单位经济，是算术不是研究</strong>：年费几百块的产品养不起一个跟单的人——一个销售一年的完全成本，要靠几百单小额年费才摊得平；年费几十万的东西也很难纯自助签下来，因为对方合规流程本身就要人对接。这条推理拿自家数字一算就有，不必信任何人。</li>
+<li><strong>行业报告，样本自选择，只能当趋势看</strong>：「PLG 型公司越来越多」这个说法最常被引用的来源是 OpenView 自 2019 年起做的年度 PLG 报告。它是投资机构的行业观察，样本自选择、口径逐年变化，没有同行评审。引它只为标注分量：可以提醒你趋势，不能当作「你也该这么干」的证据。</li>
+<li><strong>行业研究，中等强度</strong>：Gartner 反复报告 B2B 采购中平均有 6–10 人参与决策。这类研究抽样口径不公开、不可复现，但方向与一线经验一致：<strong>决策人越多，产品越不可能独自成交</strong>——它顶多说服其中一个。</li>
+</ul>
+<p class="caveat">边界：别读成「便宜就该 PLG、贵就该销售」。分界是决策复杂度，价格只是它的影子——有便宜却极难自助的（要接进老系统的小工具），也有很贵却能自助买走的（用量计费的基础设施，工程师刷卡就开通）。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>免费送出去的那部分，要沿着「他越成功越不够用」的那根轴切
+<span class="en">Where you cut the free tier is a pricing decision, not a marketing one.</span></h2>
+<span class="tag">定价决策</span><span class="tag">切对维度</span><span class="tag">禀赋效应</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">免费增值（freemium，永久免费的基础版 + 付费升级）有两种死法：切得太狠，他第一次成功都没拿到就被拦住；切得太松，他永远不撞墙。躲开这两头的办法不是调比例，是<strong>换一根轴</strong>——别按「功能的高级感」切，按<strong>一个会随他成功而增长的计量单位</strong>切：一起用的人数、存的东西、发出去的条数、经手的金额。切在这根轴上，他用得越好越必然撞墙；而撞墙那天，他已经不想搬家了。</div>
+</div>
+<div class="section">
+<div class="section-label">同样的用户，墙砌在两根不同的轴上</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">墙砌错轴，他就永远不会撞上来</text>
+<rect fill="#fdf6f2" height="240" rx="6" stroke="#e0cfc0" stroke-width="1" width="320" x="14" y="40"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.6" font-weight="700" x="30" y="62">按「功能的高级感」切</text>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.3" x1="52" x2="52" y1="248" y2="76"></line>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.3" x1="52" x2="322" y1="248" y2="248"></line>
+<line stroke="#c0603a" stroke-dasharray="5 4" stroke-width="1.6" x1="52" x2="318" y1="92" y2="92"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" x="60" y="86">付费墙：报表 / 权限 / 单点登录</text>
+<polyline fill="none" points="60,240 110,228 165,216 225,206 310,196" stroke="#4e8a3f" stroke-width="2.2"></polyline>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.2" x="120" y="188">他真正在用的那件事</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="222" y="243">用了多久 →</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="30" y="268">用得再好也够用 → 永远免费</text>
+<rect fill="#f5faf5" height="240" rx="6" stroke="#c3d8c8" stroke-width="1" width="330" x="356" y="40"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.6" font-weight="700" x="372" y="62">按「随成功增长的量」切</text>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.3" x1="394" x2="394" y1="248" y2="76"></line>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.3" x1="394" x2="674" y1="248" y2="248"></line>
+<line stroke="#1f7a5c" stroke-dasharray="5 4" stroke-width="1.6" x1="394" x2="670" y1="152" y2="152"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" x="402" y="146">免费额度：3 个协作者 / 500 条</text>
+<polyline fill="none" points="402,240 452,216 512,186 566,148 660,96" stroke="#4e8a3f" stroke-width="2.2"></polyline>
+<circle cx="571" cy="152" fill="#fbfaf4" r="6.5" stroke="#c0603a" stroke-width="2.2"></circle>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="500" y="122">撞墙 = 升级那天</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="564" y="243">用了多久 →</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="372" y="268">越成功越必然撞上来</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做模板 · 划这条线的三个问题</span>
+<p>1. <strong>免费版能不能让他独自拿到一次真实的成功？</strong>不能，就把拦路的那个东西放回免费里。没成功过的人不会升级，只会消失——你连他为什么走都问不到。</p>
+<p>2. <strong>他成功之后必然会需要什么？</strong>那个东西才是付费的位置。判断法：说出一句「等你<em>____</em>的时候就要付费了」，横线上必须能填一个<strong>好事</strong>（人多了、单子多了、量大了）。填的是坏事或没关系的事（想导出、想换主题），说明轴错了。</p>
+<p>3. <strong>撞墙那一刻，他手里已经有多少东西？</strong>数据、配置、习惯、他拉进来的同事——这才是升级的真正理由。所以免费期的目标不是「让他看功能」，是<strong>让他往里放东西</strong>；能让他自己动手配一次的，别替他配好。</p>
+<p><strong>反过来一句</strong>：三个问题都答得顺、免费用户却仍不升级，先别砍免费版——多半是他在你产品里干的那件事本身长不大，这是产品问题，不是定价问题。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Freemium dies two ways: cut too deep and he never gets one real success before the wall; cut too loosely and he never hits the wall at all. The fix isn't tuning the ratio, it's changing the axis. Don't cut along "how advanced a feature feels" — he won't miss what he doesn't use. Cut along a unit that grows as he succeeds: people collaborating, things stored, messages sent, money handled. On that axis the better it works for him the more certainly he hits the wall, and by then he doesn't want to move house. Test it with one sentence: "you'll start paying when you ____." If the blank takes a good thing — more people, more volume, more revenue — the axis is right. If it takes a bad or irrelevant one (wanting to export, wanting dark mode), it's wrong. And the free period's job isn't showing off features, it's getting him to put things in: data, settings, habits, colleagues he invited himself. One red line goes with all of it — if his data can't be exported in one click, that isn't stickiness, it's a locked door.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：免费期不是在做营销，是在让他往产品里放东西。放进去之后，「不升级」在他脑子里就换了性质——不再是「没得到一个好处」，而是「要失去我已经有的东西」，这两件事的心理价格差好几倍。</strong></p>
+<ul>
+<li><strong>硬证据（经典，但方法学有争议）· 禀赋效应</strong>：Kahneman、Knetsch &amp; Thaler (1990, <em>Journal of Political Economy</em>) 的马克杯实验发现，随机分到杯子的人开出的卖价，约为没分到的人愿意出的买价的两倍。争议必须说清：Plott &amp; Zeiler (2005, <em>American Economic Review</em>) 指出改进实验程序（充分练习、匿名出价）后效应大幅减弱甚至消失。所以按「效应真实，但幅度看情境」来用，别当铁律。</li>
+<li><strong>硬证据（神经层，单一研究）· 损失与收益不对称</strong>：Tom、Fox、Trepel &amp; Poldrack (2007, <em>Science</em>) 用 fMRI 发现，面对同等大小的潜在收益与损失，<strong>腹侧纹状体与腹内侧前额叶</strong>的活动随损失下降的斜率，比随收益上升的斜率更陡——损失在奖赏回路里被「记得更重」。样本很小（16 人），后续对「神经损失厌恶」的复现有争议，当机制线索用，别当定论。</li>
+<li><strong>多次实验，效应中等 · 自己动手的更值钱</strong>：Norton、Mochon &amp; Ariely (2012, <em>Journal of Consumer Psychology</em>) 的「IKEA 效应」：自己组装的物品，本人给出的估值显著高于同款成品。对应到产品里：让新用户自己配一次工作流，比你替他配好更贵——虽然后者的引导数据更好看。</li>
+</ul>
+<p class="caveat">红线在哪：同一套机制既能用来「让他更舍不得离开一个真在帮他的产品」，也能用来「让离开变难」。判据很实际——<strong>他的数据能不能一键完整导出</strong>。能，黏性来自价值；不能，那不叫黏性，叫把门锁上。另外禀赋效应对<strong>已有的东西</strong>最强：下调老用户额度引发的反弹，会远大于新用户看到同样小的免费版。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>试用期真正的对手不是竞品，是「这周没时间」
+<span class="en">A trial converts on one real job finished — not on features seen.</span></h2>
+<span class="tag">空状态</span><span class="tag">默认效应</span><span class="tag">相关≠因果</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">14 天试用里，绝大多数没转化的人不是「比较完你和对手之后选了对手」，是<strong>根本没开始</strong>。所以试用设计只有一个目标：让他在头几天里用<strong>自己的真活</strong>跑通一次，哪怕只跑通一小段。三个杠杆按效力排：<strong>一、消灭空状态</strong>——进来就是已经装好东西的样例，不是一个「新建项目」的空按钮；<strong>二、把默认选项设成你希望他走的那条路</strong>，别让他在每一步重新做决定；<strong>三、只推一个动作</strong>，引导里排五步等于零步。</div>
+</div>
+<div class="section">
+<div class="section-label">同样 14 天，两条走法</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#b0a898"></path>
+</marker>
+<marker id="c2" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">流失几乎都发生在「还没开始」，不是「比较之后」</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="20" y="52">空状态 · 五步引导</text>
+<rect fill="#f6e3da" height="34" rx="4" stroke="#c0603a" stroke-width="1.2" width="86" x="56" y="64"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="99" y="85">注册</text>
+<line marker-end="url(#c1)" stroke="#b0a898" stroke-width="1.3" x1="144" x2="176" y1="81" y2="81"></line>
+<rect fill="#f6e3da" height="34" rx="4" stroke="#c0603a" stroke-width="1.2" width="96" x="178" y="64"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="226" y="85">一片空白页</text>
+<line marker-end="url(#c1)" stroke="#b0a898" stroke-width="1.3" x1="276" x2="308" y1="81" y2="81"></line>
+<rect fill="#f6e3da" height="34" rx="4" stroke="#c0603a" stroke-width="1.2" width="110" x="310" y="64"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="365" y="85">「等有空再弄」</text>
+<line marker-end="url(#c1)" stroke="#b0a898" stroke-dasharray="4 4" stroke-width="1.3" x1="422" x2="524" y1="81" y2="81"></line>
+<rect fill="#efe4dc" height="34" rx="4" stroke="#a8907e" stroke-width="1.2" width="146" x="526" y="64"></rect>
+<text fill="#8f5a22" font-family="Georgia" font-size="9.4" text-anchor="middle" x="599" y="85">过期 · 一次没跑过</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" x="20" y="146">样例数据 · 默认路径 · 只推一个动作</text>
+<rect fill="#e2efdc" height="34" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="86" x="56" y="158"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="99" y="179">注册</text>
+<line marker-end="url(#c2)" stroke="#4e8a3f" stroke-width="1.3" x1="144" x2="176" y1="175" y2="175"></line>
+<rect fill="#e2efdc" height="34" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="96" x="178" y="158"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="226" y="179">3 分钟看到结果</text>
+<line marker-end="url(#c2)" stroke="#4e8a3f" stroke-width="1.3" x1="276" x2="308" y1="175" y2="175"></line>
+<rect fill="#e2efdc" height="34" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="110" x="310" y="158"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="365" y="179">换成自己的数据</text>
+<line marker-end="url(#c2)" stroke="#4e8a3f" stroke-width="1.3" x1="422" x2="454" y1="175" y2="175"></line>
+<rect fill="#e2efdc" height="34" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="86" x="456" y="158"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="499" y="179">拉同事进来</text>
+<line marker-end="url(#c2)" stroke="#4e8a3f" stroke-width="1.3" x1="544" x2="576" y1="175" y2="175"></line>
+<rect fill="#cfe6c6" height="34" rx="4" stroke="#3f6d2f" stroke-width="1.5" width="96" x="578" y="158"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="626" y="179">到期即续用</text>
+<line stroke="#cbb98f" stroke-width="1" x1="20" x2="680" y1="212" y2="212"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="99" y="230">第 1 天</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="226" y="230">第 1 天</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="365" y="230">第 2–3 天</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="499" y="230">第 5 天</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="626" y="230">第 14 天</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="256">两条路的功能完全一样。差别只在第一屏：他是面对一个空按钮，还是面对一个已经在动的东西。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="278">所以试用期该盯的指标不是「用了几个功能」，是「有没有完成过一次真活」。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 试用第 3 天那封邮件</span>
+<p><strong>别写</strong>：「您的试用还剩 11 天，快去体验我们的全部功能吧！」——这封信只提醒了他一件事：他欠你一件事没做，而人对此的第一反应是躲开。</p>
+<p><strong>改写成替他干活</strong>：「看到你把{他的真实数据}导进来了，但还没跑第一次{核心动作}。这一步大概 5 分钟：{一句话说清怎么做}。如果卡在{最常见的那个坑}，回我一句我直接帮你弄好。」</p>
+<p><strong>为什么这封更好</strong>：它承认了他已经做过的事，只要一个动作，给了时间预算（5 分钟比「快去体验」可信），并把回复门槛降到一句话。</p>
+<p><strong>快到期那封别只报剩几天</strong>：给他一次延长，条件是<strong>告诉你卡在哪</strong>。你换到的比这一单值钱——那是最诚实的用户访谈，而且愿意回你的人本来就最可能付费。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Most people who don't convert didn't compare you against a competitor and pick them — they never started. So a trial has exactly one job: get him to finish one piece of real work in the first few days, however small. Three levers, strongest first. Kill the empty state: open onto something already running with sample data, not a "new project" button. Set the defaults to the path you want him on, so he isn't re-deciding at every step. And push one action, not five — a five-step tour is a zero-step tour. Two honest warnings come with this. Defaults work because attention, not laziness, is the scarce thing, which also means they can be used to keep people who never noticed they stayed; the line is whether he'd feel tricked if he found out later. And the famous activation thresholds you've read about are correlations dressed as recipes — someone who already intended to stay naturally does more of everything. Find your own candidate behaviour, then A/B test whether pushing it actually moves retention.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：默认和样例之所以有效，不是因为人懒，是因为每一处需要重新做决定的地方都要付一次注意力，而试用期的人本来就没有这个预算。默认把决策成本降到零，样例把「从零开始」变成「改一改」——后者的心理门槛低一个数量级。</strong></p>
+<ul>
+<li><strong>硬证据（经典，强）· 默认效应</strong>：Johnson &amp; Goldstein (2003, <em>Science</em>) 比较欧洲各国的器官捐献同意率：默认「不参加、想参加要主动勾」的国家（如德国）同意率在一成上下，默认「已参加、不想参加要主动退出」的国家（如奥地利）接近 99%。同一件事，只换默认，差了近一个数量级；作者还在受控实验里复现了同方向的效果。</li>
+<li><strong>边界（很重要）</strong>：默认效应在「决策难、后果远、动机低」时最强，在他强烈在意且很懂的事上很小。别指望默认能卖掉他根本不想要的东西——它只能在他本来无所谓的岔路口替他省事。</li>
+<li><strong>红线</strong>：同一个机制可以用来降低摩擦，也可以用来让人在没注意的情况下留下（默认勾上自动续费、把取消入口藏三层）。判据是那句老话：<strong>他事后知道了，会不会觉得被耍</strong>。会，就别做——这一单赚到的钱远小于他到处说这件事的成本。</li>
+<li><strong>关于「激活阈值」的一句实话</strong>：网上流传的「7 天内加满 10 个好友」「发够 2000 条消息」这类数字，来源基本是演讲和访谈，不是可核对的论文；更要命的是它们是<strong>相关</strong>——本来就打算长期用的人自然会做更多事。照抄别人的数字没有意义。正确做法：比对留下的人和流失的人在前 7 天的行为差异，找出分离度最大的<strong>可推动</strong>动作，再用 A/B 实验验证推他做这件事真能提高留存。跳过验证，你多半只是在推人做一件做不做都一样的事。</li>
+</ul>
+<p class="caveat">不确定的地方：样例数据在什么品类里最有效，我没见到干净的公开实验；依据是机制和一线观察，不是研究结论。能确定的只有一条：<strong>空状态是一个可测的流失点</strong>，去看那一步的跳出率就知道。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>SaaS 的钱在第二年、第三年，所以定价得能跟着客户一起长大
+<span class="en">Net revenue retention is the only number that compounds on its own.</span></h2>
+<span class="tag">NRR</span><span class="tag">计量单位</span><span class="tag">现状偏好</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">NRR（net revenue retention，净收入留存）＝ 同一批老客户今年付你的钱 ÷ 他们去年付的钱，升级、降级、流失都算进去，<strong>不算新客</strong>。它是唯一一个能自己长大的数字：100% 意味着你不签新客就原地踏步，120% 意味着一个新客都不签收入也在涨。做到 100% 以上的办法不是催客户升级，是<strong>把价格绑在一个会随他成功而增长的计量单位上</strong>——跟免费边界该切在哪儿是同一根轴。按「一家公司多少钱」收费，客户长大你分不到；按人数、用量、经手金额收费，他长你也长。</div>
+</div>
+<div class="section">
+<div class="section-label">一个新客都不签，五年后的收入</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="e1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">多签一单是加法；计量单位选对一次是乘法</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="44">↑ 这批老客户带来的收入（第 0 年 = 100）</text>
+<line marker-end="url(#e1)" stroke="#8a9a90" stroke-width="1.4" x1="70" x2="70" y1="280" y2="52"></line>
+<line marker-end="url(#e1)" stroke="#8a9a90" stroke-width="1.4" x1="70" x2="668" y1="280" y2="280"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="70" y="298">第 0 年</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="184" y="298">第 1 年</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="298" y="298">第 2 年</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="412" y="298">第 3 年</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="526" y="298">第 4 年</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="640" y="298">第 5 年</text>
+<line stroke="#e3ddc7" stroke-width="1" x1="70" x2="640" y1="191.5" y2="191.5"></line>
+<polyline fill="none" points="70,191.5 184,173.8 298,152.6 412,127.1 526,96.6 640,59.9" stroke="#1f7a5c" stroke-width="2.6"></polyline>
+<polyline fill="none" points="70,191.5 640,191.5" stroke="#8f5a22" stroke-dasharray="6 4" stroke-width="2"></polyline>
+<polyline fill="none" points="70,191.5 184,200.4 298,208.3 412,215.5 526,222 640,227.8" stroke="#c0603a" stroke-width="2.4"></polyline>
+<circle cx="640" cy="59.9" fill="#1f7a5c" r="4"></circle>
+<circle cx="640" cy="191.5" fill="#8f5a22" r="4"></circle>
+<circle cx="640" cy="227.8" fill="#c0603a" r="4"></circle>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" x="404" y="80">NRR 120% → 第 5 年 249</text>
+<text fill="#8f5a22" font-family="Georgia" font-size="10" font-weight="700" x="404" y="185">NRR 100% → 一直是 100</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="404" y="248">NRR 90% → 第 5 年只剩 59</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="316">NRR 低于 100% 时，新签的单子有一部分只是在补漏——先补桶，再加水。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<ul class="checklist">
+<li><strong>先算一次真实的 NRR</strong>：去年这个月的老客户名单，今年这个月他们一共付了多少 ÷ 去年付了多少。别算新客，那是自欺。</li>
+<li><strong>找出你那个计量单位</strong>：写一句「客户越成功，<em>____</em> 这个数就越大」。填不出来，你的定价就参与不了客户的增长，NRR 天花板就是 100%。</li>
+<li><strong>把降级路径修好</strong>：能降级的客户不会流失，只会变小；只能「续或不续」的，一遇预算收紧就直接消失。降级看着难受，救回的是整条关系。</li>
+<li><strong>分开看两种 NRR</strong>：靠涨价堆出来的，和靠用量长出来的。前者会在续约时集中报复，后者才是复利。</li>
+<li><strong>同时盯客户家数</strong>：NRR 很高但家数在掉，说明你在少数几个大客户身上越绑越深——那是风险，不是成绩。</li>
+</ul>
+</div>
+<p class="en-brief"><b>EN</b> In subscription businesses the money is in year two and year three, so your price has to be able to grow with the customer. Net revenue retention — what the same cohort of existing customers pays this year divided by last year, counting upgrades, downgrades and churn but never new logos — is the one number that compounds by itself: at 100% you tread water without new sales, at 120% revenue grows even if you never sign anyone again, and at 90% a chunk of every new deal is just patching the bucket. The way above 100% isn't nagging people to upgrade, it's pricing against a unit that grows as they succeed — seats, usage, volume handled — the same axis your free tier should be cut on. Charge a flat price per company and their growth is none of your business. Two cautions: NRR built on price rises isn't the same animal as NRR built on usage, and high NRR with a shrinking customer count means concentration risk, not success.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制一是算术：NRR 是乘法不是加法。90% 五年后剩 59，120% 五年后是 249——同一批客户，差了四倍多。机制二是心理：续费之所以比新签容易，很大一块来自「不动最省事」，而不是客户更爱你了。</strong></p>
+<ul>
+<li><strong>硬证据（经典，可复现方向明确）· 现状偏好</strong>：Samuelson &amp; Zeckhauser (1988, <em>Journal of Risk and Uncertainty</em>) 在实验里发现，同一组选项，只要其中一个被标成「你现在就在这个方案上」，它被选中的比例显著上升；作者还在真实的退休金与医保方案选择数据里看到同方向的惰性，且<strong>选项越多，越倾向于不动</strong>。这解释了两件事：老客户的钱确实更好赚；以及为什么套餐一多，客户就卡在原地不升级。</li>
+<li><strong>不可靠引用警告</strong>：「留住老客户比拉新便宜 5–25 倍」这句话到处都是，但追不到可核对的原始研究，口径也从没说清（哪类生意？算不算扩张收入？）。<strong>别拿它当依据。</strong>你自己的账一算就有：同一批客户第二年的净收入 ÷ 第一年——这个数字比任何行业倍数都可信，因为它是你的。</li>
+<li><strong>红线</strong>：现状偏好可以用来减少摩擦（自动续费省得他每年重签），也可以用来让他忘了取消（订阅入口两步、取消入口五步）。这条界线在很多地方已经是法律问题，不只是道德问题。稳妥做法：<strong>扣款前发一封能一键取消的提醒信</strong>——你会损失一小批本来会忘的收入，换回的是不会在续约季集中爆发的怨气。</li>
+</ul>
+<p class="caveat">边界与口径：NRR 只对「客户能自己续费、自己扩张」的生意成立，一次性项目、买断、本地部署都别硬套。跨公司比也意义有限——含不含降级、按哪批客户算、多币种怎么折，各家算法都不同，别拿别人对外的漂亮数字当基准。有用的比较对象只有一个：你自己上个季度。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 44 Action</h3>
+<p>两小时，把这四件事落到你自己在卖的东西上——哪怕你卖的不是软件。</p>
+<div class="action">
+<strong>一（30 分钟）· 四件事归属表：</strong>把「问清卡点 / 让他信 / 证明有用 / 开口要钱」四行写下来，每行标现在是人在做还是产品在做。全是人 → 挑最容易的一件搬进产品；全是产品但转化差 → 挑一件搬回给人。<br/><br/><strong>二（20 分钟）· 找你那根轴：</strong>写出一句「客户越成功，____ 这个数越大」。这一句同时决定免费额度切在哪儿、价格能不能跟着他长。<br/><br/><strong>三（40 分钟）· 拿一个全新账号自己走一遍：</strong>从注册到第一次真实成功，掐表。每个超过 10 分钟的步骤问一句「能不能预填、给样例、或干脆删掉」。<br/><br/><strong>四（30 分钟）· 算一次真实 NRR：</strong>去年这个月的老客户，今年这个月付了多少。低于 100%，先别加大投放——桶在漏。<br/><br/>边界提醒：这一整套建立在「客户能自己续费、自己变大」上。卖一次性项目、买断软件或本地部署的，第四件事直接跳过，别硬套不属于你商业模式的指标。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我们做的是几十万一单的企业软件，PLG 这套跟我有关系吗？</summary>
+<div class="answer">有，但不是「改成免费自助」。<br/><br/>能用的是「让产品自己走完一段销售」的那部分：做一个不需要人陪、使用者自己能跑起来的小工具或沙箱，让真正要用的那个人先在里面拿到一次成功。顺序就变了——不再是先说服掏钱的人再让下面的人用，而是先让用的人有话说，再由他替你说服掏钱的人。你的销售进场时谈的也不再是「值不值得试」，而是「怎么铺开」。<br/><br/>真正不该硬套的是免费增值。如果你的东西必须集成、必须调、必须过安全审查，免费版只会造出一堆永远跑不起来的失败样本——他们不会付钱，还会到处说「我试过，不好用」。<strong>判断方法只有一条</strong>：使用者能不能在没人陪的情况下，30 分钟内做成一件对他有意义的小事？不能，就别做免费版，做有人陪的试点。</div>
+</details>
+<details>
+<summary>2. 免费用户一直不升级，是不是该把免费版砍薄一点？</summary>
+<div class="answer">先分清是哪一种不升级，三种的解法完全相反。<br/><br/><strong>一、从没成功过的那批。</strong>砍了也没用——他们不是在省钱，是根本没用起来。砍薄只会让成功率更低、让「没升级」变成「没听说过」。这批人要的是更短的首次成功路径，不是更高的墙。<br/><br/><strong>二、一直在用但从不撞墙的那批。</strong>这批说明你的墙砌错了轴：要么他在你产品里干的那件事本身长不大，要么你按功能高级感切了，而他压根不需要那些高级感。要改的是计量单位，不是比例。<br/><br/><strong>三、永远不会付钱、但会带人来的那批。</strong>他们的价值是把你的名字带进下一家公司——是渠道，不是成本。<br/><br/>还有一句压舱的提醒：<strong>砍免费版是所有动作里最不可逆的一个。</strong>收回老用户已有的额度，反弹远大于新用户看到一个同样小的免费版——那正是损失厌恶。真要收紧，新规则只用在新账号上。</div>
+</details>
+<details>
+<summary>3. 试用期该给 14 天还是 30 天？</summary>
+<div class="answer">这个问题几乎总是问错方向。正确的问法是：<strong>他完成一次真实工作需要多久，中间要不要等别人、等某个周期？</strong><br/><br/>一个人当天就能跑完的东西，14 天太长了——长试用期最大的副作用是「不急」，人会拖到最后一天才开始，然后没开始就过期了。反过来，需要拉同事一起、或要等一个月度周期才用得上的（比如做月结、出月报），14 天必然不够：他真正要用的那件事这个月还没发生。<br/><br/>更实用的做法是<strong>别按天算，按「他有没有完成那一次」算</strong>：跑得快的人第 3 天就该看到升级提示（那是他体感价值最高的时刻，别等到第 14 天他已经忘了）；卡住的人给一次延长，条件是告诉你卡在哪——这句话本身就是你能拿到的最诚实的一次用户访谈，而且愿意回你的人，本来就是最可能付费的那批。<br/><br/>真要一个起手值：当天能出结果的产品给 7–14 天，依赖周期或多人协作的给 30 天。<strong>这是经验值，不是研究结论</strong>，上线后拿自己的数据改。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 44</footer>
+</div>
+</body>
+</html>
