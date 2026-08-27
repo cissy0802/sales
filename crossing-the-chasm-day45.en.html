@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 45: Crossing the Chasm</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 45 · Phase G</div>
+<h1>Your strongest references are exactly the people your next buyer refuses to resemble</h1>
+<div class="meta"><span>Early adopters vs the mainstream · the adoption lifecycle · nail one niche</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">The chasm isn't the market shrinking. It's your best evidence quietly ceasing to count, because the next group doesn't file the last group as people like them.</div>
+</header>
+<div class="intro">
+<strong>The first few dozen customers can't wait to buy, and then suddenly nobody picks up the thread. That isn't you doing something wrong — the type of buyer changed.</strong> One move per part. <strong>One, work out which kind of person you're talking to.</strong> <strong>Two, convert ambiguity into known risk.</strong> <strong>Three, a niche isn't a small market, it's a set of people who talk to each other.</strong> <strong>Four, he's buying whether the whole job gets done, and who fills the missing pieces decides whether you cross.</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>First work out who you're talking to: the one who wants to be ahead, or the one who doesn't want trouble
+<span class="en">Your best reference is exactly the person the mainstream buyer refuses to resemble.</span></h2>
+<span class="tag">adoption lifecycle</span><span class="tag">only peers count</span><span class="tag">minimal groups</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The early adopter is buying <strong>being ahead</strong>: missing pieces don't bother him, he patches them himself and counts that as his own competence, and "nobody's used it yet" is the point rather than the problem. The early majority is buying <strong>not getting into trouble</strong>: what he wants is proof that somebody exactly like him already did this and nothing blew up. So every piece of ammunition you collected from the first group — it's new, it's fast, we were first — works <strong>in reverse</strong> on the second. Your pitch hasn't got worse. Your evidence is the wrong category.</div>
+</div>
+<div class="section">
+<div class="section-label">What breaks isn't the market — it's whose reference counts</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Same curve — but halfway along, the reason for buying changes</text>
+<line marker-end="url(#a1)" stroke="#8a9a90" stroke-width="1.4" x1="46" x2="46" y1="262" y2="46"></line>
+<line marker-end="url(#a1)" stroke="#8a9a90" stroke-width="1.4" x1="46" x2="676" y1="262" y2="262"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="40">new buyers per year</text>
+<polyline fill="none" points="56,258 96,252 136,241 176,223 216,196 256,163 296,131 336,108 376,99 416,108 456,131 496,163 536,196 576,223 616,241 656,254" stroke="#1f7a5c" stroke-width="2.4"></polyline>
+<line stroke="#cbb98f" stroke-dasharray="4 4" stroke-width="1" x1="376" x2="376" y1="90" y2="262"></line>
+<line stroke="#cbb98f" stroke-dasharray="4 4" stroke-width="1" x1="570" x2="570" y1="130" y2="262"></line>
+<rect fill="#f6e3da" height="180" stroke="#c0603a" stroke-width="1.6" width="22" x="196" y="82"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.6" font-weight="700" text-anchor="middle" x="207" y="74">chasm</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="middle" x="88" y="280">innovators · early adopters</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="middle" x="300" y="280">early majority</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="middle" x="472" y="280">late majority</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="middle" x="622" y="280">laggards</text>
+<rect fill="#e2efdc" height="52" rx="5" stroke="#4e8a3f" stroke-width="1.3" width="164" x="24" y="130"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" x="36" y="150">buys being ahead</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="36" y="166">patches the gaps himself;</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="36" y="178">"nobody's used it" sells.</text>
+<rect fill="#eaf3ee" height="52" rx="5" stroke="#8aa79a" stroke-width="1.3" width="176" x="228" y="130"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="240" y="150">buys staying safe</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="240" y="166">wants a company just like</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="240" y="178">his to have done it first.</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="24" y="306">The left group's endorsement doesn't travel: "those tinkerers aren't like us."</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="24" y="324">So crossing isn't pushing harder. It's changing evidence class — references he counts as peers.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · three questions that place him</span>
+<p>Ask these in passing at a first meeting and the answers usually settle which side he's on:</p>
+<p>1. <strong>"When did you last replace a tool you were using?"</strong> — an organisation that hasn't changed anything in three years is almost certainly not an early adopter, so stop pitching like it is.</p>
+<p>2. <strong>"If this moves forward, who signs it off?"</strong> — early adopters can often decide alone; a mainstream buyer recites a list of names. The longer the list, the more he needs evidence that others have done this, not evidence that it's advanced.</p>
+<p>3. <strong>"Who in your industry is doing something similar?"</strong> — if he names people instantly, he's carrying a mental list of peers. If your references aren't on that list, you effectively have none.</p>
+<p><strong>A reverse warning</strong>: don't file the mainstream buyer under "conservative, doesn't get it." Predictability is as rational a thing to buy as novelty. If he seems slow, it's usually that you don't hold the kind of evidence he buys on.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: people decide whether information deserves belief by asking how much like them the source is — not by weighing the information itself. So a reference's power doesn't depend on how impressive the referee is, it depends on whether the listener will file himself and the referee in the same category. No category match, and even a beautiful case study is just somebody else's story.</strong></p>
+<ul>
+<li><strong>Hard evidence (classic, widely replicated) · how cheaply "one of us" switches on</strong>: Tajfel, Billig, Bundy &amp; Flament (1971, <em>European Journal of Social Psychology</em>) split strangers into groups on a meaningless criterion — which painter you prefer — and subjects immediately favoured their own group when allocating rewards. The implication is blunt: <strong>the peer switch is extremely cheap</strong> — you don't need real similarity, just a label he can file himself under (same industry, same size, same role). Which cuts both ways: a reference who is visibly unlike him on one salient dimension switches it off just as cheaply.</li>
+<li><strong>Large classic field study</strong>: Ryan &amp; Gross (1943, <em>Rural Sociology</em>) tracked 259 farmers in two Iowa communities adopting hybrid seed corn. Most <strong>first heard</strong> of it from salesmen — but what moved them to actually plant it was <strong>the crop in a neighbour's field</strong>, and the gap between first hearing and full adoption averaged several years. Salespeople make you known; peers make you believed. That division of labour hasn't shifted in eighty years.</li>
+<li><strong>Two things worth labelling honestly</strong>: the 2.5% / 13.5% / 34% figures from Rogers, <em>Diffusion of Innovations</em> (1962/2003), are a <strong>modelling convention</strong> — he partitioned a normal curve by standard deviations — not measured constants, so don't assume your market really contains those proportions. And the chasm itself comes from Moore, <em>Crossing the Chasm</em> (1991): <strong>a practitioner observation, not a controlled study</strong>. No experiment proves it must exist. Its value is that it forces the question "do my references count as peers in his eyes," not that it has been demonstrated.</li>
+</ul>
+<p class="caveat">Boundary: these categories apply to <strong>a category of product</strong>, not to a person's personality. The same individual can be an eager early adopter of tools and deeply conservative about anything touching money or compliance. Don't label the customer; work out which side he's on <strong>for this particular thing</strong>.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>He isn't afraid of risk. He's afraid of "no idea what might go wrong" — your job is converting one into the other
+<span class="en">He isn't risk-averse. He's ambiguity-averse. Those need opposite answers.</span></h2>
+<span class="tag">ambiguity aversion</span><span class="tag">amygdala</span><span class="tag">who carries the blame</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">"A 10% chance of slipping two weeks" is <strong>risk</strong>: it can be estimated, budgeted, written into a plan. "No idea what might go wrong" is <strong>ambiguity</strong>: it can't be priced, so the only safe move is not to move. Mainstream buyers stall on the second kind almost every time. So the job isn't claiming the risk is zero — that just makes you less believable — it's converting every vague reassurance into a sentence carrying <strong>a number, a name and a way out</strong>. And there's a layer he won't say aloud: what actually gets weighed inside an organisation isn't expected value, it's <strong>who carries the blame</strong>. Lowering that one person's exposure beats doubling your stated return.</div>
+</div>
+<div class="section">
+<div class="section-label">Same facts, two ways of saying them</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 288" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Nothing on the left is untrue — each line just leaves one thing unknowable</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.2" font-weight="700" x="24" y="50">what he hears (ambiguity)</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.2" font-weight="700" x="398" y="50">what to say instead (known risk)</text>
+<rect fill="#f6e3da" height="38" rx="4" stroke="#c0603a" stroke-width="1.2" width="300" x="24" y="62"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="86">"rollout is quick"</text>
+<line marker-end="url(#b1)" stroke="#4e8a3f" stroke-width="1.4" x1="330" x2="390" y1="81" y2="81"></line>
+<rect fill="#e2efdc" height="38" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="284" x="392" y="62"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="404" y="86">"three your size: 4 to 7 weeks"</text>
+<rect fill="#f6e3da" height="38" rx="4" stroke="#c0603a" stroke-width="1.2" width="300" x="24" y="110"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="134">"our customers are all happy"</text>
+<line marker-end="url(#b1)" stroke="#4e8a3f" stroke-width="1.4" x1="330" x2="390" y1="129" y2="129"></line>
+<rect fill="#e2efdc" height="38" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="284" x="392" y="110"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="404" y="134">"here's their number — ask them"</text>
+<rect fill="#f6e3da" height="38" rx="4" stroke="#c0603a" stroke-width="1.2" width="300" x="24" y="158"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="182">"it basically never breaks"</text>
+<line marker-end="url(#b1)" stroke="#4e8a3f" stroke-width="1.4" x1="330" x2="390" y1="177" y2="177"></line>
+<rect fill="#e2efdc" height="38" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="284" x="392" y="158"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="404" y="182">"top three failures, handled thus"</text>
+<rect fill="#f6e3da" height="38" rx="4" stroke="#c0603a" stroke-width="1.2" width="300" x="24" y="206"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="230">"sign a year, it's worth it"</text>
+<line marker-end="url(#b1)" stroke="#4e8a3f" stroke-width="1.4" x1="330" x2="390" y1="225" y2="225"></line>
+<rect fill="#e2efdc" height="38" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="284" x="392" y="206"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="404" y="230">"one team, exit at three months"</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="24" y="266">Every line on the right admits things can go wrong — which is precisely what makes it plannable.</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="24" y="282">"It'll be fine" sounds stronger, but it leaves the risk with him: nobody explains it if it isn't.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Script · put the ugly parts on the table first</span>
+<p>He asks "is this going to work?" Don't answer "don't worry." Answer:</p>
+<p>"Let me name three things that <strong>could go wrong</strong>. One, we've never connected to your {legacy system}; worst case that adds two or three weeks, and I won't charge for that stretch. Two, in the first month your {role} will find it more annoying than what they do now — that's real; it pays back from about week three. Three, if {some precondition} doesn't hold, you shouldn't do this at all, and I'll tell you so directly."</p>
+<p><strong>Why that beats any guarantee</strong>: someone willing to say where it breaks has weight when he says a thing won't break. And you've turned three unknowables into three budgetable costs — he can now repeat that paragraph to his own boss.</p>
+<p><strong>Pair it with an exit</strong>: "Run it in one department for three months; if it isn't working, stop and we hand back all your data." Reversibility is the cheapest ambiguity-reducer there is. He'll almost certainly never use the clause, but without it he won't start.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: risk with known odds and uncertainty with unknown odds don't run on the same circuitry, and they don't yield to the same sentence. Saying "don't worry" only repackages the ambiguity; a number, a person he can phone, and an exit clause actually convert it into risk he can price.</strong></p>
+<ul>
+<li><strong>Hard evidence (classic, replicated endlessly) · ambiguity aversion</strong>: Ellsberg (1961, <em>Quarterly Journal of Economics</em>) offered two urns — one stated to be half red and half black, the other with proportions withheld. Most people prefer betting on the known urn whichever colour they pick, which is mathematically self-contradictory. <strong>What people hate isn't bad odds, it's unknown odds.</strong></li>
+<li><strong>Hard evidence (neural, with lesion data) · uncertainty runs on different circuitry</strong>: Hsu, Bhatt, Adolphs, Tranel &amp; Camerer (2005, <em>Science</em>) found with fMRI that gambles with <strong>unknown</strong> probabilities produced markedly more activity in the <strong>amygdala and orbitofrontal cortex</strong>, while known-probability gambles produced more <strong>striatal</strong> (reward-circuit) activity. The harder strand is the lesion group: patients with orbitofrontal damage were largely indifferent to ambiguity, treating risk and uncertainty alike. The imaging sample was small (16), and reverse inference from fMRI has recognised limits, but imaging plus lesion data pointing the same way is considerably stronger than imaging alone.</li>
+<li><strong>Organisational layer (mechanism reasoning, not a research finding)</strong>: "nobody ever got fired for buying IBM" is the same coin's other face — the decision-maker is computing his own exposure, not the company's expected value. I have no citable empirical support for it; it's mechanism plus field observation. But the action it implies is testable: <strong>put references, exit clauses and phasing on paper</strong> and watch whether he loosens.</li>
+</ul>
+<p class="caveat">Boundary and red line: this only works when he genuinely faces <strong>uncertainty</strong>. If his hesitation is really "I don't want to change," reducing ambiguity does nothing — go back to pricing the cost of not changing, where the quantification method from the digging-for-pain piece beats any reassurance. The red line: <strong>the ugly parts have to be genuinely ugly.</strong> Inventing two harmless flaws to buy trust is a performance, and it survives exactly one detection.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>A niche isn't "a smaller market" — it's a set of people who ask each other
+<span class="en">A beachhead isn't a smaller market. It's a network that talks to itself.</span></h2>
+<span class="tag">homophily</span><span class="tag">imitation coefficient</span><span class="tag">the bowling alley</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Thirty customers scattered across twenty industries gives you thirty isolated cases. The same thirty inside one industry gives you a <strong>word-of-mouth network that spreads on its own</strong>. The difference isn't the count, it's whether these people run into each other. So the test for a niche is never "is the market big enough," it's four words: <strong>do they know each other</strong> — a shared conference, group, ranking or association; the same jargon for the problem; and can the second company copy the first one's setup <strong>almost verbatim</strong>. If it can't, you're explaining from scratch again — that isn't nailing a niche, it's repeating one.</div>
+</div>
+<div class="section">
+<div class="section-label">Take one square, then roll into the adjacent ones</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Adjacent runs in two directions only: same people's next problem, same problem's next people</text>
+<circle cx="352" cy="72" fill="#1f7a5c" r="26"></circle>
+<text fill="#ffffff" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="352" y="69">first</text>
+<text fill="#ffffff" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="352" y="82">square</text>
+<line marker-end="url(#c1)" stroke="#4e8a3f" stroke-width="1.6" x1="331" x2="263" y1="88" y2="139"></line>
+<line marker-end="url(#c1)" stroke="#4e8a3f" stroke-width="1.6" x1="373" x2="443" y1="88" y2="139"></line>
+<ellipse cx="234" cy="162" fill="#cfe6c6" rx="46" ry="26" stroke="#3f6d2f" stroke-width="1.6"></ellipse>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="234" y="159">same people</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="234" y="172">next problem</text>
+<ellipse cx="470" cy="162" fill="#cfe6c6" rx="46" ry="26" stroke="#3f6d2f" stroke-width="1.6"></ellipse>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="470" y="159">same problem</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="470" y="172">next people</text>
+<line marker-end="url(#c1)" stroke="#8aa79a" stroke-width="1.4" x1="208" x2="151" y1="184" y2="232"></line>
+<line marker-end="url(#c1)" stroke="#8aa79a" stroke-width="1.4" x1="253" x2="288" y1="186" y2="229"></line>
+<line marker-end="url(#c1)" stroke="#8aa79a" stroke-width="1.4" x1="451" x2="416" y1="186" y2="229"></line>
+<line marker-end="url(#c1)" stroke="#8aa79a" stroke-width="1.4" x1="496" x2="553" y1="184" y2="232"></line>
+<circle cx="134" cy="246" fill="#eaf3ee" r="22" stroke="#8aa79a" stroke-width="1.3"></circle>
+<circle cx="302" cy="246" fill="#eaf3ee" r="22" stroke="#8aa79a" stroke-width="1.3"></circle>
+<circle cx="402" cy="246" fill="#eaf3ee" r="22" stroke="#8aa79a" stroke-width="1.3"></circle>
+<circle cx="570" cy="246" fill="#eaf3ee" r="22" stroke="#8aa79a" stroke-width="1.3"></circle>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="134" y="250">further</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="302" y="250">further</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="402" y="250">further</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="570" y="250">further</text>
+<rect fill="#fdf6f2" height="112" rx="6" stroke="#e0cfc0" stroke-width="1" width="176" x="14" y="56"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" x="28" y="78">scattered, for contrast</text>
+<circle cx="44" cy="100" fill="#f6e3da" r="8" stroke="#c0603a" stroke-width="1.1"></circle>
+<circle cx="82" cy="116" fill="#f6e3da" r="8" stroke="#c0603a" stroke-width="1.1"></circle>
+<circle cx="124" cy="96" fill="#f6e3da" r="8" stroke="#c0603a" stroke-width="1.1"></circle>
+<circle cx="160" cy="120" fill="#f6e3da" r="8" stroke="#c0603a" stroke-width="1.1"></circle>
+<circle cx="60" cy="128" fill="#f6e3da" r="8" stroke="#c0603a" stroke-width="1.1"></circle>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" x="28" y="144">nobody knows anybody —</text>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" x="28" y="156">none of them pulls the next</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="288">Each square falls on what the last one left behind: referees he can phone, and gaps already filled.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<ul class="checklist">
+<li><strong>A shared venue</strong>: do these people have a common conference, group, ranking or association? A "segment" with no shared venue is one you drew in a spreadsheet, not a real one.</li>
+<li><strong>The same jargon</strong>: do they use the same words for the problem? If not, your case study lands as irrelevant to him.</li>
+<li><strong>Copyable</strong>: can company B lift company A's setup more or less as-is? If not, the gaps differ and every deal is a fresh project.</li>
+<li><strong>Could you own the top of it</strong>: the test isn't market size, it's whether you could plausibly become the <strong>default choice</strong> among these people within twelve months. No default, no word-of-mouth network — just a customer list.</li>
+<li><strong>Where the next square is</strong>: write down the two adjacent squares before you start. If you can't name them, you've picked an island — take it and you're still stuck on it.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: word of mouth only travels between people who are both similar and actually in contact. Concentrating on one niche artificially raises the density of that conduction network — you spend the same effort, but every deal now paves the way for the next instead of ending where it landed.</strong></p>
+<ul>
+<li><strong>Review-level evidence (strong) · homophily</strong>: McPherson, Smith-Lovin &amp; Cook (2001, <em>Annual Review of Sociology</em>) survey a large body of network research: people's ties concentrate heavily among those similar to them — occupation, industry, status, education — and cross-category links are far sparser. The implication: <strong>information rarely crosses category boundaries by itself.</strong> The assumption that "once we win in this industry the next one will hear about it" usually doesn't hold.</li>
+<li><strong>Modelling evidence (reproducible, moderate) · imitation dwarfs innovation</strong>: Bass (1969, <em>Management Science</em>) splits new-product growth into two coefficients — external influence p (advertising, sales) and internal influence q (existing adopters pulling in new ones). Sultan, Farley &amp; Lehmann (1990, <em>Journal of Marketing Research</em>) meta-analysed over two hundred applications and found averages of roughly p ≈ 0.03 and q ≈ 0.38 — <strong>internal imitation is about an order of magnitude larger than external push</strong>. Honest boundary: these models fit beautifully after the fact and forecast poorly before the peak, so use it as a description of mechanism, not as a budget.</li>
+<li><strong>Field study</strong>: Ryan &amp; Gross (1943) again — salesmen made the farmers aware, neighbours made them believe. Scattering your customers dismantles the neighbour half of that machine and leaves only the salesman half doing the work.</li>
+</ul>
+<p class="caveat">Boundary: too narrow really can strand you — the test is whether you can name the two adjacent squares. And the whole approach assumes <strong>word of mouth genuinely matters in your category</strong>. Where buyers don't talk to each other and decide independently (much low-price impulse consumer buying), concentration pays far less, and choosing an audience by channel efficiency makes more sense than choosing one by network.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>He's buying whether the job gets done; who fills the missing pieces decides whether you cross
+<span class="en">He isn't buying your product. He's buying the whole job getting done.</span></h2>
+<span class="tag">whole product</span><span class="tag">name every square</span><span class="tag">don't carry them all</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Between the result he wants and the product you sell there are always missing pieces: migrating old data, training, wiring into legacy systems, compliance paperwork, who to call when it breaks, getting people internally to actually use it. The early adopter <strong>fills those himself</strong>, gladly — closing them is the edge he was buying. The early majority <strong>won't fill a single one</strong>: leave one piece unowned and the whole thing reads as "can't be done here," regardless of how good your product is. So most of the work of crossing isn't product work, it's <strong>writing a name in every square</strong> — you, a partner, or the customer himself (as long as he's agreed out loud). Anything but empty.</div>
+</div>
+<div class="section">
+<div class="section-label">The same gap, two different fates</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 268" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="d1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">"The result he wants" is the whole strip. Your product is one stretch of it.</text>
+<rect fill="#1f7a5c" height="42" rx="4" width="150" x="24" y="40"></rect>
+<text fill="#ffffff" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="99" y="66">your product</text>
+<rect fill="#eceee8" height="42" rx="4" stroke="#b7c1b6" stroke-width="1.2" width="96" x="178" y="40"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="226" y="66">migrate data</text>
+<rect fill="#eceee8" height="42" rx="4" stroke="#b7c1b6" stroke-width="1.2" width="96" x="278" y="40"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="326" y="66">legacy wiring</text>
+<rect fill="#eceee8" height="42" rx="4" stroke="#b7c1b6" stroke-width="1.2" width="96" x="378" y="40"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="426" y="66">training</text>
+<rect fill="#eceee8" height="42" rx="4" stroke="#b7c1b6" stroke-width="1.2" width="86" x="478" y="40"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="521" y="66">compliance</text>
+<rect fill="#eceee8" height="42" rx="4" stroke="#b7c1b6" stroke-width="1.2" width="86" x="568" y="40"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="611" y="66">who to call</text>
+<line marker-end="url(#d1)" stroke="#8a9a90" stroke-width="1.3" x1="24" x2="666" y1="98" y2="98"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="24" y="112">the result he wants = every square on this strip needs an owner</text>
+<rect fill="#e2efdc" height="58" rx="5" stroke="#4e8a3f" stroke-width="1.3" width="316" x="24" y="132"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.8" font-weight="700" x="38" y="152">in front of an early adopter</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="38" y="168">he fills the grey squares himself, gladly —</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="38" y="182">that patchwork is the edge he wanted.</text>
+<rect fill="#f6e3da" height="58" rx="5" stroke="#c0603a" stroke-width="1.5" width="316" x="350" y="132"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" x="364" y="152">in front of the early majority</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="364" y="168">one unowned grey square and the whole</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="364" y="182">thing is "undoable" — product irrelevant.</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="24" y="216">Put a name in each: you / a partner / him (agreed out loud). <tspan fill="#a8461f" font-weight="700">The empty square is where you lose.</tspan></text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" x="24" y="238">Taking them all is the other failure: you become a project shop, every deal bespoke, none reusable.</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" font-weight="700" x="24" y="258">Only inside one niche do you fill these squares once — which is why niche and whole product are one decision.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Template · the ownership table (one page, 30 minutes)</span>
+<p>Write out every step between signature and "he actually has the result," one square per step. Not your features — <strong>the things he has to do</strong>.</p>
+<p>Fill three things into each square: <strong>who does it · how long · who's on the hook if it goes wrong</strong>. The squares you can't fill are where your chasm currently is.</p>
+<p><strong>The right answer is not "all of them, by us"</strong>: you fill the ones that standardise and get reused (migration scripts, a go-live checklist); a partner fills the ones needing credentials, bodies or localisation; he fills some himself — but only if it's confirmed to his face, written into the plan and assigned to a named person, because "he'll handle it" and "nobody's handling it" look identical in meeting notes. The difference is whether there's a name.</p>
+<p><strong>One counter-intuitive trade</strong>: every square you fill counts for <strong>this niche only</strong>. So don't generalise it to widen your addressable market — a generic whole product can never be finished. Narrow is what makes it finishable; finishing it is what lets you roll into the next square.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: the comparison in a buyer's head is never "you vs the competitor," it's "change vs don't." And the total cost of changing includes every gap — any square he has to figure out himself gets priced at worst case, because he doesn't know what might happen there. Writing a name in it compresses an unknown into a specific number.</strong></p>
+<ul>
+<li><strong>Classic framework (practitioner observation, not a controlled study)</strong>: Levitt (1980, <em>Harvard Business Review</em>) described a product as layers — the core function, the layer the buyer assumes comes with it, and the layer beyond expectation. His central claim is that <strong>competition almost never happens on the core function</strong>, but on the layers around it. That's business analysis and case material, not experiment, but the action it implies is testable: list the outer squares and see which ones currently have no owner.</li>
+<li><strong>Why early adopters can't validate this for you</strong>: they fill the gaps <strong>for free, without complaining</strong>, so you conclude the product is complete. It's textbook self-selection bias: <strong>the people willing to patch your gaps are precisely the people least representative of the next group.</strong> Which means "our customers are all doing fine" carries almost no information about whether you can cross.</li>
+<li><strong>Related mechanisms (the earlier two, stacked)</strong>: uncertain squares get priced at worst case (ambiguity aversion), and "don't change" is the status quo, which is favoured by default. Stack those and <strong>one empty square costs more than one feature lead earns</strong> — which is why filling gaps usually beats adding features.</li>
+</ul>
+<p class="caveat">Labelled honestly: the framework layer here — whole product, ownership tables — is <strong>an experience system, not a tested theory</strong>. I've seen no clean controlled study quantifying how much filling gaps lifts conversion. What is empirically supported is the mechanisms underneath (ambiguity aversion, status quo bias, self-selection). Use it as a checklist, not a law, and after filling the table watch whether your own win rate moves.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 45 Action</h3>
+<p>Two hours on whichever line is most stuck right now — whether you sell a product, a service, or yourself.</p>
+<div class="action">
+<strong>One (20 min) · Sort existing customers into two piles:</strong> those who patched gaps themselves and didn't mind the rough edges, and those who expected everything handled. Mostly the first pile means you're still on this side of the chasm; two small scattered piles means you don't have a niche yet.<br/><br/><strong>Two (30 min) · Pick one beachhead:</strong> score it on the four tests — shared venue, same jargon, can B copy A, could you become their default inside a year. Write down the two adjacent squares at the same time; if you can't, pick a different beachhead.<br/><br/><strong>Three (40 min) · Build the ownership table:</strong> signature to real result, one square per step, each carrying who does it, how long, and who's on the hook. Rank the empty squares by cheapest fix — find a partner before you volunteer yourself for everything.<br/><br/><strong>Four (30 min) · Rewrite one passage:</strong> take the three most guarantee-like sentences in your pitch and convert each into a version with a number, a name and a way out. Use them at the next meeting.<br/><br/>Boundary: all of this is for businesses where buyers talk to each other and several people must nod. If you sell individual impulse purchases and buyers never compare notes, don't force the beachhead logic — that game's leverage sits in channel efficiency.</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. How do I tell whether I've fallen into the chasm or my product just isn't good enough yet?</summary>
+<div class="answer">Look at <strong>how you lose</strong>, not how often.<br/><br/><strong>Not good enough</strong> has a recognisable shape: customers can state exactly what's missing ("we can't use it without this"), the reasons are specific, they cluster, and they're fixable — and when you fix them, those same people actually come back.<br/><br/><strong>In the chasm</strong> looks nothing like that: "looks good, we'll think about it," with no specific gap named; warm conversations that won't advance a step; he nods at your case study and then asks "got anyone more like us?"; and deals lost not to a competitor but <strong>to doing nothing</strong> — in the end nobody bought.<br/><br/>A harder signal: list the last twelve months of deals by industry and company size. <strong>First few dozen clustered in a couple of types, then increasingly scattered with lengthening cycles</strong> is close to conclusive that the buyer type changed, not that your product got worse.<br/><br/>These often coexist, but <strong>the order matters</strong>: while gaps are unowned and your references don't count as peers, adding features won't get you across — the new ones will be praised by early adopters and ignored by the mainstream.</div>
+</details>
+<details>
+<summary>2. Doesn't going after one niche mean missing opportunities and making myself small?</summary>
+<div class="answer">The cost of what you miss is visible; the cost of being spread thin is hidden, which is why you only worry about the first one.<br/><br/>Run the arithmetic: across ten industries you rebuild the gaps ten times (different legacy systems, different compliance requirements, different jargon), and the first customer's reference doesn't count in the second industry. <strong>Ten times the cost, zero compounding.</strong> Concentrated, you fill the gaps once, and from about the third deal your pre-sales time starts falling — that drop is what "nailed it" actually feels like.<br/><br/>What deserves the worry isn't narrowness, it's <strong>picking an island</strong>: nailing it and having nowhere adjacent to roll. So the test is never market size, it's whether you can name the two adjacent squares — the same people's next problem, the same problem's next people. If you can, narrow is fine. If you can't, no size saves it.<br/><br/>A practical middle: <strong>concentrate resources, but don't refuse business that walks in</strong> — just don't change the roadmap for it and don't fill its gaps. <strong>Whose gaps are worth filling</strong> is the strategy; which deals you sign isn't.</div>
+</details>
+<details>
+<summary>3. I sell services as an individual — consulting, design, freelance. Does any of this hold?</summary>
+<div class="answer">It holds, and more visibly, because you have no marketing budget to paper over it.<br/><br/><strong>Your early clients are the adventurous ones</strong>: willing to hire someone unknown, drawn to the thinking itself, untroubled by rough process. Their referrals work beautifully among people like them, and barely at all on clients who only hire established names and want to see work in their own sector. That's your personal chasm.<br/><br/><strong>Three things transfer directly.</strong> One: a beachhead is a type of client, not a type of skill. "Visual work for early-stage consumer brands" is far narrower than "design" and far easier to sell, because those people genuinely ask each other. Two: ownership means the squares beyond delivery — what does he still have to do after receiving your work before the job is actually done? Fold one of those in (help him land it once) and your price jumps a tier, because you've moved from selling a deliverable to selling a job finished. Three: replace guarantees with specifics — not "I work fast" but "I've done four like this, two to three weeks, I need these two things from you, and without them it slips."<br/><br/>The one real difference is the <strong>ceiling</strong>: one person can't scale by filling gaps forever, so narrow matters more — narrow enough to become the default name in a small circle. For an individual, being the default is worth more than any portfolio.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 45</footer>
+</div>
+</body>
+</html>

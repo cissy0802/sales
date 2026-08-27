@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 45：跨越鸿沟</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 45 · Phase G</div>
+<h1>你最有力的那几个推荐人，正是主流买家最不想变成的人</h1>
+<div class="meta"><span>主题：早期采用者 vs 主流市场 · 技术采用生命周期 · 先打透一个细分</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">鸿沟不是市场忽然变小了，是你手上最好的证据忽然不算数了——因为下一批人不把上一批人当同类。</div>
+</header>
+<div class="intro">
+<strong>前几十个客户抢着买，然后忽然没人接话了——这不是你做错了什么，是买家换了一种人。</strong>四个动作各解一段：<strong>一、认出你现在在跟哪一种人说话</strong>；<strong>二、把「不确定」换成「已知的风险」</strong>；<strong>三、细分不是小市场，是一群会互相打听的人</strong>；<strong>四、他买的是这件事能不能办成，缺的那几块由谁补</strong>。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>先认出你在跟哪种人说话：想领先一步的，和不想出事的
+<span class="en">Your best reference is exactly the person the mainstream buyer refuses to resemble.</span></h2>
+<span class="tag">采用生命周期</span><span class="tag">同类才算数</span><span class="tag">最小群体实验</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">早期采用者买的是<strong>领先一步</strong>：东西缺胳膊少腿他不在乎，缺的那块他自己补，还当成自己的本事；他不需要别人用过，「还没人用过」正是他要的。早期大众买的是<strong>不出事</strong>：他要的是「跟我一模一样的人已经做过、没翻车」。所以你从第一批客户那里攒的所有弹药——很酷、很新、很快、我们最早——到了第二批人面前<strong>全部反向作用</strong>。你不是话术变差了，是证据的类别不对了。</div>
+</div>
+<div class="section">
+<div class="section-label">断掉的不是市场，是「谁的推荐算数」</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同一条曲线上，买的理由中途换了一次</text>
+<line marker-end="url(#a1)" stroke="#8a9a90" stroke-width="1.4" x1="46" x2="46" y1="262" y2="46"></line>
+<line marker-end="url(#a1)" stroke="#8a9a90" stroke-width="1.4" x1="46" x2="676" y1="262" y2="262"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="40">每年新买的人数</text>
+<polyline fill="none" points="56,258 96,252 136,241 176,223 216,196 256,163 296,131 336,108 376,99 416,108 456,131 496,163 536,196 576,223 616,241 656,254" stroke="#1f7a5c" stroke-width="2.4"></polyline>
+<line stroke="#cbb98f" stroke-dasharray="4 4" stroke-width="1" x1="376" x2="376" y1="90" y2="262"></line>
+<line stroke="#cbb98f" stroke-dasharray="4 4" stroke-width="1" x1="570" x2="570" y1="130" y2="262"></line>
+<rect fill="#f6e3da" height="180" stroke="#c0603a" stroke-width="1.6" width="22" x="196" y="82"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.6" font-weight="700" text-anchor="middle" x="207" y="74">鸿沟</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="middle" x="88" y="280">创新者 · 早期采用者</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="middle" x="300" y="280">早期大众</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="middle" x="472" y="280">晚期大众</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="middle" x="622" y="280">落后者</text>
+<rect fill="#e2efdc" height="52" rx="5" stroke="#4e8a3f" stroke-width="1.3" width="164" x="24" y="130"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" x="36" y="150">他买「领先一步」</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="36" y="166">缺的那块他自己补，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="36" y="178">没人用过正是卖点。</text>
+<rect fill="#eaf3ee" height="52" rx="5" stroke="#8aa79a" stroke-width="1.3" width="176" x="228" y="130"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="240" y="150">他买「不出事」</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="240" y="166">要跟他一样的公司</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="240" y="178">已经做过、没翻车。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="24" y="306">左边那批人的推荐，右边的人不当回事：「那种爱折腾的公司跟我们不一样。」</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="24" y="324">所以过鸿沟不是加大力气，是换一类证据——把推荐人换成他眼里的同类。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 三句话认出他是哪种人</span>
+<p>见面时随口问三句，基本就能定他属于哪边：</p>
+<p>1. <strong>「你们上一个换掉的工具，是什么时候换的？」</strong>——三年没换过任何东西的组织，几乎不可能是早期采用者，别按早期采用者的方式讲。</p>
+<p>2. <strong>「这事要是往前推，最后签字的是谁？」</strong>——早期采用者常常自己就能拍板；主流买家会说出一串人名。名字越多，越要给他「别人做过」的证据，而不是「这东西多先进」。</p>
+<p>3. <strong>「同行里有谁在做类似的事？」</strong>——他脱口而出几个名字，说明他心里有一张「同类名单」；你的推荐人如果不在这张名单上，就等于没有推荐人。</p>
+<p><strong>反向提醒</strong>：别把主流买家当成「保守、不懂」。可预期和先进一样是合理的购买理由。你嫌他慢，多半是你手上没有他要的那类证据。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Early adopters buy being ahead: they don't mind the missing pieces, they patch the gaps themselves and treat that as their own competence, and "nobody has used it yet" is the selling point rather than the objection. The early majority buys not getting into trouble: they want proof that somebody exactly like them already did this and nothing blew up. So everything you stockpiled from your first customers — it's new, it's fast, we were first — works in reverse on the second group. You haven't got worse at pitching; your evidence is the wrong category. Three questions in a first meeting tell you which side you're on: when did you last replace a tool, who signs this off, and who in your industry is doing something similar. Long list of names on the second, and a ready list on the third, means you need peers who've done it — not a better feature story. And don't file the mainstream buyer under slow or ignorant: predictability is as rational a purchase as novelty. If he seems slow, it usually means you don't yet hold the kind of evidence he buys on.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：人是拿「跟我像不像」来判断一条信息值不值得信的，不是拿这条信息本身有多硬。所以推荐的效力不取决于推荐人多牛，取决于听的人愿不愿意把自己和推荐人归成一类——不承认是同类，再漂亮的案例也只是别人的故事。</strong></p>
+<ul>
+<li><strong>硬证据（经典，多次复现）· 同类判断有多容易被激活</strong>：Tajfel、Billig、Bundy &amp; Flament (1971, <em>European Journal of Social Psychology</em>) 的最小群体实验：只按「你更喜欢哪个画家」这种毫无意义的标准把陌生人分成两组，被试分配奖励时就已经明显偏向自己那组。含义：<strong>「同类」这个开关极其廉价</strong>——不需要真的相似，只需要一个他能对号入座的标签（同行业、同规模、同岗位）。反过来，推荐人只要在一个显眼维度上不像他，这个开关也同样廉价地关上。</li>
+<li><strong>大样本经典田野研究</strong>：Ryan &amp; Gross (1943, <em>Rural Sociology</em>) 追踪爱荷华两个社区 259 户农民改种杂交玉米：多数人<strong>第一次听说</strong>是从推销员那里，但真正让他们动手改种的，是<strong>邻居地里的收成</strong>；从听说到全部改种平均隔了好几年。销售负责让人知道，同类负责让人相信——这条分工八十多年没变。</li>
+<li><strong>要标注清楚的两件事</strong>：Rogers《Diffusion of Innovations》(1962/2003) 那套 2.5% / 13.5% / 34% 的比例，是他把正态曲线按标准差切出来的<strong>建模约定</strong>，不是测出来的常数，别当成你的市场里真有这么多人。而「鸿沟」本身来自 Moore《Crossing the Chasm》(1991)，是<strong>商业观察，不是对照研究</strong>：没有实验证明它必然存在。它的价值在于逼你问「我的推荐人在他眼里算不算同类」，不在于它被证明过。</li>
+</ul>
+<p class="caveat">边界：这套分类是按<strong>某一类产品</strong>算的，不是性格标签。同一个人可能在工具上极敢尝鲜、在跟钱和合规有关的事上极保守。别给客户贴人格标签，只判断他在<strong>这件事</strong>上站哪边。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>他怕的不是风险，是「说不清会出什么事」——你的活是把不确定换成已知的风险
+<span class="en">He isn't risk-averse. He's ambiguity-averse. Those need opposite answers.</span></h2>
+<span class="tag">模糊厌恶</span><span class="tag">杏仁核</span><span class="tag">谁背这个锅</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">「有 10% 的概率延期两周」是<strong>风险</strong>，能算、能预留、能写进计划；「不知道会出什么问题」是<strong>不确定</strong>，没法算，只能不动。主流买家卡住，几乎都卡在第二种。所以你要做的不是把风险说成零——那只会让他更不信——是把每一处「说不清」换成一句<strong>有数字、有名字、有退路</strong>的话。还有一层他不会明说：组织里真正被算的不是期望收益，是<strong>出事了谁背</strong>。把这个人的风险降下来，比把公司收益说高一倍更管用。</div>
+</div>
+<div class="section">
+<div class="section-label">同一件事，两种说法</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 288" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerHeight="8" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="9" refY="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">左边这些话都没说错，只是每一句都留了一个说不清</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10.2" font-weight="700" x="24" y="50">他听到的（不确定）</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.2" font-weight="700" x="398" y="50">该换成的（已知的风险）</text>
+<rect fill="#f6e3da" height="38" rx="4" stroke="#c0603a" stroke-width="1.2" width="300" x="24" y="62"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="86">「上线很快的」</text>
+<line marker-end="url(#b1)" stroke="#4e8a3f" stroke-width="1.4" x1="330" x2="390" y1="81" y2="81"></line>
+<rect fill="#e2efdc" height="38" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="284" x="392" y="62"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="404" y="86">「同规模的三家，4 到 7 周」</text>
+<rect fill="#f6e3da" height="38" rx="4" stroke="#c0603a" stroke-width="1.2" width="300" x="24" y="110"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="134">「我们客户都很满意」</text>
+<line marker-end="url(#b1)" stroke="#4e8a3f" stroke-width="1.4" x1="330" x2="390" y1="129" y2="129"></line>
+<rect fill="#e2efdc" height="38" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="284" x="392" y="110"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="404" y="134">「这是他们的电话，你直接问」</text>
+<rect fill="#f6e3da" height="38" rx="4" stroke="#c0603a" stroke-width="1.2" width="300" x="24" y="158"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="182">「基本不会出问题」</text>
+<line marker-end="url(#b1)" stroke="#4e8a3f" stroke-width="1.4" x1="330" x2="390" y1="177" y2="177"></line>
+<rect fill="#e2efdc" height="38" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="284" x="392" y="158"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="404" y="182">「最常出的三个问题，这样处理」</text>
+<rect fill="#f6e3da" height="38" rx="4" stroke="#c0603a" stroke-width="1.2" width="300" x="24" y="206"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="230">「先签一年，肯定值」</text>
+<line marker-end="url(#b1)" stroke="#4e8a3f" stroke-width="1.4" x1="330" x2="390" y1="225" y2="225"></line>
+<rect fill="#e2efdc" height="38" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="284" x="392" y="206"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="404" y="230">「先一个部门，不行三个月退出」</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="24" y="266">右边每一句都承认了会出事——正因为承认，它才可算、可写进计划、可拿去跟老板交代。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="24" y="282">保证「不会有问题」听起来更强，但它把风险留在了他身上：出事没人替他解释。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 主动把丑话说在前面</span>
+<p>他问「这个靠谱吗」，别答「放心」。答：</p>
+<p>「我说三件<strong>可能出问题</strong>的事。第一，你们的{某个老系统}我们没接过，最坏情况这块要多花两三周，这段我不收钱。第二，头一个月你们{某个岗位}会觉得比原来麻烦，这是真的，第三周开始才回本。第三，如果{某个前提}不成立，这事就不该做，那我会直接告诉你别买。」</p>
+<p><strong>为什么这段比任何保证都强</strong>：一个肯说自己在哪会出问题的人，说「这块没问题」时才有分量。而且你把三个「说不清」变成了三条可预留的成本——他现在能拿这段话去跟老板交代了。</p>
+<p><strong>配一句退路</strong>：「先在一个部门跑三个月，不行就停，数据全导给你。」可逆性是最便宜的降不确定手段——他真用到退出条款的概率很小，但没有这条他根本不敢开始。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> "A 10% chance of slipping two weeks" is a risk: it can be estimated, budgeted, written into a plan. "No idea what might go wrong" is ambiguity: it can't be priced, so the safest move is not to move. Mainstream buyers stall on the second kind almost every time, so the job isn't claiming the risk is zero — that makes you less believable, not more — it's converting every vague reassurance into a sentence with a number, a name and a way out. There's also a layer nobody says aloud: organisations don't weigh expected value, they weigh who carries the blame if it goes wrong. Lowering that one person's exposure beats doubling your stated ROI. Practically: say the three things most likely to go wrong before he asks, and offer reversibility — one department, three months, stop and take your data. He will almost certainly never use the exit clause, but without it he won't start.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：概率已知的「风险」和概率未知的「不确定」，在大脑里走的不是同一套回路，也不该用同一种话去解。你说「放心」只是把不确定重新包装了一遍；给出数字、给出能打电话的人、给出退出条款，才是真的把它换成了可算的风险。</strong></p>
+<ul>
+<li><strong>硬证据（经典，复现无数次）· 模糊厌恶</strong>：Ellsberg (1961, <em>Quarterly Journal of Economics</em>) 的两个罐子：一个明确写着红黑各半，另一个比例完全不告诉你。绝大多数人宁可赌明确的那个——不管押红还是押黑都这么选，这在数学上是自相矛盾的。<strong>人厌恶的不是坏概率，是不知道概率。</strong></li>
+<li><strong>硬证据（神经层，含病灶证据）· 不确定走的是另一套回路</strong>：Hsu、Bhatt、Adolphs、Tranel &amp; Camerer (2005, <em>Science</em>) 用 fMRI 发现，面对<strong>概率未知</strong>的赌局时，<strong>杏仁核与眶额皮层</strong>活动明显更强；概率已知时，<strong>纹状体</strong>（奖赏回路）活动更强。更硬的一环是病灶组：眶额皮层受损的病人对「模糊」几乎无感，风险和不确定被一视同仁。样本不大（影像 16 人），fMRI 反推有公认局限，但影像＋病灶两路结论一致，比单一影像研究可信得多。</li>
+<li><strong>组织层面（机制推理，非研究结论）</strong>：「没人因为买 IBM 被开除」说的是同一件事的另一面：决策者算的是自己的暴露，不是公司的期望值。这条我没有可核对的实证，是机制推理加一线观察；但动作可检验：<strong>把推荐人、退出条款、分阶段落到纸上</strong>，看他松不松口。</li>
+</ul>
+<p class="caveat">边界与红线：这套只在他<strong>真的有不确定</strong>时管用。如果他的犹豫其实是「不想改」，降不确定没用，得回到不改变的代价上谈——挖痛点那期的量化法比任何保证都好使。红线：<strong>丑话得是真的丑话</strong>，编两个无关痛痒的小毛病换信任是在演，被识破一次修不回来。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>细分不是「小一点的市场」，是「一群会互相打听的人」
+<span class="en">A beachhead isn't a smaller market. It's a network that talks to itself.</span></h2>
+<span class="tag">同质相吸</span><span class="tag">模仿系数</span><span class="tag">保龄球道</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">同样 30 个客户，撒在 20 个行业里，你有 30 个孤立案例；集中在一个行业里，你有一个<strong>会自己传播的口碑网</strong>。差别不在客户数，在这些人平不平时碰面。所以挑细分的标准从来不是「市场够不够大」，而是四个字：<strong>他们互相认识吗</strong>——有没有共同的会、群、榜单、协会；用不用同一套黑话；一家做成了，另一家能不能<strong>直接照抄</strong>。照抄不了，第二家还得从头讲一遍，那不叫打透，叫重来。</div>
+</div>
+<div class="section">
+<div class="section-label">打透一个，再滚向相邻的</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">相邻只有两个方向：同一群人的下一个问题，同一个问题的下一群人</text>
+<circle cx="352" cy="72" fill="#1f7a5c" r="26"></circle>
+<text fill="#ffffff" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="352" y="69">打透的</text>
+<text fill="#ffffff" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="352" y="82">第一格</text>
+<line marker-end="url(#c1)" stroke="#4e8a3f" stroke-width="1.6" x1="331" x2="263" y1="88" y2="139"></line>
+<line marker-end="url(#c1)" stroke="#4e8a3f" stroke-width="1.6" x1="373" x2="443" y1="88" y2="139"></line>
+<ellipse cx="234" cy="162" fill="#cfe6c6" rx="46" ry="26" stroke="#3f6d2f" stroke-width="1.6"></ellipse>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="234" y="159">同一群人</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="234" y="172">下个问题</text>
+<ellipse cx="470" cy="162" fill="#cfe6c6" rx="46" ry="26" stroke="#3f6d2f" stroke-width="1.6"></ellipse>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="470" y="159">同个问题</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="470" y="172">下群人</text>
+<line marker-end="url(#c1)" stroke="#8aa79a" stroke-width="1.4" x1="208" x2="151" y1="184" y2="232"></line>
+<line marker-end="url(#c1)" stroke="#8aa79a" stroke-width="1.4" x1="253" x2="288" y1="186" y2="229"></line>
+<line marker-end="url(#c1)" stroke="#8aa79a" stroke-width="1.4" x1="451" x2="416" y1="186" y2="229"></line>
+<line marker-end="url(#c1)" stroke="#8aa79a" stroke-width="1.4" x1="496" x2="553" y1="184" y2="232"></line>
+<circle cx="134" cy="246" fill="#eaf3ee" r="22" stroke="#8aa79a" stroke-width="1.3"></circle>
+<circle cx="302" cy="246" fill="#eaf3ee" r="22" stroke="#8aa79a" stroke-width="1.3"></circle>
+<circle cx="402" cy="246" fill="#eaf3ee" r="22" stroke="#8aa79a" stroke-width="1.3"></circle>
+<circle cx="570" cy="246" fill="#eaf3ee" r="22" stroke="#8aa79a" stroke-width="1.3"></circle>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="134" y="250">更远</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="302" y="250">更远</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="402" y="250">更远</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" text-anchor="middle" x="570" y="250">更远</text>
+<rect fill="#fdf6f2" height="104" rx="6" stroke="#e0cfc0" stroke-width="1" width="176" x="14" y="56"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" x="28" y="78">撒开的对照</text>
+<circle cx="44" cy="100" fill="#f6e3da" r="8" stroke="#c0603a" stroke-width="1.1"></circle>
+<circle cx="82" cy="116" fill="#f6e3da" r="8" stroke="#c0603a" stroke-width="1.1"></circle>
+<circle cx="124" cy="96" fill="#f6e3da" r="8" stroke="#c0603a" stroke-width="1.1"></circle>
+<circle cx="160" cy="120" fill="#f6e3da" r="8" stroke="#c0603a" stroke-width="1.1"></circle>
+<circle cx="60" cy="128" fill="#f6e3da" r="8" stroke="#c0603a" stroke-width="1.1"></circle>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" x="28" y="146">谁也不认识谁 · 一个也带不动下一个</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="288">每一格能倒，靠上一格留下的两样东西：能打电话的推荐人，和已经补齐的那几块。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<ul class="checklist">
+<li><strong>共同场所</strong>：这群人有没有共同的会 / 群 / 榜单 / 协会？没有共同场所的「细分」是你在表格里画的，不是真的。</li>
+<li><strong>同一套黑话</strong>：他们描述这个问题时用不用同一个词？用词不同，你的案例讲过去他听不出跟自己有关。</li>
+<li><strong>能不能照抄</strong>：A 家的做法，B 家能不能基本原样搬？搬不动说明缺口不一样，每家都是新项目。</li>
+<li><strong>你能不能吃下前几名</strong>：判据不是市场多大，是你有没有可能在 12 个月内成为这群人里<strong>默认的那个选择</strong>。做不到默认，就没有口碑网，只有客户名单。</li>
+<li><strong>下一格在哪</strong>：动手前先写出相邻的两格。写不出来，说明你选的是一座孤岛——打透了也滚不出去。</li>
+</ul>
+</div>
+<p class="en-brief"><b>EN</b> Thirty customers scattered across twenty industries gives you thirty isolated cases; the same thirty inside one industry gives you a word-of-mouth network that spreads on its own. The difference isn't the count, it's whether these people run into each other. So the test for a beachhead is never "is the market big enough" — it's do they talk to each other: a shared conference, group, ranking or association; the same jargon for the problem; and above all, can the second company copy the first one's setup almost verbatim. If they can't, you're starting from scratch every time, which isn't nailing a niche, it's repeating one. Two more checks. Could you plausibly become the default choice among these people within a year — not the biggest vendor, the default one? And write down the two adjacent squares before you start: the same people's next problem, and the same problem's next people. If you can't name them, you've picked an island — you can take it and still be stuck on it.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：口碑只在「彼此相似且真的会碰面」的人之间传得动。集中打一个细分，等于人为把传导网的密度提上去——你花的还是同样的力气，区别是每一单都在给下一单铺路，而不是各自落地就结束。</strong></p>
+<ul>
+<li><strong>综述级证据（强）· 同质相吸</strong>：McPherson、Smith-Lovin &amp; Cook (2001, <em>Annual Review of Sociology</em>) 综述了大量社会网络研究：人的联系高度集中在与自己相似的人身上（职业、行业、地位、教育），跨类别的连接稀疏得多。含义：<strong>信息几乎不会自己越过类别边界</strong>——你以为「这行做成了那行自然会听说」，通常不会。</li>
+<li><strong>建模证据（可复现，中等强度）· 模仿远大于创新</strong>：Bass (1969, <em>Management Science</em>) 的扩散模型把新品增长拆成两个系数：外部影响 p（广告、推销带来的）和内部影响 q（已买的人带动没买的人）。Sultan、Farley &amp; Lehmann (1990, <em>Journal of Marketing Research</em>) 对两百多次应用做的元分析，平均 p 约 0.03、q 约 0.38——<strong>内部模仿的量级比外部推广大一个数量级</strong>。诚实的边界：这类模型事后拟合很好，事前预测（尤其在峰值之前）很不准，所以拿它当机制刻画，别拿它做预算。</li>
+<li><strong>田野研究</strong>：还是 Ryan &amp; Gross (1943) 那批农民——推销员负责让人知道，邻居负责让人相信。你把客户撒开，等于亲手拆掉了「邻居」这一环，只剩推销员那一半在干活。</li>
+</ul>
+<p class="caveat">边界：太窄也会真困死——判据是相邻两格写不写得出来。另外前提是<strong>口碑对你的品类真的重要</strong>；买家彼此不交流、决策高度独立的（很多个人低价冲动型消费），集中的收益就小得多，那时按渠道效率选人群更合理。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>他买的是「这件事能不能办成」；缺的那几块由谁补，决定你过不过得去
+<span class="en">He isn't buying your product. He's buying the whole job getting done.</span></h2>
+<span class="tag">整体产品</span><span class="tag">缺口归属</span><span class="tag">别全自己扛</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">从「他想要的结果」到「你的产品」中间，永远还差几块：迁移旧数据、培训、和老系统对接、合规文档、出事时找谁、内部推行。早期采用者会<strong>自己把这几块补上</strong>，而且乐意——补齐的过程正是他要的领先。早期大众<strong>一块都不想补</strong>：只要有一块没人管，这事在他那儿就是「办不成」，跟你的产品好不好无关。所以过鸿沟的实际工作量一大半不在产品上，在<strong>把缺口一格一格标上名字</strong>——名字可以是你、合作方、或他自己（但得他点头认），唯独不能是空的。</div>
+</div>
+<div class="section">
+<div class="section-label">同一个缺口，两个阶段的命运</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 268" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="d1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">「他要的结果」是一整条，你的产品只是其中一段</text>
+<rect fill="#1f7a5c" height="42" rx="4" width="150" x="24" y="40"></rect>
+<text fill="#ffffff" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="99" y="66">你的产品</text>
+<rect fill="#eceee8" height="42" rx="4" stroke="#b7c1b6" stroke-width="1.2" width="96" x="178" y="40"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="226" y="66">迁旧数据</text>
+<rect fill="#eceee8" height="42" rx="4" stroke="#b7c1b6" stroke-width="1.2" width="96" x="278" y="40"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="326" y="66">接老系统</text>
+<rect fill="#eceee8" height="42" rx="4" stroke="#b7c1b6" stroke-width="1.2" width="96" x="378" y="40"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="426" y="66">培训与推行</text>
+<rect fill="#eceee8" height="42" rx="4" stroke="#b7c1b6" stroke-width="1.2" width="86" x="478" y="40"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="521" y="66">合规文档</text>
+<rect fill="#eceee8" height="42" rx="4" stroke="#b7c1b6" stroke-width="1.2" width="86" x="568" y="40"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="611" y="66">出事找谁</text>
+<line marker-end="url(#d1)" stroke="#8a9a90" stroke-width="1.3" x1="24" x2="666" y1="98" y2="98"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="24" y="112">他要的结果 = 这一整条都得有人管</text>
+<rect fill="#e2efdc" height="58" rx="5" stroke="#4e8a3f" stroke-width="1.3" width="316" x="24" y="132"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.8" font-weight="700" x="38" y="152">早期采用者面前</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="38" y="168">灰的那几块他自己补，而且不觉得是负担——</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="38" y="182">补出来的差异正是他要的领先。</text>
+<rect fill="#f6e3da" height="58" rx="5" stroke="#c0603a" stroke-width="1.5" width="316" x="350" y="132"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" x="364" y="152">早期大众面前</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="364" y="168">灰的只要剩一块没人管，整件事就是</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="364" y="182">「办不成」——跟你产品好不好无关。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="24" y="216">每一格填一个名字：你 / 合作方 / 他自己（得他点头认）。<tspan fill="#a8461f" font-weight="700">空着的那一格，就是你丢单的地方。</tspan></text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" x="24" y="238">全部自己扛也是错的：你会被拖成一家项目公司，每一单都定制，第二单帮不上第三单。</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.2" font-weight="700" x="24" y="258">只有集中在一个细分，这几格才只用补一次——这就是为什么细分和整体产品是同一件事。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做模板 · 缺口归属表（一张纸，30 分钟）</span>
+<p>横着写下从签字到「他真的拿到结果」之间的每一步，一步一格。别写你的功能，写<strong>他要做的事</strong>。</p>
+<p>每格填三样：<strong>谁做 · 要多久 · 做砸了谁兜</strong>。填不出来的，就是你现在的鸿沟位置。</p>
+<p><strong>标准答案不是「都我来」</strong>：你自己补（能标准化能复用的，比如迁移脚本、上线清单）；找合作方补（要资质、要人力、要本地化的）；他自己补（必须当面确认、写进计划、指名到人——「他自己补」和「没人补」在会议纪要上长得一模一样，区别只在有没有名字）。</p>
+<p><strong>一个反直觉的取舍</strong>：这张表里补齐的每一格都只对<strong>这个细分</strong>有效。所以别为了扩大适用面把它做通用——通用的整体产品补不完。窄，才补得完；补完了，才滚得动下一格。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Between the result he wants and the product you sell there are always missing pieces: migrating the old data, training, wiring into legacy systems, compliance paperwork, who to call at 2am, getting people internally to actually use it. Early adopters fill those gaps themselves and enjoy it — closing them is the edge they were buying. The early majority won't fill a single one: leave one piece unowned and the whole thing reads as "can't be done here," regardless of how good your product is. So most of the work of crossing is not product work, it's writing a name in every square — you, a partner, or the customer himself, as long as he's said so out loud and it's in the plan, because "he'll handle it" and "nobody's handling it" look identical in meeting notes. Taking every square yourself is the other failure: you become a project shop where each deal is bespoke and no deal helps the next. And note that a completed whole product only counts for one niche — which is exactly why the beachhead and the whole product are the same decision.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：买家心里的比较对象从来不是「你 vs 竞品」，是「换 vs 不换」。而「换」的总成本包含所有缺口——只要有一格他得自己想办法，这格的成本在他脑子里就按最坏情况估，因为他不知道会出什么事。你把名字填上，等于把那格从「未知」压成一个具体数字。</strong></p>
+<ul>
+<li><strong>经典框架（实践观察，非对照研究）</strong>：Levitt (1980, <em>Harvard Business Review</em>) 提出产品有几层：核心功能、买家默认会有的一层、以及超出预期的一层。他的关键论点是<strong>竞争几乎从不发生在核心功能上</strong>，而发生在外面那几层。这是商业分析和案例，不是实验，但它对应的动作可检验：把外圈一格格列出来，看哪几格现在没人管。</li>
+<li><strong>为什么早期采用者不能替你验证这件事</strong>：他补缺口是<strong>免费替你干活</strong>，还不抱怨——于是你会误以为产品已经完整。这是一个典型的自选择偏差：<strong>愿意自己补缺口的人，正是最不能代表下一批人的人。</strong>所以「我们客户都跑得挺好」这句话，在过鸿沟这件事上几乎没有信息量。</li>
+<li><strong>相关机制（前两条在这里叠加）</strong>：不确定的那几格会被按最坏情况估（模糊厌恶），而「不换」是现状，天然占便宜。两者叠加意味着<strong>一格空白的损失远大于一个功能领先的收益</strong>——所以补缺口通常比加功能划算。</li>
+</ul>
+<p class="caveat">诚实标注：整体产品与缺口归属属于<strong>经验体系，不是被检验过的理论</strong>——我没见到干净的对照研究说补齐缺口能提高多少转化。可靠的是底下那几条机制（模糊厌恶、现状偏好、自选择偏差）。当检查表用，别当定律；填完看你自己的赢单率有没有动。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 45 Action</h3>
+<p>两小时，拿你现在最卡的那条线做一遍——不管你卖的是产品、服务，还是你自己。</p>
+<div class="action">
+<strong>一（20 分钟）· 给现有客户分两堆：</strong>「自己补过缺口、不介意东西不全」的一堆，「要求你什么都办好」的一堆。第一堆多，说明你还在鸿沟这一边；两堆都少而杂，说明你连细分都还没有。<br/><br/><strong>二（30 分钟）· 挑一格滩头：</strong>按四条判据打分——有共同场所吗、用同一套词吗、A 家的做法 B 家能照抄吗、你有没有可能在一年内成为这群人的默认选择。同时写出相邻的两格，写不出来就换一个。<br/><br/><strong>三（40 分钟）· 缺口归属表：</strong>从签字到他真拿到结果，一步一格，每格填「谁做 · 多久 · 做砸了谁兜」。空着的那几格，按最便宜的顺序排：能找合作方的先找，别一上来全自己扛。<br/><br/><strong>四（30 分钟）· 改一段话术：</strong>把你 pitch 里最像「保证」的那三句，逐句换成带数字、带名字、带退路的版本，下一次会面直接用。<br/><br/>边界提醒：这套是给「买家彼此会打听、决策要多人点头」的生意用的。卖个人冲动型消费、买家之间几乎不交流的，别硬套滩头——那种生意的杠杆在渠道效率上。</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我怎么知道自己是「掉进鸿沟」，还是单纯产品还不够好？</summary>
+<div class="answer">看<strong>输的方式</strong>，不看输的数量。<br/><br/><strong>产品不够好</strong>的典型形状：客户能说清楚缺什么（「没有这个功能我们没法用」），拒绝理由具体、集中、可修；修完之后同一批人真的回来了。<br/><br/><strong>掉进鸿沟</strong>的形状完全不同：对方说「挺好的，我们再看看」，说不出具体缺什么；聊得很热但推不到下一步；你拿出的成功案例他点头，然后问「有没有跟我们更像的」；单子不是输给竞品，是<strong>输给「先不动」</strong>——最后谁也没买。<br/><br/>更硬的信号：把过去 12 个月的单子按行业和规模列一列。<strong>头几十单集中在少数几类，之后越来越散、周期越来越长</strong>，基本可以确定是买家类型变了，不是产品退步了。<br/><br/>这两件事常同时存在，但<strong>顺序要紧</strong>：缺口没人管、推荐人不算同类时，加功能也过不去——新功能会被早期采用者夸奖，被主流买家无视。</div>
+</details>
+<details>
+<summary>2. 只打一个细分，会不会白白错过其他机会、把自己做小了？</summary>
+<div class="answer">错过的成本你看得见，分散的成本是隐性的，所以你只焦虑前一个。<br/><br/>算一笔账：撒在十个行业，每个行业的缺口都得重做一遍（不同的老系统、不同的合规要求、不同的黑话），第一家的推荐在第二个行业也不算数。<strong>成本是十份，复利是零份。</strong>集中在一个，缺口只补一次，第三单开始售前时间就在往下掉——那才是「打透了」的体感。<br/><br/>真正该警惕的不是「太窄」，是<strong>选了一座孤岛</strong>：打透之后滚不到任何相邻的地方去。所以判据不是市场多大，是相邻两格写不写得出来（同一群人的下一个问题、同一个问题的下一群人）。写得出来，窄不是问题；写不出来，多大都是死路。<br/><br/>现实的中间做法：<strong>集中资源，但不必拒绝送上门的单</strong>——别为他们改路线图、别为他们补缺口。<strong>谁的缺口值得补</strong>才是你的战略，签不签一单不是。</div>
+</details>
+<details>
+<summary>3. 我是个人卖服务的（做咨询 / 设计 / 自由职业），这套还成立吗？</summary>
+<div class="answer">成立，而且更明显，因为你没有市场预算可以掩盖问题。<br/><br/><strong>你的早期客户是「爱冒险的人」</strong>：敢用没名气的人，看重想法本身，不介意流程粗糙。他们的推荐在同类人之间很好使，但对「只找有名气的、要看同行案例」的客户几乎不起作用——这就是你个人的鸿沟。<br/><br/><strong>三件事直接照搬</strong>：一、滩头＝一类客户，不是一类技能。「给早期消费品牌做视觉」比「设计」窄得多也好卖得多，因为这群人真的会互相打听。二、缺口归属＝交付之外的那几格：他拿到你的东西之后还要做什么才算真办成？把其中一格包进来（比如帮他落地一次），报价立刻能跳一档——你卖的从「一份东西」变成「一件事办成了」。三、把保证换成具体：别说「我做得很快」，说「同类项目我做过四个，两到三周，需要你配合这两件事，做不到就会拖」。<br/><br/>唯一不同的是<strong>上限</strong>：一个人没法靠补缺口无限扩张，所以更要窄——窄到能成为某个小圈子里的默认人选。对个人来说，「默认」比任何案例集都值钱。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 45</footer>
+</div>
+</body>
+</html>
