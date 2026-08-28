@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 46：定价的科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 46 · Phase G</div>
+<h1>他说贵不贵，是拿旁边那个数比出来的——所以你真正在定的是那个数</h1>
+<div class="meta"><span>主题：价值定价 vs 成本加成 · 套餐与锚定 · 心理定价 · 提价策略</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">价格没有绝对值。同一个数字，换一个参照就从「太贵了」变成「才这么点？」——定价一大半的活是在设计参照，不是在算成本。</div>
+</header>
+<div class="intro">
+<strong>算成本、加个利润率、报出去——大部分钱在这一步就送掉了，人还以为自己算得挺仔细。</strong>四个动作各解一段：<strong>一、成本只定地板，参照才定价格</strong>；<strong>二、一个价没有意义，价格只在比较里存在</strong>；<strong>三、掏钱是真的疼，疼在哪块脑区都能看到</strong>；<strong>四、涨价能不能过去，取决于理由，不取决于幅度</strong>。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>成本只决定你不该卖多低；价格是他拿手上的替代方案比出来的
+<span class="en">Cost sets a floor you shouldn't go under. It has never once set his price.</span></h2>
+<span class="tag">价值定价</span><span class="tag">参照价</span><span class="tag">交易效用</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">你的成本是你的事，客户既看不见也不关心。他心里只有三条线：<strong>你的成本是地板</strong>——低于它你在补贴他；<strong>他现在为这件事花的钱和时间是参照</strong>——这个数才是他嘴里「贵不贵」的基准；<strong>换了你之后他能多赚、少赔的那部分是天花板</strong>。成本加成的毛病不是算错，是它只用到了地板那一条，报出来的数几乎必然贴着区间最左边。中间那一整段，是他本来愿意付、而你没开口要的钱。</div>
+</div>
+<div class="section">
+<div class="section-label">三条线，只有最左边那条是你的</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="p1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">价格落在哪，由三条线夹出来</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="119" y="52">成本地板</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="119" y="68">低于这条你在亏钱</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="344" y="52">替代方案参照</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="344" y="68">他现在花的那个数</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="570" y="52">价值天花板</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="570" y="68">再高不如不改变</text>
+<rect fill="#f6e3da" height="30" stroke="#c0603a" stroke-width="1.2" width="79" x="40" y="120"></rect>
+<rect fill="#e2efdc" height="30" stroke="#4e8a3f" stroke-width="1.4" width="451" x="119" y="120"></rect>
+<rect fill="#f6e3da" height="30" stroke="#c0603a" stroke-width="1.2" width="106" x="570" y="120"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle" x="79" y="139">别卖</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="344" y="139">可成交区间</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle" x="623" y="139">他不会买</text>
+<line stroke="#8a9a90" stroke-dasharray="4 4" stroke-width="1" x1="119" x2="119" y1="76" y2="118"></line>
+<line stroke="#8a9a90" stroke-dasharray="4 4" stroke-width="1" x1="344" x2="344" y1="76" y2="118"></line>
+<line stroke="#8a9a90" stroke-dasharray="4 4" stroke-width="1" x1="570" x2="570" y1="76" y2="118"></line>
+<line marker-end="url(#p1)" stroke="#c0603a" stroke-width="1.6" x1="150" x2="558" y1="176" y2="176"></line>
+<circle cx="150" cy="176" fill="#c0603a" r="4"></circle>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="40" y="200">成本加成算出来的价，几乎总落在这个红点上；</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="40" y="218">箭头这一整段，是他愿意付而你从没要过的钱。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="40" y="248">你唯一真能动的是中间那条：他拿什么跟你比，那个数就是他心里的价。</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="40" y="272">所以报价之前先问出他现在为这件事花了多少——参照没换掉，讲多少价值都没用。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 三句话问出他心里的参照价</span>
+<p>1. <strong>「这件事你们现在是怎么做的？」</strong>——先拿到替代方案。他真正在跟你比的从来不是竞品，是他现在这套凑合的做法。</p>
+<p>2. <strong>「大概占谁多少时间，一个月折下来多少钱？」</strong>——把参照换算成数字。他自己嘴里说出来的数，比你算给他的可信十倍，而且他不会跟自己讨价还价。</p>
+<p>3. <strong>「如果这块彻底不用管了，省下来的人会去做什么？」</strong>——把参照抬到收益那一侧，天花板才露出来。</p>
+<p><strong>报价时怎么用</strong>：先复述他的数，再报你的数。「你刚说这块一个月占两个人三天，一年下来十来万。我们这套三万八。」——你没有说服他，你只是把他自己的数字摆在了旁边。</p>
+<p><strong>什么时候必须回到成本</strong>：定制、按人力交付的活，成本决定你会不会做亏。先算地板，再谈参照，别混成一个数。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Your cost is your business; the buyer can't see it and doesn't care. He has three lines in his head. Your cost is the floor — go under it and you're subsidising him. What he currently spends on this problem, in money and hours, is the reference, and that number is what "expensive" is measured against. What he'll earn or stop losing after switching is the ceiling. Cost-plus isn't wrong arithmetic, it just uses the floor and nothing else, so the number lands hard against the left edge of the range and everything to the right is money he'd have paid and you never asked for. Three questions get the reference out of him: how do you handle this today, roughly how many hours or how much a month is that, and what would those people do instead if it went away. Then quote by repeating his own number before yours — you're not persuading him, you're setting his figure beside yours. One exception: for bespoke or headcount-delivered work, price the floor first, separately, or you'll sell at a loss politely.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：人判断价格从来不是看绝对值，是看它相对于某个参照点偏了多少。你不给参照，他会自己找一个——通常是最便宜的那个替代品，或者干脆是「这钱不花」。</strong></p>
+<ul>
+<li><strong>硬证据（经典，教科书级）· 参照依赖</strong>：Kahneman &amp; Tversky (1979, <em>Econometrica</em>) 的前景理论：人评价一个结果时，看的是它相对于参照点的得失，而不是绝对水平；而且损失那一侧的斜率明显更陡。含义：同样是五百块，被他归成「多花的」还是「少赔的」，在他心里根本不是一个量级。</li>
+<li><strong>硬证据（经典实验）· 交易效用</strong>：Thaler (1985, <em>Marketing Science</em>) 的海滩啤酒：同一罐啤酒，说是从「度假酒店」买来的，被试愿付的价格明显高于说从「小杂货店」买来的——酒一样、场景一样、喝法一样，变的只是他心里「这东西该值多少」的参照。<strong>价格公平感是跟参照比出来的，不是跟价值比出来的。</strong></li>
+<li><strong>行业分析（非同行评审，谨慎使用）· 价格的杠杆</strong>：Marn &amp; Rosiello (1992, <em>Harvard Business Review</em>) 基于标普 1500 公司财报的测算：平均而言价格提升 1%，营业利润提升约 11%，远高于销量提升 1% 带来的约 3%。这是咨询公司的静态测算，假设销量不变，现实里会有流失——别当定律。但方向是稳的：价格是所有杠杆里最短的那根。</li>
+</ul>
+<p class="caveat">边界：价值定价的前提是你能说清他的收益、而且他信。买家只按规格比价的市场（大宗、招标、货架上并排的同类），参照极其透明，价值定价空间很窄，那时该在成本和渠道上下功夫。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>一个价格没有意义——他不是在判断贵不贵，是在几个数之间挑
+<span class="en">One price gives him nothing to compare. Then the only comparison left is not buying.</span></h2>
+<span class="tag">锚定</span><span class="tag">三档设计</span><span class="tag">诱饵要诚实</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">只报一个数，他心里唯一的对照物是「不买」——也就是零元，任何数跟零比都贵。摆出三档，问题就从<strong>买不买</strong>换成了<strong>买哪个</strong>：同一个人、同一件东西，回答的却是完全不同的问题。所以最贵那档的作用往往不是被买走，是<strong>当尺子</strong>——它把中间那档从「最贵的」变成「中间的」。这不叫骗人，前提是每一档都真有人适合、也真能交付；摆一个你压根不打算卖的档位，那是布景，不是选项。</div>
+</div>
+<div class="section">
+<div class="section-label">你在设计的不是价格，是他的选项集</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="q1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同一个产品，两种摆法，他回答的是两个不同的问题</text>
+<line stroke="#cbb98f" stroke-dasharray="5 4" stroke-width="1.2" x1="262" x2="262" y1="40" y2="286"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="132" y="58">只报一个价</text>
+<rect fill="#eceee8" height="50" rx="4" stroke="#b7c1b6" stroke-width="1.3" width="150" x="57" y="72"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="132" y="103">三万八</text>
+<line marker-end="url(#q1)" stroke="#c0603a" stroke-width="1.5" x1="132" x2="132" y1="126" y2="164"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="132" y="186">他心里的对照只剩「不买」</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="132" y="204">跟零比，多少钱都显得贵。</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="middle" x="132" y="230">他在回答：买，还是不买？</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="480" y="58">摆出三档</text>
+<rect fill="#eaf3ee" height="40" rx="3" stroke="#8aa79a" stroke-width="1.2" width="86" x="310" y="170"></rect>
+<rect fill="#cfe6c6" height="72" rx="3" stroke="#3f6d2f" stroke-width="1.8" width="86" x="437" y="138"></rect>
+<rect fill="#eaf3ee" height="110" rx="3" stroke="#8aa79a" stroke-width="1.2" width="86" x="564" y="100"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="480" y="130">多数人选这个</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="353" y="226">基础</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="353" y="242">一万二</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="480" y="226">标准</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="480" y="242">三万八</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="607" y="226">全包</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="607" y="242">十二万</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="middle" x="480" y="266">他在回答：买哪一个？</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="286" y="288">最贵那档卖不出去也是赚的——它在给中间那档当尺子。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做模板 · 三档按「人」切，不按功能切</span>
+<p><strong>低档 · 你本来就不该去争的人</strong>：给预算小、愿意自己动手的人。它的作用是接住「太贵了」——有它在，你可以降档而不用降价。</p>
+<p><strong>中档 · 你真正想卖的</strong>：设成默认，写上「多数人选这个」。这一句同时在给推荐和给社会认同。</p>
+<p><strong>高档 · 尺子</strong>：价格明显跳一档（常见是中档的两三倍），装的是「要全办好、别让我操心」的人。</p>
+<p><strong>一句话报价</strong>：「跟你情况差不多的，大部分选 B。A 是自己动手的版本，C 是我们全包到底。你更想省钱，还是省心？」——最后那句直接把「买不买」这个问题关掉了。</p>
+<p><strong>红线</strong>：档位之间的差别必须是真的（服务范围、响应速度、交付量、谁来做），不能是同一件事换三个说法收三种钱。他迟早会跟别的客户聊到，那时丢的不是这一单。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Quote one number and the only thing he can compare it to is not buying — zero — and everything looks expensive next to zero. Put up three tiers and the question silently changes from whether to buy into which one to buy: same person, same product, completely different question. That's why the top tier often isn't there to be sold; it's a ruler that turns the middle tier from "the expensive one" into "the middle one". Cut the tiers by which kind of buyer they're for, not by feature count. The low tier is for the DIY, small-budget people you shouldn't be fighting for anyway — its real job is to absorb "too expensive" so you can drop a tier instead of dropping your price. The middle tier is the one you actually want to sell, marked as what most people choose, which does the recommending and the social proof in one line. The top tier is the ruler. All of this is honest only if every tier is real: differences in scope, response time, volume, who does the work. Three names for the same thing at three prices is a stage set, and he will eventually compare notes with another customer.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：大脑估值高度依赖当下摆在一起的那组选项。加一个选项，不只是多一个选择——它改变了其余选项彼此的相对位置。所以「选项集」本身是你能设计的东西，而且比价格数字本身更值得设计。</strong></p>
+<ul>
+<li><strong>硬证据（经典且成功复现）· 锚定</strong>：Tversky &amp; Kahneman (1974, <em>Science</em>) 的转盘实验：先当着被试的面转出一个与题目毫无关系的数字，他们对「非洲国家占联合国席位比例」的估计就被那个数字明显带跑。这条经得起复现——Klein 等 (2014, <em>Social Psychology</em>) 的 Many Labs 多实验室大规模复现里，锚定是重复出来最稳的效应之一。含义：先出现的那个数会改变后面所有判断，哪怕他明知道这个数没道理。</li>
+<li><strong>中等强度（有复现争议，必须标注）· 诱饵效应</strong>：Huber、Payne &amp; Puto (1982, <em>Journal of Consumer Research</em>) 发现，加进一个「被某个选项全面压制」的第三选项，会把选择明显推向压制它的那个。但 Frederick、Lee &amp; Baskin (2014, 同刊) 换成真实商品和图片刺激后，大多复现不出来。<strong>诚实的结论</strong>：三档管用，更可能来自锚定加上「避免极端」的倾向，而不是教科书里那个诱饵魔法。别为了造诱饵去摆假档位——收益不确定，被识破的代价是确定的。</li>
+</ul>
+<p class="caveat">边界：选项超过三四个，决策会变慢甚至干脆不选（选择过载这条本身在文献里有争议，别当铁律）。稳妥做法：三档封顶，默认档标出来。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>他不是在算贵不贵，他是在感觉疼不疼
+<span class="en">Paying registers as pain. That isn't a metaphor — you can watch it happen.</span></h2>
+<span class="tag">支付痛感</span><span class="tag">脑岛</span><span class="tag">左位数</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">买不买不是一道算术题，是两股力在拔河：一边是<strong>想要</strong>（东西带来的好处），一边是<strong>疼</strong>（掏钱这件事本身）。价格越过某个点，疼压过想要，他就说「我再看看」。这解释了一堆看着不理性的事：为什么包月比按次容易接受（疼一次 vs 疼很多次）；为什么「一天不到一杯咖啡」管用（把疼切碎）；为什么三十九比四十便宜得不成比例。而你能动的手不止降价——<strong>降价是减疼里最贵的一种</strong>。换单位、换付法、换参照，减同一份疼，却不折损价格。</div>
+</div>
+<div class="section">
+<div class="section-label">想要和疼，是两条回路，不是一个净值</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 286" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="r1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">按下「买」之前，两处已经在打架</text>
+<rect fill="#e2efdc" height="42" rx="5" stroke="#4e8a3f" stroke-width="1.4" width="192" x="52" y="42"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="148" y="60">看到东西</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="148" y="76">想象它已经是我的</text>
+<rect fill="#f6e3da" height="42" rx="5" stroke="#c0603a" stroke-width="1.4" width="192" x="456" y="42"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="552" y="60">看到价格</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="552" y="76">想象钱已经出去了</text>
+<line marker-end="url(#r1)" stroke="#8a9a90" stroke-width="1.4" x1="148" x2="148" y1="88" y2="112"></line>
+<line marker-end="url(#r1)" stroke="#8a9a90" stroke-width="1.4" x1="552" x2="552" y1="88" y2="112"></line>
+<ellipse cx="148" cy="142" fill="#cfe6c6" rx="86" ry="26" stroke="#3f6d2f" stroke-width="1.6"></ellipse>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="148" y="139">伏隔核 · 奖赏回路</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="8.8" text-anchor="middle" x="148" y="153">越活跃 = 越想买</text>
+<ellipse cx="552" cy="142" fill="#f6e3da" rx="86" ry="26" stroke="#c0603a" stroke-width="1.6"></ellipse>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="552" y="139">脑岛 · 与疼痛厌恶相关</text>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="552" y="153">越活跃 = 越不买</text>
+<line marker-end="url(#r1)" stroke="#8a9a90" stroke-width="1.4" x1="212" x2="296" y1="163" y2="188"></line>
+<line marker-end="url(#r1)" stroke="#8a9a90" stroke-width="1.4" x1="488" x2="404" y1="163" y2="188"></line>
+<rect fill="#eaf3ee" height="44" rx="5" stroke="#1f7a5c" stroke-width="1.6" width="164" x="268" y="192"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="350" y="210">内侧前额叶</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="350" y="226">两边一权衡，出决定</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="20" y="258">降价只动右边那条，而且是自掏腰包动的；换单位、换付法、换参照同样动右边，不花钱。</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="278">先让他看到结果再报价，动的是左边——同一个数字，就没那么疼了。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<ul class="checklist">
+<li><strong>换单位</strong>：年费拆成月、总价拆成每人每天。数没变，疼变小了。别用在他会自己算总账的大单上——被当成藏价格比贵更伤。</li>
+<li><strong>换付法</strong>：先用后付、分期、按里程碑付。疼被推后，而且和他拿到好处的时间对齐了。</li>
+<li><strong>换参照</strong>：跟他现在的支出比（「你们这块现在一个月花八千」），别跟零比。</li>
+<li><strong>整数还是尾数</strong>：低卷入、拿来比价的东西用三十九、九十九；高价、信任型、专业服务用整数——三千比两千九百八更像专业报价，尾数会把你往「零售促销」那边拉。</li>
+<li><strong>先给再报价</strong>：先让他看到、最好用到结果，再报数。你把「想要」那一侧抬起来了，右边那份疼没变，但拔河的结果变了。</li>
+</ul>
+</div>
+<p class="en-brief"><b>EN</b> Buying isn't arithmetic, it's a tug of war between wanting the thing and the pain of parting with money. Past a certain price the pain wins and you hear "let me think about it". That explains a pile of apparently irrational behaviour: why a monthly plan is easier to accept than paying per use (hurt once versus hurt often), why "less than a coffee a day" works, why 39 feels disproportionately cheaper than 40. The useful part is that discounting is only one lever on the pain side, and the most expensive one — you pay for it yourself. Changing the unit (per month, per person per day), changing the payment shape (pay later, in stages, on milestones), and changing the reference (compare to what he already spends, never to zero) reduce the same pain for free. Round numbers read as professional in high-trust services while charm endings read as retail, so pick by category rather than by habit. And showing him the result before you name the number lifts the other side of the rope entirely: same price, different outcome.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：想要和疼在大脑里走的是两条通路，不是先算出一个净值再决定。所以「把想要抬高」和「把疼降下来」是两件可以分开做的事——只会降价的人，等于只会操作其中一半。</strong></p>
+<ul>
+<li><strong>硬证据（fMRI，脑区明确）· 买不买能被提前看出来</strong>：Knutson、Rick、Wimmer、Prelec &amp; Loewenstein (2007, <em>Neuron</em>) 让被试先看商品、再看价格、再决定买不买：看到喜欢的商品时<strong>伏隔核</strong>（奖赏回路）活动升高；看到偏高的价格时<strong>脑岛</strong>（与厌恶和疼痛体验相关）活动升高、<strong>内侧前额叶</strong>活动下降；这三处的活动在他按键之前就能预测出他会不会买。样本 26 人，用激活反推心理过程有公认局限，但「想要」与「疼」分属不同回路这一点，和行为数据高度一致。</li>
+<li><strong>硬证据（价格改变的是体验本身）</strong>：Plassmann、O'Doherty、Shiv &amp; Rangel (2008, <em>PNAS</em>)：同一款葡萄酒，标价九十美元时被试报告的愉悦度高于标价十美元时，且<strong>内侧眶额皮层</strong>的活动同步更高——不只是嘴上说好喝。样本 20 人，外推要谨慎，但它说明价格不是贴在价值外面的标签，它参与了价值的形成。<strong>反过来读更有用</strong>：随手打折不只是少收钱，还会拉低他实际体验到的好处。</li>
+<li><strong>田野实验（真实销售数据，强）· 左位数</strong>：Anderson &amp; Simester (2003, <em>Quantitative Marketing and Economics</em>) 用真实邮购目录做对照：同一件女装标价 39 美元时，销量高于标价 34 美元<strong>和</strong> 44 美元——比更便宜的那个还好卖。九结尾同时携带了「这是便宜货」的信号，这也正是它在高端品类会反噬的原因。</li>
+</ul>
+<p class="caveat">边界与红线：减疼用在<strong>他本来就该买</strong>的东西上，是帮他跨过那道坎；用在他不该买的东西上，就是操纵。判据很简单：<strong>他事后把总价和总收益完整算一遍，会不会后悔？</strong>会，那你减掉的不是疼，是他的判断力。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>涨价能不能过去，取决于你给的理由，不取决于涨了多少
+<span class="en">He isn't judging the size of the increase. He's judging whether you were entitled to it.</span></h2>
+<span class="tag">双重权利</span><span class="tag">公平感</span><span class="tag">老客户更疼</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">涨价被记恨，几乎从来不是因为幅度，是因为他判定你<strong>凭什么</strong>。人心里有一条朴素规则：你有权保住你原来的利润，但无权借他的处境多赚。成本涨了你跟着涨，公平；看他已经离不开你所以涨，不公平——哪怕后者在经济学上完全说得通。同一个百分比配不同理由，一个平稳过去，一个换来退订加到处讲。还有一层：<strong>老客户对涨价的反应，远大于新客户对同一个高价的反应</strong>——他丢的是已经到手的价格，新客户只是没得到一个便宜。</div>
+</div>
+<div class="section">
+<div class="section-label">他判的是「你凭什么」，不是「涨了多少」</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 288" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同一次涨价，理由不同，反应完全不同</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="24" y="48">他认为公平（多半能过去）</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="360" y="48">他认为被宰（会记很久）</text>
+<rect fill="#e2efdc" height="36" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="316" x="24" y="58"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="81">我们的成本涨了，跟着调</text>
+<rect fill="#f6e3da" height="36" rx="4" stroke="#c0603a" stroke-width="1.2" width="316" x="360" y="58"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="374" y="81">看你现在换不掉我们了</text>
+<rect fill="#e2efdc" height="36" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="316" x="24" y="104"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="127">东西确实变多了、变好了</text>
+<rect fill="#f6e3da" height="36" rx="4" stroke="#c0603a" stroke-width="1.2" width="316" x="360" y="104"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="374" y="127">什么都没变，就是想多收</text>
+<rect fill="#e2efdc" height="36" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="316" x="24" y="150"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="173">提前说，老价格再留三个月</text>
+<rect fill="#f6e3da" height="36" rx="4" stroke="#c0603a" stroke-width="1.2" width="316" x="360" y="150"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="374" y="173">扣款之后才通知你</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="24" y="212">左边三条都承认了「我凭什么」；右边三条都在借他的处境多赚。</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="24" y="236">所以涨价通知里必须齐四样：从哪天起 · 为什么 · 他多得到什么 · 老客户怎么办。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="24" y="262">缺任何一条，他会自己补上一个版本——补出来的那个一定对你不利。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照读模板 · 涨价通知的四句话，缺一不可</span>
+<p>1. 「从 {日期} 起，{产品} 从 X 调到 Y。」——先说结论，别把数字埋在第三段，那看起来像心虚。</p>
+<p>2. 「原因是 {真实原因}。」——成本、投入加大、服务范围扩了都行，但必须是真的。编一个理由被戳穿，丢的不是这次涨价。</p>
+<p>3. 「你会多拿到 {具体的东西}。」——涨价最好配一次真实的增加，哪怕不大。</p>
+<p>4. 「你现在的价格保留到 {日期}。」——给缓冲不是给恩惠，它把一次损失改写成了一件可以安排的事。</p>
+<p><strong>顺序上的两条经验</strong>：先对新客户涨、看成交率掉没掉，再动老客户；老客户按签约时间分批通知，别一次全发——真出问题时你还有得改。</p>
+<p><strong>一定会掉一些人</strong>，问题只是掉的是不是该走的那批：走掉的如果是最不赚钱、要求最多的那几个，这次涨价就是成功的；如果走的是你最好的客户，说明你涨错了地方。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Price increases are resented over justification, almost never over size. People run a plain rule: you're entitled to protect the profit you had, but not to enlarge it by exploiting my situation. Costs went up so you followed — fair. You noticed I can't switch away — not fair, however sound that is economically. The same percentage with a different reason either passes quietly or buys you cancellations and a story people repeat. There's a second layer: existing customers react far more strongly to an increase than new customers do to the same higher price, because one is losing a price he already had and the other is merely not getting a bargain. So a notice needs four things or he'll fill the gaps himself, unfavourably: effective date, the real reason, what he gets more of, and what happens to existing customers. Two field habits: raise on new customers first and watch the close rate, then move existing ones in batches by contract date. Some churn is the point — check that the ones who leave are your least profitable and most demanding, not your best.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：价格在他心里不只是一个数，还是你们这段关系的条款。改条款需要一个被认可的依据——这套判断跟着「你是不是在占我便宜」走，而不是跟着供需走。</strong></p>
+<ul>
+<li><strong>硬证据（经典，多国重复出现）· 双重权利原则</strong>：Kahneman、Knetsch &amp; Thaler (1986, <em>American Economic Review</em>) 用大规模电话问卷测公众对涨价的接受度：暴雪之后五金店把雪铲从 15 涨到 20 美元，<strong>82% 的人认为不公平</strong>；而同样的提价如果是进货成本上涨引起的，多数人认为公平。他们把这条规律命名为<strong>双重权利</strong>：商家有权维持原有利润，但无权利用买家一时的处境扩大利润。这是问卷研究（测的是判断，不是实际购买），但结论在不同国家和后续研究里反复出现。</li>
+<li><strong>硬证据（同一套理论）· 为什么老客户反应大得多</strong>：还是前景理论那条不对称——损失一侧更陡。老客户失去的是<strong>已经拿到手的价格</strong>（损失），新客户只是没拿到一个便宜（未得的收益）。所以「老价格保留到某日」有效，不是因为你给了他钱，是你把一次损失改写成了一个有准备的变化。</li>
+<li><strong>诚实标注（属于一线经验，不是研究结论）</strong>：分批涨、先新后老、涨价配一次可见的增加——我没有可核对的对照实验，这是常见做法加上上面两条机制的推论。可检验：涨价后九十天的流失率和净收入一起看——只盯流失率的人永远不敢涨价。</li>
+</ul>
+<p class="caveat">红线：编一个假的成本理由，或者专挑他已经深度依赖你的时点狠涨一次，短期都有效，长期是在把一段关系换成一次性收入。判据还是那句老问题：<strong>你敢不敢把自己的定价逻辑原样讲给他听？</strong>不敢，说明你自己也知道它靠不住。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 46 Action</h3>
+<p>九十分钟，拿你现在卖的一样东西走一遍——产品、服务，或者你的时间。</p>
+<div class="action">
+<strong>一（20 分钟）· 画三条线：</strong>写下你的成本地板、他的替代方案参照（他现在为这件事花的钱和时间）、你能帮他多赚少赔的天花板。三个数里写不出来的那个，就是你下次会面要问的问题。<br/><br/><strong>二（20 分钟）· 把一个价拆成三档：</strong>定出低 / 中 / 高，标出默认档，逐档问两句——真有人适合吗？真交付得了吗？答不上来的那档是布景，删掉。<br/><br/><strong>三（20 分钟）· 写三个不降价的减疼动作：</strong>换单位、换付法、换参照，各写一句能直接说出口的话，下次报价就用。<br/><br/><strong>四（30 分钟）· 写一封涨价信：</strong>哪怕今年不打算涨。四句话齐不齐——从哪天起、为什么、他多得到什么、老客户怎么办。第二三句写不出来，说明这个价现在还没有理由涨，那就先把第三句变成真的。<br/><br/>边界提醒：以上全部建立在「这东西对他确实值这个钱」之上。要靠换参照和减疼才让他掏钱，问题在产品，别在定价上找补。
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我一涨价客户就跑，是不是说明我的价已经到顶了？</summary>
+<div class="answer">先看<strong>跑的是谁</strong>，再看跑了多少。<br/><br/>涨价必然掉人，这是设计的一部分，不是失败信号。真正要看的是：走的是不是本来就最压价、最占时间、最不赚钱的那批。是，你的净收入很可能反而涨了，还腾出了时间。如果走的是你最好的客户，问题通常不在价格，在<strong>理由和方式</strong>：他没看到多得到什么，或者是被突然通知的。<br/><br/><strong>先算临界值再决定慌不慌</strong>：涨 20%、走掉 15%，收入其实是涨的（1.2 × 0.85 ≈ 1.02），要服务的人还少了。走掉多少才真的亏，这个数你能算出来。<br/><br/><strong>真到顶的样子是另一种</strong>：不是老客户走，是<strong>新单成交率明显掉、周期变长、每单都砍价</strong>。这时正确的动作不是降回去，是回到第一条：他的参照是什么、你比它好在哪、这个「好」能不能算成钱。算不出来，价确实到顶了；算得出来但他不信，那是证据不够，不是价格太高——「太贵了」怎么办那期讲的就是这一步。</div>
+</details>
+<details>
+<summary>2. 客户直接问「你们成本多少」，或者要求按成本加合理利润来谈，怎么办？</summary>
+<div class="answer">先分清他是<strong>真的必须按成本谈</strong>，还是在用这个问法压价。<br/><br/><strong>真的必须</strong>的场合确实存在：政府和大企业的某些采购规则、按人力计费的外包、你在卖标准化产能。这时别硬扛价值定价，那只会显得你在躲——报成本结构，把利润率谈成合理数，再把差异化放到<strong>别处</strong>去争：交付周期、责任范围、返工怎么算、谁来做。<br/><br/><strong>更常见的是第二种</strong>——他在把话题从「值多少」拽回「花了多少」，因为后者对他有利。别撒谎，也别真报成本。可以这么答：「我们内部是按投入算的，但这个数对你没什么用——同样的投入做出来的东西差别可以很大。我更想跟你对的是另一个数：这件事现在一个月占你们多少钱？我们按那个数来谈才有意义。」<br/><br/>这句话在做一件事：<strong>把参照点从你的成本换回他的支出</strong>。他一旦开始报自己的数字，谈判就已经回到你希望的坐标系里了。<br/><br/>还有一层要提醒：一旦你报了成本，他会拿这把尺子逐项量你。这不是他不讲理——有了参照就必然会比。你能选的只是给他哪把尺子。</div>
+</details>
+<details>
+<summary>3. 我是个人卖服务的（自由职业 / 咨询 / 接活），没有三档、也没有市场数据，这套还能用吗？</summary>
+<div class="answer">能，而且个人是回报最高的地方——你的成本地板极低（就是你的时间），中间那一大段几乎全被白送掉了。<br/><br/><strong>三条线怎么画</strong>：地板是你这段时间的机会成本（不是「我觉得该收多少」，是这几天你本可以接的另一单）。参照是他现在的做法——自己做、找实习生、上一个供应商收了多少。天花板是这件事对他值多少：多拿一个客户、少赔一次、早两个月上线。三个数一摆，你多半会发现自己的报价一直贴在地板上。<br/><br/><strong>三档怎么搭（一个人也能做）</strong>：低档＝只交付东西（做完给你，不管落地）；中档＝东西加上一次落地陪跑；高档＝一段时间的全包，随叫随到、次数有限。差别是<strong>责任和时间</strong>，不是工作量翻三倍——否则高档会把你累死还不赚钱。<br/><br/><strong>报价方式改一处就够</strong>：别报小时费。小时费把价格死死绑在你的成本上，还制造了一个荒诞的激励——做得越快赚得越少。按项目、按成果报，参照立刻从「你一小时值多少」换成「这件事对我值多少」。<br/><br/><strong>涨价对个人更简单</strong>：不用发公告，对<strong>下一个新客户</strong>用新价就行，老客户按老价走到自然节点（项目结束、合同到期）。新价成交率没掉，就再往上走一档。这是风险最低的定价实验，多数人从没做过，只是一直在猜自己值多少。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 46</footer>
+</div>
+</body>
+</html>

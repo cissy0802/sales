@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 46: The Science of Pricing</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 46 · Phase G</div>
+<h1>Whether he calls it expensive depends on the number sitting next to it — so that's the number you're really setting</h1>
+<div class="meta"><span>Value pricing vs cost-plus · tiers and anchoring · psychological pricing · raising prices</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">A price has no absolute value. The same figure goes from "way too expensive" to "that's all?" when you change what it sits beside — most of pricing is designing the reference, not calculating the cost.</div>
+</header>
+<div class="intro">
+<strong>Add up the cost, add a margin, send the quote — most of the money is given away right there, by someone who thinks he was being careful.</strong> One move per part. <strong>One, cost sets only the floor; the reference sets the price.</strong> <strong>Two, a single price means nothing — price only exists inside a comparison.</strong> <strong>Three, paying genuinely hurts, and you can see where.</strong> <strong>Four, whether an increase survives depends on the reason, not the size.</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Your cost only decides how low you shouldn't go; the price comes from what he's comparing you to
+<span class="en">Cost sets a floor you shouldn't go under. It has never once set his price.</span></h2>
+<span class="tag">value pricing</span><span class="tag">reference price</span><span class="tag">transaction utility</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Your cost is your business. The customer can't see it and doesn't care. He has three lines in his head: <strong>your cost is the floor</strong> — go under it and you're subsidising him; <strong>what he currently spends on this, in money and hours, is the reference</strong> — that's the number "expensive" is actually measured against; <strong>what he'll earn more, or lose less, after switching is the ceiling</strong>. Cost-plus isn't bad arithmetic, it just uses the floor and nothing else, so the number lands hard against the left edge of the range. Everything to the right of it is money he'd have paid and you never asked for.</div>
+</div>
+<div class="section">
+<div class="section-label">Three lines — only the leftmost one is yours</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="p1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Three lines box the price in</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="119" y="52">your cost floor</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="119" y="68">below this you lose money</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="344" y="52">his reference</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="344" y="68">what this costs him today</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="570" y="52">value ceiling</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" text-anchor="middle" x="570" y="68">above this he'd rather not change</text>
+<rect fill="#f6e3da" height="30" stroke="#c0603a" stroke-width="1.2" width="79" x="40" y="120"></rect>
+<rect fill="#e2efdc" height="30" stroke="#4e8a3f" stroke-width="1.4" width="451" x="119" y="120"></rect>
+<rect fill="#f6e3da" height="30" stroke="#c0603a" stroke-width="1.2" width="106" x="570" y="120"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle" x="79" y="139">don't sell</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="344" y="139">the zone where a deal is possible</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle" x="623" y="139">he won't buy</text>
+<line stroke="#8a9a90" stroke-dasharray="4 4" stroke-width="1" x1="119" x2="119" y1="76" y2="118"></line>
+<line stroke="#8a9a90" stroke-dasharray="4 4" stroke-width="1" x1="344" x2="344" y1="76" y2="118"></line>
+<line stroke="#8a9a90" stroke-dasharray="4 4" stroke-width="1" x1="570" x2="570" y1="76" y2="118"></line>
+<line marker-end="url(#p1)" stroke="#c0603a" stroke-width="1.6" x1="150" x2="558" y1="176" y2="176"></line>
+<circle cx="150" cy="176" fill="#c0603a" r="4"></circle>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="40" y="200">Cost-plus lands on that red dot almost every time;</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="40" y="218">the whole arrow is money he'd have paid and you never asked for.</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="40" y="248">The only line you can really move is the middle one: whatever he compares you to is his price.</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="40" y="272">So find out what this already costs him before you quote — value talk is wasted until the reference moves.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · three questions that surface his reference price</span>
+<p>1. <strong>"How do you handle this today?"</strong> — get the alternative first. What he's really comparing you to is almost never a competitor; it's the makeshift thing he does now.</p>
+<p>2. <strong>"Roughly whose time does that take, and what does it come to in a month?"</strong> — turn the reference into a number. A figure out of his own mouth is ten times more credible than one you calculated, and he won't haggle with himself.</p>
+<p>3. <strong>"If this stopped needing attention entirely, what would those people do instead?"</strong> — that lifts the reference to the upside, which is where the ceiling becomes visible.</p>
+<p><strong>How to use it when you quote</strong>: repeat his number, then say yours. "You said this takes two people three days a month, so call it a hundred thousand a year. Ours is thirty-eight." You haven't persuaded him of anything. You put his own figure next to yours.</p>
+<p><strong>When you must go back to cost</strong>: for bespoke or headcount-delivered work, cost decides whether you lose money. Price the floor first, then talk about the reference — don't fold them into one number.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: people never judge a price in absolute terms; they judge how far it deviates from a reference point. Give him no reference and he'll pick one himself — usually the cheapest substitute around, or simply not spending the money at all.</strong></p>
+<ul>
+<li><strong>Hard evidence (classic, textbook-level) · reference dependence</strong>: Kahneman &amp; Tversky (1979, <em>Econometrica</em>), prospect theory: people evaluate outcomes as gains and losses relative to a reference point rather than in absolute levels, and the loss side is markedly steeper. Meaning: the same five hundred filed as "extra money out" versus "less money lost" isn't remotely the same size in his head.</li>
+<li><strong>Hard evidence (classic experiment) · transaction utility</strong>: Thaler (1985, <em>Marketing Science</em>), the beer on the beach: for an identical beer, people state a substantially higher acceptable price when it's coming from a "fancy resort hotel" than from a "small run-down grocery". Same beer, same beach, same drink — only the reference for what it ought to cost changed. <strong>Price fairness is judged against a reference, not against value.</strong></li>
+<li><strong>Industry analysis (not peer-reviewed — handle with care) · price leverage</strong>: Marn &amp; Rosiello (1992, <em>Harvard Business Review</em>) worked from the financials of S&amp;P 1500 companies: on average a 1% price improvement lifts operating profit by roughly 11%, far more than a 1% volume gain (about 3%). It's a consulting firm's static calculation that assumes volume holds, which it won't in reality — don't treat it as a law. But the direction is stable: price is the shortest lever you have.</li>
+</ul>
+<p class="caveat">Boundary: value pricing assumes you can state his upside and that he believes it. In markets where buyers compare on spec alone — commodities, tenders, near-identical products side by side on a shelf — the reference is brutally transparent and there's little room for it. That's where cost and channel are the real levers.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>One price means nothing — he isn't judging expensive, he's picking between numbers
+<span class="en">One price gives him nothing to compare. Then the only comparison left is not buying.</span></h2>
+<span class="tag">anchoring</span><span class="tag">three tiers</span><span class="tag">honest decoys</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Quote one number and the only thing he has to compare it against is not buying — zero — and everything looks expensive next to zero. Put up three tiers and the question quietly changes from <strong>whether to buy</strong> into <strong>which one to buy</strong>: same person, same product, completely different question. Which is why the top tier usually isn't there to be sold, it's there as <strong>a ruler</strong> — it turns the middle tier from "the expensive one" into "the middle one". That isn't a trick, provided every tier genuinely suits somebody and can genuinely be delivered. A tier you have no intention of selling is scenery, not an option.</div>
+</div>
+<div class="section">
+<div class="section-label">What you're designing isn't the price — it's his option set</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="q1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Same product, two layouts — he answers two different questions</text>
+<line stroke="#cbb98f" stroke-dasharray="5 4" stroke-width="1.2" x1="262" x2="262" y1="40" y2="286"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="132" y="58">one price only</text>
+<rect fill="#eceee8" height="50" rx="4" stroke="#b7c1b6" stroke-width="1.3" width="150" x="57" y="72"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="132" y="103">$5,400</text>
+<line marker-end="url(#q1)" stroke="#c0603a" stroke-width="1.5" x1="132" x2="132" y1="126" y2="164"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="132" y="186">the only comparison left is not buying</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="132" y="204">Next to zero, any number looks steep.</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="middle" x="132" y="230">He's answering: buy, or don't?</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="480" y="58">three tiers</text>
+<rect fill="#eaf3ee" height="40" rx="3" stroke="#8aa79a" stroke-width="1.2" width="86" x="310" y="170"></rect>
+<rect fill="#cfe6c6" height="72" rx="3" stroke="#3f6d2f" stroke-width="1.8" width="86" x="437" y="138"></rect>
+<rect fill="#eaf3ee" height="110" rx="3" stroke="#8aa79a" stroke-width="1.2" width="86" x="564" y="100"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="480" y="130">most people pick this</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="353" y="226">basic</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="353" y="242">$1,800</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="480" y="226">standard</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="480" y="242">$5,400</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" text-anchor="middle" x="607" y="226">all-in</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="607" y="242">$18,000</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.2" text-anchor="middle" x="480" y="266">He's answering: which one?</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="286" y="288">The top tier earns its keep unsold — it's the ruler for the middle one.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Template · cut the tiers by person, not by feature count</span>
+<p><strong>Low tier · the buyer you shouldn't be fighting for</strong>: small budget, happy to do it himself. Its real job is to absorb "too expensive" — with it in place you can drop a tier instead of dropping your price.</p>
+<p><strong>Middle tier · the one you actually want to sell</strong>: make it the default and label it "what most people choose". That one line does the recommending and the social proof at once.</p>
+<p><strong>Top tier · the ruler</strong>: priced a clear step up (commonly two to three times the middle), built for the buyer who wants it all handled and doesn't want to think about it.</p>
+<p><strong>The one-sentence quote</strong>: "People in your situation mostly take B. A is the do-it-yourself version, C is us handling everything end to end. Would you rather save money or save hassle?" That last question closes off the buy-or-don't question entirely.</p>
+<p><strong>Red line</strong>: the differences between tiers have to be real — scope, response time, volume, who does the work. Three names for the same thing at three prices is a stage set, and sooner or later he compares notes with another customer. What you lose then isn't this deal.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: valuation in the brain leans heavily on the set of options sitting in front of you. Adding an option isn't just one more choice — it changes where the other options sit relative to each other. So the option set is itself a thing you get to design, and it's worth more design attention than the numbers.</strong></p>
+<ul>
+<li><strong>Hard evidence (classic, and it replicates) · anchoring</strong>: Tversky &amp; Kahneman (1974, <em>Science</em>) spun a wheel in front of subjects to produce a number with no relation to the question, and their estimates of the share of African countries in the UN were visibly dragged toward it. This one holds up — in the Many Labs multi-site replication (Klein et al., 2014, <em>Social Psychology</em>) anchoring was among the most robust effects reproduced. Meaning: the first number on the table shifts every judgement that follows, even when he knows it's arbitrary.</li>
+<li><strong>Moderate strength (contested replication — flag it) · the decoy effect</strong>: Huber, Payne &amp; Puto (1982, <em>Journal of Consumer Research</em>) found that adding a third option dominated by one of the existing ones pushes choice toward the dominating option. But Frederick, Lee &amp; Baskin (2014, same journal) largely failed to reproduce it once they used real products and pictorial stimuli. <strong>The honest conclusion</strong>: three tiers probably work through anchoring plus extremeness aversion, not through the textbook decoy magic. Don't invent fake tiers to build a decoy — the gain is uncertain, the cost of being seen through isn't.</li>
+</ul>
+<p class="caveat">Boundary: past three or four options decisions slow down and sometimes don't happen at all (choice overload is itself contested in the literature, so don't treat it as a law either). Safe practice: cap at three, and mark the default.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>He isn't calculating whether it's expensive — he's feeling whether it hurts
+<span class="en">Paying registers as pain. That isn't a metaphor — you can watch it happen.</span></h2>
+<span class="tag">pain of paying</span><span class="tag">insula</span><span class="tag">left digit</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Buying isn't arithmetic, it's a tug of war: <strong>wanting</strong> on one side (what the thing does for him), <strong>hurting</strong> on the other (parting with the money itself). Past a certain price the hurt wins and you hear "let me think about it". That explains a pile of apparently irrational behaviour: why a monthly plan goes down easier than paying per use (hurt once versus hurt often); why "less than a coffee a day" works (the hurt gets chopped up); why 39 feels disproportionately cheaper than 40. And discounting isn't your only lever — <strong>it's the most expensive one on that side</strong>. Changing the unit, the payment shape, or the reference reduces the same hurt without giving up price.</div>
+</div>
+<div class="section">
+<div class="section-label">Wanting and hurting are two circuits, not one net figure</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 286" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="r1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Two places are already fighting before he clicks buy</text>
+<rect fill="#e2efdc" height="42" rx="5" stroke="#4e8a3f" stroke-width="1.4" width="192" x="52" y="42"></rect>
+<text fill="#3f6d2f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="148" y="60">he sees the thing</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="148" y="76">imagines already owning it</text>
+<rect fill="#f6e3da" height="42" rx="5" stroke="#c0603a" stroke-width="1.4" width="192" x="456" y="42"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="552" y="60">he sees the price</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="552" y="76">imagines the money gone</text>
+<line marker-end="url(#r1)" stroke="#8a9a90" stroke-width="1.4" x1="148" x2="148" y1="88" y2="112"></line>
+<line marker-end="url(#r1)" stroke="#8a9a90" stroke-width="1.4" x1="552" x2="552" y1="88" y2="112"></line>
+<ellipse cx="148" cy="142" fill="#cfe6c6" rx="86" ry="26" stroke="#3f6d2f" stroke-width="1.6"></ellipse>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="148" y="139">nucleus accumbens · reward</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="8.8" text-anchor="middle" x="148" y="153">more active = wants it more</text>
+<ellipse cx="552" cy="142" fill="#f6e3da" rx="86" ry="26" stroke="#c0603a" stroke-width="1.6"></ellipse>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="552" y="139">insula · aversion and pain</text>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="552" y="153">more active = won't buy</text>
+<line marker-end="url(#r1)" stroke="#8a9a90" stroke-width="1.4" x1="212" x2="296" y1="163" y2="188"></line>
+<line marker-end="url(#r1)" stroke="#8a9a90" stroke-width="1.4" x1="488" x2="404" y1="163" y2="188"></line>
+<rect fill="#eaf3ee" height="44" rx="5" stroke="#1f7a5c" stroke-width="1.6" width="164" x="268" y="192"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="350" y="210">medial prefrontal cortex</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="350" y="226">weighs the two, decides</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="20" y="258">Discounting moves only the right side, and you pay for it. New unit, new payment shape, new reference: free.</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="278">Show him the result before naming the number and you move the left side — same figure, less pain.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<ul class="checklist">
+<li><strong>Change the unit</strong>: annual into monthly, total into per person per day. The number is the same, the hurt is smaller. Don't do it on large deals where he'll do the annual maths himself — reading as price-hiding is worse than reading as expensive.</li>
+<li><strong>Change the payment shape</strong>: pay after use, in instalments, on milestones. The hurt is pushed back, and lined up with when he gets the benefit.</li>
+<li><strong>Change the reference</strong>: compare against what he spends now ("you're at eight thousand a month on this today"), never against zero.</li>
+<li><strong>Round or charm ending</strong>: use 39 and 99 for low-involvement things people shop around on; use round numbers for high-value, trust-based professional work — 3,000 reads as a professional quote where 2,980 drags you toward retail promotion.</li>
+<li><strong>Show before you quote</strong>: let him see, ideally use, the result before you name the number. You've raised the wanting side; the hurt is unchanged, but the tug of war ends differently.</li>
+</ul>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: wanting and hurting run on separate circuits — the brain doesn't compute one net figure and then decide. So raising the wanting and lowering the hurt are two separable jobs, and someone who only knows how to discount is working half the problem.</strong></p>
+<ul>
+<li><strong>Hard evidence (fMRI, specific regions) · the decision is visible early</strong>: Knutson, Rick, Wimmer, Prelec &amp; Loewenstein (2007, <em>Neuron</em>) showed subjects a product, then its price, then asked buy or not. Attractive products raised activity in the <strong>nucleus accumbens</strong> (reward circuitry); excessive prices raised activity in the <strong>insula</strong> (linked to aversion and the experience of pain) and lowered activity in <strong>medial prefrontal cortex</strong>; those three signals predicted the purchase before the button press. Sample of 26, and inferring mental processes from activation has well-known limits, but the split between wanting and hurting lines up closely with the behavioural data.</li>
+<li><strong>Hard evidence (price changes the experience itself)</strong>: Plassmann, O'Doherty, Shiv &amp; Rangel (2008, <em>PNAS</em>): the same wine was rated as more pleasant when labelled $90 than when labelled $10, and activity in <strong>medial orbitofrontal cortex</strong> rose along with the rating — not just talk. Sample of 20, so generalise carefully, but it shows price isn't a label stuck on the outside of value; it participates in forming it. <strong>Read it backwards for the useful part</strong>: a casual discount doesn't only collect less money, it lowers the benefit he actually experiences.</li>
+<li><strong>Field experiment (real sales data, strong) · left digit</strong>: Anderson &amp; Simester (2003, <em>Quantitative Marketing and Economics</em>) ran controlled tests in real mail-order catalogues: the same dress priced at $39 outsold the same dress at $34 <strong>and</strong> at $44 — it beat the cheaper price. A 9 ending also carries a "this is the cheap stuff" signal, which is exactly why it backfires at the premium end.</li>
+</ul>
+<p class="caveat">Boundary and red line: reducing the hurt on something <strong>he ought to buy anyway</strong> helps him over the hump; doing it on something he shouldn't buy is manipulation. The test is simple: <strong>if he later worked out the full price and the full benefit, would he regret it?</strong> If yes, what you reduced wasn't his pain, it was his judgement.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>Whether a price rise survives depends on the reason you give, not the size of the rise
+<span class="en">He isn't judging the size of the increase. He's judging whether you were entitled to it.</span></h2>
+<span class="tag">dual entitlement</span><span class="tag">fairness</span><span class="tag">existing customers hurt more</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Price rises are resented over justification, almost never over size, because he's deciding <strong>what entitled you</strong>. People run a plain rule: you have a right to protect the profit you had, and no right to enlarge it off his situation. Costs went up so you followed — fair. You noticed he can't switch away — not fair, however sound that is economically. The same percentage with two different reasons either passes quietly or buys you cancellations and a story he repeats. And one more layer: <strong>existing customers react far more strongly to an increase than new customers do to the same higher price</strong> — one is losing a price he already had, the other is merely not getting a bargain.</div>
+</div>
+<div class="section">
+<div class="section-label">He's judging what entitled you, not how much</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 288" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Same increase, different reason, completely different reaction</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="10" font-weight="700" x="24" y="48">he calls it fair (usually passes)</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="360" y="48">he calls it a shakedown (remembered)</text>
+<rect fill="#e2efdc" height="36" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="316" x="24" y="58"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="81">our costs went up, so we followed</text>
+<rect fill="#f6e3da" height="36" rx="4" stroke="#c0603a" stroke-width="1.2" width="316" x="360" y="58"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="374" y="81">you can't switch away from us now</text>
+<rect fill="#e2efdc" height="36" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="316" x="24" y="104"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="127">you're genuinely getting more now</text>
+<rect fill="#f6e3da" height="36" rx="4" stroke="#c0603a" stroke-width="1.2" width="316" x="360" y="104"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="374" y="127">nothing changed, we just want more</text>
+<rect fill="#e2efdc" height="36" rx="4" stroke="#4e8a3f" stroke-width="1.2" width="316" x="24" y="150"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="38" y="173">told early, old price held three months</text>
+<rect fill="#f6e3da" height="36" rx="4" stroke="#c0603a" stroke-width="1.2" width="316" x="360" y="150"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="374" y="173">notified after the card was charged</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="24" y="212">The left three admit what entitles you; the right three enlarge profit off his situation.</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="24" y="236">So the notice needs all four: effective date · the real reason · what he gets more of · existing customers.</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="24" y="262">Miss one and he fills it in himself — and his version will not be flattering.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Template · the four sentences a price-rise notice can't do without</span>
+<p>1. "From {date}, {product} goes from X to Y." — lead with the conclusion. Burying the number in paragraph three reads as guilt.</p>
+<p>2. "The reason is {the real reason}." — cost, heavier investment, wider scope, all fine, but it has to be true. Invent one and get caught, and what you lose isn't this price rise.</p>
+<p>3. "You'll be getting {something specific} more." — pair a rise with a real addition wherever you can, even a small one.</p>
+<p>4. "Your current price holds until {date}." — a grace period isn't a favour, it rewrites a loss into something he can plan around.</p>
+<p><strong>Two habits about sequencing</strong>: raise on new customers first and watch whether the close rate moves, then go to existing ones; notify existing customers in batches by contract date rather than all at once — if it goes wrong you still have room to change course.</p>
+<p><strong>Some will leave</strong>; the only question is whether they're the ones who should. If the leavers are your least profitable and most demanding accounts, the rise worked. If your best customers leave, you raised in the wrong place.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: a price isn't only a number to him, it's a term of the relationship. Changing a term needs a recognised basis — and that judgement tracks "are you taking advantage of me", not supply and demand.</strong></p>
+<ul>
+<li><strong>Hard evidence (classic, reproduced across countries) · dual entitlement</strong>: Kahneman, Knetsch &amp; Thaler (1986, <em>American Economic Review</em>) ran large telephone surveys on what the public accepts. A hardware store raising snow shovels from $15 to $20 the morning after a snowstorm was called unfair by <strong>82% of respondents</strong>; the same increase driven by the store's own costs going up was called fair by most. They named the regularity <strong>dual entitlement</strong>: a firm is entitled to its reference profit, but not to enlarge it by exploiting a shift in the buyer's circumstances. It's survey work — it measures judgements, not purchases — but the finding keeps reappearing across countries and later studies.</li>
+<li><strong>Hard evidence (same theory) · why existing customers react so much harder</strong>: back to prospect theory's asymmetry, with the loss side steeper. An existing customer is losing <strong>a price he already had</strong>; a new customer merely fails to receive a bargain. That's why "your current price holds until such-and-such" works — not because you gave him money, but because you rewrote a loss into a change he can prepare for.</li>
+<li><strong>Flagged as practice, not a research finding</strong>: batching, new customers before existing ones, pairing a rise with a visible addition — I have no controlled study to point at for these; they're common practice plus an inference from the two mechanisms above. Testable: look at ninety-day churn and net revenue together — people who watch churn alone never dare raise anything.</li>
+</ul>
+<p class="caveat">Red line: inventing a cost story, or timing a steep rise for the moment he's most locked in, both work in the short run and both convert a relationship into one-off revenue. The test is the old question: <strong>would you be willing to explain your pricing logic to him exactly as it is?</strong> If not, you already know it won't hold.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 46 Action</h3>
+<p>Ninety minutes, on one thing you currently sell — a product, a service, or your time.</p>
+<div class="action">
+<strong>One (20 min) · Draw the three lines:</strong> write down your cost floor, his reference (what this costs him today in money and hours), and the ceiling (what he earns more or loses less). Whichever of the three you can't fill in is the question for your next meeting.<br/><br/><strong>Two (20 min) · Split one price into three tiers:</strong> low, middle, high, with the default marked. Then ask each tier two questions — does it genuinely suit somebody, could you genuinely deliver it? A tier you can't answer for is scenery; delete it.<br/><br/><strong>Three (20 min) · Write three ways to reduce the hurt without discounting:</strong> new unit, new payment shape, new reference — one sayable sentence each, ready for the next quote.<br/><br/><strong>Four (30 min) · Write a price-rise letter</strong>, even if you're not raising this year. Check all four parts are there: from when, why, what he gets more of, what happens to existing customers. If you can't write the second and third, this price has no reason to go up yet — so go and make the third one true first.<br/><br/>Boundary: all of it assumes the thing is genuinely worth that money to him. If you need reference-switching and pain reduction to get his wallet out, the problem is the product, and pricing won't paper over it.
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. Every time I raise prices customers leave. Doesn't that mean I've hit my ceiling?</summary>
+<div class="answer">Look at <strong>who</strong> left before you look at how many.<br/><br/>Losing people is part of the design, not a failure signal. What matters is whether the leavers were the ones already grinding you hardest on price, eating the most time, making the least money. If so, your net revenue probably went up and you got hours back. If your <strong>best</strong> customers left, the problem usually isn't the price, it's the <strong>reason and the delivery</strong>: he never saw what he'd get more of, or he was told with no warning.<br/><br/><strong>Work out the break-even before you panic</strong>: raise 20%, lose 15%, and revenue is still up (1.2 × 0.85 ≈ 1.02) with fewer accounts to serve. How many can leave before you're actually worse off is a number you can calculate.<br/><br/><strong>A real ceiling looks different</strong>: it isn't existing customers leaving, it's <strong>new deals closing at a visibly lower rate, cycles stretching, every deal ending in a haggle</strong>. The right response then still isn't to roll back — it's Move 01: what's his reference, where are you better than it, and can that better be counted in money? If it can't, the price really has topped out. If it can and he doesn't believe you, that's an evidence problem rather than a price problem, which is what the "too expensive" issue is about.</div>
+</details>
+<details>
+<summary>2. What if he asks outright what my costs are, or insists on cost plus a reasonable margin?</summary>
+<div class="answer">First work out whether he <strong>genuinely has to</strong> buy that way, or is using the question to push you down.<br/><br/><strong>The genuine cases exist</strong>: certain government and large-enterprise procurement rules, headcount-billed outsourcing, selling standardised capacity. Don't fight for value pricing there — it just looks evasive. Give the cost structure, negotiate the margin to something sane, and take the differentiation <strong>elsewhere</strong>: lead time, scope of responsibility, how rework is handled, who actually does the work.<br/><br/><strong>The more common case is the second one</strong> — he's pulling the conversation from what it's worth back to what it cost, because the second frame favours him. Don't lie, and don't hand over your costs. Try: "Internally we do work from what goes in, but that number won't help you — the same inputs can produce wildly different results. The number I'd rather compare with is yours: what does this cost you a month today? Pricing against that is the only version that means anything."<br/><br/>That sentence is doing one job: <strong>moving the reference point from your cost back to his spend</strong>. The moment he starts quoting his own numbers, the negotiation is back in the coordinate system you wanted.<br/><br/>One more warning: once you've shown your costs, he'll audit every line with that ruler. It isn't unreasonableness — a reference always gets used. What you get to choose is which ruler he holds.</div>
+</details>
+<details>
+<summary>3. I sell my own services (freelance, consulting, project work) with no tiers and no market data. Does any of this apply?</summary>
+<div class="answer">Yes, and individuals get the biggest return from it, because your cost floor is very low — it's your time — so almost that whole middle stretch is being given away.<br/><br/><strong>Drawing the three lines</strong>: the floor is the opportunity cost of those days (not "what I feel I should charge" — the other job you could have taken). The reference is how he handles it now: doing it himself, an intern, what the last supplier charged. The ceiling is what the outcome is worth: one more client, one avoided write-off, launching two months earlier. Lay the three out and you'll usually find your quote has been sitting on the floor the whole time.<br/><br/><strong>Three tiers as one person</strong>: low is the deliverable alone (here it is, implementation is on you); middle is the deliverable plus one round of hands-on implementation; high is a defined period of access with a capped number of calls. The difference is <strong>responsibility and time</strong>, not three times the work — otherwise the top tier exhausts you and still doesn't pay.<br/><br/><strong>Change one thing about how you quote</strong>: stop billing hourly. An hourly rate ties your price to your cost and creates an absurd incentive where working faster earns less. Price by project or by outcome and the reference switches from "what is an hour of you worth" to "what is this worth to me".<br/><br/><strong>Raising prices is simpler for individuals</strong>: no announcement needed. Use the new price on the <strong>next new client</strong> and let existing ones run to a natural boundary (project end, contract renewal). If the close rate holds, go up another step. It's the lowest-risk pricing experiment there is, and most people never run it — they just keep guessing what they're worth.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 46</footer>
+</div>
+</body>
+</html>
