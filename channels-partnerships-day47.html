@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 47：渠道与合作伙伴</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 47 · Phase G</div>
+<h1>渠道不替你卖东西，它只替你接住已经想买的人</h1>
+<div class="meta"><span>主题：直销 vs 分销 vs 代理 · 伙伴的算盘 · 平台与生态杠杆 · 渠道冲突</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">找一百个代理，销量不会自己长出来。渠道只放大已经跑通的东西——你自己都卖不动的，交给别人只会更卖不动，还多分掉一半毛利。</div>
+</header>
+<div class="intro">
+<strong>「我们自己卖太慢了，找几个代理吧」——这句话里藏着一个反了的因果：渠道是放大器，不是需求发生器。</strong>四个动作各解一段：<strong>一、切开哪段外包得掉、哪段永远得你自己上</strong>；<strong>二、伙伴不是你的销售，他在给自己的时间排序</strong>；<strong>三、流量可以借，客户关系不能存在别人家</strong>；<strong>四、冲突靠事先划规则，不靠事后讲道理</strong>。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>能外包的是搬运，外包不掉的是说服——先切开这两段再决定要不要渠道
+<span class="en">You can outsource the shipping. You have never once outsourced the trust.</span></h2>
+<span class="tag">直销 vs 分销</span><span class="tag">交易成本</span><span class="tag">资产专用性</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">一单生意里有两段活：<strong>说服</strong>——搞清他的处境、把价值翻译成他的成果、扛住异议；<strong>搬运</strong>——报价、下单、物流、开票、售后。搬运外包很划算，说服几乎外包不掉：它依赖只有你有的知识，伙伴学会的成本常比他从这单赚的还高。所以别看人手够不够，看<strong>说服含量</strong>：含量低、单薄、决策快的，自己做才是亏；含量高、单大、要定制的，交出去等于把命门交给一个学不动也不想学的人。</div>
+</div>
+<div class="section">
+<div class="section-label">两个变量就够了：一单要多少说服 × 一个客户值多少</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="a1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">先落格，再决定用不用渠道</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="46">单客户毛利 ↑</text>
+<line marker-end="url(#a1)" stroke="#8a9a90" stroke-width="1.4" x1="108" x2="108" y1="252" y2="52"></line>
+<line marker-end="url(#a1)" stroke="#8a9a90" stroke-width="1.4" x1="108" x2="660" y1="252" y2="252"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="end" x="660" y="272">一单需要多少说服 →</text>
+<rect fill="#eaf3ee" height="90" rx="4" stroke="#8aa79a" stroke-width="1.2" width="258" x="114" y="58"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="243" y="82">自助为主 · 大单再上人</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="243" y="104">东西贵但好懂：让他自己下单，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="243" y="124">只有大客户才值得你亲自出面。</text>
+<rect fill="#e2efdc" height="90" rx="4" stroke="#3f6d2f" stroke-width="1.8" width="278" x="382" y="58"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="521" y="82">自己直销 · 外包不掉</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="521" y="104">要诊断、要定制、要扛异议。</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="8.8" font-weight="700" text-anchor="middle" x="521" y="124">伙伴学会的成本比他赚的还高，所以他不会学。</text>
+<rect fill="#dfeae2" height="90" rx="4" stroke="#1f7a5c" stroke-width="1.6" width="258" x="114" y="158"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="243" y="182">渠道 / 平台 / 分销</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="243" y="204">单薄、决策快、不用教，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="243" y="224">自己一单一单谈必然亏。</text>
+<rect fill="#f6e3da" height="90" rx="4" stroke="#c0603a" stroke-width="1.6" width="278" x="382" y="158"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="521" y="182">危险格 · 别在这找渠道</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="521" y="204">要费半天口舌，赚的还少，谁做都亏。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" font-weight="700" text-anchor="middle" x="521" y="224">先把产品做简单，或换一批更值钱的客户。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="294">一家公司常同时占好几格：小客户走平台，中客户交伙伴，大客户自己上。</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="312">先按格子分客户，再谈渠道政策——顺序反了，你会给所有人同一套分成。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 用三个数决定自己做还是给出去</span>
+<p>1. <strong>算一单的说服工时</strong>：从第一次接触到签字，你实际花了几小时？超过五六小时的，别指望伙伴复制——他没这个耐心，也没有你的背景。</p>
+<p>2. <strong>算伙伴一单赚多少</strong>：<em>你的毛利 × 分成比例</em>，再除以第 1 步的工时，就是他的时薪。低于他手上其他活，你给再高的比例他也不动。</p>
+<p>3. <strong>最常见的答案不是二选一</strong>：留下说服，给出去搬运。伙伴找线索、初次接触、开票和一线售后；要拍板那次会面你上。分成也按这个切——转线索低比例，全流程成交高比例。</p>
+<p><strong>拒绝坏渠道的一句话</strong>：「你能带的客户和我们在服务的不是同一批，贸然做两边都做不好。你手上有 XX 类的随时找我，按转介绍算。」</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Every deal contains two jobs: persuading (working out his situation, translating value into his outcome, absorbing objections) and moving (quoting, ordering, shipping, invoicing, support). Moving outsources beautifully. Persuading almost never does, because it runs on knowledge only you have, and the cost for a partner to acquire it is usually higher than what he earns on the deal. So the question isn't whether you're short-staffed, it's how much persuasion a deal carries. Low persuasion, thin margin, fast decision — doing it yourself is what loses money. High persuasion, big ticket, customised — handing it over means handing your core to somebody who won't learn it and doesn't want to. The most useful answer is rarely either/or: keep the persuading, give away the moving. Let the partner source leads, make first contact, handle invoicing and front-line support; you take the meeting where the decision gets made. Split the commission the same way — a small rate for a referred lead, a full one for a closed deal.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：一件事该自己做还是买外面的，取决于两边的交易成本谁更高。活儿依赖高度专用的知识、且好坏难以计量时，市场就贵、自己做便宜；标准化、可计量的活反过来。</strong></p>
+<ul>
+<li><strong>硬理论（两次诺奖背书）· 交易成本</strong>：Coase (1937, <em>Economica</em>) 提出企业边界由交易成本决定；Williamson (1985, <em>The Economic Institutions of Capitalism</em>) 把它做成三个可判断的变量——<strong>资产专用性、不确定性、交易频率</strong>。专用性越高越该内部化。销售里的「专用资产」就是你那套只对你的产品成立的诊断能力。</li>
+<li><strong>硬证据（真实行业实证）· 销售队伍该不该自建</strong>：Anderson &amp; Schmittlein (1984, <em>RAND Journal of Economics</em>) 用电子元器件行业数据检验：推动企业自建销售队伍的是<strong>资产专用性</strong>和<strong>业绩难以计量</strong>，而不是「销量大」或「环境不确定」。含义直白：如果你除了看成交额就说不清伙伴做得好不好，你迟早会把这段收回来。</li>
+<li><strong>行业惯例（可核对但非研究结论）· 分成区间</strong>：软硬件分销常见渠道分成大致 15%–40%，转介绍（只给线索）常见 5%–15%。这是公开合作政策里查得到的范围，不是实证规律——当起点，别当依据。</li>
+</ul>
+<p class="caveat">边界：这套框架假设你算得出单客户毛利和说服工时。刚起步只有几单时任何格子都落不准，那时更该自己多卖几单摸清流程——渠道放大的是确定性，不是希望。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>伙伴不是你的销售，他是在拿你和他手上别的活比时薪
+<span class="en">A partner isn't your salesperson. He's ranking you against everything else on his desk.</span></h2>
+<span class="tag">代理激励</span><span class="tag">注意力稀缺</span><span class="tag">双边道德风险</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">签协议只意味着你进了他的货架，不意味着他会推你。他时间固定、手上一排产品，只会推<strong>「每接触一个客户，期望赚最多、最不容易出事」</strong>的那个。所以你要赢的不是好感，是他那张排序表上的位置。表上四个变量，分成比例只是其一：<strong>一单他到手多少、几次接触成一单、卖之前要学多久、卖砸了谁赔</strong>。多数人只在第一个上加码，然后困惑为什么还是没人卖。杠杆常在后面三个。</div>
+</div>
+<div class="section">
+<div class="section-label">他的算盘：不是比分成比例，是比期望时薪</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同一个伙伴，两个产品，他推哪个</text>
+<rect fill="#eaf3ee" height="34" rx="3" stroke="#1f7a5c" stroke-width="1.4" width="180" x="252" y="40"></rect>
+<rect fill="#eceee8" height="34" rx="3" stroke="#b7c1b6" stroke-width="1.2" width="180" x="452" y="40"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="342" y="62">你的产品</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="542" y="62">他现在主推的那个</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="24" y="98">分成后一单他到手</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="342" y="98">4000 元（25%）</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.6" text-anchor="middle" x="542" y="98">2500 元（15%）</text>
+<line stroke="#d5dce4" stroke-width="1" x1="24" x2="660" y1="110" y2="110"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="24" y="134">几个客户能成一单</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="342" y="134">5 个成 1 个</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.6" text-anchor="middle" x="542" y="134">3 个成 1 个</text>
+<line stroke="#d5dce4" stroke-width="1" x1="24" x2="660" y1="146" y2="146"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="24" y="170">上手要学多久</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="342" y="170">两天培训才敢开口</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.6" text-anchor="middle" x="542" y="170">半天就能讲</text>
+<line stroke="#d5dce4" stroke-width="1" x1="24" x2="660" y1="182" y2="182"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="24" y="206">交付出问题谁赔</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="342" y="206">他去赔客户</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.6" text-anchor="middle" x="542" y="206">厂家全包</text>
+<rect fill="#f6e3da" height="40" rx="4" stroke="#c0603a" stroke-width="1.4" width="636" x="24" y="222"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" x="38" y="247">折成「每接触一个客户能赚多少」：你 4000÷5 = 800，他那个 2500÷3 ≈ 833。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="24" y="282">你分成比例高出 10 个点，仍然输——赢回来的办法是提成交率、缩短培训、把赔付接过来。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<ul class="checklist">
+<li><strong>给他一个能照读的东西</strong>：一页纸客户画像＋五句话开场＋三个常见异议的答法。伙伴不会写你的话术，只会用现成的——这一页比多给五个点有效得多。</li>
+<li><strong>把最难那步接过来</strong>：他约人，你上场演示。他的成交率从五分之一变三分之一，时薪翻倍，你一分分成没多给。</li>
+<li><strong>把赔付风险拿走</strong>：写清交付出问题由你兜底。他怕的不是少赚，是赔进自己的老客户。</li>
+<li><strong>让他先投入一点</strong>：认证、联合案例、一次共同拜访。投入过的伙伴明显更愿意继续推；但必须在他见到第一笔钱之后做，反过来就是在赶人走。</li>
+<li><strong>只养前三家</strong>：签二十家不动的，不如把资源全压给真出单的三家。渠道数量最容易骗自己。</li>
+</ul>
+</div>
+<p class="en-brief"><b>EN</b> Signing an agreement only means you're on his shelf; it doesn't mean he'll push you. His hours are fixed and his desk is full, so he pushes whatever earns the most per customer contacted with the least chance of blowing up. Four variables set that ranking and the commission rate is only one: what he actually pockets per deal, how many contacts it takes to close one, how long he must study before he dares open his mouth, and who pays when delivery goes wrong. Most people only ever push on the first — twenty per cent to twenty-five — then wonder why nothing moves. The real leverage is usually in the other three. Give him a one-page profile, five opening lines and three objection answers, because partners never write your script, they only use a ready one. Take the hardest step yourself: he books the meeting, you run the demo, and his close rate doubles without you paying a cent more. Put the delivery risk in writing on your side; what he fears isn't earning less, it's losing his own client. And feed the three partners who actually sell rather than the twenty who signed.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：代理人和你的目标天然不一致——他优化的是自己的总收入，不是你的销量；他的约束不是意愿，是时间。所以让他多卖只有两条路：提高他的单位产出，或降低他的单位成本。后者通常更便宜，因为花的是你的边际时间，不是毛利。</strong></p>
+<ul>
+<li><strong>硬理论 · 委托-代理与双边道德风险</strong>：Jensen &amp; Meckling (1976, <em>Journal of Financial Economics</em>)：只要代理人的努力不可观测，他就会努力不足，激励必须把结果和他的收益绑定。Lafontaine (1992, <em>RAND Journal of Economics</em>) 用特许经营合同数据检验，支持<strong>双边</strong>道德风险——不只加盟商会偷懒，总部同样会在支持上偷懒，所以合同要给双方都留变动收益。翻译：你要求伙伴投入，自己也得押上东西。</li>
+<li><strong>中等强度（有边界，标注清楚）· 投入过就更看重</strong>：Norton、Mochon &amp; Ariely (2012, <em>Journal of Consumer Psychology</em>) 的「宜家效应」：被试对自己动手组装的物品估值显著高于同样的成品，前提是<strong>他做成了</strong>——中途失败或被迫放弃的人，效应会消失。用在渠道上就是那条顺序：先让他成功卖出一单，再要求认证和联合投入；反过来只会把你拉黑。</li>
+<li><strong>诚实标注（一线经验，非研究结论）</strong>：「只养前三家」「一页纸比多给五个点有效」没有可核对的对照实验，是上面机制的推论加常见做法。可检验：把伙伴按过去 90 天出单数排序，看前三家占多少。</li>
+</ul>
+<p class="caveat">边界：这套算法假设伙伴是理性生意人，独立代理、经销商、推荐人大体如此。若对方是大公司里的员工（比如集成商的售前），他的排序里还有内部考核和部门政治——那时该影响的是考核口径，不是分成。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>平台的流量可以借，客户关系不能存在别人家
+<span class="en">Borrow the platform's reach. Never leave the relationship parked on their land.</span></h2>
+<span class="tag">平台杠杆</span><span class="tag">双边市场</span><span class="tag">单点依赖</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">平台早期一定对你好——它需要供给方，所以补贴你、给流量、抽得少。等两边都长起来，它的最优策略就变成从你这边抽租：抽成涨、自然流量收窄、要曝光得买广告。这不是哪家平台变坏了，是双边市场的结构必然。所以借平台只有一个正确姿势：<strong>当它是获客渠道，不是客户关系的存放地</strong>。每一笔平台成交，都要在交付那一刻把这个人变成你能直接找到的人。做不到，你就是在给平台打工，还要按月涨房租。</div>
+</div>
+<div class="section">
+<div class="section-label">借流量的四步，关键那步在交付时</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">流量是租来的，关系才是你的</text>
+<rect fill="#eaf3ee" height="52" rx="4" stroke="#8aa79a" stroke-width="1.3" width="146" x="24" y="46"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="97" y="70">平台曝光</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="97" y="86">别人的注意力</text>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.5" x1="170" x2="200" y1="72" y2="72"></line>
+<rect fill="#f6e3da" height="52" rx="4" stroke="#c0603a" stroke-width="1.3" width="146" x="200" y="46"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="273" y="70">首次成交</text>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="273" y="86">这一笔抽成最贵</text>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.5" x1="346" x2="376" y1="72" y2="72"></line>
+<rect fill="#cfe6c6" height="52" rx="4" stroke="#3f6d2f" stroke-width="1.9" width="146" x="376" y="46"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="449" y="70">交付时把人接回来</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="8.8" font-weight="700" text-anchor="middle" x="449" y="86">整条链只有这步是你的</text>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.5" x1="522" x2="552" y1="72" y2="72"></line>
+<rect fill="#e2efdc" height="52" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="124" x="552" y="46"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="614" y="70">复购与转介绍</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" text-anchor="middle" x="614" y="86">不再抽成</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="10" font-weight="700" x="24" y="130">第三步的三个动作（都在交付那一刻做，那时他对你好感最高）</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="34" y="154">· 交付物里放一份只有直接联系才拿得到的东西：手册、模板、一次答疑</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="34" y="176">· 售后入口设成你自己的（合规范围内），顺手拿到长期触达方式</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="34" y="198">· 同时请他在平台留一条评价——排名也要养，不冲突</text>
+<rect fill="#f6e3da" height="46" rx="4" stroke="#c0603a" stroke-width="1.4" width="636" x="24" y="222"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.8" font-weight="700" x="38" y="244">集中度红线：任一平台或伙伴带来的营收超过一半，你的定价权已经不在自己手里。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="38" y="262">规则一改、算法一动你没有筹码——所以必须有第二条不依赖它的路径在跑。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做模板 · 交付时把关系接回来的一段话</span>
+<p><strong>场景</strong>：你在电商 / 内容 / 应用市场 / 服务撮合平台成交了一单，正在交付。</p>
+<p>「东西发出去了。有份材料平台上放不下——我整理了一份 {安装避坑清单 / 尺寸对照表 / 常见问题答案}，加我 {联系方式} 直接发你，以后用着有问题也可以直接问，不用等平台工单。」</p>
+<p><strong>为什么管用</strong>：你给的是理由，不是请求。「加我以后有优惠」是在要东西，「有份东西平台上放不下」是在给东西——而且是真的给。</p>
+<p><strong>红线</strong>：别绕过平台的支付和成交规则。借流量是把<strong>后续关系</strong>接回来，不是把<strong>这一单</strong>偷走；后者的处罚通常是封店，而且查得出来。规则内做到极致就够了。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> A platform is generous early because it needs supply: it subsidises you, sends traffic, takes a small cut. Once both sides are dense, extracting rent from your side becomes its optimal move — the take rate rises, organic reach narrows, visibility starts costing money. That isn't a platform turning evil, it's the structure of a two-sided market. So there's only one correct posture: treat the platform as an acquisition channel, never as the place your customer relationships live. On every order that comes through it, do one thing at the moment of delivery — turn that person into someone you can reach directly. Give a reason rather than making a request: "there's something that won't fit on the platform, message me and I'll send it over" is a gift; "add me for discounts later" is a demand. Stay inside the rules — you're pulling the future relationship over, not stealing the current order, and most platforms will close your shop for the latter. One self-check: if your biggest platform cut your traffic by eighty per cent tomorrow, how many customers could you still contact? That number is the business you own; the rest is rented.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：平台的定价不是按成本分摊，而是补贴「更难拉来、更价格敏感」的那一侧，向「更离不开、更愿意付」的那一侧收费。你一开始是被补贴的稀缺侧；等同类供给变多，你就换到了被收费的那一侧——补贴撤掉不是背叛，是重新定价。</strong></p>
+<ul>
+<li><strong>硬理论（诺奖背书）· 双边市场定价</strong>：Rochet &amp; Tirole (2003, <em>Journal of the European Economic Association</em>) 证明平台的最优价格结构高度不对称：对网络外部性贡献大、价格弹性高的一侧低价甚至倒贴，从另一侧回收；Parker &amp; Van Alstyne (2005, <em>Management Science</em>) 结论同向。Tirole 2014 年因产业组织与平台研究获诺贝尔经济学奖。含义：抽成变化是结构性的，别指望靠交情豁免。</li>
+<li><strong>可核对的公开事实 · 抽成量级</strong>：主流应用商店的标准分成长期是 30%（小开发者计划为 15%）。这是公开的公司政策，可直接查证。</li>
+<li><strong>行业估算（非同行评审，口径有争议，谨慎使用）</strong>：分析机构 Marketplace Pulse 多年估算，亚马逊第三方卖家付给平台的各项费用合计（佣金＋履约＋站内广告）已接近销售额的一半。这是按公开财报和抽样反推的，算法不同差别很大，别当精确数字——但「平台费用份额长期单向上升」在多个平台都能观察到。</li>
+</ul>
+
+<p class="caveat">边界：不是所有平台都会走到高抽成，监管、竞争、所处阶段都会改变节奏。这条不是预言，是风险管理：按「有一天会涨」安排客户资产代价很小，按「它会一直对我好」安排，代价是整个生意。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>渠道冲突不是靠讲道理解决的，是靠事先把地划开
+<span class="en">Channel conflict is never argued away afterwards. It's drawn on the map beforehand.</span></h2>
+<span class="tag">报备制</span><span class="tag">分配公平</span><span class="tag">价格一致</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">渠道冲突的根源只有一句话：<strong>同一个客户可能被两条路径碰到，而谁拿钱事先没说清</strong>。后果不是吵架，是伙伴不敢投入——他养了三个月的客户被你的直销最后一步签走，他下次就不带客户来了。而且这里的反应比你预期的猛：人对分得不公的抗拒强到宁可自己也不赚。所以解法全在事前：<strong>按客户段 / 地域 / 产品线划地，加报备制度，再保证同一客户从哪条路买价格都一样。</strong>缺一条，冲突一定回来。</div>
+</div>
+<div class="section">
+<div class="section-label">同一张地图，画不画线的差别</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+<marker id="c2" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#3f6d2f"></path>
+</marker>
+</defs>
+<text fill="#a8461f" font-family="Georgia" font-size="11" font-weight="700" x="20" y="24">没划线：谁碰上算谁的</text>
+<line stroke="#cbb98f" stroke-dasharray="5 4" stroke-width="1.2" x1="336" x2="336" y1="14" y2="286"></line>
+<rect fill="#eceee8" height="34" rx="4" stroke="#b7c1b6" stroke-width="1.2" width="130" x="20" y="44"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="85" y="65">你的直销</text>
+<rect fill="#eceee8" height="34" rx="4" stroke="#b7c1b6" stroke-width="1.2" width="130" x="176" y="44"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="241" y="65">渠道伙伴</text>
+<line marker-end="url(#c1)" stroke="#c0603a" stroke-width="1.5" x1="85" x2="150" y1="80" y2="128"></line>
+<line marker-end="url(#c1)" stroke="#c0603a" stroke-width="1.5" x1="241" x2="176" y1="80" y2="128"></line>
+<rect fill="#f6e3da" height="34" rx="4" stroke="#c0603a" stroke-width="1.6" width="150" x="88" y="134"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="163" y="155">同一个客户</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="196">最后一步谁签，谁拿全部——</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="20" y="220">伙伴被截胡一次，不会来吵，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="20" y="244">只会安静地不再带客户。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="268">丢的不是这一单，是他后面所有单。</text>
+<text fill="#3f6d2f" font-family="Georgia" font-size="11" font-weight="700" x="360" y="24">划了线：先分段，再报备</text>
+<rect fill="#eaf3ee" height="40" rx="4" stroke="#8aa79a" stroke-width="1.3" width="316" x="360" y="40"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="374" y="58">小客户 · 标准包</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="374" y="74">平台自助 / 分销，直销团队不碰</text>
+<rect fill="#dfeae2" height="40" rx="4" stroke="#1f7a5c" stroke-width="1.5" width="316" x="360" y="90"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="374" y="108">中客户 · 要人跟</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="374" y="124">伙伴主导，报备后 90 天该客户归他</text>
+<rect fill="#e2efdc" height="40" rx="4" stroke="#3f6d2f" stroke-width="1.7" width="316" x="360" y="140"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" x="374" y="158">大客户 · 指定名单</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="374" y="174">直销专属，名单提前公开给所有伙伴</text>
+<line marker-end="url(#c2)" stroke="#3f6d2f" stroke-width="1.5" x1="518" x2="518" y1="184" y2="206"></line>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" x="360" y="228">三条底线：名单提前给 · 报备先到先得 · 同一客户价格一致</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="360" y="252">价格不一致，伙伴是当着客户的面被拆穿，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="360" y="272">丢的是他自己的信誉——这种恨记得最久。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做模板 · 一页纸渠道规则（把这四条写进合作协议）</span>
+<p>1. <strong>地怎么分</strong>：写清哪段客户归伙伴、哪段归直销、哪些是谁都不能碰的指定名单。名单必须<strong>提前</strong>公开——事后才说「这家是战略客户」，等于承认规则你随时能改。</p>
+<p>2. <strong>报备制</strong>：伙伴提交客户名，你两个工作日内确认，确认后 90 天该客户归他，无论最终谁去谈。先到先得，直销团队走同一套流程。</p>
+<p>3. <strong>价格一致</strong>：同一客户同一配置，从哪条路买价格都一样。想让利就让在<strong>他的分成</strong>上，别让在<strong>客户的报价</strong>上。</p>
+<p>4. <strong>撞车谁判</strong>：写明仲裁人、几天内出结果。规则的价值不在永远判对，在于他知道有得判、判得快。</p>
+<p><strong>真撞车了的一句话</strong>：「按报备记录这单是你的，直销这边退出，我让 A 配合你做技术支持。」——成本是一单，买回来的是制度的可信度。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Channel conflict has one root cause: the same customer can be reached by two paths and nobody said in advance who gets paid. The damage isn't the argument, it's that partners stop investing — a partner who nurtured an account for three months and watched your direct team close it in the last step won't complain, he'll quietly stop bringing you customers, and you lose every future deal rather than that one. People's resistance to an unfair split runs far deeper than most sellers expect: they will forgo their own gain to punish it. So the fix is entirely upfront. Divide the map by segment, territory or product line; run a deal-registration process where the partner submits a named account, you confirm within two working days, and the account is his for ninety days regardless of who ends up negotiating — with your own direct team held to the same process; publish the named-account list in advance rather than declaring an account strategic after the fact; and keep the price identical whichever path the customer buys through, discounting into the partner's margin rather than the customer's quote, because an inconsistent price humiliates him in front of his own client.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：人判断分配不只看自己拿多少，还看分法正不正当；一旦判定被占便宜，抗拒强到宁可自己也不要。所以规则的首要作用不是判对，是让伙伴事先相信「我投入的不会被拿走」——没有这个信念，他的最优策略就是不投入。</strong></p>
+<ul>
+<li><strong>硬证据（跨文化重复无数次）· 不公平的分法会被拒绝</strong>：最后通牒博弈（Güth、Schmittberger &amp; Schwarze, 1982, <em>Journal of Economic Behavior &amp; Organization</em>）：一人分一笔钱，另一人只能接受或拒绝，拒绝则两人都拿零。理性预测是「给一块也该接受」，实际结果是低于总额约两三成的分法经常被拒绝。Henrich 等 (2001, <em>American Economic Review</em>) 在十五个小规模社会重复，各地数值差别很大，但「为不公平而自损」普遍存在。</li>
+<li><strong>硬证据（fMRI，脑区明确）· 不公平激活的是厌恶回路</strong>：Sanfey、Rilling、Aronson、Nystrom &amp; Cohen (2003, <em>Science</em>) 让被试在扫描仪里玩最后通牒：面对不公平提议时，<strong>前脑岛</strong>（与厌恶、生理不适相关）活动显著升高，幅度能预测他会不会拒绝；同样的提议若来自电脑，反应明显更弱。样本 19 人，用激活反推心理过程有公认局限，但它和行为数据指向同一件事——<strong>被占便宜更接近「恶心」，不接近「算错账」，你没法用算账讲回来。</strong></li>
+<li><strong>渠道实证（问卷研究，中等强度）· 程序公平比分得多更重要</strong>：Kumar、Scheer &amp; Steenkamp (1995, <em>Journal of Marketing Research</em>) 调查处于弱势的经销商：<strong>程序公平</strong>（规则透明、双向沟通、有无申诉渠道）对信任与承诺的影响比结果分配更突出，且显著降低冲突。Anderson &amp; Weitz (1992, 同刊) 显示双方的<strong>专用投入</strong>互相强化承诺。两项都是横截面问卷，因果推断打折扣。</li>
+</ul>
+<p class="caveat">边界与红线：划线是让规则可预期，不是把伙伴锁死。别把「保护渠道」做成「客户只能走我指定的路」——限制客户选择迟早反噬成交率。对个人也成立：合作前把「什么算你带来的、多久有效、怎么算钱」说清楚，比事后凭交情分更不伤感情。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 47 Action</h3>
+<p>九十分钟，拿你现在卖的东西走一遍。</p>
+<div class="action">
+<strong>一（25 分钟）· 落格：</strong>把客户按「一单要花多少说服」和「一个客户值多少毛利」分成两三堆，看各自落进哪格。落进危险格的先别找渠道，标出来当产品问题处理。<br/><br/><strong>二（20 分钟）· 算伙伴的期望时薪：</strong>挑一个想合作的人，写下四个数——一单他到手多少、几个客户成一单、上手要学多久、卖砸谁赔。然后老实问：他手上有没有更好赚的活？有，就从后三个数里挑一个改，别只加分成。<br/><br/><strong>三（20 分钟）· 集中度体检：</strong>列出过去半年营收来自哪些渠道、各占多少。最大那条超过一半，今天就写下第二条路径的第一个动作。<br/><br/><strong>四（25 分钟）· 写一页纸规则：</strong>哪怕只有一个合作方。四条：地怎么分、报备怎么走、价格一致、撞车谁判。写完发给对方问一句「这么定你觉得公平吗」——这句本身就在建立程序公平。<br/><br/>边界提醒：以上都建立在你已经能卖动这个东西之上。自己一单没成过就铺渠道，不是放大，是把没验证的东西复制给没耐心的人。
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我签了十几个代理，绝大多数一单没出。是他们不行，还是我给的条件不够？</summary>
+<div class="answer">大概率都不是，是<strong>你把签约当成了结果</strong>。<br/><br/>签约对伙伴的成本几乎是零——多一个产品放货架上，他没损失。所以「签了多少家」天然好看，还会让你误以为在进展。真正该看的只有一个数：<strong>过去 90 天出过单的家数</strong>。<br/><br/><strong>零到一家</strong>：问题多半不在条件，在你自己还没跑通。伙伴复制不了一个你都说不清的流程。回去自己连成几单，把「什么客户会买、开场怎么说、三个常见异议怎么答」写成一页纸再来铺。<br/><br/><strong>两三家在出单、其余不动</strong>：这是正常分布，不是失败。把资源全压给这几家——陪访、给线索、做联合案例，而不是继续签新的。最常见的错误是拿有限支持平均喂一群不动的人。<br/><br/><strong>真要改条件，先改风险和难度，别先改比例。</strong>分成从 20% 提到 25%，对从没卖出去过的人是把零乘了 1.25；帮他成第一单，是把零变成一。</div>
+</details>
+<details>
+<summary>2. 我是一个人接活的（自由职业 / 小工作室），谈不上什么渠道，这套跟我有关系吗？</summary>
+<div class="answer">关系很大，个人版还更简单：你的「渠道」就是<strong>那些能把客户介绍给你的人</strong>——同行、上下游、平台、老客户。说服外包不掉，但<strong>找到人</strong>这段完全可以借力，所以你要建的不是分销网络，是三五个稳定的转介绍来源。<br/><br/><strong>用期望时薪那张表看推荐人</strong>：他为什么把客户给你？三种回报——他拿钱（明确分成）、他在客户面前更专业（你补上了他做不了的那块）、你会回介绍给他。至少坐实一个；只靠交情的转介绍会在三个月内停掉，不是他坏，是没东西在维持它。<br/><br/><strong>规则一样要事先说</strong>：「你介绍来的成交我按 10% 给你，签合同起半年内都算你的。」这话看着生分，效果相反——它让对方敢开口，因为不用担心显得图什么。含糊反而让人张不开嘴。<br/><br/><strong>集中度对个人更致命</strong>：一个客户或一个平台占你收入八成，那不是生意，是一份没有劳动合同保护的工。</div>
+</details>
+<details>
+<summary>3. 平台抽成越来越高，我要不要干脆退出来只做自己的私域？</summary>
+<div class="answer">通常不要二选一，这两件事在做完全不同的活。<br/><br/><strong>平台做的是「陌生人愿意第一次相信你」</strong>——评价体系、担保交易、退款规则，替你解决了一个昂贵的问题：不认识你的人凭什么敢先付钱。自己从零建这套信任，成本远高于抽成。所以平台费别只当成本看，它有一部分是<strong>在买信任基础设施</strong>。<br/><br/><strong>你自己的渠道做的是「信过你的人第二次来找你」</strong>——这部分平台帮不上忙，还要照抽。<br/><br/>所以合理结构是分工：<strong>平台负责首次获客，自有渠道负责复购和转介绍。</strong>往哪边加力看复购率：复购率高，自有渠道回报很大；接近零的低频品类，平台就是主战场，别硬建私域，力气花在首次转化和评价上。<br/><br/><strong>什么时候真该退</strong>：抽成加广告费吃掉你的毛利、且自有渠道获客成本明显更低时——这是能算的数，别凭情绪。算之前把平台带来的复购也算进它的贡献里。<br/><br/>还有个常被忽略的中间选项：<strong>留在平台但只卖入口款</strong>。标准化好交付的东西在平台获客，高毛利、要沟通的服务放自己这边成交——抽成落在便宜那段，真赚钱那段不用分。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 47</footer>
+</div>
+</body>
+</html>
