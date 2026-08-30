@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 48：销售团队与流程</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 48 · Phase G</div>
+<h1>团队不是一群会卖的人，是一条谁走都走得通的路</h1>
+<div class="meta"><span>主题：四段活怎么切 · 招人别信直觉 · 提成买的是可计量 · CRM 只强制四个字段</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">「等招到一个厉害的销售就好了」是最贵的幻觉。人走了流程还在，才叫团队；流程只长在某个人脑子里，你招的不是员工，是一次性的运气。</div>
+</header>
+<div class="intro">
+<strong>销售团队最常见的死法不是人不行，是把四段性质完全不同的活压给同一个人，再用一条只数得清成交额的提成去指挥他。</strong>四个动作各解一段：<strong>一、先切活再切人，交接点比岗位名重要</strong>；<strong>二、别信面试里的投缘，信他当场干出来的样本</strong>；<strong>三、提成买不到努力，只买得到你数得清的那件事</strong>；<strong>四、CRM 是让「下一步」不再只长在某个人脑子里</strong>。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>一单其实是四段完全不同的活——先按活切，再决定按人怎么切
+<span class="en">Split the work before you split the headcount.</span></h2>
+<span class="tag">SDR / AE / CSM</span><span class="tag">专业化</span><span class="tag">交接成本</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">一单至少含四段活：<strong>找人</strong>（从人海里筛出可能有需求的，靠量和纪律）、<strong>验人</strong>（判断值不值得投入，靠敢说不）、<strong>成交</strong>（诊断、讲价值、扛异议，靠经验和临场）、<strong>留住</strong>（上手、续费、扩单，靠耐心）。四段要的能力和节奏几乎不重叠：找人是重复劳动，成交是短跑，留住是慢工。硬压给一个人，结果永远一样——他会躲开最难受的那段，通常是找人。所以第一个决定不是招几个人，是<strong>这四段现在各由谁干、交接点在哪、交接时把什么带过去</strong>。</div>
+</div>
+<div class="section">
+<div class="section-label">四段活与三个交接点</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 292" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="b1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">一单是四段活，先切活，人再往上贴</text>
+<rect fill="#eaf3ee" height="64" rx="4" stroke="#1f7a5c" stroke-width="1.4" width="130" x="30" y="42"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="95" y="66">找人</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="95" y="86">靠量与纪律</text>
+<text fill="#8a988c" font-family="Georgia" font-size="8.4" text-anchor="middle" x="95" y="100">常叫 SDR</text>
+<rect fill="#eaf3ee" height="64" rx="4" stroke="#1f7a5c" stroke-width="1.4" width="130" x="200" y="42"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="265" y="66">验人</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="265" y="86">靠敢说不</text>
+<text fill="#8a988c" font-family="Georgia" font-size="8.4" text-anchor="middle" x="265" y="100">常和成交同一人</text>
+<rect fill="#e2efdc" height="64" rx="4" stroke="#3f6d2f" stroke-width="1.8" width="130" x="370" y="42"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="435" y="66">成交</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="435" y="86">靠经验与临场</text>
+<text fill="#8a988c" font-family="Georgia" font-size="8.4" text-anchor="middle" x="435" y="100">常叫 AE</text>
+<rect fill="#eaf3ee" height="64" rx="4" stroke="#1f7a5c" stroke-width="1.4" width="130" x="540" y="42"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="605" y="66">留住</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="605" y="86">靠耐心与长期</text>
+<text fill="#8a988c" font-family="Georgia" font-size="8.4" text-anchor="middle" x="605" y="100">常叫 CSM</text>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.6" x1="162" x2="196" y1="74" y2="74"></line>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.6" x1="332" x2="366" y1="74" y2="74"></line>
+<line marker-end="url(#b1)" stroke="#8a9a90" stroke-width="1.6" x1="502" x2="536" y1="74" y2="74"></line>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="20" y="140">交接必须带过去的东西（漏了等于重来一遍）</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="30" y="162">① 找人 → 验人：他<tspan fill="#2f5a24" font-weight="700">原话</tspan>说的问题，不是你的总结</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="30" y="182">② 验人 → 成交：预算、时间点、谁拍板，三个都要标「已知 / 还不知道」</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="30" y="202">③ 成交 → 留住：他当初<tspan fill="#2f5a24" font-weight="700">为什么买</tspan>，以及你承诺了什么</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="670" y1="220" y2="220"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="242">先别切：不到五个人 / 一单要几个月定制 / 你自己还没跑通过</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="266">该切了：找人总被躲开 / 交接开始漏东西 / 一人一天换三种脑子</text>
+<text fill="#8a988c" font-family="Georgia" font-size="8.8" x="20" y="286">岗位名叫什么都行，定义清楚交接点才叫分工。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 三步把「岗位」换成「交接点」</span>
+<p>1. <strong>拿最近成的三单做时间账</strong>：每单在四段上各花了多少小时。找人那段多半近乎空白——不是不需要，是一直在被躲。</p>
+<p>2. <strong>先切最痛的那一刀</strong>：第一刀几乎都切在「找人 / 成交」之间，这两段节奏最冲突。切完看一个月：成交那位的会面数涨没涨？没涨说明瓶颈不在找人。</p>
+<p>3. <strong>把交接写成一张纸</strong>：三个必填加一句「不满足就退回」。允许退回是关键——不能退回的交接，下游只会私下把上游的活重做一遍。</p>
+<p><strong>交接时的一句话</strong>：「这单交给你，他原话是『每月底对账要花两天』，预算没问过，拍板的是财务总监，这三条你先确认再排会。」</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> A deal is at least four different jobs: sourcing (screening a crowd for people who might need this — volume and discipline), qualifying (deciding whether it's worth your hours — the nerve to say no), closing (diagnosis, value, objections, negotiation — experience and presence) and keeping (onboarding, renewal, expansion — patience). The skills, tempo and temperament barely overlap. Force all four onto one person and the outcome is always the same: they quietly drop the most uncomfortable stretch, usually sourcing. So the first decision isn't how many people to hire, it's who does each of the four today, where the handoffs sit, and what travels across them. Three handoffs, each with a required payload: sourcing to qualifying carries his own words, not your summary; qualifying to closing carries budget, timing and decision-maker, each marked known or unknown; closing to keeping carries why he bought and what you promised. Make handoffs rejectable — a handoff nobody can send back gets silently redone downstream. And don't split at all while you're under five people, or while a deal takes months of customisation, or while you personally haven't run the whole thing end to end.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：分工的收益来自两处——重复带来的熟练，以及不必在不同任务间反复切换心智；代价是每个切口新增的交接损耗与信息丢失。所以不是越细越好，净收益取决于单量：量小时交接损耗大于熟练收益。</strong></p>
+<ul>
+<li><strong>硬证据（实验心理学，机制清楚）· 切换是有成本的</strong>：Rubinstein、Meyer &amp; Evans (2001, <em>Journal of Experimental Psychology: Human Perception and Performance</em>) 让被试在两类任务间来回切换，切换那一步稳定多花时间；任务越复杂、规则越不熟，代价越大。这解释了为什么「上午打陌生电话、下午谈大单」的人两头都做不好。</li>
+<li><strong>硬证据（fMRI，脑区明确）· 一心二用是硬件占用</strong>：Dux、Ivanoff、Asplund &amp; Marois (2006, <em>Neuron</em>) 用时间分辨 fMRI 定位到<strong>外侧前额叶后部（posterior lateral prefrontal cortex）</strong>存在一个「中央瓶颈」：两个任务都要经过它时只能排队，不能并行。所以不是意志力问题——通道就那么宽。</li>
+<li><strong>行业经验（非研究，别当结论）· 把找人和成交分开</strong>：Ross《Predictable Revenue》记录的是 Salesforce 的内部做法，属经验总结，没有对照组。在高单量、标准化的场景复现得不错，小团队照搬常适得其反。</li>
+</ul>
+<p class="caveat">诚实边界：上面两项实验的任务以毫秒计，把它换算成「一天换三种活损失百分之多少」是<strong>外推，不是研究结论</strong>——它支持「切换有代价」，支持不了任何具体数字。另外，分工会让每个人的视野变窄：找人的那位久不到成交现场，判断会慢慢失准，所以定期让他旁听一次真实会面，不是福利，是校准。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>别招「看着像销售的人」，招在样本任务里真的做得好的人
+<span class="en">Stop hiring the one who interviews well. Hire the one who does the work in front of you.</span></h2>
+<span class="tag">结构化面试</span><span class="tag">工作样本</span><span class="tag">外向的迷思</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">最贵的一次判断失误，通常发生在你觉得「这人聊得真投缘」的那一刻。自由发挥式的面试测的是<strong>他讨不讨你喜欢</strong>——恰恰是每个销售练得最多的技能，等于你专挑了一个最容易被伪装的信号来下注。能替代它的只有两样：<strong>同一批问题问所有人、同一把尺子打分</strong>，和<strong>让他当场干一段真活</strong>。还有一条：别按「外向」筛人。</div>
+</div>
+<div class="section">
+<div class="section-label">哪种信号真的预测得了后来的表现</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">你最信的那种面试，恰好排在最下面</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="40">横条越长＝越能预测他入职后的实际表现</text>
+<rect fill="#e2efdc" height="24" rx="3" stroke="#3f6d2f" stroke-width="1.6" width="448" x="170" y="56"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="160" y="73">结构化面试</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" x="626" y="73">0.42</text>
+<rect fill="#dfeae2" height="24" rx="3" stroke="#1f7a5c" stroke-width="1.4" width="352" x="170" y="92"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="160" y="109">工作样本（当场干一段）</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="530" y="109">0.33</text>
+<rect fill="#dfeae2" height="24" rx="3" stroke="#1f7a5c" stroke-width="1.4" width="331" x="170" y="128"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="160" y="145">一般认知能力测验</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="509" y="145">0.31</text>
+<rect fill="#f6e3da" height="24" rx="3" stroke="#c0603a" stroke-width="1.6" width="203" x="170" y="164"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="end" x="160" y="181">非结构化面试（随便聊）</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="381" y="181">0.19</text>
+<rect fill="#eceee8" height="24" rx="3" stroke="#b7c1b6" stroke-width="1.2" width="96" x="170" y="200"></rect>
+<text fill="#8a988c" font-family="Georgia" font-size="9.6" text-anchor="end" x="160" y="217">干过几年（工龄）</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9.6" font-weight="700" x="274" y="217">0.09</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="670" y1="238" y2="238"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.8" x="20" y="258">数值取自 Sackett 等 (2022) 对人事选拔效度的修订估计；经典的 Schmidt &amp; Hunter (1998) 老表数值明显更高，已被判定系统性偏高。</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9" font-weight="700" x="20" y="278">看排序，别抠小数点。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" x="20" y="296">就算排第一的 0.42 也不是「照做必准」：招聘是降低失误率，不是预知未来。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做模板 · 一个 45 分钟的试岗任务（比问十个问题管用）</span>
+<p><strong>给材料（提前发）</strong>：你们真实产品的一页介绍 + 一个真实客户的公开信息（网站、招聘页、新闻）。</p>
+<p><strong>任务一（15 分钟，现场）</strong>：「我是这家公司的运营负责人，你有十分钟。开始吧。」——你只演一个普通难缠的人：忙、有点怀疑、不主动给信息。<strong>看什么</strong>：他问了几个问题？问的是他想卖的点，还是我的处境？我含糊其辞时他是继续讲，还是追一句。</p>
+<p><strong>任务二（15 分钟）</strong>：「刚才哪里没做好，重来会怎么改？」<strong>看什么</strong>：能不能具体复盘。会复盘的人能被流程放大，只会归因于「客户不对」的人不能。</p>
+<p><strong>任务三（15 分钟）</strong>：给他一个真实异议（「我们已经在用别家了」），让他写三行回应。<strong>看什么</strong>：先认同再回应，还是直接对撞。</p>
+<p><strong>打分表（每项 1–5，所有人同一张）</strong>：提问质量 / 听完再说 / 复盘能力 / 抗含糊 / 表达清晰。<strong>先各自独立打分再讨论</strong>——先讨论会让第一个开口的人污染全场。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The most expensive misjudgement in building a sales team usually happens the moment you think "we really clicked." A free-flowing interview measures whether he is likeable to you — which is the single skill every salesperson has practised most, so you have chosen the most easily faked signal available on which to bet a hire. Only two things replace it: the same questions for every candidate scored on the same scale, and watching him do a piece of the real work. Run a forty-five minute sample: ten minutes selling to you while you play a busy, mildly sceptical buyer who volunteers nothing — count how many questions he asks, and whether they are about his pitch or your situation, and whether he follows up when you go vague; then fifteen minutes on what he'd do differently, because a person who can review himself concretely is one a process can amplify and a person who blames the customer is not; then a written answer to one real objection. Score independently before anyone speaks, or the first voice contaminates the room. And drop extraversion from your filter — it isn't the thing you think it is.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：选拔的准确度取决于信号里有多少和工作真相关的东西。自由聊天把标准交给临场好感与相似性，等于往判断里灌噪音；固定问题固定尺子，是把人放在同一条基线上比；工作样本更直接——用行为预测行为，中间少一层翻译。</strong></p>
+<ul>
+<li><strong>硬证据（大规模 meta 分析，且有重要修订）· 效度排序</strong>：Schmidt &amp; Hunter (1998, <em>Psychological Bulletin</em>) 的经典效度表被引用了二十多年；Sackett、Zhang、Berry &amp; Lievens (2022, <em>Journal of Applied Psychology</em>) 重新校正后发现旧表因校正过度而<strong>系统性偏高</strong>，把多数数值下调（结构化面试约 .42、工作样本约 .33、非结构化约 .19）。诚实地说：绝对值别再引老表，但<strong>结构化稳定高于非结构化</strong>这个排序两版都成立。</li>
+<li><strong>硬证据（设计很干净的实验）· 非结构化面试是在主动加噪音</strong>：Dana、Dawes &amp; Peterson (2013, <em>Judgment and Decision Making</em>) 让面试官面试真人，其中一部分被访者被要求<strong>随机作答</strong>。面试官照样形成了自信的印象，多数人甚至没察觉对方在乱答；加上这种面试后的预测还不如只看学业记录。它不是「信息少一点」，是<strong>让你对噪音产生了信心</strong>。</li>
+<li><strong>中等强度（单一大样本，未见大规模重复）· 外向不是筛选条件</strong>：Grant (2013, <em>Psychological Science</em>) 跟踪 340 名电话销售三个月，外向性与业绩不是线性关系，处在中间的<strong>双向性格（ambivert）</strong>营收最高。单一岗位、单一样本，别当定律，但足以把「要外向」从招聘要求里划掉。</li>
+</ul>
+<p class="caveat">边界与红线：结构化不等于死板，追问和临场跟进都可以，固定的是<strong>问题清单和评分维度</strong>，不是对话。工作样本的前提是任务真像那份工作，别拿脑筋急转弯充数。还有一条硬红线：试岗不能变成免费劳动——超过一两小时、或你打算真拿去用，就付钱。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>提成买不到努力，只买得到你数得清的那件事——数不清的会被悄悄挤掉
+<span class="en">Commission never buys effort. It buys whatever you can count, and quietly defunds everything you can't.</span></h2>
+<span class="tag">多任务代理</span><span class="tag">阶梯与堆单</span><span class="tag">折扣权限</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">提成的关键从来不是「给多少」，是「按什么给」。人会把时间投向能计量又能兑现的那个维度，计量不了的维度不是「少做一点」，是<strong>被系统性挤掉</strong>：只按新签算钱，交接和续费没人管；只按成交额算钱，折扣会被大方送出去，因为它不怎么影响提成基数；按打了多少电话算钱，你会拿到一堆通话记录和零个客户。所以先问一句：<strong>这个指标最省力的作弊方式是什么？</strong>——那件事一定会发生，不是因为人坏，是因为你在付钱让它发生。</div>
+</div>
+<div class="section">
+<div class="section-label">阶梯提成必然长出来的那个形状</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#8a9a90"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">季度末的尖峰不是需求，是你的提成表</text>
+<line marker-end="url(#c1)" stroke="#8a9a90" stroke-width="1.4" x1="80" x2="80" y1="228" y2="46"></line>
+<line marker-end="url(#c1)" stroke="#8a9a90" stroke-width="1.4" x1="80" x2="668" y1="228" y2="228"></line>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" font-weight="700" x="20" y="52">高</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" font-weight="700" text-anchor="end" x="660" y="248">季度内第几周 →</text>
+<polyline fill="none" points="96,206 141,203 186,208 231,204 276,206 321,200 366,202 411,196 456,190 501,178 546,160 591,116 636,68" stroke="#1f7a5c" stroke-width="2.4"></polyline>
+<polyline fill="none" points="96,216 141,215 186,217 231,214 276,216 321,213 366,214 411,211 456,208 501,202 546,192 591,164 636,124" stroke="#c0603a" stroke-dasharray="5,4" stroke-width="2.2"></polyline>
+<circle cx="636" cy="68" fill="#1f7a5c" r="3.4"></circle>
+<circle cx="636" cy="124" fill="#c0603a" r="3.4"></circle>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="452" y="60">成交单数</text>
+<line stroke="#1f7a5c" stroke-width="2.4" x1="418" x2="446" y1="56" y2="56"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="452" y="80">平均折扣</text>
+<line stroke="#c0603a" stroke-dasharray="5,4" stroke-width="2.2" x1="418" x2="446" y1="76" y2="76"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="96" y="252">最后两周同时冲高：他把能推的单推到门槛前，再用折扣把犹豫的拉过线。</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="8.6" x="96" y="270">形状取自文献中反复观察到的模式（Oyer 1998；Larkin 2014），是示意，不是某家公司的真实数据。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 设计提成前必须回答的四个问题</span>
+<p>1. <strong>这个指标怎么作弊最省力？</strong>按成交额 → 送折扣；按新签 → 不管续费；按活动量 → 刷记录。想清楚后，要么换指标，要么把作弊路径直接堵上（最常用的一招：<strong>折扣从他的提成基数里扣</strong>，让让利变成他自己的钱）。</p>
+<p>2. <strong>数不清但重要的事，谁在管？</strong>交接质量、说真话、帮同事——这些永远算不进提成。可行的只有三种：把单一指标的强度调低（别搞纯提成）、把一部分挂到团队或续费上、把兑现延后。<strong>再加一条提成来补，通常只会催生新的作弊面。</strong></p>
+<p>3. <strong>阶梯要不要？</strong>阶梯能拉动冲刺，代价就是上图那个形状。真要用就把周期拉长、门槛设在他跳一跳够得着的地方；差太远的人会放弃本季度、把单藏到下季度。</p>
+<p>4. <strong>比例怎么定？</strong>没有普适数字，只有推法：算一单毛利，定<strong>销售成本能占毛利多少</strong>（由你的单位经济学定，不是同行定），乘以预期单量，就是一个人的总薪包上限，再切成底薪和提成。<strong>业内常见做法</strong>是两者大致对半（可查的惯例，不是研究结论）；单越简单、越靠个人，提成比重可以越高。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Commission is never about how much, it's about what you pay on. People move their hours toward whatever is both measurable and convertible into money, and the unmeasurable dimensions don't merely shrink — they get systematically crowded out. Pay only on new logos and nobody handles handoffs or renewals. Pay only on booked revenue and discounts get handed out freely, because a discount barely touches the base your rep is paid on. Pay on activity and you'll receive a pile of call logs and zero customers. So before you design anything, ask the one useful question: what is the laziest way to game this number? Whatever that is will happen — not because people are bad, but because you are paying for it. Three fixes actually work for the things you can't count: lower the intensity of the single metric, tie part of the payout to the team or to renewals, and delay vesting. Adding one more commission line to cover the gap mostly just creates a new surface to game. And charge discounts against the rep's own commission base, so giving margin away costs him his money, not only yours.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：当一个人要同时干好几件事、而其中只有一部分能被准确计量时，对可计量部分给强激励，会把努力从不可计量的部分抽走。这不是态度问题，是理性反应——他在按你给的价格表分配时间。</strong></p>
+<ul>
+<li><strong>硬理论（诺奖背书）· 多任务代理</strong>：Holmström &amp; Milgrom (1991, <em>Journal of Law, Economics, &amp; Organization</em>) 证明了上面这件事，并给出反直觉的推论：当重要维度难以计量时，<strong>最优激励强度反而应该更低</strong>，甚至干脆用固定薪酬——因为强激励在这里主要起扭曲作用。Holmström 于 2016 年获诺贝尔经济学奖。</li>
+<li><strong>硬证据（真实公司逐单数据）· 阶梯会被择时和折扣「买单」</strong>：Larkin (2014, <em>Journal of Labor Economics</em>) 分析一家企业软件公司的逐单数据：销售会为跨过阶梯门槛而<strong>择时</strong>（把单推早或推晚）并<strong>多给折扣</strong>，估计成本约在收入的百分之几这个量级。Oyer (1998, <em>Quarterly Journal of Economics</em>) 更早用财年末的销售冲高说明：这类季节性是激励结构造的，不是需求本身。</li>
+<li><strong>硬证据（自然实验，效应大但边界窄）· 提成确实有用，条件很苛刻</strong>：Lazear (2000, <em>American Economic Review</em>) 记录 Safelite 汽车玻璃安装工从计时改计件后人均产出上升约 44%；关键在于其中<strong>约一半来自人员筛选</strong>（慢的人离开、快的人加入），只有一半是现有员工变快。边界很清楚：产出简单、可计量、纯个人完成。你的销售越像这形态提成越灵，越是长周期、多人协作、质量难判断就越不像。</li>
+</ul>
+<p class="caveat">边界：提成解决「愿不愿意」，解决不了「会不会」——转化率低通常是能力和流程问题，这时加提成只会让好的人先失望离开。对个人也一样：只奖励能数的指标（发了几条、见了几个人），那些数不清却真正复利的事就会被你自己挤掉。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>CRM 不是给老板看的监控，是让「下一步」不再只长在某个人脑子里
+<span class="en">A CRM isn't surveillance. It's where the next step lives when it isn't in one person's head.</span></h2>
+<span class="tag">流程外化</span><span class="tag">四个必填字段</span><span class="tag">管道体检</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">CRM 变成填表刑罚只有一个原因：字段是为管理层的报表设计的，不是为销售的下一个动作设计的。判断标准很朴素——<strong>一个人休假两周，别人能不能只看 CRM 就接手他的单</strong>。做不到，你存的就是记录，不是流程。所以只强制四个字段：<strong>下一步动作是什么、谁做、哪天做完、卡在哪个具体障碍上</strong>。前三个把「保持跟进」变成有触发条件的计划；第四个逼人承认卡点，而不是把单永远挂在「跟进中」这种安慰性状态里。</div>
+</div>
+<div class="section">
+<div class="section-label">同一单，两种记法</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 296" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f6e3da" height="150" rx="5" stroke="#c0603a" stroke-width="1.6" width="310" x="20" y="34"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="38" y="58">常见写法：一份记录</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="38" y="82">客户：某某科技</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="38" y="102">阶段：方案沟通中</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="38" y="122">金额：18 万　预计成交：这个月</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="38" y="142">备注：已电话沟通，保持跟进</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" x="38" y="168">→ 他一休假，这单就停了。</text>
+<rect fill="#e2efdc" height="150" rx="5" stroke="#3f6d2f" stroke-width="1.8" width="310" x="370" y="34"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="10.5" font-weight="700" x="388" y="58">四个必填：一个下一步</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="388" y="82">下一步：把对账那段做成 20 分钟演示</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="388" y="102">谁做：小林</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="388" y="122">哪天做完：11 月 6 日</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="388" y="142">卡在：财务总监还没同意进会</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" x="388" y="168">→ 任何人接手都知道下一步。</text>
+<line stroke="#d5dce4" stroke-width="1" x1="20" x2="680" y1="200" y2="200"></line>
+<text fill="#123f30" font-family="Georgia" font-size="10" font-weight="700" x="20" y="222">每周十分钟的管道体检，只问三句</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="30" y="244">① 多少单的「哪天做完」已过期？——过期的不是单，是流程。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="30" y="264">② 多少单卡在同一个障碍上？——反复出现，那是产品或材料问题。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="30" y="284">③ 多少单三周没动过？——当场推进或关掉，别让它们撑着预测。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做模板 · 让人愿意填的三条硬规矩</span>
+<p>1. <strong>字段只留四个，其余全部选填。</strong>每多一个必填，数据质量掉一截；报表字段你自己从这四个算，别摊派给一线。</p>
+<p>2. <strong>「下一步」必须写成动作 + 日期，不能是状态。</strong>「保持跟进」「等客户回复」都不算；「11 月 6 日前把对账那段做成 20 分钟演示发给小张」才算。</p>
+<p>3. <strong>永远别用 CRM 里的活动量做考核。</strong>一旦打几个电话变成考核项，你就把上一节的挤出效应搬进了系统，从此数据漂亮又无用。CRM 该是<strong>销售自己的工作台</strong>：替他记住该做什么，而不是替你盯着他做了什么。</p>
+<p><strong>周会上的一句话</strong>：「你这三单的下一步日期都过了，我们只聊这三单——是卡住了，还是该关掉？」</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Most CRMs become a filing punishment for exactly one reason: the fields were designed for management's report, not for the seller's next action. The honest test is whether someone can take a colleague's deals from the CRM alone while he's away for two weeks. If not, what you're storing is a record, not a process. So make only four fields mandatory: what the next action is, who does it, the date it's done by, and which specific obstacle the deal is stuck on. The first three turn a vague "keep following up" into a plan with a trigger, and the fourth forces people to name the blocker instead of parking the deal in the comfort of "in progress" forever. Everything else stays optional — each extra required field costs you data quality, and reports should be computed from those four rather than levied on the front line. One rule matters more than the software: never make CRM activity counts a performance metric. The moment calls logged becomes something people are paid or judged on, you have imported the crowding-out problem straight into your system, and from then on the data is beautiful and useless.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：意图变成行动靠的不是决心，是把动作挂到具体的时间和情境上——到了那刻不必重新决定。同时，把只长在个人脑中的隐性流程写成可交接的东西，团队才可能不依赖单个人；但外化本身没有魔力，起作用的是人真的照它改变行为。</strong></p>
+<ul>
+<li><strong>硬证据（94 项研究的 meta 分析）· 「什么时候做什么」显著提高执行率</strong>：Gollwitzer &amp; Sheeran (2006, <em>Advances in Experimental Social Psychology</em>) 汇总约 94 项研究、八千余名被试，发现「如果到了 X，我就做 Y」形式的<strong>执行意图</strong>对目标达成有中等偏上的效应（d 约 0.65）。机制是把行动的触发条件预先挂到具体情境上。CRM 里的「动作 + 日期」正是这件事的工位版本，「保持跟进」不是。</li>
+<li><strong>硬证据（跨行业，且必须连反面结果一起讲）· 把隐性流程变成清单</strong>：Haynes 等 (2009, <em>New England Journal of Medicine</em>) 在八家医院引入手术安全核对表，术后死亡率从约 1.5% 降到 0.8%、并发症从约 11% 降到 7%。但 Urbach 等 (2014, 同刊) 在安大略省全省强制推行后<strong>没有观察到显著改善</strong>。两个结果合起来的教训正是本节重点：<strong>清单本身没有力量，起作用的是团队真的用它改变行为；行政命令式的强制填报什么也改变不了</strong>——这正是 CRM 项目最常见的死法。</li>
+</ul>
+<p class="caveat">边界：两三个人时 CRM 的收益主要是防遗忘，一个共享表格够用；真正该上系统的信号只有两个——<strong>交接开始出现</strong>、<strong>预测开始重要</strong>。上太早，你会花几个月配置一个没数据的系统。另外，清单管的是「别漏」，管不了「该不该做这单」——那是资格判定那件事，别指望字段替你判断。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 48 Action</h3>
+<p>九十分钟，拿你现在的团队（哪怕只有你）走一遍。</p>
+<div class="action">
+<strong>一（20 分钟）· 四段活的时间账：</strong>翻最近成的三单，写下每单在找人 / 验人 / 成交 / 留住上各花了多少小时。哪段接近空白？那就是你一直在躲的地方。<br/><br/><strong>二（20 分钟）· 写交接三件套：</strong>一张纸——三个交接点各要带什么过去，加一句「不满足可以退回」。今天就发出去，问一句「这样交接你接得住吗」。<br/><br/><strong>三（25 分钟）· 给提成做作弊测试：</strong>写下你现在（或打算用）的规则，逼自己回答：最省力的作弊方式是什么？数不清但重要的事现在谁在管？改一处堵住它——最常见的是把折扣扣进提成基数。<br/><br/><strong>四（25 分钟）· 四个字段体检：</strong>打开 CRM 或那张表，给每单补上「下一步动作 / 谁做 / 哪天做完 / 卡在哪」。补完数一下：多少单根本写不出下一步？那些不是管道，是希望，今天就移出预测。<br/><br/>边界提醒：四件事都建立在「这东西已经卖得动」之上。没跑通就先建团队和系统不是规模化，是把没验证的流程复制给更多人，再用更贵的方式确认它不成立。
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我们就两三个人，这套是不是等长大了再说？</summary>
+<div class="answer">分工先别做，<strong>流程现在就做</strong>——这两件事常被混在一起，代价完全不同。<br/><br/><strong>别做的部分</strong>：三个人切成 SDR / AE / CSM，只会让每个人都在等别人。人少时交接损耗大于专业化收益，一人跟到底反而更快。<br/><br/><strong>现在就做的只有两件</strong>，都不花钱：<br/>① <strong>每单写下一步动作和日期</strong>，一张共享表格就够，防的不是别人偷懒，是你自己三周后想不起这单卡在哪。<br/>② <strong>每成一单、每丢一单写三行复盘</strong>：他为什么买 / 不买、哪句话之后气氛变了、下次改哪句。半年后这叠纸就是你招第一个人时的培训材料。<br/><br/><strong>什么时候切第一刀</strong>：当你连续两周没做找人这段、只在处理已有的单——说明成交和找人已经在抢同一个人的时间。</div>
+</details>
+<details>
+<summary>2. 提成到底该给百分之多少？总得有个数吧。</summary>
+<div class="answer">没有普适数字，抄同行是最常见的错误：毛利结构和单量不一样，同一个比例在你这可能直接亏。但有个能自己推的算法：<br/><br/><strong>一</strong>：算清一单的毛利（收入减交付成本），别用收入。<br/><strong>二</strong>：定<strong>销售成本能占毛利多大比例</strong>，由你的单位经济学决定：高毛利、低交付成本的生意给得起，薄利的给不起。<br/><strong>三</strong>：毛利 × 这个比例 × 一年能成的单量 = 他的总薪包上限，再切成底薪和提成。<strong>业内常见做法是大致对半</strong>（可查的惯例，不是研究结论）；单越简单、越靠个人、周期越短，提成占比可以越高。<br/><br/><strong>比比例重要得多的三件事</strong>：<strong>兑现周期</strong>（按季度算钱就会长出季末尖峰）、<strong>折扣算不算进基数</strong>（不算等于你在补贴让利）、<strong>续费和交接挂不挂钩</strong>（不挂钩就没人管客户成交之后过得好不好）。同样的钱，结构不同，买到的行为完全不同。<br/><br/>还有一条常被忽略：<strong>规则改得越频繁，激励衰减得越快</strong>。不完美但稳定一年的方案，通常胜过每季度调优的——人只为他相信兑现得了的东西改变行为。</div>
+</details>
+<details>
+<summary>3. 最能卖的那个人不肯填 CRM、也不肯照流程走，怎么办？</summary>
+<div class="answer">先分清两种情况，处理方式完全相反。<br/><br/><strong>一：流程真的没用。</strong>他要填十五个字段，十二个是为了别人的报表——这时错在你。把必填砍到四个，当着他的面砍，比任何动员都管用。一个反问能判断：<strong>他填的东西有没有一样是他第二天会用到的？</strong>没有，那就是纯上缴，抗拒完全合理。<br/><br/><strong>二：他在保护信息垄断。</strong>客户关系只在他手里他才有议价权——这是理性自保，不是人品问题。别劝说，改结构：把「交接质量」放进他的评估，新线索优先给愿意共享的；同时讲清代价：只有他能碰的客户群，公司不会继续往上投资源。<br/><br/><strong>还有最难的一种：他确实靠一套写不下来的直觉在赢。</strong>这时别硬套流程，改成<strong>抽取</strong>：让他做一次真实赢单复盘，你逐句问「这句你为什么这么说」。他讲不清，你能听出模式。销售流程本来就不是凭空设计的，是从最好的那个人身上扒下来的——所以别让他配合表格，请他当那套方法的作者。<br/><br/><strong>最后一句实话</strong>：既不产出又不配合的，那不是流程问题，是人的问题，早点面对更便宜。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 48</footer>
+</div>
+</body>
+</html>
