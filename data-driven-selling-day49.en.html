@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 49: Selling by the Numbers</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Iowan Old Style",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:1px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"–"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 49 · Phase G</div>
+<h1>A number that can't change one action is decoration</h1>
+<div class="meta"><span>Metrics that move an action · small samples are mostly noise · score your own forecasts · review the wins too</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">"I've got a feeling this one closes" never sharpens with practice — not because you aren't smart, but because the feedback arrives too slowly and too noisily for your brain to extract an error signal from it. Numbers aren't for reporting upward. They're the replacement for an instinct this environment can't teach you.</div>
+</header>
+<div class="intro">
+<strong>The trouble with most sales dashboards isn't that the numbers are wrong. It's that even if every one of them were exactly right, you wouldn't change a single action because of them.</strong> Four moves turn numbers into decisions. <strong>One, ask what action would change if this number moved, then decide what to watch.</strong> <strong>Two, compute the noise before you draw the conclusion.</strong> <strong>Three, put a probability on every deal and score yourself at quarter end.</strong> <strong>Four, review the wins as well as the losses, and defuse the two biases that make reviews worthless.</strong>
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Ask what action would change if this number moved — if you can't answer, stop watching it
+<span class="en">A number that can't change one action is decoration.</span></h2>
+<span class="tag">CAC</span><span class="tag">LTV</span><span class="tag">payback</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Half the numbers on your dashboard have never once changed what you did — that isn't a metric, it's decoration. Only three earn their place, and all three answer the same question: <strong>if I spend another unit of money acquiring a customer, do I get it back, and how fast?</strong> <strong>CAC</strong> is every cost of acquisition, salaries included, divided by new customers in the same period. <strong>LTV</strong> is monthly <strong>gross profit</strong> times months retained — gross profit, never revenue. <strong>Payback</strong> is CAC divided by monthly gross profit. Watch payback hardest, because it's the only one of the three that <strong>requires no guess about the future</strong>: LTV asks you to predict how long someone stays; payback only uses money already collected.</div>
+</div>
+<div class="section">
+<div class="section-label">When one customer turns cash-positive</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Cumulative gross profit per customer: when acquisition pays itself back</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="40">Illustrative: CAC 6,000 · gross profit 800 per month · average retention 24 months</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="250" y="66">Payback = 6,000 ÷ 800 ≈ 7.5 months</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" x="250" y="84">LTV (24 months) = 800 × 24 = 19,200</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.6" x="250" y="102">LTV / CAC = 3.2 — a convention to check against, not a pass mark</text>
+<line stroke="#c2ccbe" stroke-dasharray="5,4" stroke-width="1.2" x1="80" x2="660" y1="170" y2="170"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="end" x="74" y="174">0</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="end" x="74" y="258">−6,000</text>
+<polyline fill="none" points="90,254 136,243 182,232 228,220 274,209 320,198 366,187 412,176 458,164 504,153 550,142 596,131 642,120" stroke="#1f7a5c" stroke-width="2.6"></polyline>
+<circle cx="90" cy="254" fill="#c0603a" r="3.6"></circle>
+<circle cx="435" cy="170" fill="#123f30" r="4"></circle>
+<line stroke="#123f30" stroke-dasharray="4,3" stroke-width="1.2" x1="435" x2="435" y1="170" y2="252"></line>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="435" y="266">payback point</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="96" y="272">acquisition is paid in full in month 0</text>
+<line stroke="#8a9a90" stroke-width="1.2" x1="80" x2="660" y1="284" y2="284"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="90" y="297">month 0</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="366" y="297">month 6</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="642" y="297">month 12</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · four ways to stop computing these wrong</span>
+<p>1. <strong>Put people into CAC.</strong> Sales and marketing salaries, contractors and tools, all divided by new customers in the same period. A CAC built from ad spend alone is routinely under half the real figure — and you'll conclude the channel is a bargain and keep pouring money in.</p>
+<p>2. <strong>Compute it per channel, never blended.</strong> A blended CAC is an average held down by your best channel. Split it and there's usually one or two channels losing money outright, which is exactly where the budget has been growing.</p>
+<p>3. <strong>Use gross profit and the median for LTV.</strong> Revenue treats delivery cost as profit. The mean lets a handful of enormous accounts drag the number to a place no real customer occupies. <strong>The median is your typical customer.</strong></p>
+<p>4. <strong>Don't estimate retention from cohorts that haven't aged.</strong> If nobody has been a customer longer than three months, you cannot produce "average retention: 24 months" — that's an assumption wearing a number's clothes. Write it honestly: <strong>"extrapolated from current monthly churn, about 24 months, not yet observed."</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: these three numbers decide whether money can buy growth. Payback caps how fast you can spend — how long each unit of cash takes to come back. LTV over CAC decides whether the business is worth scaling at all. And the reason you need them rather than a feel for it is that sales happens to be exactly the kind of environment intuition cannot learn.</strong></p>
+<ul>
+<li><strong>Hard evidence (theoretical synthesis, co-authored across opposing camps) · intuition is conditional</strong>: Kahneman &amp; Klein (2009, <em>American Psychologist</em>) reduced a long dispute to two conditions — the environment must be regular, and the feedback must be <strong>fast and unambiguous</strong>. Chess and firefighting qualify. Sales fails both: a deal takes weeks to months, and the outcome is contaminated by forces you don't control. It isn't that you're slow — the environment itself can't teach you, so a record has to remember for you.</li>
+<li><strong>Hard evidence (meta-analysis of 136 studies) · simple rules usually beat expert feel</strong>: Grove et al. (2000, <em>Psychological Assessment</em>) compared expert clinical judgement with mechanical statistical rules. On average the mechanical rule was somewhat better, in roughly half the studies clearly better, and humans were clearly better in only a handful. In sales terms: three or four objective signals — has anyone met the actual decision-maker, is there a stated date, did the buyer raise budget unprompted — weighted into a score beats "I like the feel of this one" over time.</li>
+<li><strong>Industry convention (not research, don't treat it as law) · the thresholds</strong>: LTV/CAC ≥ 3 and payback under twelve months come from published operator and investor experience in software (David Skok, Bessemer and others). <strong>No control group anywhere.</strong> Capital costs, margins and retention vary enormously between businesses, so use them as a check-up reference, not a pass mark.</li>
+</ul>
+<p class="caveat">Honest boundary: with only a few dozen customers, LTV is largely fiction — the retention curve hasn't grown yet, so you're multiplying your own assumption by a big number. Watch payback and per-deal gross profit instead; they're enough. And all three answer whether the <em>business</em> scales, not whether <em>this</em> deal is worth chasing. That second question belongs to qualification, and no financial ratio will decide it for you.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>Twenty deals can't tell you anything — compute the noise, then conclude
+<span class="en">Twenty deals can't tell you anything. Compute the noise before you draw a conclusion.</span></h2>
+<span class="tag">small samples</span><span class="tag">regression to the mean</span><span class="tag">process metrics</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">"We closed 28% this month against 20% last month, so the new script works." At twenty-something deals, that sentence says nothing. The wobble in a close rate is computable by hand: <strong>standard error ≈ √(p × (1−p) / n)</strong>. At p = 20% and n = 25 that's about eight percentage points, so a 95% interval spans roughly ±16 — the truth behind your observed 20% could sit anywhere between 4% and 36%. Worse is <strong>regression to the mean</strong>: an unusually bad month is usually followed by an ordinary one, so <strong>anything</strong> you did at the bottom will look effective — the new script, the morning stand-up, a different coffee mug.</div>
+</div>
+<div class="section">
+<div class="section-label">The same 20%, at four sample sizes</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">All four are a 20% close rate. The smaller the sample, the wilder the truth behind it</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="40">Bars = 95% interval, estimated from √(p(1−p)/n); the n=10 bar is clipped at 0%</text>
+<line stroke="#8a9a90" stroke-dasharray="4,3" stroke-width="1.3" x1="336" x2="336" y1="58" y2="216"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="336" y="54">what you observed: 20%</text>
+<rect fill="#f6e3da" height="20" rx="3" stroke="#c0603a" stroke-width="1.5" width="484" x="120" y="62"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="112" y="76">n = 10 deals</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="610" y="76">0 – 45%</text>
+<rect fill="#f6e3da" height="20" rx="3" stroke="#c0603a" stroke-width="1.4" width="340" x="166" y="102"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="112" y="116">n = 25 deals</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="512" y="116">4 – 36%</text>
+<rect fill="#dfeae2" height="20" rx="3" stroke="#1f7a5c" stroke-width="1.4" width="168" x="252" y="142"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="112" y="156">n = 100 deals</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" x="426" y="156">12 – 28%</text>
+<rect fill="#e2efdc" height="20" rx="3" stroke="#3f6d2f" stroke-width="1.6" width="84" x="294" y="182"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="112" y="196">n = 400 deals</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" x="384" y="196">16 – 24%</text>
+<line stroke="#8a9a90" stroke-width="1.2" x1="120" x2="660" y1="222" y2="222"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="120" y="236">0%</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="228" y="236">10%</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="336" y="236">20%</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="444" y="236">30%</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="552" y="236">40%</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="660" y="236">50%</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="20" y="262">So "28% this month against 20% last month" can't even establish a direction at this volume.</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="284">To detect a real 20% → 28% lift you'd need roughly four hundred deals per group. Most teams never get there in a year.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · three rules against noise</span>
+<p>1. <strong>Ask how many deals the claim would need, before you make it.</strong> If you can't compute it, use the diagram's orders of magnitude: a few dozen shows direction and never a decimal point; hundreds are where comparisons begin. This one habit kills half your bad decisions.</p>
+<p>2. <strong>When volume is short, move upstream to process metrics.</strong> Closing is the sparsest layer, so it's the noisiest. One layer up: meetings booked, second-meeting rate, share of deals where you reached the decision-maker, reply rate within seven days of a quote. Ten times the volume, far less noise, and they happen earlier, so a change shows up sooner.</p>
+<p>3. <strong>Fix the definition and the window before you look.</strong> Whether you count by the month a lead entered or the month it closed has to be settled in advance. Choosing the window after seeing the result can make anything look effective — that isn't analysis, it's telling yourself a story.</p>
+<p><strong>What to say in the weekly meeting</strong>: "Is that lift real or is it noise? How many deals did we have this month — enough to see a difference that size?"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: a close rate is a proportion estimated from a string of won/lost draws, and the smaller the sample the more it jitters. The jitter carries no information — but people reliably supply a cause for it, preferably whatever they did most recently.</strong></p>
+<ul>
+<li><strong>Hard evidence (classic, repeatedly replicated) · the law of small numbers</strong>: Tversky &amp; Kahneman (1971, <em>Psychological Bulletin</em>) found that even statistically trained researchers treat small samples as though they were as reliable as large ones, and so overestimate how likely a result is to replicate. The sales version: two wins out of three attempts and the playbook is declared found.</li>
+<li><strong>Hard statistical fact (not a psychological hypothesis) · regression to the mean</strong>: Galton (1886) described it — an extreme observation tends to be followed by one closer to average. Kahneman's flight-instructor example shows how it deceives: shout at the cadet who flew badly and he does fly better next time; praise the one who flew well and he does worse, so instructors conclude criticism works and praise harms. It was regression to the mean all along. (A teaching case, not a controlled experiment — but the statistical phenomenon underneath is solid.)</li>
+<li><strong>Mechanical implication (arithmetic, not a finding) · why upstream helps</strong>: for the same proportion, a tenfold larger sample shrinks the standard error only about threefold — but that is often exactly the difference between "invisible" and "visible". That's the real advantage of process metrics: naturally larger samples, arriving earlier.</li>
+</ul>
+<p class="caveat">Boundary: a small sample isn't no information. A buyer's <strong>own words</strong> in a loss, or the same obstacle recurring, is qualitative signal worth having after a handful of cases — you can't build a percentage on it, but it tells you what to change next. The real error is turning five deals into a percentage and rebuilding the process around it.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Put a probability on every deal and score yourself — no forecast, no error to learn from
+<span class="en">Put a probability on every deal, then score yourself. No forecast, no error signal, no learning.</span></h2>
+<span class="tag">calibration</span><span class="tag">prediction error</span><span class="tag">commit vs forecast</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">"I'd say this one's eighty percent there" is a feeling, not a forecast, because nothing about it can later be judged wrong. Make it a rule instead: every deal carries two written values — a <strong>close probability from a fixed ladder (10 / 30 / 50 / 70 / 90) and an expected close date</strong> — changed only on new information, and only with one line saying what that information was. At quarter end, pull every deal you marked 70% and count. If four in ten closed, your "70%" means 40% in the real world, and from now on you discount it. <strong>Your forecast becomes accurate immediately, and you learned no new skill — you simply stopped fooling yourself.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">What you predicted vs what actually closed</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="k1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#8a9a90"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Turn "I feel good about it" into a number and quarter end shows you the bias</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="40">Horizontal: the probability you assigned    Vertical: how many of that batch actually closed</text>
+<line marker-end="url(#k1)" stroke="#8a9a90" stroke-width="1.4" x1="100" x2="100" y1="250" y2="52"></line>
+<line marker-end="url(#k1)" stroke="#8a9a90" stroke-width="1.4" x1="100" x2="646" y1="250" y2="250"></line>
+<line stroke="#5a7365" stroke-dasharray="6,4" stroke-width="1.4" x1="100" x2="620" y1="250" y2="60"></line>
+<polyline fill="none" points="152,240 256,222 360,193 464,164 568,126" stroke="#c0603a" stroke-width="2.6"></polyline>
+<circle cx="152" cy="240" fill="#c0603a" r="3.6"></circle>
+<circle cx="256" cy="222" fill="#c0603a" r="3.6"></circle>
+<circle cx="360" cy="193" fill="#c0603a" r="3.6"></circle>
+<circle cx="464" cy="164" fill="#c0603a" r="3.6"></circle>
+<circle cx="568" cy="126" fill="#c0603a" r="3.6"></circle>
+<line stroke="#5a7365" stroke-dasharray="6,4" stroke-width="1.4" x1="118" x2="146" y1="88" y2="88"></line>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="152" y="91">Dashed = perfect calibration: seven of every ten deals you called 70%</text>
+<line stroke="#c0603a" stroke-width="2.6" x1="118" x2="146" y1="108" y2="108"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" x="152" y="111">Solid = a typical over-optimistic shape (illustrative, not real data)</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="end" x="92" y="253">0</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="end" x="92" y="158">50%</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="end" x="92" y="63">100%</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="152" y="266">10%</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="256" y="266">30%</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="360" y="266">50%</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="464" y="266">70%</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="568" y="266">90%</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="290">Reading it: the whole line under the diagonal = systematic optimism. Treat your 70% as 45% and the forecast lands.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Template · a ten-minute calibration review</span>
+<p>1. <strong>Count by rung</strong>: how many deals sat in each of the five, and how many closed. A dozen deals per rung is enough for the shape to show.</p>
+<p>2. <strong>Look for two biases</strong>: <strong>probability</strong> — if every rung came in below its label, you're systematically optimistic, so discount as the diagram shows; <strong>dates</strong> — take the median number of days by which real close dates ran late, and add it to every future date from now on. Nearly everyone has both, and fixing them costs nothing.</p>
+<p>3. <strong>Always report two numbers, never one blend</strong>: the <strong>commit</strong> is the 90% rung only, what you'll stand behind; the <strong>forecast</strong> is every rung weighted by your <strong>calibrated</strong> probabilities. Asked how the quarter looks: "Commit is 800k, forecast 1.3m, and historically my forecast runs about ten percent optimistic."</p>
+<p><strong>What changing a probability sounds like</strong>: "He brought finance into the call today — that's new information, so this moves from 50% to 70%." Without a sentence like that, a change is just a mood.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: learning runs on the gap between what you expected and what happened. If the expectation was never fixed as a number, your brain rewrites it after the fact to match the outcome, the gap collapses to zero, nothing looks like a mistake — and nothing is learned. Writing it down exists only to keep the error alive.</strong></p>
+<ul>
+<li><strong>Hard evidence (neuroscience, specific mechanism) · brains learn from prediction error</strong>: Schultz, Dayan &amp; Montague (1997, <em>Science</em>) recorded midbrain dopamine neurons (ventral tegmental area and substantia nigra) and found they encode <strong>not reward itself but reward prediction error</strong>: firing rises when an outcome beats expectation, stays near baseline when it matches, and drops below baseline when it disappoints. The signal projects to the striatum and nucleus accumbens, where it drives the adjustment of later behaviour. <strong>With no prior expectation, there is no error to encode.</strong> That's the hard reason to write it down first — but don't extrapolate it into "writing forecasts raises win rates by X%", which no study has shown.</li>
+<li><strong>Hard evidence (multi-year forecasting tournament) · calibration is trainable</strong>: Mellers et al. (2014, <em>Psychological Science</em>) found in the Good Judgment Project's geopolitical tournaments that roughly an hour of probabilistic-reasoning training, working in teams, and <strong>continuous scoring</strong> each significantly improved accuracy (measured by Brier score). Scoring is the active ingredient — a score is what makes feedback exist at all.</li>
+<li><strong>Hard evidence (theory plus experimental review) · three kinds of overconfidence</strong>: Moore &amp; Healy (2008, <em>Psychological Review</em>) separate overestimating your own performance, believing you're better than others, and <strong>stating intervals that are too narrow</strong>. Sales forecasting mostly suffers the third, which is why you should give a range rather than one precise-looking figure.</li>
+</ul>
+<p class="caveat">Boundary: no more than five rungs — a 17% carries only the appearance of precision. More important: <strong>never tie forecasts to compensation</strong>. Once the number you report determines your reward, what gets reported stops being what you believe and becomes what is safe. It's the same logic as commission: whatever you measure, you get the performance of it. If you need both, keep the commit and the forecast separate and hold people to the commit only.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>Review the wins too — and defuse the two biases that turn a review into storytelling
+<span class="en">Review the wins too — and defuse the two biases that turn a review into storytelling.</span></h2>
+<span class="tag">hindsight</span><span class="tag">outcome bias</span><span class="tag">loss interviews</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Review only your losses and you'll learn a great deal about how not to lose and nothing about why you win. Worse, the bad decisions buried inside a won deal get laundered by the good outcome and copied across the team as "what works". Two biases stand in the way. <strong>Hindsight</strong>: once you know the result, you sincerely feel the signs were there all along, and can no longer recall how genuinely unsure you were. <strong>Outcome bias</strong>: you grade the decision by how it turned out. There is exactly one defence — <strong>compare against what you wrote down at the time, never against memory</strong>. That's the second use of the two values from the previous move.</div>
+</div>
+<div class="section">
+<div class="section-label">Review the decision, not the result</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Four ways the same deal can turn out. Only one square is safe to copy</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="280" y="52">Decision at the time: poor</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="10" font-weight="700" text-anchor="middle" x="520" y="52">Decision at the time: good</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="end" x="152" y="115">Result: won</text>
+<text fill="#37493f" font-family="Georgia" font-size="10" font-weight="700" text-anchor="end" x="152" y="215">Result: lost</text>
+<rect fill="#f6e3da" height="100" rx="4" stroke="#c0603a" stroke-width="1.8" width="240" x="160" y="60"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" x="176" y="88">The dangerous square</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="110">The result laundered the</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="128">mistake, so it became</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="146">"experience" and got copied.</text>
+<rect fill="#e2efdc" height="100" rx="4" stroke="#3f6d2f" stroke-width="1.8" width="240" x="400" y="60"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="10.5" font-weight="700" x="416" y="88">The square worth copying</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="416" y="110">Process right, result right.</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="416" y="128">Still ask one question:</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="416" y="146">how much of this was luck?</text>
+<rect fill="#eceee8" height="100" rx="4" stroke="#8a9a90" stroke-width="1.4" width="240" x="160" y="160"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="10.5" font-weight="700" x="176" y="188">The one people learn from</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="210">Bad decision, bad result,</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="228">so everyone accepts it —</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="176" y="246">and the lesson is usually right.</text>
+<rect fill="#eaf3ee" height="100" rx="4" stroke="#1f7a5c" stroke-width="1.4" width="240" x="400" y="160"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="10.5" font-weight="700" x="416" y="188">Bad luck. Change nothing</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="416" y="210">You did the right things and</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="416" y="228">still lost. Rewriting the process</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="416" y="246">here mostly breaks what worked.</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="284">One way only to tell which square you're in: read the probability and the next step you wrote at the time. Memory can't.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Template · three questions for a lost deal, two rules for inside</span>
+<p><strong>Ask the buyer</strong> (one email is enough — no defending, no re-pitching, you're here to learn):</p>
+<p>1. "Which two options were you finally choosing between?" — this asks about the <strong>alternative</strong>, not for a reason.</p>
+<p>2. "At the moment you decided, what was the one thing that settled it?" — asking about that moment is far more honest than asking why they didn't pick you.</p>
+<p>3. "Which part of dealing with us took the most effort?" — this one most often surfaces something you can actually fix.</p>
+<p><strong>Internal rule one</strong>: read the next step and the probability recorded at the time <strong>before</strong> the discussion starts. Reverse that order and the meeting becomes an exercise in constructing a plausible account of a known result.</p>
+<p><strong>Internal rule two</strong>: each quarter, run a <strong>pre-mortem</strong> on two or three live deals — "assume this is dead in three months; everyone write the most likely cause." The same cause tends to keep appearing: nobody ever met the person who actually decides.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: once the outcome is known it reaches backwards and rewrites your memory of what you believed, so a review slides from examining a decision into assembling evidence for a conclusion you already have. Discipline doesn't fix this. A contemporaneous record does — it's the only thing the outcome can't edit.</strong></p>
+<ul>
+<li><strong>Hard evidence (classic, extensively replicated) · hindsight bias</strong>: Fischhoff (1975, <em>Journal of Experimental Psychology: Human Perception and Performance</em>) asked people to judge how likely events were; those told the outcome substantially overestimated how much they had known in advance. Decades of replications and meta-analyses since support a stable effect. The sales version: after a deal dies, everybody remembers sensing it was wrong.</li>
+<li><strong>Hard evidence (clean experimental design) · outcome bias</strong>: Baron &amp; Hershey (1988, <em>Journal of Personality and Social Psychology</em>) gave people identical decision information and varied only the outcome; their ratings of the decision's quality moved with the result. The sales version: the same pushy cadence is called "confident momentum" when it wins and "rushing the buyer" when it doesn't.</li>
+<li><strong>Moderate strength (single experiment, widely adopted) · the pre-mortem</strong>: Mitchell, Russo &amp; Pennington (1989, <em>Journal of Behavioral Decision Making</em>) found that treating a future event as though it had <strong>already happened</strong> and explaining it (prospective hindsight) increased the number of causes people identified by roughly 30%. One study, so don't treat it as settled — but it costs nothing to try.</li>
+</ul>
+<p class="caveat">Boundary: discount what loss interviews tell you — buyers offer a presentable reason, and "budget" is the easiest shield to reach for. That's why you ask about alternatives and process rather than "why didn't you choose us". And a review <strong>stops working the moment it affects anyone's rating</strong>: people will only bring the version that survives scrutiny. If you want reviews to be useful, telling the truth has to be safe in that room.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 49 Action</h3>
+<p>Sixty minutes to replace a feeling with four checkable numbers.</p>
+<div class="action">
+<strong>One (15 min) · Compute a real CAC and payback:</strong> last quarter's full sales and marketing spend including salaries, divided by new customers in the same period; then divide by monthly gross profit per customer. The answer is usually uglier than you assumed, which is precisely what makes it useful.<br/><br/><strong>Two (10 min) · Compute the noise behind your most trusted conclusion:</strong> write down how many deals it rests on. Under a few dozen, demote it today from "conclusion" to "hypothesis", and note how many deals would be needed to test it.<br/><br/><strong>Three (20 min) · Add two values to every deal in the pipeline:</strong> a probability (10/30/50/70/90) and an expected close date. The deals where you can't produce a probability didn't belong in the forecast anyway. Put a calendar reminder at quarter end: pull the 70% rung and count what closed.<br/><br/><strong>Four (15 min) · Review a deal you recently won:</strong> read the next step and probability you wrote at the time, then ask how much of it was luck. Then send those three questions to someone you recently lost — most people reply, precisely because you aren't selling.<br/><br/>A boundary worth keeping: data can tell you which layer is leaking and which conclusion won't hold. It can't tell you what to say next. Metrics choose the battlefield; the conversation is still practised in the room.
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. We only close a dozen deals a month. Is any of this statistics relevant to me?</summary>
+<div class="answer">The opposite: <strong>the lower your volume, the more you need to know your numbers can't be trusted</strong>, or you'll keep rebuilding the process around noise — four playbooks a year, none of them alive long enough to be tested.<br/><br/>At low volume, use it this way:<br/><strong>One, direction only, never decimals.</strong> "Second-meeting rate is clearly climbing" is usable. "It went from 21% to 24%" is not.<br/><strong>Two, swap statistics for counting.</strong> Don't compute a rate — categorise causes. Where did the last ten losses die? The same obstacle appearing four times is real even at ten deals. That isn't statistical inference, it's pattern-spotting, and a handful of cases is enough.<br/><strong>Three, find your sample upstream.</strong> A dozen closes a month may sit under fifty quotes and a hundred meetings. Watch the trend there.<br/><strong>Four, lengthen the window.</strong> Quarters or rolling twelve-week periods, not months.<br/><br/>And the highest-return habit of all: <strong>keep a decision log</strong>. For every non-obvious decision (switching channels, changing how you quote), write three lines: what I expect to happen, how long until I'd see it, and what result would make me admit I was wrong. A year later that stack is worth more than any dashboard — it's the only control group you'll ever have.</div>
+</details>
+<details>
+<summary>2. My boss wants accurate forecasts, but I get shouted at for reporting a low number.</summary>
+<div class="answer">That's a genuine structural conflict, so don't paper over it with "I'll try harder". The fix is to <strong>separate two numbers</strong> and say out loud that they are different things:<br/><br/><strong>The commit</strong>: the 90% rung only. What you'll stand behind. Small and hard.<br/><strong>The forecast</strong>: the whole pipeline weighted by calibrated probabilities. It's an expected value, so it's supposed to move.<br/><br/>One sentence in the meeting: "Commit is 800k, forecast is 1.3m, and historically my forecast runs about ten percent optimistic." <strong>You aren't reporting a number, you're reporting a number plus its error.</strong> What actually draws the shouting is rarely a low figure — it's a figure that keeps changing while nobody knows how much to trust it.<br/><br/>Bring one more thing: <strong>your calibration record</strong>. "Last quarter I marked these 70% and 68% of them closed." Once you can show your numbers survive an audit, reporting a low one stops being an attitude problem and becomes a credibility asset.<br/><br/><strong>If compensation is paid on the forecast itself</strong>, the forecast will be distorted, and that isn't a character flaw — it's a design flaw. What you can do is make the trade-off explicit: do you want an accurate forecast or a pleasant one? If the answer is both, use the two numbers above.</div>
+</details>
+<details>
+<summary>3. My LTV/CAC looks healthy. Why is cash still tight?</summary>
+<div class="answer">Because <strong>LTV is future money and CAC is money you paid today</strong>, and the payback period sits between them. Concretely: CAC 6,000, gross profit 800 a month, payback seven and a half months. Sign ten customers this month and you're out 60,000 today, whole again in month eight — so <strong>the faster you grow, the bigger the hole</strong>. That's the entire secret behind the counterintuitive experience of selling more and having less cash: you aren't unprofitable, you're financing your own future revenue.<br/><br/>Three things to do about it:<br/><strong>One, watch payback, not the LTV/CAC ratio.</strong> A business with 24-month payback can't be pushed hard however pretty the ratio looks, unless your money is very cheap.<br/><strong>Two, pull collection forward.</strong> Discount for annual prepayment, weight the first instalment. This is usually far easier than lowering CAC and it works immediately — the cash bought by a 10% annual-prepay discount is often worth more than the acquisition cost you could have saved.<br/><strong>Three, let cash set the pace of spending.</strong> How fast you invest should be governed by payback, not by market opportunity — opportunity will always exceed your cash.<br/><br/>One last caution: if retention has never been observed (nobody has been a customer more than a few months), the LTV you computed is <strong>your assumption multiplied by a large number</strong>. That's exactly when payback should be the number you steer by.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 49</footer>
+</div>
+</body>
+</html>
