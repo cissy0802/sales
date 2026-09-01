@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 50: Customer Success &amp; Retention</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Iowan Old Style",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:1px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"–"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 50 · Phase H</div>
+<h1>The cancellation lands in month nine. The decision was made in week two.</h1>
+<div class="meta"><span>Themes: the first fortnight decides it · warning signs are behaviours, not moods · what works goes invisible · expansion has one window</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">Most churn post-mortems study the cancellation email. That's an autopsy report. The things that actually decided it happened back when they were still excited and you had already filed the deal under "won".</div>
+</header>
+<div class="intro">
+<strong>What you got on signing day wasn't revenue. It was permission to try.</strong> Four moves turn that permission into a relationship: <strong>one, force a visible first win into the opening fortnight instead of teaching the feature set</strong>; <strong>two, replace sentiment with behaviour and stop asking how it's going</strong>; <strong>three, record the baseline on day one, because value that works goes invisible</strong>; <strong>four, make the second sale in the two weeks after a proven win, never at the renewal table</strong>.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>No visible win in the first two weeks, and month nine's cancellation is already written
+<span class="en">The renewal is decided in the first two weeks, not in the ninth month.</span></h2>
+<span class="tag">time-to-first-value</span><span class="tag">onboarding</span><span class="tag">implementation intentions</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Going live is not opening an account or finishing the training. It is getting them, with their own hands, <strong>one win they recognise as a win</strong> inside two weeks — not "I know how to use it" but "that annoying thing genuinely stopped happening this week". Why two weeks specifically: motivation, attention and internal backing all peak on signing day and fall from there. Once they get pulled back into their old work, your product stays permanently at "haven't really started yet" — and that shows up in month nine as a cancellation. So the one number the delivery side should watch is <strong>time-to-first-value</strong>, not onboarding completion.</div>
+</div>
+<div class="section">
+<div class="section-label">The motivation window decides the next ten months</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Motivation peaks on signing day and only falls — the first win has to land while it is still cheap</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="40">Schematic, not real data. Curve = the attention and motivation they are putting into this.</text>
+<rect fill="#dfeae2" height="192" opacity="0.75" width="116" x="90" y="58"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="148" y="52">Motivation window</text>
+<line stroke="#1f7a5c" stroke-dasharray="4,3" stroke-width="1.2" x1="206" x2="206" y1="58" y2="250"></line>
+<polyline fill="none" points="90,72 128,92 166,116 204,138 242,157 280,172 318,185 356,196 394,205 432,212 470,218 508,222 546,226 584,228 622,230 660,231" stroke="#5a7365" stroke-width="2.4"></polyline>
+<circle cx="166" cy="116" fill="#2f7a3f" r="4.2"></circle>
+<line stroke="#2f7a3f" stroke-width="1.1" x1="170" x2="210" y1="112" y2="94"></line>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" x="214" y="82">① The first win lands here</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="214" y="98">the action gets wired into their week; habit takes over</text>
+<circle cx="320" cy="185" fill="#c0603a" r="4.2"></circle>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="342" y="160">② First real use happens here instead</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="342" y="176">motivation is spent; renewal day only states the conclusion</text>
+<line stroke="#8a9a90" stroke-width="1.2" x1="90" x2="660" y1="250" y2="250"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="9" x="90" y="266">Signing</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="206" y="266">Week 2</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="320" y="266">Week 6</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="434" y="266">Month 3</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="end" x="660" y="266">Month 9 · renewal</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="290">What you are buying inside that window is not "they know how it works" — it is one actual success.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · forcing first value into two weeks</span>
+<p>1. <strong>Define the first win as one observable sentence, dictated by the customer.</strong> "Li doesn't have to export that sheet by hand any more" is a win; "completed training" is not. Ask it at the kickoff: thirty days from now, what will have happened for you to feel this was money well spent? Write down their exact words — that is the acceptance test.</p>
+<p>2. <strong>Configure only what that one win needs.</strong> Full-feature training is the single biggest killer of adoption: the volume of information puts people off, and what they actually need may be two buttons. The rest can wait two months.</p>
+<p>3. <strong>Book a time, not an intention.</strong> Not "shall we start next week?" but "Tuesday at nine, when you run that batch, let's walk through it together" — tie the action to a specific time, place and trigger. There is hard evidence for that one edit; see below.</p>
+<p>4. <strong>Contact density in the first fortnight matters more than the following ten months combined.</strong> Better to feel slightly pushy than to feel finished.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: motivation is at its maximum on signing day and decays monotonically. Whether the action gets repeated into routine before that motivation runs out decides whether this customer later uses you out of willpower or out of habit. The willpower ones all churn eventually, because willpower always gets claimed by something else.</strong></p>
+<ul>
+<li><strong>Hard evidence (meta-analysis, 94 independent tests) · tie the action to a time and place</strong>: Gollwitzer &amp; Sheeran (2006, <em>Advances in Experimental Social Psychology</em>) pooled 94 independent tests and found that <strong>implementation intentions</strong> — "when situation X arises, I will do Y" — significantly raise goal attainment, effect size d ≈ 0.65 (medium to large). That is precisely the difference between "Tuesday at nine we'll walk through it" and "let's start next week": the second is an intention, the first is an instruction the situation itself will fire.</li>
+<li><strong>Hard evidence (specific brain mechanism) · a habit is a transfer of control</strong>: Yin &amp; Knowlton (2006, <em>Nature Reviews Neuroscience</em>) and Graybiel (2008, <em>Annual Review of Neuroscience</em>) review the same finding: once a behaviour is repeated enough, control shifts from the <strong>dorsomedial striatum</strong> (goal-directed, re-evaluating "is this worth it" every time) to the <strong>dorsolateral striatum</strong> (the habit circuit, triggered directly by context cues, no longer re-doing the arithmetic). For you: a customer stuck at "let me weigh up whether to bother today" will eventually weigh it up and decide not to; once inside the habit circuit, the question never comes up. (Mainly animal work plus human imaging — the direction is solid; don't extrapolate it to a specific number of days.)</li>
+<li><strong>Medium strength (single study, n=96) · how long it takes</strong>: Lally et al. (2010, <em>European Journal of Social Psychology</em>) tracked automaticity in everyday habits and found a median of roughly 66 days to plateau, with enormous individual spread (18 to 254 days). So "two weeks" is not the time to form a habit; it is the length of the <strong>motivation window</strong>. What has to happen in two weeks is the first success, not the habit.</li>
+</ul>
+<p class="caveat">Boundary: not every business has an onboarding. One-off transactions — selling a used phone, a single service call — have no such window; the equivalent move is one proactive check-in within 48 hours of delivery. And this only holds if the deal should have been sold in the first place (the qualifying piece) — otherwise the smoothest onboarding in the world just delays the discovery by six months.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>"How's it going lately?" will never surface churn — the warning signs are behaviours, not moods
+<span class="en">Sentiment is a lagging score. Attention moves first, and it moves in public.</span></h2>
+<span class="tag">early warning</span><span class="tag">silent accounts</span><span class="tag">champion churn</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">A customer who complains is still talking to you, which means they still intend to stay. The dangerous one raises nothing, says "all good" every time, and simply doesn't renew. <strong>Satisfaction is a costless score about the past; renewal is a spending decision about the future</strong>, and between them sit the alternatives they now know about and the cost of switching — that crack is where every "but they said they were happy" comes from. So stop chasing sentiment and chase behaviour: the five signals below show up months before any cancellation notice.</div>
+</div>
+<div class="section">
+<div class="section-label">How much warning each signal actually gives you</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="cs1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#8a9a90"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">The further left a signal starts, the more you can still do; on the right there is only damage control</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="40">Schematic, not real data. X-axis = time left before churn; each bar = when that signal typically starts.</text>
+<rect fill="#e2efdc" height="14" rx="3" stroke="#3f6d2f" stroke-width="1.4" width="450" x="210" y="59"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="70">Champion changes role or leaves</text>
+<rect fill="#e2efdc" height="14" rx="3" stroke="#3f6d2f" stroke-width="1.4" width="390" x="270" y="97"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="108">Usage narrows: five users become one</text>
+<rect fill="#f3e7cf" height="14" rx="3" stroke="#b08c3a" stroke-width="1.4" width="300" x="360" y="135"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="146">Meetings slip; the attendee gets junior</text>
+<rect fill="#f3e7cf" height="14" rx="3" stroke="#b08c3a" stroke-width="1.4" width="260" x="400" y="173"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="184">They stop asking, and stop complaining</text>
+<rect fill="#f6e3da" height="14" rx="3" stroke="#c0603a" stroke-width="1.4" width="90" x="570" y="211"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="222">"Procurement", "evaluating options"</text>
+<line marker-end="url(#cs1)" stroke="#8a9a90" stroke-width="1.4" x1="200" x2="668" y1="246" y2="246"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="205" y="262">9 months out</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="353" y="262">6 months</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="507" y="262">3 months</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="end" x="660" y="262">Churn</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="288">Satisfaction and NPS surveys only dip in that last stretch — they are the outcome, not the warning.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · five behavioural signals and one rule about silence</span>
+<p>1. <strong>Your champion changes role or leaves.</strong> The earliest and the deadliest: your value lives inside that person's head, and once they go you revert to being an invoice nobody in the building recognises. Which is why you meet a second person from day one.</p>
+<p>2. <strong>Usage narrows: five people using it become one.</strong> Total volume may hold, but it has become one person's private tool — and when that person takes leave, you disappear.</p>
+<p>3. <strong>Your meetings start getting rescheduled and downgraded</strong> (the owner used to come; now an assistant does). That is a public readout of priority, and it beats any survey.</p>
+<p>4. <strong>They abruptly stop asking for things and stop complaining.</strong> Don't read that as "finally stable".</p>
+<p>5. <strong>New vocabulary appears: compliance, evaluation, benchmarking, central procurement.</strong> By the time this one shows up it is largely over; what's left is finishing well.</p>
+<p><strong>The silence rule</strong>: any account with thirty consecutive days and no substantive human interaction (automated mail doesn't count) gets flagged, and a person books a call. Don't wait for the system to tell you — by the time a dashboard notices, the signal has already become the outcome.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: sentiment metrics record what someone is willing to say. Behavioural metrics record where they actually put their attention — and attention is both more honest and earlier. People stop using first, become dissatisfied second, and cancel last.</strong></p>
+<ul>
+<li><strong>Hard evidence (peer-reviewed, and it tests the popular practice directly) · NPS is not what it's sold as</strong>: Keiningham et al. (2007, <em>Journal of Marketing</em>) used longitudinal data to compare the Net Promoter Score against other satisfaction metrics as a predictor of firm growth and <strong>found no superiority for NPS</strong>. So don't run a lagging sentiment score as your early-warning system — the problem isn't that it's useless, it's that it isn't early.</li>
+<li><strong>Theoretical framework (not an experiment, but it explains a lot) · complaining is voice, not betrayal</strong>: Hirschman (1970, <em>Exit, Voice, and Loyalty</em>) sets out two outlets for dissatisfaction — exit and voice — and choosing voice implies you still think the relationship is worth repairing. So a customer who stops complaining often hasn't had their problems solved; they have switched to exit. Theory rather than data, but it maps onto front-line experience unusually well.</li>
+<li><strong>Contested (meta-analysis, heavily moderated) · don't treat the recovery paradox as a formula</strong>: de Matos et al. (2007, <em>Journal of Service Research</em>) found in meta-analysis that the effect — satisfaction after a well-handled failure exceeding satisfaction with no failure at all — does exist, but is moderated by a long list of conditions and is far less stable on <strong>behavioural</strong> outcomes like repurchase than on satisfaction. So don't plan to earn loyalty by firefighting; the failures themselves keep costing you.</li>
+<li><strong>Discount the industry numbers</strong>: "acquiring a new customer costs 5 to 25 times as much as keeping one" has no reliable source and the versions mostly cite each other; "a 5% lift in retention raises profit 25–95%" comes from Reichheld &amp; Sasser (1990, <em>Harvard Business Review</em>) and is a <strong>modelling exercise</strong>, not an experiment, and highly dependent on its industry assumptions. Trust the direction, not the digits.</li>
+</ul>
+<p class="caveat">Boundary: a signal exists to trigger one conversation, not to auto-demote an account. See a signal, make a call — don't see a signal and blast out a retention email, which only reveals that you think of them when the numbers dip.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>A problem you solved goes invisible — so record the baseline on day one and make the value visible again on a schedule
+<span class="en">Nobody thanks their own front door lock. Only the invoice keeps showing up.</span></h2>
+<span class="tag">baseline</span><span class="tag">peak-end rule</span><span class="tag">value review</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">When the product genuinely works, the pain stops happening; and once it stops happening, nobody remembers how much it hurt. Only the invoice keeps arriving on time. That isn't ingratitude, it is how people work — you don't thank your own front door lock every morning. There is exactly one defence, and it has to happen on day one: <strong>at signing, write down how much it currently hurts as a number</strong> (hours a week, incidents last month, orders mis-shipped in this batch). Without that number you can prove nothing six months later and are reduced to "we've been supporting you throughout" — which scores zero in a renewal meeting.</div>
+</div>
+<div class="section">
+<div class="section-label">What you delivered vs what they remember on renewal day</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">Twelve months of similar delivery — but only two bars enter the renewal decision</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="40">Schematic, not real data. Each bar = how much you actually solved for them that month.</text>
+<rect fill="#e6e9e2" height="52" width="34" x="100" y="178"></rect>
+<rect fill="#e6e9e2" height="58" width="34" x="146" y="172"></rect>
+<rect fill="#e6e9e2" height="48" width="34" x="192" y="182"></rect>
+<rect fill="#cfe6d6" height="132" stroke="#1f7a5c" stroke-width="2" width="34" x="238" y="98"></rect>
+<rect fill="#e6e9e2" height="56" width="34" x="284" y="174"></rect>
+<rect fill="#e6e9e2" height="60" width="34" x="330" y="170"></rect>
+<rect fill="#e6e9e2" height="50" width="34" x="376" y="180"></rect>
+<rect fill="#e6e9e2" height="54" width="34" x="422" y="176"></rect>
+<rect fill="#e6e9e2" height="58" width="34" x="468" y="172"></rect>
+<rect fill="#e6e9e2" height="52" width="34" x="514" y="178"></rect>
+<rect fill="#e6e9e2" height="56" width="34" x="560" y="174"></rect>
+<rect fill="#cfe6d6" height="64" stroke="#1f7a5c" stroke-width="2" width="34" x="606" y="166"></rect>
+<line stroke="#1f7a5c" stroke-width="1.2" x1="272" x2="292" y1="92" y2="86"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="296" y="82">① The peak: the incident you stayed up for</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="296" y="98">this is the one they tell other people about</text>
+<line stroke="#1f7a5c" stroke-width="1.2" x1="612" x2="600" y1="160" y2="146"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="end" x="596" y="136">② The end: the last contact before renewal</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="end" x="596" y="152">weighted out of all proportion</text>
+<line stroke="#8a9a90" stroke-width="1.2" x1="92" x2="660" y1="230" y2="230"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="117" y="246">Month 1</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="255" y="246">Month 4</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="623" y="246">Month 12</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="20" y="272">The eight in the middle were delivered just as solidly and barely enter the judgement — "we've been reliable" scores zero.</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="290">So the move is not to do more. It is to make sure a peak exists, and to manage the ending.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Template · the one-page value review (send it 60 days before renewal, not 7)</span>
+<p><strong>Line one</strong>: the problem you were brought in for — in their words from the kickoff, not paraphrased.</p>
+<p><strong>Line two</strong>: the baseline number against today's number. Conservative and precise: "3.5 hours a week" beats "a substantial efficiency gain" — a conservative exact figure is more credible than a big one, as the value-selling piece works through.</p>
+<p><strong>Line three</strong>: the single most critical moment of the period — that incident, that deadline. This is the peak, and it must be named out loud, because it is what they remember.</p>
+<p><strong>Line four</strong>: the one thing to get done together next. Point the document forward rather than making it an invoice for goodwill.</p>
+<p><strong>Opening line</strong>: "Over these six months we took X from A to B together. What I want to push next half is C — does that match how you see it?"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: memory is not a recording, it is a weighted sum of a few fragments. Evaluating a long relationship, people don't integrate — they take the most intense moment and the last moment. Your steady day-to-day delivery barely enters that calculation, which is why "our service has been consistently reliable" says nothing at all in a renewal meeting.</strong></p>
+<ul>
+<li><strong>Hard evidence (observational study plus a randomised trial that reached real behaviour) · the peak-end rule</strong>: Redelmeier &amp; Kahneman (1996, <em>Pain</em>) found that patients' remembered pain from a colonoscopy was governed by the <strong>peak and the end</strong> and was almost independent of how long it lasted (duration neglect). Redelmeier, Katz &amp; Kahneman (2003, <em>Pain</em>) then ran a randomised trial: adding a short stretch of milder discomfort at the end improved patients' subsequent evaluation, <strong>and made them more willing to come back for a repeat procedure</strong>. That is a rare case of a memory effect traced all the way to actual repeat behaviour. (One medical setting — don't treat it as a formula that transfers anywhere, but the direction is solid.)</li>
+<li><strong>Mechanistic inference (not a research finding) · why 60 days</strong>: anything you do to surface value in the week before renewal reads as "he only showed up because he wants the signature". The identical document sent two months earlier is a completely different object.</li>
+<li><strong>Honest caveat</strong>: if you didn't record the baseline, you cannot reconstruct it afterwards — the customer's memory of how bad it used to be has been rewritten by the same machinery, and usually rewritten favourably. So the real action in this section happens on signing day, not renewal day.</li>
+</ul>
+<p class="caveat">Boundary: a value review presupposes there is value. When the numbers won't stand up, the correct move is to say so and then talk about the fix — not to wrap three vague positives into a slide. They have their own ledger, and one page of polish will burn your entire credibility in a single sitting. Also: "engineer a peak" never means letting things break so you can rescue them. That is manipulation, and customers can see it in their own review.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>The second sale is the easy one — but the window is the fortnight after a proven win, not the renewal table
+<span class="en">Expansion was never hard because of the customer. It's hard because of when you ask.</span></h2>
+<span class="tag">expansion revenue</span><span class="tag">timing</span><span class="tag">when not to sell</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The first time, that customer paid a risk premium for the open question of whether you could deliver at all. Once one result has been confirmed, the premium is gone — they hold the evidence and the cost of evaluating you has fallen to roughly nothing. So the difficulty of expansion was never the customer, it was the <strong>timing</strong> — and most people put it in the worst available slot: the renewal negotiation, a table where you are structurally opposed, and where anything new you raise reads as a way to charge more. <strong>In the two weeks after a confirmed win, you are still on the same side.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">Which slot the expansion conversation belongs in</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">The same sentence, in these two places, does the opposite</text>
+<rect fill="#e2efdc" height="180" opacity="0.7" width="130" x="340" y="60"></rect>
+<rect fill="#f6e3da" height="180" opacity="0.7" width="80" x="580" y="60"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.4" x="96" y="198">line = evidence they hold about you</text>
+<polyline fill="none" points="90,216 150,212 210,208 270,204 330,200 340,146 400,142 470,138 540,134 610,130 660,128" stroke="#5a7365" stroke-width="2.4"></polyline>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" x="348" y="82">Expansion window</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="348" y="98">the win is fresh and</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="348" y="114">the risk is now known</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="490" y="176">Renewal negotiation:</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="490" y="192">not here. You are arguing</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="490" y="208">price, so anything new</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="490" y="224">reads as an increase</text>
+<line stroke="#8a9a90" stroke-dasharray="4,3" stroke-width="1.1" x1="210" x2="210" y1="60" y2="240"></line>
+<line stroke="#1f7a5c" stroke-dasharray="4,3" stroke-width="1.3" x1="340" x2="340" y1="60" y2="240"></line>
+<line stroke="#8a9a90" stroke-width="1.2" x1="90" x2="660" y1="240" y2="240"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="9" x="90" y="256">Signed</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="210" y="256">First value</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="340" y="256">One clear win</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="end" x="660" y="256">Renewal day</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="284">In the two weeks after a confirmed win you are still on the same side; on the negotiating table, anything you raise is a price rise.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Template · a three-sentence opening, and one line you never cross</span>
+<p>(Say it on the same call where they confirmed the win. Don't book a separate meeting — booking one turns it into a sales meeting.)</p>
+<p>1. <strong>Pick up their own sentence</strong>: "The reason this went so fast is that the data was cleaned up in advance, right?"</p>
+<p>2. <strong>Name the next bottleneck in the same machine</strong>: "Then by the same logic, what jams next quarter is the approval step — it takes three days today."</p>
+<p>3. <strong>Offer one small, reversible step</strong>: "One of our customers handles it like this — let me show you for ten minutes, and if it isn't worth it, forget I mentioned it."</p>
+<p><strong>The line you never cross</strong>: <strong>never sell the second thing before they have got value out of the first.</strong> That isn't expansion, it is raising the stake on an unverified assumption; they will notice eventually, and they will return both. The test is simple — can they say, unprompted, what the first purchase gave them? If not, go back and do the previous move.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: the first purchase faces unknown risk, the second faces known risk, and people price those two completely differently. Layer status-quo bias on top — carrying on needs no justification, switching does — and you are holding the position by default. But that discount only applies while they still think you're useful; once you aren't, the same inertia turns into a single clean write-off at year end.</strong></p>
+<ul>
+<li><strong>Hard evidence (experiments plus large-sample real choices) · status-quo bias</strong>: Samuelson &amp; Zeckhauser (1988, <em>Journal of Risk and Uncertainty</em>) found in both experiments and real pension and health-plan choice data that people strongly favour staying put, and that <strong>inertia grows with the number of options</strong>. The default power of renewal is real — but it protects the state of "nobody is re-examining this", not you. The year they run a central benchmarking exercise, that protection vanishes on the spot.</li>
+<li><strong>Hard evidence (classic, with meta-analytic follow-up) · a small commitment carries a larger one</strong>: Freedman &amp; Fraser (1966, <em>Journal of Personality and Social Psychology</em>) on the foot-in-the-door effect; Burger (1999, <em>Personality and Social Psychology Review</em>) confirms by meta-analysis that the effect is real but <strong>modest and condition-dependent</strong>. So "let me show you for ten minutes" genuinely helps — but don't expect it to do the persuading for you. All it does is lower the cost of saying no.</li>
+<li><strong>The boundary matters more than the evidence</strong>: these same mechanisms are the raw material of dark patterns. The difference fits in one sentence: <strong>are you helping them enlarge a result that already exists, or exploiting the mood they happen to be in?</strong> The first earns thanks three months later; the second earns resentment — and since renewal is a repeated game, resentment collects all of your future revenue in one go.</li>
+</ul>
+<p class="caveat">Boundary: not every customer should be expanded. Some are already at their ceiling, and adding more only worsens their return and makes the next renewal harder to argue. For those, the right move is <strong>to ask for a referral</strong>, not an upsell — convert their satisfaction into new customers rather than into more of their budget.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 50 Action</h3>
+<p>Ninety minutes to convert "maintaining the relationship" into four things you can actually check.</p>
+<div class="action">
+<strong>1 (20 min) · Define a "first win" for each of your three newest customers:</strong> one sentence, observable, copied from their own words. Then count: how many could you define at all? The ones you couldn't probably won't renew either.<br/><br/><strong>2 (20 min) · Run every account past the five behavioural signals:</strong> flag anything with thirty days and no substantive interaction, and book a call today with the largest one. No agenda — ask one question: which step is costing you the most effort right now?<br/><br/><strong>3 (20 min) · Pull the customers renewing in the next three months and write the one-pager:</strong> their words · baseline vs today · the critical moment · the next thing. If you can't write the baseline, what you're missing is the day-one action — so add "record the baseline" to every new signing starting today.<br/><br/><strong>4 (30 min) · Pick a customer who just got a result and use the three sentences.</strong> Remember the line: if they can't tell you what the first thing gave them, don't raise the second.<br/><br/>Boundary: all of this holds only when your product genuinely produces a result. Retention tactics can't save a deal that should never have been sold — they just cost you another six months before you find out.
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. We're a one-off business with no "customer success" function. Does any of this apply?</summary>
+<div class="answer">It does; the form changes. With no subscription there is no renewal moment, but <strong>the rules governing whether you get remembered are identical</strong>. Three actions cover it:<br/><br/><strong>One: check in proactively within 48 hours of delivery</strong> — "is that running smoothly now?" That contact is your ending, and endings carry absurd weight.<br/><strong>Two: record a baseline, even as a sentence.</strong> "You said it used to take two trips every time" — six months later that sentence is the only evidence you can produce.<br/><strong>Three: make "next time" concrete.</strong> Not "get in touch if you need anything" but "you mentioned replacing that batch next March — I'll remind you at the start of March". The first is politeness; the second is an action that will actually happen.<br/><br/>And one thing that matters more: <strong>in a one-off business, retention usually shows up as referral rather than repeat purchase.</strong> So the goal isn't to make them buy again — they may genuinely not need to — it's to make sure that when someone asks, they can say in one sentence who you are and what you fix. You have to feed them that sentence at delivery.</div>
+</details>
+<details>
+<summary>2. The customer has said outright they're cancelling. Is it salvageable, and how do I run that conversation?</summary>
+<div class="answer">First separate the two cases. <strong>One is that they genuinely got no value</strong> — that one can't be saved and shouldn't be: keeping them just postpones an inevitable bad outcome by three months while burning more trust and more of your team. <strong>The other is an internal change</strong> (new people, budget cut, an acquisition), and that one is sometimes recoverable.<br/><br/>The recovery move is <strong>downgrade, not discount</strong>: a smaller version that keeps them on the list beats a price cut by a wide margin. A discount is a one-time admission that your original price was fiction, and the next renewal only goes lower.<br/><br/>Three moves in the conversation itself:<br/><strong>One: ask about the alternative first</strong> — "in the end was it between doing it in-house and X?" Ask what they chose instead; don't ask why they're not renewing, which only earns you a polite shield (usually "budget").<br/><strong>Two: don't defend, don't re-explain the features.</strong> At this point any defence just prolongs a conversation they have already finished, and pins your final impression to persistence.<br/><strong>Three: let go gracefully, and say explicitly that the door is open</strong>: "I'll keep your configuration for three months — come back any time." That sentence genuinely brings a few customers back every year, because many cancellations come from internal change, and internal situations change again.<br/><br/>It is the same logic as handling dead deals: <strong>how it ends decides whether there is ever a next time.</strong></div>
+</details>
+<details>
+<summary>3. Management wants a customer health score. I built one and it doesn't predict anything. What went wrong?</summary>
+<div class="answer">Almost always one of three faults.<br/><br/><strong>One: you used outcomes as signals.</strong> The score is packed with satisfaction and renewal-intent measures, and those are lagging — by the time they drop, the customer is already leaving. Signals have to be behaviours, and they have to appear months ahead: the five above.<br/><strong>Two: too many bands for the sample.</strong> With a few dozen customers, a five-band score is precision theatre — a handful of accounts per band, and all the movement is noise. Three bands is plenty, or even a single binary: does someone need to call them this week?<br/><strong>Three: the score isn't wired to an action.</strong> A number that causes nobody to do anything is dashboard decoration. Every red flag needs a named person and a date, or all it does is make you anxious earlier rather than act earlier.<br/><br/>And the one that gets missed most: <strong>don't use the health score to appraise the customer success team.</strong> The moment the number drives rewards, what you receive is a good-looking number — you get the performance version of whatever you measure. Let it trigger resourcing only; if you need to appraise, appraise actual renewal and expansion results.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 50</footer>
+</div>
+</body>
+</html>

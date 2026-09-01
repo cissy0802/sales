@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 50：客户成功与复购</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 50 · Phase H</div>
+<h1>取消发生在第九个月，决定在第二周就做完了</h1>
+<div class="meta"><span>主题：头两周定生死 · 预警看行为不看情绪 · 有效的东西会隐形 · 增购只有一个窗口</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">大多数「流失复盘」分析的是那封取消邮件——那是尸检报告。真正决定他走不走的几件事，发生在他还很兴奋、而你已经觉得「这单成了」的那两周里。</div>
+</header>
+<div class="intro">
+<strong>成交那天你拿到的不是收入，是一次试用许可。</strong>四个动作把这次许可变成长期关系：<strong>一、把「第一个看得见的成果」卡进头两周，而不是把功能教完</strong>；<strong>二、把预警信号换成行为，别再问「用得还好吗」</strong>；<strong>三、基线在第一天记，价值要定期重新变可见</strong>；<strong>四、第二次卖在成果刚被确认的那两周，绝不在续约谈判桌上卖</strong>。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>头两周没让他拿到一个看得见的成果，第九个月的取消就已经写好了
+<span class="en">The renewal is decided in the first two weeks, not in the ninth month.</span></h2>
+<span class="tag">首次价值</span><span class="tag">上线</span><span class="tag">执行意图</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">上线不是把账号开通、把功能教完，是让他在头两周内<strong>亲手拿到一个他自己认得出来的成果</strong>——不是「都会用了」，是「这周那件烦人的事真的没再发生」。为什么非卡两周不可：签约当天他的动机、注意力和内部支持都在最高点，此后一路衰减；等他被原来的事吸回去，你的东西就永远停在「还没真正开始用」——那到第九个月一定表现为取消。所以交付这一侧唯一该盯的数是<strong>首次价值时间</strong>，不是上线完成率。</div>
+</div>
+<div class="section">
+<div class="section-label">动机窗口：第一个成果落在哪里，决定后面十个月</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">签约那天动机最高，之后一路往下——第一个成果必须落在还下得去手的那段</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="40">示意图（非真实数据）：曲线＝客户投在你这件事上的动机与注意力</text>
+<rect fill="#dfeae2" height="192" opacity="0.75" width="116" x="90" y="58"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="148" y="52">启动动机窗口</text>
+<line stroke="#1f7a5c" stroke-dasharray="4,3" stroke-width="1.2" x1="206" x2="206" y1="58" y2="250"></line>
+<polyline fill="none" points="90,72 128,92 166,116 204,138 242,157 280,172 318,185 356,196 394,205 432,212 470,218 508,222 546,226 584,228 622,230 660,231" stroke="#5a7365" stroke-width="2.4"></polyline>
+<circle cx="166" cy="116" fill="#2f7a3f" r="4.2"></circle>
+<line stroke="#2f7a3f" stroke-width="1.1" x1="170" x2="188" y1="112" y2="102"></line>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" x="192" y="82">① 第一个成果落在这里</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="192" y="98">动作被绑进他的日常，之后靠习惯运转</text>
+<circle cx="320" cy="185" fill="#c0603a" r="4.2"></circle>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="342" y="160">② 拖到第六周才第一次用起来</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="342" y="176">动机已经花完，续约那天只是把结论说出来</text>
+<line stroke="#8a9a90" stroke-width="1.2" x1="90" x2="660" y1="250" y2="250"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="9" x="90" y="266">签约日</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="206" y="266">第 2 周</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="320" y="266">第 6 周</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="434" y="266">第 3 月</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="end" x="660" y="266">第 9 月 · 续约</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="290">你在窗口里争的不是「教会他」，是让他先成功一次——会用和用起来是两件完全不同的事。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 把首次价值卡进两周</span>
+<p>1. <strong>先定义「第一个成果」：一句话、可观察、由客户说了算。</strong>「老李这周不用再手工导那张表」是成果；「完成培训」不是。签约会上就问一句：三十天后什么事发生了，你会觉得这钱花对了？把他的原话抄下来，那就是验收标准。</p>
+<p>2. <strong>只配置那一件事需要的东西。</strong>全功能培训是上线的头号杀手——信息量把人劝退，而他真正要的可能只有两个按钮。剩下的两个月后再说。</p>
+<p>3. <strong>约时间，不约意愿。</strong>别问「下周开始用吧？」，问「周二上午九点你处理那批订单的时候，我们一起过一遍，行吗？」——把动作绑到具体的时间、地点、触发场景上。这一句改动有很硬的证据，见下。</p>
+<p>4. <strong>头两周的联系密度，比后面十个月加起来都重要。</strong>宁可显得烦，也别显得「已经交付完了」。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Going live is not opening an account or finishing the training — it is getting them one visible win, in their own words, inside the first two weeks. Not "I know how to use it" but "that annoying thing genuinely stopped happening this week." Two weeks is not arbitrary: motivation, attention and internal backing all peak on signing day and decay from there, and once they get pulled back into their old routine your product stays permanently at "haven't really started yet" — which shows up in month nine as a cancellation. So the number the delivery side should watch is time-to-first-value, not onboarding completion. Four rules. Define the first win as one observable sentence dictated by the customer, and write down their exact words at the kickoff. Configure only what that one win needs; full-feature training is the single biggest killer of adoption. Book a time, never an intention: not "shall we start next week" but "Tuesday at nine, when you run that batch, let's walk through it together" — tie the action to a time, a place and a trigger. And make the first fortnight the densest contact of the whole relationship; better to feel slightly pushy than to feel finished.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：签约当天动机最高，此后单调衰减。能不能在动机耗尽之前把那个动作重复成日常，决定了这个客户之后是靠意志用你、还是靠习惯用你。靠意志的最终都会流失，因为意志一定会被别的事抢走。</strong></p>
+<ul>
+<li><strong>硬证据（94 项独立检验的 meta 分析）· 把动作绑到时间地点上</strong>：Gollwitzer &amp; Sheeran (2006, <em>Advances in Experimental Social Psychology</em>) 汇总 94 个独立检验，发现「如果到了情境 X，我就做 Y」这种<strong>执行意图</strong>显著提高目标达成率，效应量 d ≈ 0.65（中到大）。这正是「周二上午九点一起过一遍」和「下周开始用吧」的差别：后者是意愿，前者是一条会被情境自动触发的指令。</li>
+<li><strong>硬证据（脑机制明确）· 习惯是控制权的转移</strong>：Yin &amp; Knowlton (2006, <em>Nature Reviews Neuroscience</em>) 与 Graybiel (2008, <em>Annual Review of Neuroscience</em>) 综述了同一件事：行为重复到一定程度，控制权会从<strong>背内侧纹状体</strong>（目标导向，每次都重新评估「这值不值」）转移到<strong>背外侧纹状体</strong>（习惯回路，由情境线索直接触发，不再重算账）。落到你身上：客户停在「每次用之前先掂量一下值不值」的阶段，就总有一次会掂量成不值；进入习惯回路，他连想都不会想。（主要来自动物实验加人类脑成像，机制方向可靠，别外推到具体天数。）</li>
+<li><strong>中等强度（单一研究，96 人）· 需要多久</strong>：Lally 等 (2010, <em>European Journal of Social Psychology</em>) 追踪日常习惯的自动化程度，中位数约 66 天到达平台，个体差异极大（18 到 254 天）。所以「两周」不是养成习惯的时间，是<strong>动机窗口</strong>的长度——两周内要发生的是第一次成功，不是习惯。</li>
+</ul>
+<p class="caveat">边界：不是所有生意都有「上线」。一次性交易（卖二手手机、单次服务）没有这个窗口，对应动作是交付后 48 小时内主动确认一次。另外这条只在这单本来就该卖时成立（资格判定那期讲的）——否则再漂亮的上线，也只是把发现问题的时间往后拖半年。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>「最近用得还好吗」问不出流失——预警信号是行为，不是情绪
+<span class="en">"How's it going?" never predicts churn. Behaviour does; sentiment doesn't.</span></h2>
+<span class="tag">预警信号</span><span class="tag">沉默账户</span><span class="tag">冠军离职</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">会抱怨的客户是在跟你说话，说明他还打算继续；真正危险的是那个什么都不提、每次都说「挺好的」、到期直接不续的。<strong>满意是对过去的一次打分，续约是关于未来的一个要花钱的行为</strong>，两者之间隔着他手里的替代方案和切换成本——这道裂缝就是所有「明明说满意却走了」的来源。所以别追情绪，追行为：下面五个信号比取消通知早几个月出现。</div>
+</div>
+<div class="section">
+<div class="section-label">这些信号提前多久出现</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="cs1" markerHeight="9" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#8a9a90"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">信号越靠左，你越来得及做点什么；越靠右，就只剩降低伤害</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="40">示意图（非真实数据）：横轴＝距离流失还剩多久，横条＝这个信号通常从何时开始出现</text>
+<rect fill="#e2efdc" height="14" rx="3" stroke="#3f6d2f" stroke-width="1.4" width="450" x="210" y="59"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="70">冠军换岗或离职</text>
+<rect fill="#e2efdc" height="14" rx="3" stroke="#3f6d2f" stroke-width="1.4" width="390" x="270" y="97"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="108">用的人从五个变成一个</text>
+<rect fill="#f3e7cf" height="14" rx="3" stroke="#b08c3a" stroke-width="1.4" width="300" x="360" y="135"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="146">会议被改期、对接人降级</text>
+<rect fill="#f3e7cf" height="14" rx="3" stroke="#b08c3a" stroke-width="1.4" width="260" x="400" y="173"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="184">突然不再提需求、不再抱怨</text>
+<rect fill="#f6e3da" height="14" rx="3" stroke="#c0603a" stroke-width="1.4" width="90" x="570" y="211"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="20" y="222">「在评估别的方案」「预算砍了」</text>
+<line marker-end="url(#cs1)" stroke="#8a9a90" stroke-width="1.4" x1="200" x2="668" y1="246" y2="246"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="203" y="262">提前 9 个月</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="353" y="262">6 个月</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="507" y="262">3 个月</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="end" x="660" y="262">流失日</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="288">满意度 / NPS 调查通常只在最右边那一段才变差——它是结果，不是预警。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 五个行为信号 + 一条沉默规矩</span>
+<p>1. <strong>你的冠军换岗或离职。</strong>最早也最致命：你的价值住在他脑子里，人一走，你在这家公司就变回一张没人认识的账单。所以从第一天起就要认识第二个人。</p>
+<p>2. <strong>使用面变窄：从五个人在用变成一个人在用。</strong>总用量可能没跌，但它已经变成一个人的私人工具——那个人一休假，你就消失了。</p>
+<p>3. <strong>你的会议开始被改期、被降级</strong>（原来是负责人来，现在是助理来）。这是优先级的公开读数，比任何问卷都准。</p>
+<p>4. <strong>突然不再提需求、不再抱怨。</strong>别读成「终于稳定了」。</p>
+<p>5. <strong>话里出现新词：合规、评估、比价、统一采购。</strong>出现时基本已经晚了，只剩体面收场。</p>
+<p><strong>沉默规矩</strong>：任何账户连续 30 天没有一次实质互动（自动邮件不算），就标红，由人主动约一次。别等系统提醒你——系统提醒的时候，信号早就变成结果了。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> A customer who complains is still talking to you, which means they still intend to stay. The dangerous one says "all good" every time and simply doesn't renew. Satisfaction is a costless score about the past; renewal is a spending decision about the future, and between them sit the alternatives they now know about and the cost of switching — that gap is where every "but they said they were happy" comes from. So stop chasing sentiment and watch five behaviours, all of which show up months before a cancellation notice. Your champion changes role or leaves — the earliest and deadliest, because your value lives in that person's head and once they go you are an invoice nobody recognises. Usage narrows from five people to one, so total volume holds but the product has become one person's private tool. Your meetings start getting rescheduled and the attendee gets more junior. They abruptly stop asking for things and stop complaining. New vocabulary appears: procurement, evaluation, benchmarking. And one standing rule: any account with thirty days without a real human interaction gets flagged and called by a person — don't wait for the system, because by the time a dashboard notices, the signal has already become the outcome.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：情绪指标记录的是他愿意怎么说，行为指标记录的是他实际把注意力放在哪。注意力比嘴诚实得多，而且它变化在先——人是先不用，才不满，最后才取消。</strong></p>
+<ul>
+<li><strong>硬证据（同行评审，直接检验了流行做法）· NPS 没有传说中那么灵</strong>：Keiningham 等 (2007, <em>Journal of Marketing</em>) 用纵向数据比较净推荐值与其它满意度指标对企业增长的预测力，<strong>没有发现净推荐值更优</strong>。所以别把一个滞后的情绪分数当预警系统用——它不是没用，是不早。</li>
+<li><strong>理论框架（不是实验，但解释力强）· 抱怨是「发声」，不是背叛</strong>：Hirschman (1970, <em>Exit, Voice, and Loyalty</em>) 指出不满有两条出口——退出与发声，而肯发声本身意味着他还认为这段关系值得修。所以停止抱怨常常不是问题解决了，是他改选了退出。这是理论而非数据，但和一线经验对得极准。</li>
+<li><strong>有争议（meta 分析，条件很多）· 补救悖论别当公式</strong>：de Matos 等 (2007, <em>Journal of Service Research</em>) 的 meta 分析显示，「出了问题又被漂亮解决之后满意度反而更高」这个效应确实存在，但受大量条件调节，且在重复购买这类<strong>行为</strong>指标上远不如在满意度上稳定。所以别指望靠救火赚忠诚——出问题这件事本身一直在扣分。</li>
+<li><strong>行业数字要打折</strong>：「获取新客户的成本是留存的 5 到 25 倍」没有可靠出处，各种版本互相引用；「留存率提高 5% 利润提高 25%–95%」出自 Reichheld &amp; Sasser (1990, <em>Harvard Business Review</em>) 的<strong>建模测算</strong>，不是实验，且高度依赖行业假设。方向可信，数字别当真。</li>
+</ul>
+<p class="caveat">边界：信号是用来触发一次对话的，不是用来自动降级客户的。看到信号要打电话，别看到信号就群发一封挽留邮件——那反而暴露了你只在数据变差时才想起他。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>你解决掉的问题会隐形——所以基线在第一天记，价值要定期重新被看见
+<span class="en">A solved problem goes invisible. Record the baseline on day one.</span></h2>
+<span class="tag">基线</span><span class="tag">峰终定律</span><span class="tag">价值复盘</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">产品真管用的时候，那个痛就不再发生；痛不再发生，人就想不起来它当初有多疼，只剩账单每个月准时出现。这不是客户忘恩负义，是人的正常运作方式——你也不会每天感谢自家的锁。对策只有一个，而且必须在第一天做：<strong>签约时把「现在有多疼」记成一个数</strong>（每周花几小时、上个月出了几次事故、这批订单错了几单）。没有这个数，半年后你无法证明任何东西，只能说一句「我们一直在支持您」——那在续约会上是零分材料。</div>
+</div>
+<div class="section">
+<div class="section-label">你交付的量 vs 他续约那天记得的量</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">十二个月你交付的量差不多，但进入续约判断的只有两根</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="20" y="40">示意图（非真实数据）：每根柱＝那个月你实际帮他解决掉的量</text>
+<rect fill="#e6e9e2" height="52" width="34" x="100" y="178"></rect>
+<rect fill="#e6e9e2" height="58" width="34" x="146" y="172"></rect>
+<rect fill="#e6e9e2" height="48" width="34" x="192" y="182"></rect>
+<rect fill="#cfe6d6" height="132" stroke="#1f7a5c" stroke-width="2" width="34" x="238" y="98"></rect>
+<rect fill="#e6e9e2" height="56" width="34" x="284" y="174"></rect>
+<rect fill="#e6e9e2" height="60" width="34" x="330" y="170"></rect>
+<rect fill="#e6e9e2" height="50" width="34" x="376" y="180"></rect>
+<rect fill="#e6e9e2" height="54" width="34" x="422" y="176"></rect>
+<rect fill="#e6e9e2" height="58" width="34" x="468" y="172"></rect>
+<rect fill="#e6e9e2" height="52" width="34" x="514" y="178"></rect>
+<rect fill="#e6e9e2" height="56" width="34" x="560" y="174"></rect>
+<rect fill="#cfe6d6" height="64" stroke="#1f7a5c" stroke-width="2" width="34" x="606" y="166"></rect>
+<line stroke="#1f7a5c" stroke-width="1.2" x1="272" x2="292" y1="92" y2="86"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" x="296" y="82">① 峰值：那次事故你跟到半夜才收工</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="296" y="98">他讲你的时候讲的就是这一次</text>
+<line stroke="#1f7a5c" stroke-width="1.2" x1="612" x2="600" y1="160" y2="146"></line>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="end" x="596" y="136">② 结尾：续约前最后一次接触</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="end" x="596" y="152">权重高得不成比例</text>
+<line stroke="#8a9a90" stroke-width="1.2" x1="92" x2="660" y1="230" y2="230"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="117" y="246">第 1 月</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="255" y="246">第 4 月</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="623" y="246">第 12 月</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="20" y="272">中间那八根你交付得同样扎实，却几乎不进入续约那一刻的判断——「我们一直很稳定」是零分材料。</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="290">所以能做的不是多干，是让峰真的出现、并且管好结尾。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做模板 · 一页纸价值复盘（续约前 60 天发，不是前 7 天）</span>
+<p><strong>第一行</strong>：你当初说的问题是什么——用他签约时的原话，不要转述。</p>
+<p><strong>第二行</strong>：当时的基线数 vs 现在的数。保守、精确，宁可写「每周省 3.5 小时」也别写「大幅提升效率」——保守精确的数比大数可信，这在价值销售那期展开过。</p>
+<p><strong>第三行</strong>：这半年最关键的一次（那次事故、那次赶工期）。这是「峰」，必须点名，因为客户记住的就是它。</p>
+<p><strong>第四行</strong>：下半年要一起做成的一件事。让这份东西朝前看，而不是一次讨账。</p>
+<p><strong>开场一句话</strong>：「这半年我们一起把 X 从 A 做到了 B；下半年我想推的是 C，你看对不对？」</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> When your product actually works, the pain stops happening — and once it stops happening, nobody remembers how much it hurt. Only the invoice keeps showing up on time. That is not ingratitude, it is how people work; you don't thank your own front door lock every morning. There is exactly one defence and it has to happen on day one: at signing, write down how much it currently hurts as a number — hours per week, incidents last month, orders mis-shipped in this batch. Without that number you can prove nothing six months later and are reduced to "we've been supporting you throughout", which scores zero in a renewal meeting. Then, sixty days before renewal (not seven), send one page: their original words about the problem, the baseline number against today's number, the single most critical moment of the period, and one thing to achieve together next. Keep the numbers conservative and precise — "3.5 hours a week" beats "a substantial efficiency gain" — and always name the critical moment out loud, because that peak is what they actually remember of you.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：记忆不是录像，是几个片段的加权和。人评价一段长期关系时不做积分，只取最强烈的那一刻和最后那一刻。你稳定的日常交付几乎不进入这个计算——这就是「我们服务一直很稳」在续约会上等于没说的原因。</strong></p>
+<ul>
+<li><strong>硬证据（观察研究 + 随机对照试验，且落到了真实行为）· 峰终定律</strong>：Redelmeier &amp; Kahneman (1996, <em>Pain</em>) 发现患者对结肠镜检查的痛苦回忆由<strong>峰值和结尾</strong>决定，与持续时长几乎无关（duration neglect）。后续 Redelmeier、Katz &amp; Kahneman (2003, <em>Pain</em>) 做了随机对照：在检查末尾多留一小段较轻的不适，被试事后评价更好，<strong>而且更愿意回来做复查</strong>。这条难得地把记忆效应一路连到了真实的复购行为上。（单一医疗场景，别当成能任意迁移的公式，但方向很硬。）</li>
+<li><strong>机制推论（不是研究结论）· 为什么要提前 60 天</strong>：续约前一周做的任何唤起价值的动作，都会被读成「他是为了签单才来的」。同一份东西提前两个月发，性质完全不同。</li>
+<li><strong>诚实提醒</strong>：基线没记，事后是补不出来的——客户对「以前有多糟」的记忆同样被上面这套机制篡改过，而且通常往好里记。所以这一节真正的动作发生在成交那天，不在续约那天。</li>
+</ul>
+<p class="caveat">边界：价值复盘的前提是真有价值。数字拿不出手时，正确做法是先承认、再谈怎么补，而不是把几个模糊的正面词包装成一页 PPT——客户手里有他自己的账，粉饰会一次性烧掉你全部可信度。另外别把「制造峰值」理解成故意先让事情变糟再救火：那是操纵，而且客户复盘时看得出来。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>第二次卖比第一次容易，但窗口在成果刚被确认那两周，不在续约谈判桌上
+<span class="en">The second sale is the easy one — but only in the two weeks after a proven win.</span></h2>
+<span class="tag">扩张收入</span><span class="tag">时机</span><span class="tag">该不卖的时候</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">同一个客户，第一次买的时候在为「你到底行不行」付一笔风险溢价；一次成果被确认之后，那笔溢价就没了——他手里有证据，评估成本几乎归零。所以增购的难点从来不在客户身上，在<strong>时机</strong>上。而大多数人偏偏把它放在最差的位置：续约谈判桌——那张桌上你们天然对立，你提的任何新东西都会被读成加价手段。<strong>成果刚被确认的那两周，你们还站在同一边。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">增购该放在哪一格</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="20" y="22">同一句话，放在这两个位置的效果完全相反</text>
+<rect fill="#e2efdc" height="180" opacity="0.7" width="130" x="340" y="60"></rect>
+<rect fill="#f6e3da" height="180" opacity="0.7" width="80" x="580" y="60"></rect>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9.4" x="96" y="198">线＝客户手里关于你的证据</text>
+<polyline fill="none" points="90,216 150,212 210,208 270,204 330,200 340,146 400,142 470,138 540,134 610,130 660,128" stroke="#5a7365" stroke-width="2.4"></polyline>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" x="348" y="82">增购窗口</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="348" y="98">成果刚被确认，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="348" y="114">风险已经是已知的了</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="end" x="572" y="196">续约谈判：别在这里提</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="end" x="572" y="212">你们在谈价格，天然对立，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="end" x="572" y="228">提什么都被读成加价</text>
+<line stroke="#8a9a90" stroke-dasharray="4,3" stroke-width="1.1" x1="210" x2="210" y1="60" y2="240"></line>
+<line stroke="#1f7a5c" stroke-dasharray="4,3" stroke-width="1.3" x1="340" x2="340" y1="60" y2="240"></line>
+<line stroke="#8a9a90" stroke-width="1.2" x1="90" x2="660" y1="240" y2="240"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="9" x="90" y="256">签约</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="210" y="256">首次价值</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="340" y="256">一次明确的成果</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="end" x="660" y="256">续约日</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="20" y="284">在成果刚被确认的那两周提第二件事，你和他还站在同一边；拖到谈判桌上，你提什么都是在加价。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做模板 · 三句话的增购开口 + 一条不许越的线</span>
+<p>（就在他刚确认成果的那次通话里说，别另约会——另约就变成了一次销售会议）</p>
+<p>1. <strong>承接他刚说的话</strong>：「这次能这么快，主要是因为那批数据是提前理好的，对吧？」</p>
+<p>2. <strong>指出同一台机器的下一个瓶颈</strong>：「那按同样的逻辑，下个季度卡住的会是审批那一段——现在要三天。」</p>
+<p>3. <strong>给一个小的、可退的下一步</strong>：「有个客户就是这么干的，我先给你看十分钟，你觉得不值就当我没提。」</p>
+<p><strong>不许越的线</strong>：<strong>客户还没从已经买的东西里拿到价值时，绝不卖第二件。</strong>那不是扩张，是在一个尚未验证的假设上加注；他之后一定会发现，而且会连第一件一起退掉。判断标准很简单——上一件东西，他能不能自己说出它带来了什么。说不出来，就先回去做第三节那件事。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The same customer paid a risk premium the first time, for the question of whether you could deliver at all. Once one result has been confirmed, that premium is gone: they hold the evidence and the cost of evaluating you has fallen to nearly zero. So the difficulty of expansion was never the customer — it is the timing, and most people put it in the worst possible slot: the renewal negotiation, where you are structurally opposed (they want the price down, you want it held) and anything new you raise reads as a way to charge more. The two weeks right after a confirmed win is the window where you are still on the same side. Say it on that same call, don't book a separate meeting: pick up their own sentence about why it went well, name the next bottleneck in the same machine, then offer one small reversible step — ten minutes, and if it isn't worth it, forget I mentioned it. One line you never cross: never sell the second thing before they have got value out of the first. That isn't expansion, it's raising the stake on an unverified assumption, and when they notice they will return both. The test is simple — can they say, unprompted, what the first purchase gave them?</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：第一次购买面对的是未知风险，第二次面对的是已知风险，而人对这两者的定价完全不同。叠加现状偏好——续着的东西不需要理由，换掉才需要理由——你天然占着位置。但这个便宜只在他还认为你有用的时候才成立，一旦无用，同一股惯性会变成年底的一次性清算。</strong></p>
+<ul>
+<li><strong>硬证据（实验 + 大样本真实选择数据）· 现状偏好</strong>：Samuelson &amp; Zeckhauser (1988, <em>Journal of Risk and Uncertainty</em>) 在实验和真实的养老金 / 医保方案选择数据里都发现，人强烈倾向于维持现状，且<strong>选项越多惰性越强</strong>。续约的默认力量是真的——但它保护的是「没人重新审视」这个状态，不是你——哪年启动一次统一比价，这层保护当场消失。</li>
+<li><strong>硬证据（经典，且有 meta 分析复核）· 小承诺带出大承诺</strong>：Freedman &amp; Fraser (1966, <em>Journal of Personality and Social Psychology</em>) 的登门槛效应；Burger (1999, <em>Personality and Social Psychology Review</em>) 的 meta 分析确认这个效应真实存在，但<strong>幅度不大、条件不少</strong>。所以「先看十分钟」这种小步骤确实有用，但别指望它替你完成说服——它只是把说不的成本降下来。</li>
+<li><strong>边界比证据更重要</strong>：上面这些机制同样是暗黑模式的原材料。区别就一句话：<strong>你是在帮他把已经产生的成果扩大，还是在利用他刚才的好心情。</strong>前者他三个月后会感谢你，后者他三个月后会记恨你——而续约是重复博弈，记恨会一次性收走你未来所有的钱。</li>
+</ul>
+<p class="caveat">边界：不是每个客户都该扩张。有些客户已经用到上限，再加只会让他的投入产出变差、下一次续约更难谈。对这种客户正确的动作是<strong>要转介绍</strong>，不是要加单——把他的满意换成新客户，而不是换成他的预算。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 50 Action</h3>
+<p>九十分钟，把「维护关系」换成四件能查的事。</p>
+<div class="action">
+<strong>一（20 分钟）· 给最近三个新客户各定一个「第一个成果」：</strong>一句话、可观察、抄他的原话。然后数一眼：定义得出来的有几个？定义不出来的那些，八成也不会续。<br/><br/><strong>二（20 分钟）· 把所有客户按五个行为信号过一遍：</strong>标出连续 30 天没有实质互动的账户，今天就约其中最大的那一个。不带议程，只问一件事：你们现在最费劲的是哪一步。<br/><br/><strong>三（20 分钟）· 找出未来三个月要续约的客户，写那一页纸：</strong>原话 · 基线 vs 现在 · 最关键的一次 · 下一步。写不出基线的，说明你缺的是第一天的动作——今天就给所有新签客户加上「记基线」这一步。<br/><br/><strong>四（30 分钟）· 挑一个刚拿到成果的客户，按那三句话开口。</strong>记住那条线：他说不出上一件东西带来了什么，就别提第二件。<br/><br/>边界提醒：这一整套只在你的东西真的产生了成果时才成立。留存打法救不了一个本来就不该卖出去的单——它只会让你多花半年才发现。
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我们是一次性生意 / 小生意，没有「客户成功」这个岗位，这套还成立吗？</summary>
+<div class="answer">成立，只是形式不同。没有订阅，就没有续约那一刻，但<strong>「被再次想起」这件事的规律完全一样</strong>。三个动作就够：<br/><br/><strong>一、交付后 48 小时主动问一句「那件事现在顺了吗」。</strong>这次接触就是你的「结尾」，而结尾的权重高得离谱。<br/><strong>二、记一个基线，哪怕只是一句话。</strong>「你说以前每次要跑两趟」——半年后这句话就是你唯一能拿出来的证据。<br/><strong>三、把「下一次」具体化。</strong>别说「以后有需要找我」，说「你提过明年三月要换那批，我三月初提醒你」。前者是礼貌，后者是一个会真的发生的动作。<br/><br/>还有一条更重要：<strong>一次性生意的留存往往不表现为复购，而表现为转介绍。</strong>目标不是让他再买一次（他可能真的不需要了），是让他在别人问起时，能用一句话说清你是谁、解决什么——那句话得由你在交付时喂给他。</div>
+</details>
+<details>
+<summary>2. 客户明确说要取消了，还有救吗？该怎么谈？</summary>
+<div class="answer">先分清是哪一种。<strong>一种是真的没拿到价值</strong>——这种救不回来，也不该救：留下他只是把必然的坏结果推迟三个月，中间还多耗一份信任和一堆人力。<strong>另一种是内部变化</strong>（换人、预算被砍、被并购），这种有时能救。<br/><br/>救法是<strong>降级，不是打折</strong>：给一个更小的版本让他留在名单上，比给折扣好得多。折扣等于一次性承认你原来的价格是虚的，下次续约只会更低。<br/><br/>谈的时候三个动作：<br/><strong>一、先问替代方案</strong>：「最后是在你们自己做和 X 之间选的？」——问替代方案，别问「为什么不续」。后者只会拿到一个体面的挡箭牌（通常是「预算」）。<br/><strong>二、别辩解、别再讲一遍功能。</strong>这时任何辩解都只是在延长一场他已经结束的对话，而且会把最后印象钉在纠缠上。<br/><strong>三、体面地放手，并且明说门开着</strong>：「你们的配置我留三个月，随时可以回来。」这句话每年真的会带回几个客户——因为很多取消源于内部变化，而内部还会再变一次。<br/><br/>说到底和处理死单是同一个道理：<strong>怎么结束，决定了以后还有没有下一次。</strong></div>
+</details>
+<details>
+<summary>3. 高层要我做客户健康分，做出来发现根本不准，问题出在哪？</summary>
+<div class="answer">多半是三个毛病之一。<br/><br/><strong>一、把结果当成了信号。</strong>健康分里塞满满意度、续约意向这类滞后指标，它们变差的时候人已经在走了。信号必须是行为，而且要能提前几个月出现——就是上面那五条。<br/><strong>二、样本不够却分了太多档。</strong>客户只有几十个时，五档健康分是精确的假象：每档几个客户，抖动全是噪声。做红黄绿三档就够，甚至只做一个二分类——「这周需不需要人打个电话」。<br/><strong>三、分数没绑动作。</strong>一个不会触发任何人做任何事的分数，就是仪表盘上的装饰。每个红标必须对应一个有名字的人和一个日期，否则它只是让你更早地焦虑，不是更早地行动。<br/><br/>还有一条最容易被忽略：<strong>别拿健康分考核客户成功团队。</strong>一旦分数决定奖惩，你收到的就是好看的分——考核什么，就会拿到什么的表演版。让它只触发资源投入；要考核，就考核实际续约与扩张的结果。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 50</footer>
+</div>
+</body>
+</html>
