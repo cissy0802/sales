@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 51：口碑与转介绍</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 51 · Phase H</div>
+<h1>他不是不肯推荐你，是想不起该推荐给谁</h1>
+<div class="meta"><span>主题：想不起谁不是不愿意 · 窗口在他能说出结果那几周 · 降风险比加奖金有用 · 那个分数不预测增长</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">绝大多数转介绍不是死在意愿上，是死在一道检索题上。你把「谁合适」丢给一个正在忙的人，他脑子里一片空白，于是回一句「行，有需要我介绍」——然后什么都不会发生。</div>
+</header>
+<div class="intro">
+<strong>口碑不是满意度的自然结果，是一个需要有人做完最后一公里的动作。</strong>四件事把「他挺满意的」变成真的有人被引荐过来：<strong>一、给画像和场景，替他做完「想起谁」这一步</strong>；<strong>二、窗口在他第一次能说出成果的那几周，不在成交日</strong>；<strong>三、他的顾虑是把信誉借给你，所以削成本，别加奖金</strong>；<strong>四、那个 0–10 分预测不了增长，只配当一个开关</strong>。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>「有需要介绍给朋友啊」，是一道他当场答不出来的开放题
+<span class="en">"Keep me in mind" hands a busy person a free-recall problem they will fail.</span></h2>
+<span class="tag">线索化请求</span><span class="tag">自由回忆</span><span class="tag">通道因素</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">你要的不是「推荐」，是让他脑子里跳出一个名字。这两件事难度差着数量级：前者答应起来很轻松，后者要他毫无线索地从几百个认识的人里检索出「正好在为这件事头疼」的那一个——人的记忆几乎做不到无线索检索，所以他的答复必然是一句真诚的、也确实什么都不会发生的「好，我留意」。<strong>把开放题改成填空题：给一个能对号入座的画像，加一个他见过的场景，那个名字自己会浮出来。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">「想起谁」才是漏得最狠的那一格</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="22">同样一百个真心愿意帮你的客户，两种问法走到最后还剩几个</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="14" y="40">示意图（非真实数据）：形状取自机制</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="290" y="62">开放式：「有需要介绍给朋友啊」</text>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="560" y="62">线索化：画像 + 场景 + 一句现成的话</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="14" y="93">愿意帮你</text>
+<rect fill="#dfe4e0" height="26" rx="3" stroke="#9aa89c" stroke-width="1.2" width="220" x="180" y="76"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="9.6" text-anchor="middle" x="290" y="93">100</text>
+<rect fill="#e2efdc" height="26" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="220" x="450" y="76"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="end" x="662" y="93">100</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="14" y="131">想起了具体的人</text>
+<rect fill="#dfe4e0" height="26" rx="3" stroke="#9aa89c" stroke-width="1.2" width="60" x="260" y="114"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="328" y="131">断在这里</text>
+<rect fill="#e2efdc" height="26" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="180" x="470" y="114"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="end" x="642" y="131">替他做完了</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="14" y="169">判断确实合适</text>
+<rect fill="#dfe4e0" height="26" rx="3" stroke="#9aa89c" stroke-width="1.2" width="45" x="267" y="152"></rect>
+<rect fill="#e2efdc" height="26" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="140" x="490" y="152"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" text-anchor="end" x="622" y="169">画像替他判断</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" x="14" y="207">真的开口了</text>
+<rect fill="#dfe4e0" height="26" rx="3" stroke="#9aa89c" stroke-width="1.2" width="20" x="280" y="190"></rect>
+<rect fill="#e2efdc" height="26" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="100" x="510" y="190"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" text-anchor="end" x="602" y="207">有现成的话</text>
+<line stroke="#cbb98f" stroke-width="1" x1="14" x2="686" y1="234" y2="234"></line>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="258">两边的意愿一模一样。差别全在第二格：你有没有替他把「想起谁」这一步做完。</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="14" y="280">前者给的是检索线索，后者只给了一个类别。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做模板 · 把开放题改成填空题</span>
+<p><strong>别问：</strong>「你身边要是有合适的，帮我介绍一下啊。」——他会答应，而且是真心答应，然后永远想不起来。</p>
+<p><strong>要问（画像 + 场景 + 单数）：</strong>「你提过你们那批做跨境电商的同行，好几家也在手工对账。<strong>他们里面，谁最近抱怨过这件事？</strong>不用名单，一个人就行。」</p>
+<p>三个零件缺一不可：<strong>一、画像具体到能对号入座</strong>（「做跨境电商的」，不是「有需要的人」）；<strong>二、场景是他亲耳听过的抱怨</strong>（那是检索线索不是筛选条件）；<strong>三、只要一个</strong>——「一个」是可完成的任务，「一些」不是。</p>
+<p><strong>他说「我想想」时别停。</strong>换个线索再问一次：「上次一起吐槽这事的，都有谁？」名字常常当场就出来了。</p>
+<p><strong>拿到名字，立刻把最后一步也做掉：</strong>「我写段话发你，你觉得没问题就直接转给他。」</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> What you want isn't "a referral" — it's a name surfacing in their head, and those two things differ by an order of magnitude in difficulty. Agreeing costs nothing; retrieving, with no cue at all, the one person among hundreds who happens to be struggling with exactly this is something human memory is very bad at. So the sincere "sure, I'll keep you in mind" is followed by nothing. Turn the open question into a fill-in-the-blank: give a persona concrete enough to match against, a scene they have personally witnessed, and ask for exactly one person. Not "if you know anyone suitable" but "those cross-border sellers you mentioned — which one of them complained about this recently? One name is enough." Three parts, all required: a persona specific enough to recognise, a scene that works as a retrieval cue rather than a filter, and the singular — one is a completable task, several isn't. If they say "let me think", don't stop there; offer a second cue ("who was in the room when you were all complaining about it?") and the name often arrives on the spot. Then remove the last cost too: write the message for them to forward, and tell them to edit it freely.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：记忆是线索驱动的。存在脑子里（可获得）和当场取得出来（可提取）是两回事，中间隔着有没有一个对的线索。你以为在测他的意愿，其实在测他的提取能力——而无线索提取的成功率低到荒谬。</strong></p>
+<ul>
+<li><strong>硬证据（经典记忆实验，效应极稳）· 有线索和没线索差一大截</strong>：Tulving &amp; Pearlstone (1966, <em>Journal of Verbal Learning and Verbal Behavior</em>) 让被试记一批按类别组织的词，随后一组自由回忆、一组给出类别名再回忆。<strong>给了类别线索的一组回忆出的词显著更多</strong>，两组学的东西却完全一样——差的不是记住没记住，是取不取得出来。这就是「有合适的介绍给我」和「那批做跨境电商的里谁抱怨过」的全部区别。（原始实验用词表，外推到回忆人属于机制类比。）</li>
+<li><strong>硬证据（经典实地实验）· 挡住行动的常常是路径，不是动机</strong>：Leventhal、Singer &amp; Jones (1965, <em>Journal of Personality and Social Psychology</em>) 给大学生看破伤风疫苗宣传，加重恐惧诉求几乎没改变实际接种率；真正把接种率从<strong>约 3% 提到约 28%</strong> 的，是给一张校医院地图、并请他们定下具体什么时候去。这类小到看不见却决定成败的东西叫<strong>通道因素</strong>。一段可直接转发的话，就是你的那张地图。</li>
+<li><strong>边界</strong>：线索化解决「想不起」，解决不了「不想」。他并不觉得你好时，被逼出来的名字只会让你多打一通冷电话，还赔上他一次尴尬——所以这步必须排在下面那个窗口之后。</li>
+</ul>
+<p class="caveat">证据强度：两项都是同行评审的经典实验，方向可靠；但都不是在转介绍场景里做的，属于机制迁移。别把「3% → 28%」当成你的转介绍会涨十倍。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>窗口在他第一次能用自己的话说出成果的那几周，不在成交那天
+<span class="en">The window opens when they can state a result in their own words — not on signing day.</span></h2>
+<span class="tag">时机</span><span class="tag">意图-行为缺口</span><span class="tag">说出来即相信</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">成交那天他心情最好，手上却什么都没有——他能说的只有「我刚买了个东西，看着不错」，这在他朋友那里等于零信息，甚至是负的（像没验证就替人吆喝）。他能推荐的从来不是产品，<strong>是一个他能复述的结果</strong>。窗口两头都在关：太早他没东西可说，太晚他已不记得那件事原来有多烦——被解决掉的问题会迅速变得像从来不存在。<strong>所以开口的那一刻，是他刚亲口把成果说出来的时候。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">两条线都还高的那一段，只有几周</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="rf2" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#8a9a90"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="22">能说出结果的能力在涨，那件事还有多烦在跌——窗口是它们的交叠</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="14" y="40">示意图（非真实数据）：横轴位置随生意周期变，两条曲线的形状不变</text>
+<rect fill="#dfeae2" height="188" opacity="0.7" width="130" x="250" y="58"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="315" y="54">要转介绍的窗口</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" x="90" y="54">那件事还有多烦（动机）</text>
+<polyline fill="none" points="90,72 130,78 170,88 210,100 250,113 290,129 330,147 370,165 410,183 450,199 490,211 530,221 570,229 610,235 650,239" stroke="#c0603a" stroke-width="2.4"></polyline>
+<polyline fill="none" points="90,236 130,232 170,222 210,192 250,142 290,116 330,105 370,100 410,98 450,96 490,95 530,94 570,94 610,93 650,93" stroke="#2f7a3f" stroke-width="2.4"></polyline>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" x="424" y="86">他能用自己的话说出一个结果（能力）</text>
+<circle cx="290" cy="129" fill="#c0603a" r="3.6"></circle>
+<circle cx="290" cy="116" fill="#2f7a3f" r="3.6"></circle>
+<line stroke="#8a9a90" stroke-dasharray="3,3" stroke-width="1" x1="196" x2="280" y1="146" y2="124"></line>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="100" y="136">这里开口</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="100" y="152">他刚说完成果，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="100" y="166">也还记得原来多难受</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9.4" text-anchor="end" x="660" y="136">再往后：问题像本来就不存在，</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9.4" text-anchor="end" x="660" y="150">他讲不出对比，只能说「挺好用的」</text>
+<line marker-end="url(#rf2)" stroke="#8a9a90" stroke-width="1.4" x1="90" x2="668" y1="248" y2="248"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="9" x="90" y="264">成交日</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="315" y="264">第一个成果被他亲口确认</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="500" y="264">三个月</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="end" x="660" y="264">九个月</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="288">成交日他心情最好，但手上还没有任何可以替你说的话——心情不是素材。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做模板 · 就接在他刚说完成果的那句话后面</span>
+<p><strong>第一步，让他自己把成果说出来，别替他总结。</strong>问：「跟三个月前比，这块具体差在哪？」——他答出的那句话是之后一切的原材料。你的版本没用，要拿去转述的人是他。</p>
+<p><strong>第二步，当场接住：</strong>「这句话我能引用吗？」——先要一个最小的许可，再要人。</p>
+<p><strong>第三步才是那道填空题：</strong>「你刚说那批对账以前要两天，现在半小时。你那圈人里，谁还在过两天那种日子？」</p>
+<p><strong>三个触发时刻</strong>（都是他刚说完好话时，别另约会）：第一个成果被确认那次通话；他主动来道谢的任何时候——最强的信号，也最常被浪费；他公开说了好话之后的 48 小时内。</p>
+<p><strong>别越的线</strong>：没拿到成果就别开口。那时你要的不是推荐，是让他替一个没验证的东西作保——他事后会尴尬，而这份尴尬算在你头上。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Signing day is when they feel best and hold nothing: all they can say is "I just bought something, looks good", which carries zero information to a friend and arguably negative information — it sounds like vouching for something unverified. What they can pass on is never the product, it's a result they can retell. And that window closes at both ends: too early and they have nothing to say; too late and they no longer remember how bad the old way was, because a solved problem rapidly starts to feel like it never existed. So the moment to ask is right after they have said the result out loud themselves — not the date your calendar reached. Make them phrase it: "compared with three months ago, what's actually different?" Their sentence is the raw material; your version is useless, because the person who has to retell it is them. Then take the smallest permission first — "can I quote that?" — before asking for a person, and only then run the fill-in-the-blank. Three best triggers, all of them moments they have just said something good, none of them a separately booked meeting: the call where the first result gets confirmed; any time they spontaneously thank you, which is the strongest and most wasted signal of all; and within 48 hours of them praising you publicly. One line not to cross: don't ask before they have a result. At that point you aren't asking for a referral, you're asking them to vouch for something unproven, and the embarrassment that follows gets charged to you.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：「我会介绍的」是一个意图，而意图和行为之间的落差是系统性的，不是他不诚实。缩小它只有两条路——把行动成本降到接近零（上一节），或趁触发条件正好齐全的那一刻（这一节）。另外，让他亲口说出成果本身就会改变他：说过的版本会反过来加固他自己的判断。</strong></p>
+<ul>
+<li><strong>硬证据（元分析的元分析）· 说了会做，和真的去做，差得很远</strong>：Sheeran (2002, <em>European Review of Social Psychology</em>) 汇总多项元分析后估计，<strong>意图大约只能解释行为约 28% 的变异</strong>，大量「有意图的人」最终什么都没做。所以把「他说会介绍」记进 CRM 当线索，是在造假管道——该记的是他有没有在某天对某个具体的人做了一个具体动作。</li>
+<li><strong>硬证据（经典社会认知实验，后续反复复现）· 说出来会改变说的人</strong>：Higgins &amp; Rholes (1978, <em>Journal of Experimental Social Psychology</em>) 让被试向一个立场已知的听众描述某个人，被试会不自觉调整措辞去迎合听众；关键在于，<strong>他们随后自己的记忆与判断也朝说过的版本偏移了</strong>。所以让客户亲口把成果说成一句话，不只是取素材，也在让他更确信这件事——你替他总结不产生这个效果。（后续「共享现实」研究反复检验过。）</li>
+<li><strong>行业数据（单一企业，非随机实验）· 推荐来的客户确实更值钱</strong>：Schmitt、Skiera &amp; Van den Bulte (2011, <em>Journal of Marketing</em>) 用一家德国银行推荐计划的真实客户数据比较，发现被推荐来的客户在贡献毛利和留存上都更好，长期价值高出约 16%–25%。方向可信，但这是单家银行的观察数据，有多少来自「推荐人本来就挑对了人」很难剥离，别当通用倍数。</li>
+</ul>
+<p class="caveat">边界：这套逻辑要求真的交付了一个可观察的成果。价值要一年后才显现的生意（保险、咨询），窗口得人为造——定期把基线和现在摆在一起给他看。客户成功那期讲过：有效的东西会隐形。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>他犹豫的不是麻烦，是把信誉借给你之后你把事搞砸
+<span class="en">What stops them isn't effort. It's lending you their reputation.</span></h2>
+<span class="tag">信誉风险</span><span class="tag">社会规范</span><span class="tag">奖励的反效果</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">引荐一次，他押上的是自己在那个朋友心里的判断力。你交付得好他赚一点，你砸了他赔的是一段真关系——这笔账天然不对称，默认答案就是不动。<strong>看懂这点就知道该往哪边使劲：削他的成本和风险，而不是加高他的回报。</strong>多数人本能地往回报那边加（奖金、分成），那既压不住风险，还顺手把「帮个朋友」换算成一笔生意——人在这两种模式下的行为规则完全不同。</div>
+</div>
+<div class="section">
+<div class="section-label">他心里在比的两栏</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="rf3a" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#2f7a3f"></path>
+</marker>
+<marker id="rf3b" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#b08c3a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="22">你能动的其实只有左边这一栏</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="14" y="40">示意图：他决定要不要开口时真正在权衡的东西</text>
+<rect fill="#f6e3da" height="158" rx="5" stroke="#c0603a" stroke-width="1.4" width="250" x="60" y="56"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.4" font-weight="700" text-anchor="middle" x="185" y="76">他要承担的</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="185" y="102">把自己的判断力押上去</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="185" y="128">得想起谁、还得判断合不合适</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="185" y="154">你砸了他要去收拾</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="185" y="180">被朋友看成「在帮人推销」</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-style="italic" text-anchor="middle" x="185" y="204">砸一次，赔的是一段真关系</text>
+<rect fill="#e2efdc" height="158" rx="5" stroke="#4e8a3f" stroke-width="1.4" width="250" x="390" y="56"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="10.4" font-weight="700" text-anchor="middle" x="515" y="76">他能得到的</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="515" y="102">真的帮到了那个朋友</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="515" y="128">被看作消息灵通的那个人</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="middle" x="515" y="154">你欠他一次</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9.6" text-anchor="middle" x="515" y="180">（有时）一笔奖金</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9.4" font-style="italic" text-anchor="middle" x="515" y="204">加得再高，也压不住左边那一条</text>
+<line marker-end="url(#rf3a)" stroke="#2f7a3f" stroke-width="1.8" x1="185" x2="185" y1="252" y2="222"></line>
+<line marker-end="url(#rf3b)" stroke="#b08c3a" stroke-width="1.8" x1="515" x2="515" y1="252" y2="222"></line>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="185" y="268">有效：把左边削掉</text>
+<text fill="#b08c3a" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="515" y="268">常做但弱：往右边加</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="290">用钱往右边加，还会把「帮个朋友」切换成「一笔买卖」——规则整个变掉。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 四句降风险的话</span>
+<p>1. <strong>先把最坏结果承包掉</strong>：「聊了要是不合适，我自己会说不合适然后走开，不缠着他。」——这句解决的正是他真正担心的事。</p>
+<p>2. <strong>让引荐可撤回</strong>：「我写段话你转给他，他没兴趣就当没这回事，你不用替我追。」把一次担保降级成一次转发。</p>
+<p>3. <strong>只让他背书体验，别让他背书能力</strong>：「你就说你们用着还行、让他自己判断」，比「你跟他说这个特别好」轻得多——后者是替你打包票，前者只是分享经历。</p>
+<p>4. <strong>主动闭环</strong>：见完面一定告诉他结果，成没成都说。这条最常被跳过，却决定有没有第二次——人不怕帮忙，怕帮完石沉大海，连自己是帮了还是添了乱都不知道。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Making one introduction stakes their standing as a good judge in front of a friend. If you deliver, they gain a little; if you blow it, they lose a real relationship — the ledger is inherently asymmetric, so the default answer is to do nothing. Which tells you where to push: cut their cost and risk rather than raise their reward. Most people instinctively add to the reward side with bounties and commissions, which neither offsets the risk nor stays neutral: money quietly converts "doing a friend a favour" into "a piece of business", and people follow completely different rules in those two modes. Four sentences that cut risk. Underwrite the worst case: "if it isn't a fit I'll say so myself and go away, I won't chase him." Make the introduction reversible: send them text to forward, so a guarantee downgrades into a message. Let them vouch for their experience, never for your capability — "just say it's been working for you and let him judge" is far lighter than "tell him it's great." And close the loop, unprompted: tell them how the meeting went, deal or no deal. That last one gets skipped most and decides whether there's ever a second referral — people don't mind helping, they mind helping into silence, never learning whether they helped or created a mess.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：引荐发生在社会规范里（人情、互惠、长期关系），一旦标上价格，它就被切换进市场规范（一次性交易、按价钱算值不值）。切换是单向的、而且很难切回来——因为标价同时给了一个可以拒绝的理由：不值这个价。</strong></p>
+<ul>
+<li><strong>硬证据（实验，直接对比两种规范）· 小额报酬比不给钱更糟</strong>：Heyman &amp; Ariely (2004, <em>Psychological Science</em>) 让被试做同一件苦力活：被当成帮忙（不给钱）时努力很高，给一笔<strong>可观的</strong>报酬时也高，给一笔<strong>小额</strong>现金时努力反而最低——钱把这件事从人情挪进了买卖，而这价钱不值得。这正是「介绍成功给你 200 块」的下场：一次人情被明码标价成了不划算的兼职。</li>
+<li><strong>硬证据（实地实验，且效应不可逆）· 标价会替换掉原来的规范</strong>：Gneezy &amp; Rustichini (2000, <em>Journal of Legal Studies</em>) 在以色列的托儿所对接孩子迟到的家长罚款，迟到不减反增——罚款把「让老师多等很不好意思」换成了「迟到是一项可购买的服务」；更要命的是，<strong>取消罚款后迟到率也没回到原来的水平</strong>。给转介绍标了价，就很难退回人情模式。</li>
+<li><strong>反面的诚实说明</strong>：这不代表奖励一定无效——上一节那项银行研究，研究的本身就是一个<strong>带现金奖励的</strong>推荐计划，而且有效。区别在关系类型：<strong>弱关系、本就偏交易的场景</strong>（拉新、渠道）钱是清晰的激励；<strong>强关系客户</strong>那里钱是污染物。</li>
+</ul>
+<p class="caveat">证据强度：两项都是同行评审的经典研究，机制方向可靠；但「动机挤出」的适用范围学界一直有争论（不同元分析结论不一致）。别当成「给钱一定坏事」的定律，当成一个真实存在、值得防的风险即可。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>那个 0–10 分预测不了增长——它唯一值钱的用法是告诉你今天该找谁
+<span class="en">The score doesn't predict growth. Its one real use is telling you who to ask today.</span></h2>
+<span class="tag">净推荐值</span><span class="tag">复核失败</span><span class="tag">口碑的真相</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">净推荐值（NPS）问「你有多大可能把我们推荐给朋友」，9–10 分算推荐者、0–6 分算贬损者，相减得分。问题有两层：<strong>它测的是意图不是行为</strong>（上一节那 28% 的缺口正好落在这里），<strong>而且并不比传统满意度指标更能预测增长</strong>——不是我说的，是有人认真复核过。所以别再拿分数开会。<strong>把它降级成一个开关：谁刚打了 9 或 10 分，谁就是今天该被具体问一次的人。</strong>分数没有价值，那个时刻有。</div>
+</div>
+<div class="section">
+<div class="section-label">飞轮转不动的时候，找断掉的那一环</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="rf4" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">推荐飞轮的四环——以及那个分数只覆盖了哪一段</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="14" y="37">示意图：每一环都要有人做一个具体动作，否则它只是一张海报</text>
+<rect fill="#e2efdc" height="36" rx="5" stroke="#4e8a3f" stroke-width="1.4" width="200" x="250" y="54"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="350" y="77">① 拿到一个说得出口的成果</text>
+<rect fill="#e2efdc" height="40" rx="5" stroke="#4e8a3f" stroke-width="1.4" width="190" x="470" y="160"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="565" y="177">② 他亲口把它说成</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="565" y="192">一句话</text>
+<rect fill="#f3e7cf" height="36" rx="5" stroke="#b08c3a" stroke-width="1.4" width="200" x="250" y="270"></rect>
+<text fill="#7d6320" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="350" y="293">③ 变成对一个具体的人的引荐</text>
+<rect fill="#e2efdc" height="40" rx="5" stroke="#4e8a3f" stroke-width="1.4" width="190" x="40" y="160"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="135" y="177">④ 新客户上手更快、</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="135" y="192">更快拿到成果</text>
+<path d="M 452,72 Q 553,72 562,155" fill="none" marker-end="url(#rf4)" stroke="#5a7365" stroke-width="1.8"></path>
+<path d="M 565,202 Q 565,288 455,288" fill="none" marker-end="url(#rf4)" stroke="#c0603a" stroke-dasharray="5,4" stroke-width="1.8"></path>
+<path d="M 248,288 Q 135,288 135,202" fill="none" marker-end="url(#rf4)" stroke="#5a7365" stroke-width="1.8"></path>
+<path d="M 135,157 Q 135,72 247,72" fill="none" marker-end="url(#rf4)" stroke="#5a7365" stroke-width="1.8"></path>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="350" y="170">推荐飞轮</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9.4" text-anchor="middle" x="350" y="192">转不动时找断掉的那一环</text>
+<circle cx="556" cy="240" fill="#c0603a" r="4.5"></circle>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="end" x="508" y="228">②→③ 是最常断的一环</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="end" x="508" y="243">分数记录了他愿意说，</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="end" x="508" y="257">不记录他有没有真的开口</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="328">调查只把你送到第二环。第三环没有人负责的话，你收集到的永远只是好心情。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 把调查改造成一个开关</span>
+<p>1. <strong>分数只用来触发，不用来汇报。</strong>给 9–10 分的人，48 小时内必须被一个有名字的人问一次——问上面那道填空题，不是「谢谢您的评分」。过了那阵，劲就散了。</p>
+<p>2. <strong>真正的信息在后面那个开放题。</strong>「最主要的原因是什么？」——他写的那句话就是你的下一段文案、下一个案例标题，也是他以后转述你时会用的话。分数是个位数，那句话是原材料。</p>
+<p>3. <strong>别拿它考核团队。</strong>一旦分数决定奖惩，你收到的就是被打点过的分数：挑人发问卷、发之前先打招呼。考核什么，就拿到它的表演版。</p>
+<p>4. <strong>样本小就别算。</strong>三十个回复的净推荐值，抖动几乎全是噪声，还被回应偏差放大——愿意填问卷的人本来就偏两头。客户少时用「这个月发生了几次真实引荐」代替。</p></div>
+</div>
+<p class="en-brief"><b>EN</b> Net Promoter asks how likely you are to recommend, counts 9–10 as promoters and 0–6 as detractors, and subtracts. Two problems: it measures an intention rather than an act — the 28% gap from the previous section lands exactly here — and it is not better than conventional satisfaction measures at predicting growth, which isn't an opinion but a published replication. So stop running meetings on the number. Demote it to a switch: whoever just scored 9 or 10 is the person to ask, specifically, today. The score has no value; that moment does. Five rules. Use the score only as a trigger — a named person contacts every 9–10 within 48 hours, with the fill-in-the-blank question, not a thank-you. Treat the open follow-up as the real payload: the sentence they write is your next piece of copy, your next case study headline, and the words they'll use to describe you later. Never appraise a team on it, or you'll receive a groomed number. Don't compute it on small samples, where the movement is noise amplified by response bias; count actual introductions instead, which is a behaviour you can verify. And retire "an unhappy customer tells ten people" — it has no reliable source, and the research below points the other way.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：单题的意图量表，量的是他在被问那一刻愿意怎么表态。它和收入之间隔着三样东西——意图到行为的缺口、他有没有对具体的人开口、那个人会不会买。任何一环没人负责，分数再高也不变成钱。</strong></p>
+<ul>
+<li><strong>硬证据（同行评审，直接复核了原始主张）· 它并不更能预测增长</strong>：Reichheld (2003, <em>Harvard Business Review</em>) 提出净推荐值是「你唯一需要的那个数字」；Keiningham、Cooil、Andreassen &amp; Aksoy (2007, <em>Journal of Marketing</em>) 用纵向数据重做了这个检验，<strong>没有发现净推荐值在预测企业收入增长上优于传统满意度指标</strong>。原始的强主张没有复核过来。它不是没用（当统一口径的粗指标可以），但别拿它当因果、当预测、当经营目标。</li>
+<li><strong>硬证据（多国多品类的消费者研究）· 好话比坏话更常被说，也更有用</strong>：East、Hammond &amp; Lomax (2008, <em>International Journal of Research in Marketing</em>) 系统统计正负面口碑的发生频率及其对品牌选择的影响，结果与业内流传的相反：<strong>正面口碑比负面口碑更频繁，对选择概率的影响也更大</strong>（「一个不满意的客户会告诉十个人」查不到可靠出处）。负面口碑当然要处理，但你真正的杠杆在把已经存在的好话变成一次具体的引荐。</li>
+<li><strong>为什么「刚打完高分」是个真时刻</strong>：他刚公开表了态，此时一个小而具体的请求与他刚说过的话同向，几乎不需要他做新决定——这就是承诺与一致，影响力六原理那期讲过。边界：只在他确实觉得好时成立。</li>
+</ul>
+<p class="caveat">诚实补一句：批评净推荐值不等于满意度不重要。它的真问题是被当成了预测器和考核指标，而它只是一个被压缩过头的表态。要预测收入就看行为——续约、扩张、实际发生的引荐次数。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 51 Action</h3>
+<p>六十分钟，把「多让客户帮我们说说」换成四件能查的事。</p>
+<div class="action">
+<strong>一（15 分钟）· 写你的线索句：</strong>挑三种最容易转成客户的人，各写一句带画像 + 带场景 + 只要一个人的问法。念一遍——对方能靠回忆当场答出来就合格；他得先想「谁算合适」，重写。<br/><br/><strong>二（15 分钟）· 写那段可转发的话：</strong>一百二十字以内、第三人称、含一个具体成果、不含任何要他替你担保能力的句子。自问：他原样转发，会不会显得像在推销？会就再删。<br/><br/><strong>三（15 分钟）· 挑两个最近拿到过明确成果的客户，今天发出去。</strong>先要那句话（「跟三个月前比差在哪」），再要那个人。<br/><br/><strong>四（15 分钟）· 检查现有的调查和奖励：</strong>后面那个开放题有人读吗？给 9–10 分的人有没有在 48 小时内被问过一次？奖励是不是不上不下的小额现金？是就改成给被推荐人的优惠。<br/><br/>边界提醒：前提是你真的交付了成果。没有成果的转介绍机器只会更快花光你的名声——一次失败的引荐，赔掉的是那个推荐人往后所有的推荐。
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我刚起步，几乎没有客户，哪来的转介绍？</summary>
+<div class="answer">起步期要的不是客户推荐，是<strong>引荐一次对话</strong>——成本低得多：对方不必担保你的产品，只需担保你不浪费朋友二十分钟。同样三步：给画像、给可转发的话、明说不合适自己会走开。<br/><br/>更该换的是你找谁开口。早期最有效的推荐人往往<strong>不是客户，是天天接触你目标客户的人</strong>：服务同一群人的其他供应商、社群管理员、前同事。他们没买过你的东西，押的信誉更少，却知道谁正在为那件事头疼——这是最稀缺的信息。<br/><br/>还有个没人用的资源：<strong>那些明确拒绝了你的人。</strong>他们了解你又没有利益关系。一句「这次不合适，不过你那圈里谁正卡在这上面？」经常有回音——刚拒绝完一个请求的人，对紧接着一个小得多的请求反而更容易答应。</div>
+</details>
+<details>
+<summary>2. 我张不开这个嘴，总觉得一开口关系就变味了。</summary>
+<div class="answer">那种别扭来自你把它归成了「索取」。做个检验：<strong>你是不是真的相信，他那个朋友因为认识你会变好？</strong>信，引荐就是一份礼物；不信，那股别扭是准确的信号——该改的是产品，不是话术。<br/><br/>信但仍开不了口，三个做法能把尴尬降到很低：<strong>一、只要一个人不要名单</strong>——「一个」像帮忙，「一批」像交任务。<strong>二、明确把否决权交回去</strong>：「不合适你就直说，我不追问也不再提。」<strong>三、事后闭环</strong>：见完面告诉他结果，哪怕没成。<br/><br/>还有一层：<strong>你多半系统性地低估了别人会答应的概率。</strong>networking 不油腻那期讲过——人预测「别人会不会帮我」时普遍偏低，因为你清楚感受到自己开口的尴尬，却看不到对方拒绝时的尴尬。你以为在冒昧，对方常常只觉得被信任了一下。</div>
+</details>
+<details>
+<summary>3. 老板要我们上推荐奖励计划，该不该做？给多少？</summary>
+<div class="answer">先分清你的推荐主要来自哪种关系，答案完全相反。<strong>弱关系、偏交易的场景</strong>（消费品拉新、渠道、联盟）——钱是清晰有效的激励，大方给、说清楚。<strong>强关系客户</strong>——钱是污染物，把一次人情换算成一笔小生意，还顺手给了对方一个拒绝的理由（不值这个价）。<br/><br/>真要做，三条：<strong>一、优先把好处给被推荐人</strong>（「你朋友首年少付 X」）。推荐人转的是一份优惠不是一笔佣金，社交上安全得多，也不必解释自己有没有拿钱。<strong>二、要么明确不小、双方都当生意做（真正的分成、写进合同），要么干脆不用钱</strong>——用非货币回报：提前用到新功能、把他的案例认真写出来、给他也引荐一个人。最糟的是不上不下的小额现金，正好完成从人情到买卖的切换，还开了个很低的价。<strong>三、无论给什么，都等被推荐人真的拿到价值再结算</strong>，否则你买到的是名单不是推荐。<br/><br/>最后一个信号别误读：<strong>奖励一上，推荐量暴涨而成交率暴跌，那不是线索质量问题</strong>，是你把「因为真的有用」的推荐人换成了「因为有钱拿」的推荐人。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 51</footer>
+</div>
+</body>
+</html>
