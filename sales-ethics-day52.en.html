@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 52: Where the Line Is</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:1px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 52 · Phase H</div>
+<h1>Persuasion and manipulation use the same techniques. The line isn't in the technique.</h1>
+<div class="meta"><span>Themes: the disclosure test · a default is a decision you made · the bill never lands on that deal · write the line before the pressure</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">Scarcity, urgency, anchoring, social proof — pressed on a true fact and pressed on a false one, these buttons run down the same pathway and produce the same reaction. Which is why sorting them by how sleazy a line feels never works.</div>
+</header>
+<div class="intro">
+<strong>Only two lines can actually be drawn, and both are checkable facts rather than feelings.</strong> Four moves turn "have some principles" into a check you can run today: <strong>one, say out loud what you are doing — does the deal survive?</strong>; <strong>two, defaults and countdowns are decisions you made for them, which is why this stopped being only an ethics question</strong>; <strong>three, the bill for the deal you shouldn't have closed never lands on that deal — it is smeared across every deal after it</strong>; <strong>four, you won't cross the line while you're thinking clearly, so the line has to be written before that</strong>.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Say out loud what you're doing. Does the deal survive?
+<span class="en">If it dies on disclosure, it was never persuasion.</span></h2>
+<span class="tag">disclosure test</span><span class="tag">scarcity is a content-free signal</span><span class="tag">framing</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Persuasion and manipulation are not two sets of techniques. They are one set of techniques resting on two different sets of facts. "Only three slots left" presses exactly the same button whether the three slots are real or invented. So ask a different question: <strong>describe to their face what you are actually doing — is the deal still standing?</strong> "I quoted high first so the next number would look cheap" dies the second it is spoken. "I'll hold this price until the 15th, because my costs go up next month" survives being spoken. <strong>Persuasion withstands disclosure. Manipulation can't — it depends on the absence of it.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">Two checkable questions, far better than a gut feeling</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 346" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="eb1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#1f7a5c"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="22">The line isn't about which technique you used. It's about these two things.</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="14" y="40">The same move (a deadline, a limit, an anchor) can land in any of the four boxes</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="14" y="102">Buying really</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="14" y="117">is good for them</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="14" y="197">Buying is not</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="14" y="212">good for them</text>
+<rect fill="#f3e7cf" height="95" rx="4" stroke="#b08c3a" stroke-width="1.4" width="230" x="150" y="58"></rect>
+<text fill="#7d6320" font-family="Georgia" font-size="10.4" font-weight="700" text-anchor="middle" x="265" y="86">Paternalism</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="265" y="110">Outcome may be fine, but</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="265" y="126">you made the decision</text>
+<rect fill="#e2efdc" height="95" rx="4" stroke="#4e8a3f" stroke-width="1.6" width="230" x="380" y="58"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="10.4" font-weight="700" text-anchor="middle" x="495" y="86">Persuasion</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="495" y="110">Information, reasons, a deadline</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="495" y="126">— they decide</text>
+<rect fill="#f6e3da" height="95" rx="4" stroke="#c0603a" stroke-width="1.6" width="230" x="150" y="153"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.4" font-weight="700" text-anchor="middle" x="265" y="181">Manipulation · fraud</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="265" y="205">Only works because they</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="265" y="221">don't know what you're doing</text>
+<rect fill="#f3e7cf" height="95" rx="4" stroke="#b08c3a" stroke-width="1.4" width="230" x="380" y="153"></rect>
+<text fill="#7d6320" font-family="Georgia" font-size="10.4" font-weight="700" text-anchor="middle" x="495" y="181">Hard selling</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="495" y="205">They know you're selling and</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="495" y="221">cave; refunds live in this box</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9.4" text-anchor="middle" x="265" y="268">They don't know what you're doing</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9.4" text-anchor="middle" x="495" y="268">They know exactly what you're doing</text>
+<line marker-end="url(#eb1)" stroke="#1f7a5c" stroke-width="1.8" x1="180" x2="600" y1="288" y2="288"></line>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="312">The disclosure test pushes the dot right: if it survives being said, it was already on the right.</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="14" y="332">The second question pushes it up: fully informed and unhurried, would they still buy?</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">The second, harder check</div>
+<div class="principle">Suppose they were fully informed and had all the time in the world to think it over. Would they still buy? <strong>Yes, and you're earning a matchmaker's fee. No, and you're earning their mistake</strong> — money that gets repaid later as a refund, a bad review, or the extra sentence they add every time someone asks about you.</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Templates · three ways to swap a fake for a real one</span>
+<p><strong>1. Fake urgency → a real deadline.</strong> Not the "02:59" countdown that resets on refresh. Write: "I'll hold this quote until the 15th; after that I have to re-book capacity." A real deadline works just as well and doesn't fear a screenshot.</p>
+<p><strong>2. Fake scarcity → a real constraint.</strong> Not "only 2 left". Write: "I take three new clients a month, because I do the delivery myself." That's both scarcity and information they deserve.</p>
+<p><strong>3. Fake social proof → verifiable evidence.</strong> Not "chosen by thousands". Write: "Three firms in this city use it — call them." Real things don't need protecting from verification.</p>
+<p>What all three have in common: <strong>you didn't change the technique, you changed whether there's a fact underneath it.</strong> Nothing was given up.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: scarcity, urgency and loss signals are content-free — the brain's response to "it's running out" does not check whether it is actually running out. That is the fundamental reason manipulation is cheap: forging a signal costs far less than creating the fact behind it. So the thing that separates the two is never the technique, it's whether that fact exists.</strong></p>
+<ul>
+<li><strong>Hard evidence (classic experiment; scarcity changes valuation directly) · the cookies never changed, the jar did</strong>: Worchel, Lee &amp; Adewole (1975, <em>Journal of Personality and Social Psychology</em>) had people taste identical cookies. Cookies from a jar holding 2 were rated better tasting and more valuable than the same cookies from a jar of 10; and when the supply was visibly cut from 10 to 2 in front of them (a manufactured shortage), ratings went higher still. Same cookie, different signal — the button does not distinguish real scarcity from fake.</li>
+<li><strong>Hard evidence (neural level; wording changes the choice) · framing runs through the emotional circuit</strong>: De Martino, Kumaran, Seymour &amp; Dolan (2006, <em>Science</em>) gave people mathematically equivalent choices framed as "keep £20" or "lose £30". Behaviour swung sharply with the wording; on imaging, going along with the frame was associated with stronger <strong>amygdala</strong> activity, while people with stronger <strong>anterior cingulate</strong> activity were better at resisting it. Wording is not packaging — it takes the emotional route. That's why selling outcomes rather than features works, and also why the same gun can be aimed at anyone. (Single fMRI study; reverse inference from imaging needs caution.)</li>
+<li><strong>Boundary</strong>: the disclosure test can't adjudicate a benign frame. Saying "nine out of ten succeed" rather than "one in ten fails" survives disclosure, because nothing is being concealed. The test catches what depends on concealment, not all rhetoric.</li>
+</ul>
+<p class="caveat">Evidence strength: both are peer-reviewed classics with stable directions (effect sizes for the 1975 study vary across replications). The disclosure test itself isn't a research finding — it's an operating rule derived from the fact that manipulation depends on information asymmetry. Useful, not a theorem.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>Defaults and countdowns are decisions you made for them
+<span class="en">Which is exactly why this stopped being only an ethics question.</span></h2>
+<span class="tag">dark patterns</span><span class="tag">defaults</span><span class="tag">friction isn't persuasion</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">A dark pattern is interface design that gets people to choose what they otherwise wouldn't: the pre-ticked renewal, the buried cancel link, the extra line item at checkout, the countdown that resets on refresh. What they share is that <strong>none of them persuades — they work by friction</strong>: paving the road you want them on and gravelling the one they want. <strong>And defaults are powerful enough that you have to own one as a decision: most people never change them.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">"Users can change it" is not true as a matter of fact</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">Same continent, same human beings: organ donor consent is set by the default</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="14" y="37">Real data: effective consent rates reported in Johnson &amp; Goldstein (2003, Science)</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="58">Default is NOT a donor · you must opt in</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="end" x="140" y="79">Denmark</text>
+<rect fill="#f6e3da" height="15" rx="2" stroke="#c0603a" stroke-width="1.2" width="20" x="150" y="67"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9" x="176" y="79">4.25%</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="end" x="140" y="103">Germany</text>
+<rect fill="#f6e3da" height="15" rx="2" stroke="#c0603a" stroke-width="1.2" width="58" x="150" y="91"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9" x="214" y="103">12%</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="end" x="140" y="127">UK</text>
+<rect fill="#f6e3da" height="15" rx="2" stroke="#c0603a" stroke-width="1.2" width="83" x="150" y="115"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9" x="239" y="127">17.2%</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="end" x="140" y="151">Netherlands</text>
+<rect fill="#f6e3da" height="15" rx="2" stroke="#c0603a" stroke-width="1.2" width="132" x="150" y="139"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9" x="288" y="151">27.5%　(after a nationwide mailing campaign)</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="178">Default IS a donor · you must opt out</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="end" x="140" y="199">Sweden</text>
+<rect fill="#e2efdc" height="15" rx="2" stroke="#4e8a3f" stroke-width="1.4" width="412" x="150" y="187"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" x="568" y="199">85.9%</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="end" x="140" y="223">France</text>
+<rect fill="#e2efdc" height="15" rx="2" stroke="#4e8a3f" stroke-width="1.4" width="480" x="150" y="211"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" x="636" y="223">99.9%</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" text-anchor="end" x="140" y="247">Austria</text>
+<rect fill="#e2efdc" height="15" rx="2" stroke="#4e8a3f" stroke-width="1.4" width="480" x="150" y="235"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" x="636" y="247">99.98%</text>
+<line stroke="#cbb98f" stroke-width="1" x1="14" x2="686" y1="262" y2="262"></line>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="282">The Netherlands ran an expensive national campaign and still sits at 27.5%. Austria did nothing.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">It has already turned into a line item</div>
+<div class="principle">Article 25 of the EU's Digital Services Act bans platform interfaces that distort user choice; in 2023 the US FTC settled with Epic Games for roughly $245 million in consumer refunds over dark patterns and billing practices. You may disagree about where regulators drew the line, but <strong>this is now a risk you can put in a budget</strong> — and it is the same ledger as your refund and complaint rates, seen from the other side.</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · four things you can audit today</span>
+<p><strong>1. The cancel path.</strong> How many clicks from login to cancelled? If it's more than buying, that isn't "preventing mistakes", it's friction.</p>
+<p><strong>2. Pre-ticked boxes.</strong> Any add-on, renewal or subscription that's checked by default — untick it and watch how much conversion drops. The bigger the drop, the more of your revenue was sold by the default rather than wanted.</p>
+<p><strong>3. Countdowns and stock counters.</strong> Do they survive a refresh? If the same number comes back, it's fake. Delete it or swap in a real deadline.</p>
+<p><strong>4. First price versus final price.</strong> How far apart are the number they first see and the number they pay? The wider that gap, the higher your refund and complaint rates — verifiable in your own dashboard.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: defaults run on three forces at once — status quo bias (changing costs effort and makes you responsible for the change), implicit recommendation (people read a default as "this is what most people pick"), and plain inertia. Friction is the same trick: you don't have to talk them out of cancelling, only make cancelling more tiring than doing it tomorrow.</strong></p>
+<ul>
+<li><strong>Hard evidence (cross-national policy data; enormous effect) · the default all but decides the outcome</strong>: Johnson &amp; Goldstein (2003, <em>Science</em>) compared European organ donor consent. Where you must opt in: Denmark about 4.25%, Germany about 12%, the UK about 17.2%, the Netherlands about 27.5%. Where consent is the default and you must opt out: Sweden about 85.9%, France about 99.9%, Austria about 99.98%. (The cross-country comparison is observational, not randomised — but the gap is far too large for culture to explain, and the authors reproduced the same direction in controlled experiments.)</li>
+<li><strong>Industry evidence (large automated census) · this is the industry default, not a few bad actors</strong>: Mathur et al. (2019, <em>Proceedings of the ACM on Human-Computer Interaction</em>) crawled roughly 11,000 shopping sites and identified over 1,800 dark pattern instances on about 11% of them, with a taxonomy (false urgency, misdirection, hidden costs, and so on). The use of that number: it confirms the pressure is real — if you don't do it, competitors do — which is exactly why the long-run ledger below has to be worked out properly.</li>
+<li><strong>Boundary</strong>: not every default is a dark pattern. The difference is <strong>who the default serves</strong>: automatic backups on by default serves the user; auto-renewal ticked by default serves you. The test is the previous section's: "we ticked it for you, because most people won't untick it" — can you say that out loud?</li>
+</ul>
+<p class="caveat">To be straight: the FTC settlement and the DSA article are public enforcement and legislative facts, not research findings. They show the risk has been priced; they don't show dark patterns are net-negative over time. In the short run they do make money — which is why they are everywhere. The real ledger is the next section.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>The bill for the deal you shouldn't have closed never lands on that deal
+<span class="en">Gain booked here, cost smeared across everything after — so you never see the causal link.</span></h2>
+<span class="tag">repeated game</span><span class="tag">bad outweighs good</span><span class="tag">anterior insula</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The margin on that deal is capped, lands this quarter, and is visible. The cost is uncapped, delayed, and doesn't carry your name — it shows up as a customer who quietly stops replying six months later, a referral you never learn you didn't get, a meeting you were never invited to. <strong>Which means self-correction fails here structurally: the gain is booked against one deal, the cost is spread across every deal after it, and no report will ever show you that link.</strong> The only remedy is a rule set in advance, instead of accounting after the fact.</div>
+</div>
+<div class="section">
+<div class="section-label">The top figure has a ceiling. The bottom one doesn't.</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="eb3" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">Two ledgers landing at different times — which is why you never reconcile them</text>
+<text fill="#5a6b7d" font-family="Georgia" font-size="9" x="14" y="37">Schematic (not real data): the shape comes from the mechanism</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="72">They don't just stop buying:</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="14" y="90">in the ultimatum game, people take</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="14" y="106">nothing at all to reject an unfair split.</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" x="14" y="176">Capped · booked now · visible</text>
+<rect fill="#e2efdc" height="42" rx="4" stroke="#4e8a3f" stroke-width="1.6" width="110" x="48" y="188"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="103" y="206">＋ margin on</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="103" y="222">this one deal</text>
+<polygon fill="#f6e3da" opacity="0.6" points="180,238 660,60 660,238" stroke="#c0603a" stroke-dasharray="5,4" stroke-width="1.4"></polygon>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="305" y="216">they stop buying</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="410" y="182">no referral from them</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="512" y="150">what they say when asked</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="606" y="116">a room you weren't in</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="end" x="660" y="52">Uncapped · delayed · unattributed</text>
+<line marker-end="url(#eb3)" stroke="#5a7365" stroke-width="1.4" x1="40" x2="676" y1="252" y2="252"></line>
+<text fill="#8a988c" font-family="Georgia" font-size="9" x="48" y="268">closing day</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="330" y="268">six months</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="middle" x="500" y="268">two years</text>
+<text fill="#8a988c" font-family="Georgia" font-size="9" text-anchor="end" x="670" y="268">ever after</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="292">Gain on this deal, cost across all the later ones — no report shows that causal link.</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.4" x="14" y="312">So don't count on "you learn from getting burned": the feedback never gets back.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · three numbers that can see this bill for you</span>
+<p><strong>1. Who signed the customers who churned inside ninety days, and why.</strong> When one name keeps recurring, the problem isn't the customers.</p>
+<p><strong>2. Refund and complaint rates broken out by rep and by channel.</strong> The blended number averages it away; broken out, it has nowhere to hide.</p>
+<p><strong>3. Referral rate by customer origin.</strong> Customers who were pushed into signing produce almost none — a cell that's permanently zero means you're converting reputation into revenue.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: in almost every real market, selling is a repeated game — the same person buys again, and gets asked about you. The optimal move in a one-shot game (take what you can) is negative-return in a repeated one. Layer on one more thing: bad news carries systematically more weight in memory and in transmission than good news of equal size, so the two sides are not one-for-one.</strong></p>
+<ul>
+<li><strong>Hard evidence (large review, consistent across domains) · bad is stronger than good</strong>: Baumeister, Bratslavsky, Finkenauer &amp; Vohs (2001, <em>Review of General Psychology</em>) pulled together evidence from impression formation, relationships, learning and emotion, concluding that <strong>at equal intensity, bad events have systematically larger effects than good ones</strong>. For you: moving a customer from "fine" to "delighted" takes many deliveries; moving them from "fine" to "I was had" takes one.</li>
+<li><strong>Hard evidence (imaging plus behaviour; robust) · people pay their own money to punish unfairness</strong>: Sanfey, Rilling, Aronson, Nystrom &amp; Cohen (2003, <em>Science</em>) used the ultimatum game. Facing clearly unfair splits, participants showed markedly stronger <strong>anterior insula</strong> activity (associated with disgust and negative affect), and the stronger that activity, the more likely they were to reject — <strong>and rejecting means they get nothing either</strong>. So "it's not like they have another option" is wrong at the neural level: they have one, which is to hurt you at their own expense.</li>
+<li><strong>Boundary (this one has to be said) · don't treat "honesty pays" as a universal law</strong>: this arithmetic assumes <strong>buyers can compare notes</strong>. At the restaurant outside a tourist attraction, or anywhere buyers never meet, cutting corners genuinely does pay — which is why the food there is reliably bad. In markets with repeat business, a community and public reviews, holding the line pays. In a truly one-shot market it doesn't, and holding the line rests on your own standards rather than on returns. <strong>Rather than relying on willpower inside a bad market, don't pick that market.</strong></li>
+</ul>
+<p class="caveat">Evidence strength: the first two are peer-reviewed, heavily cited, and directionally reliable. "Repeated game" is an economic model rather than an experimental result — before applying it to your business, check the premise: is there genuinely repeat business and a word-of-mouth channel? And this section gives no figure for "how much revenue unethical selling costs you", because I've seen no credible general estimate and won't invent one.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>You won't cross the line while you're thinking clearly, so write it first
+<span class="en">In the hot moment you don't deliberate. You either execute a rule or invent one.</span></h2>
+<span class="tag">pre-commitment</span><span class="tag">goal pressure</span><span class="tag">slippery slope</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Nobody wakes up deciding to con someone. Crossing the line actually looks like this: you're one deal short, this customer isn't really a fit, but they want to buy and nothing in the process stops you. In that moment you are not deliberating, you are solving. <strong>So the only defence that works is written while you're cold and no specific deal is on the table: turn the line into a list.</strong> When the hot moment arrives, your job is execution, not judgement.</div>
+</div>
+<div class="section">
+<div class="section-label">Same person, same deal — only the written line differs</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="eb4" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+<marker id="eb5" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">Under pressure you only execute an existing rule — or invent one on the spot</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="58">List written</text>
+<rect fill="#e2efdc" height="44" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="130" x="30" y="66"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" text-anchor="middle" x="95" y="85">quarter start · cold</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" text-anchor="middle" x="95" y="100">write three lines</text>
+<rect fill="#f3e7cf" height="44" rx="4" stroke="#b08c3a" stroke-width="1.4" width="150" x="200" y="66"></rect>
+<text fill="#7d6320" font-family="Georgia" font-size="9.4" text-anchor="middle" x="275" y="85">quarter end · hot</text>
+<text fill="#7d6320" font-family="Georgia" font-size="9.4" text-anchor="middle" x="275" y="100">the bad-fit deal arrives</text>
+<rect fill="#e2efdc" height="44" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="130" x="390" y="66"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" text-anchor="middle" x="455" y="85">the list is already there</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" text-anchor="middle" x="455" y="100">execute, don't judge</text>
+<rect fill="#e2efdc" height="44" rx="4" stroke="#4e8a3f" stroke-width="1.6" width="120" x="560" y="66"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="620" y="85">say no, or</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="620" y="100">shrink the deal</text>
+<line marker-end="url(#eb4)" stroke="#5a7365" stroke-width="1.6" x1="162" x2="196" y1="88" y2="88"></line>
+<line marker-end="url(#eb4)" stroke="#5a7365" stroke-width="1.6" x1="352" x2="386" y1="88" y2="88"></line>
+<line marker-end="url(#eb4)" stroke="#5a7365" stroke-width="1.6" x1="522" x2="556" y1="88" y2="88"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="172">No list</text>
+<rect fill="#dfe4e0" height="44" rx="4" stroke="#9aa89c" stroke-width="1.4" width="130" x="30" y="180"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="9.4" text-anchor="middle" x="95" y="199">quarter start · cold</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.4" text-anchor="middle" x="95" y="214">nothing written down</text>
+<rect fill="#f3e7cf" height="44" rx="4" stroke="#b08c3a" stroke-width="1.4" width="150" x="200" y="180"></rect>
+<text fill="#7d6320" font-family="Georgia" font-size="9.4" text-anchor="middle" x="275" y="199">quarter end · hot</text>
+<text fill="#7d6320" font-family="Georgia" font-size="9.4" text-anchor="middle" x="275" y="214">the identical deal</text>
+<rect fill="#f6e3da" height="44" rx="4" stroke="#c0603a" stroke-width="1.4" width="130" x="390" y="180"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="455" y="199">invent a reason now</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="455" y="214">"just this once"</text>
+<rect fill="#f6e3da" height="44" rx="4" stroke="#c0603a" stroke-width="1.6" width="120" x="560" y="180"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="620" y="199">next time the bar</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="620" y="214">sits lower</text>
+<line marker-end="url(#eb5)" stroke="#c0603a" stroke-width="1.6" x1="162" x2="196" y1="202" y2="202"></line>
+<line marker-end="url(#eb5)" stroke="#c0603a" stroke-width="1.6" x1="352" x2="386" y1="202" y2="202"></line>
+<line marker-end="url(#eb5)" stroke="#c0603a" stroke-width="1.6" x1="522" x2="556" y1="202" y2="202"></line>
+<path d="M 620,226 Q 620,250 448,250 Q 276,250 276,230" fill="none" marker-end="url(#eb5)" stroke="#c0603a" stroke-dasharray="5,4" stroke-width="1.4"></path>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="448" y="266">Slippery slope: next time starts here, not at zero</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="290">A line's value isn't how noble it sounds. It's that it was written before the pressure.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Template · the do-not-sell list is three lines long</span>
+<p>Fixed form: <strong>"I don't sell to ___, even if they want to buy."</strong> What goes in the blank must be a type of buyer you <strong>actually met last quarter and actually hesitated over</strong>. "People who don't need it" is not a line, it's a mood.</p>
+<p>Examples: "I don't sell to companies with fewer than five people — they can't get it running and they'll cancel in three months." "I don't sell to founders hoping this fixes a management problem." "I don't sell to individuals paying out of their own pocket with no budget."</p>
+<p><strong>Three ways to say no, all better than people expect:</strong></p>
+<p><strong>1. Give the reason and an alternative:</strong> "You're below the volume where this pays off — you'd probably never get it running. Use a spreadsheet for three months and call me when you hit X." You gave up this deal; it usually comes back larger.</p>
+<p><strong>2. Shrink the deal instead of dropping it:</strong> "The full thing is wrong for now — start with that one piece and look at it in three months." Honesty isn't piety, it's selling the right quantity.</p>
+<p><strong>3. Translate when you argue it upwards:</strong> don't say "this is unethical", say "this segment's refund and complaint rates are several times the others, and the net is negative". Management may not move for ethics; it will move for negative margin.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: two forces. Goals under pressure compress attention onto the metric, squeezing everything else — including the other side's interests — out of view. And the slippery slope: each step is small relative to the last, so no step feels like crossing, because your reference point is always the previous step rather than the origin. Writing the list in advance nails the reference point back to the origin.</strong></p>
+<ul>
+<li><strong>Hard evidence (experiment, directly on goal pressure and misreporting) · people just short of the goal overstate the most</strong>: Schweitzer, Ordóñez &amp; Douma (2004, <em>Academy of Management Journal</em>) had participants perform a task and self-report performance. Those given a specific goal misreported more than those told to "do your best" — and <strong>those who fell just short of the goal misreported most of all</strong>. Quarter end is that experiment in the field. This isn't a claim about your team's character; it's a claim that the metric itself manufactures the pressure.</li>
+<li><strong>Hard evidence (experiment series, slippery slope) · the cost of the first time isn't paid the first time</strong>: Welsh, Ordóñez, Snyder &amp; Christian (2015, <em>Journal of Applied Psychology</em>) showed that when the opportunity to be dishonest <strong>grows gradually</strong>, people end up cheating substantially more than when the same large opportunity is offered outright. The real cost of "just this once" is that it lowers the bar for next time.</li>
+<li><strong>One piece of evidence I wanted to give you and can't</strong>: a famous study reported that moving an honesty declaration to the top of a form reduces cheating (Shu et al., 2012, <em>PNAS</em>). It later failed to replicate at scale (Kristal et al., 2020, <em>PNAS</em>), one of the original field datasets was found to be fabricated, and the paper was retracted. So don't add an integrity pledge to the top of a page and assume the problem is handled. That's also this issue's subject applied to itself: <strong>mislabel the strength of your evidence and the conclusion becomes harmful</strong>.</li>
+</ul>
+<p class="caveat">Boundary: a list stops deliberate crossings; it doesn't stop biases you can't see in yourself — such as sincerely believing the product suits everyone. So pair it with an external signal: refund rates, early churn, and "who signed the customers who left inside three months". Data won't cover for you. That's the second gate.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 52 Action</h3>
+<p>Sixty minutes to turn "have some principles" into four checkable things.</p>
+<div class="action">
+<strong>1 (15 min) · Run the disclosure test:</strong> lay out your landing page and the three lines you use most, and ask of each one, "does it survive being said out loud?" Take the ones that don't and swap in the real version — a real deadline, a real constraint, verifiable evidence.<br/><br/><strong>2 (10 min) · Audit four defaults:</strong> pre-ticked boxes, the cancel path, countdowns, and the gap between first and final price. Untick one box and note today's conversion — that number tells you how much of your revenue was sold by the default.<br/><br/><strong>3 (20 min) · Write the do-not-sell list:</strong> three lines, in the form "I don't sell to ___, even if they want to buy", filled with buyer types you actually met last quarter. Put it somewhere you see daily.<br/><br/><strong>4 (15 min) · Make one call:</strong> take a live deal you privately know shouldn't close, and say "it isn't the right time yet" today. Note the reaction — it will probably surprise you.<br/><br/>Boundary: none of this guarantees you earn more. It guarantees that what you earn stays. In a genuinely one-shot market with no repeat business and no word-of-mouth channel, holding the line does cost you — and what should change then isn't your standards, it's the market you picked.
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. My company requires fake countdowns and fake stock counts. What can one person do?</summary>
+<div class="answer">Sort it into three tiers. <strong>Tier one: fixable on the spot.</strong> Most fake urgency has a true version — a real quote expiry, a real capacity limit, a real price-change date. You can change the wording yourself, nobody will stop you, and conversion usually holds, because it's the same button being pressed.<br/><br/><strong>Tier two: you can't change it, but you don't have to say it.</strong> The countdown on the page isn't yours; what you say on a call is. Don't repeat numbers you know are false — that's the smallest piece you can hold, and it's yours.<br/><br/><strong>Tier three: it has to go upwards, in money rather than morals.</strong> Break out refund rates, complaint rates and support hours for this playbook versus the other cohort. Before the numbers are split out, anything you say sounds idealistic; after, it's a cost sheet.<br/><br/>One more honest layer: <strong>if you've raised it twice, shown the data, and the answer is still "do it anyway", this is a company that treats it as a business model, not a lapse.</strong> At that point the thing to evaluate isn't your script, it's whether you stay.</div>
+</details>
+<details>
+<summary>2. A customer clearly should buy but keeps stalling. Is pushing them manipulation?</summary>
+<div class="answer">Run the two tests. <strong>Does the reason you're pushing with survive being said out loud?</strong> "If you don't decide this month I can't fit you into next month's capacity" — if that's true, it survives, and it's information, not manipulation. "Only two left in stock" when you know it's false, is.<br/><br/>More importantly: <strong>stalling is usually not a shortage of urgency, it's a concern you haven't found.</strong> Adding pressure just pushes that concern below the surface, where it turns into a refund after the sale. Ask: "If you had to decide today, you'd say no — right? What's the main reason?" Giving permission to say no is what usually surfaces the real objection.<br/><br/>Three legitimate accelerators, none of which require lying: <strong>one, quantify the cost of not changing</strong> ("roughly how much labour is that per month?") — money they're already paying, you're just making it visible; <strong>two, give a real deadline and the reason for it</strong>; <strong>three, lower the cost of being wrong</strong> — start with one piece, refundable, stoppable. The third is the strongest: stalling is mostly fear of a mistake, so make the mistake cheap rather than making inaction frightening.</div>
+</details>
+<details>
+<summary>3. Everyone in my industry does this. Holding the line just means losing. Now what?</summary>
+<div class="answer">Half of that is right, so admit it: <strong>in genuinely one-shot markets, where buyers never meet and there's no review channel, holding the line really does cost you.</strong> That's structural, not spiritual. So the first priority is changing the battlefield rather than the script: move toward the side with repeat business, a community, buyers who ask each other. Where bad reputations travel, your restraint has a return.<br/><br/>If you can't move yet, two things work immediately. <strong>One, make the difference visible.</strong> Competitors hide fees, so put the full price on the first screen; their cancellation needs a phone call, so ship a button. This isn't a moral pose: in a market where everyone earns by concealing, transparency is the cheapest differentiator there is, and it's hard to copy — copying costs them revenue straight away. <strong>Two, turn it into a verifiable commitment</strong>: a refund clause in the contract, a public pricing page. A promise is only worth something if it can be checked.<br/><br/>A last honest note: <strong>this route usually is slower in the short run.</strong> What it buys is not having to rebuild your list in three years, and the sentence someone says about you when asked. Whether that's a trade you want is your call, not a principle everyone must accept.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 52</footer>
+</div>
+</body>
+</html>
