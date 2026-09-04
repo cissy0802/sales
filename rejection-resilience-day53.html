@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 53：心态与拒绝复原力</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 53 · Phase H</div>
+<h1>疼在你想明白之前就已经到了，所以「别往心里去」是一句无效指令</h1>
+<div class="meta"><span>主题：疼是自动的 · 连败多长才算信号 · 归因决定你撑不撑得到第二年 · 把记分挂在你说了算的那端</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">能不能干得久，几乎不取决于你被拒了多少次。取决于你被拒之后那 90 秒做了什么、你怎么解释它，以及你手上有没有一样自己说了算的东西可以记分。</div>
+</header>
+<div class="intro">
+<strong>复原力不是感觉，是四个可执行的零件。</strong>把"脸皮厚一点"换成今天能跑的程序：<strong>一、刺痛是自动的，力气该花在事后 90 秒</strong>；<strong>二、成交率 5% 时 20 连拒有三分之一概率纯属运气——先算清多长才算信号</strong>；<strong>三、决定你撑不撑得到第二年的不是被拒次数，是你对每个"不"的解释</strong>；<strong>四、动力衰减是因为记分挂在你控制不了的那端</strong>。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>不要试图不疼，要给那 90 秒一套程序
+<span class="en">You can't decide not to feel it. You can decide what happens in the ninety seconds after.</span></h2>
+<span class="tag">前扣带回</span><span class="tag">情绪命名</span><span class="tag">重评不是压抑</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">"别往心里去"之所以没用，是它把力气花在了一个你管不着的环节上——刺痛在你做出任何判断之前就发生了，不等你同意。<strong>你能动的是它之后那一小段：先给这感觉一个名字，再换掉你对这件事的解释。两步都不是"忍住"，忍住恰恰是最贵的选项。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">同一个"不"，两条岔路只差 15 秒</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 322" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ra1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+<marker id="ra2" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">前两秒不归你管；从第三秒起才归你管</text>
+<rect fill="#e6f0ea" height="56" rx="4" stroke="#123f30" stroke-width="1.5" width="152" x="16" y="130"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="92" y="152">听到「不」· 0–2 秒</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" text-anchor="middle" x="92" y="168">疼已经到了</text>
+<text fill="#5a7365" font-family="Georgia" font-size="8.6" text-anchor="middle" x="92" y="182">不问你同不同意</text>
+<line marker-end="url(#ra1)" stroke="#c0603a" stroke-width="1.6" x1="172" x2="204" y1="146" y2="98"></line>
+<line marker-end="url(#ra2)" stroke="#4e8a3f" stroke-width="1.6" x1="172" x2="204" y1="170" y2="218"></line>
+<rect fill="#f6e3da" height="52" rx="4" stroke="#c0603a" stroke-width="1.4" width="158" x="208" y="62"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="287" y="82">压抑：按下去</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="287" y="98">「没事」，接着打下一通</text>
+<rect fill="#f6e3da" height="52" rx="4" stroke="#c0603a" stroke-width="1.4" width="164" x="396" y="62"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="478" y="82">表情平了，身体没平</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="478" y="98">对话细节记不住</text>
+<rect fill="#f6e3da" height="52" rx="4" stroke="#c0603a" stroke-width="1.7" width="112" x="574" y="62"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="630" y="82">下一通</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="630" y="98">带着它一起打</text>
+<line marker-end="url(#ra1)" stroke="#c0603a" stroke-width="1.6" x1="368" x2="392" y1="88" y2="88"></line>
+<line marker-end="url(#ra1)" stroke="#c0603a" stroke-width="1.6" x1="562" x2="570" y1="88" y2="88"></line>
+<rect fill="#e2efdc" height="52" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="158" x="208" y="204"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="287" y="224">命名：5 秒</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" text-anchor="middle" x="287" y="240">「这是被否定的刺痛」</text>
+<rect fill="#e2efdc" height="52" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="164" x="396" y="204"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="478" y="224">重评：10 秒</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" text-anchor="middle" x="478" y="240">「他拒的是这个时机」</text>
+<rect fill="#e2efdc" height="52" rx="4" stroke="#4e8a3f" stroke-width="1.7" width="112" x="574" y="204"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="630" y="224">下一通</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="630" y="240">是干净的</text>
+<line marker-end="url(#ra2)" stroke="#4e8a3f" stroke-width="1.6" x1="368" x2="392" y1="230" y2="230"></line>
+<line marker-end="url(#ra2)" stroke="#4e8a3f" stroke-width="1.6" x1="562" x2="570" y1="230" y2="230"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="14" y="284">两条路花的时间差不多。区别是上面那条把代价推到了后面几通电话里。</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="306">别把力气花在「不疼」上——那一格没有开关。花在第三秒到第九十秒。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做模板 · 挂电话后的 90 秒</span>
+<p><strong>1. 命名（5 秒，写下来）：</strong>"我现在是被否定的刺痛 + 一点丢脸。"要具体到情绪的名字，不是"我心情不好"。</p>
+<p><strong>2. 重评（10 秒，换掉主语）：</strong>把"他不要我"换成"他现在不要这个东西"。不是安慰，是把陈述改准确——他拒的是一个提议，手上根本没有你这个人的信息。</p>
+<p><strong>3. 抽一件事实（15 秒）：</strong>"他说预算在下季度"——这是情报，写进 CRM。有一条可写的事实，这通就不是纯损失。</p>
+<p><strong>4. 隔离（60 秒）：</strong>站起来走一圈再打下一通，别让上一通的生理余波混进语气里。</p>
+<p><strong>反面示范：</strong>"没事，我不在意，下一个。"——这是压抑，代价见上图。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> "Don't take it personally" fails as an instruction because it aims at the one part of this you don't control. The sting lands before you've judged anything: in the classic Cyberball experiment, people excluded from a simple online ball-toss game report a real drop in belonging and self-esteem — and it still happens when they're told in advance that the other players are just a computer script, and even when the group excluding them is one they openly despise. The hit is reflexive, not reasoned. What you do control is the ninety seconds after. Two moves, both cheap. Name it: say or write the actual emotion ("that's the sting of being turned down, plus some embarrassment") rather than "I feel bad" — putting feelings into words measurably lowers amygdala response and recruits right ventrolateral prefrontal cortex. Then reappraise: change the subject of the sentence from "he doesn't want me" to "he doesn't want this thing right now", which isn't consolation, it's accuracy — he has no information about you as a person. Reappraisal lowers the emotional response itself; suppression, the thing most salespeople actually do, only lowers the visible expression while raising physiological arousal and degrading memory for what was said. Then extract one fact worth writing down ("budget frees up next quarter") so the call isn't a pure loss, and take sixty seconds on your feet before the next one — not as a ritual, but so the physiological tail of the last call doesn't leak into the tone of the next.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：社会拒绝走的是一条自动的、内容无关的通路——先响应"我被排除了"这个模式，理智之后才有机会介入，所以"我不该在意"来得太晚。调节有效是因为外侧前额叶能自上而下压住杏仁核，而它压的是"你怎么给这件事编码"，不是"你脸上表现出多少"。压抑只动了后者，还额外收一笔交感神经和记忆的费用。</strong></p>
+<ul>
+<li><strong>硬证据（fMRI，被拒当下的脑反应）· 疼是自动的</strong>：Eisenberger、Lieberman &amp; Williams (2003, <em>Science</em>) 用 Cyberball 把被试排除在一个网络传球游戏之外，<strong>背侧前扣带回（dACC）活动与自报的社会痛苦正相关，右腹外侧前额叶（RVLPFC）活动与痛苦负相关</strong>——一个在"疼"，一个在"压"。<em>诚实标注</em>：由此推出的"社会痛=生理痛"已被修正，Woo 等 (2014, <em>Nature Communications</em>) 的多体素模式分析显示两者细粒度上可区分。</li>
+<li><strong>硬证据（行为实验，且反直觉）· 明知是电脑也照样疼</strong>：Zadro、Williams &amp; Richardson (2004, <em>Journal of Experimental Social Psychology</em>) 事先明确告诉被试对手是电脑程序，被排除后归属感、自尊、控制感、存在意义感<strong>依然显著下降</strong>；Gonsalkorale &amp; Williams (2007, <em>European Journal of Social Psychology</em>) 更进一步：被自己厌恶的群体排除，照样疼。这判了"想清楚对方不重要就不会难受"的死刑。</li>
+<li><strong>硬证据（fMRI）· 说出名字这个动作本身有效</strong>：Lieberman 等 (2007, <em>Psychological Science</em>) 让被试给情绪面孔贴标签，<strong>杏仁核反应下降、右腹外侧前额叶活动上升</strong>，只看图或做非情绪判断则没有。这就是"写下来"比"忍一忍"强的神经层面理由。</li>
+<li><strong>硬证据（重评 vs 压抑的分离）</strong>：Gross (1998, <em>JPSP</em>) 与 Gross &amp; John (2003) 反复显示：<strong>重评降低的是情绪体验本身且几乎不加生理负担；压抑只降低外显表情，同时抬高交感神经激活并损害对当时信息的记忆。</strong>Buhle 等 (2014, <em>Cerebral Cortex</em>) 对 48 项 fMRI 研究的元分析确认了"前额叶↑、杏仁核↓"的稳定模式。推论：压抑那通电话的内容你会记不清，而那正是你唯一该带走的东西。</li>
+</ul>
+<p class="caveat">证据强度：四条都是同行评审的高引研究，方向稳定、被独立复现。边界：它们测的是"被排除后几分钟内"，而销售里的拒绝是慢性重复的，能否外推到连续三个月的低谷没有直接证据。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>"数字游戏"不是鸡汤，是一道你该真算一遍的算术
+<span class="en">"It's a numbers game" isn't a pep talk. It's arithmetic you should actually run.</span></h2>
+<span class="tag">基率</span><span class="tag">预测误差</span><span class="tag">变率强化</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">连败之所以难熬，是因为你把它读成了信号——"我不行了""这产品不行了"。<strong>先算一遍：成交率 5% 时，纯运气出现 20 连拒的概率是 36%，30 连拒是 21%。你眼前这段连败多半只是分布本来的样子，不含任何关于你的信息。</strong>这个数比任何"坚持就是胜利"都管用——它把"我是不是完了"变成了一个能查的问题。</div>
+</div>
+<div class="section">
+<div class="section-label">成交率 5% 时，纯运气能造出多长的连败</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="rb1" markerheight="8" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="9" refy="4">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">连败长度 → 它纯属运气的概率</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="14" y="38">每次独立、单次成交率 p = 5%</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="118" y="76">10 连拒</text>
+<rect fill="#c9dcc9" height="22" rx="2" stroke="#4e8a3f" stroke-width="1.2" width="240" x="130" y="60"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" x="378" y="76">60%　几乎每周都会碰到</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="118" y="112">20 连拒</text>
+<rect fill="#d5dfc6" height="22" rx="2" stroke="#4e8a3f" stroke-width="1.2" width="143" x="130" y="96"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" x="378" y="112">36%　三次里有一次，很正常</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="118" y="148">30 连拒</text>
+<rect fill="#eadfc2" height="22" rx="2" stroke="#b08c3a" stroke-width="1.2" width="86" x="130" y="132"></rect>
+<text fill="#7d6320" font-family="Georgia" font-size="9.6" font-weight="700" x="378" y="148">21%　仍然更可能是运气</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="118" y="184">40 连拒</text>
+<rect fill="#f0d9c8" height="22" rx="2" stroke="#c0603a" stroke-width="1.2" width="51" x="130" y="168"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="378" y="184">13%　开始值得查一查</text>
+<text fill="#37493f" font-family="Georgia" font-size="9.6" text-anchor="end" x="118" y="220">60 连拒</text>
+<rect fill="#f0cfc0" height="22" rx="2" stroke="#c0603a" stroke-width="1.4" width="18" x="130" y="204"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="378" y="220">4.6%　这才叫信号，去改东西</text>
+<line stroke="#3f5c7a" stroke-dasharray="4,4" stroke-width="1.3" x1="150" x2="150" y1="52" y2="240"></line>
+<line marker-end="url(#rb1)" stroke="#3f5c7a" stroke-width="1.3" x1="150" x2="196" y1="252" y2="252"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="9" x="202" y="255">5% 线：越过这条才算「不像运气了」</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="282">在 60 之前改打法，你改的是噪声；60 之后还不改，你才是真的在硬扛。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 把"我完了"换成一道可查的题</span>
+<p><strong>1. 先估你自己的 p。</strong>翻上季度：接通多少次、成交多少单，别用行业平均。冷邮件的 p 可能是 1%，老客户复购可能是 40%——两者能忍受的连败长度差一个数量级。</p>
+<p><strong>2. 算出"报警线"。</strong>粗算法：<strong>3 ÷ p</strong>，超过它才值得怀疑。p=5% → 60；p=1% → 300；p=20% → 15。写在显示器边上。</p>
+<p><strong>3. 没到线之前只看输入。</strong>今天打了多少通、问了几个有效问题、发了几封跟进——这些你说了算。结果那一格今天没有信息量。</p>
+<p><strong>4. 到线了别加倍努力，查三个地方：</strong>名单对不对、开场三十秒是不是把人吓跑了、你是不是在跟没预算的人谈。<strong>连败真是信号的时候，答案几乎从来不是"再多打一百通"。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> A losing streak hurts mostly because you read it as a signal about you. Run the arithmetic first. At a 5% close rate, a run of 20 straight no's happens by pure luck 36% of the time; 30 in a row, 21%; 40 in a row, 13%. Only around 60 consecutive no's does the probability drop under 5% — that's where a streak stops looking like noise. A usable rule of thumb: your alarm threshold is roughly 3 ÷ p. At p = 5% that's 60 calls; at 1% for cold email it's 300; at 20% for warm renewals it's 15. Write your number on the edge of your monitor, because the whole point is to convert "am I finished?" into a question with a checkable answer. There's a mechanism underneath, not just comfort. Dopamine neurons don't code reward, they code reward prediction error — the gap between what you expected and what you got. If you walk into each call expecting a yes, every no is a negative prediction error, and repeated negative prediction error is exactly the signal that extinguishes a behaviour. Set your expectation at the true base rate instead and the same no's stop registering as errors at all; nothing changed in the world, but the learning signal did. Below the threshold, score yourself only on inputs you control — dials made, real questions asked, follow-ups sent. Above it, don't work harder: check the list, the first thirty seconds, and whether these people have a budget. When a streak really is a signal, the answer is almost never "make a hundred more calls".</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：多巴胺神经元编码的不是"奖赏"，是"奖赏预测误差"——实际减预期。你带着"这通应该能成"去打，每个"不"都是一次负预测误差，而持续的负预测误差正是行为消退的标准信号。把预期调到真实基率上，同样这些"不"就不再算误差。世界没变，学习信号变了——这才是"数字游戏心态"在做的事：不是让你麻木，是把预期校准到分布上。</strong></p>
+<ul>
+<li><strong>硬证据（猴子单细胞记录，教科书级）· 多巴胺编码的是误差不是奖赏</strong>：Schultz、Dayan &amp; Montague (1997, <em>Science</em>) 记录中脑腹侧被盖区与黑质的多巴胺神经元：意外得到奖赏时放电升高；学会线索预测奖赏后放电转移到线索上；<strong>预期该来却没来的那一刻，放电降到基线以下</strong>。这是被反复复现的核心结论，也是"预期越高、落空越伤"的神经层面写法。</li>
+<li><strong>硬证据（经典操作性条件反射）</strong>：Ferster &amp; Skinner (1957) 的变率强化程式——奖赏在不确定的次数后出现——反应率高、对消退异常顽固。销售正是一个变率程式。<em>诚实标注</em>：这条在动物实验里极稳，外推到人类工作动机是模型而非已证结论。</li>
+<li><strong>这里的数字是算的，不是引的</strong>：36% = 0.95²⁰，21% = 0.95³⁰，4.6% = 0.95⁶⁰。<strong>前提是每次独立且 p 稳定</strong>——现实里两条都不完全成立，所以当量级参考、别当精确预测。我没引用任何"平均跟进 X 次才成交"的行业数字，那类数字来源大多不可查。</li>
+</ul>
+<p class="caveat">失效场景：这套算术只在"打法本来有效"时成立。如果 p 实际是 0（产品不对、名单全错），再算也只是给坏假设找耐心。所以报警线必须真执行——一半价值在"到线前别慌"，另一半在"到线了必须查"。该查哪里，找客户与资格判定那两期更细。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>决定你干不干得下去的，不是被拒次数，是你对每个"不"的解释
+<span class="en">What predicts whether you last isn't how often you're turned down. It's the sentence you say about it.</span></h2>
+<span class="tag">归因风格</span><span class="tag">三个 P</span><span class="tag">撑到第二年</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">同一句"我们不需要"，两个人写下两句完全不同的话。一个写"我不适合干这个"——永久、普遍、针对我；另一个写"这个月我给这类公司打的开场太长了"——暂时、局部、关于做法。<strong>差别不在心态好坏，在于第一句推不出任何下一步动作，第二句自带一个下一步。</strong>而在有实证的行业里，这个差别预测的不只是业绩，更是你会不会第一年就走人。</div>
+</div>
+<div class="section">
+<div class="section-label">同一句"不"，两种解释，两种结局</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="rc1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+<marker id="rc2" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<rect fill="#e6f0ea" height="38" rx="4" stroke="#123f30" stroke-width="1.5" width="260" x="220" y="14"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="350" y="38">客户说：「我们暂时不需要」</text>
+<line marker-end="url(#rc1)" stroke="#c0603a" stroke-width="1.6" x1="290" x2="176" y1="56" y2="82"></line>
+<line marker-end="url(#rc2)" stroke="#4e8a3f" stroke-width="1.6" x1="410" x2="524" y1="56" y2="82"></line>
+<rect fill="#f6e3da" height="128" rx="4" stroke="#c0603a" stroke-width="1.4" width="286" x="20" y="88"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="34" y="110">解释 A：永久 · 普遍 · 针对我</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" x="34" y="132">永久：「我一直都搞不定这种客户」</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" x="34" y="152">普遍：「我本来就不适合做销售」</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" x="34" y="172">针对我：「他就是不喜欢我这个人」</text>
+<text fill="#8a3a18" font-family="Georgia" font-size="9.4" font-weight="700" x="34" y="200">→ 推不出任何下一步动作</text>
+<rect fill="#e2efdc" height="128" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="286" x="394" y="88"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="10" font-weight="700" x="408" y="110">解释 B：暂时 · 局部 · 关于做法</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" x="408" y="132">暂时：「这个季度他们钱花完了」</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" x="408" y="152">局部：「我对这一类公司的开场太长」</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" x="408" y="172">关于做法：「我第 30 秒还没说痛点」</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" x="408" y="200">→ 自带下一步：砍开场、换名单</text>
+<line marker-end="url(#rc1)" stroke="#c0603a" stroke-width="1.6" x1="163" x2="163" y1="218" y2="242"></line>
+<line marker-end="url(#rc2)" stroke="#4e8a3f" stroke-width="1.6" x1="537" x2="537" y1="218" y2="242"></line>
+<rect fill="#f0cfc0" height="46" rx="4" stroke="#c0603a" stroke-width="1.7" width="220" x="53" y="248"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="163" y="268">下一通电话之前先减少拨号量</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="163" y="284">p 真的开始下降 → 自证</text>
+<rect fill="#c9dcc9" height="46" rx="4" stroke="#4e8a3f" stroke-width="1.7" width="220" x="427" y="248"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="537" y="268">改一处做法，继续拨号</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" text-anchor="middle" x="537" y="284">样本量保住 → 有机会回正</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="318">两句话都不是"真相"，都是解释。区别是只有一句能接上一个动词。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做模板 · 三行改写，每天下班前两分钟</span>
+<p>拿今天最难受的那一次，写三行：</p>
+<p><strong>1. 我当时说给自己听的那句话是：</strong>______（照实写，别美化。）</p>
+<p><strong>2. 圈出三个 P：</strong>永久吗（"一直""从来")？普遍吗（"做什么都")？针对我吗（"我这个人")？</p>
+<p><strong>3. 换成一句必须带动词的：</strong><strong>「这一次，在 ___ 这个环节，我做了 ___；下次我改成 ___。」</strong>比如："这一次在开场 30 秒我讲了产品；下次改成先问他们现在怎么处理这件事。"</p>
+<p><strong>边界：</strong>三个 P 的正解不是"都怪我"，是<strong>把范围缩到具体、可改的那一格</strong>。"整个市场今年都没预算"如果是真的，那它暂时、局部、不关你的人品——照写不误。<strong>准确比积极重要。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Two people hear the same "we don't need this" and write down two different sentences. One writes "I'm not cut out for this" — permanent, pervasive, personal. The other writes "my opener ran too long with this type of company this month" — temporary, specific, about a behaviour. The difference isn't optimism versus pessimism as a personality trait; it's that only the second sentence has a verb you can act on. The first one leads nowhere, so what it actually produces is fewer dials tomorrow, which lowers your real close rate, which confirms the sentence. That's the loop that ends careers, and it's a self-fulfilling one. The best field evidence comes from insurance: Seligman and Schulman studied MetLife agents and found that explanatory style measured at hiring predicted both sales and, more importantly, survival — agents in the pessimistic half quit at roughly twice the rate of the optimistic half in year one. Treat the effect sizes as suggestive rather than settled; it's one industry, one company, and closely tied to the researchers' own programme. The exercise takes two minutes at the end of the day. Take the worst moment, write the sentence you actually told yourself, circle the three P's in it, and rewrite it in a fixed form: "this once, at [which step], I did [what]; next time I'll do [what] instead." One boundary that matters: the point isn't to take all the blame. Sometimes "nobody in this sector has budget this year" is simply true — that's temporary, specific and not about your character, so write it down as is. Accuracy beats positivity.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：解释的作用不在情绪，在行为。"我不行"推不出任何具体动作，它唯一能改变的是明天的拨号量；拨号量一降，真实成交数跟着降，这句话就被自己验证了。这是"解释 → 样本量 → 结果"的自证链条，不是"心态影响业绩"那种模糊说法。把解释缩到某一个环节，链条就断了——具体的解释产出的是动作，不是结论。</strong></p>
+<ul>
+<li><strong>实地证据（保险行业，长期追踪）· 归因风格预测的是"会不会走人"</strong>：Seligman &amp; Schulman (1986, <em>Journal of Personality and Social Psychology</em>) 追踪大都会人寿的保险代理人：入职时测得的解释风格能预测后续业绩，更关键的是<strong>悲观组第一年离职率约为乐观组的两倍</strong>。这行真正的杀手不是业绩差，是人走了。<em>诚实标注</em>：单一行业、单一公司，与研究者自己的项目高度绑定；流传的"多卖 37%"之类数字当方向性参考即可。</li>
+<li><strong>硬证据（神经科学，且推翻了通俗说法）· 被学会的是控制感，不是无助</strong>：Maier &amp; Seligman (2016, <em>Psychological Review</em>) 回顾五十年后明确修正了"习得性无助"的原始解释：面对不可控的厌恶刺激时，<strong>被动与焦虑是默认反应</strong>（由背侧中缝核 5-羟色胺系统介导），<strong>真正被学会的是"我能控制"</strong>——腹内侧前额叶（vmPFC）检测到控制性后自上而下抑制中缝核。推论很硬也很反直觉：<strong>你不需要"消除无助感"，需要的是找到并登记一件确实能控制的事。</strong></li>
+<li><strong>硬证据（大样本）</strong>：Gross &amp; John (2003, <em>JPSP</em>) 显示惯用重评的人负性情绪更少、社会关系更好；惯用压抑的人负性情绪更多、社会支持更少。这就是"忍着"长期是负收益的原因。</li>
+</ul>
+<p class="caveat">证据强度：第二条是同行评审的理论修正加神经机制，很硬；第一条是实地相关研究，外推需谨慎。反面提醒：如果低谷来自结构性问题（产品不对、区域被切、指标不可能完成），归因成"我的做法"反而是错的——那是把系统问题误诊成个人问题。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>动力衰减不是意志问题，是你把记分挂在了自己控制不了的那一端
+<span class="en">Motivation doesn't leak because you're weak. It leaks because you scored yourself on something you don't control.</span></h2>
+<span class="tag">控制感</span><span class="tag">腹内侧前额叶</span><span class="tag">心理脱离</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">成交是随机的、延迟的、还受别人预算周期支配，你却拿它当每天的记分板——每天的动力都建立在一个你说了不算的变量上，衰减是必然的，不是你软弱。<strong>解法不是打气，是换记分板：每天的分记在你完全控制的输入上（拨号数、有效问题数、跟进数），成交留给按周看的那张表。</strong>这不是自我安慰的会计——上一节那条神经证据说得很直白：被学会的是控制感，那就得有一样东西真可控、且每天被登记一次。</div>
+</div>
+<div class="section">
+<div class="section-label">同样的努力，记在两个不同的格子里</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 306" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="rd1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+<marker id="rd2" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">同样一天的努力，记分板放在哪一格</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="52">记在成交上</text>
+<rect fill="#f7faf6" height="46" rx="4" stroke="#9aa89c" stroke-width="1.3" width="118" x="16" y="62"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="9.4" text-anchor="middle" x="75" y="82">今天的动作</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.4" text-anchor="middle" x="75" y="98">40 通电话</text>
+<rect fill="#f3e7cf" height="46" rx="4" stroke="#b08c3a" stroke-width="1.3" width="152" x="170" y="62"></rect>
+<text fill="#7d6320" font-family="Georgia" font-size="9.4" text-anchor="middle" x="246" y="82">中间隔着别人的</text>
+<text fill="#7d6320" font-family="Georgia" font-size="9.4" text-anchor="middle" x="246" y="98">预算 · 时机 · 内部政治</text>
+<rect fill="#f6e3da" height="46" rx="4" stroke="#c0603a" stroke-width="1.3" width="140" x="358" y="62"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="428" y="82">反馈：稀疏 · 延迟</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="428" y="98">今天大概率是 0</text>
+<rect fill="#f0cfc0" height="46" rx="4" stroke="#c0603a" stroke-width="1.7" width="150" x="534" y="62"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="609" y="82">控制感登记不上</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="609" y="98">动力持续漏</text>
+<line marker-end="url(#rd1)" stroke="#c0603a" stroke-width="1.6" x1="136" x2="166" y1="85" y2="85"></line>
+<line marker-end="url(#rd1)" stroke="#c0603a" stroke-width="1.6" x1="324" x2="354" y1="85" y2="85"></line>
+<line marker-end="url(#rd1)" stroke="#c0603a" stroke-width="1.6" x1="500" x2="530" y1="85" y2="85"></line>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="164">记在输入上</text>
+<rect fill="#f7faf6" height="46" rx="4" stroke="#9aa89c" stroke-width="1.3" width="118" x="16" y="174"></rect>
+<text fill="#4a6154" font-family="Georgia" font-size="9.4" text-anchor="middle" x="75" y="194">今天的动作</text>
+<text fill="#4a6154" font-family="Georgia" font-size="9.4" text-anchor="middle" x="75" y="210">同样 40 通电话</text>
+<rect fill="#e2efdc" height="46" rx="4" stroke="#4e8a3f" stroke-width="1.3" width="152" x="170" y="174"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" text-anchor="middle" x="246" y="194">中间不隔任何人</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" text-anchor="middle" x="246" y="210">做了就是做了</text>
+<rect fill="#c9dcc9" height="46" rx="4" stroke="#4e8a3f" stroke-width="1.3" width="140" x="358" y="174"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" text-anchor="middle" x="428" y="194">反馈：当天 · 必得</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" text-anchor="middle" x="428" y="210">今天 40 / 40</text>
+<rect fill="#c9dcc9" height="46" rx="4" stroke="#4e8a3f" stroke-width="1.7" width="150" x="534" y="174"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="609" y="194">控制感被登记</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="609" y="210">明天还打得动</text>
+<line marker-end="url(#rd2)" stroke="#4e8a3f" stroke-width="1.6" x1="136" x2="166" y1="197" y2="197"></line>
+<line marker-end="url(#rd2)" stroke="#4e8a3f" stroke-width="1.6" x1="324" x2="354" y1="197" y2="197"></line>
+<line marker-end="url(#rd2)" stroke="#4e8a3f" stroke-width="1.6" x1="500" x2="530" y1="197" y2="197"></line>
+<text fill="#697682" font-family="Georgia" font-size="9" x="14" y="252">成交那一格没有被删掉——它只是从「每天」挪到了「每周」。</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="276">你要的不是更强的意志，是一个每天都能给出确定回执的格子。</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="296">再加一条：下班之后真的不想它——恢复靠脱离，不靠躺着刷手机。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 一张能撑一年的记分板</span>
+<p><strong>1. 每日只记三个输入：</strong>有效对话数、问出的诊断性问题数、发出的跟进数。都由你说了算、都能当天结清。写在纸上打勾，别放 CRM——你要的是那个当场的确定回执。</p>
+<p><strong>2. 成交与转化率挪到周报。</strong>每天看成交率，等于每天给自己一个噪声极大的评价。</p>
+<p><strong>3. 每周留一格"我学到的一件事"：</strong>一句更好用的开场、一个新发现的异议模式。这格是复利。</p>
+<p><strong>4. 下班要真的脱离。</strong>恢复效果最强的不是"休息够长"，是"有没有真的不想工作"。手机不进卧室、周末不看管道、有一件跟销售无关且需要变强的事。<strong>躺着刷手机不算恢复，只是不工作。</strong></p>
+<p><strong>5. 提成不能是唯一的意义来源</strong>——它随行情波动，波动的东西撑不住长期动机。补一条稳定的：这个客户上月因为你少赔了多少钱。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Closing is random, delayed, and gated by other people's budget cycles — and yet most people use it as their daily scoreboard, which means their daily motivation rests on a variable they don't control. The leak is structural, not a character flaw. Change the scoreboard: score the day on inputs you fully own (dials, diagnostic questions asked, follow-ups sent) and move closes and conversion rates to a weekly view. This isn't feel-good accounting. The revised account of learned helplessness is explicit about it: passivity under uncontrollable stress is the default response, mediated by the dorsal raphe nucleus, and what actually gets learned is control — detected by ventromedial prefrontal cortex, which then inhibits that default. So you don't need to remove the helplessness; you need one thing that is genuinely controllable and gets registered every single day. Three inputs, ticked on paper, is enough — you want the immediate certain receipt, which a CRM dashboard doesn't give you. Keep one weekly slot for "one thing I learned", because that converts uncontrollable outcomes into something that compounds: a better opener, a new objection pattern. Then actually detach after work. In the recovery literature the strongest predictor isn't how long you rest but whether you psychologically disengage — phone out of the bedroom, no pipeline-checking at weekends, one demanding thing in your life that has nothing to do with selling. Scrolling on the sofa isn't recovery; it's just not working. And don't let commission be your only source of meaning: it swings with the market, and anything that swings can't hold up long-term motivation.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：三层叠加。一、可控性是被大脑单独检测和登记的变量——有专门回路判断"这件事我说了算吗"，结果直接决定后续是主动还是被动。二、成交作为反馈又稀疏又延迟，学习系统很难从中提取"我做对了什么"；输入指标当天结清，信号密度高一个数量级。三、恢复是脱离的函数不是时间的函数——身体在场心思在管道上，那段时间几乎不计数。</strong></p>
+<ul>
+<li><strong>硬证据（神经机制，五十年后的修正）· 大脑专门在检测"我能不能控制"</strong>：Maier &amp; Seligman (2016, <em>Psychological Review</em>)：不可控厌恶刺激下的被动/焦虑是<strong>默认</strong>反应，由背侧中缝核的 5-羟色胺系统驱动；<strong>腹内侧前额叶（vmPFC）检测到"我能控制"之后会抑制这套默认反应</strong>，且学到的控制感在之后遇到不可控情境时继续保护。翻译成销售：与其对抗低谷，不如每天喂给 vmPFC 一件确实由你决定、当天有结果的事。</li>
+<li><strong>同上一节的预测误差</strong>：成交常在动作发生后几周才落地，中间隔着无数别的因素，学习系统很难把功劳分给正确的动作；输入指标没有这个归因难题。</li>
+<li><strong>中等强度证据 · 恢复靠脱离不靠时长</strong>：Sonnentag &amp; Fritz (2007, <em>Journal of Occupational Health Psychology</em>) 的恢复体验框架分心理脱离、放松、掌控、控制四项，其中<strong>心理脱离与情绪耗竭、次日精力的关系最稳定</strong>。<em>诚实标注</em>：这一支主要是纵向相关与日志研究，因果方向不能说死。</li>
+<li><strong>有争议，标注后使用</strong>：Deci、Koestner &amp; Ryan (1999, <em>Psychological Bulletin</em>) 对 128 项实验的元分析报告与绩效挂钩的有形奖励会削弱内在动机；Cameron &amp; Pierce 等有实质性争议。<strong>所以只取弱结论：别让提成成为唯一的意义来源</strong>，而不是"提成有害"。</li>
+</ul>
+<p class="caveat">失效场景：换记分板解决的是"努力与反馈脱钩"，解决不了指标不可能完成、区域被切、产品没市场这类结构问题——那时最健康的反应是离开，不是更强的复原力。判据：输入指标全做满、连续两个报警周期转化率仍趴着，那问题在系统不在你。另外一句：本期讲的是扛住合理范围内的拒绝；如果低落已持续数周、影响睡眠与日常功能，那该找专业帮助。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 53 Action</h3>
+<p>四十五分钟，把"脸皮厚一点"换成四个能查的零件。</p>
+<div class="action">
+<strong>一（10 分钟）· 算报警线：</strong>用上季度数据估出你的 p，取 3 ÷ p 写在显示器边上。没到线之前不许对自己下结论。<br/><br/><strong>二（5 分钟）· 抄好三行改写模板</strong>放在电话旁边，今天第一个"不"来时当场用——事后补写效果差很多。<br/><br/><strong>三（15 分钟）· 换记分板：</strong>拿张纸画三列（有效对话 / 诊断性问题 / 跟进发出），只在这张纸上打勾，成交率周五再看。<br/><br/><strong>四（15 分钟）· 今晚脱离一次：</strong>手机不进那个房间，顺手关掉管道推送——这条见效最快。<br/><br/>边界提醒：这四件事让你扛住正常范围内的拒绝，替不了一个错的名单或一个不可能完成的指标。到了报警线还是零，该改的是打法，不是心态。
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 道理我都懂，可我就是不敢拨下一通电话，怎么办？</summary>
+<div class="answer">先接受一件事：<strong>"不敢"不会先消失再让你行动，顺序是反的。</strong>回避会短暂降低焦虑，而这次降低正好强化了下一次继续回避——这是回避行为最标准的维持机制，跟意志力无关。<br/><br/>所以别等状态。<strong>一、把最小单位缩到荒唐的小</strong>——不是"今天打 40 通"，是"我现在只按号码，接了就说我叫什么"；卡住人的是启动，不是过程。<strong>二、把最难的那通放第一个</strong>：一天里你对拒绝的耐受度递减，留到下午就不会打了。<strong>三、做一次"故意被拒"的练习</strong>：找三个明知会被拒的对象，目标就是收集三个"不"——当"不"变成完成标志而非失败标志，痛感会明显变钝。<br/><br/>还有一条常被忽略：<strong>很多"不敢"其实是"没准备好被问住"。</strong>把最怕被问的三个问题写下答案，恐惧会掉一大截——那是能力问题伪装成心态问题。</div>
+</details>
+<details>
+<summary>2. "别往心里去"跟"我该反思自己哪里做得不好"，不是矛盾吗？</summary>
+<div class="answer">不矛盾，它们该发生在不同的时间尺度上，混在一起才出问题。<br/><br/><strong>单次拒绝：不做归因。</strong>一通电话信息量太小，从中提取教训在统计上就是过拟合噪声。这时只做命名情绪 + 抽一条事实。<strong>一批拒绝：认真归因。</strong>攒够二十次以上一起看——哪一步流失最多？接通就挂，还是听完演示才没了？前者是名单和开场问题，后者是价值和资格判定问题。这时的反思才有信号可提。<br/><br/>换句话说：<strong>情绪按次处理，教训按批处理。</strong>搞反是最常见的坑——按次提教训会让你每天换一套打法，按批处理情绪会让你攒够二十次再崩一次。<br/><br/>判别法：如果"反思"落成一句关于你这个人的形容词，那不是反思，是解释 A 换了个说法。<strong>真反思一定落成一个动词加一个具体环节。</strong></div>
+</details>
+<details>
+<summary>3. 我做的是长周期大单，一年可能只成几单，输入记分板对我也适用吗？</summary>
+<div class="answer">更适用，但要改造。周期越长，成交作为反馈就越稀薄——一年三单意味着一年只有三次正反馈，这个密度撑不住三百个工作日。<br/><br/>改造方向是<strong>把里程碑当作可结清的输入</strong>：不问"成交了没有"，问"这一周我把哪个单子往前推了一格"。比如见到之前只在邮件里出现的那个人、拿到一份内部数据、让对方主动约下一次会。这些由你的动作直接决定，当周就有答案。找到决策链那期的角色地图正好当记分格用。<br/><br/>大单还有个特有的坑：<strong>沉没成本会伪装成毅力。</strong>投入半年后你越来越难说"这单没戏"，于是把整个季度耗在一个死掉的机会上。所以长周期的复原力有两半——一半是扛住漫长的沉默，另一半是<strong>敢于承认一单已经死了并主动杀掉它</strong>。后半更难也更值钱。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 53</footer>
+</div>
+</body>
+</html>
