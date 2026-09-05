@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 54: Selling for Introverts</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 54 · Phase H</div>
+<h1>“Extraverts sell more” is worth a few percent in decades of data — your personality isn't the line you're losing on</h1>
+<div class="meta"><span>Themes: the extraversion premium is overrated · letting them talk pays their reward system · change the room, not your wiring · turn preparation and follow-up into a machine</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">Introverts who can't sell almost never fail for lack of talk. They fail because they walked into a room built for somebody else's wiring and then paid to fake it — a bill much larger than rejection.</div>
+</header>
+<div class="intro">
+<strong>This isn't reassurance for introverts. It's four parts you swap out.</strong> <strong>One, void the diagnosis “I'm too introverted” — it doesn't point at any step</strong>; <strong>two, the introvert's edge isn't the compliment “good listener”, it's what's happening in the other person's head while they talk</strong>; <strong>three, don't fake extraversion, change the room — you can't move your curve, you can move where you stand on it</strong>; <strong>four, most of the work in sales is asynchronous, and that half is yours</strong>.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Void the diagnosis first: “I'm too introverted” doesn't point at any step
+<span class="en">It isn't a diagnosis. It doesn't name a single thing you could fix.</span></h2>
+<span class="tag">meta-analysis</span><span class="tag">inverted U</span><span class="tag">drive, not sociability</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">“I'm not cut out for sales, I'm too introverted” fails not because it's negative but because it isn't true. Across decades of meta-analytic work, corrected correlations between extraversion and sales performance land around .15 to .25 — roughly 2% to 6% of the variance in results. <strong>Worse for the story: at the facet level, what carries the prediction is the drive/dominance side of extraversion and the achievement side of conscientiousness, not sociability.</strong> What you're missing was never social volume. It's a diagnosis that names the step where deals die.</div>
+</div>
+<div class="section">
+<div class="section-label">How much extraversion actually explains</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ia1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">Extraversion vs results: the shape is an inverted U, and a low one</text>
+<line stroke="#9aa89c" stroke-width="1.2" x1="66" x2="390" y1="200" y2="200"></line>
+<line stroke="#9aa89c" stroke-width="1.2" x1="66" x2="66" y1="52" y2="200"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="70" y="46">results</text>
+<path d="M78,182 Q228,52 378,176" fill="none" stroke="#1f7a5c" stroke-width="2.2"></path>
+<circle cx="78" cy="182" fill="#1f7a5c" r="3.6"></circle>
+<circle cx="228" cy="116" fill="#123f30" r="4.4"></circle>
+<circle cx="378" cy="176" fill="#1f7a5c" r="3.6"></circle>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="234" y="96">the peak sits in the middle, not at the right edge</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="start" x="70" y="216">most introverted</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="middle" x="228" y="216">middle</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="end" x="386" y="216">most extraverted</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="228" y="234">degree of extraversion →</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="262">“More extraverted sells more” gets even the direction wrong: neither end is the top.</text>
+<text fill="#123f30" font-family="Georgia" font-size="11.6" font-weight="700" x="420" y="46">What explains the differences</text>
+<rect fill="#f0cfc0" height="34" stroke="#c0603a" stroke-width="1.4" width="16" x="420" y="72"></rect>
+<rect fill="#e6f0ea" height="34" stroke="#123f30" stroke-width="1.4" width="240" x="436" y="72"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="556" y="93">list · prep · questions · follow-up · product · territory · luck</text>
+<line marker-end="url(#ia1)" stroke="#c0603a" stroke-width="1.5" x1="470" x2="430" y1="58" y2="68"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="476" y="60">extraversion ≈ 2%–6%</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" x="420" y="126">corrected correlations ≈ .15–.25; squared, about 2%–6% of the variance</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.2" font-weight="700" x="420" y="152">At facet level: what predicts is drive / achievement,</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.2" font-weight="700" x="420" y="170">not sociability — that side carries almost no signal</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="300">Stop asking “am I outgoing enough”. Go find where the deal died: no meeting / no value landed / no follow-up / never asked.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · swap the character verdict for a locatable step</span>
+<p><strong>1. Pull the last five opportunities you lost and mark where each died:</strong> never got the meeting / got it but didn't land the value / landed it but didn't follow up / followed up but never asked.</p>
+<p><strong>2. Only the first box has anything to do with social volume</strong>, and it's the easiest one to replace with a system: referrals, precisely written outreach, leads that arrive through content — none of those require you to start a conversation with a stranger in a room. The prospecting and referrals pieces are about engineering exactly that box.</p>
+<p><strong>3. The other three are preparation, structure and discipline</strong>, and have nothing to do with personality. Not landing the value means you didn't translate features into their outcome; not following up means it wasn't in your calendar; not asking means you hadn't written the sentence down in advance.</p>
+<p><strong>4. If four of your five died in the last three boxes,</strong> then nothing on this year's list of things to practise is called “become extraverted”.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: sales output is a product of stages — get the meeting × ask the right questions × land the value × follow up × ask for the business. Extraversion has a marginal effect on the first stage only (it lowers the cost of starting a conversation); the other four run on preparation, structure and discipline. A variable that acts on one stage of five is necessarily diluted in the total — and that stage happens to be the easiest one to replace with a system. That's why the extraversion premium is small in the data.</strong></p>
+<ul>
+<li><strong>Hard evidence (meta-analysis, across occupations)</strong>: Barrick &amp; Mount (1991, <em>Journal of Applied Psychology</em>) meta-analysed the Big Five against job performance: <strong>conscientiousness is the only trait that predicts across every occupational category (corrected validity around .22)</strong>; extraversion shows validity only in socially loaded roles such as management and sales, at roughly .15.</li>
+<li><strong>Hard evidence (sales-specific meta-analysis, and it lands on facets)</strong>: Vinchur et al. (1998, <em>Journal of Applied Psychology</em>) pooled predictors of salesperson performance and found the predictive signal sits in <strong>the potency/dominance facet of extraversion and the achievement facet of conscientiousness</strong>, not in the affiliation/sociability side. <em>Honest labelling</em>: these are corrected for measurement error and range restriction, so raw observed values are lower; converting to 2%–6% is my own order-of-magnitude step via r², not a figure from the papers.</li>
+<li><strong>Single study — interesting direction, not a law</strong>: Grant (2013, <em>Psychological Science</em>) tracked 340 outbound reps over three months and found an <strong>inverted U</strong>: revenue peaked in the middle of the scale, with the most extraverted no better than the least. <em>Honest labelling</em>: one company, one role, correlational, limited independent replication; I'm not quoting the exact dollar figures that circulate. The one thing to take is the direction it rules out: more extraverted ≠ better at selling.</li>
+</ul>
+<p class="caveat">Boundary: none of this says personality is irrelevant. In formats that require you to walk into unfamiliar rooms and open your mouth all day — trade-show floors, pure door-knocking — the marginal return on extraversion is real. So the conclusion isn't “personality doesn't matter”, it's <strong>don't change your personality, change your channel structure</strong>: replace the “get into the room” stage with an entry point that doesn't depend on improvised socialising.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>Letting them talk isn't a virtue — their brain is collecting a reward
+<span class="en">It isn't politeness. It's a payment their reward system actually registers.</span></h2>
+<span class="tag">nucleus accumbens</span><span class="tag">follow-up questions</span><span class="tag">silence isn't listening</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">“Introverts are good listeners” is a compliment that explains nothing, because it never says why listening converts. The mechanism is physical: <strong>when people talk about themselves, the mesolimbic reward circuit (ventral tegmental area and nucleus accumbens) really does light up, and in the lab people will take less money in order to keep talking about themselves.</strong> Sitting quietly and handing over the floor means paying them continuously — and most salespeople do the opposite.</div>
+</div>
+<div class="section">
+<div class="section-label">The same 30 minutes, two ways to split the talking</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 318" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ib1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">The same 30 minutes, two ways to split the talking</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="60">typical</text>
+<rect fill="#f6e3da" height="28" stroke="#c0603a" stroke-width="1.3" width="326" x="110" y="42"></rect>
+<rect fill="#e2efdc" height="28" stroke="#4e8a3f" stroke-width="1.3" width="154" x="436" y="42"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="273" y="61">you talk · ~68%</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" text-anchor="middle" x="513" y="61">they talk · 32%</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="106">top performers</text>
+<rect fill="#f6e3da" height="28" stroke="#c0603a" stroke-width="1.3" width="206" x="110" y="88"></rect>
+<rect fill="#e2efdc" height="28" stroke="#4e8a3f" stroke-width="1.3" width="274" x="316" y="88"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" text-anchor="middle" x="213" y="107">you talk · ~43%</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="453" y="107">they talk · 57%</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" x="110" y="134">vendor's own data (tens of thousands of B2B calls), not peer-reviewed — direction only</text>
+<text fill="#123f30" font-family="Georgia" font-size="11.6" font-weight="700" x="14" y="172">What happens in their head during the half they talk</text>
+<rect fill="#e6f0ea" height="52" rx="4" stroke="#123f30" stroke-width="1.4" width="150" x="16" y="186"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="91" y="206">they talk about themselves</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" text-anchor="middle" x="91" y="222">their situation, their mess</text>
+<rect fill="#e2efdc" height="52" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="158" x="190" y="186"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="269" y="206">ventral tegmental area</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" text-anchor="middle" x="269" y="222">and accumbens light up</text>
+<rect fill="#e2efdc" height="52" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="150" x="372" y="186"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="447" y="206">they'll take less money</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" text-anchor="middle" x="447" y="222">to keep talking</text>
+<rect fill="#c9dcc9" height="52" rx="4" stroke="#4e8a3f" stroke-width="1.7" width="138" x="546" y="186"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="615" y="206">what they remember:</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="615" y="222">that went well</text>
+<line marker-end="url(#ib1)" stroke="#4e8a3f" stroke-width="1.6" x1="168" x2="186" y1="212" y2="212"></line>
+<line marker-end="url(#ib1)" stroke="#4e8a3f" stroke-width="1.6" x1="350" x2="368" y1="212" y2="212"></line>
+<line marker-end="url(#ib1)" stroke="#4e8a3f" stroke-width="1.6" x1="524" x2="542" y1="212" y2="212"></line>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="272">Silence is not listening: say nothing and what they feel is being examined.</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="294">Give a receipt — paraphrase a line, name the emotion, confirm it. Introverts skip this step.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Scripts · four ways to make them talk, none requiring you to be outgoing</span>
+<p><strong>1. Follow up (the most valuable kind):</strong> they say “we run this in a spreadsheet right now” → “could you walk me through exactly what happened last Friday?” The power of a follow-up is that it proves you processed what they just said instead of working down a list.</p>
+<p><strong>2. Label the emotion (say it, don't judge it):</strong> “sounds like the annoying part isn't the delay, it's re-reconciling the numbers every time.” Get it right and they add a paragraph; get it wrong and they correct you. Both are wins.</p>
+<p><strong>3. Turn it into a number:</strong> “roughly how many hours a month does that eat?” Converts a vague complaint into something you can price.</p>
+<p><strong>4. Silence:</strong> ask, then shut up and count to five. Most people crack at three, and the most important sentence of the meeting often arrives at four.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: asking questions reverses the economics of the conversation. When you talk, they're spending attention (a cost); when they talk about themselves, they're collecting a reward. So “let them talk” isn't a polite posture, it turns the meeting from something they pay for into something they get paid for — which explains a familiar effect: people who were asked a lot of questions consistently report the conversation went well and can't recall what you said.</strong></p>
+<ul>
+<li><strong>Hard evidence (fMRI plus behavioural economics)· self-disclosure is itself a reward</strong>: Tamir &amp; Mitchell (2012, <em>PNAS</em>) found that disclosing information about oneself increases activation in <strong>the ventral tegmental area and nucleus accumbens</strong>, core mesolimbic dopamine regions, and in the accompanying behavioural work participants <strong>gave up real money</strong> for the chance to talk about themselves instead of answering questions about other people. <em>Honest labelling</em>: I'm taking the direction, not quoting a precise discount rate.</li>
+<li><strong>Hard evidence (multiple experiments, including a live setting)· follow-ups especially</strong>: Huang, Yeomans, Brooks, Minson &amp; Gino (2017, <em>Journal of Personality and Social Psychology</em>): across online conversations and real speed-dating events, <strong>people who asked more questions were better liked, with follow-up questions carrying the strongest effect</strong>, and follow-up count predicted getting a second date. A follow-up is the only checkable proof that you were listening.</li>
+<li><strong>Industry data (weak, conflicted, labelled)</strong>: a conversation-intelligence vendor's analysis of tens of thousands of B2B calls reports top performers talking around 43% of the time versus roughly 65%–68% for average performers. <em>Honest labelling</em>: vendor-owned data, self-selected sample, not peer-reviewed, and the vendor sells software that measures precisely this metric. Use it for direction; chasing it as a KPI just makes you perform quietness.</li>
+</ul>
+<p class="caveat">Where it fails: when they clearly want answers (technical evaluation, comparison stage, an executive giving you ten minutes), more questions read as evasion and waste. The marginal value of listening is highest in diagnosis and lowest at decision. A usable test: <strong>the moment they start asking “so how exactly would you do this”, switch to giving answers.</strong></p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Don't fake extraversion — change the room
+<span class="en">You can't move your curve. You can move where you stand on it.</span></h2>
+<span class="tag">optimal stimulation</span><span class="tag">the cost of surface acting</span><span class="tag">recovery gap</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Faking extraversion doesn't just make you vaguely tired; the cost has an address. The effort goes into monitoring your own performance, which is exactly the bandwidth you needed for understanding the other person. <strong>The reliable difference between introverts and extraverts isn't social skill, it's where the optimal level of stimulation sits — the same room is right for one person and already overloaded for another.</strong> So the thing to move isn't your personality, it's the horizontal axis.</div>
+</div>
+<div class="section">
+<div class="section-label">One setting, two curves, different distances from the peak</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 338" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">Optimal stimulation: your peak was never where theirs is</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" x="14" y="38">this shows the direction of the mechanism (peaks vary by person), not precise data</text>
+<line stroke="#9aa89c" stroke-width="1.2" x1="70" x2="648" y1="226" y2="226"></line>
+<line stroke="#9aa89c" stroke-width="1.2" x1="70" x2="70" y1="52" y2="226"></line>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="76" y="50">performance / output</text>
+<line stroke="#c9c2ab" stroke-dasharray="4,4" stroke-width="1.1" x1="150" x2="150" y1="58" y2="236"></line>
+<line stroke="#c9c2ab" stroke-dasharray="4,4" stroke-width="1.1" x1="300" x2="300" y1="58" y2="236"></line>
+<line stroke="#c9c2ab" stroke-dasharray="4,4" stroke-width="1.1" x1="450" x2="450" y1="58" y2="236"></line>
+<line stroke="#c9c2ab" stroke-dasharray="4,4" stroke-width="1.1" x1="600" x2="600" y1="58" y2="236"></line>
+<path d="M84,218 Q206,52 328,218" fill="none" stroke="#1f7a5c" stroke-width="2.2"></path>
+<path d="M310,218 Q470,52 630,218" fill="none" stroke="#b08c3a" stroke-dasharray="7,4" stroke-width="2.2"></path>
+<circle cx="206" cy="135" fill="#1f7a5c" r="4.2"></circle>
+<circle cx="470" cy="135" fill="#b08c3a" r="4.2"></circle>
+<text fill="#1f7a5c" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="206" y="124">introvert's peak</text>
+<text fill="#b08c3a" font-family="Georgia" font-size="9.8" font-weight="700" text-anchor="middle" x="470" y="124">extravert's peak</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="150" y="250">one-on-one coffee</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="300" y="264">four-person meeting</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="450" y="250">ten-person review</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="600" y="264">200-person reception</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" text-anchor="middle" x="355" y="286">ambient stimulation →</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="310">Same ten-person review: one of you is at their peak, the other is already past it — that gap isn't ability.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · the same move, in a lower-stimulation version</span>
+<p><strong>Conference networking party</strong> → volunteer for the registration desk, moderate the Q&amp;A, run the mic. <strong>A role comes with lines</strong>, so you never have to improvise an approach, and people come to you instead.</p>
+<p><strong>Ten-person review meeting</strong> → book three fifteen-minute one-on-ones with the key people beforehand. Most of the decision happens before the meeting.</p>
+<p><strong>A demo sprung on you</strong> → send an agenda and your list of questions 24 hours ahead, trading improvisation for preparation.</p>
+<p><strong>Cold call</strong> → a precisely written email first, with the call reserved for confirming. Writing is the one channel you can revise; don't waste that advantage.</p>
+<p><strong>Dinner</strong> → a 45-minute coffee in the morning, one-on-one.</p>
+<p><strong>Boundary:</strong> not everything can be swapped, and when you have to be on stage you have to be on stage. The difference is this: occasionally “acting extraverted” for something you genuinely care about is affordable; making it your daily default accumulates. So budget a recovery gap afterwards — thirty minutes with nothing scheduled once it's over.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: overload doesn't make you stupid, it moves bandwidth from “understand this person” to self-monitoring and emotion management. So changing the room isn't avoidance, it's putting the same ability back at the stimulation level where it produces most. And “performing enthusiasm you don't have” versus “genuinely being curious about how this company runs” are two different bills: the first is surface acting, which charges; the second is deep acting, which doesn't.</strong></p>
+<ul>
+<li><strong>Classic experiment (clear direction, small sample)· stimulation is an adjustable variable</strong>: Geen (1984, <em>JPSP</em>) let introverts and extraverts choose their own noise level for a learning task: <strong>introverts chose markedly quieter settings, each group performed best at its own chosen level, and performance dropped when moved to the other group's preference</strong>. <em>Honest labelling</em>: small classic study, and Eysenck's underlying claim that introverts have higher baseline cortical arousal gets mixed support in modern imaging — treat the behavioural preference difference as the solid part.</li>
+<li><strong>Meta-analysis (moderate strength)· faked warmth has a measurable bill</strong>: Hülsheger &amp; Schewe (2011, <em>Journal of Occupational Health Psychology</em>) pooled 95 emotional-labour studies: <strong>surface acting — displaying emotions you don't feel — is consistently associated with emotional exhaustion and reduced performance, while deep acting, genuinely reframing how you see the situation, is not.</strong> <em>Honest labelling</em>: mostly correlational, so be careful about causal direction.</li>
+<li><strong>Randomised experiment, with a restrained conclusion</strong>: Jacques-Hamilton, Sun &amp; Vazire (2019, <em>Journal of Experimental Psychology: General</em>) randomly assigned people to “act more extraverted” for a week: positive affect rose on average, <strong>but the more dispositionally introverted the person, the smaller the benefit and the greater the tiredness and sense of inauthenticity</strong>. So the correct conclusion isn't “introverts must never act extraverted”, it's <strong>short bursts, for a specific purpose, with a recovery gap afterwards</strong>.</li>
+</ul>
+<p class="caveat">Don't use this as a licence for avoidance: if you're dodging one-on-ones and can't send an email you've already written, that isn't a stimulation problem, it's avoidance — see the first question at the end. Another boundary: some roles are inherently high-stimulation and can't be swapped (show-floor selling, retail), and then the question is whether the format suits you at all, not whether you can act for eight more hours a day.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>Most of the work in sales is asynchronous — that half is yours
+<span class="en">A meeting takes thirty minutes. The work around it takes three hours, and it can be revised.</span></h2>
+<span class="tag">conscientiousness</span><span class="tag">preparation beats improvisation</span><span class="tag">writing is your channel</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">A meeting takes thirty minutes; the research, notes and follow-up around it can take three. <strong>And everything in those three hours — reading up on the company, drafting three questions, getting the after-meeting note right, still being there on the fifth follow-up — can be revised, and none of it burns the expensive kind of energy.</strong> The most robust finding in the meta-analytic literature is that conscientiousness, not extraversion, predicts performance — which is another way of saying the long game is won by whoever is more careful in those three hours.</div>
+</div>
+<div class="section">
+<div class="section-label">How to lay out a day: spread the high-stimulation blocks, leave time to write</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 316" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">One day: two high-stimulation blocks, each with a buffer</text>
+<rect fill="#f0cfc0" height="11" stroke="#c0603a" stroke-width="1" width="11" x="300" y="36"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="316" y="46">high stimulation</text>
+<rect fill="#c9dcc9" height="11" stroke="#4e8a3f" stroke-width="1" width="11" x="420" y="36"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="436" y="46">low · prep and writing</text>
+<rect fill="#e6ecf2" height="11" stroke="#3f5c7a" stroke-width="1" width="11" x="560" y="36"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="576" y="46">buffer · notes only</text>
+<text fill="#5a7365" font-family="Georgia" font-size="9" x="60" y="66">energy (illustrative)</text>
+<polyline fill="none" points="60,92 160,86 264,132 348,100 452,94 556,136 660,106" stroke="#1f7a5c" stroke-width="2"></polyline>
+<circle cx="264" cy="132" fill="#c0603a" r="3.4"></circle>
+<circle cx="556" cy="136" fill="#c0603a" r="3.4"></circle>
+<circle cx="348" cy="100" fill="#3f5c7a" r="3.4"></circle>
+<circle cx="660" cy="106" fill="#3f5c7a" r="3.4"></circle>
+<text fill="#697682" font-family="Georgia" font-size="8.6" text-anchor="middle" x="368" y="92">buffers pull it back up</text>
+<rect fill="#c9dcc9" height="44" rx="3" stroke="#4e8a3f" stroke-width="1.3" width="100" x="60" y="180"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="110" y="200">9:00</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle" x="110" y="216">prep</text>
+<rect fill="#f0cfc0" height="44" rx="3" stroke="#c0603a" stroke-width="1.5" width="100" x="164" y="180"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="214" y="200">10:00</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="214" y="216">client meeting</text>
+<rect fill="#e6ecf2" height="44" rx="3" stroke="#3f5c7a" stroke-width="1.3" width="80" x="268" y="180"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="308" y="200">11:00</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle" x="308" y="216">notes only</text>
+<rect fill="#c9dcc9" height="44" rx="3" stroke="#4e8a3f" stroke-width="1.3" width="100" x="352" y="180"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="402" y="200">13:30</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle" x="402" y="216">written follow-up</text>
+<rect fill="#f0cfc0" height="44" rx="3" stroke="#c0603a" stroke-width="1.5" width="100" x="456" y="180"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="506" y="200">15:00</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="506" y="216">second meeting</text>
+<rect fill="#e6ecf2" height="44" rx="3" stroke="#3f5c7a" stroke-width="1.3" width="100" x="560" y="180"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="610" y="200">16:30</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle" x="610" y="216">write up · done</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="252">Rule 1: at most two high-stimulation blocks a day, never stacked in one morning.</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="274">Rule 2: thirty clear minutes after each — not to rest, but to write it down while it's warm.</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="296">Rule 3: written follow-up survives your worst hour of the day, because it can be revised ten times.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · an introvert's week</span>
+<p><strong>1. The three-question sheet, twenty minutes before any meeting:</strong> what have these people said publicly lately / what are my three questions / <strong>what's my answer to the question I'm most afraid of</strong>. The third does the heavy lifting — a lot of what feels like fear of people is fear of being caught out. Write the answer and most of it goes.</p>
+<p><strong>2. Two high-stimulation blocks a day maximum, thirty clear minutes after each.</strong> That half hour isn't staring into space, it's writing down what was said while it's still warm: their exact words, where it stuck, what happens next.</p>
+<p><strong>3. Make follow-up a calendar item, not a mood:</strong> within 24 hours, one message = a line of theirs repeated back + one useful thing they didn't ask for + one specific next step. Follow-up is purely asynchronous; it doesn't care how outgoing you are, only whether you wrote it. The follow-up discipline piece goes deeper.</p>
+<p><strong>4. For the long game, trade social entry for written entry:</strong> explain one thing you genuinely understand, and people come to you. The return on this is disproportionately high for introverts — the content/inbound and personal-brand pieces are two sides of the same thing.</p>
+<p><strong>5. Keep a weekly slot for “one thing I got right”.</strong> Most of your work is invisible by construction, so unrecorded means it didn't happen — including for the manager who thinks you don't look hungry.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: moving work from synchronous to asynchronous swaps “improvise live” for “revise ten times”. You genuinely have no edge in the first and a real one in the second, and the second carries more weight in sales. What those twenty minutes of preparation really buy isn't looking professional: everything you predicted is one less thing to invent in the room, and the bandwidth you save goes back into listening. That's not diligence compensating for talent, it's moving load off your most expensive resource.</strong></p>
+<ul>
+<li><strong>Hard evidence (meta-analysis, stable across occupations)· what's robust is conscientiousness, not extraversion</strong>: Barrick &amp; Mount (1991, <em>JAP</em>) and much subsequent replication: <strong>conscientiousness predicts job performance in every occupational category</strong> (corrected around .22), the only Big Five trait that does. Pre-meeting prep, follow-up inside 24 hours, writing conversations into the CRM — those are what conscientiousness looks like as behaviour, and all of them are learnable and personality-agnostic.</li>
+<li><strong>Hard evidence (the reward mechanism above)· why quoting them back works</strong>: repeating their own words in the follow-up note does two things at once — it proves you were listening (the written version of the follow-up-question effect) and it makes them re-experience being understood as they read, since talking about oneself runs through the reward circuit. It isn't a matter of writing style; it's handing back what they said.</li>
+<li><strong>Moderate strength · the value of a buffer is the break, not the length</strong>: in Sonnentag &amp; Fritz's (2007, <em>Journal of Occupational Health Psychology</em>) recovery-experience work, <strong>psychological detachment — genuinely stopping thinking about work — has the most stable relationship with emotional exhaustion and next-day energy</strong>, more so than how long you rested. <em>Honest labelling</em>: mostly longitudinal and diary studies, so causality isn't settled. In practice: those thirty minutes have to be a real switch of task; scrolling while replaying the meeting isn't a buffer.</li>
+</ul>
+<p class="caveat">Where it fails: an asynchronous game loses wherever judgement has to be immediate — a live bid, the other side changing terms at the table, five minutes an executive drops on you. There's no second draft there. So the goal of preparation isn't to avoid the live moment but to cut its load to something you can carry: <strong>think through everything predictable in advance, and save your in-the-room bandwidth for the part that genuinely couldn't be predicted.</strong> One trap: preparation can become a disguise for procrastination. The test: what it produces must be three questions and an opening line, not twenty pages of material.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 54 Action</h3>
+<p>One hour to turn “I'm too introverted” into four things you can put in a calendar.</p>
+<div class="action">
+<strong>One (15 min) · Locate it:</strong> write down the five opportunities you lost last quarter and mark where each died (no meeting / no value landed / no follow-up / never asked). Only the first box has anything to do with social volume.<br/><br/><strong>Two (10 min) · Change one room:</strong> take a high-stimulation event next week you were planning to grit through and swap it for a lower-stimulation version — one-on-ones beforehand, morning coffee, email before call.<br/><br/><strong>Three (15 min) · The three-question sheet:</strong> put it on a sticky note by the monitor (what have they said publicly lately / my three questions / my answer to the question I most fear).<br/><br/><strong>Four (20 min) · Lay out the week:</strong> spread the high-stimulation blocks across different days, leave thirty minutes after each for notes only, and put written follow-up in the calendar instead of waiting for the mood.<br/><br/>Boundary: this gets you the most output on your own curve; it doesn't replace actually meeting people. If a week goes by and you booked nobody, that isn't introversion, it's avoidance — and that's a different problem.
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. Am I an introvert or is this social anxiety? I've never been able to tell.</summary>
+<div class="answer">The test is whether it's <strong>a preference or a fear</strong>.<br/><br/><strong>Introversion is a preference:</strong> you're more comfortable at lower stimulation and need solitude afterwards to refill, but you aren't afraid of being judged. <strong>Social anxiety is a fear:</strong> the core is fear of negative evaluation — rehearsing the worst version beforehand, a camera pointed at yourself the whole time you're in the room, replaying afterwards which sentence came out wrong; you avoid even knowing it's irrational, and the avoidance costs you real things. They can coexist: there are anxious extraverts and perfectly unanxious introverts.<br/><br/><strong>The difference that matters most: introversion needs no treatment, and social anxiety has treatments with unusually solid evidence.</strong> Cognitive behavioural therapy, exposure in particular, is one of the best-supported areas in all of psychotherapy (see for instance Mayo-Wilson et al., 2014, <em>Lancet Psychiatry</em>, a network meta-analysis in which individual CBT came out best).<br/><br/>So if you can't send an email you've already written, or you keep cancelling one-on-ones, <strong>don't let “I'm an introvert” cover it</strong> — that's misdiagnosing a treatable problem as a personality trait, and the cost is measured in years. This piece is about the first thing; the second deserves professional help.</div>
+</details>
+<details>
+<summary>2. Should I force myself to go to industry conferences and give talks?</summary>
+<div class="answer">Yes, but don't go empty-handed. Going with no plan is the most draining and least productive version: you stand near the door for forty minutes, drink two glasses of water, go back to the hotel and hate yourself.<br/><br/><strong>Three things make it survivable. One, give yourself a task you can finish.</strong> Not “meet people” but “meet three people” — and when it's done you may leave, and you actually leave. A drain with an end is far easier to carry than one without. <strong>Two, get a role.</strong> Volunteer, run registration, moderate the Q&amp;A, carry the mic — a role comes with lines, so you never improvise an approach, and people come to you. <strong>Three, relabel the nerves beforehand.</strong> Brooks (2014, <em>JEP: General</em>) had people say “I am excited” rather than “calm down” before speaking, singing and maths tasks, and they performed better; the mechanism is that anxiety and excitement share almost the same physiological arousal, so “calm down” asks you to fight the arousal while “I'm excited” only asks you to relabel it. <em>Honest labelling</em>: one multi-experiment line of research, and effect sizes haven't always held up since — worth trying mainly because it costs nothing.<br/><br/>But don't expect it to replace preparation: <strong>what actually stops the panic is the answer to those three questions</strong> — writing out the one you most fear beats any amount of self-talk.</div>
+</details>
+<details>
+<summary>3. My manager thinks I'm “not hungry enough” and everyone else talks more than me. Now what?</summary>
+<div class="answer">Start by accepting something unfair and true: <strong>in group settings, how long you talk is itself read as competence and leadership, almost independently of what you said.</strong> Research calls this the babble hypothesis — in small-group studies, <strong>total speaking time predicts how others rate your leadership, and it holds after controlling for the quality of what was said</strong> (MacLaren et al., 2020, <em>The Leadership Quarterly</em>). You aren't imagining it.<br/><br/>The response isn't to become a talker (you couldn't keep it up), it's <strong>to turn invisible work into visible objects</strong>. <strong>One, don't improvise in the weekly meeting — bring one page</strong>: which deals moved, where each is stuck, what I'm doing next; one page has more presence in a room than three interruptions. <strong>Two, report your preparation and follow-up as numbers. Three, move the important communication into small rooms:</strong> walk your manager through your read one-on-one before the meeting, then all you need in the room is “as I mentioned to you earlier”.<br/><br/>And one thing worth saying plainly: <strong>if a team really does allocate on volume alone</strong>, what you're facing isn't a self-expression problem, it's a measurement problem. If that can't be changed, moving somewhere that measures closed business beats practising your projection here.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 54</footer>
+</div>
+</body>
+</html>
