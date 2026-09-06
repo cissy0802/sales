@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 55: Cross-Cultural Selling</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Times New Roman",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:1px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"−"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 55 · Phase H</div>
+<h1>Where someone is from barely predicts how they'll negotiate — the gap between two national averages is smaller than the gap between two people from one country</h1>
+<div class="meta"><span>Themes: nationality is a weak prior · retrieve unsayable information with offers · their fourth line is the cost of vouching · a second-language buyer can't hear your urgency</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">Cross-border deals are rarely lost because you didn't know the local etiquette. They're lost because you treated a very weak prior as a conclusion and then stopped watching the person in front of you.</div>
+</header>
+<div class="intro">
+<strong>Four parts you swap out.</strong> <strong>One, nationality is a prior, not a conclusion — ten minutes of observation should override it</strong>; <strong>two, they aren't withholding, you're probing on the wrong channel — swap questions for offers</strong>; <strong>three, relationship-first isn't dinner first, it's a fourth line in their arithmetic: who do I answer to if this fails</strong>; <strong>four, localisation isn't translation — in a second language your urgency and loss framing arrive discounted</strong>.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>Nationality is a weak prior, and ten minutes of watching should override it
+<span class="en">It tells you something about institutions. It tells you very little about this person.</span></h2>
+<span class="tag">ecological fallacy</span><span class="tag">overlapping distributions</span><span class="tag">prior vs observation</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">National culture dimensions are real, and they explain much less than the popular story claims: <strong>the spread between individuals inside one country is usually far larger than the gap between two national averages.</strong> Hofstede's dimensions are averages over tens of thousands of questionnaires; using them to predict the person across the table is the textbook ecological fallacy — a relationship that holds at group level doesn't transfer down to individuals. So use nationality as a weak prior, then overwrite it with observable behaviour in the first ten minutes.</div>
+</div>
+<div class="section">
+<div class="section-label">What the two distributions actually look like</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ca1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#3f5c7a"></path>
+</marker>
+<marker id="ca2" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">Negotiating style in two countries: a lot of overlap, a small gap in means</text>
+<line stroke="#9aa89c" stroke-width="1.2" x1="60" x2="660" y1="228" y2="228"></line>
+<path d="M120,228 C210,228 210,98 300,98 C390,98 390,228 480,228" fill="none" stroke="#1f7a5c" stroke-width="2.2"></path>
+<path d="M215,228 C305,228 305,98 395,98 C485,98 485,228 575,228" fill="none" stroke="#b08c3a" stroke-dasharray="7,4" stroke-width="2.2"></path>
+<line stroke="#1f7a5c" stroke-dasharray="4,4" stroke-width="1.1" x1="300" x2="300" y1="100" y2="240"></line>
+<line stroke="#b08c3a" stroke-dasharray="4,4" stroke-width="1.1" x1="395" x2="395" y1="100" y2="240"></line>
+<text fill="#1f7a5c" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="end" x="292" y="86">mean, country A</text>
+<text fill="#b08c3a" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="start" x="403" y="86">mean, country B</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="66" y="222">more indirect</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" text-anchor="end" x="654" y="222">more direct</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="348" y="244">gap between national means</text>
+<line marker-end="url(#ca1)" stroke="#3f5c7a" stroke-width="1.5" x1="348" x2="304" y1="258" y2="258"></line>
+<line marker-end="url(#ca1)" stroke="#3f5c7a" stroke-width="1.5" x1="348" x2="391" y1="258" y2="258"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="300" y="282">two people from the same country can differ this much</text>
+<line marker-end="url(#ca2)" stroke="#c0603a" stroke-width="1.5" x1="300" x2="126" y1="290" y2="290"></line>
+<line marker-end="url(#ca2)" stroke="#c0603a" stroke-width="1.5" x1="300" x2="474" y1="290" y2="290"></line>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="316">With overlap that large, knowing their passport adds almost nothing. What adds information is the three things you watch.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · three observables that overwrite the prior</span>
+<p><strong>1. Who is in the room:</strong> did they come alone or bring three people? Who speaks first, who speaks last? <strong>Headcount and speaking order tell you more about the length of the approval chain than any national label.</strong></p>
+<p><strong>2. How information is given:</strong> ask something concrete ("roughly how many hours a month does this cost you?") and notice whether you get a number or a paragraph of context. Context isn't evasion — it means they expect you to infer it, which means it's time to switch channels. See the next move.</p>
+<p><strong>3. Who sets the timetable:</strong> do they offer dates, or do you have to chase? A buyer who volunteers dates can be worked directly.</p>
+<p><strong>4. All three are observable in one meeting, and they're behaviour rather than guesswork.</strong> Put them in your notes — worth more than ten memorised etiquette rules.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: national dimensions are means estimated at group level. Whenever variance is large and the gap between means is small, the overlap region dominates — and knowing which distribution someone was drawn from tells you almost nothing about their value. That isn't "culture doesn't exist". It's that group means are statistically weak instruments for individual prediction. Behaviour you observe in a first meeting comes straight from the individual, so it carries an order of magnitude more information.</strong></p>
+<ul>
+<li><strong>Hard evidence (meta-analysis, and the result is counterintuitive)</strong>: Oyserman, Coon &amp; Kemmelmeier (2002, <em>Psychological Bulletin</em>) synthesised 83 studies of individualism and collectivism: <strong>cross-national differences were smaller and much less consistent than assumed</strong> — in several comparisons Japanese and Korean respondents were not more collectivistic than Americans — and within-country variance dwarfed between-country variance.</li>
+<li><strong>Large sample, but keep the levels straight</strong>: Hofstede (1980, <em>Culture's Consequences</em>) rests on well over a hundred thousand IBM employee questionnaires and the dimension structure is stable at country level; <strong>the author himself repeatedly warned against the ecological fallacy</strong>. For the methodological critique see McSweeney (2002, <em>Human Relations</em>). <em>Honest labelling</em>: useful for anticipating institutional variables — approval layers, contracting norms, payment cycles — not for predicting an individual's style.</li>
+<li><strong>Weak evidence, use with the label attached</strong>: Hall's (1976) high- and low-context distinction is hugely influential and thinly evidenced. Kittler, Rieg &amp; Franke's (2011, <em>International Journal of Cross Cultural Management</em>) review found <strong>the classification of countries as high- or low-context lacks solid empirical grounding</strong>. Fine as a heuristic, not as a measurement.</li>
+</ul>
+<p class="caveat">Boundary: when you know nothing at all about the person, a weak prior still beats no information — deciding how formal the first email should be, or whether to bring a written agenda, on national grounds is perfectly reasonable. It fails in exactly one place: when the meeting has started and you're still running on it instead of on what you can see.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>They aren't withholding — you're probing on the wrong channel. Swap questions for offers
+<span class="en">Information they can't say out loud still moves. It moves through the choices they make.</span></h2>
+<span class="tag">joint gains</span><span class="tag">MESO</span><span class="tag">decoding the polite deferral</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The most reliable experimental finding in cross-cultural negotiation is unglamorous: <strong>intercultural pairs reach systematically lower joint gains than intracultural pairs — not because anyone is more hostile, but because the two sides are looking for information on different channels.</strong> You probe on channel A, they answer on channel B, and both sides conclude the other won't cooperate. The fix isn't to force directness. It's to change the probe from a question into an offer.</div>
+</div>
+<div class="section">
+<div class="section-label">The two channels information travels on</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="cb1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">Same information, two channels</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="70">Channel A</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" x="14" y="84">direct Q&amp;A</text>
+<rect fill="#e2efdc" height="40" rx="3" stroke="#4e8a3f" stroke-width="1.3" width="128" x="106" y="52"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.2" text-anchor="middle" x="170" y="77">I ask about budget</text>
+<rect fill="#e2efdc" height="40" rx="3" stroke="#4e8a3f" stroke-width="1.3" width="128" x="266" y="52"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.2" text-anchor="middle" x="330" y="77">they answer directly</text>
+<rect fill="#c9dcc9" height="40" rx="3" stroke="#4e8a3f" stroke-width="1.6" width="150" x="426" y="52"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="501" y="77">I get their priorities</text>
+<line marker-end="url(#cb1)" stroke="#4e8a3f" stroke-width="1.6" x1="236" x2="262" y1="72" y2="72"></line>
+<line marker-end="url(#cb1)" stroke="#4e8a3f" stroke-width="1.6" x1="396" x2="422" y1="72" y2="72"></line>
+<text fill="#697682" font-family="Georgia" font-size="8.8" x="588" y="76">low-context default</text>
+<text fill="#b08c3a" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="142">Channel B</text>
+<text fill="#b08c3a" font-family="Georgia" font-size="9.4" x="14" y="156">trade via offers</text>
+<rect fill="#f7f0dd" height="40" rx="3" stroke="#b08c3a" stroke-width="1.3" width="128" x="106" y="124"></rect>
+<text fill="#8a6c22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="170" y="149">three equal offers at once</text>
+<rect fill="#f7f0dd" height="40" rx="3" stroke="#b08c3a" stroke-width="1.3" width="128" x="266" y="124"></rect>
+<text fill="#8a6c22" font-family="Georgia" font-size="9.2" text-anchor="middle" x="330" y="149">they pick B</text>
+<rect fill="#efe3c2" height="40" rx="3" stroke="#b08c3a" stroke-width="1.6" width="150" x="426" y="124"></rect>
+<text fill="#8a6c22" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="501" y="149">I get their real constraint</text>
+<line marker-end="url(#cb1)" stroke="#4e8a3f" stroke-width="1.6" x1="236" x2="262" y1="144" y2="144"></line>
+<line marker-end="url(#cb1)" stroke="#4e8a3f" stroke-width="1.6" x1="396" x2="422" y1="144" y2="144"></line>
+<text fill="#697682" font-family="Georgia" font-size="8.8" x="588" y="148">common in high context</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="192">The usual failure: you ask on channel A, they answer on channel B, and both sides read the other as uncooperative.</text>
+<text fill="#123f30" font-family="Georgia" font-size="11.6" font-weight="700" x="14" y="222">How much value ends up on the table</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="14" y="250">same-culture pair</text>
+<rect fill="#c9dcc9" height="22" stroke="#4e8a3f" stroke-width="1.4" width="300" x="130" y="234"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle" x="280" y="249">joint gains, baseline</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="14" y="284">intercultural pair</text>
+<rect fill="#f0cfc0" height="22" stroke="#c0603a" stroke-width="1.4" width="205" x="130" y="268"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle" x="232" y="283">systematically lower</text>
+<text fill="#697682" font-family="Georgia" font-size="8.6" x="450" y="249">Brett &amp; Okumura 1998 · Adair et al. 2001</text>
+<text fill="#697682" font-family="Georgia" font-size="8.6" x="350" y="283">direction only, not an exact ratio</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="318">Whichever one they pick has told you their preference — and they never had to say it out loud.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Scripts · three moves, none of which require them to be direct</span>
+<p><strong>1. Three equivalent offers (MESO — multiple equivalent simultaneous offers, meaning several differently structured deals you'd all accept):</strong> "Three versions all work for us. <strong>A</strong>: twelve months, lowest unit price, paid upfront. <strong>B</strong>: six months, billed quarterly, 8% higher unit price. <strong>C</strong>: twelve months billed quarterly at A's price, in exchange for a case study we can put your name on. Which one is closest?" Pick A and you know cash is fine and price is the issue; B means cash is tight or they can't commit to a horizon; C means the budget is fixed but there's a reputational appetite. <strong>Choosing among three isn't refusing anything — it's only a preference, which is why it survives both high context and low trust.</strong></p>
+<p><strong>2. Decoding "we'll discuss it internally":</strong> there's exactly one test — whether a name and a date follow. If they do, it's real; if they don't, it's a no. So supply them: "Who sees it next? Roughly when might there be a round of feedback? And if there's a concern on that side, is it most likely budget, timing, or replacing how you do it today?" <strong>Three options are far easier to answer, and far easier on their face, than "any concerns?"</strong></p>
+<p><strong>3. Route sensitive questions through a third party:</strong> real budget, who actually signs, whether there's internal opposition — have whoever introduced you ask those. The referral relationships covered in the word-of-mouth piece pay off more here than at home.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: integrative negotiation only reaches high joint gains once both sides have exchanged their priority orderings. There are two routes for that exchange — state it, or let it be inferred from the trade-offs visible across a series of offers. Stating it requires trust and a low-context habit. The offer route requires neither, because it converts a declaration into a choice, and a choice carries no responsibility for having said anything. That's why, when trust is low, face is expensive, and language is a barrier, the offer channel is the one still working.</strong></p>
+<ul>
+<li><strong>Hard evidence (laboratory negotiation, cross-national samples)</strong>: Adair, Okumura &amp; Brett (2001, <em>Journal of Applied Psychology</em>) found American and Japanese negotiators route information differently — <strong>Americans mainly through direct question and answer, Japanese negotiators mainly through inference from a sequence of offers</strong> — and intercultural dyads reached lower joint gains than intracultural ones. Brett &amp; Okumura (1998, <em>Academy of Management Journal</em>) found the same direction with US and Japanese managers.</li>
+<li><strong>Hard evidence (more general mechanism)</strong>: Gunia, Brett, Nandkeolyar &amp; Kamdar (2011, <em>JAP</em>), comparing US and Indian negotiators: <strong>lower baseline trust → less direct information sharing → lower joint gains</strong>, with trust mediating. Which is exactly why the offer channel is valuable: it doesn't require either side to extend trust first.</li>
+<li><strong>Honest labelling</strong>: these are mostly simulated negotiations with executive-education or MBA samples on standardised integrative tasks. <strong>The direction is stable; don't transplant the absolute numbers</strong> — and don't turn "Japan = indirect" into a prediction about a person. Go back to the three observables above.</li>
+</ul>
+<p class="caveat">Where it fails: indirect doesn't mean they have no opinion, and not every silence is cultural — often they simply have no authority to decide. Also, MESO only works if you would genuinely sign all three; padding the set with an option you don't want gets spotted once, and after that every offer you make reads as a technique.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>Relationship-first isn't dinner first — it's a fourth line in their arithmetic: who do I answer to if this fails
+<span class="en">You're not buying goodwill. You're lowering the personal cost of vouching for you.</span></h2>
+<span class="tag">medial prefrontal cortex</span><span class="tag">cost of vouching</span><span class="tag">face is operational</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">A transactional buyer runs three lines: value, price, risk. A relationship-oriented buyer runs a fourth — <strong>if I bring this in and it goes wrong, who do I have to explain myself to, and whose favour did I just spend.</strong> Leave that line unsolved and the first three don't matter. And there's a strikingly specific piece of neural evidence underneath it: in one imaging study, Chinese participants judging their mother's traits recruited the same medial prefrontal region they used to judge themselves, while Western participants recruited it only for self-judgements. The boundary of "self" can contain other people.</div>
+</div>
+<div class="section">
+<div class="section-label">The arithmetic running in their head</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">Same proposal, two different calculations</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="10.4" font-weight="700" x="20" y="44">Transactional: three lines</text>
+<rect fill="#e2efdc" height="26" rx="3" stroke="#4e8a3f" stroke-width="1.2" width="290" x="20" y="54"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.2" x="32" y="71">1. Value — how much it brings</text>
+<rect fill="#e2efdc" height="26" rx="3" stroke="#4e8a3f" stroke-width="1.2" width="290" x="20" y="86"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.2" x="32" y="103">2. Price — how much it costs</text>
+<rect fill="#e2efdc" height="26" rx="3" stroke="#4e8a3f" stroke-width="1.2" width="290" x="20" y="118"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.2" x="32" y="135">3. Risk — odds it doesn't work</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="20" y="166">Three lines done, they can sign</text>
+<line stroke="#cbb98f" stroke-width="1.2" x1="348" x2="348" y1="40" y2="172"></line>
+<text fill="#8a6c22" font-family="Georgia" font-size="10.4" font-weight="700" x="386" y="44">Relational: one more line</text>
+<rect fill="#f7f0dd" height="26" rx="3" stroke="#b08c3a" stroke-width="1.2" width="290" x="386" y="54"></rect>
+<text fill="#8a6c22" font-family="Georgia" font-size="9.2" x="398" y="71">1, 2, 3 as on the left</text>
+<rect fill="#efe3c2" height="58" rx="3" stroke="#b08c3a" stroke-width="1.8" width="290" x="386" y="86"></rect>
+<text fill="#8a6c22" font-family="Georgia" font-size="9.2" font-weight="700" x="398" y="105">4. Cost of vouching — if I bring this in</text>
+<text fill="#8a6c22" font-family="Georgia" font-size="9.2" font-weight="700" x="398" y="121">and it fails, who do I answer to</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" x="386" y="166">Line four unsolved, the first three don't matter</text>
+<line stroke="#e3ddc7" stroke-width="1.2" x1="20" x2="676" y1="188" y2="188"></line>
+<text fill="#123f30" font-family="Georgia" font-size="11.2" font-weight="700" x="20" y="212">Where the boundary of "self" is drawn · Zhu et al. 2007 (small early study, direction only)</text>
+<rect fill="#e6f0ea" height="62" rx="4" stroke="#123f30" stroke-width="1.5" width="316" x="20" y="224"></rect>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="34" y="246">Chinese participants judging mother's traits</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" x="34" y="264">recruited the same medial prefrontal region as for self</text>
+<rect fill="#eef1f5" height="62" rx="4" stroke="#3f5c7a" stroke-width="1.5" width="316" x="360" y="224"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.4" font-weight="700" x="374" y="246">Western participants: only for self-judgements</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.4" x="374" y="264">mother fell on the "other" side</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="20" y="312">So "what's in it for you personally" is, for some buyers, aimed at the wrong entity from the start.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · four ways to lower line four</span>
+<p><strong>1. Take the risk off them personally:</strong> a small pilot, written exit conditions, one named person on your side who owns it end to end. <strong>What they fear isn't a bad product — it's signing and then having nobody to call.</strong></p>
+<p><strong>2. Never let them be proven wrong in front of colleagues:</strong> disagreement goes to them privately, and the room only hears the conclusion you reached together. True everywhere; where face is expensive, breaking it costs the whole deal.</p>
+<p><strong>3. Give credit they can put their name on:</strong> write the one-pager they need for their own internal review — problem, approach, expected result, risks and mitigations. <strong>That isn't flattery, it's absorbing their cost of explaining upward.</strong></p>
+<p><strong>4. Introductions beat cold starts, and the gap widens here:</strong> a credible introduction replaces months of trust-building because the introducer prepays part of the cost of vouching.</p>
+<p><strong>Boundary:</strong> relationship lowers the cost of trust, it doesn't substitute for value. A warm relationship on top of a solution that doesn't solve anything only makes it harder for them to refuse you — so you find out you lost later than you should have.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: where interdependent self-construal dominates, relational consequences are already inside the decision-maker's utility function — not "they're more emotional", but the set of consequences they carry is larger. So every piece of risk mitigation you supply (a pilot, exit conditions, a named owner, the write-up you did for them) subtracts directly from line four, which is why it beats another pass through your product advantages.</strong></p>
+<ul>
+<li><strong>Hard evidence (fMRI, and unusually specific) · the boundary of self-representation can include others</strong>: Zhu, Zhang, Fan &amp; Han (2007, <em>NeuroImage</em>): <strong>Chinese participants activated the same medial prefrontal cortex region for self-judgements and mother-judgements; Western participants activated it only for self.</strong> <em>Honest labelling</em>: barely more than a dozen participants per group, early cultural neuroscience, limited replication — and later priming work suggests the boundary can be pushed around by context, so what it supports is malleability, not any essential difference between peoples.</li>
+<li><strong>The behavioural framework</strong>: Markus &amp; Kitayama (1991, <em>Psychological Review</em>) on independent versus interdependent self-construal, supported by a large downstream literature — with the magnitude discounted per the Oyserman meta-analysis above.</li>
+<li><strong>Moderate strength · relationships do carry economic value</strong>: Luo, Huang &amp; Wang (2012, <em>Management and Organization Review</em>) report a meta-analytic positive association between guanxi and firm performance. <em>Honest labelling</em>: firm-level, largely Chinese samples, cross-sectional correlations, publication bias not ruled out. It supports "relationships have economic value", not "a few more dinners wins the deal".</li>
+</ul>
+<p class="caveat">A legal boundary, not a cultural one: the line between a gift and a bribe is drawn by law — the US FCPA and the UK Bribery Act both reach conduct abroad — not by local custom. The cheapest test is the one from the sales-ethics piece: <strong>does it survive being said out loud?</strong> If this dinner, this gift, were written into both companies' public minutes, would it still stand? If not, don't, and don't offer "that's just how it works here" as a reason.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>In a second language, your urgency and loss framing arrive discounted
+<span class="en">Numbers, demos and reference customers cross intact. Puns, deadlines and dread do not.</span></h2>
+<span class="tag">processing fluency</span><span class="tag">foreign-language effect</span><span class="tag">accent and credibility</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Localisation is not translating the deck. Two things here have real evidence behind them: <strong>the same sentence spoken with an accent gets rated as less truthful</strong> — the mechanism appears to be processing difficulty misread as low credibility rather than overt prejudice — and <strong>people reasoning in a second language show weaker framing effects and weaker loss aversion.</strong> Put together, the conclusion is concrete: the urgency and loss framing you engineered land at a discount, while specific numbers, live demos and checkable reference customers cross more or less intact.</div>
+</div>
+<div class="section">
+<div class="section-label">What survives the change of language</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="cd1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="20">What is left after the language changes</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="10" font-weight="700" x="14" y="46">High survival · make these the load-bearing part</text>
+<rect fill="#c9dcc9" height="11" stroke="#4e8a3f" stroke-width="1" width="11" x="14" y="60"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="32" y="69">specific numbers and units</text>
+<rect fill="#c9dcc9" height="11" stroke="#4e8a3f" stroke-width="1" width="11" x="14" y="86"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="32" y="95">a live demo</text>
+<rect fill="#c9dcc9" height="11" stroke="#4e8a3f" stroke-width="1" width="11" x="14" y="112"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="32" y="121">reference customers they can check</text>
+<rect fill="#c9dcc9" height="11" stroke="#4e8a3f" stroke-width="1" width="11" x="14" y="138"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="32" y="147">an agenda sent in advance</text>
+<rect fill="#c9dcc9" height="11" stroke="#4e8a3f" stroke-width="1" width="11" x="14" y="164"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="32" y="173">charts</text>
+<text fill="#a8461f" font-family="Georgia" font-size="10" font-weight="700" x="370" y="46">Low survival · never load-bearing</text>
+<rect fill="#f0cfc0" height="11" stroke="#c0603a" stroke-width="1" width="11" x="370" y="60"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="388" y="69">puns and humour</text>
+<rect fill="#f0cfc0" height="11" stroke="#c0603a" stroke-width="1" width="11" x="370" y="86"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="388" y="95">idioms and sports metaphors</text>
+<rect fill="#f0cfc0" height="11" stroke="#c0603a" stroke-width="1" width="11" x="370" y="112"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="388" y="121">urgency and loss framing</text>
+<rect fill="#f0cfc0" height="11" stroke="#c0603a" stroke-width="1" width="11" x="370" y="138"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="388" y="147">rhetorical questions and hints</text>
+<rect fill="#f0cfc0" height="11" stroke="#c0603a" stroke-width="1" width="11" x="370" y="164"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="9.2" x="388" y="173">complex terms said aloud only once</text>
+<line stroke="#e3ddc7" stroke-width="1.2" x1="14" x2="686" y1="196" y2="196"></line>
+<text fill="#123f30" font-family="Georgia" font-size="11.2" font-weight="700" x="14" y="220">How an accent turns into "not credible": one misrouted wire</text>
+<rect fill="#eef1f5" height="46" rx="3" stroke="#3f5c7a" stroke-width="1.3" width="148" x="14" y="234"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle" x="88" y="253">same sentence, said</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle" x="88" y="269">with an accent</text>
+<rect fill="#eef1f5" height="46" rx="3" stroke="#3f5c7a" stroke-width="1.3" width="148" x="192" y="234"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle" x="266" y="253">harder for them to parse</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle" x="266" y="269">processing cost rises</text>
+<rect fill="#eef1f5" height="46" rx="3" stroke="#3f5c7a" stroke-width="1.3" width="148" x="370" y="234"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle" x="444" y="253">felt fluency drops</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle" x="444" y="269">"something feels off"</text>
+<rect fill="#f0cfc0" height="46" rx="3" stroke="#c0603a" stroke-width="1.6" width="148" x="548" y="234"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="622" y="253">misattributed as</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="622" y="269">"less likely to be true"</text>
+<line marker-end="url(#cd1)" stroke="#3f5c7a" stroke-width="1.5" x1="164" x2="188" y1="257" y2="257"></line>
+<line marker-end="url(#cd1)" stroke="#3f5c7a" stroke-width="1.5" x1="342" x2="366" y1="257" y2="257"></line>
+<line marker-end="url(#cd1)" stroke="#3f5c7a" stroke-width="1.5" x1="520" x2="544" y1="257" y2="257"></line>
+<text fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700" x="14" y="304">The fix isn't losing the accent. It's lowering their processing cost: written first, short sentences, have them restate the terms.</text>
+<text fill="#697682" font-family="Georgia" font-size="8.8" x="14" y="324">Lev-Ari &amp; Keysar 2010: telling participants accent can bias them shrank the effect for mild accents — so it runs on fluency, not hostility.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Checklist · six rules for a second-language buyer</span>
+<p><strong>1. Send the agenda and the key figures 24 hours ahead.</strong> Trading live listening for reading they can pace themselves is worth more than any speaking technique.</p>
+<p><strong>2. Cut sentences to one idea each.</strong> Strip idioms, sports metaphors, puns and internal acronyms. "Let's ballpark it" costs two seconds of decoding — two seconds that should have gone to your proposal.</p>
+<p><strong>3. Have them restate the important terms in their own words.</strong> Never ask "is that clear?" — that question has exactly one possible answer in every culture. Ask instead: "so I know I haven't left anything out, how would you describe this to your colleagues?"</p>
+<p><strong>4. Don't make urgency and loss framing load-bearing.</strong> Use specific numbers and checkable references instead. "Sign by Wednesday and save 10%" hits noticeably softer here than it does at home.</p>
+<p><strong>5. Don't read silence as agreement — or as refusal.</strong> A second-language beat or two of extra processing is normal. Count to five after asking; the sentence you talk over is often the most valuable one in the meeting. The silence covered in the listening piece is worth double across languages.</p>
+<p><strong>6. When you're the accented one:</strong> written version first, slower delivery, key numbers on screen — and stop apologising. <strong>Repeating "sorry, my English isn't great" actively cues the listener to discount what you're about to say.</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: people can't tell "this was hard to process" apart from "this isn't credible". Processing fluency is a widely misused cue — the easier something is to take in, the more readily it's judged true. Accents, translationese, unfamiliar currencies and date formats all raise processing cost, and that cost gets charged to your credibility account. Which also means everything that lowers processing cost — written first, short sentences, charts, local units — is buying credibility. That isn't politeness, it's the mechanism.</strong></p>
+<ul>
+<li><strong>Hard evidence (clean mechanism, and it applies to you)</strong>: Lev-Ari &amp; Keysar (2010, <em>Journal of Experimental Social Psychology</em>): <strong>identical statements were rated less truthful when spoken by non-native speakers</strong>. The authors attribute this mainly to misattributed processing difficulty, evidenced by the fact that <strong>telling participants accent can bias judgement reduced the effect for mild accents</strong> (it did not fully remove it for heavy ones).</li>
+<li><strong>Hard evidence, but discount it · the foreign-language effect</strong>: Keysar, Hayakawa &amp; An (2012, <em>Psychological Science</em>): framing effects and loss aversion weakened markedly when people reasoned in a second language. <em>Honest labelling</em>: replications are inconsistent, framing paradigms hold up better than risk-preference ones, and effect sizes are smaller than first reported. Only one inference is safe: <strong>emotional framing decays across languages; numbers don't.</strong></li>
+<li><strong>General mechanism (broadly supported)</strong>: processing fluency shapes judgement — easily processed stimuli are rated more positively and as more true (Reber, Winkielman &amp; Schwarz, 1998, <em>Psychological Science</em>, among a long line of work). This is also why local currency, units, date formats and clean typography are worth the effort.</li>
+</ul>
+<p class="caveat">Where it fails, and one trap: don't turn localisation into imitation. Local slang in translationese damages you more than clean standard phrasing, because it lowers fluency and sincerity at once. And don't send machine-translated contract terms — equivalence of legal terms is not a translation problem.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 55 Action</h3>
+<p>One hour to turn "cultural differences" into four things you can check and change.</p>
+<div class="action">
+<strong>One (10 min) · Separate prior from observation:</strong> take a live cross-border deal, write down three judgements you hold about this person, and mark each one "observed" or "inferred from nationality". Cross out every inferred one and turn it into something to watch for next meeting.<br/><br/><strong>Two (20 min) · Build three equivalent offers:</strong> differently structured, all acceptable to you, so they can choose instead of having to state a preference.<br/><br/><strong>Three (15 min) · Second-language audit:</strong> take the last important email or one-pager you sent, delete every idiom, sports metaphor and acronym, cut sentences to one idea each, and replace the urgency line with a specific number.<br/><br/><strong>Four (15 min) · Lower their cost of vouching:</strong> write down who they'd have to explain themselves to if this went wrong, then add one concrete term that softens that outcome — pilot scope, exit conditions, or a named owner on your side.<br/><br/>Boundary: all of this lowers the cost of misreading each other; none of it creates demand. Plenty of cross-border deals are lost to time zones, legal review and procurement process — fix those with process, don't explain them with culture.
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. Should I adapt to their style? Does mirroring them actually help?</summary>
+<div class="answer"><strong>Moderate adaptation helps. Wholesale imitation costs you.</strong><br/><br/>For the upside: Maddux, Mullen &amp; Galinsky (2008, <em>JESP</em>) found that naturally following the other side's posture and speech rhythm — strategic behavioural mimicry — raised trust and joint gains, including in cross-cultural pairs. But adaptation has a ceiling: in Francis's (1991, <em>Journal of International Business Studies</em>) experiment, Japanese negotiators rated moderately adapting Americans most favourably, and <strong>substantial adaptation scored worse than moderate</strong> — overdoing it reads as performance or calculation. <em>Honest labelling</em>: both are older, single lines of research; don't over-weight the effect sizes.<br/><br/>The workable version separates two layers. <strong>Adapt the form</strong> — how you address people, business cards, agendas, punctuality, who sits down first, how the proposal document is laid out. <strong>Don't perform the content</strong> — your judgement and what you'd advise them not to buy are your only differentiation, and shouldn't be localised away. The consultative-selling idea that a prescription must include what you don't recommend is worth more here, not less: when everyone in the room is being agreeable, the one person willing to say "don't buy that part" is unusually credible.</div>
+</details>
+<details>
+<summary>2. Everything is remote and across time zones. How do I build trust?</summary>
+<div class="answer"><strong>Make one phone call before you go to email.</strong> Morris and colleagues (2002, <em>Group Dynamics</em>) — the paper is literally called "Schmooze or lose" — found that a brief, task-irrelevant phone conversation before an email negotiation markedly improved cooperation and settlement rates, while email-only pairs slid into impasse more often. The mechanism isn't mysterious: email lacks immediate feedback and non-verbal cues, misreadings never get corrected in the moment, and hostility accumulates message by message. <em>Honest labelling</em>: a single line of experiments with student negotiators; direction is stable, magnitude isn't transferable.<br/><br/>Three concrete things. <strong>One, video for the first meeting, and spend the opening five minutes on people rather than the proposal</strong> — that's not waste, it's insurance on the next twenty emails. <strong>Two, attach a two-minute screen recording or voice note to every long email</strong> so they hear your tone; written directness is the thing most easily read as coldness. <strong>Three, don't always make them take the awkward hour</strong> — trading off who gets up early is remembered far more than you'd expect, and it's one of the rare items in the cost-of-vouching column that you can lower unilaterally.</div>
+</details>
+<details>
+<summary>3. They were friendly the whole way through and then vanished. Is that cultural?</summary>
+<div class="answer">Usually not. Run the ordinary causes of silence first: no budget, no authority, internal priorities changed, or you never actually spoke to whoever decides — work through the checks in the piece on dead deals and no-replies before reaching for culture.<br/><br/>Culture explains exactly one thing, and it matters: <strong>where face is expensive, "no" arrives less often in the form of the word "no", so you learn the outcome later.</strong> The answer isn't to guess, it's to move the test earlier. Two moves. <strong>One, before every meeting ends: "if this ends up not going ahead, where do you think it would most likely get stuck?"</strong> — that hands them a dignified exit for naming the obstacle, and it's far easier to answer than "any concerns?". <strong>Two, ask for a name and a date for the next step.</strong> Enthusiasm that can't produce a name and a date isn't enthusiasm in any culture.<br/><br/>This is the same move as the up-front contract in the Sandler piece: <strong>agree how the meeting will end before it starts</strong> — "by the end of this you may well decide it isn't a fit, which is completely fine; I'd just rather we reach a conclusion today than turn it into a month of silence." Pre-authorising the no is what buys you earlier, truer information.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 55</footer>
+</div>
+</body>
+</html>
