@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 56: Selling in the Age of AI</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Times New Roman",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:1px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"−"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 56 · Phase H</div>
+<h1>Writing a decent email no longer proves you made an effort — so you need something else that does</h1>
+<div class="meta"><span>Themes: when contact costs nothing the channel is scarce · disclosing the machine costs conversions · AI raises the floor, not the ceiling · verification cost designs the loop</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">Most people use AI to send the emails nobody was answering, faster and in greater volume. The real change is on the other side: what got automated is exactly what used to prove you'd taken the trouble.</div>
+</header>
+<div class="intro">
+<strong>Four parts you swap out.</strong> <strong>One, reaching people costs nothing now, so the scarce thing moved from "getting to them" to "why should they read you"</strong>; <strong>two, saying up front that they're talking to a machine costs conversions — the fix isn't hiding it, it's moving where the machine stands</strong>; <strong>three, AI raises the floor: novices gain a lot, veterans almost nothing, so the valuable skills changed</strong>; <strong>four, the loop is designed by verification cost, not by prompt craft</strong>.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>When reaching anyone costs nothing, the scarce thing stops being contact
+<span class="en">It stops being "can I get to them" and becomes "why would they read me".</span></h2>
+<span class="tag">congestion externality</span><span class="tag">rent on scarcity</span><span class="tag">bulk sender rules</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">AI compresses "find five hundred plausible targets and write each of them something that looks thoughtful" from two weeks into an afternoon. So does it for your competitors. Inbox capacity didn't change and the number of senders did, so the equilibrium points one way: <strong>reply rates per message fall until sending one more is barely worth it.</strong> What AI changed isn't how many you should send — it's where the two saved weeks should go.</div>
+</div>
+<div class="section">
+<div class="section-label">After the cost collapses, the scarce thing changes</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="aa1" markerWidth="11" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text x="14" y="20" fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700">One chain, four steps</text>
+<rect x="14" y="42" width="148" height="48" rx="3" fill="#eef1f5" stroke="#3f5c7a" stroke-width="1.3"></rect>
+<text x="88" y="62" fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle">a passable email</text>
+<text x="88" y="78" fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle">costs ~nothing</text>
+<rect x="192" y="42" width="148" height="48" rx="3" fill="#eef1f5" stroke="#3f5c7a" stroke-width="1.3"></rect>
+<text x="266" y="62" fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle">every seller sends more</text>
+<text x="266" y="78" fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle">still individually optimal</text>
+<rect x="370" y="42" width="148" height="48" rx="3" fill="#eef1f5" stroke="#3f5c7a" stroke-width="1.3"></rect>
+<text x="444" y="62" fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle">inbox volume rises</text>
+<text x="444" y="78" fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle">attention doesn't</text>
+<rect x="548" y="42" width="148" height="48" rx="3" fill="#f0cfc0" stroke="#c0603a" stroke-width="1.6"></rect>
+<text x="622" y="62" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">reply rate falls</text>
+<text x="622" y="78" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">until gain ≈ cost</text>
+<line x1="166" x2="188" y1="66" y2="66" stroke="#3f5c7a" stroke-width="1.5" marker-end="url(#aa1)"></line>
+<line x1="344" x2="366" y1="66" y2="66" stroke="#3f5c7a" stroke-width="1.5" marker-end="url(#aa1)"></line>
+<line x1="522" x2="544" y1="66" y2="66" stroke="#3f5c7a" stroke-width="1.5" marker-end="url(#aa1)"></line>
+<line x1="14" x2="686" y1="112" y2="112" stroke="#e3ddc7" stroke-width="1.2"></line>
+<text x="14" y="136" fill="#2f5a24" font-family="Georgia" font-size="10.4" font-weight="700">What AI made nearly free</text>
+<rect x="14" y="148" width="316" height="128" rx="4" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="30" y="170" fill="#37493f" font-family="Georgia" font-size="9.2">· a list that looks exactly right</text>
+<text x="30" y="192" fill="#37493f" font-family="Georgia" font-size="9.2">· a fluent opener that looks bespoke</text>
+<text x="30" y="214" fill="#37493f" font-family="Georgia" font-size="9.2">· swapping in company and sector detail</text>
+<text x="30" y="236" fill="#37493f" font-family="Georgia" font-size="9.2">· cadences, reminders, meeting notes</text>
+<text x="30" y="262" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700">excelling here is queueing with everyone else</text>
+<text x="370" y="136" fill="#8a6c22" font-family="Georgia" font-size="10.4" font-weight="700">What AI can't make free</text>
+<rect x="370" y="148" width="316" height="128" rx="4" fill="#f7f0dd" stroke="#b08c3a" stroke-width="1.6"></rect>
+<text x="386" y="170" fill="#37493f" font-family="Georgia" font-size="9.2">· one credible intro (a different queue)</text>
+<text x="386" y="192" fill="#37493f" font-family="Georgia" font-size="9.2">· having used their product and hit a wall</text>
+<text x="386" y="214" fill="#37493f" font-family="Georgia" font-size="9.2">· judging which trigger event actually hurts</text>
+<text x="386" y="236" fill="#37493f" font-family="Georgia" font-size="9.2">· your name on it: someone to call</text>
+<text x="386" y="262" fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700">put the two saved weeks in this column</text>
+<text x="14" y="302" fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700">Platforms are pricing sending again: since February 2024, bulk senders must authenticate and offer one-click unsubscribe,</text>
+<text x="14" y="320" fill="#697682" font-family="Georgia" font-size="8.8">and hold spam complaints under 0.3% (Gmail and Yahoo sender requirements — an operational rule, not a research finding).</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Do this · four places for the saved time</span>
+<p><strong>1. Look for a referral path before you consider writing.</strong> Check current customers, former colleagues, investors for a route to this person. A warm intro doesn't win on copy — it isn't queueing in the same place. As noise rises, the return on relationship stock only goes up.</p>
+<p><strong>2. Point AI at trigger events, not at the letter.</strong> Hiring, funding, a system migration, a compliance deadline, a new person in the seat — monitoring and summarising is what it's genuinely good at. Judging which trigger actually hurts right now stays with you.</p>
+<p><strong>3. One line per message that a model couldn't write.</strong> The specific thing a peer of theirs told you last week, the step you got stuck on inside their product, a number from something they said last month. <strong>The test: if the sentence would still be true for another company, it doesn't count.</strong></p>
+<p><strong>4. Cut volume, raise preparation time per message.</strong> The structure from the piece on cold outreach still holds — what changed is that volume no longer buys an edge, because it got cheap for everyone.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: an arms race under a congestion externality. When marginal cost approaches zero and total attention is fixed, "send a few more" is always individually optimal, and in aggregate it pushes everyone's reply rate down until it barely covers the residual cost. Personalised copy is the same story — it worked because it was scarce, not because it carried information, and once anyone can generate it the rent disappears.</strong></p>
+<ul>
+<li><strong>Hard evidence (large field experiments)</strong>: Sahni, Wheeler &amp; Chintagunta (2018, <em>Marketing Science</em>): adding the recipient's name to the subject line <strong>raised open rates by roughly 20%</strong>, lowered unsubscribes and produced more leads. The authors call it noninformative content — it adds no information at all. <em>Honest labelling</em>: run before generative AI was widespread; the effect depends on scarcity, so don't transfer the magnitude.</li>
+<li><strong>Checkable operational rule (not research)</strong>: since February 2024 Gmail and Yahoo require bulk senders (roughly 5,000+ messages a day) to authenticate with SPF/DKIM/DMARC, offer one-click unsubscribe, and <strong>keep spam complaints under 0.3%</strong>. The platform is repricing sending on the recipient's behalf.</li>
+</ul>
+<p class="caveat">Boundary: outreach isn't dead — the "bulk and generic" box is. More noise actually raises the value of the other box: few, precise, a real trigger event, a verifiable sender. In a genuinely narrow market, fifty accurate letters still build a pipeline.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>Disclosure costs you conversions — the fix isn't hiding it, it's moving where the machine stands
+<span class="en">Disclose, then put the bot only where disclosure is free.</span></h2>
+<span class="tag">mentalizing network</span><span class="tag">uniqueness neglect</span><span class="tag">timing of disclosure</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">One uncomfortably large number: in a field experiment at a financial-services firm, undisclosed chatbots sold about as well as proficient human agents — <strong>while saying "I'm a bot" before the conversation cut purchase rates by roughly 80%.</strong> You cannot run that backwards; concealment is both illegal and trust-destroying. The usable reading is different: <strong>disclose, and put the machine where disclosure costs nothing.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">Same bot, very different cost by stage</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 344" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ab1" markerWidth="11" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+<marker id="ab2" markerWidth="11" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text x="14" y="20" fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700">Disclosure is free on the left and expensive on the right</text>
+<rect x="14" y="38" width="124" height="52" rx="3" fill="#c9dcc9" stroke="#4e8a3f" stroke-width="1.4"></rect>
+<text x="76" y="58" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">triage and FAQs</text>
+<text x="76" y="74" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">scheduling · docs</text>
+<rect x="152" y="38" width="124" height="52" rx="3" fill="#c9dcc9" stroke="#4e8a3f" stroke-width="1.4"></rect>
+<text x="214" y="58" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">notes and follow-up</text>
+<text x="214" y="74" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">data cleanup</text>
+<rect x="290" y="38" width="124" height="52" rx="3" fill="#f7f0dd" stroke="#b08c3a" stroke-width="1.4"></rect>
+<text x="352" y="58" fill="#8a6c22" font-family="Georgia" font-size="9" text-anchor="middle">demo and proposal</text>
+<text x="352" y="74" fill="#8a6c22" font-family="Georgia" font-size="9" text-anchor="middle">half and half</text>
+<rect x="428" y="38" width="124" height="52" rx="3" fill="#f0cfc0" stroke="#c0603a" stroke-width="1.6"></rect>
+<text x="490" y="58" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">pricing, objections</text>
+<text x="490" y="74" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">human only</text>
+<rect x="566" y="38" width="124" height="52" rx="3" fill="#f0cfc0" stroke="#c0603a" stroke-width="1.6"></rect>
+<text x="628" y="58" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">negotiation, signing</text>
+<text x="628" y="74" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">and bad news</text>
+<text x="14" y="110" fill="#2f5a24" font-family="Georgia" font-size="9.2" font-weight="700">objective, checkable, correctable on the spot</text>
+<text x="686" y="110" fill="#a8461f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="end">subjective, consequential, someone must carry it</text>
+<line x1="14" x2="686" y1="126" y2="126" stroke="#e3ddc7" stroke-width="1.2"></line>
+<text x="14" y="150" fill="#123f30" font-family="Georgia" font-size="11.6" font-weight="700">Why the "machine" label leaves trust nowhere to grow</text>
+<text x="14" y="184" fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700">they assume</text>
+<text x="14" y="198" fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700">a human</text>
+<rect x="102" y="166" width="176" height="44" rx="3" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="190" y="184" fill="#2f5a24" font-family="Georgia" font-size="8.8" text-anchor="middle">mentalizing network engaged</text>
+<text x="190" y="199" fill="#2f5a24" font-family="Georgia" font-size="8.8" text-anchor="middle">medial prefrontal · right TPJ</text>
+<rect x="310" y="166" width="176" height="44" rx="3" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="398" y="192" fill="#2f5a24" font-family="Georgia" font-size="8.8" text-anchor="middle">they infer why you said it</text>
+<rect x="518" y="166" width="168" height="44" rx="3" fill="#c9dcc9" stroke="#4e8a3f" stroke-width="1.6"></rect>
+<text x="602" y="192" fill="#2f5a24" font-family="Georgia" font-size="8.8" font-weight="700" text-anchor="middle">goodwill can accumulate</text>
+<line x1="282" x2="306" y1="188" y2="188" stroke="#4e8a3f" stroke-width="1.5" marker-end="url(#ab1)"></line>
+<line x1="490" x2="514" y1="188" y2="188" stroke="#4e8a3f" stroke-width="1.5" marker-end="url(#ab1)"></line>
+<text x="14" y="246" fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700">they know</text>
+<text x="14" y="260" fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700">it's a machine</text>
+<rect x="102" y="228" width="176" height="44" rx="3" fill="#f6e3da" stroke="#c0603a" stroke-width="1.3"></rect>
+<text x="190" y="254" fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle">that inference drops away</text>
+<rect x="310" y="228" width="176" height="44" rx="3" fill="#f6e3da" stroke="#c0603a" stroke-width="1.3"></rect>
+<text x="398" y="248" fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle">they only check whether</text>
+<text x="398" y="263" fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle">the answer is right</text>
+<rect x="518" y="228" width="168" height="44" rx="3" fill="#f0cfc0" stroke="#c0603a" stroke-width="1.6"></rect>
+<text x="602" y="254" fill="#a8461f" font-family="Georgia" font-size="8.8" font-weight="700" text-anchor="middle">goodwill has nothing to sit on</text>
+<line x1="282" x2="306" y1="250" y2="250" stroke="#c0603a" stroke-width="1.5" marker-end="url(#ab2)"></line>
+<line x1="490" x2="514" y1="250" y2="250" stroke="#c0603a" stroke-width="1.5" marker-end="url(#ab2)"></line>
+<text x="14" y="298" fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700">So the machine costs nothing where only correctness matters; it costs everything where "is he on my side" is the question.</text>
+<text x="14" y="318" fill="#697682" font-family="Georgia" font-size="8.8">Krach et al. 2008: the more human-like the partner, the higher the activity in medial prefrontal cortex and right TPJ (small samples).</text>
+<text x="14" y="336" fill="#697682" font-family="Georgia" font-size="8.8">Luo et al. 2019: disclosing bot identity up front cut purchase rates by about 79.7% (one firm, one field experiment).</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Do this · disclose anyway, move the position</span>
+<p><strong>1. An interactive bot says it in its first line.</strong> "I'm the automated assistant — I can pull pricing and availability; for anything about the proposal I'll hand you straight to the person who owns your account." <strong>Put the disclosure and the exit in the same sentence</strong> — "I'm a bot" alone loses points; "I'm a bot and here's who takes over" buys certainty.</p>
+<p><strong>2. The more subjective and consequential the stage, the more a person shows up.</strong> Pricing, bad news, objections, negotiation, the first call after something breaks — all human. What buyers evaluate there isn't whether the answer is right, it's whether this person will be on their side when it goes wrong: precisely the inference the label switches off.</p>
+<p><strong>3. Don't put AI behind a human mask.</strong> Caught once, everything true you ever said gets repriced — and Article 50 of the EU AI Act requires people be told they are interacting with an AI system (applying from August 2026). The test from the piece on sales ethics still does the work: <strong>would this survive being said out loud?</strong></p>
+<p><strong>4. The more unusual they think their situation is, the more a human takes it.</strong> The more people believe their own case is unique, the more they resist handing it to an algorithm. When you hear "we're not like the others", the answer is a person plus a question about the specific difference — not a longer automated report.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: most trust in selling rests on an inference — why did he say that, is he looking out for me. That inference has a fairly specific home in the brain (the mentalizing network: medial prefrontal cortex and right temporo-parietal junction), and how strongly it engages depends on how human the counterpart is taken to be. Label the counterpart a machine and the buyer stops inferring intent and simply inspects the output. Where correctness is the whole job that costs nothing; where the question is "is he on my side", what you lose is the only currency there is.</strong></p>
+<ul>
+<li><strong>Hard evidence (field experiment, very large effect)</strong>: Luo, Tong, Fang &amp; Qu (2019, <em>Marketing Science</em>): undisclosed chatbots performed on par with proficient agents and far better than inexperienced ones, <strong>while disclosing bot identity before the call cut purchase rates by about 79.7%</strong> — driven by perceptions of less knowledge and less empathy. <em>Honest labelling</em>: one firm, one financial product category; take the direction, not the magnitude.</li>
+<li><strong>Hard evidence (fMRI, specific regions)</strong>: Krach et al. (2008, <em>PLoS ONE</em>): <strong>as the game partner became more human-like (computer → functional robot → anthropomorphic robot → human), activity in medial prefrontal cortex and right TPJ rose accordingly</strong>; McCabe et al. (2001, <em>PNAS</em>) and Gallagher et al. (2002, <em>NeuroImage</em>) report the same human-vs-computer contrast in trust games and rock-paper-scissors. <em>Honest labelling</em>: samples in the teens to twenties; this is about how much mentalizing machinery gets recruited, not about AI being worse than people.</li>
+<li><strong>Moderate · where resistance lives</strong>: Longoni, Bonezzi &amp; Morewedge (2019, <em>JCR</em>): <strong>the more unique people believe their case to be, the more they resist algorithmic decisions</strong> (medical settings, several experiments). Castelo, Bos &amp; Lehmann (2019, <em>JMR</em>): <strong>people accept algorithms on objective tasks and refuse them on subjective ones</strong>. Together those two draw the line above.</li>
+</ul>
+<p class="caveat">Failure mode: don't read this as "conceal where you can". Beyond the law there's a purely economic reason — selling is a repeated game, and being caught is priced against the whole relationship. Also, the disclosure penalty isn't a constant: it's far smaller for buyers already used to AI assistants.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>AI raises the floor, not the ceiling: novices gain most, veterans gain almost nothing
+<span class="en">Which means the list of skills worth paying for just changed.</span></h2>
+<span class="tag">tacit knowledge copied</span><span class="tag">rent shifts</span><span class="tag">three columns</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">The strongest field evidence so far all points at one shape: <strong>AI turns what the best performers do into something anyone can call, so novices gain most and veterans gain close to nothing.</strong> The implication isn't "learn AI faster". It's that <strong>whatever skill you live on, if a model can copy it, its rent is going to zero — and what's left sits in three places: inputs AI can't reach, judgement someone has to sign, and relationships.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">Where the gains land</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<text x="14" y="20" fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700">Same tool, very different beneficiaries</text>
+<line x1="150" x2="150" y1="34" y2="152" stroke="#9aa89c" stroke-width="1.2"></line>
+<text x="140" y="58" fill="#37493f" font-family="Georgia" font-size="9.2" text-anchor="end">newest / lowest-skilled</text>
+<rect x="150" y="44" width="340" height="22" fill="#c9dcc9" stroke="#4e8a3f" stroke-width="1.4"></rect>
+<text x="500" y="60" fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700">issues resolved per hour, about +34%</text>
+<text x="140" y="96" fill="#37493f" font-family="Georgia" font-size="9.2" text-anchor="end">average across all</text>
+<rect x="150" y="82" width="140" height="22" fill="#dfeae2" stroke="#4e8a3f" stroke-width="1.2"></rect>
+<text x="300" y="98" fill="#2f5a24" font-family="Georgia" font-size="9.4">+14%</text>
+<text x="140" y="134" fill="#37493f" font-family="Georgia" font-size="9.2" text-anchor="end">most experienced</text>
+<rect x="150" y="120" width="10" height="22" fill="#f0cfc0" stroke="#c0603a" stroke-width="1.2"></rect>
+<text x="170" y="136" fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700">≈ 0 (slightly negative on some measures)</text>
+<text x="14" y="168" fill="#697682" font-family="Georgia" font-size="8.8">Brynjolfsson, Li &amp; Raymond: 5,179 customer-support agents at a software firm, staged rollout of a generative assistant.</text>
+<line x1="14" x2="686" y1="182" y2="182" stroke="#e3ddc7" stroke-width="1.2"></line>
+<text x="14" y="206" fill="#123f30" font-family="Georgia" font-size="11.6" font-weight="700">So your work splits three ways — and only the right column still pays</text>
+<rect x="14" y="220" width="212" height="96" rx="4" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="28" y="240" fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700">1 · hand it over</text>
+<text x="28" y="260" fill="#37493f" font-family="Georgia" font-size="8.8">lists · summaries · notes</text>
+<text x="28" y="278" fill="#37493f" font-family="Georgia" font-size="8.8">reminders · first-line FAQs</text>
+<text x="28" y="302" fill="#697682" font-family="Georgia" font-size="8.6">give this away this week</text>
+<rect x="244" y="220" width="212" height="96" rx="4" fill="#f7f0dd" stroke="#b08c3a" stroke-width="1.3"></rect>
+<text x="258" y="240" fill="#8a6c22" font-family="Georgia" font-size="9.4" font-weight="700">2 · it drafts, you verify</text>
+<text x="258" y="260" fill="#37493f" font-family="Georgia" font-size="8.8">email drafts · comparisons</text>
+<text x="258" y="278" fill="#37493f" font-family="Georgia" font-size="8.8">business cases · demo scripts</text>
+<text x="258" y="302" fill="#697682" font-family="Georgia" font-size="8.6">checking must cost less than it saves</text>
+<rect x="474" y="220" width="212" height="96" rx="4" fill="#e6f0ea" stroke="#123f30" stroke-width="1.8"></rect>
+<text x="488" y="240" fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700">3 · only you can do it</text>
+<text x="488" y="260" fill="#37493f" font-family="Georgia" font-size="8.8">get their real internal constraints</text>
+<text x="488" y="278" fill="#37493f" font-family="Georgia" font-size="8.8">say which option not to buy</text>
+<text x="488" y="296" fill="#37493f" font-family="Georgia" font-size="8.8">sign for it, show up when it breaks</text>
+<text x="488" y="312" fill="#2f5a24" font-family="Georgia" font-size="8.6" font-weight="700">the model has no input here</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Do this · a one-hour re-sort</span>
+<p><strong>1. Lay last week out in three columns.</strong> Most people find column one is a third to 40% of it — list building, notes, follow-up reminders, answering the same question again. <strong>Hand that over this week; it is nobody's advantage any more.</strong></p>
+<p><strong>2. Column two gets one hard rule: verification must cost less than the time saved.</strong> Drafts, competitor comparisons and business cases genuinely halve; but if you spend forty minutes checking three numbers it invented, that item goes back to column three and you write it. <strong>The illusion of saved time is the expensive trap here.</strong></p>
+<p><strong>3. Write column three as actions, not adjectives.</strong> Not "build trust" — get three buyers' real approval chains this month; say out loud which option they shouldn't buy; commit in writing to showing up when it breaks. The prescribe-don't-pitch logic from the consultative selling piece is the moat: a model can generate advice, it cannot carry the consequences of the advice being wrong.</p>
+<p><strong>4. If you're new: this is your catch-up window, and the fastest-closing door.</strong> AI can pull your scripts, structure and follow-up discipline up to average — but average itself is depreciating. <strong>Spend every saved hour on real customer conversations; that's the input a model can't give you.</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: these tools turn "how the best people do it" from tacit knowledge into a copyable public good. Once copying gets cheap, the rent on that skill disappears — the beneficiaries are the people who were furthest from best practice, and whoever used to earn a premium on that tacit knowledge gains nothing. What premium remains has to come from things the model can't reach: a buyer's private internal constraints, judgement someone has to answer for, and relationship stock that can't be generated.</strong></p>
+<ul>
+<li><strong>Hard evidence (large field study, not a lab)</strong>: Brynjolfsson, Li &amp; Raymond (NBER working paper 2023; <em>Quarterly Journal of Economics</em> 2025): at a software firm, <strong>5,179 customer-support agents</strong> got a generative assistant in staged rollout; <strong>issues resolved per hour rose about 14% on average, roughly a third for novice and low-performing agents, and close to nothing for the most experienced.</strong></li>
+<li><strong>Hard evidence (randomised, including the downside)</strong>: Dell'Acqua et al. (2023, Harvard Business School working paper): BCG consultants randomised to AI <strong>completed 12.2% more tasks 25.1% faster at higher quality inside the model's competence; on a task deliberately placed outside it, AI users were about 19 percentage points less likely to be correct.</strong> They call it the jagged technological frontier.</li>
+<li><strong>Honest labelling</strong>: these are support and consulting settings, not an end-to-end sales cycle — don't treat "+14%" as the number your team will get. <strong>What transfers is the shape of the distribution (floor up, ceiling flat), not the magnitude.</strong></li>
+</ul>
+<p class="caveat">Boundary: a higher floor is good news if you're new, and it also means "slightly better than average" no longer pays. And if you hand over column one without moving the time into column three, the net result is just doing the same undifferentiated work faster. The measurement discipline from the data-driven selling piece applies: compare output per hour before and after, not how it feels.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>The loop is designed by verification cost, not by prompt craft
+<span class="en">Cheap, specific checks and a named signature — that's the whole design.</span></h2>
+<span class="tag">automation bias</span><span class="tag">algorithm aversion</span><span class="tag">named sign-off</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">There's only one way to use this badly: let it generate and have nobody actually check. <strong>The danger isn't that it errs, it's that it errs exactly where you're least able to notice</strong> — confident tone, clean formatting, plausible-looking citations. So the core of the loop isn't the prompt, it's <strong>a cheap verification action for every class of output, and a named person who signs it.</strong></div>
+</div>
+<div class="section">
+<div class="section-label">A loop that survives, and the branch that doesn't</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ac1" markerWidth="11" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+<marker id="ac2" markerWidth="11" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text x="14" y="20" fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700">Four steps, one loop — drop any of them and it blows up within weeks</text>
+<rect x="14" y="40" width="148" height="52" rx="3" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="88" y="62" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">AI drafts</text>
+<text x="88" y="78" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">email · comparison · case</text>
+<rect x="192" y="40" width="148" height="52" rx="3" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="266" y="62" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">numbers back to source</text>
+<text x="266" y="78" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">facts back to the record</text>
+<rect x="370" y="40" width="148" height="52" rx="3" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="444" y="62" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">a named person signs</text>
+<text x="444" y="78" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">reachable when it's wrong</text>
+<rect x="548" y="40" width="148" height="52" rx="3" fill="#c9dcc9" stroke="#4e8a3f" stroke-width="1.6"></rect>
+<text x="622" y="70" fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">it goes out</text>
+<line x1="166" x2="188" y1="66" y2="66" stroke="#4e8a3f" stroke-width="1.5" marker-end="url(#ac1)"></line>
+<line x1="344" x2="366" y1="66" y2="66" stroke="#4e8a3f" stroke-width="1.5" marker-end="url(#ac1)"></line>
+<line x1="522" x2="544" y1="66" y2="66" stroke="#4e8a3f" stroke-width="1.5" marker-end="url(#ac1)"></line>
+<path d="M622,96 L622,126 L88,126 L88,98" fill="none" stroke="#4e8a3f" stroke-width="1.5" marker-end="url(#ac1)"></path>
+<text x="355" y="120" fill="#2f5a24" font-family="Georgia" font-size="8.8" font-weight="700" text-anchor="middle">feed back what the human edited, or the next draft won't improve</text>
+<line x1="14" x2="686" y1="150" y2="150" stroke="#e3ddc7" stroke-width="1.2"></line>
+<text x="14" y="174" fill="#a8461f" font-family="Georgia" font-size="11.6" font-weight="700">The branch that skips the middle two steps</text>
+<rect x="14" y="188" width="210" height="60" rx="3" fill="#f6e3da" stroke="#c0603a" stroke-width="1.3"></rect>
+<text x="119" y="212" fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle">output is fast and polished</text>
+<text x="119" y="230" fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle">so nobody really reads it</text>
+<rect x="244" y="188" width="210" height="60" rx="3" fill="#f6e3da" stroke="#c0603a" stroke-width="1.3"></rect>
+<text x="349" y="212" fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle">automation bias: with a cue</text>
+<text x="349" y="230" fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle">people miss things and follow errors</text>
+<rect x="474" y="188" width="212" height="60" rx="3" fill="#f0cfc0" stroke="#c0603a" stroke-width="1.8"></rect>
+<text x="580" y="212" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">the expensive mistakes land</text>
+<text x="580" y="230" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">where you can't see them</text>
+<line x1="228" x2="240" y1="218" y2="218" stroke="#c0603a" stroke-width="1.5" marker-end="url(#ac2)"></line>
+<line x1="458" x2="470" y1="218" y2="218" stroke="#c0603a" stroke-width="1.5" marker-end="url(#ac2)"></line>
+<text x="14" y="278" fill="#697682" font-family="Georgia" font-size="8.8">Skitka et al. 1999: with an automated aid present, both omission errors and commission errors increase.</text>
+<text x="14" y="296" fill="#697682" font-family="Georgia" font-size="8.8">Dell'Acqua et al. 2023: outside the model's competence, AI users were about 19 percentage points less likely to be right.</text>
+<text x="14" y="322" fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700">Every number you send a customer must trace to a source that isn't the model — the one step in this loop you can never drop.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Do this · three hard rules for the wall</span>
+<p><strong>1. Numbers trace to systems; customer facts trace to records.</strong> Any percentage, amount or timeline you send must point back to the CRM, the finance system or a real call record; model-generated numbers never leave the building. <strong>This isn't fastidiousness — one invented case study, caught once, costs you every remaining deal in that relationship.</strong></p>
+<p><strong>2. Every outbound piece has a named person who signs it.</strong> Not process approval — the person the customer calls when it's wrong. <strong>A signature makes someone actually read it</strong>, which is the cheapest gate there is.</p>
+<p><strong>3. The bigger the time saving, the more the check has to be written as an action.</strong> "Review carefully" is not a check. "Verify three numbers, open one cited source, confirm the name and title" is — and it fits in two minutes, which is why it gets done.</p>
+<p><strong>4. Keep an editing seat; don't go fully automatic.</strong> This is also about whether you'll still be using it in three months: people abandon an algorithm outright after seeing it err once, while being allowed to adjust the output even slightly restores use substantially. <strong>Draft-then-human-approve outlives full automation.</strong></p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: people treat fluency, confidence and clean formatting as cues to correctness, so generative output naturally survives one quick look; and whenever an automated cue is present, independent checking drops (that's automation bias). Stacked together, the error rate isn't high but the miss rate is — and what gets missed is exactly the expensive category: things outside the model's competence where you have no independent information to compare against. Cheap checks written as actions are the only thing that holds both down.</strong></p>
+<ul>
+<li><strong>Hard evidence (classic experiment, clean mechanism)</strong>: Skitka, Mosier &amp; Burdick (1999, <em>International Journal of Human-Computer Studies</em>): with an automated aid, participants produced <strong>both omission errors (missing events the aid didn't flag) and commission errors (acting on a wrong prompt)</strong>; the finding has been reproduced repeatedly in later human-automation work.</li>
+<li><strong>Hard evidence (randomised)</strong>: Dell'Acqua et al. (2023): on tasks outside the model's competence, <strong>AI users were about 19 percentage points less likely to be correct</strong> — the errors arrive where they're hardest to notice, which is the whole reason to design the check.</li>
+<li><strong>Hard evidence with a direct remedy · algorithm aversion</strong>: Dietvorst, Simmons &amp; Massey (2015, <em>JEP: General</em>): <strong>people abandon an algorithm faster after seeing it err, even when it still beats them on average</strong>; the same group (2018, <em>Management Science</em>) found that <strong>letting people modify the output, even slightly, restores adoption substantially</strong>. <em>Honest labelling</em>: opposite results exist — Logg, Minson &amp; Moore (2019, <em>OBHDP</em>) report people preferring algorithmic judgement on some tasks. So it <strong>depends on the task and on whether a failure was witnessed</strong>; it isn't a universal law.</li>
+</ul>
+<p class="caveat">Failure mode: don't turn verification into a second full rewrite — that saves nothing and the team quietly skips it within three weeks. Checks should be short, specific and doable in two minutes. The other common trap is pasting sensitive customer data into an uncontrolled tool; settle the compliance question before legal comes to ask you.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 56 Action</h3>
+<p>One hour to turn "we should use AI" into four things you can check and change.</p>
+<div class="action">
+<strong>One (15 min) · Three columns:</strong> lay last week out as hand it over / it drafts and you verify / only you can do it, and give column one away this week.<br/><br/><strong>Two (15 min) · Audit one letter:</strong> take a recent outbound email and strike every sentence that would be true for another company. If only the sign-off survives, it shouldn't have gone out.<br/><br/><strong>Three (15 min) · Place the disclosure:</strong> write out the stages from first contact to signature, mark which ones a machine can hold without cost (objective, checkable) and which must be human (pricing, objections, bad news, negotiation), and rewrite the bot's opening line as "who I am, what I can do, who takes over when I can't".<br/><br/><strong>Four (15 min) · Define the checks:</strong> for the AI output you use most, write three checks that fit in two minutes, plus one named signer.<br/><br/>Boundary: this saves time, it doesn't create demand. With an empty pipeline, AI just helps you discover it's empty sooner — that's a prospecting and qualification problem, not a tooling one.
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. Should I add "this email was drafted with AI" to my messages?</summary>
+<div class="answer"><strong>Two layers — don't answer them as one.</strong><br/><br/><strong>Interactive systems must say so.</strong> If someone is conversing with a bot that answers back, Article 50 of the EU AI Act requires that they be informed they're interacting with an AI system (applying from August 2026); and that "disclosure cost 80% of purchases" experiment shows how large the short-term gain from concealment is, not that concealment pays. In a repeated game, being caught once is priced against the entire relationship.<br/><br/><strong>Assisted drafting doesn't need a per-message declaration</strong> — you don't declare templates or a colleague's edits either. The responsibility isn't in the byline, it's in the content: <strong>every fact and number in the letter must be something you verified and will stand behind.</strong> The test is still the same one: would it survive being said out loud? If a customer would feel deceived on learning a model drafted it, the problem is usually not that you used AI — it's that the letter had no substance to begin with.</div>
+</details>
+<details>
+<summary>2. Will AI replace selling as a job?</summary>
+<div class="answer"><strong>Tasks being automated isn't the same as an occupation disappearing — but don't use that sentence as comfort either.</strong><br/><br/>What gets eaten: list building, first-pass qualification, answering common questions, notes, follow-up reminders, standardised quotes — half the week for a lot of people. What doesn't, easily: getting at a buyer's real internal constraints (private information the model has no input on), judgement in complex deals that someone has to answer for, and a person who turns up when things break.<br/><br/>The usual analogy is the ATM: Bessen, in <em>Learning by Doing</em> (2015), points out that US teller numbers didn't immediately fall after ATMs spread — lower staffing cost per branch let banks open more branches, and the teller role shifted toward relationships and selling. <em>Honest labelling</em>: descriptive evidence from a single case, not a general law, and teller jobs have since been declining. It supports only this: <strong>automation changes the mix of tasks in a role before it changes the headcount, and the gap between those two is your window to re-tool.</strong><br/><br/>One actionable conclusion: <strong>invest where the model has no input.</strong> With the floor raised, being slightly better than average stopped paying.</div>
+</details>
+<details>
+<summary>3. A customer brings AI-generated analysis to challenge my pricing. Now what?</summary>
+<div class="answer"><strong>This is good news — they're doing the work. Don't argue with the model; chase the source.</strong><br/><br/><strong>One, agree first, then ask for provenance:</strong> "That's a useful comparison — which year, which edition, which usage tier is that price from? Let me line it up against how we quote." Public pricing is often stale and bundles different modules and usage assumptions; <strong>chasing provenance moves the conversation from "who's right" to "are we comparing the same thing".</strong><br/><br/><strong>Two, pull the generic output back to their private facts:</strong> "There are three things the model doesn't know about you: your data volume, whether this has to pass a compliance audit, and how much history you'd migrate. Any one of them changes the shape of the quote. Which of them are true here?" <strong>Their private constraints are in nobody's training data — which is exactly where you're still worth something.</strong><br/><br/><strong>Three, don't discount — decompose.</strong> Price versus value, break the comparison apart, cut scope rather than unit price if you must; the approach in the piece on price objections still holds, with one extra step of source-checking. And if their number is simply wrong, saying so calmly with a checkable source is the cheapest proof of expertise you'll get all year.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 56</footer>
+</div>
+</body>
+</html>

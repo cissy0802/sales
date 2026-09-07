@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 56：AI 时代的销售</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 56 · Phase H</div>
+<h1>写一封像样的邮件不再证明你花了心思——所以你得另外找一件能证明的事</h1>
+<div class="meta"><span>主题：触达塌成零成本后稀缺的是通道 · 说出机器身份会掉成交率 · AI 抬地板不抬天花板 · 验证成本决定回路怎么搭</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">大多数人拿 AI 做的事，是把原来就没人回的邮件发得更快更多。真正的变化在另一边：被自动化掉的那部分，恰好是过去用来证明你认真的那部分。</div>
+</header>
+<div class="intro">
+<strong>四个换掉的零件。</strong><strong>一、触达塌到零成本，稀缺的从「联系上他」换成了「凭什么读你」</strong>；<strong>二、事前说出机器身份会掉成交率——解法不是隐瞒，是换机器站的位置</strong>；<strong>三、AI 抬的是地板：新手涨得多、老手几乎没涨，值钱的东西换了一批</strong>；<strong>四、回路怎么搭由验证成本决定，不由提示词决定</strong>。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>触达的成本塌到零，稀缺的就不再是「联系上他」，而是「凭什么读你」
+<span class="en">When reaching anyone is free, contact stops being the scarce thing.</span></h2>
+<span class="tag">拥挤外部性</span><span class="tag">个性化的稀缺租</span><span class="tag">发件人新规</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">AI 把「找到 500 个像样的目标 + 每人写一封看起来很用心的信」从两周压成一下午。问题是对手也一样。收件箱容量没变、发的人变多，均衡只有一个方向：<strong>单封回复率往下掉，直到再发一封的收益接近于零。</strong>所以 AI 改的不是你该发多少封，是省下的两周该投到哪条它复制不了的通道上。</div>
+</div>
+<div class="section">
+<div class="section-label">成本塌下去之后，稀缺的东西换了一个</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="aa1" markerWidth="11" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text x="14" y="20" fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700">同一条链，四步走完</text>
+<rect x="14" y="42" width="148" height="48" rx="3" fill="#eef1f5" stroke="#3f5c7a" stroke-width="1.3"></rect>
+<text x="88" y="62" fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle">写一封通顺的信</text>
+<text x="88" y="78" fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle">成本趋近于零</text>
+<rect x="192" y="42" width="148" height="48" rx="3" fill="#eef1f5" stroke="#3f5c7a" stroke-width="1.3"></rect>
+<text x="266" y="62" fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle">每个卖家都多发</text>
+<text x="266" y="78" fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle">这仍是个体最优</text>
+<rect x="370" y="42" width="148" height="48" rx="3" fill="#eef1f5" stroke="#3f5c7a" stroke-width="1.3"></rect>
+<text x="444" y="62" fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle">收件箱总量上升</text>
+<text x="444" y="78" fill="#2f4a66" font-family="Georgia" font-size="9" text-anchor="middle">注意力总量不变</text>
+<rect x="548" y="42" width="148" height="48" rx="3" fill="#f0cfc0" stroke="#c0603a" stroke-width="1.6"></rect>
+<text x="622" y="62" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">单封回复率下降</text>
+<text x="622" y="78" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">直到收益≈成本</text>
+<line x1="166" x2="188" y1="66" y2="66" stroke="#3f5c7a" stroke-width="1.5" marker-end="url(#aa1)"></line>
+<line x1="344" x2="366" y1="66" y2="66" stroke="#3f5c7a" stroke-width="1.5" marker-end="url(#aa1)"></line>
+<line x1="522" x2="544" y1="66" y2="66" stroke="#3f5c7a" stroke-width="1.5" marker-end="url(#aa1)"></line>
+<line x1="14" x2="686" y1="112" y2="112" stroke="#e3ddc7" stroke-width="1.2"></line>
+<text x="14" y="136" fill="#2f5a24" font-family="Georgia" font-size="10.4" font-weight="700">AI 让它趋近零成本的</text>
+<rect x="14" y="148" width="316" height="128" rx="4" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="30" y="170" fill="#37493f" font-family="Georgia" font-size="9.2">· 找出一份看起来很对的名单</text>
+<text x="30" y="192" fill="#37493f" font-family="Georgia" font-size="9.2">· 写出通顺、像是专门给他的开场</text>
+<text x="30" y="214" fill="#37493f" font-family="Georgia" font-size="9.2">· 按人替换公司名与行业细节</text>
+<text x="30" y="236" fill="#37493f" font-family="Georgia" font-size="9.2">· 排跟进节奏、提醒、写纪要</text>
+<text x="30" y="262" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700">这一栏做得再好，也只是和所有人一起卷</text>
+<text x="370" y="136" fill="#8a6c22" font-family="Georgia" font-size="10.4" font-weight="700">AI 抹不掉成本的</text>
+<rect x="370" y="148" width="316" height="128" rx="4" fill="#f7f0dd" stroke="#b08c3a" stroke-width="1.6"></rect>
+<text x="386" y="170" fill="#37493f" font-family="Georgia" font-size="9.2">· 一次可信的引荐（不在同一个池子里）</text>
+<text x="386" y="192" fill="#37493f" font-family="Georgia" font-size="9.2">· 你真的用过他们的产品，点到了问题</text>
+<text x="386" y="214" fill="#37493f" font-family="Georgia" font-size="9.2">· 判断哪个触发事件是真的、现在就疼</text>
+<text x="386" y="236" fill="#37493f" font-family="Georgia" font-size="9.2">· 你的署名：出问题找得到的人</text>
+<text x="386" y="262" fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700">省下的两周，全部投到这一栏</text>
+<text x="14" y="302" fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700">平台也在把 AI 抹掉的成本加回来：2024 年 2 月起，日发五千封以上要过认证、给一键退订。</text>
+<text x="14" y="320" fill="#697682" font-family="Georgia" font-size="8.8">并把垃圾投诉率压在 0.3% 以下（Gmail 与 Yahoo 的发件人规则，不是研究结论）。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 把省下的时间投到四个地方</span>
+<p><strong>1. 先找引荐路径，再考虑写信。</strong>在现有客户、前同事、投资人里找一条通往对方的路。引荐信不靠文案取胜，它根本不在同一个池子里排队——噪音变多之后，关系存量的回报只会更高。</p>
+<p><strong>2. 让 AI 盯触发事件，别让它替你写那封信。</strong>招人、融资、换系统、合规期限、新上任的负责人——监控与摘要它很擅长。判断「哪个是真的现在就疼」，留给你自己。</p>
+<p><strong>3. 每封信至少一句模型写不出来的。</strong>你上周跟他同行聊到的具体做法、你在他们产品里卡住的那一步、他上个月发言里的一个数字。<strong>判据很简单：这句话换一家公司还成立，就不算。</strong></p>
+<p><strong>4. 发送量往下砍，每封的准备时间往上加。</strong>冷邮件与外联那期的结构照旧有效——变的是「量」这一维不再能买到优势，因为它对谁都便宜了。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> AI compresses "find five hundred plausible targets and write each of them something that looks thoughtful" from two weeks into an afternoon. So does it for your competitors. Inbox capacity didn't change and the number of senders did, so the equilibrium only points one way: reply rates per message fall until sending one more is barely worth it. What AI changed isn't how many you should send, it's where the two saved weeks should go. The evidence on personalisation is worth reading carefully here. Sahni, Wheeler and Chintagunta (2018, Marketing Science) ran large field experiments and found that simply adding the recipient's name to the subject line raised open rates by around 20%, lowered unsubscribes and produced more leads — and they called it noninformative content, because it adds no information at all. It worked because it was scarce. Once everyone can generate a bespoke-looking opener, that channel decays back toward baseline; the direction is certain, the magnitude isn't predictable. Platforms are also putting the cost back: since February 2024 Gmail and Yahoo require bulk senders (roughly 5,000+ messages a day) to authenticate with SPF, DKIM and DMARC, offer one-click unsubscribe, and hold spam complaints under 0.3%. Four places to put the saved time. Look for a referral path before you consider writing at all — a warm introduction doesn't compete in the same queue. Have AI watch for trigger events (hiring, funding, a system migration, a compliance deadline, a new person in the seat) and keep for yourself the judgement of which trigger actually hurts right now. Put at least one line in every message a model couldn't produce; the test is whether the sentence would still be true for a different company, and if it would, it doesn't count. And cut volume while raising the preparation time per message, because volume is the one dimension that no longer buys you an edge.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：拥挤外部性下的军备竞赛。边际成本趋近零、注意力总量固定时，「我再多发一点」永远是个体最优，加总起来却压低所有人的回复率，直到刚好覆盖那点残余成本。个性化文案同理——它有效是因为稀缺，不是因为携带信息；谁都能生成，租金就消失。</strong></p>
+<ul>
+<li><strong>硬证据（大规模田野实验）</strong>：Sahni、Wheeler &amp; Chintagunta (2018, <em>Marketing Science</em>)：主题行里加上收件人姓名<strong>把打开率提高约 20%，退订下降、线索增加</strong>；作者称之为「非信息性内容」——它不提供任何新信息。<em>诚实标注</em>：实验做在生成式 AI 普及之前，效应依赖稀缺，幅度不能照搬。</li>
+<li><strong>可核查的运营规则（不是研究）</strong>：Gmail 与 Yahoo 自 2024 年 2 月起要求大批量发件人（约每日五千封以上）完成 SPF/DKIM/DMARC 认证、提供一键退订，并<strong>把垃圾投诉率保持在 0.3% 以下</strong>。平台在替收件人重新给发送定价。</li>
+</ul>
+<p class="caveat">边界：不是外联死了，是「批量 + 泛化」这一格死了。噪音变多恰恰抬高了另一格的价值——少而准、有真实触发事件、发信人可核查。在很窄的市场里，五十封精准的信仍能撑起一条管道。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>说出「对面是机器」会掉成交率——解法不是隐瞒，是换机器站的位置
+<span class="en">Disclosure costs you conversions. The fix isn't hiding it; it's moving where the machine stands.</span></h2>
+<span class="tag">心智推断网络</span><span class="tag">独特性忽视</span><span class="tag">披露的时点</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">一个大得让人不舒服的数字：在一家金融公司的田野实验里，不披露身份的聊天机器人成交表现与熟练坐席相当；<strong>而对话开始前就告知「我是机器人」，购买率下降约八成。</strong>这条不能反过来用——隐瞒既违法也毁信任。它真正的用法是：<strong>披露照做，把机器放在披露不掉分的环节上。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">同一个机器人，站在哪一环差别很大</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 344" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ab1" markerWidth="11" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+<marker id="ab2" markerWidth="11" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text x="14" y="20" fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700">按环节分配：披露在左边不掉分，在右边掉很多</text>
+<rect x="14" y="38" width="124" height="52" rx="3" fill="#c9dcc9" stroke="#4e8a3f" stroke-width="1.4"></rect>
+<text x="76" y="58" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">初筛与答疑</text>
+<text x="76" y="74" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">排期 · 资料</text>
+<rect x="152" y="38" width="124" height="52" rx="3" fill="#c9dcc9" stroke="#4e8a3f" stroke-width="1.4"></rect>
+<text x="214" y="58" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">纪要与跟进</text>
+<text x="214" y="74" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">数据整理</text>
+<rect x="290" y="38" width="124" height="52" rx="3" fill="#f7f0dd" stroke="#b08c3a" stroke-width="1.4"></rect>
+<text x="352" y="58" fill="#8a6c22" font-family="Georgia" font-size="9" text-anchor="middle">演示与方案</text>
+<text x="352" y="74" fill="#8a6c22" font-family="Georgia" font-size="9" text-anchor="middle">人机各一半</text>
+<rect x="428" y="38" width="124" height="52" rx="3" fill="#f0cfc0" stroke="#c0603a" stroke-width="1.6"></rect>
+<text x="490" y="58" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">报价与异议</text>
+<text x="490" y="74" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">必须是人</text>
+<rect x="566" y="38" width="124" height="52" rx="3" fill="#f0cfc0" stroke="#c0603a" stroke-width="1.6"></rect>
+<text x="628" y="58" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">谈判与签约</text>
+<text x="628" y="74" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">坏消息也是</text>
+<text x="14" y="110" fill="#2f5a24" font-family="Georgia" font-size="9.2" font-weight="700">客观、可核对、答错了能当场纠正</text>
+<text x="686" y="110" fill="#a8461f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="end">主观、有后果、需要有人担着</text>
+<line x1="14" x2="686" y1="126" y2="126" stroke="#e3ddc7" stroke-width="1.2"></line>
+<text x="14" y="150" fill="#123f30" font-family="Georgia" font-size="11.6" font-weight="700">为什么「机器」这个标签一贴上，信任就没地方长</text>
+<text x="14" y="184" fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700">他以为</text>
+<text x="14" y="198" fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700">对面是人</text>
+<rect x="102" y="166" width="176" height="44" rx="3" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="190" y="184" fill="#2f5a24" font-family="Georgia" font-size="8.8" text-anchor="middle">心智推断网络参与更高</text>
+<text x="190" y="199" fill="#2f5a24" font-family="Georgia" font-size="8.8" text-anchor="middle">内侧前额叶 · 右侧颞顶联合区</text>
+<rect x="310" y="166" width="176" height="44" rx="3" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="398" y="192" fill="#2f5a24" font-family="Georgia" font-size="8.8" text-anchor="middle">他在推断你为什么这么说</text>
+<rect x="518" y="166" width="168" height="44" rx="3" fill="#c9dcc9" stroke="#4e8a3f" stroke-width="1.6"></rect>
+<text x="602" y="192" fill="#2f5a24" font-family="Georgia" font-size="8.8" font-weight="700" text-anchor="middle">善意可以被积累</text>
+<line x1="282" x2="306" y1="188" y2="188" stroke="#4e8a3f" stroke-width="1.5" marker-end="url(#ab1)"></line>
+<line x1="490" x2="514" y1="188" y2="188" stroke="#4e8a3f" stroke-width="1.5" marker-end="url(#ab1)"></line>
+<text x="14" y="246" fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700">他知道</text>
+<text x="14" y="260" fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700">对面是机器</text>
+<rect x="102" y="228" width="176" height="44" rx="3" fill="#f6e3da" stroke="#c0603a" stroke-width="1.3"></rect>
+<text x="190" y="254" fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle">同一套推断参与下降</text>
+<rect x="310" y="228" width="176" height="44" rx="3" fill="#f6e3da" stroke="#c0603a" stroke-width="1.3"></rect>
+<text x="398" y="248" fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle">他只评估这句话</text>
+<text x="398" y="263" fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle">对不对、有没有用</text>
+<rect x="518" y="228" width="168" height="44" rx="3" fill="#f0cfc0" stroke="#c0603a" stroke-width="1.6"></rect>
+<text x="602" y="254" fill="#a8461f" font-family="Georgia" font-size="8.8" font-weight="700" text-anchor="middle">善意无处附着</text>
+<line x1="282" x2="306" y1="250" y2="250" stroke="#c0603a" stroke-width="1.5" marker-end="url(#ab2)"></line>
+<line x1="490" x2="514" y1="250" y2="250" stroke="#c0603a" stroke-width="1.5" marker-end="url(#ab2)"></line>
+<text x="14" y="298" fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700">客观环节机器不掉分——那里只需要答案对；掉分的是要判断「他站不站我这边」的环节。</text>
+<text x="14" y="318" fill="#697682" font-family="Georgia" font-size="8.8">Krach 等 2008：交互对象越拟人，内侧前额叶与右侧颞顶联合区活动越高（小样本影像研究，方向参考）。</text>
+<text x="14" y="336" fill="#697682" font-family="Georgia" font-size="8.8">Luo 等 2019：事前披露机器人身份，购买率降约 79.7%（单家公司的田野实验）。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 披露照做，位置换掉</span>
+<p><strong>1. 交互式机器人一开口就说清楚。</strong>「我是 XX 的智能助理，能查价格和排期；要谈方案我直接转给负责你的顾问。」<strong>把披露和「我能干什么、干不了时转给谁」写在同一句里</strong>——单说「我是机器人」是扣分，加上出口才是给确定性。</p>
+<p><strong>2. 越主观、越有后果的环节，越要有人露面。</strong>报价、坏消息、异议、谈判、出事后的第一通电话，全部由人来。买家在这里评估的不是答案对不对，是「出问题时他会不会站我这边」——正是标签一贴上就关掉的那套推断。</p>
+<p><strong>3. 别把 AI 藏在人后面冒充人。</strong>被拆穿一次，之前所有真话一起被重估；欧盟 AI 法案第 50 条也明确要求让人知道自己正在与 AI 系统交互（2026 年 8 月适用）。判据还是销售的伦理边界那期那条——<strong>说破了还成立吗</strong>。</p>
+<p><strong>4. 客户越觉得自己情况特殊，越要人接手。</strong>人越认为自己的案例独特，越抗拒交给算法。听到「我们跟别家不一样」，正确回应是人露面 + 问具体差异，不是甩一份更详细的自动化报告。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> One number here is uncomfortably large. Luo, Tong, Fang and Qu (2019, Marketing Science) ran a field experiment at a financial-services firm: chatbots that didn't disclose their identity sold about as well as proficient human agents and far better than inexperienced ones — but disclosing bot identity before the conversation cut purchase rates by roughly 80%. You cannot run that backwards. Hiding it is both a legal problem (the EU AI Act's Article 50 transparency duties require that people be informed they are interacting with an AI system, applying from August 2026) and a trust problem: get caught once and every true thing you said gets repriced. The usable reading is different — disclose, and move where the machine stands. There's a mechanism underneath. Believing a human is on the other side recruits the mentalizing network — medial prefrontal cortex and right temporo-parietal junction. Krach and colleagues (2008, PLoS ONE) found activity in those regions increased with how human-like the game partner was, from computer through robot to person; earlier imaging work (McCabe et al., 2001, PNAS; Gallagher et al., 2002, NeuroImage) found the same contrast between playing a person and playing a computer. Small samples, treat as direction rather than a settled quantity. But it explains the pattern precisely: label the counterpart a machine and the buyer stops inferring why you said something and starts merely checking whether it's correct. Where correctness is the whole job — scheduling, FAQs, document retrieval, meeting notes — that costs nothing. Where the buyer is really asking "will this person be on my side when it breaks" — pricing, objections, negotiation, bad news, the first call after an incident — it costs everything. And when someone insists their situation is unusual, put a human on it: Longoni, Bonezzi and Morewedge (2019, Journal of Consumer Research) showed resistance to algorithms rises with the belief that one's own case is unique.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：销售里的信任大半建立在一套推断上——「他为什么这么说、是不是在替我着想」。这套推断在大脑里有明确落点（内侧前额叶与右侧颞顶联合区的心智化网络），激活程度取决于对方被认为有多像人。贴上「机器」的标签，买家不再推断意图，只剩对输出的验收：只需要答案对的环节不掉分，需要「他站不站我这边」的环节，掉的是唯一那样货币。</strong></p>
+<ul>
+<li><strong>硬证据（田野实验，效应极大）</strong>：Luo、Tong、Fang &amp; Qu (2019, <em>Marketing Science</em>)：未披露的聊天机器人成交表现与熟练坐席相当、显著优于新手坐席；<strong>而对话前披露机器人身份使购买率下降约 79.7%</strong>，主因是被认为知识与共情不足。<em>诚实标注</em>：单一公司、单一金融品类，幅度别外推，有价值的是方向。</li>
+<li><strong>硬证据（fMRI，脑区明确）</strong>：Krach 等 (2008, <em>PLoS ONE</em>)：<strong>博弈对手的拟人程度越高（计算机 → 功能型机器人 → 拟人机器人 → 人），内侧前额叶与右侧颞顶联合区活动越强</strong>；McCabe 等 (2001, <em>PNAS</em>) 与 Gallagher 等 (2002, <em>NeuroImage</em>) 在信任博弈与猜拳里报告了「对人 vs 对电脑」的同向差异。<em>诚实标注</em>：样本只有十几到二十几人，说的是心智推断被调用的程度，不是「AI 不如人」。</li>
+<li><strong>中等强度 · 抗拒发生在哪</strong>：Longoni、Bonezzi &amp; Morewedge (2019, <em>JCR</em>)：<strong>人越认为自己情况独特，越抗拒把决策交给算法</strong>（医疗场景，多个实验）。Castelo、Bos &amp; Lehmann (2019, <em>JMR</em>)：<strong>客观任务愿意用算法，主观任务不愿意</strong>。两条合起来就是上面那条分界线。</li>
+</ul>
+<p class="caveat">失效场景：别读成「能瞒就瞒」。除了法律还有纯经济的理由——销售是重复博弈，被拆穿的代价按整条关系计价。另外披露的负面效应不是常数：对习惯用 AI 助手的买家小得多。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>AI 抬的是地板不是天花板：新手涨最多，最资深的几乎没涨
+<span class="en">AI raises the floor, not the ceiling — so the scarce skills changed.</span></h2>
+<span class="tag">隐性知识被复制</span><span class="tag">租金转移</span><span class="tag">三栏分工</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">最扎实的一批现场证据指向同一个形状：<strong>AI 把最好那批人的做法变成所有人都能调用的东西，于是新手涨幅最大、资深者接近于零。</strong>含义不是「快学 AI」，是：<strong>你赖以吃饭的技能如果 AI 能复制，租金正在归零；剩下的只在三处——AI 拿不到的输入、要签字负责的判断、关系。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">收益按经验水平怎么分</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<text x="14" y="20" fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700">同一个工具，涨幅落在谁身上</text>
+<line x1="150" x2="150" y1="34" y2="152" stroke="#9aa89c" stroke-width="1.2"></line>
+<text x="140" y="58" fill="#37493f" font-family="Georgia" font-size="9.2" text-anchor="end">新手 / 低绩效</text>
+<rect x="150" y="44" width="340" height="22" fill="#c9dcc9" stroke="#4e8a3f" stroke-width="1.4"></rect>
+<text x="500" y="60" fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700">每小时解决的问题数 +约 34%</text>
+<text x="140" y="96" fill="#37493f" font-family="Georgia" font-size="9.2" text-anchor="end">全体平均</text>
+<rect x="150" y="82" width="140" height="22" fill="#dfeae2" stroke="#4e8a3f" stroke-width="1.2"></rect>
+<text x="300" y="98" fill="#2f5a24" font-family="Georgia" font-size="9.4">+14%</text>
+<text x="140" y="134" fill="#37493f" font-family="Georgia" font-size="9.2" text-anchor="end">最资深 / 高绩效</text>
+<rect x="150" y="120" width="10" height="22" fill="#f0cfc0" stroke="#c0603a" stroke-width="1.2"></rect>
+<text x="170" y="136" fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700">≈ 0（部分指标上略负）</text>
+<text x="14" y="168" fill="#697682" font-family="Georgia" font-size="8.8">Brynjolfsson、Li &amp; Raymond：一家企业软件公司 5,179 名客服坐席、逐步上线生成式助手的现场研究。</text>
+<line x1="14" x2="686" y1="182" y2="182" stroke="#e3ddc7" stroke-width="1.2"></line>
+<text x="14" y="206" fill="#123f30" font-family="Georgia" font-size="11.6" font-weight="700">于是你的活分成三栏，而值钱的只剩最右边一栏</text>
+<rect x="14" y="220" width="212" height="96" rx="4" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="28" y="240" fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700">① 直接交给它</text>
+<text x="28" y="260" fill="#37493f" font-family="Georgia" font-size="8.8">名单 · 摘要 · 会议纪要</text>
+<text x="28" y="278" fill="#37493f" font-family="Georgia" font-size="8.8">跟进提醒 · 常见问题初答</text>
+<text x="28" y="302" fill="#697682" font-family="Georgia" font-size="8.6">这一栏本周就该交出去</text>
+<rect x="244" y="220" width="212" height="96" rx="4" fill="#f7f0dd" stroke="#b08c3a" stroke-width="1.3"></rect>
+<text x="258" y="240" fill="#8a6c22" font-family="Georgia" font-size="9.4" font-weight="700">② 它起草，你验证</text>
+<text x="258" y="260" fill="#37493f" font-family="Georgia" font-size="8.8">邮件初稿 · 竞品对比</text>
+<text x="258" y="278" fill="#37493f" font-family="Georgia" font-size="8.8">商业案例 · 演示脚本</text>
+<text x="258" y="302" fill="#697682" font-family="Georgia" font-size="8.6">验证成本必须低于省下的时间</text>
+<rect x="474" y="220" width="212" height="96" rx="4" fill="#e6f0ea" stroke="#123f30" stroke-width="1.8"></rect>
+<text x="488" y="240" fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700">③ 只有你能做</text>
+<text x="488" y="260" fill="#37493f" font-family="Georgia" font-size="8.8">拿到他内部的真实约束</text>
+<text x="488" y="278" fill="#37493f" font-family="Georgia" font-size="8.8">说出你不推荐的那一条</text>
+<text x="488" y="296" fill="#37493f" font-family="Georgia" font-size="8.8">为结果签字、出事时到场</text>
+<text x="488" y="312" fill="#2f5a24" font-family="Georgia" font-size="8.6" font-weight="700">模型没有这一栏的输入</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 一小时做完的重新分栏</span>
+<p><strong>1. 把上周的时间按三栏摊开。</strong>多数人会发现第一栏占了三到四成——名单整理、纪要、跟进提醒、重复回答同样的问题。<strong>这一栏本周交出去，它已经不构成任何人的优势。</strong></p>
+<p><strong>2. 第二栏定一条硬规则：验证成本必须低于省下的时间。</strong>邮件初稿、竞品对比、商业案例，AI 起草能省一半；但要是得花四十分钟核对它编的三个数字，这一项就退回第三栏自己写。<strong>省时间的假象是这栏最贵的坑。</strong></p>
+<p><strong>3. 把第三栏写成具体动作，不是形容词。</strong>不是「建立信任」，是：这个月拿到三家客户内部的真实审批流程；说出一条「这条你们别买」；给一个出事时你到场的承诺并写进条款。顾问式销售那期的处方逻辑在这里就是护城河——模型能生成建议，不能承担建议错了的后果。</p>
+<p><strong>4. 如果你是新手：这是追赶的窗口，也是关得最快的门。</strong>AI 能把你的话术、结构、跟进纪律拉到平均线，但平均线本身正在贬值。<strong>省下的时间全用在拿真实客户对话上——那是模型给不了你的输入。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> The strongest field evidence so far all points at one shape: AI turns the best performers' tacit know-how into something anyone can call, so novices gain most and veterans gain almost nothing. Brynjolfsson, Li and Raymond studied 5,179 customer-support agents at a software firm as a generative assistant rolled out (NBER working paper 2023; Quarterly Journal of Economics 2025) and found issues resolved per hour rose about 14% on average — with roughly a third more for the newest and least-skilled agents, and little to no gain for the most experienced. Dell'Acqua and colleagues (2023, Harvard Business School working paper) found a matching pattern and a warning in a randomised study of BCG consultants: inside the model's competence, AI users completed 12.2% more tasks 25.1% faster at higher quality; on a task deliberately placed outside it, consultants using AI were about 19 percentage points less likely to reach the right answer. The practical reading isn't "learn AI faster." It's that whatever skill you live on, if a model can copy it, its rent is going to zero — and the rent left sits in three places: inputs AI can't get, judgement someone has to sign, and relationships. So take last week's calendar and split it three ways. Column one — list building, notes, follow-up reminders, answering the same question again — is a third of most people's week and should be handed over now; it is nobody's advantage any more. Column two, where AI drafts and you verify, needs one hard rule: verification must cost less than the time saved, or the item goes back to column three. And write column three as actions, not adjectives: get three buyers' real approval chains this month, say out loud which option they shouldn't buy, commit in writing to showing up when it breaks. A model can generate advice; it cannot carry the consequences of the advice being wrong.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：这类工具把「最好的那批人怎么做」从隐性知识变成可复制的公共品。复制成本一低，这项技能的租金就消失——受益的是原来离最佳实践最远的人，靠它赚溢价的人什么也没多拿。剩下的溢价只能来自模型拿不到的东西：客户内部的私有信息、要担责的判断、不能被生成的人际存量。</strong></p>
+<ul>
+<li><strong>硬证据（大样本现场研究，非实验室）</strong>：Brynjolfsson、Li &amp; Raymond（2023 NBER 工作论文；2025 <em>Quarterly Journal of Economics</em>）：某企业软件公司 <strong>5,179 名客服坐席</strong>分批上线生成式助手，<strong>每小时解决问题数平均升约 14%；新手与低绩效者涨约三成，最资深者几乎没有收益</strong>。</li>
+<li><strong>硬证据（随机对照，且给出反面）</strong>：Dell'Acqua 等 (2023, 哈佛商学院工作论文)：BCG 顾问随机分组，<strong>能力边界内，用 AI 者多完成 12.2% 的任务、快 25.1%、质量更高；在一项刻意设在边界外的任务上，用 AI 的一组正确率低约 19 个百分点。</strong>作者称之为「锯齿状能力边界」。</li>
+<li><strong>诚实标注</strong>：以上是客服与咨询场景，不是销售全流程，别把「+14%」当成你的团队会拿到的数字。<strong>可迁移的是分布形状（地板抬高、天花板不动），不是幅度。</strong></li>
+</ul>
+<p class="caveat">边界：地板被抬高对新手是好事，但也意味着「比平均强一点」不再值钱。另外，第一栏交出去之后若没把时间投到第三栏，净结果只是更快地做同样多不产生差异的事——用数据做销售那期的口径在这里很有用：比上线前后的单位时间产出，别比感觉。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>回路怎么搭，由验证成本决定，不由提示词决定
+<span class="en">The loop is designed by verification cost, not by prompt craft.</span></h2>
+<span class="tag">自动化偏差</span><span class="tag">算法厌恶</span><span class="tag">具名签发</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">把 AI 用坏的方式只有一种：让它生成，然后没人真的检查。<strong>危险不在于它会出错，在于它出错的地方恰好是你最看不出来的地方</strong>——语气自信、格式漂亮、引用像模像样。所以回路的核心不是提示词，是<strong>每类输出都配一个便宜的验证动作和一个具名的人签发。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">一个能跑很久的回路，和一条断掉的岔路</div>
+<div class="frame-diagram">
+<svg viewBox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ac1" markerWidth="11" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+<marker id="ac2" markerWidth="11" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto" refX="10" refY="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text x="14" y="20" fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700">四步一圈，缺哪一步都会在几周内爆</text>
+<rect x="14" y="40" width="148" height="52" rx="3" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="88" y="62" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">AI 起草</text>
+<text x="88" y="78" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">邮件 · 对比 · 案例</text>
+<rect x="192" y="40" width="148" height="52" rx="3" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="266" y="62" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">数字回源系统核对</text>
+<text x="266" y="78" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">客户事实回通话记录</text>
+<rect x="370" y="40" width="148" height="52" rx="3" fill="#e2efdc" stroke="#4e8a3f" stroke-width="1.3"></rect>
+<text x="444" y="62" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">具名的人签发</text>
+<text x="444" y="78" fill="#2f5a24" font-family="Georgia" font-size="9" text-anchor="middle">出问题找得到他</text>
+<rect x="548" y="40" width="148" height="52" rx="3" fill="#c9dcc9" stroke="#4e8a3f" stroke-width="1.6"></rect>
+<text x="622" y="70" fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">发出</text>
+<line x1="166" x2="188" y1="66" y2="66" stroke="#4e8a3f" stroke-width="1.5" marker-end="url(#ac1)"></line>
+<line x1="344" x2="366" y1="66" y2="66" stroke="#4e8a3f" stroke-width="1.5" marker-end="url(#ac1)"></line>
+<line x1="522" x2="544" y1="66" y2="66" stroke="#4e8a3f" stroke-width="1.5" marker-end="url(#ac1)"></line>
+<path d="M622,96 L622,126 L88,126 L88,98" fill="none" stroke="#4e8a3f" stroke-width="1.5" marker-end="url(#ac1)"></path>
+<text x="355" y="120" fill="#2f5a24" font-family="Georgia" font-size="8.8" font-weight="700" text-anchor="middle">把人改掉的那几处喂回去，下一版才会变好</text>
+<line x1="14" x2="686" y1="150" y2="150" stroke="#e3ddc7" stroke-width="1.2"></line>
+<text x="14" y="174" fill="#a8461f" font-family="Georgia" font-size="11.6" font-weight="700">跳过中间两步的那条岔路</text>
+<rect x="14" y="188" width="210" height="60" rx="3" fill="#f6e3da" stroke="#c0603a" stroke-width="1.3"></rect>
+<text x="119" y="212" fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle">生成得又快又像样</text>
+<text x="119" y="230" fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle">于是没人真的检查</text>
+<rect x="244" y="188" width="210" height="60" rx="3" fill="#f6e3da" stroke="#c0603a" stroke-width="1.3"></rect>
+<text x="349" y="212" fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle">自动化偏差：有了提示</text>
+<text x="349" y="230" fill="#a8461f" font-family="Georgia" font-size="9" text-anchor="middle">人会漏检，也会跟着错</text>
+<rect x="474" y="188" width="212" height="60" rx="3" fill="#f0cfc0" stroke="#c0603a" stroke-width="1.8"></rect>
+<text x="580" y="212" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">最贵的错，出在你</text>
+<text x="580" y="230" fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle">最看不出来的地方</text>
+<line x1="228" x2="240" y1="218" y2="218" stroke="#c0603a" stroke-width="1.5" marker-end="url(#ac2)"></line>
+<line x1="458" x2="470" y1="218" y2="218" stroke="#c0603a" stroke-width="1.5" marker-end="url(#ac2)"></line>
+<text x="14" y="278" fill="#697682" font-family="Georgia" font-size="8.8">Skitka 等 1999：有自动化提示时，人的漏检与「跟着提示一起错」都增加。</text>
+<text x="14" y="296" fill="#697682" font-family="Georgia" font-size="8.8">Dell'Acqua 等 2023：任务落在模型能力边界之外时，用 AI 的一组正确率低约 19 个百分点。</text>
+<text x="14" y="322" fill="#123f30" font-family="Georgia" font-size="9.6" font-weight="700">给客户的每一条数字，都要能指回一个不是模型生成的来源——这是整套回路里唯一不能省的一步。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 三条硬规则，贴在墙上</span>
+<p><strong>1. 数字回源系统，客户事实回记录。</strong>发给客户的任何百分比、金额、周期，必须能指回 CRM、财务系统或一份真实通话记录；模型生成的数字一律不出门。<strong>不是洁癖：一个编出来的客户案例被戳穿，你损失的是这条关系里剩下的全部单子。</strong></p>
+<p><strong>2. 每条对外内容有一个具名的人签发。</strong>不是流程审批，是「出问题客户打给谁」。<strong>署名会让人真的看一眼</strong>——最便宜的一道闸。</p>
+<p><strong>3. 越省时间的地方，验证越要写成动作。</strong>「仔细检查一下」等于没检查。写成：核对三个数字、点开一次来源、确认客户名与职位。<strong>两分钟内做得完的检查才会被真的做。</strong></p>
+<p><strong>4. 给自己留可修改的接口，别做全自动。</strong>这也是你能不能长期用下去的问题：人看到算法犯一次错就倾向彻底弃用，而只要允许自己稍微改一改输出，使用率就明显回升。<strong>AI 出稿、你终审，比全自动更可能活过第三个月。</strong></p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> There's only one way to use this badly: let it generate and have nobody actually check. The danger isn't that models err, it's that they err exactly where you're least able to notice — confident tone, clean formatting, plausible-looking citations. Skitka, Mosier and Burdick (1999, International Journal of Human-Computer Studies) documented automation bias in a flight-simulation task: with an automated aid present, people made both omission errors (missing events the aid didn't flag) and commission errors (following the aid into a mistake). Dell'Acqua and colleagues (2023) supply the sales-relevant version: outside the model's competence, AI users were about 19 percentage points less likely to be right. So design the loop around verification cost, not prompt craft. Three rules worth putting on the wall. Every number you send a customer — a percentage, an amount, a timeline — must trace to something that isn't the model: the CRM, the finance system, a real call recording. This isn't fastidiousness; one invented case study, caught once, costs you every remaining deal in that relationship. Every outbound piece gets a named person who signs it, meaning the person the customer calls when it's wrong — a signature is the cheapest gate there is, because it makes someone actually read the thing. And write verification as an action: "check it carefully" is not a check; "verify three numbers, open one cited source, confirm the name and title" is, and it fits in two minutes, which is why it gets done. Finally, keep an editing seat for yourself rather than going fully automatic. Dietvorst, Simmons and Massey (2015, JEP: General) showed people abandon an algorithm quickly after seeing it err even when it beats them on average; their 2018 Management Science follow-up showed that letting people modify the output, even slightly, restores use substantially. Draft-then-human-approve isn't just safer output — it's the version you'll still be running in three months.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：人把「流畅、自信、格式规整」当成正确性的线索，所以生成式输出天然骗得过一次快速检查；而只要有自动化提示在场，人的独立核查就会减少（自动化偏差）。叠加的结果是错误率不高、漏检率很高，漏掉的恰好是最贵的那类——落在模型能力边界之外、你又没有独立信息可对照的那部分。写成动作的、便宜的验证，是唯一能同时压住这两条的东西。</strong></p>
+<ul>
+<li><strong>硬证据（经典实验，机制清楚）</strong>：Skitka、Mosier &amp; Burdick (1999, <em>International Journal of Human-Computer Studies</em>)：有自动化辅助时，被试出现<strong>漏检（辅助没提示的事件被忽略）与跟错（跟着错误提示走）两类错误</strong>；后续人机协作研究反复重复出这一结论。</li>
+<li><strong>硬证据（随机对照）</strong>：Dell'Acqua 等 (2023)：模型能力边界之外的任务上，<strong>用 AI 的一组正确率低约 19 个百分点</strong>——错误正好发生在最难自我察觉的地方。</li>
+<li><strong>硬证据（且有直接的对策）· 算法厌恶</strong>：Dietvorst、Simmons &amp; Massey (2015, <em>JEP: General</em>)：<strong>人看到算法犯错后会更快抛弃它，哪怕它平均仍优于人</strong>；同组 (2018, <em>Management Science</em>) 发现<strong>允许人对输出做哪怕很小的修改，采用率显著回升</strong>。<em>诚实标注</em>：反向结果也存在——Logg、Minson &amp; Moore (2019, <em>OBHDP</em>) 报告某些判断任务里人反而更信算法。所以它<strong>依赖任务与是否见过失误</strong>，不是普适定律。</li>
+</ul>
+<p class="caveat">失效场景：别把验证做成第二遍全文重写——那等于没省时间，团队三周内就会偷偷跳过。验证要短、要具体、两分钟内做得完。另一个常见的坑：把客户敏感数据贴进不受控的工具里，先问清合规，别等法务来问你。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 56 Action</h3>
+<p>一小时，把「要用 AI」换成四件能查、能改的事。</p>
+<div class="action">
+<strong>一（15 分钟）· 三栏分工：</strong>把上周的时间摊开，按「直接交给它 / 它起草你验证 / 只有你能做」分栏，第一栏本周交出去。<br/><br/><strong>二（15 分钟）· 一封信的体检：</strong>拿最近发出的一封外联信，划掉所有换一家公司也成立的句子。划完只剩落款，这封就不该发。<br/><br/><strong>三（15 分钟）· 排披露位置：</strong>写下从第一次接触到签约的环节，标出哪些交给机器不掉分（客观、可核对）、哪些必须是人（报价、异议、坏消息、谈判），并把机器人开场白改成「我是谁 + 能做什么 + 做不了时转给谁」。<br/><br/><strong>四（15 分钟）· 定验证动作：</strong>给最常用的那类 AI 输出写三条两分钟内做得完的检查，和一个具名签发人。<br/><br/>边界提醒：这套省的是时间，不产生需求。管道空着时，AI 只会让你更快发现它是空的——那要回到找客户和资格判定。
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我要不要在邮件里注明「本邮件由 AI 辅助撰写」？</summary>
+<div class="answer"><strong>分两层，别混着答。</strong><br/><br/><strong>交互式的必须说。</strong>对方在跟会回话的机器人对话时，欧盟 AI 法案第 50 条要求让人知道自己正在与 AI 系统交互（2026 年 8 月适用）；那个「披露掉八成购买率」的实验证明的是隐瞒的短期收益有多大，不是它划算——重复博弈里被拆穿一次，代价按整条关系计价。<br/><br/><strong>辅助起草的不必逐封声明</strong>——你用模板、让同事改稿，也没有逐封声明。责任不在署名格式上，在内容上：<strong>信里每条事实和数字都必须是你核实过、并愿意负责的。</strong>判据还是那条：说破了还成立吗——如果客户知道这封是模型起草的会觉得被骗，问题通常不在用了 AI，而在这封信本来就没有实质内容。</div>
+</details>
+<details>
+<summary>2. AI 会取代销售这个职业吗？</summary>
+<div class="answer"><strong>任务被替代 ≠ 职业被替代，但别用这句话安慰自己。</strong><br/><br/>会被吃掉的：名单整理、初筛、常见问题应答、纪要、跟进提醒、标准化报价单——本来占掉不少人一半的时间。不容易被吃掉的：拿到客户内部真实约束的能力（私有信息，模型没有输入）、复杂交易里要担责的判断、出事时有人到场。<br/><br/>常被引用的类比是自动柜员机：Bessen 在 <em>Learning by Doing</em> (2015) 里指出，ATM 普及后美国柜员总数没有立刻减少——单网点人力成本下降使银行开了更多网点，柜员职责往关系与销售那端移。<em>诚实标注</em>：单一案例的描述性证据，且后来柜员岗位确实在减少。它只说明：<strong>自动化先改变岗位里的任务组合，再改变数量，中间那段时间差就是你重配技能的窗口。</strong><br/><br/>可操作的结论只有一条：<strong>盯着「AI 拿不到输入」那一栏加码。</strong>地板抬高之后，比平均水平强一点已经不值钱了。</div>
+</details>
+<details>
+<summary>3. 客户拿 AI 生成的分析来质疑我的报价，怎么办？</summary>
+<div class="answer"><strong>这是好事，说明他在认真做功课。别辩论模型，去追来源。</strong><br/><br/><strong>一、先认同，再要出处：</strong>「这个对比挺有意思——它引的价格是哪一年、哪个版本、什么用量档？我拿我们的口径对一遍。」公开报价常常过时、含不同模块与用量假设；<strong>追出处是把话题从「谁说得对」换成「比的是不是同一件事」。</strong><br/><br/><strong>二、把通用输出拉回他的专有信息：</strong>「模型不知道你们的三件事：数据量、要不要过合规审计、要迁移多少历史记录。任何一条成立，报价结构都会变。哪几条在你们这儿成立？」<strong>他的私有约束不在任何训练数据里——这正是你还值钱的地方。</strong><br/><br/><strong>三、别打折，去拆分。</strong>价格 vs 价值、拆开对比、必要时缩范围而不降单价——「太贵了」那期的打法照旧成立，只多一步来源核对。如果他的数字是错的，平静地指出来并给出可核查的来源，是你今年最便宜的一次专业度证明。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 56</footer>
+</div>
+</body>
+</html>
