@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Day 57: Sales Myths, Debunked</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Times New Roman",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:1px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"–"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 57 · Phase H</div>
+<h1>The most-quoted line in sales was written to humiliate salesmen</h1>
+<div class="meta"><span>Themes: the "natural" explains under a tenth · no magic line, only exit conditions · ABC is a stage line, not a finding · intuition needs an environment that earns it</span><span>·</span><span>4 moves · 4 diagrams</span></div>
+<div class="subtitle">Sales folklore is rarely wrong in its conclusion. It's wrong in its sourcing: a film script, a percentage nobody can trace, a winner's memory of why they won. Pull the sources apart and what's left is more specific, and easier to practise.</div>
+</header>
+<div class="intro">
+<strong>Four myths to take apart.</strong> <strong>One, "born to sell" is a weak prior — personality explains under a tenth of the gap in your results, and the rest sits in the trainable column</strong>; <strong>two, there is no magic line; what copies between people is the exit condition on each step</strong>; <strong>three, "always be closing" is a line from a 1984 play, and used as a method it runs against the evidence on large deals</strong>; <strong>four, a veteran's intuition isn't automatic — it needs an environment that teaches, and where the environment doesn't, you have to manufacture the feedback yourself</strong>.
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>"I'm just not a natural" — the natural explains under a tenth of the gap
+<span class="en">Personality correlates with sales results, but weakly enough to be the wrong thing to worry about.</span></h2>
+<span class="tag">traits vs outcomes</span><span class="tag">survivor stories</span><span class="tag">limits of practice</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Personality does correlate with sales performance — weakly. Decades of meta-analytic work put the corrected coefficients somewhere around 0.2 to 0.3; <strong>square that and you're explaining under a tenth of the variance.</strong> Treating "am I outgoing enough" as the entry ticket means letting a variable with no say in ninety percent of the outcome hand down a life sentence.</div>
+</div>
+<div class="section">
+<div class="section-label">Where the gap in results actually sits</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ma1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="22">The folk version</text>
+<rect fill="#f0cfc0" height="40" rx="3" stroke="#c0603a" stroke-width="1.5" width="672" x="14" y="34"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.5" font-weight="700" text-anchor="middle" x="350" y="58">Innate personality — you either have it or you don't, and it can't be learned</text>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="14" y="106">The version the literature supports (magnitudes only, not a real variance split)</text>
+<rect fill="#dfe6ee" height="46" rx="3" stroke="#3f5c7a" stroke-width="1.4" width="62" x="14" y="118"></rect>
+<rect fill="#e2efdc" height="46" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="330" x="76" y="118"></rect>
+<rect fill="#f7f0dd" height="46" rx="3" stroke="#b08c3a" stroke-width="1.4" width="280" x="406" y="118"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="8.6" text-anchor="middle" x="45" y="140">traits</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="8.6" text-anchor="middle" x="45" y="154">&lt;10%</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="241" y="138">trainable behaviour and process</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="241" y="156">questions asked · preparation · follow-through · asking for a decision</text>
+<text fill="#8a6c22" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="546" y="138">the part you don't choose</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="546" y="156">territory and accounts · product and pricing · timing and luck</text>
+<line stroke="#e3ddc7" stroke-width="1.2" x1="14" x2="686" y1="188" y2="188"></line>
+<text fill="#123f30" font-family="Georgia" font-size="10.6" font-weight="700" x="14" y="212">Two boundaries that usually get skipped</text>
+<rect fill="#eef1f5" height="66" rx="4" stroke="#3f5c7a" stroke-width="1.3" width="330" x="14" y="224"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.2" font-weight="700" x="28" y="245">Time served is not the answer either</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="28" y="263">Deliberate practice explains ~26% of variance in</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="28" y="279">games, 21% music, 18% sport — and ~1% in professions</text>
+<rect fill="#eef1f5" height="66" rx="4" stroke="#3f5c7a" stroke-width="1.3" width="330" x="356" y="224"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.2" font-weight="700" x="370" y="245">The war stories come from winners</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="370" y="263">The sample is selected on the outcome: people who</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="370" y="279">ran the same play and lost never get the microphone</text>
+<line marker-end="url(#ma1)" stroke="#c0603a" stroke-width="1.5" x1="620" x2="620" y1="78" y2="112"></line>
+<text fill="#697682" font-family="Georgia" font-size="8.6" x="14" y="312">Magnitudes from Barrick &amp; Mount (1991) and Vinchur et al. (1998) on personality and performance; the practice figures from Macnamara et al. (2014).</text>
+<text fill="#697682" font-family="Georgia" font-size="8.6" x="14" y="328">Illustrative scale only — not a measured variance decomposition of any actual sales team.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Do this · swap the trait question for four scoreable behaviours</span>
+<p><strong>1. Question density.</strong> Count the open questions you asked on one call and the minutes they spoke. This moves when you work on it; your personality doesn't.</p>
+<p><strong>2. Preparation.</strong> Before every meeting, write three specific facts about them and one hypothesis you intend to test. No note, no meeting — that step has nothing to do with temperament and everything to do with twenty minutes.</p>
+<p><strong>3. Follow-through rate.</strong> Of the things you promised, how many landed on time. When people call you reliable, this is the number they mean, and it's pure behaviour.</p>
+<p><strong>4. Asking for a decision.</strong> How many times this week you explicitly asked what the next step is. It's the most trainable of the four: write the sentence in advance and read it out.</p>
+<p><strong>How to run it:</strong> track those four for two weeks and you'll see your results move with them, not with how outgoing you happened to feel.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: traits are stable across situations, sales outcomes are violently situational — move the same person to another territory or price band and their numbers change by an order of magnitude. A stable variable predicting an unstable outcome has a low ceiling on correlation by construction. Then add survivorship: the "plays" you hear about come out of winners' mouths, a sample already filtered on the result, which is why every play sounds infallible.</strong></p>
+<ul>
+<li><strong>Hard evidence (meta-analysis)</strong>: Barrick &amp; Mount (1991, <em>Personnel Psychology</em>) pooled the validity literature and found <strong>conscientiousness is the one trait that predicts performance consistently across occupations</strong> (corrected validity around 0.2), with extraversion showing a small positive validity only for managers and salespeople. Vinchur, Schippmann, Switzer &amp; Roth (1998, <em>Journal of Applied Psychology</em>) ran the sales-specific version: <strong>the achievement facet of conscientiousness and the potency facet of extraversion did best, still landing in that 0.2–0.3 band</strong>, and lower against objective sales figures than against supervisor ratings.</li>
+<li><strong>Hard evidence (meta-analysis, and a counterintuitive one)</strong>: Macnamara, Hambrick &amp; Oswald (2014, <em>Psychological Science</em>) pooled 88 studies: deliberate practice explained about 26% of performance variance in games, 21% in music, 18% in sport — <strong>and roughly 1% in professions</strong>. <em>Honest labelling</em>: that says years served and loosely-measured practice barely predict professional performance; it doesn't say training is useless. It pushes the weight onto the structure of the practice and the quality of the feedback.</li>
+<li><strong>Supporting (single study, replication unsettled)</strong>: Grant (2013, <em>Psychological Science</em>) tracked 340 outbound reps and found extraversion barely correlated with revenue, with ambiverts producing the most per hour. The piece on selling for introverts covers it; the point to take here is narrower — <strong>even the direction of "extraverts do better" is shaky.</strong></li>
+</ul>
+<p class="caveat">Boundary: saying traits explain little is not saying people don't differ. The differences are real — they just live in behaviour and in how accounts get allocated, not in a personality inventory. And meta-analytic coefficients are corrected estimates that vary a fair bit between studies; don't treat 0.2–0.3 as a constant.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>There is no magic line — what copies is the exit condition on each step
+<span class="en">Most of the outcome was decided before you opened your mouth.</span></h2>
+<span class="tag">smallest coefficient</span><span class="tag">skipped steps under load</span><span class="tag">adopted vs decreed</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Hunting for the magic line means hunting in the last box on the chain for the variable with the smallest coefficient in it. <strong>Most of the result was settled earlier: whether the right person entered the pipeline, whether the pain was ever converted into money, whether the person who signs was in the room.</strong> None of that is secured by inspiration. It's secured by something unglamorous — one written exit condition per step, a thing that has to be true before you're allowed to move on.</div>
+</div>
+<div class="section">
+<div class="section-label">Five steps, one exit condition each</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 348" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mb1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+<marker id="mb2" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="11" y="20">One deal end to end: five boxes, one exit condition each</text>
+<rect fill="#e2efdc" height="52" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="118" x="11" y="34"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="70" y="54">01 right person</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.4" text-anchor="middle" x="70" y="72">fits the profile</text>
+<rect fill="#e2efdc" height="52" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="118" x="151" y="34"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="210" y="54">02 real pain</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.4" text-anchor="middle" x="210" y="72">it converts to money</text>
+<rect fill="#e2efdc" height="52" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="118" x="291" y="34"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="350" y="54">03 decision chain</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.4" text-anchor="middle" x="350" y="72">you've met the payer</text>
+<rect fill="#e2efdc" height="52" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="118" x="431" y="34"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="490" y="54">04 value landed</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.4" text-anchor="middle" x="490" y="72">they can repeat it</text>
+<rect fill="#e2efdc" height="52" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="118" x="571" y="34"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="630" y="54">05 ask for a call</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.4" text-anchor="middle" x="630" y="72">a date, or a clean no</text>
+<line marker-end="url(#mb1)" stroke="#4e8a3f" stroke-width="1.5" x1="131" x2="147" y1="60" y2="60"></line>
+<line marker-end="url(#mb1)" stroke="#4e8a3f" stroke-width="1.5" x1="271" x2="287" y1="60" y2="60"></line>
+<line marker-end="url(#mb1)" stroke="#4e8a3f" stroke-width="1.5" x1="411" x2="427" y1="60" y2="60"></line>
+<line marker-end="url(#mb1)" stroke="#4e8a3f" stroke-width="1.5" x1="551" x2="567" y1="60" y2="60"></line>
+<rect fill="#f0cfc0" height="34" rx="3" stroke="#c0603a" stroke-width="1.5" width="188" x="386" y="122"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" font-weight="700" text-anchor="middle" x="480" y="143">the "magic line" you polish</text>
+<line marker-end="url(#mb2)" stroke="#c0603a" stroke-width="1.5" x1="574" x2="622" y1="132" y2="92"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" x="386" y="172">acts on the last box only — and it's the smallest term in it</text>
+<line stroke="#e3ddc7" stroke-width="1.2" x1="11" x2="689" y1="192" y2="192"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.6" font-weight="700" x="11" y="216">Medicine ran the large test of exactly this idea</text>
+<rect fill="#eef1f5" height="106" rx="4" stroke="#3f5c7a" stroke-width="1.3" width="330" x="11" y="228"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.2" font-weight="700" x="26" y="249">When the checklist is adopted</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="26" y="268">8 hospitals, ~8,000 operations:</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="26" y="286">deaths 1.5% → 0.8%</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="26" y="304">complications 11% → 7%</text>
+<text fill="#697682" font-family="Georgia" font-size="8.4" x="26" y="322">Haynes et al. (2009, NEJM)</text>
+<rect fill="#f6e3da" height="106" rx="4" stroke="#c0603a" stroke-width="1.3" width="330" x="359" y="228"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.2" font-weight="700" x="374" y="249">When it is merely decreed</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="374" y="268">Mandated across 100+ Ontario hospitals:</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="374" y="286">no significant improvement in</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="374" y="304">deaths or complications</text>
+<text fill="#697682" font-family="Georgia" font-size="8.4" x="374" y="322">Urbach et al. (2014, NEJM)</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Scripts · what an exit condition sounds like out loud</span>
+<p><strong>You're not memorising a line, you're saying the test out loud.</strong> It doubles as qualification, and it makes you look unhurried.</p>
+<p><strong>Exit from box 02:</strong> "Roughly what does this cost you over a year — tens of thousands, or hundreds? I want to know whether it's worth your time to fix. <strong>If the number turns out small, we can stop here today.</strong>"</p>
+<p><strong>Exit from box 03:</strong> "At this size, do you sign it or does someone else? I'd rather not get to the last step and discover we left someone out — that wastes your time as much as mine."</p>
+<p><strong>Exit from box 04:</strong> "Let me check I explained it properly: if a colleague asked you why us, what would you tell them?" If they can't say it back, you didn't land it — that's on you, not on their listening.</p>
+<p><strong>Exit from box 05:</strong> "Either we put a date on the next step, or you tell me this isn't happening this year. <strong>I'm fine with both answers; the expensive one is staying in limbo.</strong>"</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: failure in complex work is usually not incompetence, it's knowing a step and skipping it under time pressure and memory load. A checklist adds no skill — it offloads memory into external structure, which is why it lifts the floor rather than the ceiling, and why the gain is always largest for the least experienced. Wording optimises one term inside the final box; how completely you cleared the first four decides whether that box ever gets to happen.</strong></p>
+<ul>
+<li><strong>Hard evidence (multi-centre before-and-after)</strong>: Haynes et al. (2009, <em>New England Journal of Medicine</em>) introduced a surgical safety checklist across eight hospitals: <strong>inpatient deaths fell from 1.5% to 0.8% and complications from 11% to 7%</strong>.</li>
+<li><strong>Hard evidence (the counter-case, equally important)</strong>: Urbach et al. (2014, <em>NEJM</em>) studied the mandated rollout across more than a hundred Ontario hospitals and found <strong>no significant improvement in deaths or complications</strong>. <em>Honest labelling</em>: neither study is a randomised trial, and the first is exposed to secular trends. Read together, though, the conclusion is stable — <strong>a system works when it is adopted, not when it is issued.</strong></li>
+<li><strong>Industry research (weighted as such)</strong>: Rackham's team at Huthwaite analysed roughly 35,000 sales conversations to derive the SPIN findings, including that closing techniques raised success in small sales and lowered it in large ones. <em>Honest labelling</em>: proprietary commercial research whose raw data and methods were never fully published, so it can't carry the weight of peer review — but it remains the largest systematic observation of sales conversations anyone has run, and the direction is worth taking seriously.</li>
+</ul>
+<p class="caveat">Failure mode: write fifteen exit conditions and the team will be quietly skipping them within a fortnight — that's the decreed version again. Five steps maximum, one sentence each, short enough to recite in a lift. And don't recite the checklist at the customer: it governs what counts as done, not what you say.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>"Always be closing" is a line written to humiliate salesmen — as a method it runs against the evidence on large deals
+<span class="en">Satire, not a finding. And pressure raises their exposure, not their urgency.</span></h2>
+<span class="tag">reactance</span><span class="tag">the sign flips with deal size</span><span class="tag">medial prefrontal cortex</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">"Always be closing" comes from David Mamet's <em>Glengarry Glen Ross</em> (play, 1984; film, 1992). The character delivering it was sent from head office to threaten the sales team, in a story that ends with someone driven to crime. <strong>It's satire, not a conclusion.</strong> And used as a conclusion it hurts you systematically on your most expensive deals — because the harder you press, the more the other side needs a refusal to take their choice back.</div>
+</div>
+<div class="section">
+<div class="section-label">Two loops: change the deal size and the sign flips</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mc1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+<marker id="mc2" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12" font-weight="700" x="14" y="20">The loop that runs in their head after you press</text>
+<rect fill="#f6e3da" height="42" rx="3" stroke="#c0603a" stroke-width="1.4" width="150" x="14" y="34"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="89" y="52">you press: this price</text>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="89" y="68">is only good today</text>
+<rect fill="#f6e3da" height="42" rx="3" stroke="#c0603a" stroke-width="1.4" width="150" x="192" y="34"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="267" y="52">they feel their freedom</text>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="267" y="68">to choose narrowing</text>
+<rect fill="#f6e3da" height="42" rx="3" stroke="#c0603a" stroke-width="1.4" width="150" x="370" y="34"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="445" y="52">motivation to restore</text>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" text-anchor="middle" x="445" y="68">it fires (reactance)</text>
+<rect fill="#f0cfc0" height="42" rx="3" stroke="#c0603a" stroke-width="1.8" width="150" x="548" y="34"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" font-weight="700" text-anchor="middle" x="623" y="52">cheapest way to restore:</text>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" font-weight="700" text-anchor="middle" x="623" y="68">don't buy / don't reply</text>
+<line marker-end="url(#mc1)" stroke="#c0603a" stroke-width="1.5" x1="168" x2="188" y1="55" y2="55"></line>
+<line marker-end="url(#mc1)" stroke="#c0603a" stroke-width="1.5" x1="346" x2="366" y1="55" y2="55"></line>
+<line marker-end="url(#mc1)" stroke="#c0603a" stroke-width="1.5" x1="524" x2="544" y1="55" y2="55"></line>
+<line stroke="#e3ddc7" stroke-width="1.2" x1="14" x2="686" y1="98" y2="98"></line>
+<text fill="#123f30" font-family="Georgia" font-size="12" font-weight="700" x="14" y="122">Same closing techniques, opposite directions</text>
+<rect fill="#f7faf6" height="92" rx="4" stroke="#4e8a3f" stroke-width="1.3" width="330" x="14" y="134"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.6" font-weight="700" x="30" y="155">Small · one-off · one person decides</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="30" y="175">low stakes; dithering costs more than a wrong buy</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="30" y="193">→ a push raises the close rate</text>
+<text fill="#697682" font-family="Georgia" font-size="8.4" x="30" y="213">which is why ABC found a market in the first place</text>
+<rect fill="#f6e3da" height="92" rx="4" stroke="#c0603a" stroke-width="1.5" width="330" x="356" y="134"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="9.6" font-weight="700" x="372" y="155">Large · long-term · several deciders</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="372" y="175">they carry the blame and must convince colleagues</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="372" y="193">→ a push lowers the close rate</text>
+<text fill="#697682" font-family="Georgia" font-size="8.4" x="372" y="213">pressure raises their exposure, not their urgency</text>
+<line stroke="#e3ddc7" stroke-width="1.2" x1="14" x2="686" y1="238" y2="238"></line>
+<rect fill="#e2efdc" height="82" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="672" x="14" y="250"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.8" font-weight="700" x="30" y="271">The replacement: always be qualifying — leave every contact with one clear outcome</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="30" y="292">Either a specific next step (who, what, which day), or a clean no.</text>
+<text fill="#37493f" font-family="Georgia" font-size="9" x="30" y="311">A clean no is a real output: it hands your time back to the next deal and keeps the relationship open for later.</text>
+<line marker-end="url(#mc2)" stroke="#4e8a3f" stroke-width="1.5" x1="350" x2="350" y1="228" y2="246"></line>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="scene">
+<div class="setup">Same customer, same moment: your quote has been out for two weeks and they say "let me think about it."</div>
+<div class="dialog bad">
+<div class="speaker">the ABC version</div>
+<p>"Understood — though this price only holds until the end of the month, and it goes back up on the first. Why don't we sign today and sort the details after? A couple of other clients are waiting on this slot."</p>
+<p><em>What just happened:</em> they've been told that not deciding now makes them a loser. In a deal with several deciders, what they're really calculating isn't the discount — it's "if I push this through and it goes wrong, whose name is on it." You just raised that number.</p>
+</div>
+<div class="dialog good">
+<div class="speaker">the low-pressure version</div>
+<p>"You should think about it. What I'd like to know is which part you're thinking about — whether it's worth the money, or whether you can get it through internally?"</p>
+<p>(after listening) "Here's what I'd suggest. <strong>If this genuinely isn't happening this year, just tell me it's a no and I'll stop chasing you.</strong> If it is worth doing, let's fix the next step: I send the ROI page Thursday, you walk finance through it Tuesday, and after that you give me a yes or a no."</p>
+<p><em>What just happened:</em> you handed the right to refuse back explicitly, so reactance has nothing to push against — and what you asked for wasn't a signature but a specific next step, which is far cheaper for them to agree to.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism one: reactance. When people feel their freedom to choose being compressed, they acquire a motive to restore it, and the cheapest restoration available is the opposite of the option being pushed — refuse, stall, go quiet. Mechanism two, which only shows up on big deals: pressure doesn't raise urgency, it raises the decision-maker's personal exposure, because they'll have to explain internally why they were rushed. That's why one technique helps on small transactions and backfires on large ones.</strong></p>
+<ul>
+<li><strong>Hard evidence (theory plus meta-analysis of experiments)</strong>: Brehm (1966) set out the theory of psychological reactance; Rains (2013, <em>Human Communication Research</em>) meta-analysed the experimental literature and found <strong>controlling, forceful language reliably raises reactance and lowers compliance</strong>. It replicates well in health communication.</li>
+<li><strong>Hard evidence (neural, and better than self-report)</strong>: Falk, Berkman &amp; Lieberman (2012, <em>Psychological Science</em>) found that <strong>activity in the medial prefrontal cortex — the region that relates incoming information to the self — while people were exposed to a message predicted population-level behaviour change, out-predicting what those same people said they intended to do</strong>; the same group had shown an individual-level version earlier (2010, <em>Journal of Neuroscience</em>). <em>Honest labelling</em>: samples of a few dozen, and these are predictive studies rather than causal experiments. The usable direction is clear all the same — <strong>what drives action is "this is about me" processing, not the closing line.</strong></li>
+<li><strong>Industry research (weighted as such)</strong>: Rackham and the Huthwaite analyses reported that <strong>closing techniques raised success in small sales and reduced it in large ones</strong> — not peer-reviewed, but pointing the same way as the reactance work.</li>
+</ul>
+<p class="caveat">Boundary: this is not an argument against ever mentioning urgency. A real deadline — capacity, a price rise, a budget year — is information, and you should say it. Manufactured deadlines are what trigger reactance, and being caught once puts the whole relationship's credibility on the invoice. Don't overshoot in the other direction either: low pressure is not the absence of an ask. As the piece on closing put it, the most expensive mistake is never asking at all.</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>A veteran's intuition isn't a product of years — it needs an environment that teaches, and sales mostly isn't one
+<span class="en">Where the environment won't give you feedback, manufacture it.</span></h2>
+<span class="tag">high-validity environments</span><span class="tag">mechanical prediction</span><span class="tag">the source test</span>
+</div>
+<div class="section">
+<div class="section-label">The principle in one line</div>
+<div class="principle">Intuition becomes accurate under two conditions: the environment contains enough regularity to learn, and you get <strong>fast, unambiguous feedback</strong>. Big sales fails both — cycles run months, and why you won is tangled up with budget, competitors, timing and luck, so the reason you invented afterwards was never scored. Which is why "twenty years in, I can just tell" is, in a lot of situations, confidence fed by survivorship.</div>
+</div>
+<div class="section">
+<div class="section-label">Which judgements you can trust, and which you have to score</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="md1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#3f5c7a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12" font-weight="700" x="14" y="18">Vertical: does the environment hold regularities · Horizontal: how fast and clear is the feedback</text>
+<rect fill="#f7f0dd" height="118" rx="3" stroke="#b08c3a" stroke-width="1.2" width="300" x="60" y="34"></rect>
+<rect fill="#e2efdc" height="118" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="300" x="368" y="34"></rect>
+<rect fill="#f6e3da" height="118" rx="3" stroke="#c0603a" stroke-width="1.5" width="300" x="60" y="160"></rect>
+<rect fill="#eef1f5" height="118" rx="3" stroke="#3f5c7a" stroke-width="1.2" width="300" x="368" y="160"></rect>
+<text fill="#8a6c22" font-family="Georgia" font-size="9.4" font-weight="700" x="76" y="54">Regular, but feedback is slow and murky</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="76" y="76">· "will this large B2B deal close"</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="76" y="96">· "is this candidate any good"</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="76" y="116">Intuition can't grow here — so manufacture feedback:</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="8.8" font-weight="700" x="76" y="136">write the prediction → check it on the date → review</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" x="384" y="54">Regular + fast, clear feedback</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="384" y="76">· high-volume phone sales: fifty calls teaches you</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="384" y="96">· retail, counter service, short cycles</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="384" y="116">· chess, firefighting judgement</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="8.8" font-weight="700" x="384" y="136">In this box, veteran intuition is real</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9.4" font-weight="700" x="76" y="180">Weak regularity + slow feedback: the dangerous box</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="76" y="202">· "I can tell at a glance if they have budget"</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="76" y="222">· "will this sector pick up this year"</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="76" y="242">Experience here adds confidence, not accuracy</text>
+<text fill="#a8461f" font-family="Georgia" font-size="8.8" font-weight="700" x="76" y="262">the surer you feel, the more you should score it</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.4" font-weight="700" x="384" y="180">Weak regularity, but fast feedback</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="384" y="202">· subject lines, landing page copy</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="384" y="222">Don't guess — run the A/B:</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="8.8" font-weight="700" x="384" y="242">where feedback is cheap, testing beats arguing</text>
+<text fill="#697682" font-family="Georgia" font-size="8.4" x="384" y="262">Two-condition framework: Kahneman &amp; Klein (2009)</text>
+<line marker-end="url(#md1)" stroke="#3f5c7a" stroke-width="1.4" x1="46" x2="46" y1="286" y2="30"></line>
+<line marker-end="url(#md1)" stroke="#3f5c7a" stroke-width="1.4" x1="60" x2="676" y1="292" y2="292"></line>
+<text fill="#2f4a66" font-family="Georgia" font-size="8.6" x="10" y="160">regularity</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="8.6" text-anchor="middle" x="368" y="308">feedback gets faster and clearer to the right</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="328">Cheapest way to manufacture it: at the quote stage write one line — "closes within 30 days: __%, because ____" —</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="14" y="342">then check them all together in three months. You'll find a systematic overestimate first; calibration starts after that.</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">Do this · four questions before you quote a number</span>
+<p>A surprising share of the most-repeated numbers in sales fail these four. <strong>Quote a fake statistic once, let the customer check it once, and a year of credibility goes with it.</strong></p>
+<p><strong>1. Who ran it, and where was it published?</strong> No author, no year, no journal or primary report — treat it as non-existent. "Studies show" is not a source.</p>
+<p><strong>2. What was the sample?</strong> How many people, in what setting. A few dozen undergraduates in a lab sit several layers away from the procurement director in front of you.</p>
+<p><strong>3. What did it actually measure?</strong> The commonest switch: an open rate reported as a close rate, a stated intention reported as a behaviour.</p>
+<p><strong>4. Does the original paper say that?</strong> The famous "93% of communication is non-verbal" is where this one crashes: Mehrabian's two 1967 experiments measured the relative weight of tone, expression and wording for <strong>single words</strong> conveying liking, and he has repeatedly said it doesn't generalise to communication at large. Another: "human attention span is now 8 seconds, shorter than a goldfish" traces back to a second-hand citation with no primary study behind it. The piece on follow-up discipline takes apart a similar set of percentages.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Why it works · mechanism and evidence</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>Mechanism: skill comes out of a predict–feedback–correct loop. When the loop is cut — feedback arriving months later, contaminated by a dozen outside causes — the brain still supplies a causal story, so confidence keeps growing while accuracy stands still. That's why in low-validity environments, years mostly buy you conviction. Writing the prediction down and checking it on the date is a manual reconnection of the loop.</strong></p>
+<ul>
+<li><strong>Hard evidence (a rare adversarial-consensus paper)</strong>: Kahneman &amp; Klein (2009, <em>American Psychologist</em>) set out the two conditions for trustworthy intuition — <strong>an environment regular enough to be predictable, and an opportunity to learn those regularities through practice, which means fast and unambiguous feedback</strong>. The two authors started from opposing positions and agreed on this, which is part of why the paper carries weight.</li>
+<li><strong>Hard evidence (meta-analysis)</strong>: Grove et al. (2000, <em>Psychological Assessment</em>) pooled 136 studies comparing clinical judgement with mechanical or statistical prediction: <strong>the mechanical rule matched or beat the expert in the large majority, with humans clearly ahead in only a handful</strong>. The line runs back to Meehl (1954).</li>
+<li><strong>Hard evidence (large forecasting tournament)</strong>: Mellers et al. (2014, <em>Psychological Science</em>), reporting the Good Judgment Project, found that <strong>training in probabilistic reasoning plus feedback measurably improved forecasting accuracy</strong>. <em>Honest labelling</em>: those were geopolitical events, not sales pipelines; carrying it over is a reasonable extrapolation, not direct evidence.</li>
+</ul>
+<p class="caveat">Boundary: don't swing to the other extreme. Where feedback is fast and the sample is large — high-volume outbound, retail, ad copy — veteran intuition is genuine skill, and scoring everything will only slow you down. The test is those two conditions: does this situation hold regularities, and how soon will I know I was wrong? Two yeses, trust the gut. One no, write it down.</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>Your Day 57 Action</h3>
+<p>One hour to swap four myths for four things you can check.</p>
+<div class="action">
+<strong>One (15 min) · Take the story out of your win reviews:</strong> list two deals you won and two you lost last quarter. For each, write the reason you believed at the time — then write the evidence you could actually produce. Where you can't produce any, you were telling yourself a story.<br/><br/><strong>Two (15 min) · Write your five steps:</strong> five at most, one exit condition each — what has to be true before you move on. Read it back, and cut anything past step five.<br/><br/><strong>Three (15 min) · Rewrite one push:</strong> find the last thing you said to pressure someone and rewrite it so the right to say no is handed back explicitly, ending with a specific next step (who, what, which day).<br/><br/><strong>Four (15 min) · Open a prediction log:</strong> for every deal reaching the quote stage this week, write one line — "closes within 30 days: __%, because ____". Check them together in three months. In a low-validity environment, that log is the only feedback you can make for yourself.<br/><br/>Boundary: debunking isn't a licence to believe nothing. Where feedback is fast — high-volume outbound, retail, ad copy — experienced intuition really is accurate, and volume really does work. This scepticism is for the long, large, murky deals; don't use it as a reason not to act.
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">Think It Through</div>
+<details>
+<summary>1. Top performers plainly exist. How do you explain them?</summary>
+<div class="answer"><strong>The gap is real; it's the explanation that's wrong.</strong> A several-fold spread between best and worst on the same team is completely normal — the error is booking all of it to talent.<br/><br/>Pulled apart, it's usually three things stacked. <strong>One, allocation</strong> — territory, sector, inherited accounts, the quality of leads routed to them; this is often larger than the difference between the people, and it never appears in the story. <strong>Two, volume and completeness of behaviour</strong> — real conversations per week, the share of follow-ups done on time, the three extra questions asked. <strong>Three, a genuine but smaller skill difference</strong>, mostly in questioning and in handling complicated situations — and that was trained too.<br/><br/><strong>The checkable move: don't listen to their war stories, look at their calendar and their CRM.</strong> Lay out last week — hours in live customer conversations, hours preparing, hours in internal meetings. You'll find a very unglamorous difference in distribution. That you can copy; the line from the stage you can't.</div>
+</details>
+<details>
+<summary>2. If I follow a system, don't I become a robot reading a script?</summary>
+<div class="answer"><strong>You become a robot by turning the checklist into dialogue, not by having one.</strong><br/><br/>Keep two things apart. <strong>Exit conditions</strong> govern what counts as done — was the pain converted into money, have you met the person who signs. <strong>How you say things</strong> stays yours, and shifts with the person, the industry and the mood in the room. Fix the first, never the second. A surgical checklist doesn't prescribe the surgeon's tone; it prescribes that identity, site and allergies were confirmed.<br/><br/>There's a second layer: the checklist is there for your bad days. On a good day everyone remembers to ask about the decision chain; tired, or chasing month-end, people skip it. The Ontario counter-case is the warning — a checklist handed down as a form to fill in does nothing. It works when it's your own five lines and you actually use them.</div>
+</details>
+<details>
+<summary>3. My boss believes in ABC and wants a close attempt on every call. Now what?</summary>
+<div class="answer"><strong>Don't argue beliefs — argue with your own data, and start by conceding the part where they're right.</strong><br/><br/><strong>Concede first:</strong> in small, high-frequency, single-decider business, pushing harder genuinely does raise close rates. Your boss probably grew up in exactly that business. Their experience isn't fake; it's being transferred to the wrong setting.<br/><br/><strong>Then negotiate:</strong> propose a 90-day test rather than a debate. "Let me run half my deals your way and half on 'every contact ends with a specific next step or a clean no', and we compare win rate and average cycle in three months. If mine loses, I'll run it your way." <strong>Turning a disagreement into a checkable question with a deadline is far easier than converting someone's beliefs.</strong><br/><br/><strong>And hand them something they want:</strong> clean no's make your pipeline numbers honest and your forecast more accurate — most managers care about forecast accuracy about as much as they care about closing. You're not asking to close less. You're turning limbo into answers sooner.</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.en.html">← Back to index</a>
+</nav>
+<footer>BigCat · Sales · Day 57</footer>
+</div>
+</body>
+</html>
