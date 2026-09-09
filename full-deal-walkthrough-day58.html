@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>销售 Day 58：组合拳 · 一个完整成交复盘</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Noto Serif SC","Songti SC",serif;background:#f3f1ea;color:#263029;line-height:1.75}
+.container{max-width:780px;margin:0 auto;padding:24px 22px 80px}
+header{text-align:center;padding:56px 0 38px;border-bottom:2px solid #cbb98f;position:relative}
+header .week-tag{display:inline-block;font-size:0.78rem;letter-spacing:3px;color:#1f7a5c;margin-bottom:10px;text-transform:uppercase;font-weight:700}
+header h1{font-size:2.05rem;font-weight:800;color:#123f30;letter-spacing:2px;line-height:1.3}
+header .meta{margin-top:14px;font-size:0.92rem;color:#5a7365}
+header .meta span{margin:0 8px}
+header .subtitle{margin-top:18px;font-size:1rem;color:#1f7a5c;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+.intro{margin:36px 0 12px;padding:22px 26px;background:#fbfaf4;border-left:4px solid #1f7a5c;border-radius:4px;font-size:0.97rem;color:#2c382f}
+.intro strong{color:#123f30}
+.card{margin-top:42px;background:#fbfaf4;border-radius:8px;padding:34px 32px;box-shadow:0 2px 14px rgba(18,63,48,0.09);border-top:3px solid #1f7a5c}
+.card-header{border-bottom:1px solid #e3ddc7;padding-bottom:18px;margin-bottom:22px}
+.card-num{display:inline-block;font-size:0.76rem;color:#1f7a5c;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.card h2{font-size:1.42rem;color:#123f30;font-weight:700;line-height:1.35}
+.card h2 .en{display:block;font-size:0.92rem;color:#5a7365;font-weight:400;font-style:italic;margin-top:4px}
+.tag{display:inline-block;font-size:0.74rem;background:#dfeae2;color:#1f5a44;padding:3px 10px;border-radius:12px;margin-top:10px;margin-right:6px;letter-spacing:1px}
+.section{margin-top:20px}
+.section-label{font-size:0.78rem;letter-spacing:2.5px;color:#1f7a5c;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.principle{font-size:1.08rem;color:#1e2b24;font-weight:600;background:#e6f0ea;padding:14px 18px;border-radius:4px;border-left:3px solid #123f30}
+.scene{background:#f7faf6;padding:18px 20px;border-radius:4px;border:1px solid #e3ddc7}
+.scene .setup{color:#4a6154;font-size:0.95rem;margin-bottom:10px}
+.dialog{margin:10px 0;padding:10px 14px;border-radius:4px;font-size:0.95rem}
+.dialog.bad{background:#f6e3da;border-left:3px solid #c0603a}
+.dialog.good{background:#e2efdc;border-left:3px solid #4e8a3f}
+.dialog .speaker{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.dialog.bad .speaker{color:#a8461f}
+.dialog.good .speaker{color:#3f6d2f}
+.dialog p{margin:4px 0;color:#2c382f}
+.template{background:#eaf3ee;padding:16px 20px;border-radius:4px;border-left:3px solid #1f7a5c}
+.template .label{font-weight:700;color:#1f5a44;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.template p{margin:6px 0;color:#26382f}
+ul.checklist{list-style:none;padding:0}
+ul.checklist li{padding:8px 0 8px 30px;position:relative;color:#2c382f;font-size:0.96rem;border-bottom:1px dashed #e3ddc7}
+ul.checklist li:last-child{border-bottom:none}
+ul.checklist li::before{content:"☐";position:absolute;left:6px;color:#1f7a5c;font-size:1.1rem;top:6px}
+.english{background:#eaf1ec;padding:14px 18px;border-radius:4px;font-size:0.94rem;color:#25402f;border-left:3px solid #4e8a3f}
+.english .label{font-weight:700;color:#2c7a58;font-size:0.82rem;letter-spacing:2px;margin-bottom:8px;display:block}
+.english em{color:#1f7a5c;font-weight:600;font-style:normal}
+.homework{margin-top:50px;padding:28px 26px;background:linear-gradient(135deg,#123f30 0%,#1f7a5c 100%);color:#eef7f2;border-radius:8px}
+.homework h3{font-size:1.15rem;letter-spacing:2px;margin-bottom:14px;color:#d8ecdf}
+.homework p{font-size:1rem;color:#e2f0e8;margin-bottom:8px}
+.homework .action{background:rgba(255,255,255,0.1);padding:14px 18px;border-radius:4px;margin-top:12px;font-style:italic;border-left:3px solid #7bc0a4}
+.frame-diagram{background:#f7faf6;padding:22px;border-radius:6px;margin:16px 0;border:1px solid #e3ddc7;text-align:center}
+.frame-diagram svg{max-width:100%;height:auto}
+.en-brief{margin-top:12px;font-size:0.9rem;color:#4a6154;background:#eef4f0;padding:10px 14px;border-radius:4px}
+.en-brief b{color:#1f7a5c;font-style:normal;margin-right:6px}
+.evidence{background:#eef1f5;padding:16px 20px;border-radius:4px;border-left:3px solid #3f5c7a}
+.evidence .label{font-weight:700;color:#2f4a66;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.evidence .mech{color:#2c382f;margin-bottom:8px}
+.evidence .mech strong{color:#123f30}
+.evidence ul{list-style:none;padding:0;margin-top:6px}
+.evidence li{padding:7px 0 7px 20px;position:relative;font-size:0.92rem;color:#37493f;border-top:1px dashed #d5dce4}
+.evidence li strong{color:#2f4a66}
+.evidence li::before{content:"▪";position:absolute;left:2px;color:#3f5c7a}
+.evidence .caveat{margin-top:10px;font-size:0.86rem;color:#697682;font-style:italic}
+.qa{margin-top:50px}
+.qa-title{font-size:1.15rem;letter-spacing:2px;color:#123f30;font-weight:700;margin-bottom:18px;text-align:center}
+.qa details{background:#fbfaf4;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.qa summary{cursor:pointer;padding:16px 44px 16px 20px;font-weight:700;color:#123f30;font-size:1rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:20px;top:16px;color:#1f7a5c;font-weight:700}
+.qa details[open] summary::after{content:"－"}
+.qa summary:hover{color:#1f7a5c}
+.qa .answer{padding:2px 20px 18px;color:#2c382f;font-size:0.96rem;line-height:1.78}
+.qa .answer strong{color:#123f30}
+nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px solid #cbb98f}
+nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
+nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
+footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+@media(max-width:600px){
+header h1{font-size:1.55rem}
+.card{padding:24px 20px}
+.card h2{font-size:1.2rem}
+.container{padding:16px 14px 60px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="week-tag">Day 58 · Phase H</div>
+<h1>单子很少死在某一步做得不好，多半死在两步之间没人接住</h1>
+<div class="meta"><span>主题：漏水在交接处不在某一格 · 一个单子从冷邮件走到续约 · 交付的记忆只取峰值和结尾 · 复盘先判过程再看结果</span><span>·</span><span>4 个动作 · 4 张图</span></div>
+<div class="subtitle">把前面所有招式串成一条链，最脆的地方不是任何一环，而是环与环的接口。下面把一个单子从第一封冷邮件走到第 14 个月的续约，逐个接口看它怎么被交下去。</div>
+</header>
+<div class="intro">
+<strong>四个动作。</strong><strong>一、损耗发生在交接处，而且是相乘的——每一格结束必须交出一句具体的东西给下一格</strong>；<strong>二、拿一个端到端的例子走完七格，看的是出口条件不是话术</strong>；<strong>三、成交只是把风险交给了交付，而客户记住的只有峰值和结尾</strong>；<strong>四、复盘先判过程再看结果，赢下来的单子最容易教坏你</strong>。
+</div>
+<!-- ============ Card 1 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 01</div>
+<h2>漏斗不漏在某一格里——漏在两格之间的交接
+<span class="en">The funnel doesn't leak inside a stage. It leaks in the handoff between them.</span></h2>
+<span class="tag">交接物</span><span class="tag">乘法损耗</span><span class="tag">工作记忆的上限</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">复盘时你习惯问「哪一步做砸了」，但六格各做到 80 分，端到端不是 80 分——五次交接每次只丢两成，走完只剩三成三。<strong>决定成败的不是任何一格里的表现，而是每一格结束时你有没有把一件明确的东西交到下一格手里。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">六格与它们之间的五次交接</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ma1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="5" y="18">六格走一遍：真正的损耗发生在格与格之间</text>
+<text fill="#697682" font-family="Georgia" font-size="8.6" x="5" y="33">箭头下面挂的，是这一次交接实际要交出去的那一句话。</text>
+<rect fill="#e2efdc" height="52" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="100" x="5" y="44"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="55" y="64">01 触达</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.2" text-anchor="middle" x="55" y="82">找到对的人</text>
+<rect fill="#e2efdc" height="52" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="100" x="123" y="44"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="173" y="64">02 判定</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.2" text-anchor="middle" x="173" y="82">值不值得追</text>
+<rect fill="#e2efdc" height="52" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="100" x="241" y="44"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="291" y="64">03 发现</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.2" text-anchor="middle" x="291" y="82">痛点换算成钱</text>
+<rect fill="#e2efdc" height="52" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="100" x="359" y="44"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="409" y="64">04 决策链</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.2" text-anchor="middle" x="409" y="82">见到掏钱的人</text>
+<rect fill="#e2efdc" height="52" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="100" x="477" y="44"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="527" y="64">05 方案成交</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.2" text-anchor="middle" x="527" y="82">拿到一个日期</text>
+<rect fill="#e2efdc" height="52" rx="3" stroke="#4e8a3f" stroke-width="1.4" width="100" x="595" y="44"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" text-anchor="middle" x="645" y="64">06 交付续约</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.2" text-anchor="middle" x="645" y="82">他愿意再买</text>
+<line marker-end="url(#ma1)" stroke="#4e8a3f" stroke-width="1.5" x1="107" x2="119" y1="70" y2="70"></line>
+<line marker-end="url(#ma1)" stroke="#4e8a3f" stroke-width="1.5" x1="225" x2="237" y1="70" y2="70"></line>
+<line marker-end="url(#ma1)" stroke="#4e8a3f" stroke-width="1.5" x1="343" x2="355" y1="70" y2="70"></line>
+<line marker-end="url(#ma1)" stroke="#4e8a3f" stroke-width="1.5" x1="461" x2="473" y1="70" y2="70"></line>
+<line marker-end="url(#ma1)" stroke="#4e8a3f" stroke-width="1.5" x1="579" x2="591" y1="70" y2="70"></line>
+<line stroke="#9aab9f" stroke-dasharray="3 3" stroke-width="1.1" x1="113" x2="113" y1="76" y2="128"></line>
+<line stroke="#9aab9f" stroke-dasharray="3 3" stroke-width="1.1" x1="231" x2="231" y1="76" y2="128"></line>
+<line stroke="#9aab9f" stroke-dasharray="3 3" stroke-width="1.1" x1="349" x2="349" y1="76" y2="128"></line>
+<line stroke="#9aab9f" stroke-dasharray="3 3" stroke-width="1.1" x1="467" x2="467" y1="76" y2="128"></line>
+<line stroke="#9aab9f" stroke-dasharray="3 3" stroke-width="1.1" x1="585" x2="585" y1="76" y2="128"></line>
+<rect fill="#eaf3ee" height="34" rx="3" stroke="#1f7a5c" stroke-width="1.2" width="106" x="60" y="130"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="8.4" text-anchor="middle" x="113" y="151">他说过的一句现状</text>
+<rect fill="#eaf3ee" height="34" rx="3" stroke="#1f7a5c" stroke-width="1.2" width="106" x="178" y="130"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="8.4" text-anchor="middle" x="231" y="151">他符合画像哪一条</text>
+<rect fill="#eaf3ee" height="34" rx="3" stroke="#1f7a5c" stroke-width="1.2" width="106" x="296" y="130"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="8.4" text-anchor="middle" x="349" y="151">一句他能复述的痛</text>
+<rect fill="#eaf3ee" height="34" rx="3" stroke="#1f7a5c" stroke-width="1.2" width="106" x="414" y="130"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="8.4" text-anchor="middle" x="467" y="151">谁掏钱谁反对</text>
+<rect fill="#eaf3ee" height="34" rx="3" stroke="#1f7a5c" stroke-width="1.2" width="106" x="532" y="130"></rect>
+<text fill="#1f5a44" font-family="Georgia" font-size="8.4" text-anchor="middle" x="585" y="151">谁·做什么·哪天</text>
+<line stroke="#e3ddc7" stroke-width="1.2" x1="5" x2="689" y1="186" y2="186"></line>
+<text fill="#123f30" font-family="Georgia" font-size="10.6" font-weight="700" x="6" y="208">五次交接，损耗是相乘的，不是相加的</text>
+<rect fill="#f3f1ea" height="24" rx="2" stroke="#e3ddc7" stroke-width="1" width="545" x="140" y="220"></rect>
+<rect fill="#f0cfc0" height="24" rx="2" stroke="#c0603a" stroke-width="1.4" width="179" x="140" y="220"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="6" y="236">每次交接丢 20%</text>
+<text fill="#a8461f" font-family="Georgia" font-size="9" font-weight="700" x="327" y="236">端到端只剩 33%</text>
+<rect fill="#f3f1ea" height="24" rx="2" stroke="#e3ddc7" stroke-width="1" width="545" x="140" y="254"></rect>
+<rect fill="#e2efdc" height="24" rx="2" stroke="#4e8a3f" stroke-width="1.4" width="422" x="140" y="254"></rect>
+<text fill="#37493f" font-family="Georgia" font-size="8.8" x="6" y="270">每次只丢 5%</text>
+<text fill="#2f5a24" font-family="Georgia" font-size="9" font-weight="700" x="570" y="270">剩 77%</text>
+<text fill="#123f30" font-family="Georgia" font-size="9" font-weight="700" x="6" y="300">六格每格都做到 80 分也没用——差别不在任何一格里，而在交接时丢了多少。</text>
+<text fill="#697682" font-family="Georgia" font-size="8.4" x="6" y="318">结构化交接能把丢失压下去：Starmer 等 (2014, NEJM)</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 五次交接，每次只交一样东西</span>
+<p><strong>1. 触达 → 判定：</strong>交「他自己说过的一句具体现状」，不是「他好像有兴趣」。原话记下来，后面每一格都要用它。</p>
+<p><strong>2. 判定 → 发现：</strong>交「他符合理想客户画像的哪一条，凭什么」。写不出这一条，说明这单是靠感觉进来的。</p>
+<p><strong>3. 发现 → 决策链：</strong>交「一句他能自己复述的痛，且已经换算成钱或时间」。他复述不出来，就等于没有。</p>
+<p><strong>4. 决策链 → 方案：</strong>交一份名单：谁掏钱、谁使用、谁会反对，每人一句他在意什么。</p>
+<p><strong>5. 方案 → 成交：</strong>交一个具体的下一步——谁、做什么、哪天。「我们保持联系」不是下一步。</p>
+<p><strong>做法：</strong>这五句话写在同一处（CRM 备注就行），每次动作之前先读一遍。哪一句是空的，就回去补，别往下走——往下走只是把空缺带进更贵的格子。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> You debrief by asking which step you botched, but six stages at 80% each don't add up to 80% end to end. Five handoffs losing a fifth apiece leaves you a third of what went in; five handoffs losing a twentieth leave you three quarters. The variable that decides deals isn't performance inside any stage — it's whether each stage hands something specific to the next one. Loss at the seam is the default state, not an accident: working memory holds only about four chunks at once, so the customer detail you were sure you'd remember has been compressed into a vague impression by the next call two weeks later. Vogel and Machizawa (2004, <em>Nature</em>) measured that ceiling directly with contralateral delay activity, an EEG signature that saturates around three or four items and localises near the intraparietal sulcus; Cowan (2001, <em>Behavioral and Brain Sciences</em>) reached the same limit from behavioural evidence. Writing the handoff down as one sentence simply routes around the bottleneck. There's a large-sample precedent for structuring the seam: Starmer and colleagues (2014, <em>New England Journal of Medicine</em>) introduced the I-PASS handoff bundle across nine children's hospitals covering 10,740 admissions and saw medical errors fall from 24.5 to 18.8 per 100 admissions and preventable adverse events from 4.7 to 3.3, with no increase in handoff duration. That's a pre-post study in medicine, not a randomised trial in sales, so treat it as the mechanism rather than the number. So carry five things: the specific line the buyer said about their current state; which criterion of your ideal customer profile they meet and on what evidence; one pain they can repeat back, already converted into money or hours; a list of who pays, who uses and who objects, one line each on what they care about; and a next step naming a person, an action and a date. Keep the five in one place, read them before every move, and refuse to advance a deal on a blank line.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：每一格的输入就是上一格的输出。信息在接口处丢失是默认状态而不是意外——人脑一次只能稳住三四个组块，你以为「记住了」的客户细节，两周后已经被压缩成一个模糊印象。把交接物写成一句话外化出去，等于绕开了这个瓶颈。而损耗之所以致命，是因为它相乘不相加：五个 0.8 连乘只剩 0.33。</strong></p>
+<ul>
+<li><strong>硬证据（神经科学，脑电指标）</strong>：Vogel &amp; Machizawa (2004, <em>Nature</em>) 用对侧延迟活动（CDA）这一脑电信号直接测视觉工作记忆容量：信号在 <strong>3–4 个项目处饱和</strong>，个体差异稳定，来源定位在顶内沟一带。Cowan (2001, <em>Behavioral and Brain Sciences</em>) 从行为证据得到同一个「约 4 个组块」的上限。含义直白：靠脑子记交接，超过四条必然丢。</li>
+<li><strong>硬证据（大样本前后对照）</strong>：Starmer 等 (2014, <em>NEJM</em>) 在 9 家儿童医院、10,740 次住院中引入结构化交接流程：<strong>医疗差错从每 100 次住院 24.5 降到 18.8（约降 23%），可预防不良事件从 4.7 降到 3.3（约降 30%）</strong>，而交接花的时间没有增加。<em>诚实标注</em>：这是医疗场景的前后对照（非随机对照），迁移到销售是类比；能迁移的是机制——把交接内容固定成几个必填项。</li>
+<li><strong>经典但方法较弱</strong>：Bartlett (1932) 的连续复述实验显示，信息在多次转述中被系统性简化，并被同化进转述者已有的框架。以现代标准看方法不严谨，只作「口头交接必然变形」的定性佐证。</li>
+</ul>
+<p class="caveat">边界：一次通话就能定的小额生意别套五次交接，那是给自己加工序。这套的价值随周期长度和参与人数上升——两周内、一个人拍板的单子，一句备注就够。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 2 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 02</div>
+<h2>把一个单子从冷邮件走到续约，逐格看它怎么被交下去
+<span class="en">One deal, cold email to renewal, watched at every seam.</span></h2>
+<span class="tag">合成示例</span><span class="tag">出口条件</span><span class="tag">多人决策</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">下面这个例子是把常见形态合成出来的<strong>示例</strong>，不是某家公司的真实复盘，数字只用来演示比例关系，别当行业基准。<strong>看的时候别看话术，看每一格的出口条件——做到什么才算过——以及它交出去的那句话。</strong></div>
+</div>
+<div class="section">
+<div class="section-label">七格、六次交接、14 个月</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mb1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#5a7365"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="4" y="18">一个单子从冷邮件走到续约</text>
+<text fill="#697682" font-family="Georgia" font-size="8.4" x="4" y="34">合成示例，用于演示衔接与比例关系；不是某家公司的真实复盘，数字别当基准。</text>
+<line marker-end="url(#mb1)" stroke="#5a7365" stroke-width="1.4" x1="20" x2="684" y1="170" y2="170"></line>
+<rect fill="#e2efdc" height="76" rx="3" stroke="#4e8a3f" stroke-width="1.3" width="100" x="2" y="80"></rect>
+<text fill="#1f7a5c" font-family="Georgia" font-size="8.4" font-weight="700" text-anchor="middle" x="52" y="98">第 0 天</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="52" y="116">触达</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="52" y="132">冷邮件三句话</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="52" y="146">一句具体观察</text>
+<line stroke="#5a7365" stroke-width="1.3" x1="52" x2="52" y1="156" y2="165"></line>
+<circle cx="52" cy="170" fill="#4e8a3f" r="5"></circle>
+<rect fill="#eef1f5" height="76" rx="3" stroke="#3f5c7a" stroke-width="1.3" width="100" x="102" y="184"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="8.4" font-weight="700" text-anchor="middle" x="152" y="202">第 6 天</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="152" y="220">判定</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="152" y="236">20 分钟通话</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="152" y="250">确认预算与时间点</text>
+<line stroke="#5a7365" stroke-width="1.3" x1="152" x2="152" y1="175" y2="184"></line>
+<circle cx="152" cy="170" fill="#3f5c7a" r="5"></circle>
+<rect fill="#e2efdc" height="76" rx="3" stroke="#4e8a3f" stroke-width="1.3" width="100" x="202" y="80"></rect>
+<text fill="#1f7a5c" font-family="Georgia" font-size="8.4" font-weight="700" text-anchor="middle" x="252" y="98">第 19 天</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="252" y="116">发现</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="252" y="132">45 分钟只问不讲</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="252" y="146">痛换算成 38 万/年</text>
+<line stroke="#5a7365" stroke-width="1.3" x1="252" x2="252" y1="156" y2="165"></line>
+<circle cx="252" cy="170" fill="#4e8a3f" r="5"></circle>
+<rect fill="#eef1f5" height="76" rx="3" stroke="#3f5c7a" stroke-width="1.3" width="100" x="302" y="184"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="8.4" font-weight="700" text-anchor="middle" x="352" y="202">第 34 天</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="352" y="220">决策链</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="352" y="236">见到掏钱的那个人</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="352" y="250">内部多一个冠军</text>
+<line stroke="#5a7365" stroke-width="1.3" x1="352" x2="352" y1="175" y2="184"></line>
+<circle cx="352" cy="170" fill="#3f5c7a" r="5"></circle>
+<rect fill="#e2efdc" height="76" rx="3" stroke="#4e8a3f" stroke-width="1.3" width="100" x="402" y="80"></rect>
+<text fill="#1f7a5c" font-family="Georgia" font-size="8.4" font-weight="700" text-anchor="middle" x="452" y="98">第 61 天</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="452" y="116">方案</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="452" y="132">一页纸商业案例</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="452" y="146">他能自己复述</text>
+<line stroke="#5a7365" stroke-width="1.3" x1="452" x2="452" y1="156" y2="165"></line>
+<circle cx="452" cy="170" fill="#4e8a3f" r="5"></circle>
+<rect fill="#eef1f5" height="76" rx="3" stroke="#3f5c7a" stroke-width="1.3" width="100" x="502" y="184"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="8.4" font-weight="700" text-anchor="middle" x="552" y="202">第 88 天</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="552" y="220">成交</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="552" y="236">拿到上线日期</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="552" y="250">不是「再想想」</text>
+<line stroke="#5a7365" stroke-width="1.3" x1="552" x2="552" y1="175" y2="184"></line>
+<circle cx="552" cy="170" fill="#3f5c7a" r="5"></circle>
+<rect fill="#e6f0ea" height="76" rx="3" stroke="#123f30" stroke-width="1.3" width="100" x="595" y="80"></rect>
+<text fill="#1f7a5c" font-family="Georgia" font-size="8.4" font-weight="700" text-anchor="middle" x="645" y="98">第 14 个月</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="645" y="116">续约扩张</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="645" y="132">12 万 → 31 万</text>
+<text fill="#37493f" font-family="Georgia" font-size="8" text-anchor="middle" x="645" y="146">首次价值在第 6 周</text>
+<line stroke="#5a7365" stroke-width="1.3" x1="645" x2="645" y1="156" y2="165"></line>
+<circle cx="645" cy="170" fill="#123f30" r="5"></circle>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="4" y="290">七格、六次交接、没有一句神奇话术；每一格的产出都是下一格的开场白。</text>
+<text fill="#697682" font-family="Georgia" font-size="8.4" x="4" y="308">停留最久的一格是决策链（15 天）——大多数单子也正是停在这儿。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">最关键的一次交接 · 从「他转述」变成「你在场」</span>
+<p>停最久那一格的卡点几乎总是同一件事：对方愿意帮你在内部转述。<strong>而转述必然衰减——他不会用你的话说，也不会记得那三个数字。</strong>你要做的不是给他更好的材料，是把自己放进那个房间。</p>
+<p><strong>可以照念：</strong>「我们聊得挺顺，但我不想让你替我在内部转述——通常转述完会掉一半，掉的还偏偏是财务那一半。下周能不能约 30 分钟，把预算这条线上的人拉进来？我准备一页纸，只讲三件事：现在这套一年花掉多少、换过来能省多少、多久看得到。你不用替我讲，你只需要在场说一句你怎么看。」</p>
+<p><strong>为什么管用：</strong>它让对方少做事而不是多做事，给了具体时长和议程。他要拒绝就得给个理由——而那个理由正是你最缺的信息：要么他并不真想推进，要么预算那条线上另有其人。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Here is one deal walked end to end. It's a composite built from common shapes, not a real company's post-mortem; the numbers illustrate proportions and shouldn't be taken as benchmarks. Day 0, a three-sentence cold email built on one specific observation. Day 6, a twenty-minute call that qualifies — budget and timing confirmed, or the deal is killed. Day 19, forty-five minutes of questions where the pain gets converted into roughly 380k a year. Day 34, the person who signs is in the room and an internal champion exists. Day 61, a one-page business case the buyer can repeat back without you. Day 88, a close that yields a go-live date rather than "let us think about it". Month 14, renewal and expansion. Watch the exit conditions, not the lines. The stage that took longest was the decision chain, fifteen days, and that is where most deals stall — almost always for the same reason: your contact offers to take it inside for you. Relaying always attenuates, and the half that gets lost is the financial half. So don't send better material with them; get yourself into the room. Try this: "I don't want you relaying this internally on my behalf — half of it usually gets lost, and it's the finance half. Can we get thirty minutes next week with whoever owns the budget? I'll bring one page covering three things: what the current setup costs per year, what switching saves, and how fast it shows. You don't have to present it. You just have to be there and say what you think." It asks the buyer to do less, not more, names a duration and an agenda, and if they refuse, the reason they give is itself the information you most needed. Underneath all of this sits one finding: a next step that names a person, an action and a date is not politeness, it's the mechanism that makes the step happen.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：单子在两格之间停住，通常不是对方不想推进，而是没人对「下一件事」负责到具体的人和具体的日子。把每一格的结束动作固定成「谁、做什么、哪天」，等于把一个需要靠意志力发起的意图，换成一个由情境线索自动触发的动作——这是行为科学里效应最稳的一类干预。</strong></p>
+<ul>
+<li><strong>硬证据（元分析）</strong>：Gollwitzer &amp; Sheeran (2006) 汇总 94 项研究、约 8000 名被试：把目标写成「如果到了情境 X，我就做 Y」的<strong>实施意图</strong>，对目标达成的效应量 <strong>d ≈ 0.65（中到大）</strong>。这是「每一步结束必须落一个具体下一步」背后最硬的一条；机制上和 psychology 站讲的是同一件事。</li>
+<li><strong>神经层面（较弱，方向性证据）</strong>：有 fMRI 工作提示，实施意图会把行动控制从需要自我发起的前额叶（额极 BA10 一带）转到由外部线索触发的更自动的通路（Gilbert 等 2009）。<em>诚实标注</em>：单一方向的小样本研究，复现有限，只当机制旁证，不作硬结论。</li>
+<li><strong>行业数据（强度中等，非同行评审）</strong>：Adamson &amp; Dixon 在《The Challenger Customer》(2015) 报告的厂商侧调研显示，B2B 采购<strong>平均约 6.8 人参与</strong>，且参与人越多，「什么都不买」的概率越高。当量级参考，别当精确常数——样本与口径都不公开。</li>
+</ul>
+<p class="caveat">边界：七格是给周期以月计、多人参与的生意用的。个人消费、一个人拍板的场景压到三格就够：判定 → 讲清价值 → 要一个决定。硬套七格只会把自己拖死，也会让对方觉得你在走流程而不是在帮他。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 3 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 03</div>
+<h2>成交只是把风险交给了交付——而他记住的只有峰值和结尾
+<span class="en">Closing hands the risk to delivery. Memory keeps two points.</span></h2>
+<span class="tag">峰终定律</span><span class="tag">奖赏预测误差</span><span class="tag">首次价值</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">客户续不续约，靠的不是这一年的平均体验，而是<strong>最难受（或最爽）的那个峰值，加上最后一段的感觉</strong>。这也是为什么成交时多承诺的那一句代价极大：它抬高的是他一整年的比较基线，而大脑记的是「实际减预期」的那个差。</div>
+</div>
+<div class="section">
+<div class="section-label">记忆取样，和预期这条线</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mc1" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#4e8a3f"></path>
+</marker>
+<marker id="mc2" markerheight="9" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="10" refy="4.5">
+<path d="M0,0 L11,4.5 L0,9 z" fill="#c0603a"></path>
+</marker>
+</defs>
+<text fill="#123f30" font-family="Georgia" font-size="11.5" font-weight="700" x="10" y="38">同一条体验曲线，记忆基本只取两个点</text>
+<rect fill="#fbfaf4" height="210" rx="4" stroke="#e3ddc7" stroke-width="1.2" width="330" x="10" y="48"></rect>
+<line stroke="#cbb98f" stroke-width="1.2" x1="30" x2="330" y1="240" y2="240"></line>
+<line stroke="#cbb98f" stroke-width="1.2" x1="30" x2="30" y1="62" y2="240"></line>
+<text fill="#697682" font-family="Georgia" font-size="8" x="14" y="60">体验</text>
+<line stroke="#9aab9f" stroke-dasharray="4 3" stroke-width="1.2" x1="32" x2="330" y1="178" y2="178"></line>
+<polyline fill="none" points="40,200 75,182 110,214 145,132 180,158 215,172 250,180 285,168 320,140" stroke="#1f7a5c" stroke-width="2.2"></polyline>
+<circle cx="145" cy="132" fill="#4e8a3f" r="4.5"></circle>
+<text fill="#2f5a24" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="145" y="122">峰</text>
+<circle cx="320" cy="140" fill="#123f30" r="4.5"></circle>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="318" y="130">终</text>
+<text fill="#697682" font-family="Georgia" font-size="8" x="36" y="254">虚线＝全程平均，几乎不进入记忆；持续多久也基本不计。</text>
+<text fill="#123f30" font-family="Georgia" font-size="11.5" font-weight="700" x="356" y="38">承诺抬高预期线，同样的交付就变成负号</text>
+<rect fill="#fbfaf4" height="210" rx="4" stroke="#e3ddc7" stroke-width="1.2" width="334" x="356" y="48"></rect>
+<line stroke="#cbb98f" stroke-width="1.2" x1="376" x2="676" y1="240" y2="240"></line>
+<line stroke="#c0603a" stroke-dasharray="5 3" stroke-width="1.4" x1="376" x2="676" y1="104" y2="104"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="8.4" x="380" y="98">你多承诺的那一句，把预期抬到这里</text>
+<line stroke="#4e8a3f" stroke-dasharray="5 3" stroke-width="1.4" x1="376" x2="676" y1="196" y2="196"></line>
+<text fill="#2f5a24" font-family="Georgia" font-size="8.4" x="380" y="212">克制的承诺，预期停在这里</text>
+<polyline fill="none" points="386,164 440,156 500,152 560,150 666,148" stroke="#1f7a5c" stroke-width="2.2"></polyline>
+<text fill="#1f5a44" font-family="Georgia" font-size="8.4" x="420" y="176">实际交付：两种情况下完全一样</text>
+<line marker-end="url(#mc2)" stroke="#c0603a" stroke-width="1.5" x1="628" x2="628" y1="110" y2="142"></line>
+<text fill="#a8461f" font-family="Georgia" font-size="13" font-weight="700" x="636" y="132">−</text>
+<line marker-end="url(#mc1)" stroke="#4e8a3f" stroke-width="1.5" x1="576" x2="576" y1="190" y2="158"></line>
+<text fill="#2f5a24" font-family="Georgia" font-size="13" font-weight="700" x="584" y="178">＋</text>
+<text fill="#697682" font-family="Georgia" font-size="8.4" x="10" y="284">峰终与结尾：Kahneman 等 (1993, Psych Science)；Redelmeier &amp; Kahneman (1996, Pain)；随机对照后续 Redelmeier 等 (2003, Pain)</text>
+<text fill="#697682" font-family="Georgia" font-size="8.4" x="10" y="300">预测误差：Schultz、Dayan &amp; Montague (1997, Science)——中脑多巴胺神经元编码的是「实际减预期」，不是绝对好坏</text>
+<text fill="#123f30" font-family="Georgia" font-size="9.4" font-weight="700" x="10" y="320">所以过度承诺是双份代价：当下没多拿到什么，还把之后每一次交付都推进了零或负的区间。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="section-label">场景：到期前 60 天的那通电话</div>
+<div class="scene">
+<div class="setup">合同还有两个月到期。同一件事，两种开场，得到的是两种完全不同的对话。</div>
+<div class="dialog bad">
+<div class="speaker">常见开场</div>
+<p>「王总，合同快到期了，续约的事咱们什么时候聊一下？」</p>
+<p><em>问题：</em>这句话把议题设成了「你要不要再付一次钱」，等于请对方从零开始重新评估你。而他手上没有证据，只有印象——印象里最容易被调出来的，正是上线时最难受的那两周。</p>
+</div>
+<div class="dialog good">
+<div class="speaker">把峰和终放回你能控的位置</div>
+<p>「王总，还有两个月到期。我先自己做了一版这一年的账：上线第 6 周你们第一次跑通了整条流程，到现在每月大概省下 40 小时——这个数是从你们后台导出来的，不是我拍的，附件里有明细。我想听你说两件事：这一年最不顺的是哪一段，以及明年你最想解决的是什么。下周三下午方便吗？」</p>
+<p><em>差别在哪：</em>你先把「峰」换成一个可核对的事实（第 6 周跑通），再主动把最难受那一段摆上桌——讲出来的痛苦比他自己回忆的版本温和得多。最后一句还把话题从「续不续」推到了「明年解决什么」。</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 把峰和终放到你能控的位置</span>
+<p><strong>1. 把「首次价值」定成一个可核对的事件。</strong>不是上线，是他第一次真的拿到结果。写进交付计划的第一行，并且约定到那天你们一起看一次数。</p>
+<p><strong>2. 最难受的那一段，提前说它会难受、大概多久。</strong>数据迁移、换流程、内部培训——预期提前抬平，峰值就不记在你头上；事后解释只会被当成找借口。</p>
+<p><strong>3. 结尾别用「项目结项」，用一次把成果念出来的会。</strong>三个数字，加一句他自己说过的话。二十分钟就够，却是他一年里记得最清楚的二十分钟。</p>
+<p><strong>4. 成交那一刻，别多承诺一句。</strong>你多说的那一句不会让他更想签，只会把之后 12 个月的比较基线抬高一格。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Whether a customer renews doesn't track the average of their year with you. It tracks the peak — the worst or best moment — plus how the last stretch felt. That's why one extra promise at signing costs so much: it doesn't buy you the deal, it raises the baseline against which twelve months of delivery gets compared, and what the brain records is the difference between what happened and what was expected. The evidence here is unusually hard. Kahneman, Fredrickson, Schreiber and Redelmeier (1993, <em>Psychological Science</em>) found people preferred to repeat a longer unpleasant episode with a gentler ending over a shorter one that ended at its worst; Redelmeier and Kahneman (1996, <em>Pain</em>) reproduced it in colonoscopy, where extending the procedure with a less painful final minute lowered remembered pain; and Redelmeier, Katz and Kahneman (2003, <em>Pain</em>) ran the randomised follow-up and found the improved-ending group was more likely to return for a repeat procedure — which is about as close to direct evidence about repeat purchase as this literature gets. Underneath sits the reward machinery: Schultz, Dayan and Montague (1997, <em>Science</em>) showed midbrain dopamine neurons fire to the prediction error, not the absolute outcome — better than expected fires, exactly as expected barely moves, worse is suppressed. So four moves. Define first value as a checkable event rather than go-live, and put it on line one of the delivery plan. Warn them in advance about the ugly stretch and roughly how long it lasts, because an expectation flattened beforehand doesn't get charged to you, while an explanation afterwards reads as an excuse. Replace project sign-off with twenty minutes reading the results out loud — three numbers and one sentence they said themselves. And at signing, say one thing less than you want to. One boundary: peak-end holds most reliably for short, clearly bounded experiences; stretching it over a months-long delivery shared by several people is a reasonable extrapolation, not a demonstrated result, and it is never a licence to let the middle rot — a bad middle just manufactures its own negative peak.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：大脑评估一段经历不靠积分，靠取样——峰值和结尾权重极高，持续多久几乎不计（「持续时间忽视」）。同时奖赏系统编码的是预测误差而不是绝对值：好于预期才放电，等于预期几乎不动，差于预期被抑制。两条叠起来的结论是，交付的价值感是差值造成的；所以过度承诺是双份代价——当下不多卖出什么，之后每一次交付都被推进零或负的区间。</strong></p>
+<ul>
+<li><strong>硬证据（实验 + 随机对照，且直指复购）</strong>：Kahneman、Fredrickson、Schreiber &amp; Redelmeier (1993, <em>Psychological Science</em>) 的冷水实验发现，被试更愿意重复「更长但结尾更温和」的那一次；Redelmeier &amp; Kahneman (1996, <em>Pain</em>) 在结肠镜检查中重现——延长检查、让最后一段不那么痛，患者<strong>回忆的总痛苦更低</strong>；Redelmeier、Katz &amp; Kahneman (2003, <em>Pain</em>) 的随机对照进一步显示，<strong>结尾被改良的那组更愿意回来做复查</strong>。</li>
+<li><strong>硬证据（神经机制）</strong>：Schultz、Dayan &amp; Montague (1997, <em>Science</em>) 记录中脑（腹侧被盖区与黑质致密部）多巴胺神经元，确立其放电<strong>编码奖赏预测误差</strong>：结果好于预期时爆发放电，与预期相符时基本不变，差于预期时被抑制。这是「惊喜来自差值」这句话的物理基础。</li>
+<li><strong>边界与争议</strong>：峰终定律在时长较短、强度明确的体验上最稳；跨越数月、由多人共同经历的 B2B 交付是合理外推，不是直接证据。也有研究在某些情境下没有复现出结尾效应。</li>
+</ul>
+<p class="caveat">边界：别把峰终当成「中间可以随便烂」的许可——中间烂会自己长出一个负峰值，那正是记忆最爱抓的东西。而且这套只在你确实交付了价值时才成立：用体验设计盖住产品没做到的事，最多骗过一个续约周期。</p>
+</div>
+</div>
+</div>
+<!-- ============ Card 4 ============ -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">MOVE 04</div>
+<h2>复盘先判过程，再看结果——赢下来的单子最容易教坏你
+<span class="en">Judge the process first, the outcome second. The deals you won teach the worst lessons.</span></h2>
+<span class="tag">后见之明</span><span class="tag">结果偏差</span><span class="tag">结构化复盘</span>
+</div>
+<div class="section">
+<div class="section-label">一句话原则</div>
+<div class="principle">按结果复盘，你学到的是运气的形状。<strong>先逐格判「出口条件满足了没有」，再把结果放进去看——顺序反了，赢单会把你漏做的动作一起固化下来</strong>，而那正是下一次翻车的原因。</div>
+</div>
+<div class="section">
+<div class="section-label">复盘的四格</div>
+<div class="frame-diagram">
+<svg viewbox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+<text fill="#123f30" font-family="Georgia" font-size="12.5" font-weight="700" x="4" y="20">复盘的四格：先判过程，再看结果</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="255" y="50">每一格的出口条件都满足</text>
+<text fill="#2f4a66" font-family="Georgia" font-size="9.4" font-weight="700" text-anchor="middle" x="525" y="50">有一格没满足</text>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="62" y="126">赢 了</text>
+<text fill="#123f30" font-family="Georgia" font-size="11" font-weight="700" text-anchor="middle" x="62" y="246">丢 了</text>
+<rect fill="#e2efdc" height="120" rx="4" stroke="#4e8a3f" stroke-width="1.4" width="270" x="120" y="60"></rect>
+<text fill="#2f5a24" font-family="Georgia" font-size="10.6" font-weight="700" x="136" y="92">可复制的一格</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.6" x="136" y="116">把这一遍七格原样记下来。</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.6" x="136" y="134">下一单照抄的是流程和出口条件，</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.6" x="136" y="152">不是你当时说的那几句漂亮话。</text>
+<rect fill="#f6e3da" height="120" rx="4" stroke="#c0603a" stroke-width="1.4" width="270" x="390" y="60"></rect>
+<text fill="#a8461f" font-family="Georgia" font-size="10.6" font-weight="700" x="406" y="92">最危险的一格</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.6" x="406" y="116">赢了会把你漏做的动作一起固化。</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.6" x="406" y="134">写清楚这次是靠哪个外部条件赢的，</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.6" x="406" y="152">换个客户它就不在了。</text>
+<rect fill="#eef1f5" height="120" rx="4" stroke="#3f5c7a" stroke-width="1.4" width="270" x="120" y="180"></rect>
+<text fill="#2f4a66" font-family="Georgia" font-size="10.6" font-weight="700" x="136" y="212">别改打法，改资格判定</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.6" x="136" y="236">每格都做到了还丢，多半是这单</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.6" x="136" y="254">本来就不该进管道，或者纯运气。</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.6" x="136" y="272">要改的是进门那一格的标准。</text>
+<rect fill="#fdf3e0" height="120" rx="4" stroke="#c99a3f" stroke-width="1.4" width="270" x="390" y="180"></rect>
+<text fill="#8a6a1e" font-family="Georgia" font-size="10.6" font-weight="700" x="406" y="212">唯一你会主动学的一格</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.6" x="406" y="236">也最容易只学到表面。写的是</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.6" x="406" y="254">「哪一格的出口条件没满足」，</text>
+<text fill="#37493f" font-family="Georgia" font-size="8.6" x="406" y="272">不是「客户觉得太贵」。</text>
+<text fill="#697682" font-family="Georgia" font-size="8.4" x="4" y="322">结果偏差：Baron &amp; Hershey (1988, JPSP)——同一个决策，结果不同，人给的评分就不同。所以顺序不能反。</text>
+</svg>
+</div>
+</div>
+<div class="section">
+<div class="template">
+<span class="label">照做清单 · 端到端复盘的一页纸</span>
+<p><strong>第一步（不许看结果）：</strong>七格逐行写「出口条件满足了吗：是 / 否 / 说不清」。「说不清」按「否」算——你当时没有证据。</p>
+<p><strong>第二步：</strong>找出第一个「否」，写它发生的日期。<strong>大多数单子的真实死亡时间，比你以为的早一个月。</strong></p>
+<p><strong>第三步（这时才看结果）：</strong>把这一单落进上面四格，按那一格的指示行动。</p>
+<p><strong>第四步 · 三个问题：</strong>①下次在同一格，我可以提前多问哪一个问题？②这一单里有哪件事是我控制不了的，别记在自己账上？③如果这单一开始就注定丢，最早能在哪一格看出来？</p>
+<p><strong>关键的一条：</strong>复盘要在<strong>写下预测之后</strong>做才有意义。单子进入报价阶段时先写一行「30 天内成交概率 __%，因为 ____」，复盘时把它翻出来对——否则你只会读到一个「我当时就觉得」的故事。</p>
+</div>
+</div>
+<p class="en-brief"><b>EN</b> Debrief by outcome and what you learn is the shape of your luck. Go stage by stage first — was the exit condition met, yes, no, or can't tell, and "can't tell" counts as no, because you had no evidence at the time. Then find the first no and date it: most deals actually died a month earlier than people think. Only then bring in the result, and place the deal in one of four boxes. Process clean and won: copy the sequence, not the clever lines. Process clean and lost: don't change your playbook, change your qualification bar — either this deal shouldn't have entered the pipeline or it was luck. Process broken and lost: the one box people actually learn from, and the one where they learn the surface, writing "they thought it was too expensive" instead of naming the stage whose exit condition failed. Process broken and won: the dangerous box, because winning locks in the steps you skipped. The biases here are well-established. Fischhoff (1975, <em>JEP: Human Perception and Performance</em>) demonstrated hindsight bias — once you know the outcome, you systematically overestimate how predictable it was; Guilbault and colleagues (2004) confirmed it meta-analytically across more than a hundred studies. Baron and Hershey (1988, <em>JPSP</em>) showed outcome bias: the identical decision gets rated as better or worse depending only on how it turned out, which is exactly why the order of the two questions matters. Structured debriefs do work when they're actually structured — Tannenbaum and Cerasoli (2013, <em>Human Factors</em>) meta-analysed 46 samples and found debriefs improved performance over controls by roughly a quarter, d ≈ 0.67, with the effect concentrated in debriefs that were structured, focused on specific behaviours and conducted without blame. And none of it works retrospectively: write "probability of closing within 30 days: __%, because ____" when the deal enters the quote stage, then check it. Without a written prediction, a debrief just reads back a story you have already rewritten.</p>
+<div class="section">
+<div class="section-label">为什么有效 · 机制与证据</div>
+<div class="evidence">
+<span class="label">Why it works</span>
+<p class="mech"><strong>机制：知道结果之后，大脑会自动重写「当初我怎么想的」，并把已发生的结局看成本来就明显。所以按结果起头的复盘，学到的必然是被结果污染的版本。先判过程再看结果，是在结果污染进来之前，把当时的判断锁住。「说不清」按「否」算，防的是同一种自我美化。</strong></p>
+<ul>
+<li><strong>硬证据（经典 + 元分析）</strong>：Fischhoff (1975, <em>JEP: Human Perception and Performance</em>) 确立后见之明偏差——得知结果后，人系统性高估当初的可预测性；Guilbault 等 (2004) 汇总逾百项研究做元分析，效应稳定复现。</li>
+<li><strong>硬证据（结果偏差）</strong>：Baron &amp; Hershey (1988, <em>JPSP</em>) 让被试评价决策质量：<strong>完全相同的决策过程，仅因结果不同，评分就显著不同</strong>。这直接说明为什么两个问题的顺序不能反。</li>
+<li><strong>硬证据（元分析，且给出条件）</strong>：Tannenbaum &amp; Cerasoli (2013, <em>Human Factors</em>) 汇总 46 个样本：结构化复盘相对对照组把绩效提升约四分之一，<strong>d ≈ 0.67</strong>；效应集中在<strong>有结构、针对具体行为、不追责</strong>的复盘上。散漫的「说说感受」不在这个效应里。</li>
+<li><strong>可选加强（单一研究）</strong>：Mitchell、Russo &amp; Pennington (1989) 的「事前后见之明」实验显示，先假设事情已经发生，再倒推原因，能显著提高说出正确原因的数量。Klein 的事前验尸（premortem）就建在这上面。<em>诚实标注</em>：单一研究，常被引用的提升幅度别当精确数字。</li>
+</ul>
+<p class="caveat">边界：复盘有成本，别每单都做。挑三类：金额最大的、周期最长的、和你觉得「莫名其妙就没了」的那种——第三类信息量最高。「不追责」不是场面话，它是效应存在的条件：复盘一旦变成定责会，人只会交出能自保的版本。</p>
+</div>
+</div>
+</div>
+<div class="homework">
+<h3>本期习作 · Your Day 58 Action</h3>
+<p>90 分钟，把一个真实的单子从头到尾走一遍。</p>
+<div class="action">
+<strong>一（20 分钟）· 画你自己的格：</strong>别用我这七格。写下你的生意实际有几格，每格只写一个出口条件（做到什么才算过）。超过七格就合并。<br/><br/><strong>二（25 分钟）· 补交接物：</strong>挑一个你手上正在跑的单子，逐格写「这一格交给下一格的那句话」。写不出来的地方就是你的漏点——今天就去把它补上，而不是往下推。<br/><br/><strong>三（25 分钟）· 复盘一个已结束的单子：</strong>先只判七格的出口条件（是/否/说不清，说不清算否），找出第一个「否」和它的日期，再看结果，落进四格。赢的那单尤其要做——它最可能藏着你已经固化的漏做动作。<br/><br/><strong>四（20 分钟）· 定一次首次价值：</strong>手上已成交的客户里挑一个，把「他第一次真的拿到结果」定义成一个可核对的事件和一个日期，发一封三行的邮件跟他对齐。<br/><br/>边界提醒：这一整套是给周期以月计、多人参与的生意的。一通电话就能定的单子压成三格，别为了完整而完整——流程感太重本身就会让人觉得你在推自己的漏斗，而不是在帮他做决定。
+</div>
+</div>
+<div class="qa">
+<div class="qa-title">思考与回答 · Think It Through</div>
+<details>
+<summary>1. 我的生意就是一通电话成交，这套七格是不是跟我没关系？</summary>
+<div class="answer"><strong>格数跟你没关系，接口跟你有关系。</strong>短周期生意里，七格会压缩成三格：判定（这人是不是我该服务的）→ 讲清价值（他能不能复述）→ 要一个决定。但接口还在，只是从「两周之间」变成了「两句话之间」。<br/><br/>短周期里的接口长这样：<strong>你问完需求、到你开口讲方案的那一秒</strong>——多数人在这里跳过交接，用自己的话概括一下就开讲。正确做法是把交接物念出来：「我确认一下我听对了：你现在最烦的是 X，一个月大概耗掉你 Y。是这个吗？」他说「对，还有一点」，你就拿到了原本会丢掉的那部分。<br/><br/><strong>另一个接口是成交到交付。</strong>一通电话卖掉的东西，交付常常不是你自己做。你在电话里那句「我们会帮你弄好」，若没变成一条具体记录传给做事的人，前面讲的负预测误差就在两周后等着你。</div>
+</details>
+<details>
+<summary>2. 交接文档写了根本没人看，我自己一个人干，还要写吗？</summary>
+<div class="answer"><strong>要，但你写错了对象。</strong>没人看，通常是因为写成了「记录」——把发生了什么全记下来。记录确实没人看，你自己也不看。<br/><br/>交接物不是记录，是<strong>下一次动作的开场白</strong>。它最多五行，每一行都要能被直接念出来：他的原话、换算出来的那个数、名单上每人在意什么、下一步的谁做什么哪天。判断标准很简单：<strong>如果这五行不能让你在下次通话前 30 秒读完就直接开口，那它写得不对。</strong><br/><br/>一个人干更要写，原因在机制那一节：工作记忆一次稳不住四条以上，两周后你调出来的不是细节，而是一个被自己重新组织过的印象。<strong>你不是在给别人交接，是在给两周后那个已经记错了的自己交接</strong>——而且没有同事会问你「他当时到底怎么说的」。</div>
+</details>
+<details>
+<summary>3. 复盘丢单时问客户，得到的答案永远是「预算」，怎么办？</summary>
+<div class="answer"><strong>「预算」是成本最低的礼貌答案，问法不改，答案不会变。</strong>别问「为什么没选我们」——这是在请对方评价你，任何人都会给一个不伤人的版本。<br/><br/><strong>换成问过程，不问原因：</strong>「这件事你们内部最后是怎么定下来的？大概什么时候基本定了方向？那时候最主要在比的是哪两件事？」过程比原因诚实得多，因为它不需要对方做评价，只需要回忆。你常常会听到真正的时间点——比你以为的早得多，往往在你还在热情跟进的时候。<br/><br/><strong>更重要的是先看自己的证据再去问人。</strong>翻出这单在哪一格停最久、第一个「说不清」出现在哪天，带着这个去问，你问的就是具体问题而不是开放式忏悔。<em>诚实标注</em>：丢单访谈本身证据强度不高——回忆重构、社交礼貌都在里面，当线索别当结论；你那份逐格记录比对方的回忆可信。</div>
+</details>
+</div>
+<nav class="footer-nav">
+<a href="index.html">← 返回目录</a>
+</nav>
+<footer>BigCat · Sales · Day 58</footer>
+</div>
+</body>
+</html>
