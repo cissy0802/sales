@@ -42,8 +42,44 @@
 1. header：`week-tag`（DAY N · PHASE X）+ 标题 + 副标题 + 日期 + 一句反直觉钩子（pitch）
 2. intro：why this matters，一个反直觉转向，无元叙述
 3. **3–4 个 section**，每节：正文（松弛、可操作）→ 需要时插 SVG → **一句英文 `.en-brief` 简介（只在中文页有，英文页去掉）** → 可给"照做清单 / 话术模板"小块
-4. 收尾（习作）：一个"明天就试"的具体行动 + 一句适用边界提醒
-5. **思考与回答**：最后放一个『思考与回答 · Think It Through』section——2–4 个能触发思考 / 直面读者常见疑问的问题，每题给一个诚实、可落地的模型答案（可 cross-ref 后续期），用可展开的 `<details>` 承载（见 day1 基准页）
+4. **越界 · 跨学科的联想 · Crossovers**（2026-10-17 起，**必写，3–5 条**；放在最后一个 section 之后、习作之前）：写本期某个销售打法 / 机制和**另一个领域里的什么东西是同一个结构**——像在哪、不像在哪（边界）。**心理学（含行为经济学、说服、影响力、谈判心理）是销售自己的工具箱，不算越界，不准挂**；往更远的地方挂：演化生物学（信号理论、昂贵信号、互惠利他）、博弈论（重复博弈、机制设计、拍卖）、复杂性科学（网络效应、幂律、相变）、神经科学、佛学 / 东西方哲学、分布式系统（共识、握手协议、超时重试）、物理等；领导力 / 投资 / 商业只作旁支偶尔用。**每条约 60–90 字（一两句）**，只有展开的那 1 条可到约 120 字。具体研究、人物、年份必须真实准确，拿不准就换一条。**分工**：原作者 / 本期正文自己引用的研究进正文和 `.evidence`；我们自己联想到的才进越界，两处不重复。格式：
+   ```html
+   <div class="crossx">
+   <h3>越界 · 跨学科的联想</h3>
+   <ul>
+   <li><b>学科 · 概念/人物</b>：……</li>
+   </ul>
+   </div>
+   ```
+   英文页标题 `Crossovers`。
+5. **十条要点 · Ten takeaways**（2026-10-17 起，**必写，正好 10 条**；放在越界框之后、习作之前）：读者拿它直接记笔记。每条一句完整的话，约 20–45 字，**单独抄出去也能看懂**（写出框架名、话术要点、研究者名，不用「它」「这一步」「这个打法」这类靠上下文的代词）。覆盖各节最值得记的打法、话术、机制和证据，可含越界里的一两条；顺序跟正文走。**只总结正文已经写过的东西**，不加新信息，不放引语 / 话术原句。人名不必每条都当主语开头：全组里主角的名字出现两三次就够，其余各条直接写观点、机制或事实（写「先问痛点再报价，价格才有参照」，不写「Rackham 认为先问痛点……」）。格式：
+   ```html
+   <div class="tk">
+   <h3>十条要点</h3>
+   <ol class="takeaways">
+   <li>……</li>
+   </ol>
+   </div>
+   ```
+   英文页标题 `Ten takeaways`。
+   **CSS（2026-10-17 起）**：day1 基准页里没有这两块的样式，新页面照抄 day1 的 `<style>` 后，在末尾**追加**下面这段（配色取本站绿 / 米色，越界用一抹李子紫区分）：
+   ```css
+   .crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+   .crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+   .crossx ul{list-style:none;padding:0;margin:0}
+   .crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+   .crossx li:first-child{border-top:none}
+   .crossx b{color:#5a3d69}
+   .tk{margin-top:36px}
+   .tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+   .takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+   .takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+   .takeaways li:first-child{border-top:none}
+   .takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
+   ```
+   **篇幅（2026-10-17 起）**：越界约 400 字、十条要点约 350 字；`.maxchars` 已为这两节从 6000 上调到 6750，正文其余部分的篇幅不变，别借新上限把正文写长。`publish.sh` 只卡新页：十条要点正好 10 条、越界 3–5 条（中英两页都查）。
+6. 收尾（习作）：一个"明天就试"的具体行动 + 一句适用边界提醒
+7. **思考与回答**：最后放一个『思考与回答 · Think It Through』section——2–4 个能触发思考 / 直面读者常见疑问的问题，每题给一个诚实、可落地的模型答案（可 cross-ref 后续期），用可展开的 `<details>` 承载（见 day1 基准页）
 
 ## 发布
 - 用仓库根的 `publish.sh`（无参数）：它自动校验 + commit + push 到 main。别自己发明发布流程。
