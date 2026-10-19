@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -527,6 +539,33 @@ header h1{font-size:1.55rem}
 <p>Let the silence <em>do the work</em>. — let silence do the job for you.</p>
 </div>
 </div>
+</div>
+<!-- ============ Crossovers ============ -->
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Neuroscience · Predictive processing</b>: The brain guesses first and checks second, passing up only the mismatches, the "prediction errors." Listening to reply is a prior so rigid that every error gets suppressed, so all you hear is your own guess. The difference: the brain's predictions are usually right, while our assumptions in a conversation are often wrong exactly where it costs most.</li>
+<li><b>Evolutionary biology · The handicap principle (Amotz Zahavi, 1975)</b>: A signal is believable only if it carries a cost that can't be faked, like the peacock's tail. Real listening is a costly signal too: holding back your own lines, remembering details, paraphrasing on target. Fakers don't last. The difference is that the cost of listening is spent on the other person, so it is itself a gift.</li>
+<li><b>Buddhism · Mahasi Sayadaw's "noting"</b>: The Burmese meditation teacher Mahasi Sayadaw had insight practitioners lightly name each thought and sensation ("thinking," "irritation," "pain"); once named, you step half a pace back from it. It is the same move as labeling an emotion. The difference: the meditator labels their own experience to see impermanence, not to draw out someone else's concern.</li>
+<li><b>Distributed systems · Acknowledge and retransmit (ACK)</b>: In TCP, sent data doesn't count until an acknowledgment comes back; no ACK before the timeout means resend. Paraphrase-to-confirm runs the same protocol: their "that's right" is the ACK, and a lukewarm "okay" means nothing was received, so rephrase and try again. The direction is reversed, though: on a network the receiver confirms, while in conversation the listener sends the content back and the speaker confirms, because only the speaker holds the original.</li>
+<li><b>Game theory · The war of attrition (John Maynard Smith, 1974)</b>: Two animals face off, whoever backs down first loses, and the contest is about who can bear the cost longer. Silence after a price has that shape: the one who speaks first to fill it often concedes first. But the boundary drawn above is the opposite of a war of attrition: good silence gives the other person time to think, it isn't a contest of who cracks first.</li>
+</ul>
+</div>
+<!-- ============ Takeaways ============ -->
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Most people listen to reply; real listening means switching off the urge to rebut or pitch and listening to understand.</li>
+<li>When a client throws a barbed complaint, catch the feeling underneath, then ask for details, and the complaint turns into information.</li>
+<li>Experiments by Itzchakov and Kluger show that people who are listened to well get less defensive and more open to shifting their views.</li>
+<li>Listening loosens defenses, not facts: if the product can't deliver what they need, no amount of listening closes the deal.</li>
+<li>Naming the other person's unspoken emotion in a tentative "it sounds like" voice lowers its intensity and brings the real concern to the surface.</li>
+<li>Lieberman's 2007 fMRI study found that naming an emotion lowers amygdala activity and activates the prefrontal cortex.</li>
+<li>Mirroring means repeating the last one to three words with a rising tone, and the other person will elaborate on their own.</li>
+<li>Paraphrase until they clearly confirm you got it, what Voss calls getting to "that's right"; a polite "okay" doesn't count.</li>
+<li>After a real question or a price, hold the silence for a few counted seconds; whoever rushes to fill it often concedes first.</li>
+<li>Paraphrase-to-confirm works like TCP's acknowledge-and-retransmit: no clear confirmation means rephrase and send again.</li>
+</ol>
 </div>
 <!-- ============ Homework ============ -->
 <div class="homework">

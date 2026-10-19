@@ -76,6 +76,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -417,6 +429,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">Failure mode: don't turn verification into a second full rewrite — that saves nothing and the team quietly skips it within three weeks. Checks should be short, specific and doable in two minutes. The other common trap is pasting sensitive customer data into an uncontrolled tool; settle the compliance question before legal comes to ask you.</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Evolutionary biology · The handicap principle (Amotz Zahavi, 1975)</b>: a peacock's tail is believable because it is expensive and a weak bird can't afford one. A carefully written email used to be the same kind of signal: the cost itself proved you cared. Once generating it costs nothing, the signal stops being honest, and buyers go looking for something else that is still expensive, like an introduction or a detail no model could produce. Where it breaks: the tail's cost is grown into the body and can't be faked, while the cost of writing was outsourced overnight.</li>
+<li><b>Philosophy of mind · The intentional stance (Daniel Dennett, 1987)</b>: you can predict a system from the design stance (what was it built to do) or the intentional stance (what does it want). Saying "I'm a bot" flips the buyer from the second to the first, and they start merely checking function. Unlike Dennett's picture, the stance isn't chosen for predictive power here; a label switches it.</li>
+<li><b>Microbiology · Horizontal gene transfer</b>: bacteria don't have to wait for descendants to evolve; they can pick up a resistance gene straight from a neighbour. AI hands a veteran's tacit moves sideways to every novice, skipping the vertical, apprenticeship route. The difference: a resistance gene still works once it has spread, while a sales skill's relative edge drops to zero.</li>
+<li><b>Distributed systems · The end-to-end argument (Saltzer, Reed and Clark, 1984)</b>: checks at every hop in a network can't replace one final check at the endpoint, because only the endpoint knows what counts as correct. The named signer is that endpoint. The catch: a checksum isn't fooled by clean formatting, and a person is.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>AI pushes the cost of outreach toward zero while inbox capacity stays fixed, so reply rates per message keep falling.</li>
+<li>Personalised openers worked because they were scarce, not because they carried information, and the premium disappears once anyone can generate them.</li>
+<li>Put the saved time into referral paths, trigger events and one line per message a model couldn't write, not into more volume.</li>
+<li>In Luo and colleagues' field experiment, disclosing a bot before the conversation cut purchases by about 80%, yet hiding it is illegal and destroys trust.</li>
+<li>Bots belong where only correctness matters, like scheduling, FAQs and notes; pricing, objections, negotiation and bad news need a human.</li>
+<li>Customers who stress how unusual their situation is resist algorithms most, so hand them to a person who asks what exactly is different.</li>
+<li>Brynjolfsson and colleagues' study of over 5,000 support agents found that a generative assistant helped novices most and the most experienced barely at all.</li>
+<li>Any skill a model can copy is losing its rent; what remains sits in inputs AI can't reach, judgement someone must sign, and relationships.</li>
+<li>AI errors hide inside fluent, confident output, so every type of output needs a two-minute verification step and a named signer.</li>
+<li>Letting people modify an algorithm's output restores its use, which is why AI-drafts, human-approves outlasts full automation.</li>
+</ol>
 </div>
 <div class="homework">
 <h3>Your Day 56 Action</h3>

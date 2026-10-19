@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -391,6 +403,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">Labelled honestly: the framework layer here — whole product, ownership tables — is <strong>an experience system, not a tested theory</strong>. I've seen no clean controlled study quantifying how much filling gaps lifts conversion. What is empirically supported is the mechanisms underneath (ambiguity aversion, status quo bias, self-selection). Use it as a checklist, not a law, and after filling the table watch whether your own win rate moves.</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Evolutionary biology · The green-beard effect (Hamilton, Dawkins)</b>: if one gene both produces a visible marker and makes its carrier favour others with the same marker, cooperation runs on a single label switch, much as a mainstream buyer keys on "same industry, same size." The difference: the real green beard found in fire ants is tied to one gene, while a market label is only a proxy, and the right label doesn't make someone a true peer.</li>
+<li><b>Complexity science · The percolation threshold (Erd&#337;s–Rényi)</b>: in a random network, once the average node has more than one link, scattered clusters suddenly fuse into a single giant component. Thirty customers spread thin are islands below threshold; a beachhead pushes local link density past it. The difference: real buyer networks aren't random graphs, and homophily means the threshold holds inside one circle while the links between circles stay broken.</li>
+<li><b>Distributed systems · Two-phase commit</b>: a distributed transaction succeeds only if every participant votes to commit; one silent participant rolls the whole thing back. The whole product works the same way: one unowned square on the gap sheet and, to the mainstream buyer, the job can't be done. The difference: a coordinator times out and retries, while a buyer usually doesn't retry, he just quietly stays put.</li>
+<li><b>Game theory · Information cascades (Bikhchandani, Hirshleifer and Welch, 1992)</b>: rational people watch what those before them chose and set aside their own private information to follow, which is exactly what a mainstream buyer waiting for "someone like us" is doing. The difference: in a classic cascade every earlier choice counts, whereas the chasm exists because the first wave is judged "not like us," so the cascade breaks at the category boundary.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Early adopters buy being ahead and the early majority buys not getting into trouble, so each trusts the opposite kind of evidence.</li>
+<li>Moore's chasm is a break in reference value, not in the market: mainstream buyers don't see early customers as peers, so those case studies don't count.</li>
+<li>Three questions tell you which side a buyer is on: when they last replaced a tool, who signs off, and which peers are doing something similar.</li>
+<li>The minimal group experiments show the "one of us" switch is cheap: a matching label turns it on, and a mismatched one turns it off just as cheaply.</li>
+<li>Risk can be estimated and budgeted, while ambiguity only freezes people; mainstream buyers mostly stall on ambiguity, not on risk.</li>
+<li>Replace "trust me" with sentences carrying a number, a name and a way out, name three things that could go wrong, and offer a reversible pilot.</li>
+<li>Pick a beachhead by whether its members talk to each other, through shared venues, shared jargon and setups they can copy, not by market size.</li>
+<li>In meta-analyses of the Bass diffusion model, internal imitation outweighs external promotion by an order of magnitude, and word of mouth travels only among similar people who meet.</li>
+<li>The whole product behaves like a two-phase commit: every square on the gap sheet needs a name, yours, a partner's or the customer's, or the deal can't close.</li>
+<li>Early adopters fill your gaps for free, so "our customers are doing fine" proves nothing about whether the product is complete for the mainstream.</li>
+</ol>
 </div>
 <div class="homework">
 <h3>Your Day 45 Action</h3>

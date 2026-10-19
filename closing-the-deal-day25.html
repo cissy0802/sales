@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -449,6 +461,30 @@ header h1{font-size:1.55rem}
 <p>"I don't have a discount for this week — I have a slot." —— 拒假紧迫，给真约束。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>演化生物学 · Zahavi 的昂贵信号</b>：Amotz Zahavi 1975 年的累赘原理说，信号可信是因为它贵，孔雀尾巴装不出来。真假购买信号用的是同一个判据：牵出人、时间、流程的问题才算数，只带好奇的不算。不像在哪：孔雀在刻意展示，买家多半不知道自己在发信号。</li>
+<li><b>博弈论 · Rubinstein 讨价还价模型</b>：Ariel Rubinstein 1982 年证明，只要双方都为拖延付代价，交替出价的谈判会在第一轮就成交，越耐不起等的一方让得越多。「不动的代价」就是模型里那个贴现因子。不像在哪：模型假设彼此的等待成本是共同知识，现实里他的成本只有他自己清楚，所以要让他亲口算出来。</li>
+<li><b>神经科学 · 证据累积到阈值</b>：Roitman 与 Shadlen 2002 年发现，猴子判断运动方向时，顶叶 LIP 神经元的放电随证据爬升，碰到阈值才做决定。窗口期再加新功能，等于往累加器里灌噪声。不像在哪：猴子的阈值大致固定，人的阈值会被一句「不急」调高。</li>
+<li><b>分布式系统 · 两阶段提交的阻塞</b>：两阶段提交里，参与方投了「准备好」后若协调者失联，只能锁着资源干等。「我们内部再对一下」就是一个没有超时、没有协调者的准备状态，所以要给它挂上日期和负责人。不像在哪：数据库节点不能单方面反悔，买家随时可以。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>Rackham 团队对约 35,000 通销售通话的研究发现，花哨的成交技巧在大额交易里用得越多，成功率越低。</li>
+<li>购买信号的标志是客户的问题从「这东西好不好」转向「到我这儿怎么落地」，比如上线时间和谁来对接。</li>
+<li>信号出现后继续加功能会稀释已经讲好的部分，把买家从模拟拥有拉回挑毛病的评估模式。</li>
+<li>真购买信号带成本，会牵出人、时间和流程；只带好奇的问题可能只是在比价。</li>
+<li>「要不要买」的默认答案是不；把问题换成落在排期上的二选一，前进就成了默认选项。</li>
+<li>二选一不油腻有四个条件：只在信号之后用、两个选项都真实、落在怎么做上、留一条免费退出。</li>
+<li>人系统性低估别人答应请求的概率，Flynn 与 Lake 的实验里低估近一半，所以最大的风险是根本没开口要。</li>
+<li>成交请求要具体到谁在什么时候做什么，删掉缓冲垫，说完闭嘴数到七，别用降价填补沉默。</li>
+<li>紧迫感唯一合法的来源是不动的代价，而且要用客户自己报出的数字来算拖延成本。</li>
+<li>说服和操纵的分界：如果对方完全知道截止日期怎么来的，他是否还会做同样的决定。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="7f8edafca9158225">本期习作 · Your Day 25 Action</h3>

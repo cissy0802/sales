@@ -85,6 +85,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -409,6 +421,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">Boundaries. <strong>One, don't turn it into nickel-and-diming</strong>: pricing every small favour wrecks the relationship account. An occasional "this one's on us" has real value with a long-standing client — but say explicitly that it's an exception, or the exception becomes the new baseline automatically. <strong>Two, only trade things you can actually deliver</strong>: agreeing to an impossible deadline to protect a price converts a pricing problem into a trust problem, which is the more expensive one. <strong>Three, if they genuinely have only one axis</strong> (a hard budget mandate), three packages won't save it — at that point the question is whether the deal is still worth having (the logic from the qualifying piece).</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Game theory · Rubinstein bargaining (Ariel Rubinstein, 1982)</b>: Two players alternate offers while the pie shrinks with every round of delay, and in equilibrium the first proposer gets the larger share. Alike in that moving first really pays; unlike in that the model assumes complete information and the edge comes from the other side's impatience, while here it comes from anchoring and knowing the market.</li>
+<li><b>Evolutionary biology · The handicap principle (Amotz Zahavi, 1975)</b>: A peacock's tail is believable because a weak bird can't afford to fake it. A concession ladder that shrinks and slows is likewise a signal that costs something, which is why the other side trusts it. The difference: the peacock's honesty is guaranteed by its body, while a shrinking ladder can still be acted, and only reputation across repeated deals keeps it honest.</li>
+<li><b>Distributed systems · Exponential backoff</b>: In Ethernet and network retries, the wait doubles after each failure, and collisions die down on their own. Halving each concession and stretching the gap between them is the mirror image of that curve. Unlike backoff, which exists to stop two senders colliding, a shrinking ladder is meant to be read: it lets the other side see your floor.</li>
+<li><b>Evolution · Reciprocal rewards in mycorrhizal symbiosis (Toby Kiers et al., 2011, <em>Science</em>)</b>: Plants send more carbon to the fungi that deliver more phosphorus, and fungi route phosphorus to the roots that pay more carbon, so cooperation holds and freeloaders lose out. It is "never give, always trade" without a mind behind it: each side hands over what is cheap for it and valuable to the other. Unlike a negotiator, roots and hyphae don't bargain or lay out three equivalent packages; natural selection does all the calculating.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>"Never make the first offer" is mostly backwards: if you know the market at all, the side that goes first usually gets more.</li>
+<li>Tversky and Kahneman showed in 1974 that people start from whatever number is at hand and adjust away from it, and the adjustment is reliably too small.</li>
+<li>Don't go first when you don't know the market, when they hold cost information you lack, or when they have a published price list.</li>
+<li>A precise first offer like 38,500 draws smaller counteroffers than a round one, because it looks like the output of a calculation.</li>
+<li>If you quote a range, use a bolstering range with your target at the bottom: want 38, say 38 to 42, never 35 to 40.</li>
+<li>State your reasoning before the number, then stop talking instead of adding that the price is negotiable.</li>
+<li>Equal concessions announce that more is coming; make each step smaller and slower so the other side works out your floor for themselves.</li>
+<li>A free concession only resets the other side's expectations, so attach a condition to every move and put the "if" first.</li>
+<li>Deals stall when both sides assume price is the only axis; putting payment terms, contract length or case-study rights on the table breaks the fixed-pie bias.</li>
+<li>Offering three packages that are equal to you but shaped differently (MESO) reveals whether the buyer cares most about cash flow, headline price or timeline.</li>
+</ol>
 </div>
 <div class="homework">
 <h3>Your Day 24 Action</h3>

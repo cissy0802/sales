@@ -84,6 +84,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -401,6 +413,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">This is where the line between persuasion and manipulation is easiest to cross, and one sentence settles it: <strong>if they knew everything — how this deadline came about, whether there'll be another next month — would they still decide the same way?</strong> Yes is persuasion; no is manipulation. Fake countdowns, invented "only two slots left," price-rise notices that never arrive: all effective short-term, all billed to repeat business and reputation (the scarcity section of the influence-principles piece draws the same line).</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Evolutionary biology · Zahavi's costly signals</b>: Amotz Zahavi's 1975 handicap principle says a signal is believable because it is expensive; a peacock can't fake its tail. Real and fake buying signals split on the same test: questions that drag in people, dates and process count, mere curiosity doesn't. The difference: the peacock is showing off on purpose, while a buyer rarely knows they are signalling at all.</li>
+<li><b>Game theory · Rubinstein's bargaining model</b>: Ariel Rubinstein showed in 1982 that when both sides pay for delay, alternating-offer bargaining settles in the very first round, and whoever can least afford to wait concedes more. The cost of standing still is the model's discount factor. The difference: the model assumes each side's cost of waiting is common knowledge; in real deals only the buyer knows theirs, which is why they have to compute it out loud themselves.</li>
+<li><b>Neuroscience · evidence to threshold</b>: Roitman and Shadlen (2002) found that while monkeys judged the direction of moving dots, neurons in parietal area LIP ramped up with the evidence and the choice came when they hit a threshold. Piling on features once the window is open pours noise into the accumulator. The difference: the monkey's threshold is roughly fixed; a human's rises the moment you say "no rush."</li>
+<li><b>Distributed systems · blocking in two-phase commit</b>: in two-phase commit, a participant that has voted "prepared" and then loses its coordinator can only wait, holding its locks. "We'll sync internally" is a prepared state with no timeout and no coordinator, so give it a date and an owner. The difference: a database node can't back out on its own; a buyer always can.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Rackham's team studied about 35,000 sales calls and found that the more fancy closing techniques reps used in large deals, the lower their success rate.</li>
+<li>A buying signal shows up when the buyer's questions shift from whether the product is any good to how it would run on their side, such as go-live dates and owners.</li>
+<li>Adding features after a buying signal dilutes what already landed and pulls the buyer from imagining ownership back into fault-finding evaluation.</li>
+<li>Real buying signals carry a cost, pulling in people, dates and process; questions driven only by curiosity may just be price shopping.</li>
+<li>The default answer to "should we go ahead?" is no; an either-or question about scheduling makes moving forward the default instead.</li>
+<li>An either-or close stays honest under four conditions: use it only after a signal, make both options real, aim it at logistics, and offer a free exit.</li>
+<li>People systematically underestimate how often others say yes, by nearly half in Flynn and Lake's experiments, so the biggest risk is never asking.</li>
+<li>A closing request should name who does what by when, drop every cushion, then go silent for a count of seven without filling the gap with a discount.</li>
+<li>The only legitimate urgency is the cost of waiting, and it must be computed from numbers the buyer gave you.</li>
+<li>Persuasion turns into manipulation when a fully informed buyer, knowing where the deadline came from, would decide differently.</li>
+</ol>
 </div>
 <div class="homework">
 <h3>Your Day 25 Action</h3>

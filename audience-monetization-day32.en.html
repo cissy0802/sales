@@ -88,6 +88,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -451,6 +463,30 @@ header h1{font-size:1.55rem}
 <p>"I turned that sponsorship down; I haven't used the product." —— a refusal said out loud is itself a deposit.</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Evolutionary biology · Zahavi's handicap principle</b>: Amotz Zahavi argued in 1975 that a signal is believable precisely because it is costly and hard to fake. Talking people out of buying, or admitting what you can't do, pays that kind of cost. Where it breaks: a peacock's tail advertises fitness, close to competence; your cost advertises whose side you're on.</li>
+<li><b>Evolutionary game theory · raising the stakes</b>: Roberts and Sherratt's 1998 Nature model showed that strangers can start cooperating with tiny investments and scale up only after the other side reciprocates, and that this strategy evolves stably. A product ladder has the same shape. Where it breaks: in the model both sides probe symmetrically; on a ladder the risk sits mostly with the buyer.</li>
+<li><b>Network science · the weak spot of scale-free networks</b>: Albert, Jeong and Barabási found in 2000 that networks held together by a few hubs shrug off random failures but collapse under attacks on the hubs. A star-shaped community that dies when its host goes quiet has the same weakness. Where it breaks: natural hubs grow through preferential attachment, while a community host has to deliberately demote themselves.</li>
+<li><b>Distributed systems · AIMD congestion control</b>: TCP congestion control (Jacobson 1988; convergence shown by Chiu and Jain in 1989) grows its window linearly while things go well and halves it on a single loss, which is exactly the trust account's slow-climb, fast-drop curve. The logic matches too: probe carefully so you don't swamp a shared channel. Where it breaks: TCP halves by design to share bandwidth fairly, so the drop follows a formula; an audience's trust has no floor on how far it falls and no schedule for recovering.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Attention, trust and revenue are three funnels with different fuels, so growing followers without growing sales is the default, not bad luck.</li>
+<li>High-arousal emotions like awe, anger and anxiety drive sharing, but people hooked by a surprise usually carry no problem to solve.</li>
+<li>In the Fiske warmth-competence model, warmth is judged first and weighted heavier, so a feed of pure expertise builds only half of trust.</li>
+<li>Count the three funnel stages separately, find the narrowest one and fix only that, instead of topping up the stage you least lack.</li>
+<li>A product ladder sells a cheaper way to check you out, not a lower price; the bottom rungs are measured by how many people got one real delivery.</li>
+<li>The buyer's barrier is risk, not price: Kahneman and Tversky's loss aversion explains why smaller rungs or refunds work and discounts don't.</li>
+<li>A sample product must be useful on its own, and two or three rungs are enough; a bait sample costs more trust than it earns.</li>
+<li>A community turns the corner when members answer each other, so the host should hold back replies and praise helping, not just results.</li>
+<li>Good content is a deposit and every pitch a withdrawal, and negativity bias lets one moment of feeling farmed outweigh dozens of good posts.</li>
+<li>Once revenue becomes the feedback signal it quietly retrains creators to write what sells, and only an external rule that money can't bend holds the line.</li>
+</ol>
 </div>
 <div class="homework">
 <h3>Your Day 32 Action</h3>

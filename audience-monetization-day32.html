@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -457,6 +469,30 @@ header h1{font-size:1.55rem}
 <p>"I turned that sponsorship down; I haven't used the product." —— 说出来的拒绝，本身就是存款。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>演化生物学 · 累赘原理（Zahavi）</b>：扎哈维 1975 年提出，信号可信恰恰因为发出它要付真代价、装不起。劝人别买、承认自己不会，就是在付这种代价。不像在：孔雀尾巴证明的是体质，近似能力；这里的代价证明的是立场，也就是善意。</li>
+<li><b>演化博弈论 · 逐步加码</b>：Roberts 与 Sherratt 1998 年在 Nature 上的模型显示，陌生个体可以从很小的投入开始合作，对方回报了再加码，这种策略能稳定演化出来。产品阶梯是同一个结构。不像在：模型里双方对称地试探，阶梯里风险主要压在买家一侧。</li>
+<li><b>网络科学 · 无标度网络的软肋</b>：Albert、Jeong 与 Barabási 2000 年发现，靠少数枢纽连起来的网络扛得住随机故障，却经不起专打枢纽；星型社群主理人一停更就散，是同一个软肋。不像在：自然网络的枢纽靠优先连接自己长出来，社群主理人要做的却是主动给自己降权。</li>
+<li><b>分布式系统 · AIMD 拥塞控制</b>：TCP 拥塞控制（Jacobson 1988；Chiu 与 Jain 1989 证明其收敛）没出事就线性加窗，一丢包就把窗口砍半，曲线正是「爬得慢、掉得快」的信任账户；道理也像，小心试探才不会压垮大家共用的通道。不像在：TCP 砍半是为公平分带宽而刻意设计的，掉多少有公式；读者的信任一次掉多少没有下限，也不会按时恢复。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>注意力、信任、成交是三段漏斗，燃料各不相同，涨粉了钱却没来是默认结果，不是运气差。</li>
+<li>敬畏、愤怒、焦虑这类高唤醒情绪推动转发，但被反差钩来的人心里往往没有待解决的问题。</li>
+<li>Fiske 等人的两维模型：信任沿能力和善意两条轴走，善意判断得更早、权重更大，只发干货只长了一条腿。</li>
+<li>三段漏斗要分开各自计数，找出最窄的一段只修它，别再补最不缺的那一段。</li>
+<li>产品阶梯卖的不是更低的价格，是更小的验证成本；前一两级的指标是多少人拿到过一次真实交付。</li>
+<li>买家的障碍是风险而不是价格，Kahneman 与 Tversky 的损失厌恶说明：降价不对症，切小台阶或接过风险才对症。</li>
+<li>取样品必须自己就有用，台阶两三级就够，做成诱饵式的半成品会损失更多信任。</li>
+<li>社群的转折点是成员开始互相回答问题；主理人先别抢答，公开表扬互助而不只表扬成绩。</li>
+<li>好内容是存款、推销是取款，负面偏差让一次被当韭菜的感觉抵得过几十篇好内容。</li>
+<li>收入一旦成为反馈信号，会悄悄驯化作者多写好卖的，只能靠一条不因钱改变的外部规则来锚定。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="5bc667c2d6be7047">本期习作 · Your Day 32 Action</h3>

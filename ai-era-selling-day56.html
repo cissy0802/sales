@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -427,6 +439,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">失效场景：别把验证做成第二遍全文重写——那等于没省时间，团队三周内就会偷偷跳过。验证要短、要具体、两分钟内做得完。另一个常见的坑：把客户敏感数据贴进不受控的工具里，先问清合规，别等法务来问你。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>演化生物学 · 累赘原理（Amotz Zahavi，1975）</b>：孔雀尾巴之所以可信，是因为它贵，弱个体付不起；一封用心写的信过去也是这种信号，成本本身证明你在意。生成成本塌到零，这条信号就不再诚实，买家只好改看别的贵东西：引荐、一句模型写不出的细节。不像在于：尾巴的成本长在身体上，伪造不了；写信的成本却一夜之间被外包掉了。</li>
+<li><b>心灵哲学 · 意向立场（Daniel Dennett，1987）</b>：预测一个系统，可以取设计立场（它被造来做什么），也可以取意向立场（它想要什么）。一句「我是机器人」把买家从后者切到前者，只验收功能。不像的是，Dennett 说立场按哪个预测得准来挑，买家却是被一个标签切换的。</li>
+<li><b>微生物学 · 水平基因转移</b>：细菌不必等后代慢慢演化，能直接从邻居那里拿到一段抗药基因；AI 把资深者的隐性做法横向递给每个新手，也跳过了师徒式的垂直传承。不像在于：抗药基因传开后照样管用，销售技能传开后相对优势却归零。</li>
+<li><b>分布式系统 · 端到端原则（Saltzer、Reed、Clark，1984）</b>：网络中间每一跳都做校验，也替代不了端点最后核对一次，因为只有端点知道什么算对；具名签发人就是那个端点。不像的是，校验和不会被漂亮格式骗过，人却会。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>AI 把触达成本压到接近零，而收件箱容量没变，单封外联的回复率只会一路下滑。</li>
+<li>个性化开头有效靠的是稀缺而不是信息量，人人都能生成之后，这份溢价就会消失。</li>
+<li>省下的时间该投向引荐路径、触发事件和每封信里一句模型写不出的话，而不是加大发送量。</li>
+<li>Luo 等人的田野实验里，对话前披露机器人身份让购买率下降约八成，但隐瞒既违法也毁信任。</li>
+<li>机器人适合排期、答疑、纪要这类只需答案正确的环节，报价、异议、谈判和坏消息必须由人出面。</li>
+<li>客户越强调自己情况特殊就越抗拒算法，这时应换人接手并追问具体差异。</li>
+<li>Brynjolfsson 等人对五千多名客服的研究显示，生成式助手让新手涨幅最大，最资深者几乎没涨。</li>
+<li>模型能复制的技能租金正在归零，剩下的溢价在 AI 拿不到的输入、要担责的判断和关系里。</li>
+<li>AI 的错误藏在流畅自信的输出里，每类输出都要配一个两分钟能做完的验证动作和一个具名签发人。</li>
+<li>允许人修改算法输出能让使用率回升，所以 AI 起草、人来终审比全自动更能长期用下去。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="fed668e7cabaa16d">本期习作 · Your Day 56 Action</h3>

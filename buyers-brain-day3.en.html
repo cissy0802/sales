@@ -82,6 +82,18 @@ nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px s
 nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
 nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
 footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 @media(max-width:600px){
 header h1{font-size:1.55rem}
 .card{padding:24px 20px}
@@ -488,6 +500,31 @@ header h1{font-size:1.55rem}
 <p>"You can always <em>change your mind</em>." — reversibility is the best sedative.</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Neuroscience · the split-brain "interpreter" (Gazzaniga)</b>: A split-brain patient's right hemisphere sees a snow scene and the left hand picks a shovel; the left hemisphere, which saw only a chicken claw, instantly explains that the shovel is for cleaning the chicken shed. Same shape as "emotion decides, logic justifies." The difference: the patient's reason has no link to the real cause, while an ordinary buyer's reasons can still feed back and revise the lean.</li>
+<li><b>Buddhism · feeling, craving, grasping in dependent origination</b>: In the twelve links, feeling (vedanā) comes first, then craving and grasping. Lighting the emotion before the close walks exactly this chain. The direction is reversed: practice aims to notice the gap between feeling and craving and not be carried off; selling wants the chain to run to completion.</li>
+<li><b>Evolutionary biology · the life-dinner principle (Dawkins &amp; Krebs, 1979)</b>: A fox chasing a rabbit risks a meal; the rabbit risks its life, so the rabbit runs harder. There, losses outweigh gains because the stakes really are asymmetric. Loss aversion differs: the dollar is the same size, it only feels heavier when lost.</li>
+<li><b>Chemistry · activation energy and catalysts</b>: Even a reaction that ends in a more stable state must first climb an energy barrier, so at room temperature often nothing happens; a catalyst lowers the barrier without changing start or end, like lowering the cost of change for a buyer. Unlike a catalyst, selling also raises the cost of standing still, which amounts to changing the starting point.</li>
+<li><b>Distributed systems · sagas and compensating transactions (Garcia-Molina &amp; Salem, 1987)</b>: A long transaction avoids locking resources by pairing each step with a compensating action, so the system dares to move forward; trials and refunds are compensating actions for a purchase. The limit: compensation is a semantic undo, and the buyer's time and effort never come back.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Buying decisions usually happen first at the emotional level; reason arrives afterward to justify a lean that already exists.</li>
+<li>Light the buyer's real feeling first, then hand over reasons they can defend to a boss, a spouse and themselves; both are needed.</li>
+<li>Damasio found that patients with ventromedial prefrontal damage keep normal intelligence yet cannot make ordinary decisions, because no emotion scores the options.</li>
+<li>Under prospect theory a loss hurts about twice as much as an equal gain pleases, so "what you are losing" moves people more than "what you could gain."</li>
+<li>The endowment effect makes things harder to give up once they feel like ours, which is why free trials and samples work.</li>
+<li>Most lost deals are not lost to a competitor but to "keep things as they are and revisit later."</li>
+<li>Status quo bias is braided from switching costs, loss aversion and anticipated regret, so raise the cost of inaction and lower the barrier to change together.</li>
+<li>Buyers who stall are often stuck on "will this go wrong for me" rather than "is it worth it"; people dislike unknown odds more than known risks.</li>
+<li>Guarantees, trials, similar customer cases, a clear next step and reversibility all remove uncertainty, provided the guarantee is actually honored.</li>
+<li>Illuminating real losses and risks is service; inventing urgency or fear is manipulation, and once exposed it wipes out trust.</li>
+</ol>
 </div>
 <!-- ============ Homework ============ -->
 <div class="homework">

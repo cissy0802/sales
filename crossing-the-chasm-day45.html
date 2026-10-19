@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -394,6 +406,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">诚实标注：整体产品与缺口归属属于<strong>经验体系，不是被检验过的理论</strong>——我没见到干净的对照研究说补齐缺口能提高多少转化。可靠的是底下那几条机制（模糊厌恶、现状偏好、自选择偏差）。当检查表用，别当定律；填完看你自己的赢单率有没有动。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>演化生物学 · 绿胡子效应（Hamilton、Dawkins）</b>：一个基因若既造出显眼标记、又让携带者优待同样带标记的个体，合作就只凭一个标签开关，主流买家认「同行业、同规模」也是这样。不像在：火蚁身上找到的真绿胡子由同一个基因绑定，市场上的标签只是代理，贴对了不等于真同类。</li>
+<li><b>复杂性科学 · 渗流阈值（Erdős–Rényi）</b>：随机网络里平均每个节点的连接一旦超过 1，零散的小团会突然连成一个巨型连通分量。撒开的 30 个客户是低于阈值的孤岛，集中打一个细分是在局部把连接密度推过阈值。不像在：真实买家网络不是随机图，同质相吸让阈值只在一个圈子里成立，跨圈仍是断的。</li>
+<li><b>分布式系统 · 两阶段提交</b>：一笔分布式事务要所有参与者都投「可以提交」才算成，只要有一个没回应，整笔回滚。整体产品同理：缺口表里一格无人认领，这事在主流买家那里就是「办不成」。不像在：协调者会超时重试，买家通常不重试，只是悄悄不动。</li>
+<li><b>博弈论 · 信息级联（Bikhchandani、Hirshleifer、Welch，1992）</b>：理性的人看前面的人怎么选，就放下自己的私有信息跟着走，主流买家等「同类做过」正是这种理性跟随。不像在：经典级联里谁的选择都算数，鸿沟的要害是前一批人被判为「不是同类」，级联在类别边界上断掉。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>早期采用者买的是领先一步，早期大众买的是不出事，两者认的证据方向相反。</li>
+<li>Moore 的鸿沟断掉的不是市场，而是推荐的效力：主流买家不把早期客户当同类，案例就不算数。</li>
+<li>三句话能分辨客户站哪边：上次换工具是什么时候、最后谁签字、同行里谁在做类似的事。</li>
+<li>最小群体实验说明「同类」开关极其廉价：一个对得上号的标签就能打开，也能同样廉价地关上。</li>
+<li>风险能算、能预留，不确定只能让人不动；主流买家多半卡在不确定上，而不是风险上。</li>
+<li>把「放心」换成带数字、带名字、带退路的话，主动说出可能出问题的三件事，再给一个可退出的试点。</li>
+<li>挑细分的标准不是市场大小，而是这群人会不会互相打听：共同场所、同一套黑话、做法能否照抄。</li>
+<li>Bass 扩散模型的元分析里，内部模仿系数比外部推广高一个数量级，口碑只在相似且会碰面的人之间传。</li>
+<li>整体产品像两阶段提交：缺口表里每一格都要写上你、合作方或客户本人的名字，有一格空着整件事就办不成。</li>
+<li>早期采用者会免费替你补缺口，所以「老客户都用得挺好」并不能证明产品对主流买家已经完整。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="27c6e62861543d3d">本期习作 · Your Day 45 Action</h3>

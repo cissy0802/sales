@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -531,6 +543,33 @@ header h1{font-size:1.55rem}
 <p>Let the silence <em>do the work</em>. —— 让沉默替你干活。</p>
 </div>
 </div>
+</div>
+<!-- ============ Crossovers ============ -->
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>神经科学 · 预测加工（predictive processing）</b>：大脑先猜后核对，只上报对不上的「预测误差」。为回应而听，就是先验太硬、误差全被压掉，听见的只是自己的猜测。不像的是，大脑多半猜对，对话里的预设却常错在最贵处。</li>
+<li><b>演化生物学 · 不利条件原理（Amotz Zahavi，1975）</b>：信号要可信，就得付出装不出的代价，如孔雀尾巴。真听也是昂贵信号：压下自己的话、记住细节、复述到点上，假装的人撑不久。不同在于，倾听的代价花在对方身上，本身就是好处。</li>
+<li><b>佛学 · 马哈希禅师的「标记」（noting）</b>：缅甸的马哈希禅师教内观，让人给念头和感受轻轻贴名：「想」「烦」「痛」，一贴名就退出半步。和贴情绪标签同一个动作；只是禅修者标记的是自己，为看清无常，不为请出别人的顾虑。</li>
+<li><b>分布式系统 · 确认与重传（ACK）</b>：TCP 里数据发出去不算数，收到确认（ACK）才算送达，超时就重发。复述确认是同一套协议：那声「对，就是这样」就是 ACK，敷衍的「好的」等于没收到，得换个说法重来。不像的是方向反了：网络里接收方确认，对话里是听的人把内容送回去，由只知道原文的说话人确认。</li>
+<li><b>博弈论 · 消耗战（John Maynard Smith，1974）</b>：两只动物对峙，谁先撤谁输，比谁更耗得起；报价后的沉默也是这个结构，先开口找补的往往先让步。但正文划的边界正是消耗战的反面：好的沉默是给对方想的时间，不是比谁先崩。</li>
+</ul>
+</div>
+<!-- ============ Takeaways ============ -->
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>多数人听是为了回应，真正的倾听是先关掉准备反驳和推销的念头，为理解而听。</li>
+<li>客户抛来带刺的抱怨时，先接住话底下的情绪，再请他讲细节，抱怨就变成了信息。</li>
+<li>Itzchakov 与 Kluger 的实验显示，被高质量倾听的人防御更低，态度更愿意松动。</li>
+<li>倾听松动的是防御不是事实，产品给不了对方要的东西时，听得再好也成不了交。</li>
+<li>用试探的「听起来」语气说出对方没出口的情绪，情绪强度会下降，真顾虑随之浮出。</li>
+<li>Lieberman 2007 年的 fMRI 研究发现，给情绪命名时杏仁核活动下降、前额叶被激活。</li>
+<li>镜像就是重复对方最后一到三个词、语气上扬，对方会自己补充和展开。</li>
+<li>复述要做到对方明确认可你说中了，Voss 称之为逼出 that's right，敷衍应和不算。</li>
+<li>问出真问题或报完价后忍住沉默、默数几秒，先开口找补的一方往往先让步。</li>
+<li>复述确认和 TCP 的确认重传是同一套协议：没收到明确确认，就换个说法再发一次。</li>
+</ol>
 </div>
 <!-- ============ Homework ============ -->
 <div class="homework">

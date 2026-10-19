@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -456,6 +468,30 @@ header h1{font-size:1.55rem}
 <p>"Which of these three works best on your end?" —— 从「要不要」切到「要哪个」。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>博弈论 · 鲁宾斯坦讨价还价模型（Ariel Rubinstein，1982）</b>：双方轮流出价、每拖一轮蛋糕都会缩水，均衡里先出价的一方分得更多。像在先手确有优势；不像在模型假设信息完全，优势来自对方的不耐烦，而本篇的先手优势来自锚点和信息差。</li>
+<li><b>演化生物学 · 累赘原理（Amotz Zahavi，1975）</b>：孔雀尾巴可信，是因为造假的代价付不起。越来越小、越来越慢的让步也是付了代价的信号，对方因此信它。不像在于，孔雀的诚实由身体成本结构性地保证；谈判里的递减阶梯仍然可以演，守住它的只是重复交往的声誉。</li>
+<li><b>分布式系统 · 指数退避（exponential backoff）</b>：以太网和网络重试里，每次失败后等待间隔翻倍，冲突自然收敛。让步阶梯「每步减半、间隔拉长」是同一条曲线的镜像。不像的是，退避为的是避免互相撞车，让步递减则是故意让对方从曲线上读出你的底价。</li>
+<li><b>生物进化 · 菌根共生的互惠奖赏（Toby Kiers 等，2011，<em>Science</em>）</b>：植物把更多碳分给供磷更多的真菌，真菌也把磷优先送给给碳更多的根，合作因此稳定，偷懒者拿不到好处。这正是「绝不白让，每次给都挂条件」的无意识版本：双方交换的是对自己便宜、对对方值钱的东西。不像在于，根和菌丝不会谈判，也不会报三个等价方案，那份算计全由自然选择代劳。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>「谁先出价谁吃亏」基本说反了：只要对行情有起码判断，先出价的一方通常拿走更多。</li>
+<li>Tversky 与 Kahneman 1974 年的研究表明，人从手边的数出发往外调，而调整量系统性地不够。</li>
+<li>不知道行情、对方掌握你没有的成本信息、或对方有公开价目表时，不要先出价。</li>
+<li>精确的报价（如 38,500）比整数报价引来的还价幅度更小，因为它看起来是算出来的。</li>
+<li>用区间报价就用加强型区间，把目标放在下端：想要 38 就报 38 到 42，而不是 35 到 40。</li>
+<li>依据要放在数字前面，报完就停，不要自己补充说价格可以商量。</li>
+<li>等额让步等于宣告后面还有；让步应逐步递减、间隔越拉越长，让对方自己算出你的底价。</li>
+<li>无条件让步只会重设对方的期待值，每次松口都要挂条件，并把「如果」放在前半句。</li>
+<li>谈判常因默认只有价格一根轴而卡死，把账期、合同期限、案例署名等交换项摆上桌才能打破固定蛋糕误判。</li>
+<li>同时报三个对你等价、形状不同的方案（MESO），对方选哪个就暴露他真正在乎现金流、总价还是周期。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="199e067ce14c8c22">本期习作 · Your Day 24 Action</h3>

@@ -85,6 +85,18 @@ nav.footer-nav{margin-top:60px;text-align:center;padding:30px 0;border-top:1px s
 nav.footer-nav a{color:#1f7a5c;text-decoration:none;font-size:0.95rem;padding:8px 20px;border:1px solid #cbb98f;border-radius:20px;transition:all 0.2s}
 nav.footer-nav a:hover{background:#1f7a5c;color:#fbfaf4}
 footer{text-align:center;padding:20px 0 4px;font-size:0.8rem;color:#9aab9f}
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 @media(max-width:600px){
 header h1{font-size:1.55rem}
 .card{padding:24px 20px}
@@ -499,6 +511,31 @@ header h1{font-size:1.55rem}
 <p>"You can always <em>change your mind</em>." —— 可逆，是最好的镇定剂。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>神经科学 · 裂脑人的「解释器」（Gazzaniga）</b>：裂脑病人的右脑看到雪景、左手去拿铲子，只看到鸡爪的左脑马上编出「铲子是用来清理鸡舍的」，说得毫不犹豫。这和「情绪先定、理性补台」是同一个结构；不像在于，病人的理由和真实原因完全接不上，常人的理由多少还能回头修正倾向。</li>
+<li><b>佛学 · 十二因缘的「受→爱→取」</b>：缘起链里，苦乐的感受（受）在前，想要（爱）和抓住（取）在后，先点情绪再成交走的正是这条链。方向相反：修行是要在受与爱之间看见那道缝、不被带走，销售却希望这条链顺利走完。</li>
+<li><b>演化生物学 · 「生命—晚餐」原则（Dawkins &amp; Krebs，1979）</b>：狐狸追兔子，狐狸输了丢一顿晚餐，兔子输了丢一条命，所以兔子跑得更拼。这里失大于得是真实的代价不对称；损失厌恶不同，同样一块钱，只是感觉上失去更重。</li>
+<li><b>化学 · 活化能与催化剂</b>：终点更稳定的反应也得先翻过能垒，常温下往往「什么都不发生」；催化剂压低能垒、不改起点终点，正像降低改变的门槛。不像在于，销售还会抬高「不动」的代价，等于改了起点，催化剂做不到。</li>
+<li><b>分布式系统 · Saga 补偿事务（Garcia-Molina &amp; Salem，1987）</b>：长事务不锁死资源，每一步配一个补偿操作，出错就反向撤销，系统因此敢先往前走；试用和退款就是给购买配的补偿操作。不像在于，补偿只是语义上的撤销，客户花掉的时间和精力退不回来。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>购买决定通常先在情绪层发生，理性随后登场，为已经有的倾向找理由。</li>
+<li>先点着对方真实的情绪，再递上能向老板、配偶和自己交代的理由，两者缺一不可。</li>
+<li>Damasio 发现腹内侧前额叶受损的人智力正常，却因没有情绪给选项打分而做不了决定。</li>
+<li>按前景理论，失去的痛约是同等得到的两倍，所以讲「正在失去什么」更推得动人。</li>
+<li>禀赋效应说明东西一旦归了自己就更难放手，这是免费试用和先给样品好用的原因。</li>
+<li>多数没成交的单子不是输给同行，而是输给「维持现状、以后再说」。</li>
+<li>现状偏好由改变成本、损失厌恶和预期后悔拧成，要同时抬高不动的代价、降低改变的门槛。</li>
+<li>客户迟迟不下单，常卡在「会不会踩坑」而不是「值不值」，人厌恶未知概率甚于已知风险。</li>
+<li>保证、试用、同类案例、清晰的下一步和可撤销，都能拆掉不确定感，前提是保证真能兑现。</li>
+<li>照亮真实存在的损失和风险是服务，编造紧迫和恐吓是操纵，一旦被识破信任归零。</li>
+</ol>
 </div>
 <!-- ============ Homework ============ -->
 <div class="homework">

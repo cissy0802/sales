@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -424,6 +436,31 @@ header h1{font-size:1.55rem}
 <p>"Who has to be convinced for this to move?" —— 洞见要落到能推动的人身上。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>演化生物学 · 昂贵信号（Zahavi 的累赘原理）</b>：Amotz Zahavi 1975 年提出，孔雀尾巴可信，正因为它贵、弱者负担不起；Alan Grafen 1990 年用模型证明了这个直觉。被压价时顶住、说对自己不利的实话，是同一种信号：舍得丢掉折扣才证明你信自己的判断。不像在于：孔雀的代价刻在身体里，装不出来；销售的代价是声誉，骗子能装一次，靠的是重复博弈才把他筛掉。</li>
+<li><b>博弈论 · Axelrod 的重复囚徒困境锦标赛</b>：1980 年前后两轮电脑锦标赛里胜出的「一报还一报」，特点是善意、会回击、肯原谅、规则清楚，正像「果断而不咄咄逼人」的倒 U 中点。不像的是，锦标赛策略只管合作与背叛，没有洞见可教。</li>
+<li><b>西方哲学 · 苏格拉底的「助产术」</b>：柏拉图《泰阿泰德篇》里，苏格拉底自比助产士，只用提问帮对方把想法生出来，这就是把洞见落在问句上。不像在于：苏格拉底自称一无所知，挑战者手里早有答案，还把路引向自家方案。</li>
+<li><b>神经科学 · 预测编码（Rao &amp; Ballard，1999）</b>：大脑先拿内部模型去猜，只有预测误差才逼它改模型。「岗位空窗才是成本大头」就是一次精心设计的预测误差。不像的是，大脑的误差来自现实，销售的误差是人挑过的，指向自己的强项。</li>
+<li><b>分布式系统 · 共识协议（Lamport 的 Paxos）</b>：多个节点必须对同一个值达成一致，任何两个节点给出相互矛盾的值，系统就裂了。同一洞见讲给 CFO 和一线主管，只换单位不换事实，就是保持一致性。不像在于：节点无私心，决策人各有考核要护。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>CEB 对约六千名销售的调查发现，复杂方案销售里关系维护型业绩垫底，挑战者在明星中占比最高。</li>
+<li>挑战者的价值不在关系，在于用一个客户没看到的洞见，教他重新看一遍自己的生意。</li>
+<li>洞见式开场不提产品，而是把客户熟悉的问题重构成更大、他没算过的问题，新框架正好只有你能接住。</li>
+<li>重构改的是对方评估用的那把尺子，框架效应说明同一选择换个呈现方式偏好就会反转。</li>
+<li>同一个洞见要翻译成 CFO、业务负责人、一线主管各自被考核的那个数，否则没人会在内部推动。</li>
+<li>B2B 单子常死在内部达不成共识，真正决定成败的是想改变现状的动员者，而不是最好聊的人。</li>
+<li>被压价时一让就等于承认价值有水分；顶住并给出理由，甚至说对自己不利的实话，反而更可信。</li>
+<li>Ames 与 Flynn 的研究显示果断和成效呈倒 U，太软没分量，太硬像推土机，都掉信任。</li>
+<li>洞见摆成结论是打脸，摆成问句是邀请：先给横向观察，再把结论留给客户自己说出口。</li>
+<li>顶住价格、说违背自身利益的话，和演化生物学的昂贵信号同构：舍得付代价，信号才可信。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="ad4398ba4bf414b4">本期习作 · Your Day 36 Action</h3>
