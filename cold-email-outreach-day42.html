@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -427,6 +439,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">边界：节奏受渠道和行业约束，邮件比私信容忍度高。还有一条硬线：对方说了不需要，序列立刻结束、名单里划掉，不换个借口重启。这不只是礼貌——这是你在这个圈子里还能不能被推荐的问题，而那个池子比这一单值钱得多。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>分布式系统 · 指数退避</b>：以太网发包撞车后，重试间隔按倍数拉长，次数也有上限，到顶就丢弃这一帧；间隔递增、终点写死的序列是同一个结构。不像在于：网络重发的是同一个包，邮件每一封都得换角度，原样重发只会被当成噪声。</li>
+<li><b>神经科学 · 习惯化（Eric Kandel 的海兔实验）</b>：同一个刺激反复出现，海兔的缩鳃反射一次比一次弱，因为突触释放的递质在减少；来一个新的强刺激，反应又回来。五封「跟进一下」就是同一刺激。不像的是，海兔没法把你拉黑，收件人可以。</li>
+<li><b>行为生态学 · 边际值定理（Eric Charnov，1976）</b>：觅食动物在一块地上越采越少，当这里的收获率掉到整片环境的平均水平以下，就该去下一块。序列的终点也是这笔账：再发一封的回复概率，比不上换一个新名字。不像在于：动物边吃边算，销售却要在开跑前写死，因为发到第七封时人会被沉没成本绑住。</li>
+<li><b>演化生物学 · 间接互惠（Nowak 与 Sigmund，1998）</b>：帮不帮一个陌生人，看他的名声，而名声来自他怎么对待别人；对方说不需要就停，守的正是这份名声，因为圈子里会转述。不像在于：模型里的名声是公开记分，现实中你的分数只在私下流传，看不见也查不到。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>收件人不读冷邮件而是做半秒钟的分类，整封信的任务是落进「写给我的」那一堆。</li>
+<li>主题行最可靠的写法是放一个只对收件人成立的具体事实，勾好奇心骗得到打开、骗不到回复。</li>
+<li>打开率高不等于有效，算数的只有回复；伪造「Re:」前缀换来的是一次打开和永久的不信任。</li>
+<li>个性化信号的价值等于伪造它的成本，零成本的变量插入如今只证明你用了群发工具。</li>
+<li>冷邮件第一句要接一句因果而不是夸奖，并写能被想象的具体个人，别写行业平均值。</li>
+<li>第一封冷邮件要的是一次十秒能给的回复，不是一场 30 分钟的会议。</li>
+<li>价值前置是先送一小块已经替对方做完的工作，并明说不用回，而不是附一份白皮书。</li>
+<li>跟进序列有效靠的是抽样：紧迫程度随时间波动，多触达一次就多一次撞上对方正在意的那一周。</li>
+<li>序列每封都要换进入角度、间隔递增，终点在开跑前写死，像以太网退避一样设重试上限。</li>
+<li>零回复几乎从不是写作问题，先查送达，再查人群和触发时机，最后才改文字。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="633ca9a032fa4715">本期习作 · Your Day 42 Action</h3>

@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -424,6 +436,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">Boundary: cadence is constrained by channel and industry — email tolerates more than a direct message. And one hard line: the moment someone says they're not interested, the sequence ends, the name comes off the list, and it doesn't restart under a new pretext. That isn't only politeness — it decides whether you can still be recommended inside that circle, and that pool is worth far more than this one deal.</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Distributed systems · exponential backoff</b>: after a collision, Ethernet waits a randomly chosen, doubling interval before each retry, and caps the number of attempts before dropping the frame; a sequence with widening gaps and a fixed end is the same structure. The difference: the network resends the identical packet, while every email has to come in from a new angle, or it is just noise.</li>
+<li><b>Neuroscience · habituation (Eric Kandel's Aplysia work)</b>: touch a sea slug the same way again and again and its gill-withdrawal reflex weakens, because the synapse releases less transmitter; a new strong stimulus brings the response back. Five "just following up" emails are the same touch. Unlike the slug, a recipient can block you.</li>
+<li><b>Behavioral ecology · the marginal value theorem (Eric Charnov, 1976)</b>: a forager should leave a patch once its intake rate there drops below the average for the whole habitat. A sequence's end is the same calculation: one more email is worth less than a fresh name. The difference: the animal computes as it goes, while a seller must fix the end in advance, because by message seven sunk cost is doing the deciding.</li>
+<li><b>Evolutionary biology · indirect reciprocity (Nowak and Sigmund, 1998)</b>: whether a stranger gets help depends on their reputation, earned by how they treated others; stopping the moment someone says no protects exactly that, because circles talk. The difference: in the model reputation is a public score, while yours travels privately, and you never get to see it.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Recipients don't read cold emails; they sort them in half a second, and the whole message exists to land in the "written to me" pile.</li>
+<li>The most reliable subject line holds one concrete fact true only of the recipient; curiosity bait wins opens, not replies.</li>
+<li>A high open rate proves nothing, only replies count, and a fake "Re:" prefix buys one open at the price of lasting distrust.</li>
+<li>Personalization is worth exactly what it would cost to fake, so zero-cost merge fields now only prove you used a mass-mail tool.</li>
+<li>A cold email's opening line should carry a reason rather than a compliment, and describe a person who can be pictured, not an industry average.</li>
+<li>The first cold email should ask for a reply that takes ten seconds to give, not a thirty-minute meeting.</li>
+<li>Leading with value means handing over a small piece of work already done for the recipient and saying no reply is needed, not attaching a white paper.</li>
+<li>Follow-up sequences work by sampling: urgency fluctuates, so each extra touch is another chance to hit the week the recipient actually cares.</li>
+<li>Each message in a sequence needs a new angle and a wider gap, with the end fixed in advance, like a retry cap in Ethernet backoff.</li>
+<li>Zero replies are almost never a writing problem: check deliverability first, then the audience and the trigger, and only then the copy.</li>
+</ol>
 </div>
 <div class="homework">
 <h3>Your Day 42 Action</h3>
