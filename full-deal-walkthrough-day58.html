@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -463,6 +475,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">边界：复盘有成本，别每单都做。挑三类：金额最大的、周期最长的、和你觉得「莫名其妙就没了」的那种——第三类信息量最高。「不追责」不是场面话，它是效应存在的条件：复盘一旦变成定责会，人只会交出能自保的版本。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>分布式系统 · 端到端原则（Saltzer、Reed、Clark，1984）</b>：每一跳都可靠，不等于整条链路可靠，正确性最终只能在两端核对；六格各做 80 分、端到端只剩三成三，说的是同一件事。不像在：论文认为中间逐跳校验只是性能优化，而人工交接丢得太多，逐格交出一句具体的话恰恰是必需的。</li>
+<li><b>演化生物学 · 遗传搭车（Maynard Smith、Haigh，1974）</b>：一个有利突变被选择扫过时，紧挨着它的中性甚至有害的基因也会跟着一起扩散。赢单里漏做的动作，就是这样搭着结果被固化下来的。不像在：基因连锁靠染色体上的距离，拆不开；复盘可以先判过程，把搭车的那一段拆下来。</li>
+<li><b>投资 · 预期差</b>：财报公布后股价跟的不是利润绝对值，而是它比市场一致预期高还是低。成交时多说的一句承诺抬高了预期线，同样的交付就成了「不及预期」。不像在：市场每季重新定价，客户的基线往往一年只在续约时结算一次。</li>
+<li><b>佛学 · 缘起</b>：一件事由众多条件和合而成，没有哪一个单独的因说了算。复盘时写清这一单靠哪个外部条件赢，就是不把众缘之果全记在自己账上。不像在：缘起要人看破「我做成了」的执着，复盘还得从众缘里挑出下次你能控制的那一格。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>六格各做到 80 分、五次交接每次丢两成，端到端只剩三成三，漏斗的损耗是相乘的。</li>
+<li>每一格结束都要交出一句具体的东西给下一格，比如客户亲口说过的一句现状、谁掏钱谁反对。</li>
+<li>工作记忆一次只能稳住约 4 个组块，靠脑子记交接必然丢，交接物要写下来外化。</li>
+<li>Starmer 等在 9 家儿童医院引入结构化交接，医疗差错降了约 23%，交接时间却没有增加。</li>
+<li>端到端走一个单子时看每一格的出口条件，而不是话术；停留最久、最常卡死的一格是决策链。</li>
+<li>别让对方在内部替你转述，转述必然衰减；用具体时长和议程，把自己请进掏钱的人那间屋子。</li>
+<li>把每一格的结束动作固定成「谁、做什么、哪天」，实施意图的元分析效应量约 0.65。</li>
+<li>按 Kahneman 的峰终定律，续约看的是峰值和结尾而非全年平均；成交时多承诺一句会抬高一整年的基线。</li>
+<li>把首次价值定成可核对的事件，提前预告最难受的那一段，用一次念出成果的会代替项目结项。</li>
+<li>复盘先不看结果、逐格判出口条件，「说不清」按「否」算；赢单里漏做的动作会像遗传搭车一样被结果固化。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="e12d90bbb536305a">本期习作 · Your Day 58 Action</h3>

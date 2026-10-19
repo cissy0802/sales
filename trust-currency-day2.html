@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -492,6 +504,30 @@ header h1{font-size:1.55rem}
 <p>"<em>Bank trust, don't spend it.</em>" —— 存信任，别花信任。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>分布式系统 · TCP 的 AIMD 拥塞控制</b>：Van Jacobson 1988 年给 TCP 定的规矩是"加性增、乘性减"：顺利时窗口每轮只加一点，一丢包就砍半。这是"一滴滴攒、一桶桶泼"的工程版。不像在哪：TCP 砍完照原速爬回、不记旧账；人的信任泼过一次，常回不到旧高点。</li>
+<li><b>演化生物学 · 裂唇鱼</b>：Bshary 与 Grutter 2006 年在《自然》报告，清洁鱼被排队的"顾客"围观时更老实，少偷咬黏液，因为旁观者据此决定来不来。口碑扩散和转介绍同构；不像的是鱼只在被看时守规矩。</li>
+<li><b>佛学 · 正语</b>：《中部·无畏王子经》说如来只讲真实、有益的话，哪怕对方不爱听，并挑时机说。这和"主动亮短"同构：真话可贵在于对说话人不利。不同处：正语为对方解脱，不为成交。</li>
+<li><b>儒家 · 民无信不立</b>：《论语·颜渊》中孔子说兵、食、信，不得已先去兵、再去食，信最后丢。信排在实力和好处之前，与"善意先行"相通；但孔子讲的是国与民，信的对象是制度。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>信任由能力和善意两条腿撑着，陌生人先判断你站不站他这边，再看你有没有本事。</li>
+<li>只秀能力、不给善意，会落进"能干但危险"的象限：对方佩服你，同时也提防你。</li>
+<li>开场先发善意信号，比如做过对方的功课、第一句话关于他，再让能力顺势出来。</li>
+<li>Maister 的信任方程式是（可信＋可靠＋亲近）÷ 自我导向，分母最容易被忽略也最致命。</li>
+<li>敢认"不知道"、承诺略小兑现略多、主动暴露风险，分别抬高可信、可靠和亲近三项。</li>
+<li>劝客户别买对他不划算的东西是一种昂贵信号：只想成交的人做不出来，所以格外可信。</li>
+<li>信任攒得慢、崩得快，负面偏误和损失厌恶让一次背信抵掉几十次守信。</li>
+<li>产品有短板就主动讲出来，短期多一道成交障碍，长期换来"连缺点都说实话"的信任标签。</li>
+<li>在 Axelrod 式的重复博弈里守信长期稳赢，客户默认你靠谱后不再逐单审查，成交更快、议价更少。</li>
+<li>信任像 TCP 的拥塞控制一样加得慢、砍得狠，所以稳定的可靠胜过偶尔的惊艳。</li>
+</ol>
 </div>
 <!-- ============ Homework ============ -->
 <div class="homework">

@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -423,6 +435,31 @@ header h1{font-size:1.55rem}
 <p class="caveat">Boundary: Little's Law assumes steady state, so a team with heavy seasonality, or one that has just changed how it sells, will get misleading answers in the short run. And "mark dead" doesn't mean delete the person: it means remove the deal from the forecast, not blacklist the buyer. Some come back six months later on their own — reviving them is covered in the piece on silence and dead deals, and what a valuable follow-up cadence looks like is in the piece on follow-up discipline.</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Distributed systems · Timeouts and failure detection</b>: In an asynchronous network you cannot tell a crashed node from a slow one; the 1985 impossibility result of Fischer, Lynch and Paterson turns on exactly this. Engineers set a timeout and declare the node dead. Marking an aged deal dead when it yields no date is the same move. The difference: a node declared dead must rejoin, while a dead deal that returns on its own is good news.</li>
+<li><b>Complexity science · Phase transition in traffic</b>: In the 1992 Nagel-Schreckenberg cellular automaton, once car density crosses a critical point, more cars on the road means fewer get through. A pipeline whose total rises while closings stay flat sits on the same curve. The difference: traffic jams emerge on their own, while stuck deals usually lack one specific person or decision.</li>
+<li><b>Physics · Ergodicity (Ole Peters)</b>: Peters argued in 2019 that an expected value averages over many parallel worlds, while an individual lives one path through time, and the two need not match. A weighted pipeline answers a single quarter with a parallel-world average. The difference: Peters was writing about multiplicative wealth growth, whereas a quarter's deals simply add up.</li>
+<li><b>Neuroscience · Reward prediction error</b>: Schultz and colleagues described in 1997 how dopamine neurons fire on the gap between outcome and expectation, and learning runs on that gap. Writing forecasts down and scoring them at quarter end manufactures a prediction error by hand. The difference: the brain keeps the books automatically, while an unwritten forecast leaves nothing to learn from.</li>
+<li><b>Buddhism · Upadana (clinging)</b>: Buddhism names clinging, holding on to what is already changing, as a root of suffering. Refusing to mark dead a deal you have chased for eleven months is a very concrete form of it. The difference: Buddhist letting go serves no further goal, while marking a deal dead frees attention for new leads.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Stage names like "proposal sent" or "followed up" record only the seller's own actions and say nothing about whether the deal will close.</li>
+<li>A stage criterion should be a costly action by the buyer: spending time, disclosing information, or pulling a third person in.</li>
+<li>Intent and behavior diverge: in the Webb and Sheeran meta-analysis, large gains in intention produced only small changes in behavior.</li>
+<li>Win rate computed on "closed this month" runs systematically high, because the largest outcome, no decision, never enters the denominator.</li>
+<li>A real win rate follows one cohort of leads from intake to final outcome, with the whole cohort as the denominator.</li>
+<li>Deals are binary: eight coin-flip deals land on exactly four wins only about 27% of the time, so the weighted forecast describes no real outcome.</li>
+<li>Split the single forecast into commit, best case and pipeline, and admit to commit only deals where the buyer did something costly.</li>
+<li>Write every forecast down and score it at quarter end; scored feedback is the only reliable way to calibrate subjective probabilities.</li>
+<li>By Little's Law, work in progress equals arrival rate times time in system, so a growing pipeline usually means slower flow, not more inflow.</li>
+<li>Every aged deal either gets a new next-step date or is marked dead, the same way distributed systems use timeouts to declare a node dead.</li>
+</ol>
 </div>
 <div class="homework">
 <h3>Your Day 40 Action</h3>

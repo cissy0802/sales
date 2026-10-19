@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -389,6 +401,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">失效场景：异步打法在需要即时判断的地方会输——竞标现场、谈判桌上对方突然改条件、高管临时插进来的五分钟，这些地方没有第二稿。所以准备的目标不是避开临场，而是把负担降到你能处理的量：<strong>能预判的全部提前想完，把当场的带宽留给真正没法预判的那部分。</strong>另一个坑：准备会变成拖延的伪装。判据：准备的产出必须是三个问题和一句开场，不是二十页资料。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>生态学 · 李比希最小因子定律</b>：植物长多高，取决于最缺的那种养分，而不是最充足的那种。销售业绩是一串环节的乘积，结构一样：外向只在第一环起作用，补它对总产出的边际很小。不像的地方是，养分彼此替不了，「约到人」这一环却能用转介绍和书面外联整个换掉。</li>
+<li><b>演化生物学 · 理毛与 Dunbar 的语言假说</b>：灵长类理毛会释放内啡肽，Dunbar 据此认为语言是「用嗓子理毛」。让对方谈自己就是廉价的理毛；不像的是，理毛向来互换，这份奖赏却几乎单向流给对方。</li>
+<li><b>生理生态学 · 蜥蜴的行为调温</b>：蜥蜴各有最适体温，它不改生理，而是在阳光和阴影间来回挪（Raymond Huey 的研究主题）。换房间不换性格是同一招；不像的是，人的曲线靠练习还能拉宽一点。</li>
+<li><b>分布式系统 · 异步消息与背压</b>：同步调用换成消息队列，慢的一方就能按自己的节奏处理，过载前用背压限流，高刺激块后的 30 分钟缓冲就是背压。不像的是，客户的耐心有时限，跟进晚了就过期。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>外向程度与销售业绩的校正相关约 .15–.25，折成能解释的业绩差异只有约 2%–6%。</li>
+<li>真正预测销售业绩的是外向里的「主动 / 支配」和尽责性里的「成就动机」，不是爱交际。</li>
+<li>Grant 2013 年的外呼研究里外向与营收呈倒 U，最外向的人并不比最内向的人卖得多。</li>
+<li>别审计性格，去审计丢单：标出每单死在没约到、没讲清、没跟进还是没敢要。</li>
+<li>谈论自己会点亮腹侧被盖区–伏隔核奖赏回路，人甚至愿意少拿钱来换这个机会。</li>
+<li>追问是「你真在听」最可核查的证据；一声不吭不算倾听，要给复述、点情绪、确认这类回执。</li>
+<li>内向与外向最可靠的差别是最优刺激量的位置，该调的是场合的刺激量，而不是性格。</li>
+<li>表层扮演出来的热情与情绪耗竭稳定相关，装外向只宜短时、为具体目的，演完留恢复缺口。</li>
+<li>尽责性是大五里唯一跨职业预测绩效的特质，会前准备和会后跟进就是它的动作形态。</li>
+<li>会后 24 小时内发一封信：复述对方一句原话、附一件有用的东西、定一个明确的下一步。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="6fa5246d27e3ff60">本期习作 · Your Day 54 Action</h3>

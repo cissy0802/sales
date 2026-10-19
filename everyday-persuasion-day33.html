@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -482,6 +494,31 @@ header h1{font-size:1.55rem}
 <p>"I need X" &gt; "you never do X" —— 请求代替评判，是长期关系里最省钱的一句改写。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>化学 · 勒夏特列原理</b>：给处于平衡的体系施加压力，平衡会朝抵消这个压力的方向移动，和逆反是同一个结构：你往哪边推，他往反方向挪。不像在于，化学平衡只抵消一部分、不会反超；人会矫枉过正，被推完比原来站得更远。</li>
+<li><b>演化生物学 · 不利条件原理（Amotz Zahavi，1975）</b>：信号要可信，就得让说谎者付不起代价，孔雀的大尾巴因此成了诚实信号。「这事你定」可信，靠的也是你真可能拿不到想要的结果；不打算接受拒绝的还权，是没付代价的信号，一被识破就作废。不像的是，孔雀的代价一次长在身上，还权的代价要你每一次都兑现。</li>
+<li><b>西方哲学 · 苏格拉底的助产术</b>：柏拉图《泰阿泰德篇》里，苏格拉底自比助产士：不生产观点，只帮对方把想法生出来再检验，像请他讲机制。不像在于，苏格拉底常把人问到哑口无言，正文要的是真问题，不是让人下不来台。</li>
+<li><b>道家 · 老子《道德经》第十七章</b>：老子说最好的统治者，百姓只知道有他；事情办成了，百姓都说「我们本来就是这样」。这像让对方自己撞上缺口、自己改口。不像在于，老子的高明在于隐身，正文的底线却是方法当面说破也立得住。</li>
+<li><b>分布式系统 · 指数退避（exponential backoff）</b>：服务过载时立刻重试只会把它压垮，规矩是先停、隔一段再试，像对方情绪上头时先停止推进。不像在于，退避靠随机抖动错开重试，吵架后却要约具体时间，含糊的「以后再说」像放弃。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>日常说服失败多半不是论据太弱，而是太强：压力越大，对方越要靠反对你来证明自己能做主。</li>
+<li>先明确把决定权还回去，再只留一个最担心的点，比把三条理由摞在一起更容易被听进去。</li>
+<li>Carpenter 2013 年对 42 项研究的元分析显示，请求后补一句对方可以拒绝，依从率会小幅上升。</li>
+<li>嘴上说你定、心里并不接受拒绝的假还权，被识破一次，之后你说什么都会被当成施压。</li>
+<li>解释深度错觉：请对方一步步讲清这事具体怎么运作，他会自己撞上缺口，并自己下调信心。</li>
+<li>你摆出反驳理由，对方忙着组织反驳，原立场反而被练得更结实；同一个漏洞要由他自己讲出来。</li>
+<li>别在会上当众提：公开表态会把观点升级成面子，改口的代价从认错变成当众认错。</li>
+<li>提请求挑私下的窗口，最好接在对方自己抱怨这个问题之后，并缩成小而可逆的短期试验。</li>
+<li>收益与损失框架的总体效应很小；要长期相处的关系里默认用收益框架，损失框架反复用就像恐吓。</li>
+<li>伴侣和孩子是无限次博弈：结果可以不商量，路径给两个你真能接受的选项，假选择一次都不能有。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="48f4fda97ceb63b9">本期习作 · Your Day 33 Action</h3>

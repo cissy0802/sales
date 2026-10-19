@@ -87,6 +87,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -490,6 +502,30 @@ header h1{font-size:1.55rem}
 </div>
 </div>
 
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Distributed systems · TCP's AIMD congestion control</b>: The rule Van Jacobson gave TCP in 1988 is "additive increase, multiplicative decrease": the window grows a little each round while things go well, and is halved on a lost packet. That is "built in drops, lost in buckets" as engineering. Where it differs: TCP climbs straight back and holds no grudge; human trust, once spilled, often never regains its old high.</li>
+<li><b>Evolutionary biology · cleaner fish</b>: Bshary and Grutter reported in <em>Nature</em> (2006) that cleaner wrasse cheat less, nipping less mucus, when waiting "clients" are watching, since bystanders decide whether to visit based on what they see. Reputation spreading via onlookers mirrors referrals; unlike the fish, a seller has to behave when nobody is looking.</li>
+<li><b>Buddhism · right speech</b>: In the Abhaya Sutta (Majjhima Nikaya 58) the Buddha speaks only what is true and beneficial, even if unwelcome, and picks the right time. Same shape as volunteering your weak spot: true words count because they cost the speaker. The gap: right speech serves the listener's liberation, not a sale.</li>
+<li><b>Confucianism · without trust, nothing stands</b>: In <em>Analects</em> 12.7, Confucius ranks arms, food and trust, and says to drop arms first, then food; trust goes last. Ranking trust above strength and handouts echoes "warmth first"; but he means a state and its people, where trust attaches to institutions.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Trust stands on competence and warmth, and strangers first check whether you are on their side, then whether you can deliver.</li>
+<li>Showing competence without warmth lands you in the "capable but dangerous" quadrant: admired, and guarded against.</li>
+<li>Open with warmth signals, such as homework on the client and a first sentence about them, and let competence follow.</li>
+<li>Maister's trust equation is (Credibility + Reliability + Intimacy) / Self-Orientation, and the denominator is the most ignored and most lethal term.</li>
+<li>Admitting "I don't know," under-promising and over-delivering, and flagging risks raise credibility, reliability and intimacy respectively.</li>
+<li>Telling a client not to buy what isn't good for them is a costly signal: a seller who only wants the deal can't fake it.</li>
+<li>Trust builds slowly and breaks fast, because negativity bias and loss aversion let one betrayal erase dozens of kept promises.</li>
+<li>Volunteering a product's weak spot adds a hurdle now but earns the label "tells me the truth, even about flaws."</li>
+<li>In Axelrod-style repeated games, keeping your word wins over time, and clients who assume you're reliable stop re-auditing every deal.</li>
+<li>Like TCP congestion control, trust grows slowly and is cut sharply, so steady reliability beats occasional brilliance.</li>
+</ol>
+</div>
 <!-- ============ Homework ============ -->
 <div class="homework">
 <h3>Your Day 2 Action</h3>

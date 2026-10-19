@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -521,6 +533,30 @@ header h1{font-size:1.55rem}
 <p>"Thanks for saying so directly." —— 被拒后的这一句，买的是下一次。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>演化生物学 · 互惠利他（Robert Trivers，1971）</b>：Trivers 指出，帮非亲属的行为能演化出来，前提是双方会反复相遇、还能认出只取不还的人；吸血蝠给挨饿的同伴反哺血液就是一例。像的是「先给」与「只提款就被冷落」，不像的是：蝙蝠真在记账，本篇偏偏劝你别记。</li>
+<li><b>复杂性科学 · 小世界网络（Watts &amp; Strogatz，1998）</b>：在一张高度抱团的网里随机换上几条远程连线，任意两点的平均距离就骤降，而局部的抱团几乎不变。跨圈的弱连接就是那几条远程线。不像在于，模型里的连线是随机的，现实中这条线得有人还记得你、肯替你开口，所以才是倒 U 而不是越远越好。</li>
+<li><b>分布式系统 · TLS 会话恢复</b>：客户端和服务器握手成功过一次，下次可以凭会话票据跳过完整握手，直接复用当初建立的信任。休眠联系人正是这样：旧信任不用重建。不像的是，票据几小时就过期，人的信任能撑好几年；但重连时最好主动报出那张「票据」，也就是具体的记忆锚点。</li>
+<li><b>佛学 · 三轮体空</b>：大乘讲布施要做到施者、受者、施物三者皆空，不执着「我给了他什么」，《金刚经》说「应无所住行于布施」。这和本篇「给的时候就当没回报」同一个方向。不像的是，佛学要的是放下我执，销售这边坦然承认有目的，只是不把目的记成对方的债。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>networking 让人别扭的开关不在脸皮，而在你有没有带一样能给对方的东西。</li>
+<li>Casciaro 等人 2014 年发现，为职业目的结交比因兴趣结交更让人不适，位置越低的人越强烈。</li>
+<li>新人也有四种低成本货币可给：一手观察、具名的公开认可、牵线、具体反馈。</li>
+<li>机会多来自「有点熟」的弱连接，因为最熟的朋友和你泡在同一个信息池里。</li>
+<li>LinkedIn 约 2000 万用户的随机实验显示，中等弱连接对换工作帮助最大，是倒 U 而非越弱越好。</li>
+<li>关系像账户，只在有事时出现就是一直提款；一条有用信息、一次具名认可、一次牵线都是便宜的存入。</li>
+<li>三年以上没联系的休眠联系人常给出更新颖的建议：旧信任还在，信息却已不再重叠。</li>
+<li>重新联系久未联系的人，先承认间隔，再给一个具体的记忆锚点，第一条消息不附请求。</li>
+<li>Flynn 和 Lake 的实验显示，人们大约把需要开口的人数高估一倍，因为没算对方当面拒绝的尴尬。</li>
+<li>同样的请求当面提比发邮件成功率高得多；请求本身要具体、明给台阶、说清你能回报什么。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="a4c84dda167b8094">本期习作 · Your Day 34 Action</h3>

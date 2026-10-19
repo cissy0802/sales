@@ -76,6 +76,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -356,6 +368,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">Boundary: discount what loss interviews tell you — buyers offer a presentable reason, and "budget" is the easiest shield to reach for. That's why you ask about alternatives and process rather than "why didn't you choose us". And a review <strong>stops working the moment it affects anyone's rating</strong>: people will only bring the version that survives scrutiny. If you want reviews to be useful, telling the truth has to be safe in that room.</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Philosophy of science · Popper's falsifiability</b>: In <em>The Logic of Scientific Discovery</em> (1934), Popper argued a claim has content only if facts could prove it wrong. "This deal's eighty percent there" can never be wrong, so it says nothing. The likeness: a forecast must be fixed in advance so error has somewhere to land. The difference: Popper's single counterexample refutes a theory, while one probabilistic call can never be refuted on its own — only a batch scored rung by rung can, so calibration is falsification done statistically.</li>
+<li><b>Statistical physics · fluctuations and 1/√N</b>: The relative fluctuation in a gas shrinks as 1/√N, which is why temperature and pressure are only stable at macroscopic scale. A close rate settles the same way, and twenty deals is a world of a few molecules. The difference: molecules are independent and the laws hold still; customers influence each other and the market drifts.</li>
+<li><b>Game theory · mechanism design and incentive compatibility</b>: Hurwicz, Maskin and Myerson shared the 2007 economics Nobel for mechanism design, whose core question is how to make telling the truth each player's best strategy. Tie forecasts to pay and a safe number becomes the best play; splitting forecast from commit is a small incentive-compatible design.</li>
+<li><b>Distributed systems · write-ahead logging</b>: A database writes each operation to a log before applying it, so recovery after a crash replays the log instead of trusting any node's memory. Reading the original probability and next step before a review is the same structure. The difference: the log guards against lost power; the deal record guards against an outcome rewriting your judgement.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>A number that would never change any of your actions is just decoration on the dashboard.</li>
+<li>CAC must include sales and marketing headcount, and should be computed per channel rather than as one blended total.</li>
+<li>Payback uses only money already received and needs no guess about retention, so it deserves more attention than LTV.</li>
+<li>Kahneman and Klein say intuition needs stable regularities and fast, clear feedback; sales offers neither.</li>
+<li>A close rate's standard error is about √(p(1−p)/n), so at twenty-odd deals it can swing by well over ten points.</li>
+<li>Regression to the mean makes any fix tried during a slump look effective; that is noise, not progress.</li>
+<li>When deal volume is thin, watch upstream process metrics such as meetings booked and second-meeting rate: larger samples, less noise, earlier signal.</li>
+<li>Put a five-rung probability and an expected close date on every deal, then score each rung at quarter end to correct your optimism.</li>
+<li>Report forecast and commit separately and hold people only to the commit, or they will report a safe number instead of a believed one.</li>
+<li>Reading the original probability and next step before discussing a deal is what defuses hindsight bias and outcome bias.</li>
+</ol>
 </div>
 <div class="homework">
 <h3>Your Day 49 Action</h3>

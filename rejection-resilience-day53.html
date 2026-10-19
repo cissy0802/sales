@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -413,6 +425,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">失效场景：换记分板解决的是"努力与反馈脱钩"，解决不了指标不可能完成、区域被切、产品没市场这类结构问题——那时最健康的反应是离开，不是更强的复原力。判据：输入指标全做满、连续两个报警周期转化率仍趴着，那问题在系统不在你。另外一句：本期讲的是扛住合理范围内的拒绝；如果低落已持续数周、影响睡眠与日常功能，那该找专业帮助。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>佛学 · 第二支箭</b>：《箭经》（相应部 36.6）说，凡夫中了一箭，又因忧恼给自己补上第二箭。第一节同构：刺痛是躲不开的第一箭，事后那句"我不行"是自己射的第二箭。不像在：佛陀连第一箭都要不起贪嗔，重评只求把解释改准确。</li>
+<li><b>分布式系统 · phi 累积失效检测</b>：集群不因一次心跳没到就判节点死亡，而按心跳间隔的历史分布算这次沉默有多反常，过阈值才报警，与 3 ÷ p 报警线同一思路。不像在：节点分布时时更新，你的 p 只能拿上季度粗估。</li>
+<li><b>演化生态学 · 边际价值定理</b>：Charnov（1976）证明，觅食者该在斑块收获率跌到全环境平均时离开，"敢杀掉一单"就是这条离场规则。不像在：动物直接感知采食速度，长单信号稀疏，人易被沉没成本拖住。</li>
+<li><b>斯多葛哲学 · 控制二分</b>：爱比克泰德《手册》开篇把事分成"取决于我们的"和"不取决于我们的"，只在前者上用力；第四节换记分板是它的会计版。不像在：斯多葛视结果为无所谓，销售仍要每周看成交。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>被拒的刺痛在任何判断之前自动发生，连事先知道对手只是电脑程序的人也照样疼。</li>
+<li>挂电话后的 90 秒按程序走：命名情绪、换掉主语重评、抽一条事实、起身隔离一分钟。</li>
+<li>重评降低情绪体验本身；压抑只压住表情，还抬高生理唤醒、让你记不清通话内容。</li>
+<li>成交率 5% 时，纯运气出现 20 连拒的概率约 36%，连败多半不含关于你的信息。</li>
+<li>报警线粗算为 3 ÷ p；没到线只看输入，到线了查名单、开场和预算，而不是多打一百通。</li>
+<li>把预期校准到真实基率，同样的拒绝就不再构成负的奖赏预测误差，行为也不会被消退。</li>
+<li>Seligman 追踪大都会人寿代理人发现，悲观解释风格组第一年离职率约为乐观组的两倍。</li>
+<li>把"我不适合干这个"改写成带动词的一句：这一次在哪个环节做了什么，下次改成什么。</li>
+<li>大脑真正学会的是控制感，所以每天只在有效对话、诊断问题、跟进这三个可控输入上记分。</li>
+<li>恢复效果取决于下班后有没有真正心理脱离，而不是休息时间有多长。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="e21b8b3d4ca8c6eb">本期习作 · Your Day 53 Action</h3>

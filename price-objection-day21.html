@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -438,6 +450,34 @@ header h1{font-size:1.55rem}
 </div>
 </div>
 </div>
+<!-- ============ Crossovers ============ -->
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>分布式系统 · 超时的歧义</b>：异步网络里节点不回应，分不清是慢了还是挂了，FLP 不可能定理（1985）的根子就在这；盲目重试只会放大故障。"太贵了"同样是四因一果的歧义信号。不像的是，客户可以直接问。</li>
+<li><b>物理 · 参考系</b>：速度只在参考系里才有数值，换个参考系，同一个运动快慢全变；换分母、换对照物就是换参考系。不像在于，价格这头的不变量只有一个：他最后真掏出去的钱。</li>
+<li><b>演化生物学 · 扎哈维的累赘原理（1975）</b>：孔雀尾巴可信，因为它贵，弱者装不起；守住原价、宁丢单不白让，是同一种信号。不像的是，报高价本身不花钱，代价在于你真肯为它放走生意。</li>
+<li><b>博弈论 · 谢林的承诺（1960）</b>：《冲突的战略》指出，能堵死自己退路的一方更有议价力，"报价里没留水分"正是让降价变得不可信。不像在于，好的让步只关掉价格这一项，同时打开范围、账期、交期。</li>
+<li><b>演化生物学 · 清洁鱼的惩罚</b>：Bshary 与 Grutter（2005，<em>Biology Letters</em>）发现，裂唇鱼偷咬黏液时，客户鱼要么换一家，要么追咬惩罚，清洁鱼随后变老实。被判不公的涨价同样招来走人和报复。</li>
+</ul>
+</div>
+<!-- ============ Takeaways ============ -->
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>"太贵了"至少有四种：真没钱、没看出值、跟别家比了、在试你会不会松口，解法各不相同。</li>
+<li>听到"太贵了"先别动价格，先问一句"贵是跟什么比"，把对方心里那个对照物问出来。</li>
+<li>按 Kahneman 与 Tversky 的前景理论，人拿参考点而非绝对值判断价格，所以对照物那端也能改。</li>
+<li>不降价也能改变贵的感觉：把总价摊到使用年限上、换一个更真实的对照物、算出不改变的现状成本。</li>
+<li>三档定价必选中间的诱饵效应在真实商品的复制研究里屡屡失败，可以当技巧，别当铁律。</li>
+<li>折扣是一条信息：它告诉对方原价是虚的，还把续费、复购和转介绍的参考价永久拉低。</li>
+<li>毛利 40% 时让 10 个点的折，要多卖约三分之一才能回到原来的毛利；毛利 20% 时要卖一倍。</li>
+<li>让步要换东西，如缩范围、预付、长合约或案例署名；真降价就写清原因、注明一次性。</li>
+<li>Kahneman 等人 1986 年发现：归因于成本上升的涨价多被接受，归因于需求旺的被判不公。</li>
+<li>涨价前先算能承受的流失，提前 30–60 天通知，给老客户锁价窗口，并挂在真实新增内容上。</li>
+</ol>
+</div>
+<!-- ============ Homework ============ -->
 <div class="homework">
 <h3 data-tts="8b4229ccbf9ff844">本期习作 · Your Day 21 Action</h3>
 <p>今天不背话术，先把你自己的数字算出来——没有这几个数，你的每一次让步都是凭感觉。</p>

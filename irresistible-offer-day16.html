@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -498,6 +510,32 @@ header h1{font-size:1.55rem}
 <p>Nothing is expensive next to the cost of doing nothing.</p>
 </div>
 </div>
+</div>
+<!-- ============ Crossovers ============ -->
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>化学 · 催化剂与活化能</b>：催化剂不改变反应前后的能量差，只压低中间那道坎；压低等待和努力也是这样，结果和价格没动，只是更容易跨过去。不像在于：坎低了反应迟早会发生，客户坎再低也可能一直不动。</li>
+<li><b>演化生物学 · 花的蜜导（nectar guide）</b>：许多花瓣有蜜蜂看得见的紫外线条纹，像跑道指向花蜜：花没多给蜜，只替传粉者省了找的功夫，正是"降低他的努力"。不像的是，这是自然选择磨出来的，没人谈判。</li>
+<li><b>分布式系统 · 蓝绿部署与影子流量</b>：新旧两套系统并行，结果对得上再切，出事一键切回，回滚成本归发布方，正是"第一个月并行跑"。不像：软件回滚近乎零成本，客户退出时，那个月和信任都收不回。</li>
+<li><b>博弈论 · 菜单定价与甄别（Mussa &amp; Rosen，1978）</b>：卖方设计一组档位，让不同类型的买家自己挑出给自己的那档；Deneckere 与 McAfee 1996 年还分析过故意做弱的"受损商品"，像精简版删掉一项来衬托。不像：甄别理论假设买家冷静自选，三档报价靠的却是参照物在拖判断。</li>
+<li><b>道家 · 老子"长短相形，高下相倾"</b>：《道德经》第二章说长短、高下都是比出来的，没有孤立的长，也没有孤立的贵。不像的是，老子借此劝人放下比较，报价却主动挑选他拿什么来比。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>客户说"再考虑考虑"时，卡住的多半不是价格，而是结果、把握、等待和努力这四件事。</li>
+<li>Hormozi 的价值方程是（想要的结果×把握）÷（等待时间×付出努力），价格不在四项之中。</li>
+<li>降价不动四个杠杆中的任何一个，只削你的利润，还告诉客户原价可以谈。</li>
+<li>等待被近乎双曲的贴现超比例折价，把第一个真实结果提前，比打八折更能改变客户的感受。</li>
+<li>价值堆叠是把通往结果的每个障碍列出来、说明由谁挡掉，而不是往报价里塞赠品。</li>
+<li>呈现者悖论：强卖点之外再加一条中等卖点，整体评价反而下降，所以要删掉最弱的那条。</li>
+<li>客户真正的对手常是"什么都不做"，风险逆转就是把买错的代价从客户搬到卖方。</li>
+<li>敢兑现的保证本身是可信度的信号，但要按三倍兑现率定价，并绑在客户走完约定流程上。</li>
+<li>价格没有绝对刻度，报价前先让客户自己算出不改变的年度代价，再给完整、标准、精简三档。</li>
+<li>虚构原价再划掉是欺诈不是锚定，截止日期也必须绑在排期、涨价日、名额这类真实约束上。</li>
+</ol>
 </div>
 <!-- ============ Homework ============ -->
 <div class="homework">

@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -463,6 +475,30 @@ header h1{font-size:1.55rem}
 <p>"Same thing looking forward, that's actually our fastest channel." —— 把防守落点搬回增长。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>物理 · 遍历性问题（Ole Peters，2019）</b>：基金对一百家公司取平均，亏掉六成也能被一个赢家补回；创始人只活在一条路径上，没有平均可取。双方对「稳」估值相反，正因为总体平均不等于单条路径。不像在于：Peters 讲的是一个人的财富随时间变化，这里是两种人各算各的账，谁也没算错。</li>
+<li><b>演化生物学 · 累赘原理（Amotz Zahavi，1975）</b>：孔雀尾巴可信，是因为病弱个体长不起；续费的付费客户可信，也是因为装的人造不出来。不像在于：尾巴的代价长在身上，无法造假；用户数和复购却能虚报，所以投资人还得做尽调。</li>
+<li><b>分布式系统 · 拜占庭将军问题（Lamport 等，1982）</b>：节点宕机，2f+1 个节点就能达成共识；节点撒谎，得 3f+1 个才扛得住。说「不知道，周三给你」是干净的宕机，编一个数字是拜占庭故障。不像在于：节点说谎不丢名声，人会。</li>
+<li><b>佛学 · 第二支箭（《箭经》，相应部 36.6）</b>：中箭是第一支，随之而起的嗔怒和辩解是自己补射的第二支。尖锐提问是第一支箭，答成辩论就是第二支。不像在于：佛陀教人不再补箭，pitch 里你仍须回应，只是用承认、应对、切框代替反击。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>风险投资的回报高度偏斜，基金的全部成绩靠极少数赢家撑起，所以投资人最在意成了之后的天花板。</li>
+<li>投资人错过一个赢家只损失一次机会，投中不温不火的公司却要占住资金十年，错误成本因此不对称。</li>
+<li>先给可信的今天（付费客户、续费、单位经济），再给一条通往更大终局的路径，并点明能证伪它的节点。</li>
+<li>稳定盈利的中型生意不该包装成火箭，诚实的做法是去找形状匹配的钱，比如经营贷或收入分成融资。</li>
+<li>Deck 每页只回答一个问题，讲稿不印在幻灯片上：屏幕文字与口头讲述重复，理解反而下降。</li>
+<li>开场三十秒先交付定位和一个可核对的数字，因为最初几秒的薄片印象会左右整场会面的解读。</li>
+<li>按 Spence 的信号理论，热情零成本不携带信息，付费、复购和踩过的坑难以伪造才被当真。</li>
+<li>人对概率未知的模糊比对已知风险更退缩，所以说清楚何时、用什么方法查明，胜过搪塞或硬编一个数字。</li>
+<li>被质疑时按承认、应对、切回增长三步作答；只承认弱点不给应对，效果比不提还差。</li>
+<li>编造数字像分布式系统里的拜占庭故障，比坦白不知道更难容忍，而且在尽调中几乎必然暴露。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="43a0ee953a429169">本期习作 · Your Day 30 Action</h3>

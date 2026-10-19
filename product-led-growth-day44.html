@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -406,6 +418,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">边界与口径：NRR 只对「客户能自己续费、自己扩张」的生意成立，一次性项目、买断、本地部署都别硬套。跨公司比也意义有限——含不含降级、按哪批客户算、多币种怎么折，各家算法都不同，别拿别人对外的漂亮数字当基准。有用的比较对象只有一个：你自己上个季度。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>演化生物学 · 花蜜与传粉</b>：很多植物每朵花只给一点花蜜，传粉者吃不饱就得飞向下一朵，顺手把花粉带走——白送的那份算好了量，让对方的成功恰好替你干活。不像的是，蜜蜂不会被锁住，花也不会因蜂群变大而多收一份。</li>
+<li><b>经济学 · 杜皮的三等车厢</b>：法国工程师 Jules Dupuit 1849 年写道，铁路公司不给三等车厢装顶棚，不是心疼那几千法郎，是怕付得起二等票的人坐进来——最早被写下的「故意把便宜版做差」。同样是在划免费与付费的线；不像在于，杜皮让便宜版难受，本篇要免费版好用，只在他长大时不够用。</li>
+<li><b>分布式系统 · 缓存预热</b>：冷缓存的头一批请求全部未命中，所以上线前先灌进常用数据，让第一次访问就快；试用里消灭空状态是同一招。区别是预热的数据可以一直用，样例只负责领人进门，证明价值还得靠他自己的真数据。</li>
+<li><b>种群生态学 · 净繁殖率 R₀</b>：每个个体平均留下的后代数，大于 1 种群就涨，小于 1 就萎缩，和 NRR 以 100% 为界是同一个乘法结构，几年后差距悬殊。不像的是，R₀ 靠新生个体，NRR 恰恰不数新客，只看同一批客户自己长大。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>一笔生意总要有人做完四件事：问清卡点、建立信任、证明有用、开口要钱；PLG 是把它们搬进产品，不是省掉。</li>
+<li>判断能不能做 PLG 只看一条：没人陪着，陌生用户能否独自拿到一次真实的成功。</li>
+<li>自助还是派人，分界是决策复杂度而非客单价；要过采购、法务或安全审查的那一段必须由人走。</li>
+<li>免费版要按一个随客户成功而增长的计量单位切，如人数、存储、发送量、经手金额，而不是按功能高级感切。</li>
+<li>检验免费边界的办法：「等你____的时候就要付费」这句话的横线上，必须能填一件好事。</li>
+<li>免费期的目标是让用户往产品里放数据、配置和同事；数据不能一键导出就不叫黏性，叫锁门。</li>
+<li>试用没转化的人大多不是选了竞品，而是根本没开始，所以试用要让他在头几天用真活跑通一次。</li>
+<li>试用转化的三个杠杆按效力排：消灭空状态、把默认设成你希望的路径、引导只推一个动作。</li>
+<li>网上流传的激活阈值多是相关不是因果，要自己找候选行为，再用 A/B 实验验证它能否提高留存。</li>
+<li>NRR 超过 100% 靠的不是催升级，而是把价格绑在随客户长大的计量单位上，和免费边界同一根轴。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="19e1efc96fad9afb">本期习作 · Your Day 44 Action</h3>

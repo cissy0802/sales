@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -461,6 +473,30 @@ header h1{font-size:1.55rem}
 <p>"Happy to send it either way — no strings." —— 无条件留门。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>神经科学 · 习惯化（Eric Kandel 的海兔实验）</b>：反复轻触海兔的虹吸管，缩鳃反射一次比一次弱，突触释放的递质变少了；换一个更强的新刺激，反应又回来。一串空手的「确认进展」就是那下重复的轻触。不像在于，海兔的习惯化不经过判断，人还会记住是谁在碰他。</li>
+<li><b>信息论 · 香农的信息量（Claude Shannon，1948）</b>：一条消息的信息量取决于它有多出乎意料，对方百分之百猜得到的内容就是零比特，「就是跟您确认一下进展」正是零比特。不像的是，香农的信息量不管意义，乱码也可以很「意外」；「删掉会不会亏」还要求那份意外对他有用。</li>
+<li><b>分布式系统 · 超时与 FLP 不可能性（Fischer、Lynch、Paterson，1985）</b>：异步网络里没法区分一个节点是慢了还是死了，工程上只能约定超时，到点就按下线处理。放手线是同一个设计：三次无回应不证明他不要，只是你事先约好从这里起按「不在」算。不像在于，被误判的节点恢复后重新入群、不记仇；人会记得你怎么走的，所以收尾信要给台阶、留门。</li>
+<li><b>演化生物学 · 边际价值定理（Eric Charnov，1976）</b>：觅食的动物在一丛果子里越吃越少，当这里的收获速率掉到整片环境的平均水平以下，就该起身换一丛。跟进表上「连续无回应」那一列算的是同一笔账。不像的是，动物能实时尝到回报在下降，销售看不见对方心里的进度，只好事先写死一个次数。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>「80% 的成交发生在第 5 次跟进之后」查不到原始报告和署名机构，是一条互相引用的假数据。</li>
+<li>Oldroyd 等人 2011 年在 HBR 的审计发现，1 小时内联系线索，推进到实质对话的可能性约为晚 1 小时的 7 倍。</li>
+<li>跟进次数是结果而非原因：热单才活得到第 7 次，把次数当成因只会去骚扰本不该追的人。</li>
+<li>骚扰的定义不是次数多，而是重复且没有新东西；空手的跟进不是零，是负数。</li>
+<li>发跟进前只问一句：这条消息他不看就删掉，会不会亏。</li>
+<li>有信息量的跟进有五种：替他做的一小块活、他那行的新信息、补上次没答完的、流程节点、真记得的私事。</li>
+<li>每次对话用三句收尾：自己先承诺交付时间，让对方说出他的时间，再约好下一次联系。</li>
+<li>依 Gollwitzer 的执行意图研究，「尽快」要改写成「几号 · 谁 · 做什么」，下一步才会真的发生。</li>
+<li>跟进要分散而非集中、间隔逐步拉长；连续无反应时该查资格判定，而不是加密频率。</li>
+<li>用五列表管跟进并事先定好放手线，越线后发一封给台阶、免回复、无条件留门的收尾信。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="085889bd5ae82750">本期习作 · Your Day 26 Action</h3>

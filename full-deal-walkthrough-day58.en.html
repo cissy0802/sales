@@ -81,6 +81,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -459,6 +471,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">Boundary: debriefs cost real time, so don't run one per deal. Pick three kinds — the largest, the longest, and the ones that "just evaporated for no reason". The third yields the most information. And "without blame" isn't a pleasantry, it's a condition of the effect: once a debrief becomes an accountability hearing, people submit the version that protects them.</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Distributed systems · the end-to-end argument (Saltzer, Reed, Clark, 1984)</b>: Making every hop reliable doesn't make the whole path reliable; correctness can only be checked at the endpoints. Six stages at 80% each leaving a third end to end is the same fact. The difference: the paper treats hop-by-hop checks as a mere performance optimization, while human handoffs lose so much that writing down one specific sentence at every seam is essential.</li>
+<li><b>Evolutionary biology · genetic hitchhiking (Maynard Smith &amp; Haigh, 1974)</b>: When a favourable mutation sweeps through a population, neutral or even harmful genes sitting next to it spread along with it. The steps you skipped on a won deal get locked in the same way, riding on the result. The difference: linked genes can't be pulled apart at will; a debrief that judges process first can cut the hitchhiker loose.</li>
+<li><b>Investing · the expectations gap</b>: After earnings, a stock moves on whether profit beat or missed the consensus, not on the absolute number. One extra promise at signing raises the expectation line, and identical delivery becomes a miss. The difference: markets reprice every quarter, while a customer's baseline is often settled only once a year, at renewal.</li>
+<li><b>Buddhism · dependent origination</b>: Anything that happens arises from many conditions together, and no single cause decides it. Writing down which outside condition won you the deal is refusing to book the fruit of many conditions to your own account. The difference: the teaching aims to dissolve the sense of "I made this happen", while a debrief still has to pick out the one stage you can control next time.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Six stages at 80% each, with every handoff losing a fifth, leave a third end to end: funnel loss multiplies.</li>
+<li>Every stage should end by handing one specific item to the next, such as a situation the customer described in their own words.</li>
+<li>Working memory holds about four chunks at once, so handoffs kept in your head will leak; write them down.</li>
+<li>Starmer and colleagues brought structured handoffs to nine children's hospitals and cut medical errors by about 23% without longer handoffs.</li>
+<li>When walking a deal end to end, watch each stage's exit condition rather than the wording; the stage where deals stall longest is the buying committee.</li>
+<li>Don't let your contact retell your case internally, because retelling decays; ask for a set length and agenda to get into the budget holder's room.</li>
+<li>Fix the end of every stage as who does what by which day; the implementation-intentions meta-analysis puts the effect near d = 0.65.</li>
+<li>Under Kahneman's peak-end rule, renewal tracks the peak and the ending rather than the year's average, and one extra promise raises the whole year's baseline.</li>
+<li>Define first value as a checkable event, warn ahead about the hardest stretch, and replace project sign-off with a meeting that reads the results aloud.</li>
+<li>Debrief by judging each stage's exit condition before looking at the outcome, counting "can't tell" as no; skipped steps on won deals hitchhike on the result.</li>
+</ol>
 </div>
 <div class="homework">
 <h3>Your Day 58 Action</h3>

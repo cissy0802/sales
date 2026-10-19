@@ -87,6 +87,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -509,6 +521,30 @@ header h1{font-size:1.55rem}
 <p>What they build, they believe.</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Information theory · Shannon's redundancy (1948)</b>: Shannon showed that a noisy channel needs redundancy to deliver a message reliably: the extra encoding lets the signal be recovered even when part of it is lost. Saying your one sentence at the start and again at the end is error correction against the noise of a meeting. The difference: putting the same words on the slide and in your mouth at once is not good redundancy, it is two signals crowding the same narrow channel in the listener's head.</li>
+<li><b>Evolutionary biology · Ritualization (Julian Huxley, 1914)</b>: Watching great crested grebes court, Huxley saw that animal signals evolve to become exaggerated, stereotyped and repeated, so the receiver recognizes them at a glance and can't misread them. Repeating your one sentence word for word has the same structure. The difference: animal signals are fixed by selection over generations; you get one meeting.</li>
+<li><b>Distributed systems · Heartbeats</b>: Nodes in a cluster ping each other every few seconds, and one that stops answering is marked down before any job fails. A check-in question every few minutes of a demo is a heartbeat: the answer proves the buyer is still online. Unlike a machine, though, a person can be present and nodding while their mind has left, so the heartbeat has to ask for a specific answer.</li>
+<li><b>Zen · "Like drinking water, you know for yourself whether it is cold or warm" (Platform Sutra)</b>: After the Sixth Patriarch's instruction, the monk Huiming said realization is like drinking water: only the drinker knows its temperature. The schedule the buyer runs with their own hands has that shape; ten of your demos don't equal one of theirs. The difference: Zen self-verification aims past words and judgment, while a hands-on demo exists precisely so the buyer can judge.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Before presenting the fix, describe the buyer's problem until they nod or correct you, and they turn from critic into co-diagnostician.</li>
+<li>Guessing the pain wrong costs nothing if you end with "stop me if I'm off"; their correction is worth more than a right guess.</li>
+<li>Leading with the problem is not fearmongering: it must be a problem the buyer recognizes and can restate in their own words.</li>
+<li>People leave a pitch with three or four items at most, and the opening and close hold the best slots, so say your one sentence at both.</li>
+<li>The one sentence of a pitch should name the buyer's outcome, not your feature; pick the wrong one and repeating it just sounds like a slogan.</li>
+<li>Sweller and colleagues' redundancy-effect research shows that reading your slides aloud while the audience reads them lowers comprehension.</li>
+<li>Run a live demo as result, then how, then their hands on it, and show the finished output within the first minute.</li>
+<li>Kahneman's peak-end research shows people remember the peak and the final moment, so don't end a demo on the settings page or pad its length.</li>
+<li>A check-in question every four or five minutes of a demo, asking for one real response, pulls wandering attention back.</li>
+<li>Handing the buyer the mouse for 30 seconds to enter two numbers from their own data makes the result stick harder and feel like theirs.</li>
+</ol>
 </div>
 <div class="homework">
 <h3>Your Day 17 Action</h3>

@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -476,6 +488,30 @@ header h1{font-size:1.55rem}
 <p>"What did you end up doing instead?" —— 问行为，不问理由。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>分布式系统 · FLP 不可能性</b>：Fischer、Lynch 与 Paterson 1985 年证明，在纯异步系统里，只要可能有一个进程崩溃，就没有确定性算法能保证达成共识；根子在于，从外面看，「很慢」和「已经死了」无法区分。这正是沉默的处境。工程上的解法也一样：不去解码沉默，而是设超时、发心跳去主动探测。不像的是，节点不会因为你探测太勤而生气。</li>
+<li><b>网络协议 · 指数退避</b>：以太网发生冲突后，重发的等待时间成倍拉长，否则所有节点一起狂重试，只会把信道堵得更死。「越没反应越用力」正是反着来的重试风暴。不像的是，网络冲突两边对称，而客户的沉默往往只是他那头忙。</li>
+<li><b>化学 · 亚稳态与活化能</b>：一块金刚石在常温下理论上该变成石墨，却能放上亿年，因为中间隔着一道能垒。维持现状就是组织的亚稳态，触发点的作用像催化剂，降低的是门槛而不是终点。不像的是，组织的能垒会随换人、预算周期自己变高变低。</li>
+<li><b>佛学 · 唯识的「遍计所执」</b>：唯识宗说，心会把自己的分别执取加到对象上，再把这层投射当成对象本身。把沉默读成「他嫌贵、他烦我」，就是一次遍计。不像在于：佛学要看破一切这样的构造，这一期只要你别据此行动，先去问一句。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>一条沉默同时兼容没看见、要问人、内部反对、预算黄了、选了别家、真不想做六种处境，信息量接近于零。</li>
+<li>聚光灯效应和邮件语气失真说明，你高估了自己在对方脑子里的分量，也高估了消息传出去的语气。</li>
+<li>沉默只有对照基线才算信号：一向秒回的人在他自己定的日期后消失，才是值得认真对待的变化。</li>
+<li>破冰的目标不是要到答案，而是把对方的回复成本压到一个字或一个数字。</li>
+<li>破冰按对方要付出多少分四级：一键退出、回个数字、带东西且免回复、直接问状态，从最便宜的一级开始。</li>
+<li>明确交出拒绝权反而提高回应意愿，Carpenter 2013 年对 42 项研究的元分析支持这一点；但一键退出必须是真退出。</li>
+<li>多数死单输给的是维持现状而不是对手，因为改变要付决策成本、迁移成本和拍板背锅的风险。</li>
+<li>复活死单要先分诊再看触发点：换人、新预算周期、现状出事故、竞品蜜月期结束；「三个月没联系」不算触发点。</li>
+<li>复活消息三行都讲对方：点名他那边的变化，回到他当时的原话，再给一个低成本问句和退出口。</li>
+<li>自利归因让自己写的败因总落在价格和时机上，所以放手后要发归档信，请对方回一个字母说明真实败因。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="c4ddb69856f7e02a">本期习作 · Your Day 27 Action</h3>

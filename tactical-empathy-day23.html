@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -456,6 +468,30 @@ header h1{font-size:1.55rem}
 <p>"Is there anything I should be asking you that I haven't?" —— 直接索要黑天鹅。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>西方哲学 · 苏格拉底的产婆术</b>：苏格拉底自称不生产知识，只用提问帮对方把想法「接生」出来；校准问题也是把题递回去，让对方亲口说出自己的约束。不像在于：苏格拉底的追问常把人逼进自相矛盾，校准问题要的是对方舒服地多说，不是要他认输。</li>
+<li><b>分布式系统 · 确认与重传（ACK）</b>：可靠传输里，发出去的不算数，对方回了确认才算送达。总结后请对方校正也是这样，你的理解要等他确认才算数，说偏了就是丢包，得重传。不像的是，机器回 ACK 不改变自身状态；人说出「说得对」那一刻，防御本身就降了。</li>
+<li><b>免疫学 · 疫苗</b>：疫苗先给身体一份减毒或灭活的抗原，真病原体来时免疫系统已有准备；指控审计也是先用温和的剂量把最难听的话说出来，让对方心里那句指责失去冲击力。不像在于：疫苗防的是第三方，指控审计里打预防针的，正是那个可能「致病」的你自己。</li>
+<li><b>行为生态学 · 边际价值定理（Eric Charnov，1976）</b>：觅食动物在一片食物上的收获率降到环境平均水平以下，就该换地方；挖黑天鹅也一样，三个好问题问不出新信息就该停，按已知决定。不像的是，动物能估出环境平均值，你却不知道下一片地里有没有天鹅。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>理解对方的处境和答应对方的条件是两件独立的事，可以把难处说准而一分不让。</li>
+<li>Voss 的校准问题以「怎么」「什么」开头、无法用是或否回答，把难题递回给对方。</li>
+<li>对方开出接不了的条件时，问自己该怎么做到，比直接反提议一个数更能逼出真实约束。</li>
+<li>「你说得对」多半是礼貌地结束对话，「对，就是这样」才说明对方感到处境被说中。</li>
+<li>好的总结有三个零件：标注情绪、用自己的话复述处境结构、请对方校正，说完停四秒。</li>
+<li>指控审计是开场先替对方说出他心里最难听的几句话，再把坏消息直接放在最前面。</li>
+<li>主动先披露不利信息比被对方揭出来伤害更小，主动求助还会让对方觉得你更有能力。</li>
+<li>Galinsky 等人的谈判实验显示，认知上推测对方想法比情绪上体会对方感受收益更好。</li>
+<li>谈不下来的局常卡在一条你根本不知道存在的约束上，Voss 把这类信息称为黑天鹅。</li>
+<li>找黑天鹅靠改打电话、议程后多聊几分钟、问最难推的环节，提高对方开口的量和随意度。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="17f31f4eb7197532">本期习作 · Your Day 23 Action</h3>

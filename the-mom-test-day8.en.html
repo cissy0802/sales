@@ -88,6 +88,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -548,6 +560,32 @@ header h1{font-size:1.55rem}
 <p>Enthusiasm isn't commitment. — only paying a cost counts.</p>
 </div>
 </div>
+</div>
+<!-- ============ Crossovers ============ -->
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Game theory · Cheap talk (Crawford and Sobel, 1982)</b>: How much a costless message can convey depends on whether sender and receiver want the same thing; the further apart their interests, the vaguer the message, until none of it can be trusted. A compliment is cheap talk: the speaker mainly wants you to feel good. The difference is that they aren't lying for gain, only protecting your feelings, so a better question gets you the truth.</li>
+<li><b>Neuroscience · Constructive episodic simulation (Schacter and Addis, 2007)</b>: Brain imaging shows that imagining the future and remembering the past draw on largely the same hippocampus-centered network: imagining is reassembling fragments of old memories. "Would you use it?" gets you an assembly with no reality check. The boundary: remembering is reconstruction too, so asking about the past isn't enough; pin it to one specific occasion.</li>
+<li><b>Chinese philosophy · Confucius, "listen to their words and watch their deeds"</b>: After his disciple Zai Yu was caught napping in the daytime, Confucius said he used to hear people's words and trust their deeds, and now he hears their words and watches their deeds. It is the intention-behavior gap, spotted two and a half millennia early. The difference: Confucius was judging character, while The Mom Test judges demand; a polite yes says nothing bad about the person.</li>
+<li><b>Distributed systems · Two-phase commit (2PC)</b>: The coordinator sends "prepare," and a participant may vote "yes" only after writing the change to its log and locking resources; once cast, the vote can't be taken back. A prospect who says "let's keep in touch" is voting yes without locking anything, so the vote doesn't count. Unlike 2PC, where a single vote settles it, sales commitments have to be raised one notch at a time.</li>
+</ul>
+</div>
+<!-- ============ Takeaways ============ -->
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Pitch your idea and ask whether it's good, and people switch into encouragement mode and hand you polite lies.</li>
+<li>Move the conversation off your idea and onto their life: how they handle the problem today and what they did the last time it came up.</li>
+<li>Friends and family give the worst data; to validate demand, talk to strangers who actually have the problem.</li>
+<li>"Would you buy it?" asks people to predict their own future behavior, which they do badly and over-optimistically.</li>
+<li>A 2006 meta-analysis by Webb and Sheeran found that large increases in intention produce only small changes in behavior.</li>
+<li>Swap "would you, will you, someday" for "last time, how much, how do you do it now" to get around the intention-behavior gap.</li>
+<li>The Mom Test sorts bad data into compliments, fluff and hypotheticals; hearing any of them is a cue to dig into one specific instance.</li>
+<li>The worst thing about compliments is not that they mislead you but that they make you stop asking, as if demand were already proven.</li>
+<li>Enthusiasm is noise; a real signal of demand is when someone spends time, reputation or money on you.</li>
+<li>Fitzpatrick redefines a successful meeting as one that advances to a next commitment that costs the other side something.</li>
+</ol>
 </div>
 <!-- ============ Homework ============ -->
 <div class="homework">

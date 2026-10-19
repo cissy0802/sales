@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -491,6 +503,30 @@ header h1{font-size:1.55rem}
 <p>"Change <em>one variable</em> at a time." —— 一次只改一个变量。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>信息论 · Claude Shannon（1948）</b>：消息的信息量取决于它排除了多少种可能；对谁都成立的话一种也没排除，信息量为零，换名测试量的就是这个。不像在于：Shannon 只算概率不管意义，买家只在乎被说中的是不是他的麻烦。</li>
+<li><b>生态学 · 竞争排斥原理（G. F. Gause，1934）</b>：两种草履虫抢同一份食物，几周后总有一种消失，长期共存只能各占一块生态位。聚焦就是主动找自己的生态位。不像的是，草履虫挑不了生态位，公司可以。</li>
+<li><b>分布式系统 · TLS 握手</b>：客户端先报出自己支持的加密套件清单，服务端只从清单里挑一个，不把自己会的全报一遍；画布先填对方那半就是这个顺序。不像在于：客户端的清单是明说的，客户的痛点得靠访谈问出来。</li>
+<li><b>演化生物学 · Dawkins 的「黄鼠狼程序」（1986）</b>：《盲眼钟表匠》里，随机字母串每代小幅变异、只留最像目标的那个，几十代就拼出一句莎士比亚台词，改一格测一轮正是这种累积选择。不像的是，程序预知目标句，Dawkins 也承认这点不像真演化；价值主张没有标准答案，筛子是陌生人能否复述。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>价值主张是一句让对方在里面看见自己的话，第一句的主语应该是对方，而不是「我们」。</li>
+<li>价值主张四空公式：帮谁、解决什么具体问题、拿到什么结果、凭什么是你，其中三空说的是对方。</li>
+<li>自我参照效应说明与自己相关的信息编码更深，开场让对方代入自己，才过得了注意力的第一道闸门。</li>
+<li>「赋能」「一站式」「全链路」读不出任何画面，研究显示无谓的复杂用词反而让人显得不够聪明。</li>
+<li>Osterwalder 的价值主张画布要先填满对方的任务、痛点和期望收益，再让产品逐条去对。</li>
+<li>先填对方那半张是为了打破知识的诅咒：熟悉自己产品的人总会高估别人懂多少、在乎多少。</li>
+<li>换名测试：把竞争对手的名字放进去仍然成立的句子不是差异化，只是噪音。</li>
+<li>可信的差异化只有三种来源：聚焦一小类人、写清独特机制、给出可验证的证据；敢说不适合谁也会加分。</li>
+<li>选项难以区分时买家最常见的动作是先不决定，差异化等于替他把比较做完。</li>
+<li>价值主张靠测试打磨：抄客户描述痛苦的原词，做 5 秒测试问三问，哪问答不上就只改那一格再测。</li>
+</ol>
 </div>
 <!-- ============ Homework ============ -->
 <div class="homework">

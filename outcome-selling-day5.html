@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -467,6 +479,30 @@ header h1{font-size:1.55rem}
 <p>"What's the <em>one</em> thing you need it to do?" —— 你最需要它做成的那<em>一</em>件事是什么？</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>演化生物学 · 选择只看表型</b>：自然选择看不见基因序列，只"看见"它在世界里造成的效果——跑得多快、活得多久；客户也只为特性在他生活里造成的结果投票。不像在于：基因没法替自己翻译，销售却可以把特性一路讲到结果。</li>
+<li><b>佛学 · 指月之指</b>：《楞严经》说，有人以手指月示人，看的人应顺着手指去看月亮；若把手指当成月亮，不但丢了月，连手指也认错了。特性是手指，结果是月亮。不像的是：佛家要人看到月就放下手指，销售还得把参数留着，给已经心动的人当证据。</li>
+<li><b>西方哲学 · 亚里士多德的"目的因"</b>：亚里士多德把一件东西的成因分为质料、形式、动力和目的四种，钻头的钢材和转速是前几种，墙上那幅画才是它的目的因。区别在于：亚里士多德把目的放在物本身之内，销售里的目的只在买家那里，换个人目的就变了。</li>
+<li><b>分布式系统 · 按症状告警，不按原因告警</b>：Google《SRE》（2016）主张，告警应当盯住用户感受得到的症状（请求变慢、出错），而不是 CPU 这类内部原因；服务好不好，由用户那一端说了算。这和卖结果是同一个视角翻转：先从客户那一端定义"好"，内部指标退到后面当排查依据。不像的是，SRE 的症状可以直接测量，客户的 after-state 往往只能靠描述先让他想象出来。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>每讲一个特性都追问"那又怎样"，沿着特性→好处→结果的阶梯，一直推到客户生活里的具体成果。</li>
+<li>"更省心"还只是好处，"下班到家地已经干净、多出 40 分钟"才是结果，说得越具体越值钱。</li>
+<li>知识的诅咒让专家只报参数：Newton 的敲曲实验里，敲的人以为一半人能猜中，实际只有 2.5%。</li>
+<li>客户要的不是钻头也不是洞，是墙上挂好的画；先点亮用完之后的 after-state，再把产品当作通往它的桥。</li>
+<li>Knutson 等人 2007 年的 fMRI 研究发现，伏隔核的奖赏预期能预测购买，价格引起的脑岛激活则预测不买。</li>
+<li>价格是精确数字，价值停在形容词上就没法比；把结果算成省下的时间和钱，"贵不贵"才变成"划不划算"。</li>
+<li>用客户自己报的数据一起算 ROI，并把"不改变的代价"算进去，因为损失带来的冲击约是同等获得的两倍。</li>
+<li>功能疲劳：买之前人们偏爱功能多的产品，用了之后却因复杂而不满，堆功能是拿长期留存换短期成交。</li>
+<li>面对比参数的行家、买标准化商品的人，卖结果会失效，把规格给准、给全、给对价才是尊重。</li>
+<li>特性和结果的关系像佛经里的指月之指：特性是指向月亮的手指，客户真正要看的是月亮。</li>
+</ol>
 </div>
 <!-- ============ Homework ============ -->
 <div class="homework">

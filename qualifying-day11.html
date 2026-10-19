@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -488,6 +500,32 @@ header h1{font-size:1.55rem}
 <p>Your best leads look like the customers you've already won.</p>
 </div>
 </div>
+</div>
+<!-- ============ Crossovers ============ -->
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>生态学 · 边际价值定理（Eric Charnov，1976）</b>：觅食动物在一片草场的收获速率掉到整片栖息地平均以下，就该挪窝。死磕总说「再考虑」的客户，就是赖在吃空的草场。不像的是，草场空了看得见，成交概率却藏着，得靠预算和时间表逼出来。</li>
+<li><b>博弈论 · 廉价磋商（Crawford 与 Sobel，1982）</b>：不花成本的表态谁都说得出，分不开真买家和随口聊的人。热情、「很感兴趣」都是廉价磋商；肯报预算、定时间表才是有代价的承诺。BANT 问的正是后者，所以比聊得投机可靠。</li>
+<li><b>分布式系统 · 超时与故障检测</b>：异步网络里分不清节点是慢还是挂了（FLP 不可能性，1985），工程上只能设超时，过时判它「疑似失效」。给拖着的客户设死线是同一招：分不清慢还是不会买，就让时间替你判。好在两边都可回滚：误判的节点能重新加入，降级的客户也能再升回来。</li>
+<li><b>佛学 · 执取（upādāna）</b>：佛学说苦来自执取，抓住已流走的东西不放。沉没成本就是执取已花掉的三个月。真诚的取消资格也得先放下，心里惦记成交，放手就成了表演。不同在于，修行放下为解脱，销售放下为把时间还给对的人。</li>
+</ul>
+</div>
+<!-- ============ Takeaways ============ -->
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>销售最稀缺的资源是时间，花在永远不会买的客户身上的每一小时，都是从会买的客户那里偷来的。</li>
+<li>追单越久越舍不得放是沉没成本谬误，决定追不追时要假装今天才第一次接触这单。</li>
+<li>给一直停在内部再讨论的大客户设清晰的下一步和死线，给不出预算和时间表就降级。</li>
+<li>BANT 用预算、权力、需求、时机四问，把感觉这单有戏拆成能逐项核查的信号。</li>
+<li>BANT 四问要拆散、包在帮客户省时间的语境里自然问出，先建立价值和痛点再问预算。</li>
+<li>信号真不匹配时主动告诉客户这可能不适合他，往往能解除防御、反而提升信任。</li>
+<li>取消资格的力量全来自真诚，客户其实合适却假装要走逼他追上来，就是欲擒故纵式的操纵。</li>
+<li>理想客户画像（ICP）要从已经赢下、用得好又续费的客户身上反推共同点，而不是凭空想象谁会感兴趣。</li>
+<li>用契合度和意向两轴筛客户，契合度优先，警惕热情很高却不匹配的热情陷阱。</li>
+<li>热情是不花成本的廉价表态，肯给出预算和时间表才是有代价的承诺，所以 BANT 比聊得投机更可靠。</li>
+</ol>
 </div>
 <!-- ============ Homework ============ -->
 <div class="homework">

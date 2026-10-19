@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -460,6 +472,30 @@ header h1{font-size:1.55rem}
 <p>"What's the <em>one</em> thing you need it to do?"</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Evolutionary biology · Selection sees only the phenotype</b>: natural selection never reads a gene sequence; it only "sees" what the gene does in the world, how fast an animal runs, how long it lives. Buyers likewise vote only on what a feature does in their lives. The difference: a gene cannot translate itself, while a seller can talk a feature all the way up to the outcome.</li>
+<li><b>Buddhism · The finger pointing at the moon</b>: the Surangama Sutra says that when someone points at the moon, you should follow the finger to the moon; mistake the finger for the moon and you lose both. Features are the finger, the outcome is the moon. Unlike the sutra, selling keeps the finger around afterward, as proof for a buyer who is already persuaded.</li>
+<li><b>Western philosophy · Aristotle's final cause</b>: Aristotle split a thing's causes into material, formal, efficient and final; the drill's steel and speed belong to the first few, and the picture on the wall is its final cause. The difference: Aristotle located purpose inside the thing, while in selling purpose lives only in the buyer, and changes with each buyer.</li>
+<li><b>Distributed systems · Alert on symptoms, not causes</b>: Google's <em>Site Reliability Engineering</em> book (2016) argues that alerts should track what users feel (slow requests, errors) rather than internal causes such as CPU load; whether a service is good is decided at the user's end. That is the same flip as selling outcomes: define "good" from the customer's side first and let internal metrics drop back to diagnostics. Where it differs: an SRE can measure symptoms directly, while a buyer's after-state usually has to be described before it can even be imagined.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Ask "so what?" of every feature and climb the feature-benefit-outcome ladder until you reach a concrete result in the buyer's life.</li>
+<li>"Less hassle" is only a benefit; "the floor is clean when you get home and you gain 40 minutes" is an outcome, and specifics are worth more.</li>
+<li>The curse of knowledge makes experts recite specs: in Newton's tapping study, tappers expected half of listeners to guess the song, but only 2.5% did.</li>
+<li>Nobody wants the drill or even the hole, they want the picture on the wall; light up the after-state first, then offer the product as the bridge to it.</li>
+<li>Knutson and colleagues' 2007 fMRI study found that reward anticipation in the nucleus accumbens predicted buying, while price-driven insula activation predicted walking away.</li>
+<li>A price is a precise number and value stated in adjectives cannot be weighed against it; turn the outcome into hours and money so "is it expensive?" becomes "is it worth it?"</li>
+<li>Run the ROI with the customer's own numbers and include the cost of doing nothing, since a loss hits about twice as hard as an equal gain.</li>
+<li>Feature fatigue: before buying people prefer feature-rich products, after using them complexity breeds regret, so piling on features trades retention for a quick close.</li>
+<li>Outcome selling fails with experts comparing specs on standardized goods; for them, accurate and complete specs at a fair price are the respectful answer.</li>
+<li>Features relate to outcomes like the finger pointing at the moon in the Buddhist parable: the feature points, and the moon is what the buyer came to see.</li>
+</ol>
 </div>
 <!-- ============ Homework ============ -->
 <div class="homework">

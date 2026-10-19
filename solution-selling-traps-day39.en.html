@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -430,6 +442,31 @@ header h1{font-size:1.55rem}
 <p class="caveat">Edges: don't treat this as permission to coast. The genuinely dangerous box is "very clear, and clearly wrong" — they open by asking for A, and A won't solve their problem. The test: <strong>can they state what they want and also why they want it?</strong> If they can answer "why," quote. If they can only answer "what," it's worth one probing question — this is where the Challenger material earns its keep, but as a question, not a meeting.</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Software engineering · Technical debt (Ward Cunningham, 1992)</b>: Cunningham compared shipping imperfect code to borrowing money: you get speed now and pay interest on every later change. A free customization is an unrecorded loan, and the delivery team services it. The difference: programmers usually take on technical debt knowingly, while the rep's debt often goes unrecorded on signing day.</li>
+<li><b>Distributed systems · Forks and upstream</b>: A forked codebase stops receiving upstream fixes and features automatically; every merge means resolving conflicts by hand, and the longer it diverges the harder it is to bring back. A customized build that can't follow the main release is the same structure. Unlike open-source forks, which sometimes become the better mainline, a customer's custom build almost always becomes an island.</li>
+<li><b>Information theory · Shannon information (Claude Shannon, 1948)</b>: Shannon defined information as reduced uncertainty: a message everyone sends, with probability near one, carries almost no bits. "End-to-end integrated solution" is that message. Where it breaks: Shannon's measure ignores meaning and truth, while buyers also judge credibility, which takes a different mechanism.</li>
+<li><b>Western philosophy · "Determination is negation" (Spinoza, 1674)</b>: In a letter to Jarig Jelles, Spinoza wrote that to determine a thing is to negate its other possibilities, a line Hegel later made famous. "We don't do X" defines a vendor by exclusion. The difference: Spinoza was talking about shape and being, while a sales exclusion only counts if it costs something real.</li>
+<li><b>Cybernetics · Law of requisite variety (W. Ross Ashby, 1956)</b>: Ashby held that a regulator needs at least as much variety as the system it regulates in order to control it. Discovery depth should likewise match decision complexity. The mismatch: Ashby sets only a floor and says nothing about excess, whereas in sales surplus diagnosis is itself a cost, so there is a ceiling too.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Over-customization is a structural problem, not a character flaw: the upside reaches the rep immediately, while the cost lands later on delivery, support and the next account owner.</li>
+<li>Meet every customization request with four questions: what outcome it serves, whether a standard workaround gets eighty percent, whether they will pay and wait separately, and whether one customer or ten asked.</li>
+<li>Treat customization as its own deal, priced, scheduled and written into the contract separately, never as a free sweetener to close.</li>
+<li>Extra information is not neutral: impressions average rather than add up, so three mediocre selling points dilute one hard piece of evidence.</li>
+<li>When two options each have clear advantages and are hard to choose between, buyers tend to defer, and deferral usually means doing nothing.</li>
+<li>Subtract from proposals: one recommendation, or two that differ clearly on one axis, a deletion test for every claim, and weak evidence moved to the appendix.</li>
+<li>"End-to-end solution" carries no information because anyone can say it; only falsifiable specifics and a plain statement of what you do not do get past the buyer's filter.</li>
+<li>Run the competitor test on your pitch: strike any sentence a rival could lift verbatim and swap each adjective for a number, a customer name or a scenario.</li>
+<li>Discovery has a price and should scale with decision complexity; if the buyer asks for price, knows the exact spec, or can sign alone, two signals mean quote now.</li>
+<li>Rackham observed that the same sales techniques flip from helping to hurting between small and large deals, so consultative effort is an investment, not a posture.</li>
+</ol>
 </div>
 <div class="homework">
 <h3>Your Day 39 Action</h3>

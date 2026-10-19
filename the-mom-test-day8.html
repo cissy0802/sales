@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -553,6 +565,32 @@ header h1{font-size:1.55rem}
 <p>Enthusiasm isn't commitment. —— 热情不等于承诺，肯付代价才算。</p>
 </div>
 </div>
+</div>
+<!-- ============ Crossovers ============ -->
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>博弈论 · 廉价话语（Crawford 与 Sobel，1982）</b>：不花成本的话可信多少，取决于双方利益是否一致；偏得越远，话越不可信。恭维就是廉价话语，说的人图你高兴。不像的是，对方并非骗你得利，只是护你面子，换个问法就肯说真话。</li>
+<li><b>神经科学 · 建构性情景模拟（Schacter 与 Addis，2007）</b>：脑成像发现，想象未来和回忆过去调用大体同一套以海马为核心的网络，想象就是把旧记忆碎片重新拼装。「你以后会不会用」问出的只是一次没有现实约束的拼装。边界在于回忆也是重建，所以光问过去不够，还得钉到具体的某一次。</li>
+<li><b>东方哲学 · 孔子「听其言而观其行」</b>：宰予白天睡觉，孔子说从前听了话就信，如今听了还要看怎么做，和意图与行为的鸿沟是同一个结论。不同在于孔子判断的是品性，The Mom Test 判断的是需求，说漂亮话不等于人品差。</li>
+<li><b>分布式系统 · 两阶段提交（2PC）</b>：参与者要先把改动写进日志、锁住资源，才能投「同意」，投了不能反悔。只说「保持联系」的客户，等于没锁资源就喊同意，这票不算数。不像的是 2PC 一票定局，销售承诺要一格一格往上加。</li>
+</ul>
+</div>
+<!-- ============ Takeaways ============ -->
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>一把点子端出去问好不好，对方就会切进鼓励模式，回给你的多半是善意谎言。</li>
+<li>把话题从你的方案挪到对方的生活上：他现在怎么处理这件事、上次遇到时怎么做的。</li>
+<li>专挑家人朋友聊最容易收到假数据，验证需求要去找真正有这个问题的陌生用户。</li>
+<li>问「你会不会买」是让人预测自己，而人对自己未来行为的预测既不准又偏乐观。</li>
+<li>Webb 与 Sheeran 2006 年的元分析显示，意图被大幅拉高，实际行为却只挪动一小步。</li>
+<li>把「会不会、愿不愿、以后」换成「上一次、花了多少、现在怎么弄」，就能绕开意图与行为的鸿沟。</li>
+<li>The Mom Test 把假数据分成恭维、空泛、假设三类，听到任何一类都要往具体某一次追问。</li>
+<li>恭维最大的害处不是骗你，而是让你提前停止追问，误以为需求已经验证过了。</li>
+<li>热情只是噪音，对方肯付出时间、名声或金钱，才是需求的真信号。</li>
+<li>Fitzpatrick 把会谈成败重新定义为：有没有推进到一个要对方付出代价的下一步承诺。</li>
+</ol>
 </div>
 <!-- ============ Homework ============ -->
 <div class="homework">

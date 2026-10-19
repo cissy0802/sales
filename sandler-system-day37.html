@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -474,6 +486,33 @@ header h1{font-size:1.55rem}
 </div>
 </div>
 </div>
+<!-- ============ Crossovers ============ -->
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>分布式系统 · FLP 不可能性与超时</b>：Fischer、Lynch、Paterson 1985 年证明，纯异步系统里分不清节点是慢了还是挂了，工程上只能靠超时把悬而未决变成确定状态。「我再想想」就是这样一个节点，带日期的下一步就是超时。不像在于：节点不会说谎，客户会，超时后还得问清是哪种。</li>
+<li><b>演化生物学 · Zahavi 的累赘原理（1975）</b>：孔雀的大尾巴可信，因为弱个体负担不起，成本保证了信号诚实。不追不求的姿态也只在管道里真有别的机会时才装得像。不像在于：尾巴一次长成，销售的底气随管道每周涨落。</li>
+<li><b>博弈论 · Rubinstein 交替出价模型（1982）</b>：轮流出价、拖延有代价时，越耐心的一方在均衡里分得越多；需求感就是亮出自己的急。不像的是，模型里双方耐心是公共知识，现实中只能从回复和让步的速度去猜。</li>
+<li><b>佛学 · 渴爱与善法欲</b>：佛教把执取不放的渴爱（taṇhā）和朝向目标的意愿（chanda）分开，前者是苦的根源；「可以想要，不能需要」几乎是同一条线。不像在于：佛学连对结果的执取也要放下，Sandler 放下执取是为了成交。</li>
+</ul>
+</div>
+<!-- ============ Takeaways ============ -->
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>David Sandler 在 1967 年前后建立这套体系，核心是别被买方的剧本拖成免费顾问。</li>
+<li>开场 90 秒的前期契约要对齐时长、双方议程、允许出现的结果和一个带日期的下一步。</li>
+<li>把「不合适就到此为止」写进开场，拒绝就不必伪装成「我再想想」，真话会早几周出现。</li>
+<li>没有约定结局的会，默认结局就是「我再想想」，因为悬着的对方最安全的动作是不表态。</li>
+<li>痛苦漏斗把一句抱怨往下钻三层：表层问题、可量化的影响、对方自己的代价。</li>
+<li>对方亲口说出的代价他得负责，销售替他说出的痛他随时可以反驳。</li>
+<li>Sandler 的姿态原则是可以想要这单、不能需要这单，需求感会从回复速度和主动让价里漏出去。</li>
+<li>给退出许可的跟进消息只在你真心接受「今年不做」时才有用，而且一单只用一次。</li>
+<li>出方案前先问痛、钱和决策流程，顺序反过来就是在做免费咨询。</li>
+<li>「我再想想」像分布式系统里分不清慢还是挂掉的节点，带日期的下一步就是超时。</li>
+</ol>
+</div>
+<!-- ============ Homework ============ -->
 <div class="homework">
 <h3 data-tts="0d8f44364975b8ef">本期习作 · Your Day 37 Action</h3>
 <p>四十分钟，三步。挑一场你这周真要开的会，和一个悬了三周以上的单子。</p>

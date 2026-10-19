@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -376,6 +388,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">诚实补一句：批评净推荐值不等于满意度不重要。它的真问题是被当成了预测器和考核指标，而它只是一个被压缩过头的表态。要预测收入就看行为——续约、扩张、实际发生的引荐次数。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>神经科学 · 模式补全（David Marr，1971）</b>：海马体被认为能凭一小块残片唤回整段记忆，给对了局部，整体会自己浮上来。画像加场景就是那块残片，名字是被补全出来的部分。不像在于：大脑补全的是它存过的东西，客户还得多做一步判断，那个人眼下是否真的合适。</li>
+<li><b>演化生物学 · 间接互惠（Nowak &amp; Sigmund，1998）</b>：陌生个体之间的合作靠「名声分」维持，你帮过谁，旁观者都记着。引荐人押上的正是这份分数，你搞砸了，扣的是他的。不像的是，模型里名声是一本公共账本，现实里只记在那一个朋友心里，扣掉就很难补回。</li>
+<li><b>分布式系统 · 确认应答（ACK）</b>：发送方收不到确认，就分不清对面是收到了还是丢了，只能超时、退避。推荐人得不到结果回音也一样，下一次干脆不发。不像在于：协议会自动重传，人只会默默把你从候选名单里划掉。</li>
+<li><b>复杂性科学 · 基本再生数 R₀</b>：每个感染者平均传给不止一个人，传播会自己蔓延；低于一，初始规模再大也会熄灭。推荐飞轮同理：每个客户平均带来不到一次真实引荐，就只能靠销售一直往里推。不像在于：病毒靠接触被动传播，引荐的每一跳都要有人主动开口。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>多数转介绍不是死在意愿上，而是死在客户当场想不起该推荐谁。</li>
+<li>别问「有合适的帮我介绍」，要给能对号入座的画像、他亲眼见过的场景，并且只要一个名字。</li>
+<li>Tulving 的记忆实验显示，给出类别线索后回忆量显著增加，差别在提取而不在记住。</li>
+<li>一段可直接转发的话就像破伤风疫苗实验里那张校医院地图，替对方消掉行动路径上的障碍。</li>
+<li>开口窗口在客户第一次能用自己的话说出成果的那几周，而不是成交当天。</li>
+<li>让客户亲口把成果说成一句话，既拿到他转述用的素材，也会加固他自己对这件事的判断。</li>
+<li>客户犹豫是因为引荐要押上自己的信誉，所以该削他的成本和风险，而不是加高奖金。</li>
+<li>小额现金奖励会把一次人情切换成一笔不划算的买卖，效果可能比完全不给钱还差。</li>
+<li>引荐之后无论成败都主动告诉推荐人结果，像网络协议的确认应答，没有回音就不会有第二次。</li>
+<li>净推荐值并不比传统满意度指标更能预测增长，只配当提醒「今天该找谁」的开关。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="9f20f9bdcb5337fa">本期习作 · Your Day 51 Action</h3>

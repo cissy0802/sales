@@ -77,6 +77,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -351,6 +363,30 @@ header h1{font-size:1.55rem}
 <p class="caveat">Boundary: not every customer should be expanded. Some are already at their ceiling, and adding more only worsens their return and makes the next renewal harder to argue. For those, the right move is <strong>to ask for a referral</strong>, not an upsell — convert their satisfaction into new customers rather than into more of their budget.</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>Crossovers</h3>
+<ul>
+<li><b>Ethology · Lorenz and imprinting</b>: Greylag goslings attach to whatever they follow in the first day or two after hatching, and once that window shuts it is very hard to rewrite — the same critical-period shape as "the first two weeks decide it". The difference: imprinting is close to irreversible, while a missed motivation window can be partly reopened by a fresh win, only at a much higher cost.</li>
+<li><b>Distributed systems · heartbeats and failure detection</b>: A crashed node never sends a message saying it has died; the cluster can only infer it from a missed heartbeat — exactly the thirty-days-of-silence rule. The phi accrual detector used in Cassandra (Hayashibara et al., 2004) outputs a continuous level of suspicion rather than a hard verdict and leaves the response to the layer above, much as a signal here should trigger a call, not an automatic downgrade. Unlike a node, though, a quiet customer is sometimes just busy.</li>
+<li><b>Philosophy · Heidegger on the ready-to-hand</b>: In Being and Time (1927) Heidegger notes that a hammer in good working order disappears — you see only the nail — and shows up as a thing only when it breaks. A product that works is forgotten in the same way. The difference: you cannot wait for it to break to be noticed, so the day-one baseline has to manufacture the contrast instead.</li>
+<li><b>Investing · staged venture financing</b>: Venture investors rarely fund everything up front; they release the next round only after a milestone has cut the uncertainty — the same shape as raising expansion only after a confirmed win. The difference: in staged financing the option sits with the party paying, whereas in expansion the customer holds it, so all you control is asking at the moment they have just confirmed the result.</li>
+</ul>
+</div>
+<div class="tk">
+<h3>Ten takeaways</h3>
+<ol class="takeaways">
+<li>Closing gives you only a licence to try; whether the customer renews is largely settled in the first two weeks after signing.</li>
+<li>The number the delivery side should watch is time-to-first-value, not onboarding completion or how much training got done.</li>
+<li>Tying an action to a specific time, place and trigger raises goal attainment markedly (Gollwitzer &amp; Sheeran, d ≈ 0.65).</li>
+<li>Two weeks is the motivation window, not the time a habit takes; in Lally's study habits took a median of about 66 days to become automatic.</li>
+<li>Satisfaction is a free score about the past and renewal is a spending decision about the future, so watch behaviour, not sentiment.</li>
+<li>A departing champion, narrowing usage, downgraded meetings, sudden silence and procurement vocabulary all appear months before a cancellation notice.</li>
+<li>Flag any account with thirty days of no real interaction and have a person call; a signal should trigger a conversation, never an automatic downgrade.</li>
+<li>A solved problem goes invisible, so record how much it hurts as a number on signing day, because it cannot be reconstructed later.</li>
+<li>Send a one-page value review sixty days before renewal: their original words, baseline versus now, the critical moment, and the next step.</li>
+<li>The expansion window is the fortnight after a confirmed win, and you never sell a second thing before the first has delivered value.</li>
+</ol>
 </div>
 <div class="homework">
 <h3>Your Day 50 Action</h3>

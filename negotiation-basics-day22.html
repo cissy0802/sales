@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -445,6 +457,30 @@ header h1{font-size:1.55rem}
 <p>"If things change on your side, come back to me — the door's open." —— 体面地走开。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>博弈论 · 纳什议价解（John Nash，1950）</b>：纳什证明，在几条公理下，议价结果只取决于双方相对「谈崩点」多得的那部分——谈崩点就是 BATNA，退路一动，结果跟着移。不像在于：纳什假设双方效用都摊在桌上，真实谈判里对方的退路只能猜，所以才要问、要验。</li>
+<li><b>演化生物学 · 生物市场与菌根共生</b>：植物拿碳换菌根真菌的磷，Kiers 等（2011，<em>Science</em>）发现双方都把更多资源分给交付更多的一方，正是「对我便宜、对你值钱」的交换。不像在于：根和菌丝没有意图，靠分配本身奖惩，用不着问权重。</li>
+<li><b>分布式系统 · 超时（timeout）</b>：可靠的系统不会无限等一个不回话的节点，超时阈值在请求发出前就写进配置，而不是卡住了再临场决定——走开条件写死是同一个道理。不像在于：系统超时后重试或切换，谈判里走开后门还开着，对方可以带着新条件回来。</li>
+<li><b>中国哲学 · 庄子「朝三暮四」</b>：狙公把橡子从朝三暮四改成朝四暮三，总数没变，众狙由怒转喜，庄子评「名实未亏而喜怒为用」。这像议题打包：总价不动，组合一换，满意度就变。不像在于：猴子若真偏好早上多吃，这是权重差带来的真交换；若只是换个说法哄过去，就落进了诱导那条线。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>立场是对方挑中的一个解，利益是让他挑中它的那组约束，同一组约束往往有好几个解。</li>
+<li>听到「预算就这么多」，先用中性语气问这个数是怎么定的，分清是真没钱还是流程门槛。</li>
+<li>固定蛋糕知觉很普遍：谈判者默认对方偏好与自己完全对立，能早点修正的人联合收益更高。</li>
+<li>Fisher 与 Ury 提出的 BATNA 是谈崩后你最好的退路，它决定保留价：低于这个数，不如不成交。</li>
+<li>双方保留价围出可成交区间 ZOPA，想多拿就改善自己的退路，或让对方看清他的退路有多贵。</li>
+<li>谈判前 48 小时最值钱的动作是多找一条真实退路，而不是练话术；编造的退路一被验证就拆穿。</li>
+<li>单议题谈判必然零和；加入交期、付款、范围等议题，只要双方权重不同，就有两边都更好的交换。</li>
+<li>让步永远打包、永远带条件，同时摆出两三个对你价值相当的方案（MESO），对方一选就暴露了权重。</li>
+<li>最后通牒博弈显示人愿意花钱惩罚不公，所以谈判要对人留面子，对事寸步不让。</li>
+<li>走开条件要在谈判前写死，像系统的超时阈值一样；临场靠意志力，会输给结束对话的冲动。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="b6fc1dd32b191f58">本期习作 · Your Day 22 Action</h3>

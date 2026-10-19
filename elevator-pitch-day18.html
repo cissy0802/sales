@@ -91,6 +91,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -480,6 +492,33 @@ header h1{font-size:1.55rem}
 <p>Write it so they can read it out loud.</p>
 </div>
 </div>
+</div>
+<!-- ============ Crossovers ============ -->
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>演化生物学 · 长尾黑颚猴的警报叫声（Seyfarth、Cheney & Marler，1980）</b>：这种猴子对豹、鹰、蛇各有一种叫声，同伴一听就知道该上树、抬头还是低头找。一句话定位要的就是这个：一出口就落进对方现成的格子。不像的是，猴子的格子全族共享，你得先猜对眼前这个人脑子里有哪些格子。</li>
+<li><b>东方哲学 · 老子「少则得，多则惑」</b>：《道德经》第二十二章说，少反而有所得，多反而生迷惑。30 秒里塞进第五个组块，被挤掉的是中间那段，正是「多则惑」。不像的是，老子讲的是不执取，电梯陈述的舍却有明确目的：换来第二次见面。</li>
+<li><b>博弈论 · 廉价话语（Crawford & Sobel，1982）</b>：不花成本、也无法核实的话叫廉价话语，Crawford 与 Sobel 证明，双方利益分歧越大，这类话能传的信息越粗。「效率很高」就是典型的廉价话语，可核实的数字才算数。不同在于，模型里双方算得清，现实里陌生人干脆把形容词打折到零。</li>
+<li><b>信息论 · 香农的有噪信道（1948）</b>：香农证明，只要加足冗余编码，有噪信道也能可靠传输。一页纸就是给转述加冗余：第一行和最后一行是主信号，中间三条是被追问时的备份。不像的是，信道噪声是随机的，转述的失真却有方向，总往转述者原有的想法上偏，所以光加冗余不够，每一格还得写成他能照着念出口的句子。</li>
+<li><b>分布式系统 · 无状态请求（Fielding 的 REST，2000）</b>：REST 要求每个请求自带全部上下文，因为服务器不记得上一次交互。一页纸也得这样：读它的拍板人没见过你，不能依赖「上次聊过」。不同在于，服务器照单全收，人会挑着读，所以每一格都得能单独成立。</li>
+</ul>
+</div>
+<!-- ============ Takeaways ============ -->
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>电梯陈述的合格线不是讲全，而是对方能用自己的话把你转述给另一个人。</li>
+<li>一句话定位的任务是让对方三秒内把你归进已有的格子，归不了类的东西会被搁置。</li>
+<li>听着费力会被读成可疑，Oppenheimer 发现用词越生僻，读者给作者的智力评分越低。</li>
+<li>Cowan 把工作记忆容量定在约四个组块，所以 30 秒陈述只分钩子、谁和痛、怎么做到、小请求四段。</li>
+<li>首尾记得牢、中间掉得快，最想让对方带走的那句话只能放在开头或结尾。</li>
+<li>结尾的请求要小到顺手就能答应，并带上具体时间和形式，别只说保持联系。</li>
+<li>形容词是你对自己的评价，数字和画面让对方自己去算、自己去看见。</li>
+<li>数字必须真实并标明口径，诚实的区间比虚假的精确更有说服力。</li>
+<li>拍板的人往往不在场，一页纸是塞进对接人转述里的台词，每一格都要写成能照念的句子。</li>
+<li>一页纸就是一页，删不到一页通常说明第一格的定位还没想清楚。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="3684c1680dc5b7bd">本期习作 · Your Day 18 Action</h3>

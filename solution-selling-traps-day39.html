@@ -82,6 +82,18 @@ header h1{font-size:1.55rem}
 .card h2{font-size:1.2rem}
 .container{padding:16px 14px 60px}
 }
+.crossx{margin-top:42px;padding:22px 26px;background:#f6f1f7;border:1px solid #ddcfe2;border-left:4px solid #6b4c7a;border-radius:6px}
+.crossx h3{font-size:0.82rem;letter-spacing:2.5px;color:#5a3d69;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.crossx ul{list-style:none;padding:0;margin:0}
+.crossx li{padding:10px 0;border-top:1px dashed #ddcfe2;font-size:0.95rem;color:#2c382f;line-height:1.75}
+.crossx li:first-child{border-top:none}
+.crossx b{color:#5a3d69}
+.tk{margin-top:36px}
+.tk h3{font-size:0.82rem;letter-spacing:2.5px;color:#123f30;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid #e3ddc7;border-left:3px solid #1f7a5c;border-radius:6px;background:#fbfaf4}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid #ece6d3;font-size:0.95rem;line-height:1.75;color:#2c382f}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;font-weight:700;color:#1f7a5c}
 </style>
 </head>
 <body>
@@ -438,6 +450,31 @@ header h1{font-size:1.55rem}
 <p class="caveat">边界：别把这条当偷懒的许可证。真正危险的格子是"他很清楚、但他清楚错了"——张口就要 A，而 A 解决不了他的问题。判断法：<strong>他说得出要什么，也说得出为什么要吗？</strong>说得出"为什么"就直接报价；只说得出"什么"，就值得用一个问句探一下（这是「挑战者销售」那期的用武之地——但用一个问句，不是一场会议）。</p>
 </div>
 </div>
+</div>
+<div class="crossx">
+<h3>越界 · 跨学科的联想</h3>
+<ul>
+<li><b>软件工程 · 技术债（Ward Cunningham，1992）</b>：Cunningham 把「先交付不完美的代码」比作借钱：拿到速度，此后每次改动都付利息。免费定制就是一笔没登记的债，由交付团队来还。不像在于，程序员借技术债常是知情的，销售这笔签字那天没人记账。</li>
+<li><b>分布式系统 · 分叉（fork）与上游</b>：分叉出去的代码不再自动收到上游修复，分得越久越难合回。定制版跟不上主版本升级，是同一个结构。不同处：开源分叉偶尔会长成新主线，客户的定制版几乎只会变成孤岛。</li>
+<li><b>信息论 · 香农的信息量（Claude Shannon，1948）</b>：香农把信息定义为不确定性的消除：人人必发、概率接近 1 的消息几乎不带比特，「端到端一站式」正是这种消息。不像在于，香农不管意义和真假，买家还要判断可信度。</li>
+<li><b>西方哲学 · 「规定即否定」（斯宾诺莎，1674）</b>：斯宾诺莎在一封信里说，规定一个东西就是否定它的其余可能；「我们不做 X」正是用排除来定义自己。不同在于，他谈的是形状与存在，销售的排除要付出真实代价才算数。</li>
+<li><b>控制论 · 必要多样性定律（W. Ross Ashby，1956）</b>：Ashby 说，调节者的多样性必须至少匹配被调节系统的多样性才控得住它；诊断深度也该匹配决策复杂度。不像在于，Ashby 只给下限，销售里多余的诊断本身就是成本，上限也得卡。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>十条要点</h3>
+<ol class="takeaways">
+<li>过度定制是结构问题：好处即时归销售，代价延迟落到交付、支持和两年后的接手人身上。</li>
+<li>收到定制请求先问：要什么结果、标准功能能否拿到八成、愿不愿单独付钱、几个客户提过。</li>
+<li>定制要当一笔生意来算，单独定价、排期、写进合同，不能当促成交的赠品白送。</li>
+<li>多余信息不是中性的：印象更像平均而非累加，平庸卖点会稀释旁边那条硬证据。</li>
+<li>两个选项各有优势、难以取舍时，买家倾向推迟，而推迟往往等于什么都不做。</li>
+<li>提案减法：方案砍到一个，最多两个且在同一维度明显不同，卖点做删除测试，弱证据进附录。</li>
+<li>「端到端一站式」人人能说所以不带信息，穿过买家过滤器的是可证伪的具体结果和一句「我们不做什么」。</li>
+<li>竞品测试洗口号：竞争对手能原样搬走的句子就划掉，每个形容词换成数字、客户名字或场景。</li>
+<li>诊断有成本，投入应与决策复杂度成正比；买家先问价、说得出规格、一人能签，命中两条就直接报价。</li>
+<li>Rackham 观察到同一套技巧在小单和大单里效果会翻转，顾问式是一笔投入，不是姿态。</li>
+</ol>
 </div>
 <div class="homework">
 <h3 data-tts="34bf0ded24987fca">本期习作 · Your Day 39 Action</h3>
